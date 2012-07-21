@@ -14,6 +14,8 @@
 		36D40DFA15BA881D001890B0 /* core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D40DE015BA881D001890B0 /* core.dylib */; };
 		36D40E0015BA881D001890B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36D40DFE15BA881D001890B0 /* InfoPlist.strings */; };
 		36D40E0315BA881D001890B0 /* coreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D40E0215BA881D001890B0 /* coreTests.m */; };
+		36D40E0F15BA88C9001890B0 /* ProgramCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 36D40E0D15BA88C9001890B0 /* ProgramCode.h */; };
+		36D40E1015BA88C9001890B0 /* ProgramCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D40E0E15BA88C9001890B0 /* ProgramCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		36D40DFF15BA881D001890B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36D40E0115BA881D001890B0 /* coreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coreTests.h; sourceTree = "<group>"; };
 		36D40E0215BA881D001890B0 /* coreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = coreTests.m; sourceTree = "<group>"; };
+		36D40E0D15BA88C9001890B0 /* ProgramCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramCode.h; sourceTree = "<group>"; };
+		36D40E0E15BA88C9001890B0 /* ProgramCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramCode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		36D40DD515BA881D001890B0 = {
 			isa = PBXGroup;
 			children = (
+				36D40E0C15BA8871001890B0 /* Code */,
 				36D40DE915BA881D001890B0 /* core */,
 				36D40DFB15BA881D001890B0 /* coreTests */,
 				36D40DE215BA881D001890B0 /* Frameworks */,
@@ -141,6 +146,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		36D40E0C15BA8871001890B0 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				36D40E0D15BA88C9001890B0 /* ProgramCode.h */,
+				36D40E0E15BA88C9001890B0 /* ProgramCode.m */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -148,6 +162,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D40E0F15BA88C9001890B0 /* ProgramCode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36D40DEE15BA881D001890B0 /* core.m in Sources */,
+				36D40E1015BA88C9001890B0 /* ProgramCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
