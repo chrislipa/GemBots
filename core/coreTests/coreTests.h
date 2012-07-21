@@ -1,0 +1,13 @@
+//
+//  coreTests.h
+//  coreTests
+//
+//  Created by Christopher Lipa on 7/20/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface coreTests : SenTestCase
+
+@end
