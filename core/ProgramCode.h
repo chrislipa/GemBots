@@ -46,6 +46,6 @@
 @property (readwrite,assign) int mines;
 @property (readwrite,assign) int shield;
 
--(ProgramCode*) programCodeFromFile:(NSString*) path;
++(ProgramCode*) programCodeFromFile:(NSString*) path;
 
 @end
