@@ -29,6 +29,9 @@
 		360892CC15BE876D00A06C94 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892CB15BE876D00A06C94 /* MySpotlightImporter.m */; };
 		360892DC15BE8F5900A06C94 /* BattleDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */; };
 		364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDF815BEA01700A765D0 /* RobotListTableView.m */; };
+		364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFB15BF185F00A765D0 /* RobotCellView.m */; };
+		364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFE15BF18CE00A765D0 /* Utility.m */; };
+		364DCE0115BF19F000A765D0 /* RobotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364DCE0015BF19F000A765D0 /* RobotCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,11 @@
 		364DCDDC15BE9C8100A765D0 /* core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = core.xcodeproj; path = core/core.xcodeproj; sourceTree = "<group>"; };
 		364DCDF715BEA01700A765D0 /* RobotListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableView.h; sourceTree = "<group>"; };
 		364DCDF815BEA01700A765D0 /* RobotListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableView.m; sourceTree = "<group>"; };
+		364DCDFA15BF185F00A765D0 /* RobotCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotCellView.h; sourceTree = "<group>"; };
+		364DCDFB15BF185F00A765D0 /* RobotCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotCellView.m; sourceTree = "<group>"; };
+		364DCDFD15BF18CE00A765D0 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		364DCDFE15BF18CE00A765D0 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		364DCE0015BF19F000A765D0 /* RobotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +201,11 @@
 				3608928515BE876D00A06C94 /* Supporting Files */,
 				364DCDF715BEA01700A765D0 /* RobotListTableView.h */,
 				364DCDF815BEA01700A765D0 /* RobotListTableView.m */,
+				364DCDFA15BF185F00A765D0 /* RobotCellView.h */,
+				364DCDFB15BF185F00A765D0 /* RobotCellView.m */,
+				364DCDFD15BF18CE00A765D0 /* Utility.h */,
+				364DCDFE15BF18CE00A765D0 /* Utility.m */,
+				364DCE0015BF19F000A765D0 /* RobotCell.xib */,
 			);
 			path = bot;
 			sourceTree = "<group>";
@@ -377,6 +390,7 @@
 				3608929515BE876D00A06C94 /* BattleDocument.xib in Resources */,
 				3608929815BE876D00A06C94 /* MainMenu.xib in Resources */,
 				360892B715BE876D00A06C94 /* botImporter.mdimporter in Resources */,
+				364DCE0115BF19F000A765D0 /* RobotCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +437,8 @@
 				3608929215BE876D00A06C94 /* BattleDocument.m in Sources */,
 				360892DC15BE8F5900A06C94 /* BattleDocumentViewController.m in Sources */,
 				364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */,
+				364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */,
+				364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  RobotListTableView.h
+//  RobotCellView.h
 //  bot
 //
 //  Created by Christopher Lipa on 7/24/12.
@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RobotListTableView : NSTableView {
-    
-}
+@interface RobotCellView : NSTableCellView
 
 @end

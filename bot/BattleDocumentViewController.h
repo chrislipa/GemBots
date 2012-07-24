@@ -7,11 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "RobotListTableView.h"
 #import "BattleDocument.h"
 
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
+    IBOutlet RobotListTableView* robotList;
+    NSMutableArray* robots;
     
 }
 

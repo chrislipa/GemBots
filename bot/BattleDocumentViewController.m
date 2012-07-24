@@ -26,7 +26,11 @@
 
 
 - (IBAction) addRobotButtonEvent:(id)sender {
-    
+    [self promptUserToAddRobots];
+   
+}
+
+-(void) promptUserToAddRobots {
     NSOpenPanel* p = [NSOpenPanel openPanel];
     [p setCanChooseFiles:YES];
     [p setAllowedFileTypes:[NSArray arrayWithObjects:@"at2", nil]];
@@ -38,7 +42,6 @@
     for (NSURL* url in paths) {
         [self loadRobotFromURL:url];
     }
-    
 }
 
 -(void) loadRobotFromURL:(NSURL*) url {
@@ -47,7 +50,7 @@
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return 0;
+    return 1;//[robots count];
 }
 
 - (NSArray *)tableView:(NSTableView *)tableView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)indexSet {
@@ -57,6 +60,7 @@
 
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    return nil;
+    NSNib* cell = [[NSNib alloc] initWithNibNamed:@"RobotCell" bundle:nil];
+    return cell;
 }
 @end
