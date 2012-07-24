@@ -1,0 +1,15 @@
+ffffffffffffffffffffffffffffffff 2ee3919d489cd3e0e2dd8ada0f86878c ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app
+00000000500e559500000000000057c5 4730d12d96e2de46416b915123b63c99 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/BattleDocument.nib
+00000000500e4fed00000000000328f0 1eccaecd1e4fab6c21b8335a9e640621 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/MainMenu.nib
+00000000000000000000000000000000 7e51285cb482baba6b047d789efbc4bd ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/botImporter.mdimporter
+00000000000000000000000000000000 95cddf11045de5a95e6569c2606c0ce6 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf
+00000000500e4fed000000000000002d f4c020cf1805734eb8886b51e184fdc1 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/InfoPlist.strings
+ffffffffffffffffffffffffffffffff 4970e8ec34d4590f1154663c9d59b138 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/MacOS/bot
+00000000500e4fed0000000000000088 aab6e38f9087d5bb0493beac116917b9 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/Document.momd
+53a70b1434966a48a605f43e3abd0b3a 8a5293b997d8c690d3c3a6e348754b6c ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.o
+53a70b1464983c54a605f43e3abd0be8 b44bfb66138de48dbd8cba5474ed33c1 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.o
+00000000000000000000000000000000 740d740f8ef7f5997489598312a24653 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/Info.plist
+00000000000000000000000000000000 740d740f8ef7f5997489598312a24653 ffffffffffffffffffffffffffffffff 0 /Users/lipa/bot/build/Debug/bot.app/Contents/PkgInfo
+00000000500e4fed0000000000000089 53a70b1464983c54a605f43e3abd0be8 ffffffffffffffffffffffffffffffff 11515440 /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.pth
+00000000500e559500000000000057c5 12182658f833e7858b86643b3b646470 ffffffffffffffffffffffffffffffff 6503 /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/Document.nib
+ffffffffffffffffffffffffffffffff 98d2866f567685d34bd92d25fca1bd6d ffffffffffffffffffffffffffffffff 21716 /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.o

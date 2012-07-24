@@ -1,0 +1,351 @@
+Tbot
+v5
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/lipa/bot/build/Debug/bot.app/Contents/Info.plist bot/bot-Info.plist
+cProcessPCH /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.pth bot/bot-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.o /Users/lipa/bot/bot/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.o /Users/lipa/bot/bot/BattleDocument.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.o /Users/lipa/bot/bot/BattleDocumentViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/lipa/bot/build/Debug/bot.app/Contents/MacOS/bot normal x86_64
+cCopyStringsFile /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/InfoPlist.strings bot/en.lproj/InfoPlist.strings
+cCpResource bot/en.lproj/Credits.rtf build/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf
+cCompileXIB /Users/lipa/bot/bot/en.lproj/BattleDocument.xib
+cCompileXIB /Users/lipa/bot/bot/en.lproj/MainMenu.xib
+cCpResource build/Debug/botImporter.mdimporter build/Debug/bot.app/Contents/Resources/botImporter.mdimporter
+cTouch /Users/lipa/bot/build/Debug/bot.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
+c000000004FDC1AA700000000000000CC
+t1339824807
+s204
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004F46A0520000000000002470
+t1330028626
+s9328
+
+N/Users/lipa/bot/bot/BattleDocument.h
+c00000000500E5A0800000000000000DE
+t1343117832
+s222
+
+N/Users/lipa/bot/bot/BattleDocument.m
+c00000000500E5A0700000000000003AF
+t1343117831
+s943
+
+N/Users/lipa/bot/bot/BattleDocumentViewController.h
+c00000000500E5ABB0000000000000175
+t1343118011
+s373
+
+N/Users/lipa/bot/bot/BattleDocumentViewController.m
+c00000000500E5DC50000000000000374
+t1343118789
+s884
+
+N/Users/lipa/bot/bot/Document.h
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/lipa/bot/bot/Document.m
+c00000000500E4FED000000000000039D
+t1343115245
+s925
+
+N/Users/lipa/bot/bot/Document.xcdatamodeld
+c00000000500E4FED0000000000000088
+t1343115245
+s136
+
+N/Users/lipa/bot/bot/bot-Prefix.pch
+c00000000500E4FED0000000000000089
+t1343115245
+s137
+
+N/Users/lipa/bot/bot/en.lproj/BattleDocument.xib
+c00000000500E5B2200000000000059BD
+t1343118114
+s22973
+
+N/Users/lipa/bot/bot/en.lproj/Credits.rtf
+c00000000500E4FED00000000000001B4
+t1343115245
+s436
+
+N/Users/lipa/bot/bot/en.lproj/Document.xib
+c00000000500E559500000000000057C5
+t1343116693
+s22469
+
+N/Users/lipa/bot/bot/en.lproj/InfoPlist.strings
+c00000000500E4FED000000000000002D
+t1343115245
+s45
+
+N/Users/lipa/bot/bot/en.lproj/MainMenu.xib
+c00000000500E4FED00000000000328F0
+t1343115245
+s207088
+
+N/Users/lipa/bot/bot/main.m
+c00000000500E4FED00000000000000FF
+t1343115245
+s255
+
+N/Users/lipa/bot/build/Debug/bot.app
+t1343118789
+s102
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Info.plist
+t1343117187
+s3094
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/MacOS/bot
+t1343118789
+s16744
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/PkgInfo
+t1343117187
+s8
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/Document.momd
+t1343116856
+s170
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/botImporter.mdimporter
+t1343116856
+s102
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/BattleDocument.nib
+t1343118114
+s6800
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf
+t1343116856
+s436
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/Document.nib
+t1343116693
+s6503
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/InfoPlist.strings
+t1343116856
+s92
+
+N/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/MainMenu.nib
+t1343116856
+s25630
+
+N/Users/lipa/bot/build/Debug/botImporter.mdimporter
+c00000000500E56380000000000000066
+t1343116856
+s102
+
+N/Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.o
+t1343117832
+s18460
+
+N/Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.o
+t1343118789
+s26040
+
+N/Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.o
+t1343115327
+s21716
+
+N/Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/bot.LinkFileList
+c00000000500E59FC0000000000000109
+t1343117820
+s265
+
+N/Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.o
+t1343116856
+s2656
+
+N/var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.pth
+t1343115327
+s11515440
+
+Nbot/bot-Info.plist
+c00000000500E57830000000000000B23
+t1343117187
+s2851
+
+CBuild AST from /Users/lipa/bot/bot/BattleDocument.m
+r0
+
+CBuild AST from /Users/lipa/bot/bot/BattleDocumentViewController.m
+r0
+
+CBuild AST from /Users/lipa/bot/bot/Document.m
+r0
+
+CBuild AST from /Users/lipa/bot/bot/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies7288e85b95beb541^72c2e85b95beb541^---0#1#0#--18"Check dependencies36"6841296F-3C8C-4154-BAB3-C3E9BBC39D40-
+
+CCompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.o /Users/lipa/bot/bot/BattleDocument.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s364810632.763228
+e364810632.796131
+r1
+xCompileC
+xbuild/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.o
+x/Users/lipa/bot/bot/BattleDocument.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Compile /Users/lipa/bot/bot/BattleDocument.m3179c38891beb541^990fd48891beb541^---0#0#0#-19%DVTDocumentLocation2@52"file://localhost/Users/lipa/bot/bot/BattleDocument.m0000000000000000^2351"CompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.o bot/BattleDocument.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/lipa/bot    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-generated-files.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-own-target-headers.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-all-target-headers.hmap -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-project-headers.hmap -I/Users/lipa/bot/build/Debug/include -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources/x86_64 -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources -F/Users/lipa/bot/build/Debug -include /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch -MMD -MT dependencies -MF /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.d --serialize-diagnostics /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.dia -c /Users/lipa/bot/bot/BattleDocument.m -o /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocument.o36"0BF1A69C-54DC-470A-982F-DDCE41E3E045-
+
+CCompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.o /Users/lipa/bot/bot/BattleDocumentViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s364811589.790138
+e364811589.830033
+r1
+xCompileC
+xbuild/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.o
+x/Users/lipa/bot/bot/BattleDocumentViewController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/lipa/bot/bot/BattleDocumentViewController.m:36:14: warning: unused variable 'paths' [-Wunused-variable]
+o    NSArray* paths = [p URLs];
+o             ^
+o1 warning generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Compile /Users/lipa/bot/bot/BattleDocumentViewController.me867ca4595beb541^857cd44595beb541^-178"/Users/lipa/bot/bot/BattleDocumentViewController.m:36:14: warning: unused variable 'paths' [-Wunused-variable]    NSArray* paths = [p URLs];             ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@23"Unused variable 'paths'-364811589#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@66"file://localhost/Users/lipa/bot/bot/BattleDocumentViewController.m0000000000000000^35#13#35#13#832#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@66"file://localhost/Users/lipa/bot/bot/BattleDocumentViewController.m0000000000000000^2435"CompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.o bot/BattleDocumentViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/lipa/bot    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-generated-files.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-own-target-headers.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-all-target-headers.hmap -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-project-headers.hmap -I/Users/lipa/bot/build/Debug/include -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources/x86_64 -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources -F/Users/lipa/bot/build/Debug -include /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch -MMD -MT dependencies -MF /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.d --serialize-diagnostics /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.dia -c /Users/lipa/bot/bot/BattleDocumentViewController.m -o /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/BattleDocumentViewController.o36"0484C6DD-5169-4819-9C96-156CCD8601BA-
+
+CCompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.o /Users/lipa/bot/bot/Document.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s364808127.842798
+e364808127.901832
+r1
+xCompileC
+xbuild/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.o
+x/Users/lipa/bot/bot/Document.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Compile /Users/lipa/bot/bot/Document.m9b1dd9bf87beb541^61dfe6bf87beb541^---0#0#0#-19%DVTDocumentLocation2@46"file://localhost/Users/lipa/bot/bot/Document.m0000000000000000^2383"CompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.o bot/Document.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/lipa/bot    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-generated-files.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-own-target-headers.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-all-target-headers.hmap -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-project-headers.hmap -I/Users/lipa/bot/build/Debug/include -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources/x86_64 -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources -F/Users/lipa/bot/build/Debug -include /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch -MMD -MT dependencies -MF /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.d --serialize-diagnostics /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.dia -c /Users/lipa/bot/bot/Document.m -o /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/Document-5AF5AB02B4432B4B.o36"8AB90CF9-E81A-44A3-B154-12BCD1B200DB-
+
+CCompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.o /Users/lipa/bot/bot/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s364809656.369398
+e364809656.420343
+r1
+xCompileC
+xbuild/bot.build/Debug/bot.build/Objects-normal/x86_64/main.o
+x/Users/lipa/bot/bot/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection34"Compile /Users/lipa/bot/bot/main.m6b0f5fb88dbeb541^a2996bb88dbeb541^---0#0#0#-19%DVTDocumentLocation2@42"file://localhost/Users/lipa/bot/bot/main.m0000000000000000^2291"CompileC build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.o bot/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/lipa/bot    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-generated-files.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-own-target-headers.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-all-target-headers.hmap -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-project-headers.hmap -I/Users/lipa/bot/build/Debug/include -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources/x86_64 -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources -F/Users/lipa/bot/build/Debug -include /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch -MMD -MT dependencies -MF /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.dia -c /Users/lipa/bot/bot/main.m -o /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/main.o36"03405E45-7D60-4745-9B4C-184E41881533-
+
+CCompileXIB /Users/lipa/bot/bot/en.lproj/BattleDocument.xib
+s364810914.853964
+e364810914.884332
+r1
+xCompileXIB
+x/Users/lipa/bot/bot/en.lproj/BattleDocument.xib
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compiling /Users/lipa/bot/bot/en.lproj/BattleDocument.xibb29ddba292beb541^db6ee2a292beb541^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/lipa/bot/bot/en.lproj/BattleDocument.xib0000000000000000^530"CompileXIB bot/en.lproj/BattleDocument.xib    cd /Users/lipa/bot    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/BattleDocument.nib /Users/lipa/bot/bot/en.lproj/BattleDocument.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk36"6D805D6B-FDC4-4FDC-8360-4863ACFB123B-
+
+CCompileXIB /Users/lipa/bot/bot/en.lproj/Document.xib
+s364809493.839036
+e364809493.858759
+r1
+xCompileXIB
+x/Users/lipa/bot/bot/en.lproj/Document.xib
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Compiling /Users/lipa/bot/bot/en.lproj/Document.xib17d9d6158dbeb541^bed8db158dbeb541^---0#0#0#-19%DVTDocumentLocation2@57"file://localhost/Users/lipa/bot/bot/en.lproj/Document.xib0000000000000000^512"CompileXIB bot/en.lproj/Document.xib    cd /Users/lipa/bot    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/Document.nib /Users/lipa/bot/bot/en.lproj/Document.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk36"16E0D492-425E-4544-B9B2-99B325521624-
+
+CCompileXIB /Users/lipa/bot/bot/en.lproj/MainMenu.xib
+s364809656.473619
+e364809656.568987
+r1
+xCompileXIB
+x/Users/lipa/bot/bot/en.lproj/MainMenu.xib
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Compiling /Users/lipa/bot/bot/en.lproj/MainMenu.xib1a4e79b88dbeb541^54a991b88dbeb541^---0#0#0#-19%DVTDocumentLocation2@57"file://localhost/Users/lipa/bot/bot/en.lproj/MainMenu.xib0000000000000000^512"CompileXIB bot/en.lproj/MainMenu.xib    cd /Users/lipa/bot    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/MainMenu.nib /Users/lipa/bot/bot/en.lproj/MainMenu.xib --sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk36"D7DCB910-61CD-48EC-9C08-F8ED9240383A-
+
+CCopyStringsFile /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/InfoPlist.strings bot/en.lproj/InfoPlist.strings
+s364809656.473307
+e364809656.475943
+r1
+xCopyStringsFile
+x/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/InfoPlist.strings
+xbot/en.lproj/InfoPlist.strings
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection35"Copy bot/en.lproj/InfoPlist.stringsa43679b88dbeb541^73d879b88dbeb541^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/lipa/bot/bot/en.lproj/InfoPlist.strings0000000000000000^324"CopyStringsFile build/Debug/bot.app/Contents/Resources/en.lproj/InfoPlist.strings bot/en.lproj/InfoPlist.strings    cd /Users/lipa/bot    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding UTF-16 --outdir /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj -- bot/en.lproj/InfoPlist.strings36"A55B40CD-EAC8-404A-8076-1A507732B8C3-
+
+CCpResource bot/en.lproj/Credits.rtf build/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf
+s364809656.473312
+e364809656.476344
+r1
+xCpResource
+xbot/en.lproj/Credits.rtf
+xbuild/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf9f3b79b88dbeb541^aef179b88dbeb541^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf000000000080d041^441"CpResource bot/en.lproj/Credits.rtf build/Debug/bot.app/Contents/Resources/en.lproj/Credits.rtf    cd /Users/lipa/bot    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip /Users/lipa/bot/bot/en.lproj/Credits.rtf /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/en.lproj36"A1EBD405-82DD-4704-A1F3-9E25B092CAC5-
+
+CCpResource build/Debug/botImporter.mdimporter build/Debug/bot.app/Contents/Resources/botImporter.mdimporter
+s364809656.473952
+e364809656.481593
+r1
+xCpResource
+xbuild/Debug/botImporter.mdimporter
+xbuild/Debug/bot.app/Contents/Resources/botImporter.mdimporter
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/Debug/bot.app/Contents/Resources/botImporter.mdimporterbb6379b88dbeb541^234a7bb88dbeb541^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/botImporter.mdimporter000000000080d041^454"CpResource build/Debug/botImporter.mdimporter build/Debug/bot.app/Contents/Resources/botImporter.mdimporter    cd /Users/lipa/bot    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip /Users/lipa/bot/build/Debug/botImporter.mdimporter /Users/lipa/bot/build/Debug/bot.app/Contents/Resources36"FC3759F9-DE11-42BD-9529-3C42B671925A-
+
+CDataModelVersionCompile /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/Document.momd /Users/lipa/bot/bot/Document.xcdatamodeld
+s364809656.362478
+e364809656.430734
+r1
+xDataModelVersionCompile
+x/Users/lipa/bot/build/Debug/bot.app/Contents/Resources/Document.momd
+x/Users/lipa/bot/bot/Document.xcdatamodeld
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"DataModelVersionCompile build/Debug/bot.app/Contents/Resources/Document.momd bot/Document.xcdatamodeld12dc5cb88dbeb541^4c8b6eb88dbeb541^---0#0#0#-19%DVTDocumentLocation2@58"file://localhost/Users/lipa/bot/bot/Document.xcdatamodeld/0000000000000000^465"DataModelVersionCompile build/Debug/bot.app/Contents/Resources/Document.momd bot/Document.xcdatamodeld    cd /Users/lipa/bot    /Applications/Xcode.app/Contents/Developer/usr/bin/momc -XD_MOMC_SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -MOMC_PLATFORMS macosx -XD_MOMC_TARGET_VERSION=10.7 /Users/lipa/bot/bot/Document.xcdatamodeld /Users/lipa/bot/build/Debug/bot.app/Contents/Resources/Document.momd36"9181C480-43C7-4963-8DCF-81C29FB0E9D2-
+
+CLd /Users/lipa/bot/build/Debug/bot.app/Contents/MacOS/bot normal x86_64
+s364811589.837217
+e364811589.885733
+r1
+xLd
+x/Users/lipa/bot/build/Debug/bot.app/Contents/MacOS/bot
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Link /Users/lipa/bot/build/Debug/bot.app/Contents/MacOS/botb360d64595beb541^f9dbe24595beb541^---0#0#0#--608"Ld build/Debug/bot.app/Contents/MacOS/bot normal x86_64    cd /Users/lipa/bot    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -L/Users/lipa/bot/build/Debug -F/Users/lipa/bot/build/Debug -filelist /Users/lipa/bot/build/bot.build/Debug/bot.build/Objects-normal/x86_64/bot.LinkFileList -mmacosx-version-min=10.7 -fobjc-arc -framework Cocoa -o /Users/lipa/bot/build/Debug/bot.app/Contents/MacOS/bot36"10FF3A03-4FCB-430E-859D-6B48A67EEDA3-
+
+CProcessInfoPlistFile /Users/lipa/bot/build/Debug/bot.app/Contents/Info.plist bot/bot-Info.plist
+s364809987.480765
+e364809987.484919
+r1
+xProcessInfoPlistFile
+x/Users/lipa/bot/build/Debug/bot.app/Contents/Info.plist
+xbot/bot-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection26"Process bot/bot-Info.plist9f1e7b038fbeb541^4f247c038fbeb541^---0#0#0#-19%DVTDocumentLocation2@50"file://localhost/Users/lipa/bot/bot/bot-Info.plist0000000000000000^313"ProcessInfoPlistFile build/Debug/bot.app/Contents/Info.plist bot/bot-Info.plist    cd /Users/lipa/bot    builtin-infoPlistUtility bot/bot-Info.plist -genpkginfo /Users/lipa/bot/build/Debug/bot.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/lipa/bot/build/Debug/bot.app/Contents/Info.plist36"E1720BA8-7025-4788-9CA2-42F866C68B95-
+
+CProcessPCH /Users/lipa/bot/build/bot/Index/PrecompiledHeaders/bot-Prefix-helwwtkgfbskaraulrvwnrmiuitd_ast/bot-Prefix.pch.pth bot/bot-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.pth bot/bot-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s364808127.263175
+e364808127.835588
+r1
+xProcessPCH
+x/var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.pth
+xbot/bot-Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection29"Precompile bot/bot-Prefix.pchfd8443bf87beb541^ddead5bf87beb541^---0#0#0#-19%DVTDocumentLocation2@50"file://localhost/Users/lipa/bot/bot/bot-Prefix.pch0000000000000000^2474"ProcessPCH /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.pth bot/bot-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/lipa/bot    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.7 -g -Wno-conversion -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-generated-files.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-own-target-headers.hmap -I/Users/lipa/bot/build/bot.build/Debug/bot.build/bot-all-target-headers.hmap -iquote /Users/lipa/bot/build/bot.build/Debug/bot.build/bot-project-headers.hmap -I/Users/lipa/bot/build/Debug/include -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources/x86_64 -I/Users/lipa/bot/build/bot.build/Debug/bot.build/DerivedSources -F/Users/lipa/bot/build/Debug --serialize-diagnostics /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.dia -c /Users/lipa/bot/bot/bot-Prefix.pch -o /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/7j/v5shjf2n64545v8f4j_4vyt40000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/bot-Prefix-aghproojwqjmejatzykefcvsolef/bot-Prefix.pch.d36"9311A9A8-52D9-4DC5-85B4-7008B09FFE9F-
+
+CTouch /Users/lipa/bot/build/Debug/bot.app
+s364811589.903689
+e364811589.907958
+r1
+xTouch
+x/Users/lipa/bot/build/Debug/bot.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Touch /Users/lipa/bot/build/Debug/bot.app8462e74595beb541^28d3ec4595beb541^---0#0#0#--107"Touch build/Debug/bot.app    cd /Users/lipa/bot    /usr/bin/touch -c /Users/lipa/bot/build/Debug/bot.app36"BA421588-EFCF-41D0-815E-F71A106F7460-
+
