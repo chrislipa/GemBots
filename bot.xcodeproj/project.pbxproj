@@ -28,6 +28,7 @@
 		360892C915BE876D00A06C94 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892C815BE876D00A06C94 /* GetMetadataForFile.m */; };
 		360892CC15BE876D00A06C94 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892CB15BE876D00A06C94 /* MySpotlightImporter.m */; };
 		360892DC15BE8F5900A06C94 /* BattleDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */; };
+		364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDF815BEA01700A765D0 /* RobotListTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 360892B315BE876D00A06C94;
 			remoteInfo = botImporter;
+		};
+		364DCDE415BE9C8200A765D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 364DCDDC15BE9C8100A765D0 /* core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36D40DE015BA881D001890B0;
+			remoteInfo = core;
+		};
+		364DCDE615BE9C8200A765D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 364DCDDC15BE9C8100A765D0 /* core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36D40DF415BA881D001890B0;
+			remoteInfo = coreTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -83,6 +98,9 @@
 		360892CE15BE876D00A06C94 /* botImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "botImporter-Prefix.pch"; sourceTree = "<group>"; };
 		360892DA15BE8F5900A06C94 /* BattleDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentViewController.h; sourceTree = "<group>"; };
 		360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleDocumentViewController.m; sourceTree = "<group>"; };
+		364DCDDC15BE9C8100A765D0 /* core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = core.xcodeproj; path = core/core.xcodeproj; sourceTree = "<group>"; };
+		364DCDF715BEA01700A765D0 /* RobotListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableView.h; sourceTree = "<group>"; };
+		364DCDF815BEA01700A765D0 /* RobotListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +138,7 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				364DCDDC15BE9C8100A765D0 /* core.xcodeproj */,
 				3608928415BE876D00A06C94 /* bot */,
 				360892A715BE876D00A06C94 /* botTests */,
 				360892C015BE876D00A06C94 /* botImporter */,
@@ -172,6 +191,8 @@
 				3608929315BE876D00A06C94 /* BattleDocument.xib */,
 				3608929615BE876D00A06C94 /* MainMenu.xib */,
 				3608928515BE876D00A06C94 /* Supporting Files */,
+				364DCDF715BEA01700A765D0 /* RobotListTableView.h */,
+				364DCDF815BEA01700A765D0 /* RobotListTableView.m */,
 			);
 			path = bot;
 			sourceTree = "<group>";
@@ -228,6 +249,15 @@
 				360892CE15BE876D00A06C94 /* botImporter-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		364DCDDD15BE9C8100A765D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				364DCDE515BE9C8200A765D0 /* core.dylib */,
+				364DCDE715BE9C8200A765D0 /* coreTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +335,12 @@
 			mainGroup = 3608926F15BE876D00A06C94;
 			productRefGroup = 3608927B15BE876D00A06C94 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 364DCDDD15BE9C8100A765D0 /* Products */;
+					ProjectRef = 364DCDDC15BE9C8100A765D0 /* core.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3608927915BE876D00A06C94 /* bot */,
@@ -313,6 +349,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		364DCDE515BE9C8200A765D0 /* core.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = core.dylib;
+			remoteRef = 364DCDE415BE9C8200A765D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		364DCDE715BE9C8200A765D0 /* coreTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = coreTests.octest;
+			remoteRef = 364DCDE615BE9C8200A765D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3608927815BE876D00A06C94 /* Resources */ = {
@@ -369,6 +422,7 @@
 				3608928B15BE876D00A06C94 /* main.m in Sources */,
 				3608929215BE876D00A06C94 /* BattleDocument.m in Sources */,
 				360892DC15BE8F5900A06C94 /* BattleDocumentViewController.m in Sources */,
+				364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +657,7 @@
 				360892D315BE876D00A06C94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		360892D415BE876D00A06C94 /* Build configuration list for PBXNativeTarget "bot" */ = {
 			isa = XCConfigurationList;
@@ -611,6 +666,7 @@
 				360892D615BE876D00A06C94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		360892D715BE876D00A06C94 /* Build configuration list for PBXNativeTarget "botTests" */ = {
 			isa = XCConfigurationList;
@@ -619,6 +675,7 @@
 				360892D915BE876D00A06C94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

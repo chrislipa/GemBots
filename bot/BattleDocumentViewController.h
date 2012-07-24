@@ -10,8 +10,9 @@
 
 #import "BattleDocument.h"
 
-@interface BattleDocumentViewController : NSViewController {
+@interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
+    
 }
 
 - (IBAction) addRobotButtonEvent:(id)sender;

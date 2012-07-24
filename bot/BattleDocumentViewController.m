@@ -42,8 +42,21 @@
 }
 
 -(void) loadRobotFromURL:(NSURL*) url {
-    NSString* codeString = [NSString stringWithContentsOfURL:url];
+    NSString* codeString = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:nil];
     
 }
 
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return 0;
+}
+
+- (NSArray *)tableView:(NSTableView *)tableView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)indexSet {
+    return nil;
+}
+
+
+
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    return nil;
+}
 @end
