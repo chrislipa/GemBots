@@ -410,6 +410,7 @@
 				36D40E0815BA881D001890B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36D40E0915BA881D001890B0 /* Build configuration list for PBXNativeTarget "coreTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +419,7 @@
 				36D40E0B15BA881D001890B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

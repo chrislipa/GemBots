@@ -9,11 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface BotDescription : NSObject {
-    NSString* pathToBot;
+    NSURL* urlToBot;
     NSString* name;
     NSString* description;
 }
 
+@property (readwrite,retain) NSURL* urlToBot;
+@property (readwrite,retain) NSString* name;
+@property (readwrite,retain) NSString* description;
+
+-(id) initWithURL:(NSString*) path;
 
 
 @end

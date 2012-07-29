@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BotDescription.h"
+@interface RobotCellView : NSView {
+    IBOutlet NSTextField* name;
+    
+}
 
-@interface RobotCellView : NSView
-
--(id) initWithRobot:(NSString*) robot;
+-(void) refreshWithBot:(BotDescription*) b;
 
 @end
