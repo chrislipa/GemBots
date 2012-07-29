@@ -10,8 +10,9 @@
 
 @implementation RobotCellView
 
-- (id)initWithFrame:(NSRect)frame
+-(id) initWithRobot:(NSString*) robot
 {
+    CGRect frame = CGRectMake(0, 0, 200, 50);
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.

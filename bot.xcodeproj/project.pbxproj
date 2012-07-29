@@ -32,6 +32,8 @@
 		364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFB15BF185F00A765D0 /* RobotCellView.m */; };
 		364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFE15BF18CE00A765D0 /* Utility.m */; };
 		364DCE0115BF19F000A765D0 /* RobotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364DCE0015BF19F000A765D0 /* RobotCell.xib */; };
+		3670B91115C5E6D900A38D46 /* BotDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91015C5E6D900A38D46 /* BotDescription.m */; };
+		3670B91415C5E85700A38D46 /* BotCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91315C5E85700A38D46 /* BotCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,10 @@
 		364DCDFD15BF18CE00A765D0 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		364DCDFE15BF18CE00A765D0 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		364DCE0015BF19F000A765D0 /* RobotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotCell.xib; sourceTree = "<group>"; };
+		3670B90F15C5E6D900A38D46 /* BotDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotDescription.h; sourceTree = "<group>"; };
+		3670B91015C5E6D900A38D46 /* BotDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotDescription.m; sourceTree = "<group>"; };
+		3670B91215C5E85700A38D46 /* BotCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotCellView.h; sourceTree = "<group>"; };
+		3670B91315C5E85700A38D46 /* BotCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				3670B90E15C5E6BB00A38D46 /* botDescription */,
 				364DCDDC15BE9C8100A765D0 /* core.xcodeproj */,
 				3608928415BE876D00A06C94 /* bot */,
 				360892A715BE876D00A06C94 /* botTests */,
@@ -271,6 +278,17 @@
 				364DCDE715BE9C8200A765D0 /* coreTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3670B90E15C5E6BB00A38D46 /* botDescription */ = {
+			isa = PBXGroup;
+			children = (
+				3670B90F15C5E6D900A38D46 /* BotDescription.h */,
+				3670B91015C5E6D900A38D46 /* BotDescription.m */,
+				3670B91215C5E85700A38D46 /* BotCellView.h */,
+				3670B91315C5E85700A38D46 /* BotCellView.m */,
+			);
+			name = botDescription;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +457,8 @@
 				364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */,
 				364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */,
 				364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */,
+				3670B91115C5E6D900A38D46 /* BotDescription.m in Sources */,
+				3670B91415C5E85700A38D46 /* BotCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

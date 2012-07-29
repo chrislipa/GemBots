@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RobotCellView : NSTableCellView
+@interface RobotCellView : NSView
+
+-(id) initWithRobot:(NSString*) robot;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "BattleDocumentViewController.h"
-
+#import "RobotCellView.h"
 @interface BattleDocumentViewController ()
 
 @end
@@ -19,6 +19,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
+        robots = [NSArray arrayWithObject:@"robot1"];
+    
     }
     
     return self;
@@ -45,22 +47,25 @@
 }
 
 -(void) loadRobotFromURL:(NSURL*) url {
-    NSString* codeString = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:nil];
+    //NSString* codeString = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:nil];
+    
+}
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+    return 100;
+}
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return [robots count];
+}
+
+
+
+- (NSView *)tableView:(NSTableView *)tableView
+   viewForTableColumn:(NSTableColumn *)tableColumn
+                  row:(NSInteger)row {
+    
+    return [[RobotCellView alloc] initWithRobot:[robots objectAtIndex:row]];
+    
     
 }
 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return 1;//[robots count];
-}
-
-- (NSArray *)tableView:(NSTableView *)tableView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)indexSet {
-    return nil;
-}
-
-
-
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    NSNib* cell = [[NSNib alloc] initWithNibNamed:@"RobotCell" bundle:nil];
-    return cell;
-}
 @end
