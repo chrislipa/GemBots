@@ -29,6 +29,9 @@
 @synthesize numberOfMinesLayed;
 @synthesize numberOfMinesConnected;
 @synthesize numberOfTimesHit;
+@synthesize team;
+@synthesize compiledCorrectly;
+@synthesize compileError;
 @end
 
 

@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "GameStateDescriptor.h"
-@interface engine_javascript_bridge : NSObject
+#import <WebKit/WebKit.h>
+
+@interface engine_javascript_bridge : NSObject {
+    WebView* webview;
+    WebScriptObject* webScriptObject;
+}
 
 -(id) init;
 
 
 //Reads in the robot at the given URL into the engine.
--(void) addRobot:(NSURL*) url;
+-(void) addRobot:(NSData*) robotData;
+
+-(void) setRobot:(NSString*) sessionUniqueRobotIdentifier:(NSString*)surid toTeam:(int) team;
 
 
 //Returns an array of GemBotDescriptions
@@ -26,12 +33,12 @@
 -(void) setNumberOfMatches:(int) numberOfMatches;
 
 
--(void) startGame;
+-(void) startNewSetOfMatches;
 
 -(void) stepGameCycle;
 
 -(GameStateDescriptor*) currentGameStateDescription;
 
--(bool) isSetOfRoundsCompleted;
+-(bool) isSetOfMatchesCompleted;
 
 @end

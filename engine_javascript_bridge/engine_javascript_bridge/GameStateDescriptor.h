@@ -11,6 +11,7 @@
 
 @interface RobotDescription : NSObject {
     NSString* sessionUniqueRobotIdentifier;
+    int team;
     
     NSString* name;
     NSString* description;
@@ -27,6 +28,10 @@
     int numberOfMissilesFired, numberOfMissilesConnected;
     int numberOfMinesLayed, numberOfMinesConnected;
     int numberOfTimesHit;
+    
+    bool compiledCorrectly;
+    NSString* compileError;
+    
 }
 @property (readwrite,retain) NSString* sessionUniqueRobotIdentifier;
 
@@ -53,6 +58,10 @@
 @property (readwrite,assign) int numberOfMinesConnected;
 @property (readwrite,assign) int numberOfTimesHit;
 
+
+@property (readwrite,assign) bool compiledCorrectly;
+@property (readwrite,retain) NSString* compileError;
+@property (readwrite,assign) int team;
 @end
 
 

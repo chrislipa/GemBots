@@ -9,12 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ArenaViewController : NSViewController {
+    
     NSMutableArray* robotPositions;
     NSMutableArray* misslePositions;
     NSMutableArray* scannerPositions;
     NSMutableArray* sonarPositions;
     NSMutableArray* explosionPositions;
-    
 }
 
 

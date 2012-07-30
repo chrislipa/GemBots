@@ -28,15 +28,13 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-//    glMatrixMode(GL_MODELVIEW);
-//    glLoadIdentity();
-//    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+
 //    glTranslatef(0.0f,0.0f,-6);
 //    glRotatef(20,0,0,1);
 //    glRotatef(20,1,0,0);
-//    glColor3f(1,0,0);
-//    
-//    [[self openGLContext] flushBuffer];
+
     
     
     
