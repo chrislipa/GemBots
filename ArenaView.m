@@ -5,10 +5,12 @@
 //  Created by Christopher Lipa on 7/29/12.
 //
 //
+#import <Cocoa/Cocoa.h>
 
 #import "ArenaView.h"
 #include <OpenGL/OpenGL.h>
 #include <OpenGL/gl.h>
+
 
 
 
@@ -26,6 +28,18 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//    glTranslatef(0.0f,0.0f,-6);
+//    glRotatef(20,0,0,1);
+//    glRotatef(20,1,0,0);
+//    glColor3f(1,0,0);
+//    
+//    [[self openGLContext] flushBuffer];
+    
+    
+    
     glClearColor(0, 0, 0, 0);
     glClear(GL_COLOR_BUFFER_BIT);
     

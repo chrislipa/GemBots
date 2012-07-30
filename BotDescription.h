@@ -18,7 +18,7 @@
 @property (readwrite,retain) NSString* name;
 @property (readwrite,retain) NSString* description;
 
--(id) initWithURL:(NSString*) path;
+-(id) initWithURL:(NSURL*) path;
 
 
 @end
