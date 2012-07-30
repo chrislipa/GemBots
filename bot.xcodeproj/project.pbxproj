@@ -34,6 +34,10 @@
 		3670B91115C5E6D900A38D46 /* BotDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91015C5E6D900A38D46 /* BotDescription.m */; };
 		3670B91815C5F09700A38D46 /* RobotCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91615C5F09700A38D46 /* RobotCellViewController.m */; };
 		3670B91915C5F09700A38D46 /* RobotCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670B91715C5F09700A38D46 /* RobotCellViewController.xib */; };
+		3670B92015C6027100A38D46 /* ArenaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91F15C6027100A38D46 /* ArenaView.m */; };
+		3670B92315C602DC00A38D46 /* ArenaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B92215C602DC00A38D46 /* ArenaViewController.m */; };
+		3670B92515C6115F00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
+		3670B92815C611CF00A38D46 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92615C611CF00A38D46 /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +119,13 @@
 		3670B91515C5F09700A38D46 /* RobotCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotCellViewController.h; path = bot/RobotCellViewController.h; sourceTree = "<group>"; };
 		3670B91615C5F09700A38D46 /* RobotCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RobotCellViewController.m; path = bot/RobotCellViewController.m; sourceTree = "<group>"; };
 		3670B91715C5F09700A38D46 /* RobotCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RobotCellViewController.xib; path = bot/RobotCellViewController.xib; sourceTree = "<group>"; };
+		3670B91E15C6027100A38D46 /* ArenaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArenaView.h; sourceTree = "<group>"; };
+		3670B91F15C6027100A38D46 /* ArenaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArenaView.m; sourceTree = "<group>"; };
+		3670B92115C602DC00A38D46 /* ArenaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArenaViewController.h; sourceTree = "<group>"; };
+		3670B92215C602DC00A38D46 /* ArenaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArenaViewController.m; sourceTree = "<group>"; };
+		3670B92415C6115F00A38D46 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		3670B92615C611CF00A38D46 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3670B92715C611CF00A38D46 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3670B92815C611CF00A38D46 /* GLKit.framework in Frameworks */,
+				3670B92515C6115F00A38D46 /* OpenGL.framework in Frameworks */,
 				360892A315BE876D00A06C94 /* SenTestingKit.framework in Frameworks */,
 				360892A415BE876D00A06C94 /* Cocoa.framework in Frameworks */,
 			);
@@ -152,6 +165,9 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				3670B92615C611CF00A38D46 /* GLKit.framework */,
+				3670B92715C611CF00A38D46 /* GLUT.framework */,
+				3670B91D15C6020F00A38D46 /* Arena */,
 				3670B91C15C5F38300A38D46 /* RobotCell */,
 				3670B90E15C5E6BB00A38D46 /* botDescription */,
 				364DCDDC15BE9C8100A765D0 /* core.xcodeproj */,
@@ -176,6 +192,7 @@
 		3608927D15BE876D00A06C94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3670B92415C6115F00A38D46 /* OpenGL.framework */,
 				3608927E15BE876D00A06C94 /* Cocoa.framework */,
 				360892A215BE876D00A06C94 /* SenTestingKit.framework */,
 				360892B815BE876D00A06C94 /* CoreServices.framework */,
@@ -297,6 +314,17 @@
 				3670B91715C5F09700A38D46 /* RobotCellViewController.xib */,
 			);
 			name = RobotCell;
+			sourceTree = "<group>";
+		};
+		3670B91D15C6020F00A38D46 /* Arena */ = {
+			isa = PBXGroup;
+			children = (
+				3670B91E15C6027100A38D46 /* ArenaView.h */,
+				3670B91F15C6027100A38D46 /* ArenaView.m */,
+				3670B92115C602DC00A38D46 /* ArenaViewController.h */,
+				3670B92215C602DC00A38D46 /* ArenaViewController.m */,
+			);
+			name = Arena;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +495,8 @@
 				364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */,
 				3670B91115C5E6D900A38D46 /* BotDescription.m in Sources */,
 				3670B91815C5F09700A38D46 /* RobotCellViewController.m in Sources */,
+				3670B92015C6027100A38D46 /* ArenaView.m in Sources */,
+				3670B92315C602DC00A38D46 /* ArenaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
