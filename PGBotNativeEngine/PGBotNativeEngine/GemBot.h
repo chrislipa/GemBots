@@ -8,8 +8,8 @@
 
 #import "GameStateDescriptor.h"
 #import "EngineDefinitions.h"
-
-
+#import "PGBotNativeEngine.h"
+#import "Opcode.h"
 
 @interface GemBot : NSObject <RobotDescription> {
     NSData* source;
@@ -69,6 +69,19 @@
     
     
     int savedClockCycles;
+    int numberOfConsecutiveConditionalJumps;
+    
+    bool wasLastInstructionAByteMaskedSet;
+    int addressOfLastBytMaskedSet;
+    int quarterClockCyclesIntoByteMaskedSet;
+    
+    __weak PGBotNativeEngine* engine;
+    
+    Opcode* opcode;
+    Device* device;
+    SystemCall* systemCall;
+    int op1;
+    int op2;
 }
 
 @property (readwrite,assign) int* memory;
@@ -113,7 +126,7 @@
 
 +(GemBot*) gemBotFromSource:(NSData*) source;
 -(void) setGemBotSource:(NSData*)source;
--(void) reallocRAM:(int) targetSize;
+
 
 
 -(bool) isAlive;

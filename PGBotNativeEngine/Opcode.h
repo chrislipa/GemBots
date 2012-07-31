@@ -8,6 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
+#define AX 0
+#define BX 1
+#define CX 2
+#define DX 3
+#define EX 4
+#define FX 5
+#define CMP_RESULT 7
+#define SP 8
+#define IP 9
+#define LOOP_CTR 10
+#define DESIRED_THROTTLE 100
+#define DESIRED_HEADING 101
+#define TURRET_OFFSET 102
+#define TIME_SINCE_DETECTION 104
+#define COLLISIONS 104
+#define ODOMETER 105
+#define COMM_QUEUE 256
+#define STACK 1024
+#define SOURCE_START 2048
+
+
+
+
 @interface Opcode : NSObject {
     int opcode;
     int time;
@@ -51,6 +74,11 @@
 
 
 NSArray* opcodeArray();
-NSDictionary* readDeviceArray();
-NSDictionary* writeDeviceArray();
+NSArray* readDeviceArray();
+NSArray* writeDeviceArray();
 NSArray* systemCallsArray();
+
+Opcode* getOpcode(int opcodeNumber);
+Device* getReadDevice(int deviceNumber);
+Device* getWriteDevice(int deviceNumber) ;
+SystemCall* getSystemCall(int sysCallNumber);

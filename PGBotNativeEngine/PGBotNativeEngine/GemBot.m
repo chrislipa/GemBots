@@ -81,28 +81,6 @@
 
 
 
--(void) reallocRAM:(int) targetSize {
-    if (memory == NULL) {
-        memory = (int*)malloc(targetSize * sizeof(int));
-        memorySize = targetSize;
-        for (int i = 0; i < memorySize; i++) {
-            memory[i] = 0;
-        }
-    } else {
-        int old_size = memorySize;
-        int new_size = memorySize;
-        while (new_size < targetSize) {
-            new_size <<= 2;
-        }
-        new_size = MIN(new_size, BOT_MAX_MEMORY);
-        memory = (int*)realloc(memory, targetSize * sizeof(int));
-        memorySize = targetSize;
-        for (int i = old_size; i < memorySize; i++) {
-            memory[i] = 0;
-        }
-    }
-}
-                        
 
 -(bool) isAlive {
     return internal_armor > 0;

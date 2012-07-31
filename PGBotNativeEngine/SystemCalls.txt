@@ -17,3 +17,4 @@
 17 1 recieve
 18 1 queued_data_size
 19 1 clear_comm_queue
+20 1 sys_call_nop

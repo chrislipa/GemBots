@@ -29,7 +29,8 @@
 
 -(void) cleanBetweenRounds {
     
-    
+    numberOfConsecutiveConditionalJumps = 0;
+    ////
     name=nil;
     descript=nil;
     author=nil;

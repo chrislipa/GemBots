@@ -16,3 +16,4 @@
 15 0 overdrive rw
 16 0 transponder rw
 17 0 random r
+18 -3 device_nop rw

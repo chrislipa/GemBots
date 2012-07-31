@@ -7,6 +7,7 @@
 //
 
 #import "Opcode.h"
+#import "EngineDefinitions.h"
 @implementation Opcode
 @synthesize opcode;
 @synthesize time;
@@ -49,13 +50,13 @@ NSMutableArray* newOpcodesFromTextFile(NSString* file) {
             int numberOfOperands = 0;
             if ([lineComps count] > 3) {
                 op1 = [lineComps objectAtIndex:3];
-                selectorStr = [selectorStr stringByAppendingString:@":"];
+                
                 numberOfOperands++;
             }
             
             if ([lineComps count] > 4) {
                 op2 = [lineComps objectAtIndex:4];
-                selectorStr = [selectorStr stringByAppendingString:@":"];
+                
                 numberOfOperands++;
             }
             SEL sel = NSSelectorFromString(selectorStr);
@@ -99,10 +100,10 @@ NSArray* newDevicesFromTextFile(NSString* file, bool write) {
             NSString* selectorStr = [lineComps objectAtIndex:2];
             NSString* search;
             if (write) {
-                selectorStr = [selectorStr stringByAppendingString:@"w:"];
+                
                 search = @"w";
             } else {
-                selectorStr = [selectorStr stringByAppendingString:@"r:"];
+                
                 search = @"r";
             }
             SEL sel = NSSelectorFromString(selectorStr);
@@ -124,7 +125,7 @@ NSArray* newDevicesFromTextFile(NSString* file, bool write) {
     return array;
 }
 
-NSArray* readDeviceDictionary() {
+NSArray* readDeviceArray() {
     __strong static NSArray* readDeviceDictionary = nil;
     if (readDeviceDictionary == nil) {
         readDeviceDictionary = [NSArray arrayWithArray:newDevicesFromTextFile(@"Devices", NO)];
@@ -132,7 +133,7 @@ NSArray* readDeviceDictionary() {
     return readDeviceDictionary;
 }
 
-NSArray* writeDeviceDictionary() {
+NSArray* writeDeviceArray() {
     __strong static NSArray* writeDeviceDictionary = nil;
     if (writeDeviceDictionary == nil) {
         writeDeviceDictionary = [NSArray arrayWithArray:newDevicesFromTextFile(@"Devices", YES)];
@@ -181,5 +182,35 @@ NSArray* systemCallsArray() {
     }
     return readDeviceDictionary;
 }
+
+
+id indexIntoArray(NSArray* a, int index, int defaultIndex) {
+    if (index < 0 || index >= [a count]) {
+        return [a objectAtIndex:defaultIndex];
+    }
+    id x = [a objectAtIndex:index];
+    if (x == [NSNull null]) {
+        return [a objectAtIndex:defaultIndex];
+    }
+    return x;
+}
+
+
+Opcode* getOpcode(int opcodeNumber) {
+    return indexIntoArray(opcodeArray(), opcodeNumber, NOP);
+}
+
+Device* getReadDevice(int deviceNumber) {
+    return indexIntoArray(readDeviceArray(), deviceNumber, READ_DEVICE_NOP);
+}
+Device* getWriteDevice(int deviceNumber) {
+   return indexIntoArray(writeDeviceArray(), deviceNumber, WRITE_DEVICE_NOP);
+}
+
+SystemCall* getSystemCall(int sysCallNumber) {
+    return indexIntoArray(writeDeviceArray(), sysCallNumber, SYS_CALL_NOP);
+}
+
+
 
 

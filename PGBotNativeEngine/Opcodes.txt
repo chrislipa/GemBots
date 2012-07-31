@@ -37,15 +37,15 @@
 36 1 pop L
 37 -3 syscall R
 38 -4 rd R L
-39 -4 wr R R
+39 -5 wr R R
 40 1 call R
 41 1 return
 42 1 do R
 43 1 loop R
-44 -5 setb0 L R
-45 -5 setb1 L R
-46 -5 setb2 L R
-47 -5 setb3 L R
-48 -5 sets0 L R
-49 -5 sets1 L R
+44 -6 setb0 L R
+45 -6 setb1 L R
+46 -6 setb2 L R
+47 -6 setb3 L R
+48 -6 sets0 L R
+49 -6 sets1 L R
  
