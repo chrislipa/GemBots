@@ -38,6 +38,7 @@
 		3670B92315C602DC00A38D46 /* ArenaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B92215C602DC00A38D46 /* ArenaViewController.m */; };
 		3670B92515C6115F00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
 		3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
+		36C3D8D915C71A66003CCD2A /* GameStateDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D8D815C71A66003CCD2A /* GameStateDescriptor.m */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
 		36C7946115C63C6600D53ADB /* MasterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7946015C63C6600D53ADB /* MasterController.m */; };
 /* End PBXBuildFile section */
@@ -57,19 +58,12 @@
 			remoteGlobalIDString = 360892B315BE876D00A06C94;
 			remoteInfo = botImporter;
 		};
-		364DCDE415BE9C8200A765D0 /* PBXContainerItemProxy */ = {
+		36C3D97315C7406F003CCD2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 364DCDDC15BE9C8100A765D0 /* core.xcodeproj */;
+			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 36D40DE015BA881D001890B0;
-			remoteInfo = core;
-		};
-		364DCDE615BE9C8200A765D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 364DCDDC15BE9C8100A765D0 /* core.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 36D40DF415BA881D001890B0;
-			remoteInfo = coreTests;
+			remoteGlobalIDString = 36C3D95815C74062003CCD2A;
+			remoteInfo = PGBotNativeEngine;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -109,7 +103,6 @@
 		360892CE15BE876D00A06C94 /* botImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "botImporter-Prefix.pch"; sourceTree = "<group>"; };
 		360892DA15BE8F5900A06C94 /* BattleDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentViewController.h; sourceTree = "<group>"; };
 		360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleDocumentViewController.m; sourceTree = "<group>"; };
-		364DCDDC15BE9C8100A765D0 /* core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = core.xcodeproj; path = core/core.xcodeproj; sourceTree = "<group>"; };
 		364DCDF715BEA01700A765D0 /* RobotListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableView.h; sourceTree = "<group>"; };
 		364DCDF815BEA01700A765D0 /* RobotListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableView.m; sourceTree = "<group>"; };
 		364DCDFA15BF185F00A765D0 /* RobotCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotCellView.h; path = bot/RobotCellView.h; sourceTree = "<group>"; };
@@ -126,6 +119,10 @@
 		3670B92115C602DC00A38D46 /* ArenaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArenaViewController.h; sourceTree = "<group>"; };
 		3670B92215C602DC00A38D46 /* ArenaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArenaViewController.m; sourceTree = "<group>"; };
 		3670B92415C6115F00A38D46 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		36C3D8D615C71A45003CCD2A /* PGBotEngineProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PGBotEngineProtocol.h; path = include/PGBotEngineProtocol.h; sourceTree = "<group>"; };
+		36C3D8D715C71A66003CCD2A /* GameStateDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateDescriptor.h; path = include/GameStateDescriptor.h; sourceTree = "<group>"; };
+		36C3D8D815C71A66003CCD2A /* GameStateDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameStateDescriptor.m; path = include/GameStateDescriptor.m; sourceTree = "<group>"; };
+		36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PGBotNativeEngine.xcodeproj; path = PGBotNativeEngine/PGBotNativeEngine.xcodeproj; sourceTree = "<group>"; };
 		36C7945C15C63B1F00D53ADB /* PGBotApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotApplication.h; sourceTree = "<group>"; };
 		36C7945D15C63B1F00D53ADB /* PGBotApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGBotApplication.m; sourceTree = "<group>"; };
 		36C7945F15C63C6600D53ADB /* MasterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterController.h; sourceTree = "<group>"; };
@@ -169,6 +166,8 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */,
+				36C3D8D515C71A2A003CCD2A /* include */,
 				36C7945F15C63C6600D53ADB /* MasterController.h */,
 				36C7946015C63C6600D53ADB /* MasterController.m */,
 				36C7945C15C63B1F00D53ADB /* PGBotApplication.h */,
@@ -176,7 +175,6 @@
 				3670B91D15C6020F00A38D46 /* Arena */,
 				3670B91C15C5F38300A38D46 /* RobotCell */,
 				3670B90E15C5E6BB00A38D46 /* botDescription */,
-				364DCDDC15BE9C8100A765D0 /* core.xcodeproj */,
 				3608928415BE876D00A06C94 /* bot */,
 				360892A715BE876D00A06C94 /* botTests */,
 				360892C015BE876D00A06C94 /* botImporter */,
@@ -292,15 +290,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		364DCDDD15BE9C8100A765D0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				364DCDE515BE9C8200A765D0 /* core.dylib */,
-				364DCDE715BE9C8200A765D0 /* coreTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3670B90E15C5E6BB00A38D46 /* botDescription */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +320,24 @@
 				3670B92215C602DC00A38D46 /* ArenaViewController.m */,
 			);
 			name = Arena;
+			sourceTree = "<group>";
+		};
+		36C3D8D515C71A2A003CCD2A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D8D715C71A66003CCD2A /* GameStateDescriptor.h */,
+				36C3D8D815C71A66003CCD2A /* GameStateDescriptor.m */,
+				36C3D8D615C71A45003CCD2A /* PGBotEngineProtocol.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		36C3D96D15C7406E003CCD2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,8 +417,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 364DCDDD15BE9C8100A765D0 /* Products */;
-					ProjectRef = 364DCDDC15BE9C8100A765D0 /* core.xcodeproj */;
+					ProductGroup = 36C3D96D15C7406E003CCD2A /* Products */;
+					ProjectRef = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -424,18 +431,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		364DCDE515BE9C8200A765D0 /* core.dylib */ = {
+		36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = core.dylib;
-			remoteRef = 364DCDE415BE9C8200A765D0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		364DCDE715BE9C8200A765D0 /* coreTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = coreTests.octest;
-			remoteRef = 364DCDE615BE9C8200A765D0 /* PBXContainerItemProxy */;
+			path = PGBotNativeEngine.dylib;
+			remoteRef = 36C3D97315C7406F003CCD2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -505,6 +505,7 @@
 				3670B92315C602DC00A38D46 /* ArenaViewController.m in Sources */,
 				36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */,
 				36C7946115C63C6600D53ADB /* MasterController.m in Sources */,
+				36C3D8D915C71A66003CCD2A /* GameStateDescriptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

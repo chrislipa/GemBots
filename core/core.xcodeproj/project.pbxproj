@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		36D40DE415BA881D001890B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D40DE315BA881D001890B0 /* Cocoa.framework */; };
 		36D40DEE15BA881D001890B0 /* core.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D40DED15BA881D001890B0 /* core.m */; };
-		36D40DF615BA881D001890B0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D40DF515BA881D001890B0 /* SenTestingKit.framework */; };
 		36D40DF715BA881D001890B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D40DE315BA881D001890B0 /* Cocoa.framework */; };
 		36D40DFA15BA881D001890B0 /* core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D40DE015BA881D001890B0 /* core.dylib */; };
-		36D40E0015BA881D001890B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36D40DFE15BA881D001890B0 /* InfoPlist.strings */; };
-		36D40E0315BA881D001890B0 /* coreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D40E0215BA881D001890B0 /* coreTests.m */; };
 		36D40E0F15BA88C9001890B0 /* ProgramCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 36D40E0D15BA88C9001890B0 /* ProgramCode.h */; };
 		36D40E1015BA88C9001890B0 /* ProgramCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D40E0E15BA88C9001890B0 /* ProgramCode.m */; };
 /* End PBXBuildFile section */
@@ -46,11 +43,6 @@
 		36D40DEC15BA881D001890B0 /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		36D40DED15BA881D001890B0 /* core.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = core.m; sourceTree = "<group>"; };
 		36D40DF415BA881D001890B0 /* coreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coreTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36D40DF515BA881D001890B0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		36D40DFD15BA881D001890B0 /* coreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "coreTests-Info.plist"; sourceTree = "<group>"; };
-		36D40DFF15BA881D001890B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		36D40E0115BA881D001890B0 /* coreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coreTests.h; sourceTree = "<group>"; };
-		36D40E0215BA881D001890B0 /* coreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = coreTests.m; sourceTree = "<group>"; };
 		36D40E0D15BA88C9001890B0 /* ProgramCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramCode.h; sourceTree = "<group>"; };
 		36D40E0E15BA88C9001890B0 /* ProgramCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramCode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36D40DF615BA881D001890B0 /* SenTestingKit.framework in Frameworks */,
 				36D40DF715BA881D001890B0 /* Cocoa.framework in Frameworks */,
 				36D40DFA15BA881D001890B0 /* core.dylib in Frameworks */,
 			);
@@ -91,7 +82,6 @@
 				367F66D515C6613A00B231C2 /* engine_javascript_bridge.xcodeproj */,
 				36D40E0C15BA8871001890B0 /* Code */,
 				36D40DE915BA881D001890B0 /* core */,
-				36D40DFB15BA881D001890B0 /* coreTests */,
 				36D40DE215BA881D001890B0 /* Frameworks */,
 				36D40DE115BA881D001890B0 /* Products */,
 			);
@@ -110,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				36D40DE315BA881D001890B0 /* Cocoa.framework */,
-				36D40DF515BA881D001890B0 /* SenTestingKit.framework */,
 				36D40DE515BA881D001890B0 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -140,25 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				36D40DEB15BA881D001890B0 /* core-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		36D40DFB15BA881D001890B0 /* coreTests */ = {
-			isa = PBXGroup;
-			children = (
-				36D40E0115BA881D001890B0 /* coreTests.h */,
-				36D40E0215BA881D001890B0 /* coreTests.m */,
-				36D40DFC15BA881D001890B0 /* Supporting Files */,
-			);
-			path = coreTests;
-			sourceTree = "<group>";
-		};
-		36D40DFC15BA881D001890B0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				36D40DFD15BA881D001890B0 /* coreTests-Info.plist */,
-				36D40DFE15BA881D001890B0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -269,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36D40E0015BA881D001890B0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36D40E0315BA881D001890B0 /* coreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,17 +286,6 @@
 			targetProxy = 36D40DF815BA881D001890B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		36D40DFE15BA881D001890B0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36D40DFF15BA881D001890B0 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		36D40E0415BA881D001890B0 /* Debug */ = {
