@@ -104,7 +104,9 @@
 }
                         
 
-
+-(bool) isAlive {
+    return internal_armor > 0;
+}
 
 
 

@@ -13,6 +13,12 @@
 		363D8F5115C7DB56000FB3AE /* GemBot+SourceCodeCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F4F15C7DB56000FB3AE /* GemBot+SourceCodeCompiler.m */; };
 		363D8F5415C7DB6A000FB3AE /* GemBot+BinaryCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 363D8F5215C7DB6A000FB3AE /* GemBot+BinaryCompiler.h */; };
 		363D8F5515C7DB6A000FB3AE /* GemBot+BinaryCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F5315C7DB6A000FB3AE /* GemBot+BinaryCompiler.m */; };
+		363D8F5A15C7E75E000FB3AE /* PGBotNativeEngine+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 363D8F5815C7E75E000FB3AE /* PGBotNativeEngine+Runtime.h */; };
+		363D8F5B15C7E75E000FB3AE /* PGBotNativeEngine+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F5915C7E75E000FB3AE /* PGBotNativeEngine+Runtime.m */; };
+		363D8F5E15C7E83B000FB3AE /* GemBot+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 363D8F5C15C7E83B000FB3AE /* GemBot+Runtime.h */; };
+		363D8F5F15C7E83B000FB3AE /* GemBot+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F5D15C7E83B000FB3AE /* GemBot+Runtime.m */; };
+		363D8F6315C7ECD4000FB3AE /* Opcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 363D8F6115C7ECD4000FB3AE /* Opcode.h */; };
+		363D8F6415C7ECD4000FB3AE /* Opcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F6215C7ECD4000FB3AE /* Opcode.m */; };
 		36C3D95C15C74062003CCD2A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95B15C74062003CCD2A /* Cocoa.framework */; };
 		36C3D96615C74062003CCD2A /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */; };
 		36C3D97A15C74180003CCD2A /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D97815C74180003CCD2A /* GemBot.h */; };
@@ -76,6 +82,15 @@
 		363D8F4F15C7DB56000FB3AE /* GemBot+SourceCodeCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+SourceCodeCompiler.m"; sourceTree = "<group>"; };
 		363D8F5215C7DB6A000FB3AE /* GemBot+BinaryCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+BinaryCompiler.h"; sourceTree = "<group>"; };
 		363D8F5315C7DB6A000FB3AE /* GemBot+BinaryCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+BinaryCompiler.m"; sourceTree = "<group>"; };
+		363D8F5815C7E75E000FB3AE /* PGBotNativeEngine+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Runtime.h"; sourceTree = "<group>"; };
+		363D8F5915C7E75E000FB3AE /* PGBotNativeEngine+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Runtime.m"; sourceTree = "<group>"; };
+		363D8F5C15C7E83B000FB3AE /* GemBot+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Runtime.h"; sourceTree = "<group>"; };
+		363D8F5D15C7E83B000FB3AE /* GemBot+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Runtime.m"; sourceTree = "<group>"; };
+		363D8F6015C7EC2E000FB3AE /* Opcodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Opcodes.txt; sourceTree = "<group>"; };
+		363D8F6115C7ECD4000FB3AE /* Opcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opcode.h; sourceTree = "<group>"; };
+		363D8F6215C7ECD4000FB3AE /* Opcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opcode.m; sourceTree = "<group>"; };
+		363D8F6515C7F3CB000FB3AE /* SystemCalls.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SystemCalls.txt; sourceTree = "<group>"; };
+		363D8F6615C7F3EA000FB3AE /* Devices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Devices.txt; sourceTree = "<group>"; };
 		36C3D95815C74062003CCD2A /* PGBotNativeEngine.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = PGBotNativeEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -137,6 +152,11 @@
 				36C3D99615C771FC003CCD2A /* include */,
 				36C3D98615C75FBA003CCD2A /* DefaultVariables.txt */,
 				36C3D98515C74458003CCD2A /* Constants.txt */,
+				363D8F6015C7EC2E000FB3AE /* Opcodes.txt */,
+				363D8F6515C7F3CB000FB3AE /* SystemCalls.txt */,
+				363D8F6615C7F3EA000FB3AE /* Devices.txt */,
+				363D8F6115C7ECD4000FB3AE /* Opcode.h */,
+				363D8F6215C7ECD4000FB3AE /* Opcode.m */,
 				36C3D98115C7434C003CCD2A /* EngineUtility.h */,
 				36C3D98215C7434C003CCD2A /* EngineUtility.m */,
 				36C3D98015C742B1003CCD2A /* GameState */,
@@ -179,6 +199,8 @@
 				36C3D96415C74062003CCD2A /* PGBotNativeEngine.h */,
 				36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */,
 				36C3D96215C74062003CCD2A /* Supporting Files */,
+				363D8F5815C7E75E000FB3AE /* PGBotNativeEngine+Runtime.h */,
+				363D8F5915C7E75E000FB3AE /* PGBotNativeEngine+Runtime.m */,
 			);
 			path = PGBotNativeEngine;
 			sourceTree = "<group>";
@@ -203,6 +225,8 @@
 				36C3D9A315C776F4003CCD2A /* Scan.m */,
 				36C3D9A615C77722003CCD2A /* Explosion.h */,
 				36C3D9A715C77722003CCD2A /* Explosion.m */,
+				363D8F5C15C7E83B000FB3AE /* GemBot+Runtime.h */,
+				363D8F5D15C7E83B000FB3AE /* GemBot+Runtime.m */,
 			);
 			name = GameState;
 			sourceTree = "<group>";
@@ -255,6 +279,9 @@
 				363D8F4C15C7DB47000FB3AE /* GemBot+Compiler.h in Headers */,
 				363D8F5015C7DB56000FB3AE /* GemBot+SourceCodeCompiler.h in Headers */,
 				363D8F5415C7DB6A000FB3AE /* GemBot+BinaryCompiler.h in Headers */,
+				363D8F5A15C7E75E000FB3AE /* PGBotNativeEngine+Runtime.h in Headers */,
+				363D8F5E15C7E83B000FB3AE /* GemBot+Runtime.h in Headers */,
+				363D8F6315C7ECD4000FB3AE /* Opcode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +383,9 @@
 				363D8F4D15C7DB47000FB3AE /* GemBot+Compiler.m in Sources */,
 				363D8F5115C7DB56000FB3AE /* GemBot+SourceCodeCompiler.m in Sources */,
 				363D8F5515C7DB6A000FB3AE /* GemBot+BinaryCompiler.m in Sources */,
+				363D8F5B15C7E75E000FB3AE /* PGBotNativeEngine+Runtime.m in Sources */,
+				363D8F5F15C7E83B000FB3AE /* GemBot+Runtime.m in Sources */,
+				363D8F6415C7ECD4000FB3AE /* Opcode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

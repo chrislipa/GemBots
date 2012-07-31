@@ -68,8 +68,7 @@
     
     
     
-
-    
+    int savedClockCycles;
 }
 
 @property (readwrite,assign) int* memory;
@@ -116,4 +115,6 @@
 -(void) setGemBotSource:(NSData*)source;
 -(void) reallocRAM:(int) targetSize;
 
+
+-(bool) isAlive;
 @end

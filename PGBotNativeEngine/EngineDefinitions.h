@@ -16,6 +16,9 @@
 #define DISTANCE_MULTIPLIER 0x40000000
 #define HEAT_MULTIPLIER 0x40000000
 
+#define NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE 5
+
 typedef unsigned long long lint;
+
 
 #endif

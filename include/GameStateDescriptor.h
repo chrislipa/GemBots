@@ -36,7 +36,7 @@
 -(int) numberOfMinesConnected;
 -(int) numberOfTimesHit;
 
-
+-(bool) isAlive;
 -(bool) compiledCorrectly;
 -(NSString*) compileError;
 -(int) team;

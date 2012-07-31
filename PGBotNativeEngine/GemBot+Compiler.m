@@ -58,6 +58,7 @@
     
     shieldOn = NO;
     overburnOn = NO;
+    savedClockCycles = 0;
 }
 
 @end
