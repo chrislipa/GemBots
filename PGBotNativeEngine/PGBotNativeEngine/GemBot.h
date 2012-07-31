@@ -12,16 +12,19 @@
 
 
 @interface GemBot : NSObject <RobotDescription> {
+    NSData* source;
+    
     NSString* name;
-    NSString* description;
+    NSString* descript;
     NSString* author;
     
-    int scanner;
-    int weapon;
-    int engine;
-    int heatsinks;
-    int mines;
-    int shield;
+    int config_scanner;
+    int config_weapon;
+    int config_engine;
+    int config_heatsinks;
+    int config_mines;
+    int config_shield;
+    int config_armor;
     
     int* memory;
     int memorySize;
@@ -71,16 +74,6 @@
 
 @property (readwrite,assign) int* memory;
 
-
-
-
-
-
-
-
-
-
-
 @property (readwrite,assign) int scanner;
 @property (readwrite,assign) int weapon;
 @property (readwrite,assign) int armor;
@@ -92,7 +85,7 @@
 @property (readwrite,retain) NSString* sessionUniqueRobotIdentifier;
 
 @property (readwrite,retain) NSString* name;
-@property (readwrite,retain) NSString* description;
+@property (readwrite,retain) NSString* descript;
 @property (readwrite,retain) NSString* author;
 
 @property (readwrite,assign) int x;
@@ -119,7 +112,8 @@
 @property (readwrite,retain) NSString* compileError;
 @property (readwrite,assign) int team;
 
-+(GemBot*) gemBotFromBinary:(NSString*) binary;
-+(GemBot*) gemBotFromString:(NSString*) string;
++(GemBot*) gemBotFromSource:(NSData*) source;
+-(void) setGemBotSource:(NSData*)source;
+-(void) reallocRAM:(int) targetSize;
 
 @end
