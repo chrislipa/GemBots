@@ -9,6 +9,7 @@
 #import "GemBot+SourceCodeCompiler.h"
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
+#import "GemBot+Memory.h"
 
 @implementation GemBot (SourceCodeCompiler)
 
@@ -100,19 +101,19 @@
         if (firstToken && [firstToken isEqual:@"#ARMAMENT"] && secondToken && thirdToken) {
             int v = readInteger(thirdToken);
             if ([secondToken isEqualToString:@"RADAR"]) {
-                self.scanner = v;
+                self.config_scanner = v;
             } else if ([secondToken isEqualToString:@"WEAPON"]) {
-                self.weapon = v;
+                self.config_weapon = v;
             } else if ([secondToken isEqualToString:@"ARMOR"]) {
-                self.armor = v;
+                self.config_armor = v;
             } else if ([secondToken isEqualToString:@"ENGINE"]) {
-                self.engine = v;
+                self.config_engine = v;
             } else if ([secondToken isEqualToString:@"HEATSINK"]) {
-                self.heatsinks = v;
+                self.config_heatsinks = v;
             } else if ([secondToken isEqualToString:@"MINES"]) {
-                self.mines = v;
+                self.config_mines = v;
             }  else if ([secondToken isEqualToString:@"SHIELD"]) {
-                self.shield = v;
+                self.config_shield = v;
             }
         } else {
             [o addObject:l];

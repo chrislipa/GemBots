@@ -1,5 +1,5 @@
 //
-//  GemBot+Runtime.h
+//  GemBot+Interface.h
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 7/31/12.
@@ -7,11 +7,7 @@
 //
 
 #import "GemBot.h"
-#import "PGBotNativeEngine.h"
 
-@interface GemBot (Runtime)
-
-
--(void) executeClockCycles:(int) clockCycles;
+@interface GemBot (Interface)
 
 @end

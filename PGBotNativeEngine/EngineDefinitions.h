@@ -15,7 +15,7 @@
 #define ARMOR_MULTIPLIER 0x40000000
 #define DISTANCE_MULTIPLIER 0x40000000
 #define HEAT_MULTIPLIER 0x40000000
-
+#define SIZE_OF_INSTRUCTION 3
 #define MAXINT 0x7fffffff
 #define MININT 0x80000000
 
@@ -34,5 +34,21 @@ typedef unsigned long long lint;
 #define SETS1 49
 
 
+extern int left_filled_mask[33];
+
+extern int right_filled_mask[33];
+
+#define B0 0x000000FF
+#define B1 0x0000FF00
+#define B2 0x00FF0000
+#define B3  0x0FF00000
+#define NOTB0 0xFFFFFF00
+#define NOTB1 0xFFFF00FF
+#define NOTB2 0xFF00FFFF
+#define NOTB3 0x00FFFFFF
+#define S0 0x0000FFFF
+#define S1 0xFFFF0000
+#define NOTS1 0x0000FFFF
+#define NOTS0 0xFFFF0000
 
 #endif

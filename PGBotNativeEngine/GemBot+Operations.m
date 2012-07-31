@@ -8,79 +8,9 @@
 
 #import "GemBot+Operations.h"
 #import "GemBot+Memory.h"
+#import "EngineDefinitions.h"
 
-const int left_filled_mask[33] = {
-    0b00000000000000000000000000000000,
-    0b10000000000000000000000000000000,
-    0b11000000000000000000000000000000,
-    0b11100000000000000000000000000000,
-    0b11110000000000000000000000000000,
-    0b11111000000000000000000000000000,
-    0b11111100000000000000000000000000,
-    0b11111110000000000000000000000000,
-    0b11111111000000000000000000000000,
-    0b11111111100000000000000000000000,
-    0b11111111110000000000000000000000,
-    0b11111111111000000000000000000000,
-    0b11111111111100000000000000000000,
-    0b11111111111110000000000000000000,
-    0b11111111111111000000000000000000,
-    0b11111111111111100000000000000000,
-    0b11111111111111110000000000000000,
-    0b11111111111111111000000000000000,
-    0b11111111111111111100000000000000,
-    0b11111111111111111110000000000000,
-    0b11111111111111111111000000000000,
-    0b11111111111111111111100000000000,
-    0b11111111111111111111110000000000,
-    0b11111111111111111111111000000000,
-    0b11111111111111111111111100000000,
-    0b11111111111111111111111110000000,
-    0b11111111111111111111111111000000,
-    0b11111111111111111111111111100000,
-    0b11111111111111111111111111110000,
-    0b11111111111111111111111111111000,
-    0b11111111111111111111111111111100,
-    0b11111111111111111111111111111110,
-    0b11111111111111111111111111111111
-};
-
-const int right_filled_mask[33] = {
-    0x00000000,
-    0x00000001,
-    0x00000003,
-    0x00000007,
-    0x0000000F,
-    0x0000001F,
-    0x0000003F,
-    0x0000007F,
-    0x000000FF,
-    0x000001FF,
-    0x000003FF,
-    0x000007FF,
-    0x00000FFF,
-    0x00001FFF,
-    0x00003FFF,
-    0x00007FFF,
-    0x0000FFFF,
-    0x0001FFFF,
-    0x0003FFFF,
-    0x0007FFFF,
-    0x000FFFFF,
-    0x001FFFFF,
-    0x003FFFFF,
-    0x007FFFFF,
-    0x00FFFFFF,
-    0x01FFFFFF,
-    0x03FFFFFF,
-    0x0FFFFFFF,
-    0x0FFFFFFF,
-    0x1FFFFFFF,
-    0x3FFFFFFF,
-    0x7FFFFFFF,
-    0xFFFFFFFF
-};
-
+#import <objc/message.h>
 
 @implementation GemBot (Operations)
 
@@ -229,25 +159,126 @@ int rotateLeft(int x, int d) {
 }
 
 //25 2 test R R
-//26 1 jump R
+-(void) test {
+    [self setMemory:CMP_RESULT :op1 & op2];
+}
+
+//26 1 jump R {
+-(void) jump {
+    [self setMemory:IP :op1 - SIZE_OF_INSTRUCTION];
+}
+
 //27 -2 jle R
+
+-(void) jle {
+    int c = [self getMemory:CMP_RESULT];
+    if (c == 1 || c == 2) {
+        [self jump];
+    }
+}
 //28 -2 jlt R
+-(void) jlt {
+    int c = [self getMemory:CMP_RESULT];
+    if (c == 2) {
+        [self jump];
+    }
+}
 //29 -2 jeq R
+-(void) jeq {
+    int c = [self getMemory:CMP_RESULT];
+    if (c == 1) {
+        [self jump];
+    }
+}
 //30 -2 jne R
+-(void) jne {
+    int c = [self getMemory:CMP_RESULT];
+    if (c != 1 ) {
+        [self jump];
+    }
+}
 //31 -2 jgt R
+-(void) jgt {
+    int c = [self getMemory:CMP_RESULT];
+    if (c == 4) {
+        [self jump];
+    }
+}
 //32 -2 jge R
+-(void) jge {
+    int c = [self getMemory:CMP_RESULT];
+    if (c == 1 || c == 4) {
+        [self jump];
+    }
+}
 //33 -2 jz R
+-(void) jz {
+    int c = [self getMemory:CMP_RESULT];
+    if (c == 0) {
+        [self jump];
+    }
+}
 //34 -2 jnz R
+-(void) jnz {
+    int c = [self getMemory:CMP_RESULT];
+    if (c != 0) {
+        [self jump];
+    }
+}
 //35 1 push R
+-(void) push {
+    [self setMemory:[self getMemory:SP] :op1];
+    [self setMemory:SP :[self getMemory:SP]+1];
+}
 //36 1 pop L
+-(void) pop {
+    [self setMemory:SP :[self getMemory:SP]-1];
+    [self setMemory:op1:[self getMemory:SP]];
+}
 //37 -3 syscall R
+-(void) syscall {
+    objc_msgSend(self, systemCall.selector);
+}
 //38 -4 rd R L
+-(void) rd {
+    objc_msgSend(self, device.selector);
+}
+
 //39 -5 wr R R
+-(void) wr {
+    objc_msgSend(self, device.selector);
+}
 //40 1 call R
-//41 1 return
-//42 1 do R
-//43 1 loop R
+-(void) call {
+    [self setMemory:[self getMemory:SP] :[self getMemory:IP]];
+    [self setMemory:SP :[self getMemory:SP]+1];
+    [self setMemory:IP :op1];
+}
+
+//41 1 returnI
+-(void) returnI {
+    [self setMemory:SP :[self getMemory:SP]-1];
+    [self setMemory:[self getMemory:IP]:[self getMemory:SP]];
+}
+
+//42 1 doI R
+
+-(void) doI {
+    [self setMemory:LOOP_CTR :op1];
+}
+//43 1 loopI R
+-(void) loopI {
+    [self setMemory:LOOP_CTR :[self getMemory:LOOP_CTR]-1];
+    if ([self getMemory:LOOP_CTR] > 0) {
+        [self setMemory:IP :op1];
+    }
+}
+
 //44 -6 setb0 L R
+-(void) setb0 {
+    int z = ([self getMemory:op1]& NOTB0) | ((op2 & B0)<<0);
+    [self setMemory:op1 :z];
+}
 //45 -6 setb1 L R
 //46 -6 setb2 L R
 //47 -6 setb3 L R

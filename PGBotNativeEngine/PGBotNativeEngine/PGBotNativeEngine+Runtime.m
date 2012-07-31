@@ -35,7 +35,7 @@
 -(void) executeGameCycle {
     for (GemBot* bot in robots) {
         if ([bot isAlive]) {
-            [bot executeClockCycles:NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE withEnvironment:self];
+            [bot executeClockCycles:NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
         }
     }
     

@@ -10,6 +10,7 @@
 #import "SBJson.h"
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
+#import "GemBot+Memory.h"
 @implementation GemBot (BinaryCompiler)
 
 

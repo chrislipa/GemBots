@@ -10,6 +10,6 @@
 
 @interface GemBot (Memory)
 -(void) reallocRAM:(int) targetSize;
--(int) setMemory:(int) addr :(int) value;
+-(void) setMemory:(int) addr :(int) value;
 -(int) getMemory:(int) addr ;
 @end

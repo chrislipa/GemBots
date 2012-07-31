@@ -84,15 +84,16 @@
     int op2;
 }
 
+@property (readwrite,weak)     PGBotNativeEngine* engine;
 @property (readwrite,assign) int* memory;
 
-@property (readwrite,assign) int scanner;
-@property (readwrite,assign) int weapon;
-@property (readwrite,assign) int armor;
-@property (readwrite,assign) int engine;
-@property (readwrite,assign) int heatsinks;
-@property (readwrite,assign) int mines;
-@property (readwrite,assign) int shield;
+@property (readwrite,assign) int config_scanner;
+@property (readwrite,assign) int config_weapon;
+@property (readwrite,assign) int config_armor;
+@property (readwrite,assign) int config_engine;
+@property (readwrite,assign) int config_heatsinks;
+@property (readwrite,assign) int config_mines;
+@property (readwrite,assign) int config_shield;
 
 @property (readwrite,retain) NSString* sessionUniqueRobotIdentifier;
 
@@ -100,11 +101,10 @@
 @property (readwrite,retain) NSString* descript;
 @property (readwrite,retain) NSString* author;
 
-@property (readwrite,assign) int x;
-@property (readwrite,assign) int y;
+
 @property (readwrite,assign) int heading;
 
-@property (readwrite,assign) int heat;
+
 @property (readwrite,assign) int kills;
 @property (readwrite,assign) int deaths;
 @property (readwrite,assign) int wins;

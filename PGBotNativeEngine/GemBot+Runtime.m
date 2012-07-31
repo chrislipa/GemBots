@@ -76,14 +76,17 @@
     while (TRUE) {
         
         
-        int extended_opcode = memory[IP];
-        int opcodenum = extended_opcode & 0x000000ff;
+        int extended_opcode = [self getMemory:IP];
+        op1 = [self getMemory:IP+1];
+        op2 = [self getMemory:IP+2];
         
+        [self setMemory:IP :[self getMemory:IP]+SIZE_OF_INSTRUCTION];
+        
+        int opcodenum = extended_opcode & 0x000000ff;
         opcode = getOpcode(opcodenum);
         int rtype1 = (extended_opcode & 0x00030000) >> 16;
         int rtype2 = (extended_opcode & 0x03000000) >> 24;
-        op1 = [self getMemory:IP+1];
-        op2 = [self getMemory:IP+2];
+        
         
         if (rtype1 == 3) {
             opcode = getOpcode(NOP);
@@ -103,6 +106,7 @@
         
         int clockCyclesRequiredForNext = [self clockCyclesRequiredForNextInstruction];
         if (clockCyclesRequiredForNext > savedClockCycles) {
+            [self setMemory:IP :[self getMemory:IP]-SIZE_OF_INSTRUCTION];
             break;
         }
         
@@ -110,7 +114,7 @@
         
 
         savedClockCycles -= clockCyclesRequiredForNext;
-        [self setMemory:IP : [self getMemory:IP]+3];
+        
         
         
     }

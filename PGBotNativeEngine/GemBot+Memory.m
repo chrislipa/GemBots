@@ -44,7 +44,7 @@
     }
 }
 
--(int) setMemory:(int) addr :(int) value {
+-(void) setMemory:(int) addr :(int) value {
     addr &= (BOT_MAX_MEMORY - 1);
     if (addr >=memorySize ) {
         [self reallocRAM:addr];

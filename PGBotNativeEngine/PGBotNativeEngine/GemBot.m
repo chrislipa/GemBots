@@ -17,11 +17,10 @@
 @synthesize name;
 @synthesize descript;
 @synthesize author;
-@synthesize x;
-@synthesize y;
+
 @synthesize heading;
-@synthesize armor;
-@synthesize heat;
+
+
 @synthesize kills;
 @synthesize deaths;
 @synthesize wins;
@@ -40,14 +39,14 @@
 @synthesize memory;
 
 
-@synthesize scanner;
-@synthesize weapon;
+@synthesize config_scanner;
+@synthesize config_weapon;
+@synthesize config_engine;
+@synthesize config_heatsinks;
+@synthesize config_mines;
+@synthesize config_shield;
+@synthesize config_armor;
 
-
-@synthesize engine;
-@synthesize heatsinks;
-@synthesize mines;
-@synthesize shield;
 
 
 -(void) setGemBotSource:(NSData *)p_source {
@@ -85,7 +84,18 @@
 -(bool) isAlive {
     return internal_armor > 0;
 }
-
+-(int) armor {
+    return (internal_armor + (ARMOR_MULTIPLIER/2))/ARMOR_MULTIPLIER;
+}
+-(int) heat {
+    return (internal_heat + (HEAT_MULTIPLIER/2))/HEAT_MULTIPLIER;
+}
+-(int) x {
+    return (internal_x + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+}
+-(int) y {
+    return (internal_y + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+}
 
 
 -(void) dealloc {
