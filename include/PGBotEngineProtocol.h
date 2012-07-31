@@ -15,8 +15,9 @@
 -(id) init;
 
 
-//Reads in the robot at the given URL into the engine.
--(void) addRobot:(NSData*) robotData;
+
+-(void) addRobotFromSourceCode:(NSString*) sourceCode;
+-(void) addRobotFromBinary:(NSData*) robotData;
 
 -(void) setRobot:(NSString*) sessionUniqueRobotIdentifier toTeam:(int) team;
 
@@ -36,7 +37,7 @@
 
 -(void) stepGameCycle;
 
--(GameStateDescriptor*) currentGameStateDescription;
+-(NSObject<GameStateDescriptor>*) currentGameStateDescription;
 
 -(bool) isSetOfMatchesCompleted;
 

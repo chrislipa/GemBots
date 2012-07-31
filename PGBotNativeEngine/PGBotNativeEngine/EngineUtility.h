@@ -16,3 +16,4 @@
 NSDictionary* constantDictionary();
 NSDictionary* defaultVariablesDictionary();
 int readInteger(NSString* s);
+NSString* uuid();

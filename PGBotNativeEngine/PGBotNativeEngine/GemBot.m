@@ -9,17 +9,37 @@
 #import "GemBot.h"
 #import "EngineUtility.h"
 @implementation GemBot
+@synthesize sessionUniqueRobotIdentifier;
+
+@synthesize name;
+@synthesize description;
+@synthesize author;
+@synthesize x;
+@synthesize y;
+@synthesize heading;
+@synthesize armor;
+@synthesize heat;
+@synthesize kills;
+@synthesize deaths;
+@synthesize wins;
+@synthesize loses;
+@synthesize shieldOn;
+@synthesize overburnOn;
+@synthesize numberOfMissilesFired;
+@synthesize numberOfMissilesConnected;
+@synthesize numberOfMinesLayed;
+@synthesize numberOfMinesConnected;
+@synthesize numberOfTimesHit;
+@synthesize team;
+@synthesize compiledCorrectly;
+@synthesize compileError;
+
 @synthesize memory;
 
-@synthesize variables;
-@synthesize labels;
-
-@synthesize timeslice;
-@synthesize message;
 
 @synthesize scanner;
 @synthesize weapon;
-@synthesize armor;
+
 @synthesize engine;
 @synthesize heatsinks;
 @synthesize mines;
@@ -33,8 +53,8 @@
     NSMutableArray* o = [[NSMutableArray alloc] init];
     for (NSString* s in lines) {
         NSString* t = nil;
-        int indent = 0;
-        NSArray* tags = [NSArray arrayWithObjects:@"#NAME ",@"#AUTHOR ",@"#DESCRIPTION ", nil]
+
+        NSArray* tags = [NSArray arrayWithObjects:@"#NAME ",@"#AUTHOR ",@"#DESCRIPTION ", nil];
         for (NSString* tag in tags) {
             if  ([s hasPrefix:tag]) {
                 t = [s substringFromIndex:[tag length]];
@@ -58,18 +78,16 @@
         memory = NULL;
         memorySize = 0;
         
-        variables = [NSMutableDictionary dictionary];
-        currentlyOpenVariableSlot = 512;
-        variablesReverseLookup = [NSMutableDictionary dictionary];
-        
         NSArray* lines = [self stripComments:string];
         [self readDescription:lines];
         lines = [self tokenize:lines];
         lines = [self readCompilerDirectives:lines];
         
-        lines = [self readVariables:lines];
+        NSMutableDictionary* variables;
         
-        [self readmemory:lines];
+        lines = [self readVariables:lines withVariable:&variables];
+        
+        [self readmemory:lines withVariable:variables];
         
     }
     return self;
@@ -77,7 +95,7 @@
 
 -(NSArray*) tokenize:(NSArray*) inA {
     NSMutableArray* o = [[NSMutableArray alloc] init];
-    for (NSString* line = inA) {
+    for (NSString* line in inA) {
         NSArray* a = [line componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         if ([a count] > 0) {
             [o addObject:a];
@@ -111,7 +129,7 @@
 -(NSArray*) readCompilerDirectives:(NSArray*) a {
     NSMutableArray* o = [NSMutableArray array];
     for (NSArray* l in a) {
-        NSString* firstToken = nil, secondToken = nil, thirdToken = nil;
+        NSString* firstToken = nil, *secondToken = nil, *thirdToken = nil;
         if ([l count] > 0) {
             firstToken = [l objectAtIndex:0];
         }
@@ -148,11 +166,12 @@
 
 
 
--(NSArray*) readVariables:(NSArray*) a {
+-(NSArray*) readVariables:(NSArray*) a withVariable:(NSMutableDictionary**) variablesPTR {
+    NSMutableDictionary* variables = [NSMutableDictionary dictionaryWithDictionary: defaultVariablesDictionary()];
     NSMutableDictionary* variablesReverseLookup = [NSMutableDictionary dictionary];
     int currentlyOpenVariableSlot = 512;
     int maxVariableSlot = 1023;
-    self.variables = [NSMutableDictionary dictionaryWithDictionary: defaultVariablesDictionary()];
+    
     
     NSMutableArray* o = [NSMutableArray array];
     for (NSArray* p in a) {
@@ -160,7 +179,7 @@
             if ([p count] >= 2) {
                 int memLocation = -1;
                 if ([p count] >= 3) {
-                    memLocation = readInteger([p objectAtIndex:2])
+                    memLocation = readInteger([p objectAtIndex:2]);
                 } else {
                     while ([variablesReverseLookup objectForKey:[NSNumber numberWithInt:currentlyOpenVariableSlot] ]) {
                         currentlyOpenVariableSlot++;
@@ -172,23 +191,19 @@
                     
                 }
                 if (memLocation > 0) {
-                    NSString* name = [p objectAtIndex:1];
-                    if ([self.variables objectForKey:name]==nil)
-                        
-                    {
-                        
-                        [self.variables setObject:[NSNumber numberWithInt:memLocation] forKey:name];
-                        [currentlyOpenVariableSlot setObject:name forKey:[NSNumber numberWithInt:memLocation]];
-                        
-                        
+                    NSString* varname = [p objectAtIndex:1];
+                    if ([variables objectForKey:name]==nil) {
+                        [variables setObject:[NSNumber numberWithInt:memLocation] forKey:varname];
+                        [variablesReverseLookup setObject:varname forKey:[NSNumber numberWithInt:memLocation]];
                     }
                 }
                         
             }
         } else {
-            [o addObject:l];
+            [o addObject:p];
         }
     }
+    (*variablesPTR) = variables;
     return o;
 }
 
@@ -196,8 +211,12 @@
     if (memory == NULL) {
         memory = (int*)malloc(targetSize * sizeof(int));
         memorySize = targetSize;
+        for (int i = 0; i < memorySize; i++) {
+            memory[i] = 0;
+        }
         return;
     } else {
+        int old_size = memorySize;
         int new_size = memorySize;
         while (new_size < targetSize) {
             new_size <<= 2;
@@ -205,74 +224,78 @@
         new_size = MIN(new_size, BOT_MAX_MEMORY);
         memory = (int*)realloc(memory, targetSize * sizeof(int));
         memorySize = targetSize;
+        for (int i = old_size; i < memorySize; i++) {
+            memory[i] = 0;
+        }
     }
 }
                         
 
--(void) readmemory:(NSArray*) a {
-    int numberOfInstructions = [a count];
+-(void) readmemory:(NSArray*) a withVariable:(NSMutableDictionary*) variables{
+    int numberOfInstructions = (int)[a count];
     [self reallocRAM:numberOfInstructions*3];
-    
+    NSDictionary* constants = constantDictionary();
     NSMutableDictionary* labels = [NSMutableDictionary dictionary];
-    NSMutableArray* labelEnumeration = [NSMutableDictionary dictionary];
-    
-
-    
-    dereferenceCount = malloc(65536*sizeof(char));
-    isLabel = malloc(65536*sizeof(char));
-    labels = [NSMutableDictionary dictionary];
-    for (int i = 0; i < 65536; i++) {
-        memory[i] = 0;
-        dereferenceCount[i] = 0;
-        isLabel = 0;
-    }
-    int pc = 1024;
-    for (NSString* l in a) {
-        NSArray* p = [self parse:l];
-        bool first = YES;
-        for (NSString* t in p) {
-            NSString* s = t;
-            while ([s hasPrefix:@"@"] || ([s hasPrefix:@"["] && [s hasSuffix:@"]"])) {
-                if ([s hasPrefix:@"@"]) {
-                    s = [s substringFromIndex:1];
-                    dereferenceCount[pc]++;
-                } else if ([s hasPrefix:@"["] && [s hasSuffix:@"]"]) {
-                    s = [s substringWithRange:NSMakeRange(1, [s length]-2)];
-                    dereferenceCount[pc]++;
-                }
+    NSMutableArray* pointersToLabels = [NSMutableArray array];
+    int pc = BOT_SOURCE_CODE_START;
+    for (NSArray* p in a) {
+        
+        int rtype[2] = {0,0};
+        int bytes[3] = {0,0,0};
+        bool isLabel = NO;
+        for (int i = (int)[p count]-1; i>=0; i--) {
+            
+            
+            NSString* s = [p objectAtIndex:i];
+            
+            while ([s hasPrefix:@"#"]) {
+                s = [s substringFromIndex:1];
+                rtype[i-1]++;
             }
-            if (first && ([s hasPrefix:@":"] || [s hasPrefix:@"!"])) {
+            if (i == 0 && [s hasSuffix:@":"]) {
                 [labels setObject:[NSNumber numberWithInt:pc] forKey:s];
-            } else if ([s hasPrefix:@":"] || [s hasPrefix:@"!"]) {
-                isLabel[pc] = YES;
-                memory[pc] = [labelEnumeration count];
-                [labelEnumeration addObject:s];
-            } else if ([self.variables objectForKey:s]) {
-                memory[pc] = [[self.variables objectForKey:s] shortValue];
-                dereferenceCount[pc]++;
+                isLabel = YES;
+            } else if ([s hasSuffix:@":"]) {
+                [pointersToLabels addObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:pc], s, nil ]];
+            } else if ([variables objectForKey:s]) {
+                bytes[i] = [[variables objectForKey:s] intValue];
+                rtype[i-1]++;
             } else if ([constants objectForKey:s]) {
-                memory[pc] = [[self.variables objectForKey:s] shortValue];
-            } else if ([s hasPrefix:@"0x"] || [s hasPrefix:@"-0x"]) {
-                NSScanner *sc = [NSScanner scannerWithString:s];
-                unsigned int r = 0;
-                [sc setScanLocation:0];
-                [sc scanHexInt:&r];
-                memory[pc] = r;
+                bytes[i] = [[constants objectForKey:s] intValue];
             } else {
-                memory[pc]  = [s intValue];
+                bytes[i] = readInteger(s);
             }
-            
-            
-            first = NO;
+        }
+        bytes[0] |= ((rtype[0] << 16) | (rtype[1] << 24));
+        for (int i =0; i<3; i++) {
+            memory[pc++] = bytes[i];
         }
     }
+    for (NSArray* a in pointersToLabels) {
+        int memLoc = [[a objectAtIndex:0] intValue];
+        NSString* label = [a objectAtIndex:1];
+        int labelLoc = [[labels objectForKey:label] intValue];
+        memory[memLoc] = labelLoc;
+    }
+    linesOfCode = (pc - 1024 + 2) / 3;
     
 }
 
 
+
+-(id) initWithBinary:(NSString*) binaryStr {
+    if (self = [super init]) {
+                                
+    }
+    return self;
+}
++(GemBot*) gemBotFromBinary:(NSString*) binary{
+    return [[self alloc] initWithBinary:binary];
+}
+
+
 -(void) dealloc {
-    free(isLabel);
+
     free(memory);
-    free(dereferenceCount);
 }
 @end

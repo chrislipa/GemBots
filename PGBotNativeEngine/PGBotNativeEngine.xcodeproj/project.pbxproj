@@ -11,11 +11,56 @@
 		36C3D96615C74062003CCD2A /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */; };
 		36C3D97A15C74180003CCD2A /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D97815C74180003CCD2A /* GemBot.h */; };
 		36C3D97B15C74180003CCD2A /* GemBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D97915C74180003CCD2A /* GemBot.m */; };
-		36C3D97E15C742A3003CCD2A /* GameState.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D97C15C742A3003CCD2A /* GameState.h */; };
-		36C3D97F15C742A3003CCD2A /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D97D15C742A3003CCD2A /* GameState.m */; };
 		36C3D98315C7434C003CCD2A /* EngineUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D98115C7434C003CCD2A /* EngineUtility.h */; };
 		36C3D98415C7434C003CCD2A /* EngineUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D98215C7434C003CCD2A /* EngineUtility.m */; };
+		36C3D99A15C771FC003CCD2A /* GameStateDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D99715C771FC003CCD2A /* GameStateDescriptor.h */; };
+		36C3D99C15C771FC003CCD2A /* PGBotEngineProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D99915C771FC003CCD2A /* PGBotEngineProtocol.h */; };
+		36C3D9A015C776C6003CCD2A /* Missile.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D99E15C776C6003CCD2A /* Missile.h */; };
+		36C3D9A115C776C6003CCD2A /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D99F15C776C6003CCD2A /* Missile.m */; };
+		36C3D9A415C776F4003CCD2A /* Scan.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D9A215C776F4003CCD2A /* Scan.h */; };
+		36C3D9A515C776F4003CCD2A /* Scan.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D9A315C776F4003CCD2A /* Scan.m */; };
+		36C3D9A815C77722003CCD2A /* Explosion.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D9A615C77722003CCD2A /* Explosion.h */; };
+		36C3D9A915C77722003CCD2A /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D9A715C77722003CCD2A /* Explosion.m */; };
+		36C3D9C015C77F75003CCD2A /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D9B715C77F59003CCD2A /* SBJson.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36C3D9B615C77F59003CCD2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC12323D1391D5CC00131607;
+			remoteInfo = SBJson;
+		};
+		36C3D9B815C77F59003CCD2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC1232521391D5CC00131607;
+			remoteInfo = SBJsonTests;
+		};
+		36C3D9BA15C77F59003CCD2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2626913920FC7003D9994;
+			remoteInfo = "sbjson-ios";
+		};
+		36C3D9BC15C77F59003CCD2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2627313920FC7003D9994;
+			remoteInfo = "sbjson-iosTests";
+		};
+		36C3D9BE15C77F6F003CCD2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC12323C1391D5CC00131607;
+			remoteInfo = SBJson;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		36C3D95815C74062003CCD2A /* PGBotNativeEngine.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = PGBotNativeEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,12 +73,20 @@
 		36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGBotNativeEngine.m; sourceTree = "<group>"; };
 		36C3D97815C74180003CCD2A /* GemBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GemBot.h; path = PGBotNativeEngine/GemBot.h; sourceTree = "<group>"; };
 		36C3D97915C74180003CCD2A /* GemBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GemBot.m; path = PGBotNativeEngine/GemBot.m; sourceTree = "<group>"; };
-		36C3D97C15C742A3003CCD2A /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameState.h; path = PGBotNativeEngine/GameState.h; sourceTree = "<group>"; };
-		36C3D97D15C742A3003CCD2A /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameState.m; path = PGBotNativeEngine/GameState.m; sourceTree = "<group>"; };
 		36C3D98115C7434C003CCD2A /* EngineUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EngineUtility.h; path = PGBotNativeEngine/EngineUtility.h; sourceTree = "<group>"; };
 		36C3D98215C7434C003CCD2A /* EngineUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EngineUtility.m; path = PGBotNativeEngine/EngineUtility.m; sourceTree = "<group>"; };
 		36C3D98515C74458003CCD2A /* Constants.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Constants.txt; path = PGBotNativeEngine/Constants.txt; sourceTree = "<group>"; };
 		36C3D98615C75FBA003CCD2A /* DefaultVariables.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DefaultVariables.txt; sourceTree = "<group>"; };
+		36C3D99715C771FC003CCD2A /* GameStateDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateDescriptor.h; sourceTree = "<group>"; };
+		36C3D99915C771FC003CCD2A /* PGBotEngineProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotEngineProtocol.h; sourceTree = "<group>"; };
+		36C3D99E15C776C6003CCD2A /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Missile.h; path = PGBotNativeEngine/Missile.h; sourceTree = "<group>"; };
+		36C3D99F15C776C6003CCD2A /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Missile.m; path = PGBotNativeEngine/Missile.m; sourceTree = "<group>"; };
+		36C3D9A215C776F4003CCD2A /* Scan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scan.h; sourceTree = "<group>"; };
+		36C3D9A315C776F4003CCD2A /* Scan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scan.m; sourceTree = "<group>"; };
+		36C3D9A615C77722003CCD2A /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
+		36C3D9A715C77722003CCD2A /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explosion.m; sourceTree = "<group>"; };
+		36C3D9AA15C77AAC003CCD2A /* EngineDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EngineDefinitions.h; sourceTree = "<group>"; };
+		36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = external/SBJson_3.1/SBJson.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C3D9C015C77F75003CCD2A /* SBJson.framework in Frameworks */,
 				36C3D95C15C74062003CCD2A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +105,9 @@
 		36C3D94D15C74062003CCD2A = {
 			isa = PBXGroup;
 			children = (
+				36C3D9AB15C77F4E003CCD2A /* external */,
+				36C3D9AA15C77AAC003CCD2A /* EngineDefinitions.h */,
+				36C3D99615C771FC003CCD2A /* include */,
 				36C3D98615C75FBA003CCD2A /* DefaultVariables.txt */,
 				36C3D98515C74458003CCD2A /* Constants.txt */,
 				36C3D98115C7434C003CCD2A /* EngineUtility.h */,
@@ -110,12 +167,45 @@
 		36C3D98015C742B1003CCD2A /* GameState */ = {
 			isa = PBXGroup;
 			children = (
-				36C3D97C15C742A3003CCD2A /* GameState.h */,
-				36C3D97D15C742A3003CCD2A /* GameState.m */,
 				36C3D97815C74180003CCD2A /* GemBot.h */,
 				36C3D97915C74180003CCD2A /* GemBot.m */,
+				36C3D99E15C776C6003CCD2A /* Missile.h */,
+				36C3D99F15C776C6003CCD2A /* Missile.m */,
+				36C3D9A215C776F4003CCD2A /* Scan.h */,
+				36C3D9A315C776F4003CCD2A /* Scan.m */,
+				36C3D9A615C77722003CCD2A /* Explosion.h */,
+				36C3D9A715C77722003CCD2A /* Explosion.m */,
 			);
 			name = GameState;
+			sourceTree = "<group>";
+		};
+		36C3D99615C771FC003CCD2A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D99715C771FC003CCD2A /* GameStateDescriptor.h */,
+				36C3D99915C771FC003CCD2A /* PGBotEngineProtocol.h */,
+			);
+			name = include;
+			path = ../include;
+			sourceTree = "<group>";
+		};
+		36C3D9AB15C77F4E003CCD2A /* external */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */,
+			);
+			name = external;
+			sourceTree = "<group>";
+		};
+		36C3D9AD15C77F58003CCD2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D9B715C77F59003CCD2A /* SBJson.framework */,
+				36C3D9B915C77F59003CCD2A /* SBJsonTests.octest */,
+				36C3D9BB15C77F59003CCD2A /* libsbjson-ios.a */,
+				36C3D9BD15C77F59003CCD2A /* sbjson-iosTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +216,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				36C3D97A15C74180003CCD2A /* GemBot.h in Headers */,
-				36C3D97E15C742A3003CCD2A /* GameState.h in Headers */,
 				36C3D98315C7434C003CCD2A /* EngineUtility.h in Headers */,
+				36C3D99A15C771FC003CCD2A /* GameStateDescriptor.h in Headers */,
+				36C3D99C15C771FC003CCD2A /* PGBotEngineProtocol.h in Headers */,
+				36C3D9A015C776C6003CCD2A /* Missile.h in Headers */,
+				36C3D9A415C776F4003CCD2A /* Scan.h in Headers */,
+				36C3D9A815C77722003CCD2A /* Explosion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +239,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				36C3D9BF15C77F6F003CCD2A /* PBXTargetDependency */,
 			);
 			name = PGBotNativeEngine;
 			productName = PGBotNativeEngine;
@@ -170,12 +265,49 @@
 			mainGroup = 36C3D94D15C74062003CCD2A;
 			productRefGroup = 36C3D95915C74062003CCD2A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 36C3D9AD15C77F58003CCD2A /* Products */;
+					ProjectRef = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				36C3D95715C74062003CCD2A /* PGBotNativeEngine */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		36C3D9B715C77F59003CCD2A /* SBJson.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SBJson.framework;
+			remoteRef = 36C3D9B615C77F59003CCD2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36C3D9B915C77F59003CCD2A /* SBJsonTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SBJsonTests.octest;
+			remoteRef = 36C3D9B815C77F59003CCD2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36C3D9BB15C77F59003CCD2A /* libsbjson-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libsbjson-ios.a";
+			remoteRef = 36C3D9BA15C77F59003CCD2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36C3D9BD15C77F59003CCD2A /* sbjson-iosTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "sbjson-iosTests.octest";
+			remoteRef = 36C3D9BC15C77F59003CCD2A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36C3D95415C74062003CCD2A /* Sources */ = {
@@ -184,12 +316,22 @@
 			files = (
 				36C3D96615C74062003CCD2A /* PGBotNativeEngine.m in Sources */,
 				36C3D97B15C74180003CCD2A /* GemBot.m in Sources */,
-				36C3D97F15C742A3003CCD2A /* GameState.m in Sources */,
 				36C3D98415C7434C003CCD2A /* EngineUtility.m in Sources */,
+				36C3D9A115C776C6003CCD2A /* Missile.m in Sources */,
+				36C3D9A515C776F4003CCD2A /* Scan.m in Sources */,
+				36C3D9A915C77722003CCD2A /* Explosion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36C3D9BF15C77F6F003CCD2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SBJson;
+			targetProxy = 36C3D9BE15C77F6F003CCD2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		36C3D96715C74062003CCD2A /* Debug */ = {
