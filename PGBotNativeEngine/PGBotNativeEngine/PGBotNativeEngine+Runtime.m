@@ -10,6 +10,8 @@
 #import "GemBot+Runtime.h"
 #import "Missile.h"
 #import "GemBot+Communication.h"
+#import "GemBot+Interface.h"
+#import "Missile+Interface.h"
 @implementation PGBotNativeEngine (Runtime)
  
 
@@ -44,6 +46,10 @@
 //
 //6. Check end round conditions.
 -(void) executeGameCycle {
+    /// ------ Clean Phase
+    
+    
+    
     
     ////----- Robot CPU execution phase
     for (GemBot* bot in robots) {

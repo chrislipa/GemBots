@@ -13,4 +13,8 @@
 -(int) speed {
     return (int)(internal_speed / (DISTANCE_MULTIPLIER / 100));
 }
+
+-(void) updatePosition {
+    
+}
 @end

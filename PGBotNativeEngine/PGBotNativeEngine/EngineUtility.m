@@ -10,7 +10,7 @@
 #import "EngineDefinitions.h"
 
 
-lint sqrt(lint x) {
+lint intsqrt(lint x) {
     lint rv = 0;
     lint b = 1uL << 64-2;
     while (b > x) {
@@ -105,7 +105,7 @@ int getAngleTo(lint nx, lint ny) {
     if (x+y == 0) {
         return 0;
     }
-    double norm = sqrt(x*x+y*y);
+    lint norm = intsqrt(x*x+y*y);
     
     int nangle = (int)lround((256.0/(M_2_PI)) *(asin(((double)y)/norm)));
     nangle = 64 - nangle;
@@ -132,8 +132,22 @@ lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObj
     return sqrt(deltaX*deltaX+deltaY*deltaY);
 }
 
-lint distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
+int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
     lint d = internal_distance_between(a, b);
     return (int)(d + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+}
+
+int relativeHeading(NSObject<OrientedObject>* a, NSObject<TangibleObject>* b) {
+    int absHeading = heading(a,b);
+    return anglemod(absHeading - a.heading);
+}
+
+int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
+    return getAngleTo(b.internal_x-a.internal_x, b.internal_y-a.internal_y);
+}
+
+int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b) {
+    int absHeading = heading(a,b);
+    return anglemod(absHeading - a.turretHeading);
 }
 

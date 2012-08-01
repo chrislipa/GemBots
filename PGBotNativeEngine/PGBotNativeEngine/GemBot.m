@@ -12,18 +12,21 @@
 #import "GemBot+Compiler.h"
 
 @implementation GemBot
+
+
 @synthesize sessionUniqueRobotIdentifier;
 
 @synthesize name;
 @synthesize descript;
 @synthesize author;
-
+@synthesize internal_x;
+@synthesize internal_y;
 @synthesize heading;
 @synthesize unique_tank_id;
 @synthesize desiredHeading;
 @synthesize internal_speed;
 @synthesize lastTimeFiredShotHitATank;
-
+@synthesize mostRecentlyScannedTank;
 @synthesize kills;
 @synthesize deaths;
 @synthesize wins;
@@ -38,7 +41,7 @@
 @synthesize team;
 @synthesize compiledCorrectly;
 @synthesize compileError;
-
+@synthesize turretHeading;
 @synthesize memory;
 @synthesize gameCycleOfLastDamage;
 
@@ -52,7 +55,7 @@
 @synthesize keepshiftOn;
 @synthesize throttle;
 @synthesize scan_arc_half_width;
-
+@synthesize alive;
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;
     [self compile];
@@ -86,7 +89,7 @@
 
 
 -(bool) isAlive {
-    return internal_armor > 0;
+    return alive;
 }
 -(int) armor {
     return (internal_armor + (ARMOR_MULTIPLIER/2))/ARMOR_MULTIPLIER;

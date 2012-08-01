@@ -1,16 +1,13 @@
 //
-//  GemBot+Interface.h
+//  Missile+Interface.h
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 7/31/12.
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
-#import "GemBot.h"
+#import "Missile.h"
 
-@interface GemBot (Interface)
-
--(int) speed;
-
+@interface Missile (Interface)
 -(void) updatePosition;
 @end

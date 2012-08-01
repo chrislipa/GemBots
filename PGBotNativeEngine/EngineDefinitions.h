@@ -54,4 +54,5 @@ extern int right_filled_mask[33];
 #define COMMUNICATION_MEMORY_START 256
 #define COMMUNICATION_MEMORY_END 512
 
+#define SONAR_RADIUS 250
 #endif

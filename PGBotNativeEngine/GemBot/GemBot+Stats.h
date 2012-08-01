@@ -1,5 +1,5 @@
 //
-//  GemBot+Interface.h
+//  GemBot+Stats.h
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 7/31/12.
@@ -8,9 +8,9 @@
 
 #import "GemBot.h"
 
-@interface GemBot (Interface)
+@interface GemBot (Stats)
 
--(int) speed;
+-(int) scanRadius;
 
--(void) updatePosition;
+
 @end

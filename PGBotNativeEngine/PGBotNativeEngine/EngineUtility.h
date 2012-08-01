@@ -11,7 +11,7 @@
 #import "EngineDefinitions.h"
 #import "TangibleObject.h"
 #import "OrientedObject.h"
-
+#import "TurretedObject.h"
 
 NSDictionary* constantDictionary();
 NSDictionary* defaultVariablesDictionary();
@@ -20,6 +20,9 @@ NSString* uuid();
 
 int getAngleTo(lint x, lint y);
 int anglemod(int a);
-lint sqrt(lint x);
+lint intsqrt(lint x);
 lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
-lint distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
+int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
+int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
+int relativeHeading(NSObject<OrientedObject>* a, NSObject<TangibleObject>* b);
+int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b);

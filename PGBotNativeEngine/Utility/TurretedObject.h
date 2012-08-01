@@ -1,5 +1,5 @@
 //
-//  OrientedObject.h
+//  TurretedObject.h
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 7/31/12.
@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TangibleObject.h"
-@protocol OrientedObject <TangibleObject>
--(int) heading;
+#import "OrientedObject.h"
+
+@protocol TurretedObject <OrientedObject>
+-(int) turretHeading;
 @end

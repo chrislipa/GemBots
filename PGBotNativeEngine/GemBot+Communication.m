@@ -7,7 +7,7 @@
 //
 
 #import "GemBot+Communication.h"
-
+#import "GemBot+Memory.h"
 @implementation GemBot (Communication)
 
 

@@ -12,7 +12,9 @@
 #import "Opcode.h"
 #import "TangibleObject.h"
 #import "OrientedObject.h"
-@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject> {
+#import "TurretedObject.h"
+
+@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject,TurretedObject> {
     NSData* source;
     
     NSString* name;
@@ -58,14 +60,14 @@
     lint internal_y;
     lint internal_heat;
     
-    int x,y,heading, desiredHeading;
+    int heading, desiredHeading;
     int internal_speed, throttle;
     int armor;
     int heat;
     bool shieldOn;
     bool overburnOn;
     bool keepshiftOn;
-    
+    int turretHeading;
     
     
     int kills, deaths, wins, losses;
@@ -93,9 +95,11 @@
     int op1;
     int op2;
     bool markForSelfDestruction;
-    __weak GemBot* mostRecentlyScannedTank;
+    GemBot* mostRecentlyScannedTank;
     int gameCycleOfLastDamage;
     int lastTimeFiredShotHitATank;
+    
+    bool alive;
     
     ///
     //comm
@@ -110,6 +114,11 @@ int number_of_comm_transmits_this_turn;
 int scan_arc_half_width;
     
 }
+
+@property (readwrite,retain) GemBot* mostRecentlyScannedTank;
+@property (readwrite, assign) lint internal_x;
+@property (readwrite, assign) lint internal_y;
+@property (readwrite,assign)  bool alive;
 @property (readwrite,assign) int scan_arc_half_width;
 @property (readwrite,assign) int throttle;
 @property (readwrite,assign) int lastTimeFiredShotHitATank;
@@ -146,7 +155,7 @@ int scan_arc_half_width;
 @property (readwrite,assign) bool shieldOn;
 @property (readwrite,assign) bool overburnOn;
 @property (readwrite,assign) bool keepshiftOn;
-
+@property (readwrite,assign) int turretHeading;
 
 @property (readwrite,assign) int numberOfMissilesFired;
 @property (readwrite,assign) int numberOfMissilesConnected;

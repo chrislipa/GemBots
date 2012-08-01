@@ -11,7 +11,9 @@
 #define DETEMINISTIC 0
 #define DETEMINISTIC_SEED 0
 
-@interface Random : NSObject
+@interface Random : NSObject {
+    int seed;
+}
 
 
 
