@@ -8,6 +8,7 @@
 
 #import "GemBot+Devices.h"
 #import "GemBot+Memory.h"
+#import "PGBotNativeEngine+Interface.h"
 
 @implementation GemBot (Devices)
 //
@@ -48,11 +49,19 @@
 
 //4 1 radar r
 -(void) radarr {
-    
+    [self setMemory:op1 :[engine computeRadarFromBot:self]];
 }
 
 //5 3 wide_radar r
+-(void) wide_radarr {
+    [self setMemory:op1 :[engine computeWideRadarFromBot:self]];
+}
+
 //6 40 sonar r
+-(void) sonarr {
+    [self setMemory:op1 :[engine computeSonarFromBot:self]];
+}
+
 //7 0 turret_offset rw
 //8 0 turret_heading rw
 //9 3 fire_missile rw

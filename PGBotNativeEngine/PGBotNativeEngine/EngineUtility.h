@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import "EngineDefinitions.h"
-@interface EngineUtility : NSObject
-
-@end
+#import "TangibleObject.h"
+#import "OrientedObject.h"
 
 
 NSDictionary* constantDictionary();
@@ -21,3 +20,6 @@ NSString* uuid();
 
 int getAngleTo(lint x, lint y);
 int anglemod(int a);
+lint sqrt(lint x);
+lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
+lint distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);

@@ -43,5 +43,7 @@
     [self setMemory:FX :v];
 }
 
-
+-(void) communicationPhase {
+    
+}
 @end

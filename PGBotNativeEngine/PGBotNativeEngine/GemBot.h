@@ -10,8 +10,9 @@
 #import "EngineDefinitions.h"
 #import "PGBotNativeEngine.h"
 #import "Opcode.h"
-
-@interface GemBot : NSObject <RobotDescription> {
+#import "TangibleObject.h"
+#import "OrientedObject.h"
+@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject> {
     NSData* source;
     
     NSString* name;

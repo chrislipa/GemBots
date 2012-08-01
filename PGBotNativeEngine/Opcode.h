@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#ifndef OPCODE
+#define OPCODE
+
 
 #define AX 0
 #define BX 1
@@ -27,7 +30,6 @@
 #define COMM_QUEUE 256
 #define STACK 1024
 #define SOURCE_START 2048
-
 
 
 
@@ -82,3 +84,4 @@ Opcode* getOpcode(int opcodeNumber);
 Device* getReadDevice(int deviceNumber);
 Device* getWriteDevice(int deviceNumber) ;
 SystemCall* getSystemCall(int sysCallNumber);
+#endif

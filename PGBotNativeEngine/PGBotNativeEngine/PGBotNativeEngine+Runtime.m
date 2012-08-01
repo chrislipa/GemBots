@@ -9,6 +9,7 @@
 #import "PGBotNativeEngine+Runtime.h"
 #import "GemBot+Runtime.h"
 #import "Missile.h"
+#import "GemBot+Communication.h"
 @implementation PGBotNativeEngine (Runtime)
  
 

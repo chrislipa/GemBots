@@ -34,6 +34,8 @@
 		363D8F8115C8A7AA000FB3AE /* GemBot+Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F7F15C8A7AA000FB3AE /* GemBot+Communication.m */; };
 		363D8F8415C8AA9C000FB3AE /* GemBot+Devices.h in Headers */ = {isa = PBXBuildFile; fileRef = 363D8F8215C8AA9C000FB3AE /* GemBot+Devices.h */; };
 		363D8F8515C8AA9C000FB3AE /* GemBot+Devices.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F8315C8AA9C000FB3AE /* GemBot+Devices.m */; };
+		366B027615C8B27C006441FF /* Random.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B027415C8B27C006441FF /* Random.h */; };
+		366B027715C8B27C006441FF /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B027515C8B27C006441FF /* Random.m */; };
 		36C3D95C15C74062003CCD2A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95B15C74062003CCD2A /* Cocoa.framework */; };
 		36C3D96615C74062003CCD2A /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */; };
 		36C3D97A15C74180003CCD2A /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D97815C74180003CCD2A /* GemBot.h */; };
@@ -121,6 +123,10 @@
 		363D8F7F15C8A7AA000FB3AE /* GemBot+Communication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Communication.m"; sourceTree = "<group>"; };
 		363D8F8215C8AA9C000FB3AE /* GemBot+Devices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Devices.h"; sourceTree = "<group>"; };
 		363D8F8315C8AA9C000FB3AE /* GemBot+Devices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Devices.m"; sourceTree = "<group>"; };
+		366B027415C8B27C006441FF /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Random.h; path = Utility/Random.h; sourceTree = "<group>"; };
+		366B027515C8B27C006441FF /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Random.m; path = Utility/Random.m; sourceTree = "<group>"; };
+		366B027815C8B3D8006441FF /* TangibleObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TangibleObject.h; sourceTree = "<group>"; };
+		366B027915C8B414006441FF /* OrientedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OrientedObject.h; path = Utility/OrientedObject.h; sourceTree = "<group>"; };
 		36C3D95815C74062003CCD2A /* PGBotNativeEngine.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = PGBotNativeEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -197,9 +203,23 @@
 			name = gembot;
 			sourceTree = "<group>";
 		};
+		366B026F15C8B246006441FF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D98115C7434C003CCD2A /* EngineUtility.h */,
+				36C3D98215C7434C003CCD2A /* EngineUtility.m */,
+				366B027415C8B27C006441FF /* Random.h */,
+				366B027515C8B27C006441FF /* Random.m */,
+				366B027815C8B3D8006441FF /* TangibleObject.h */,
+				366B027915C8B414006441FF /* OrientedObject.h */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		36C3D94D15C74062003CCD2A = {
 			isa = PBXGroup;
 			children = (
+				366B026F15C8B246006441FF /* Utility */,
 				36C3D9AB15C77F4E003CCD2A /* external */,
 				36C3D9AA15C77AAC003CCD2A /* EngineDefinitions.h */,
 				363D8F7015C89097000FB3AE /* EngineDefinitions.c */,
@@ -211,8 +231,6 @@
 				363D8F6615C7F3EA000FB3AE /* Devices.txt */,
 				363D8F6115C7ECD4000FB3AE /* Opcode.h */,
 				363D8F6215C7ECD4000FB3AE /* Opcode.m */,
-				36C3D98115C7434C003CCD2A /* EngineUtility.h */,
-				36C3D98215C7434C003CCD2A /* EngineUtility.m */,
 				36C3D98015C742B1003CCD2A /* GameState */,
 				36C3D96115C74062003CCD2A /* PGBotNativeEngine */,
 				36C3D95A15C74062003CCD2A /* Frameworks */,
@@ -342,6 +360,7 @@
 				363D8F7C15C8A1CF000FB3AE /* PGBotNativeEngine+Interface.h in Headers */,
 				363D8F8015C8A7AA000FB3AE /* GemBot+Communication.h in Headers */,
 				363D8F8415C8AA9C000FB3AE /* GemBot+Devices.h in Headers */,
+				366B027615C8B27C006441FF /* Random.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +473,7 @@
 				363D8F7D15C8A1CF000FB3AE /* PGBotNativeEngine+Interface.m in Sources */,
 				363D8F8115C8A7AA000FB3AE /* GemBot+Communication.m in Sources */,
 				363D8F8515C8AA9C000FB3AE /* GemBot+Devices.m in Sources */,
+				366B027715C8B27C006441FF /* Random.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

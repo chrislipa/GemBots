@@ -1,15 +1,21 @@
 //
-//  GemBot+Communication.h
+//  Random.m
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 7/31/12.
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
-#import "GemBot.h"
-
-@interface GemBot (Communication)
+#import "Random.h"
 
 
--(void) communicationPhase;
+
+@implementation Random
+
+-(int) random {
+    if (DETEMINISTIC == 0) {
+        return arc4random();
+    }
+    
+}
 @end

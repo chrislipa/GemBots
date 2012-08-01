@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 #import "PGBotEngineProtocol.h"
-
+#import "Random.h"
 
 @interface PGBotNativeEngine : NSObject <PGBotEngineProtocol,GameStateDescriptor> {
+    Random* random;
     int currentMatch;
     int totalNumberOfMatches;
     int gameCycle;

@@ -8,11 +8,31 @@
 
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
-@implementation EngineUtility
 
 
+lint sqrt(lint x) {
+    lint rv = 0;
+    lint b = 1uL << 64-2;
+    while (b > x) {
+        b >>= 2;
+    }
+    while (b != 0) {
+        if (x >= rv + b) {
+            x = x - (rv + b);
+            rv = rv + b<<1;
+        }
+        rv >>= 1;
+        b >>= 2;
+    }
+    
+    
+    if (x > rv) {
+        return rv+1;
+    } else {
+        return rv;
+    }
+}
 
-@end
 
 int readInteger(NSString* valueStr) {
     int value;
@@ -106,4 +126,14 @@ int anglemod(int a) {
     return a;
 }
 
+lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
+    lint deltaX = (a.internal_x - b.internal_x) >> 10;
+    lint deltaY = (a.internal_y - b.internal_y) >> 10;
+    return sqrt(deltaX*deltaX+deltaY*deltaY);
+}
+
+lint distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
+    lint d = internal_distance_between(a, b);
+    return (int)(d + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+}
 

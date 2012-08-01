@@ -18,4 +18,28 @@
     }
     return count;
 }
+
+
+
+-(int) computeRadarFromBot:(GemBot*)bot {
+    
+}
+
+-(int) computeWideRadarFromBot:(GemBot*)bot {
+    
+}
+
+
+-(int) computeSonarFromBot:(GemBot*)bot {
+    int rv = -1;
+    for (GemBot* g in robots) {
+        if ([g isAlive] && g != bot) {
+            int 
+        }
+    }
+        
+    
+}
+
+
 @end

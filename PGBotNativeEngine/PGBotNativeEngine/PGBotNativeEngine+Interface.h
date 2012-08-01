@@ -7,7 +7,13 @@
 //
 
 #import "PGBotNativeEngine.h"
-
+#import "GemBot.h"
 @interface PGBotNativeEngine (Interface)
 -(int) numberOfRobotsAlive;
+
+
+-(int) computeRadarFromBot:(GemBot*)bot;
+-(int) computeWideRadarFromBot:(GemBot*)bot;
+-(int) computeSonarFromBot:(GemBot*)bot;
+
 @end
