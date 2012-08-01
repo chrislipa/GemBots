@@ -26,3 +26,11 @@ int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int relativeHeading(NSObject<OrientedObject>* a, NSObject<TangibleObject>* b);
 int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b);
+int roundInternalDistanceToDistance(lint d);
+lint distanceToInternalDistance(int d) ;
+
+int roundInternalHeatToHeat(lint d);
+lint heatToInternalHeat(int d) ;
+
+int roundInternalArmorToArmor(lint d) ;
+lint armorToInternalArmor(int d) ;

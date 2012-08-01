@@ -18,7 +18,7 @@
 #define SIZE_OF_INSTRUCTION 3
 #define MAXINT 0x7fffffff
 #define MININT 0x80000000
-
+#define INITIAL_ARMOR 100
 #define NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE 5
 
 typedef signed long long lint;

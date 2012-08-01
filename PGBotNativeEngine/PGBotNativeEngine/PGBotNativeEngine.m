@@ -89,6 +89,12 @@
     return NO;
 }
 
+-(bool) isMatchCurrentlyActive {
+    return isMatchCurrentlyActive;
+}
+-(NSSet*) winnersOfLastMatch {
+    return winnersOfLastMatch;
+}
 
 
 @end

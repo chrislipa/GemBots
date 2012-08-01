@@ -7,14 +7,20 @@
 //
 
 #import "GemBot+Interface.h"
+#import "EngineDefinitions.h"
+#import "EngineUtility.h"
 
 @implementation GemBot (Interface)
 
 -(int) speed {
-    return (int)(internal_speed / (DISTANCE_MULTIPLIER / 100));
+    return roundInternalDistanceToDistance(internal_speed);
 }
 
 -(void) updatePosition {
     
+}
+
+-(void) dealInternalDamage:(lint) damage  {
+    internal_armor -= damage;
 }
 @end

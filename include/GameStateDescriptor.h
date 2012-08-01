@@ -62,8 +62,8 @@
 
 @protocol ExplosionDescription <NSObject>
 
--(int) centerX;
--(int) centerY;
+-(int) x;
+-(int) y;
 -(int) radius;
 
 @end
@@ -81,5 +81,7 @@
 -(NSArray*) scans;
 -(NSArray*) explosions;
 -(NSArray*) soundEffectsInitiatedThisCycle;
-
+-(bool) isMatchCurrentlyActive;
+-(NSSet*) winnersOfLastMatch;
+-(bool) isSetOfMatchesCompleted;
 @end

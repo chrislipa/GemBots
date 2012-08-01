@@ -92,16 +92,16 @@
     return alive;
 }
 -(int) armor {
-    return (internal_armor + (ARMOR_MULTIPLIER/2))/ARMOR_MULTIPLIER;
+    return roundInternalArmorToArmor(internal_armor);
 }
 -(int) heat {
-    return (internal_heat + (HEAT_MULTIPLIER/2))/HEAT_MULTIPLIER;
+    return roundInternalHeatToHeat(internal_heat);
 }
 -(int) x {
-    return (internal_x + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+    return roundInternalDistanceToDistance(internal_x);
 }
 -(int) y {
-    return (internal_y + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+    return roundInternalDistanceToDistance(internal_y);
 }
 
 

@@ -51,8 +51,8 @@
 
 //7 32 find_angle
 -(void) find_angle {
-    lint targetX = [self getMemory:EX]*DISTANCE_MULTIPLIER;
-    lint targetY = [self getMemory:FX]*DISTANCE_MULTIPLIER;
+    lint targetX = distanceToInternalDistance([self getMemory:EX]);
+    lint targetY = distanceToInternalDistance([self getMemory:FX]);
     lint deltaX = targetX - internal_x;
     lint deltaY = targetY - internal_y;
     int angle = getAngleTo(deltaX,deltaY);

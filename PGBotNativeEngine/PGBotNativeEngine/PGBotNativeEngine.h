@@ -22,6 +22,9 @@
     NSMutableArray* scans;
     NSMutableArray* explosions;
     NSMutableArray* soundEffectsInitiatedThisCycle;
+    
+    bool isMatchCurrentlyActive;
+    NSMutableSet* winnersOfLastMatch;
 }
 
 @property (readwrite,assign) int currentMatch;
@@ -58,5 +61,6 @@
 
 -(bool) isSetOfMatchesCompleted;
 
-
+-(bool) isMatchCurrentlyActive;
+-(NSSet*) winnersOfLastMatch;
 @end

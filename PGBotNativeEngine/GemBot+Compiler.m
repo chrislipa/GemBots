@@ -10,6 +10,9 @@
 #import "GemBot+BinaryCompiler.h"
 #import "GemBot+SourceCodeCompiler.h"
 #import "GemBot+Memory.h"
+#import "EngineUtility.h"
+#import "Gembot+Reset.h"
+
 @implementation GemBot (Compiler)
 
 -(void) compile {
@@ -38,27 +41,6 @@
     memccpy(savedMemory, memory, memorySize, sizeof(int));
 }
 
--(void) reboot {
-    if (memory) {
-        free(memory);
-    }
-    memorySize = savedMemorySize;
-    memory = (int*)malloc(memorySize*sizeof(int));
-    memccpy(memory,savedMemory, memorySize, sizeof(int));
-    [self setMemory:IP :SOURCE_START];
-}
 
--(void) cleanBetweenRounds {
-    [self reboot];
-    numberOfConsecutiveConditionalJumps = 0;
-    internal_armor = 100*ARMOR_MULTIPLIER;
-    internal_x = 0;
-    internal_y = 0;
-    internal_heat =  0;
-    shieldOn = NO;
-    overburnOn = NO;
-    savedClockCycles = 0;
-    
-}
 
 @end

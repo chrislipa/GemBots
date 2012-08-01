@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EngineDefinitions.h"
 
 @protocol TangibleObject <NSObject>
 -(lint) internal_x;

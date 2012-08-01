@@ -12,74 +12,30 @@
 #import "GemBot+Communication.h"
 #import "GemBot+Interface.h"
 #import "Missile+Interface.h"
+#import "Explosion.h"
+#import "PGBotNativeEngine+DealDamage.h"
+#import "PGBotNativeEngine+RobotCPUPhase.h"
+#import "PGBotNativeEngine+CollisionPhase.h"
+#import "PGBotNativeEngine+CommPhase.h"
+#import "PGBotNativeEngine+CheckForStartNextMatch.h"
+
 @implementation PGBotNativeEngine (Runtime)
  
 
--(void) setUpNewSetOfRounds {
-    
-}
-
--(void) setUpNewRound {
-    
-}
 
 
-
-
--(void) isRoundOver {
-    
-}
-
--(void) isSetOfRoundsOver {
-    
-}
-
-//1. Give each tanks 5 clock cycles.  They free only to modify their memory, emit missiles, mines, scan, adjust steering and throttle here, but no changes are made to positions.
-//
-//2. Update direction and speed based on steering and throttle for the bots only.
-//
-//3. Move everything forward by its velocity.
-//
-//4. Check for collisions.  Detonate explosions.  Remove missiles.
-//
-//5. Deal damage.  Kill robots.
-//
-//6. Check end round conditions.
 -(void) executeGameCycle {
-    /// ------ Clean Phase
-    
-    
-    
-    
-    ////----- Robot CPU execution phase
-    for (GemBot* bot in robots) {
-        if ([bot isAlive]) {
-            [bot executeClockCycles:NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
-        }
+    [self checkForStartNextMatchPhase];
+    [self cleanPhase];
+    [self checkForRobotDeathPhase];
+    if ([self checkForEndMatchPhase]) {
+        return;
     }
-    
-    //-------- Robot Comm Phase
-    for (GemBot* bot in robots) {
-        if ([bot isAlive]) {
-            [bot communicationPhase];
-        }
-    }
-    
-    
-    
-    ////---- Movement phase
-    
-    for (GemBot* bot in robots) {
-        if ([bot isAlive]) {
-            [bot updatePosition];
-        }
-    }
-    for (Missile* missile in missiles) {
-        [missile updatePosition];
-    }
-    
-    
-    
+    [self robotCPUPhase];
+    [self communicationPhase];
+    [self movementPhase];
+    [self collisionPhase];
+    [self dealDamagePhase];
     
     
     

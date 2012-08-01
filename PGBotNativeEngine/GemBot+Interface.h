@@ -13,4 +13,6 @@
 -(int) speed;
 
 -(void) updatePosition;
+
+-(void) dealInternalDamage:(lint) damage ;
 @end

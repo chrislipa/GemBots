@@ -40,6 +40,22 @@
 		366B027D15C8C080006441FF /* Missile+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B027B15C8C080006441FF /* Missile+Interface.m */; };
 		366B028015C8C0D7006441FF /* GemBot+Stats.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B027E15C8C0D7006441FF /* GemBot+Stats.h */; };
 		366B028115C8C0D7006441FF /* GemBot+Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B027F15C8C0D7006441FF /* GemBot+Stats.m */; };
+		366B028615C9968A006441FF /* PGBotNativeEngine+DealDamage.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B028415C9968A006441FF /* PGBotNativeEngine+DealDamage.h */; };
+		366B028715C9968A006441FF /* PGBotNativeEngine+DealDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028515C9968A006441FF /* PGBotNativeEngine+DealDamage.m */; };
+		366B028A15C99B9A006441FF /* PGBotNativeEngine+RobotCPUPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B028815C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.h */; };
+		366B028B15C99B9A006441FF /* PGBotNativeEngine+RobotCPUPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */; };
+		366B028E15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B028C15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h */; };
+		366B028F15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */; };
+		366B029215C99C54006441FF /* PGBotNativeEngine+MovementPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B029015C99C54006441FF /* PGBotNativeEngine+MovementPhase.h */; };
+		366B029315C99C54006441FF /* PGBotNativeEngine+MovementPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029115C99C54006441FF /* PGBotNativeEngine+MovementPhase.m */; };
+		366B029615C99D33006441FF /* PGBotNativeEngine+CommPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B029415C99D33006441FF /* PGBotNativeEngine+CommPhase.h */; };
+		366B029715C99D33006441FF /* PGBotNativeEngine+CommPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029515C99D33006441FF /* PGBotNativeEngine+CommPhase.m */; };
+		366B029A15C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B029815C99F63006441FF /* PGBotNativeEngine+CheckForStartNextMatch.h */; };
+		366B029B15C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029915C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.m */; };
+		366B029E15C9A038006441FF /* GemBot+Reset.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B029C15C9A037006441FF /* GemBot+Reset.h */; };
+		366B029F15C9A038006441FF /* GemBot+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029D15C9A037006441FF /* GemBot+Reset.m */; };
+		366B02A215C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B02A015C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.h */; };
+		366B02A315C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02A115C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.m */; };
 		36C3D95C15C74062003CCD2A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95B15C74062003CCD2A /* Cocoa.framework */; };
 		36C3D96615C74062003CCD2A /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */; };
 		36C3D97A15C74180003CCD2A /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D97815C74180003CCD2A /* GemBot.h */; };
@@ -136,6 +152,22 @@
 		366B027E15C8C0D7006441FF /* GemBot+Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GemBot+Stats.h"; path = "GemBot/GemBot+Stats.h"; sourceTree = "<group>"; };
 		366B027F15C8C0D7006441FF /* GemBot+Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GemBot+Stats.m"; path = "GemBot/GemBot+Stats.m"; sourceTree = "<group>"; };
 		366B028215C8C32E006441FF /* TurretedObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TurretedObject.h; path = Utility/TurretedObject.h; sourceTree = "<group>"; };
+		366B028415C9968A006441FF /* PGBotNativeEngine+DealDamage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+DealDamage.h"; sourceTree = "<group>"; };
+		366B028515C9968A006441FF /* PGBotNativeEngine+DealDamage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+DealDamage.m"; sourceTree = "<group>"; };
+		366B028815C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+RobotCPUPhase.h"; sourceTree = "<group>"; };
+		366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+RobotCPUPhase.m"; sourceTree = "<group>"; };
+		366B028C15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CollisionPhase.h"; sourceTree = "<group>"; };
+		366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CollisionPhase.m"; sourceTree = "<group>"; };
+		366B029015C99C54006441FF /* PGBotNativeEngine+MovementPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+MovementPhase.h"; sourceTree = "<group>"; };
+		366B029115C99C54006441FF /* PGBotNativeEngine+MovementPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+MovementPhase.m"; sourceTree = "<group>"; };
+		366B029415C99D33006441FF /* PGBotNativeEngine+CommPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CommPhase.h"; sourceTree = "<group>"; };
+		366B029515C99D33006441FF /* PGBotNativeEngine+CommPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CommPhase.m"; sourceTree = "<group>"; };
+		366B029815C99F63006441FF /* PGBotNativeEngine+CheckForStartNextMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CheckForStartNextMatch.h"; sourceTree = "<group>"; };
+		366B029915C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CheckForStartNextMatch.m"; sourceTree = "<group>"; };
+		366B029C15C9A037006441FF /* GemBot+Reset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GemBot+Reset.h"; path = "GemBot/GemBot+Reset.h"; sourceTree = "<group>"; };
+		366B029D15C9A037006441FF /* GemBot+Reset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GemBot+Reset.m"; path = "GemBot/GemBot+Reset.m"; sourceTree = "<group>"; };
+		366B02A015C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CleanPhase.h"; sourceTree = "<group>"; };
+		366B02A115C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CleanPhase.m"; sourceTree = "<group>"; };
 		36C3D95815C74062003CCD2A /* PGBotNativeEngine.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = PGBotNativeEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -210,6 +242,8 @@
 				363D8F8315C8AA9C000FB3AE /* GemBot+Devices.m */,
 				366B027E15C8C0D7006441FF /* GemBot+Stats.h */,
 				366B027F15C8C0D7006441FF /* GemBot+Stats.m */,
+				366B029C15C9A037006441FF /* GemBot+Reset.h */,
+				366B029D15C9A037006441FF /* GemBot+Reset.m */,
 			);
 			name = gembot;
 			sourceTree = "<group>";
@@ -287,6 +321,20 @@
 				363D8F5915C7E75E000FB3AE /* PGBotNativeEngine+Runtime.m */,
 				363D8F7A15C8A1CF000FB3AE /* PGBotNativeEngine+Interface.h */,
 				363D8F7B15C8A1CF000FB3AE /* PGBotNativeEngine+Interface.m */,
+				366B028415C9968A006441FF /* PGBotNativeEngine+DealDamage.h */,
+				366B028515C9968A006441FF /* PGBotNativeEngine+DealDamage.m */,
+				366B028815C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.h */,
+				366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */,
+				366B028C15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h */,
+				366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */,
+				366B029015C99C54006441FF /* PGBotNativeEngine+MovementPhase.h */,
+				366B029115C99C54006441FF /* PGBotNativeEngine+MovementPhase.m */,
+				366B029415C99D33006441FF /* PGBotNativeEngine+CommPhase.h */,
+				366B029515C99D33006441FF /* PGBotNativeEngine+CommPhase.m */,
+				366B029815C99F63006441FF /* PGBotNativeEngine+CheckForStartNextMatch.h */,
+				366B029915C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.m */,
+				366B02A015C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.h */,
+				366B02A115C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.m */,
 			);
 			path = PGBotNativeEngine;
 			sourceTree = "<group>";
@@ -377,6 +425,14 @@
 				366B027615C8B27C006441FF /* Random.h in Headers */,
 				366B027C15C8C080006441FF /* Missile+Interface.h in Headers */,
 				366B028015C8C0D7006441FF /* GemBot+Stats.h in Headers */,
+				366B028615C9968A006441FF /* PGBotNativeEngine+DealDamage.h in Headers */,
+				366B028A15C99B9A006441FF /* PGBotNativeEngine+RobotCPUPhase.h in Headers */,
+				366B028E15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h in Headers */,
+				366B029215C99C54006441FF /* PGBotNativeEngine+MovementPhase.h in Headers */,
+				366B029615C99D33006441FF /* PGBotNativeEngine+CommPhase.h in Headers */,
+				366B029A15C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.h in Headers */,
+				366B029E15C9A038006441FF /* GemBot+Reset.h in Headers */,
+				366B02A215C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +548,14 @@
 				366B027715C8B27C006441FF /* Random.m in Sources */,
 				366B027D15C8C080006441FF /* Missile+Interface.m in Sources */,
 				366B028115C8C0D7006441FF /* GemBot+Stats.m in Sources */,
+				366B028715C9968A006441FF /* PGBotNativeEngine+DealDamage.m in Sources */,
+				366B028B15C99B9A006441FF /* PGBotNativeEngine+RobotCPUPhase.m in Sources */,
+				366B028F15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m in Sources */,
+				366B029315C99C54006441FF /* PGBotNativeEngine+MovementPhase.m in Sources */,
+				366B029715C99D33006441FF /* PGBotNativeEngine+CommPhase.m in Sources */,
+				366B029B15C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.m in Sources */,
+				366B029F15C9A038006441FF /* GemBot+Reset.m in Sources */,
+				366B02A315C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

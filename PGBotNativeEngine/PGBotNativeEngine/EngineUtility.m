@@ -134,7 +134,7 @@ lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObj
 
 int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
     lint d = internal_distance_between(a, b);
-    return (int)(d + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+    return roundInternalDistanceToDistance(d);
 }
 
 int relativeHeading(NSObject<OrientedObject>* a, NSObject<TangibleObject>* b) {
@@ -149,5 +149,30 @@ int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
 int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b) {
     int absHeading = heading(a,b);
     return anglemod(absHeading - a.turretHeading);
+}
+
+int roundInternalDistanceToDistance(lint d) {
+    return (int)(d + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+}
+
+lint distanceToInternalDistance(int d) {
+    return (((lint)d) *((lint) DISTANCE_MULTIPLIER));
+}
+
+int roundInternalHeatToHeat(lint d) {
+    return (int)(d + (HEAT_MULTIPLIER/2))/HEAT_MULTIPLIER;
+}
+
+lint heatToInternalHeat(int d) {
+    return (((lint)d) *((lint) HEAT_MULTIPLIER));
+}
+
+
+int roundInternalArmorToArmor(lint d) {
+    return (int)(d + (ARMOR_MULTIPLIER/2))/ARMOR_MULTIPLIER;
+}
+
+lint armorToInternalArmor(int d) {
+    return (((lint)d) *((lint) ARMOR_MULTIPLIER));
 }
 

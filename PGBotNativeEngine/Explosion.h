@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "GameStateDescriptor.h"
+#import "TangibleObject.h"
+#import "EngineDefinitions.h"
 
-@interface Explosion : NSObject <ExplosionDescription> {
-    int centerX, centerY;
-    int radius;
+@interface Explosion : NSObject <ExplosionDescription, TangibleObject> {
+    lint internal_radius;
+    lint internal_x;
+    lint internal_y;
 }
 
-@property (readwrite,assign) int centerX;
-@property (readwrite,assign) int centerY;
-@property (readwrite,assign) int radius;
+@property (readwrite,assign) lint internal_x;
+@property (readwrite,assign) lint internal_y;
+@property (readwrite,assign) lint internal_radius;
+
+
 
 @end
