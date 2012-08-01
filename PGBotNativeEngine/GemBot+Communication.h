@@ -1,5 +1,5 @@
 //
-//  GemBot+Interface.h
+//  GemBot+Communication.h
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 7/31/12.
@@ -8,8 +8,6 @@
 
 #import "GemBot.h"
 
-@interface GemBot (Interface)
-
--(int) speed;
+@interface GemBot (Communication)
 
 @end

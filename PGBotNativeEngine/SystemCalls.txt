@@ -12,9 +12,10 @@
 11 1 set_overdrive
 12 2 get_timer
 13 4 get_game_info
+14 5 get_tank_info
 15 3 get_kd_info
-16 1 transmit
-17 1 recieve
-18 1 queued_data_size
-19 1 clear_comm_queue
+16 1 set_comm_channel
+17 1 transmit
+18 1 recieve
+19 1 queued_data_size
 20 1 sys_call_nop

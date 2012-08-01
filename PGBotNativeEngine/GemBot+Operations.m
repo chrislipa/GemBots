@@ -280,8 +280,28 @@ int rotateLeft(int x, int d) {
     [self setMemory:op1 :z];
 }
 //45 -6 setb1 L R
+-(void) setb1 {
+    int z = ([self getMemory:op1]& NOTB1) | ((op2 & B0)<<8);
+    [self setMemory:op1 :z];
+}
 //46 -6 setb2 L R
+-(void) setb2 {
+    int z = ([self getMemory:op1]& NOTB2) | ((op2 & B0)<<16);
+    [self setMemory:op1 :z];
+}
 //47 -6 setb3 L R
+-(void) setb3 {
+    int z = ([self getMemory:op1]& NOTB3) | ((op2 & B0)<<24);
+    [self setMemory:op1 :z];
+}
 //48 -6 sets0 L R
+-(void) sets0 {
+    int z = ([self getMemory:op1]& NOTS0) | ((op2 & S0)<<0);
+    [self setMemory:op1 :z];
+}
 //49 -6 sets1 L R
+-(void) sets1 {
+    int z = ([self getMemory:op1]& NOTS1) | ((op2 & S0)<<16);
+    [self setMemory:op1 :z];
+}
 @end

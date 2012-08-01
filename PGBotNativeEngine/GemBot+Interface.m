@@ -10,5 +10,7 @@
 
 @implementation GemBot (Interface)
 
-
+-(int) speed {
+    return (int)(internal_speed / (DISTANCE_MULTIPLIER / 100));
+}
 @end

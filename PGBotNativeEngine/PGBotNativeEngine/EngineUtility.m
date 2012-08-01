@@ -7,7 +7,7 @@
 //
 
 #import "EngineUtility.h"
-
+#import "EngineDefinitions.h"
 @implementation EngineUtility
 
 
@@ -79,6 +79,31 @@ NSString* uuid() {
     return uuidString;
 }
 
-
+int getAngleTo(lint nx, lint ny) {
+    lint x = ABS(nx)>>10;
+    lint y = ABS(ny)>>10;
+    if (x+y == 0) {
+        return 0;
+    }
+    double norm = sqrt(x*x+y*y);
+    
+    int nangle = (int)lround((256.0/(M_2_PI)) *(asin(((double)y)/norm)));
+    nangle = 64 - nangle;
+    if (nx < 0 && ny >= 0) {
+        nangle = 256 - nangle;
+    } else if (nx < 0 && ny < 0) {
+        nangle = 128 + nangle;
+    } else if (nx >= 0 && ny < 0) {
+        nangle = 64 + (64-nangle);
+    }
+    return nangle;
+}
+int anglemod(int a) {
+    a %= 256;
+    if (a < 0) {
+        a+=256;
+    }
+    return a;
+}
 
 

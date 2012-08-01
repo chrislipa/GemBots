@@ -19,7 +19,10 @@
 @synthesize author;
 
 @synthesize heading;
-
+@synthesize unique_tank_id;
+@synthesize desiredHeading;
+@synthesize internal_speed;
+@synthesize lastTimeFiredShotHitATank;
 
 @synthesize kills;
 @synthesize deaths;
@@ -37,7 +40,7 @@
 @synthesize compileError;
 
 @synthesize memory;
-
+@synthesize gameCycleOfLastDamage;
 
 @synthesize config_scanner;
 @synthesize config_weapon;
@@ -46,8 +49,9 @@
 @synthesize config_mines;
 @synthesize config_shield;
 @synthesize config_armor;
-
-
+@synthesize keepshiftOn;
+@synthesize throttle;
+@synthesize scan_arc_half_width;
 
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;

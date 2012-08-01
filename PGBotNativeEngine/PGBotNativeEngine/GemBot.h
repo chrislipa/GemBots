@@ -29,6 +29,9 @@
     int* memory;
     int memorySize;
     
+    int* savedMemory;
+    int savedMemorySize;
+    
     //////////////////////////////////////
     // Everything above this line comes from the bot description (source or binary
     /////////////////////////////////////
@@ -42,6 +45,9 @@
     /////////////////////////////////////
     
     
+    int unique_tank_id;
+    int collisions;
+    int odometer;
     
     NSString* sessionUniqueRobotIdentifier;
     int team;
@@ -51,15 +57,18 @@
     lint internal_y;
     lint internal_heat;
     
-    int x,y,heading;
+    int x,y,heading, desiredHeading;
+    int internal_speed, throttle;
     int armor;
     int heat;
     bool shieldOn;
     bool overburnOn;
+    bool keepshiftOn;
     
     
     
     int kills, deaths, wins, losses;
+    int killsThisMatch;
     int numberOfMissilesFired, numberOfMissilesConnected;
     int numberOfMinesLayed, numberOfMinesConnected;
     int numberOfTimesHit;
@@ -82,8 +91,32 @@
     SystemCall* systemCall;
     int op1;
     int op2;
+    bool markForSelfDestruction;
+    __weak GemBot* mostRecentlyScannedTank;
+    int gameCycleOfLastDamage;
+    int lastTimeFiredShotHitATank;
+    
+    ///
+    //comm
+    ///
+int comm_channel;
+int comm_channel_to_switch_to;
+bool swtich_comm_channel_this_turn;
+int comm_write_ptr;
+int comm_read_ptr;
+int comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
+int number_of_comm_transmits_this_turn;
+int scan_arc_half_width;
+    
 }
+@property (readwrite,assign) int scan_arc_half_width;
+@property (readwrite,assign) int throttle;
+@property (readwrite,assign) int lastTimeFiredShotHitATank;
+@property (readwrite,assign) int gameCycleOfLastDamage;
+@property (readwrite,assign) int desiredHeading;
 
+@property (readwrite,assign) int internal_speed;
+@property (readwrite,assign) int unique_tank_id;
 @property (readwrite,weak)     PGBotNativeEngine* engine;
 @property (readwrite,assign) int* memory;
 
@@ -111,6 +144,7 @@
 @property (readwrite,assign) int loses;
 @property (readwrite,assign) bool shieldOn;
 @property (readwrite,assign) bool overburnOn;
+@property (readwrite,assign) bool keepshiftOn;
 
 
 @property (readwrite,assign) int numberOfMissilesFired;

@@ -21,14 +21,14 @@
 
 #define NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE 5
 
-typedef unsigned long long lint;
+typedef signed long long lint;
 
 
 
 #define NOP 0
 #define SYS_CALL_NOP 20
-#define READ_DEVICE_NOP 18
-#define WRITE_DEVICE_NOP 18
+#define READ_DEVICE_NOP 20
+#define WRITE_DEVICE_NOP 20
 
 #define SETS0 48
 #define SETS1 49
@@ -50,5 +50,8 @@ extern int right_filled_mask[33];
 #define S1 0xFFFF0000
 #define NOTS1 0x0000FFFF
 #define NOTS0 0xFFFF0000
+
+#define COMMUNICATION_MEMORY_START 256
+#define COMMUNICATION_MEMORY_END 512
 
 #endif

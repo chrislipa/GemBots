@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "EngineDefinitions.h"
 @interface EngineUtility : NSObject
 
 @end
@@ -17,3 +18,6 @@ NSDictionary* constantDictionary();
 NSDictionary* defaultVariablesDictionary();
 int readInteger(NSString* s);
 NSString* uuid();
+
+int getAngleTo(lint x, lint y);
+int anglemod(int a);
