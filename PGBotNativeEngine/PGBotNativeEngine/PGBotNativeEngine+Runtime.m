@@ -18,6 +18,9 @@
 #import "PGBotNativeEngine+CollisionPhase.h"
 #import "PGBotNativeEngine+CommPhase.h"
 #import "PGBotNativeEngine+CheckForStartNextMatch.h"
+#import "PGBotNativeEngine+CleanPhase.h"
+#import "PGBotNativeEngine+Movement.h"
+#import "PGBotNativeEngine+RobotDeath.h"
 
 @implementation PGBotNativeEngine (Runtime)
  

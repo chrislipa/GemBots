@@ -1,5 +1,5 @@
 //
-//  PGBotNativeEngine+CleanPhase.h
+//  PGBotNativeEngine+RobotDeath.h
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 8/1/12.
@@ -8,6 +8,6 @@
 
 #import "PGBotNativeEngine.h"
 
-@interface PGBotNativeEngine (CleanPhase)
--(void) cleanPhase;
+@interface PGBotNativeEngine (RobotDeath)
+-(void) checkForRobotDeathPhase;
 @end

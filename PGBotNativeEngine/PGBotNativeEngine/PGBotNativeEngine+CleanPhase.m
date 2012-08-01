@@ -10,4 +10,8 @@
 
 @implementation PGBotNativeEngine (CleanPhase)
 
+-(void) cleanPhase {
+    
+}
+
 @end

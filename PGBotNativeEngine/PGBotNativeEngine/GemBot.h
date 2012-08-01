@@ -62,8 +62,6 @@
     
     int heading, desiredHeading;
     int internal_speed, throttle;
-    int armor;
-    int heat;
     bool shieldOn;
     bool overburnOn;
     bool keepshiftOn;
