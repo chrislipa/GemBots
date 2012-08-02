@@ -13,18 +13,29 @@
 @implementation Random
 
 -(int) random {
-    if (DETEMINISTIC == 0) {
+    if (isDeterministic == 0) {
         return arc4random();
     }
+    return 0;
 }
 
--(void) reset {
-    seed = DETEMINISTIC_SEED;
+-(void) setDeterministic:(bool)deterministic {
+    isDeterministic = deterministic;
+}
+-(bool) deterministic {
+    return isDeterministic;
+}
+
+-(unsigned int) deterministicSeed {
+    return seed;
+}
+-(void) setDeterministicSeed:(unsigned int)p_seed {
+    seed = p_seed;
 }
 
 -(id) init {
     if (self = [super init]) {
-        [self reset];
+       
     }
     return self;
 }

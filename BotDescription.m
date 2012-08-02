@@ -14,15 +14,38 @@
 
 @implementation BotDescription
 
-@synthesize urlToBot;
-@synthesize name;
-@synthesize description;
-
-
--(id) initWithURL:(NSURL*) url {
+-(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) p_engine andURL:(NSURL*) url {
     if (self = [super init]) {
-        self.urlToBot = url;
+        engine = p_engine;
+        [self setURLToBot:url];
     }
     return self;
+}
+
+-(void) setSourceCode:(NSData*) source {
+    robot = [engine addRobotFromSource:source];
+}
+
+-(void) setURLToBot:(NSURL*) p_url {
+    urlToBot = p_url;
+    NSData* source = [NSData dataWithContentsOfURL:urlToBot];
+    [self setSourceCode:source];
+}
+
+-(NSURL*) urlToBot {
+    return urlToBot;
+}
+
+-(NSString*) name {
+    return robot.name;
+}
+-(NSString*) descript {
+    return robot.descript;
+}
+-(NSString*) author {
+    return robot.author;
+}
+-(int) linesOfCode {
+    return robot.linesOfCode;
 }
 @end

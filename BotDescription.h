@@ -7,18 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameStateDescriptor.h"
+#import "PGBotEngineProtocol.h"
 
 @interface BotDescription : NSObject {
     NSURL* urlToBot;
     NSString* name;
     NSString* description;
+    NSObject<RobotDescription>* robot;
+    NSObject<PGBotEngineProtocol>* engine;
 }
 
-@property (readwrite,retain) NSURL* urlToBot;
-@property (readwrite,retain) NSString* name;
-@property (readwrite,retain) NSString* description;
 
--(id) initWithURL:(NSURL*) path;
+@property (readwrite,retain) NSObject<RobotDescription>* robot;
+-(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) engine andURL:(NSURL*) url;
 
+-(NSString*) name;
+-(NSString*) descript;
+-(NSString*) author;
+-(int) linesOfCode;
+
+-(void) setURLToBot:(NSURL*) url;
+-(NSURL*) urlToBot;
 
 @end

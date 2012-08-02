@@ -13,5 +13,5 @@
 -(lint) internalScanRadius;
 -(lint) maxSpeedNumerator;
 -(lint) maxSpeedDenomenator;
-
+-(lint) initialInternalArmor;
 @end

@@ -10,7 +10,7 @@
 #import "RobotCellView.h"
 #import "RobotCellViewController.h"
 #import "BotDescription.h"
-
+#import "PGBotNativeEngine.h"
 @interface BattleDocumentViewController ()
 
 @end
@@ -23,7 +23,7 @@
     if (self) {
         // Initialization code here.
         robots = [NSMutableArray array];
-    
+        engine = [[PGBotNativeEngine alloc] init];
     }
     
     return self;
@@ -38,7 +38,7 @@
 -(void) promptUserToAddRobots {
     NSOpenPanel* p = [NSOpenPanel openPanel];
     [p setCanChooseFiles:YES];
-    [p setAllowedFileTypes:[NSArray arrayWithObjects:@"pgb", @"pgbbin", nil]];
+    [p setAllowedFileTypes:[NSArray arrayWithObjects:@"gembot", nil]];
     [p setCanChooseDirectories:NO];
     [p setResolvesAliases:YES];
     [p runModal];
@@ -48,8 +48,11 @@
 }
 
 -(void) loadRobotsFromURLs:(NSArray*) urls {
+    [self performSelector:@selector(loadRobotsFromURLs_internal:) withObject:urls afterDelay:1];
+}
+-(void) loadRobotsFromURLs_internal:(NSArray*) urls {
     for (NSURL* url in urls) {
-        BotDescription* d = [[BotDescription alloc] initWithURL:url];
+        BotDescription* d = [[BotDescription alloc] initWithEngine:engine andURL:url];
         [robots addObject:d];
     }
     

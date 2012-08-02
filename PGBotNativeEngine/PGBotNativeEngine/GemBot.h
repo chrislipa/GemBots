@@ -36,7 +36,7 @@
     
     int* savedMemory;
     int savedMemorySize;
-    
+
     //////////////////////////////////////
     // Everything above this line comes from the bot description (source or binary
     /////////////////////////////////////
@@ -143,7 +143,7 @@ int scan_arc_half_width;
 @property (readwrite,assign) int unique_tank_id;
 @property (readwrite,weak)     PGBotNativeEngine* engine;
 @property (readwrite,assign) int* memory;
-
+@property (readwrite,assign) int linesOfCode;
 @property (readwrite,assign) int config_scanner;
 @property (readwrite,assign) int config_weapon;
 @property (readwrite,assign) int config_armor;

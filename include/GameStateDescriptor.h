@@ -14,7 +14,8 @@
 -(NSString*) sessionUniqueRobotIdentifier;
 
 -(NSString*) name;
--(NSString*) description;
+-(NSString*) descript;
+-(int) linesOfCode;
 -(NSString*) author;
 
 -(int) x;

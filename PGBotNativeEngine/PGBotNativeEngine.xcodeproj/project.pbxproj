@@ -66,6 +66,7 @@
 		366B02A815C9A1D1006441FF /* PGBotNativeEngine+RobotDeath.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02A615C9A1D1006441FF /* PGBotNativeEngine+RobotDeath.m */; };
 		366B02AF15C9A4A1006441FF /* GemBot+Movement.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B02AD15C9A4A0006441FF /* GemBot+Movement.h */; };
 		366B02B015C9A4A1006441FF /* GemBot+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02AE15C9A4A0006441FF /* GemBot+Movement.m */; };
+		36A897FE15CA5C960028CEB4 /* PGBotNativeEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D96415C74062003CCD2A /* PGBotNativeEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C3D95C15C74062003CCD2A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95B15C74062003CCD2A /* Cocoa.framework */; };
 		36C3D96615C74062003CCD2A /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */; };
 		36C3D97A15C74180003CCD2A /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D97815C74180003CCD2A /* GemBot.h */; };
@@ -188,6 +189,7 @@
 		366B02A615C9A1D1006441FF /* PGBotNativeEngine+RobotDeath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+RobotDeath.m"; sourceTree = "<group>"; };
 		366B02AD15C9A4A0006441FF /* GemBot+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Movement.h"; sourceTree = "<group>"; };
 		366B02AE15C9A4A0006441FF /* GemBot+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Movement.m"; sourceTree = "<group>"; };
+		36A8980615CA5DA40028CEB4 /* RandomProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomProtocol.h; sourceTree = "<group>"; };
 		36C3D95815C74062003CCD2A /* PGBotNativeEngine.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = PGBotNativeEngine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -391,6 +393,7 @@
 				36C3D96415C74062003CCD2A /* PGBotNativeEngine.h */,
 				36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */,
 				36C3D96215C74062003CCD2A /* Supporting Files */,
+				36A8980615CA5DA40028CEB4 /* RandomProtocol.h */,
 			);
 			path = PGBotNativeEngine;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				3609A10315C9B93C002E312A /* PGBotNativeEngine+CheckForEndOfMatch.h in Headers */,
 				3609A16F15CA13C5002E312A /* Mine.h in Headers */,
 				3609A17715CA1489002E312A /* Mine+Interface.h in Headers */,
+				36A897FE15CA5C960028CEB4 /* PGBotNativeEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

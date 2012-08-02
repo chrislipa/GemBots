@@ -13,7 +13,7 @@
 const int scan_radius_config_options[6] = {250,500,750,1000,1250,1500};
 const lint weapon_percentage_config_options[6] = {50,80,100,120,135,150};
 const lint number_of_mines_config_options[6] = {2,4,6,10,16,24};
-const lint armor_percentage_config_options[6] = {50,66,100,120,130,150};
+const int armor_percentage_config_options[6] = {50,66,100,120,130,150};
 const lint armor_speed_percentage_config_options[6] = {133,120,100,85,75,66};
 const lint shield_config_options[6] = {0,0,0,67,50,33};
 const lint heatsink_config_options[6] = {750,1000,1125,1250,1330,1500};
@@ -29,6 +29,7 @@ const lint speedPercentageMultiplierFromHeat[5][2] ={
 };
     
 
+
 lint indexInto(const lint a[][2], lint v) {
     for (int i =0; ; i++) {
         if (v < a[i][0]) {
@@ -40,7 +41,9 @@ lint indexInto(const lint a[][2], lint v) {
 
 
 @implementation GemBot (Stats)
-
+-(lint) initialInternalArmor {
+    return armorToInternalArmor(INITIAL_ARMOR * armor_percentage_config_options[config_armor])/100;
+}
 -(lint) internalScanRadius {
     return distanceToInternalDistance(scan_radius_config_options[config_scanner]);
 }

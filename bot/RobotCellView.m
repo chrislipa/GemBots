@@ -11,7 +11,7 @@
 @implementation RobotCellView
 
 -(void) refreshWithBot:(BotDescription*) b {
-    [name setStringValue:[[b urlToBot] absoluteString]];
+    [name setStringValue:[b name]];
 }
 
 @end

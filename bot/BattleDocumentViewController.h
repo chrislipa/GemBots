@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "RobotListTableView.h"
 #import "BattleDocument.h"
+#import "GameStateDescriptor.h"
+#import "PGBotEngineProtocol.h"
 
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
     NSMutableArray* robots;
-    
+    NSObject<PGBotEngineProtocol>* engine;
 }
 
 - (IBAction) addRobotButtonEvent:(id)sender;

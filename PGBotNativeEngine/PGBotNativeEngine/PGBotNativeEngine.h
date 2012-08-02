@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 #import "PGBotEngineProtocol.h"
-#import "Random.h"
+#import "RandomProtocol.h"
+#import "GameStateDescriptor.h"
 
-#import "GemBot.h"
+
 @class GemBot;
 @interface PGBotNativeEngine : NSObject <PGBotEngineProtocol,GameStateDescriptor> {
     
@@ -31,7 +32,7 @@
     NSMutableArray* explosions;
     NSMutableArray* soundEffectsInitiatedThisCycle;
     
-    Random* random;
+    NSObject<RandomProtocol>* random;
     NSMutableSet* winnersOfLastMatch;
     int numberOfExplosionsAppliedThisCycle;
 }

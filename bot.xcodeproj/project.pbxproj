@@ -38,6 +38,7 @@
 		3670B92315C602DC00A38D46 /* ArenaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B92215C602DC00A38D46 /* ArenaViewController.m */; };
 		3670B92515C6115F00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
 		3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
+		36A8980515CA5CD00028CEB4 /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
 		36C7946115C63C6600D53ADB /* MasterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7946015C63C6600D53ADB /* MasterController.m */; };
@@ -57,6 +58,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 360892B315BE876D00A06C94;
 			remoteInfo = botImporter;
+		};
+		36A8980315CA5CC90028CEB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 36C3D95715C74062003CCD2A;
+			remoteInfo = PGBotNativeEngine;
 		};
 		36C3D97315C7406F003CCD2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -140,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A8980515CA5CD00028CEB4 /* PGBotNativeEngine.dylib in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
 				3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */,
 			);
@@ -360,6 +369,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				36A8980415CA5CC90028CEB4 /* PBXTargetDependency */,
 				360892B615BE876D00A06C94 /* PBXTargetDependency */,
 			);
 			name = bot;
@@ -546,6 +556,11 @@
 			target = 360892B315BE876D00A06C94 /* botImporter */;
 			targetProxy = 360892B515BE876D00A06C94 /* PBXContainerItemProxy */;
 		};
+		36A8980415CA5CC90028CEB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PGBotNativeEngine;
+			targetProxy = 36A8980315CA5CC90028CEB4 /* PBXContainerItemProxy */;
+		};
 		36C3D98815C76EFF003CCD2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PGBotNativeEngine;
@@ -612,6 +627,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -626,6 +642,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = PGBotNativeEngine/PGBotNativeEngine;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -640,6 +657,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -647,6 +665,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = PGBotNativeEngine/PGBotNativeEngine;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};

@@ -62,7 +62,7 @@
 @synthesize internal_armor;
 @synthesize speedOfMostRecentlyScannedTankAtTimeOfScan;
 @synthesize relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
-
+@synthesize linesOfCode;
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;
     [self compile];

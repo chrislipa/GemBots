@@ -1,22 +1,14 @@
 //
-//  Random.h
+//  RandomProtocol.h
 //  PGBotNativeEngine
 //
-//  Created by Christopher Lipa on 7/31/12.
+//  Created by Christopher Lipa on 8/2/12.
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "RandomProtocol.h"
 
-
-@interface Random : NSObject <RandomProtocol> {
-    bool isDeterministic;
-    int seed;
-}
-
-
-
+@protocol RandomProtocol <NSObject>
 -(int) random;
 -(void) setDeterministic:(bool) deterministic;
 -(bool) deterministic;
