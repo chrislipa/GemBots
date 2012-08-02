@@ -7,6 +7,7 @@
 //
 
 #import "PGBotNativeEngine+RobotDeath.h"
+#import "PGBotNativeEngine+Interface.h"
 #import "GemBot.h"
 #import "GemBot+Interface.h"
 #import "EngineUtility.h"
@@ -18,8 +19,7 @@
     for (GemBot* bot in robots) {
         if ([bot isAlive] && bot.internal_armor <= 0) {
             [bot die];
-            int explosion_internalRadius = distanceToInternalDistance(ROBOT_DEATH_EXPLOSION_RADIUS);
-            [self spawnExplosionAt:bot ofRadius:explosion_internalRadius];
+            [self createExplosionAt:bot ofRadius:distanceToInternalDistance(ROBOT_DEATH_EXPLOSION_RADIUS)];
         }
     }
 }

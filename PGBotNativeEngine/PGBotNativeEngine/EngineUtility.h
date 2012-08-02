@@ -13,6 +13,7 @@
 #import "OrientedObject.h"
 #import "TurretedObject.h"
 
+lint roundedDivision(lint numerator, lint denominator);
 NSDictionary* constantDictionary();
 NSDictionary* defaultVariablesDictionary();
 int readInteger(NSString* s);
@@ -34,3 +35,8 @@ lint heatToInternalHeat(int d) ;
 
 int roundInternalArmorToArmor(lint d) ;
 lint armorToInternalArmor(int d) ;
+
+bool isObjectOutOfBounds(NSObject<TangibleObject>* a);
+void placeObjectBackInBounds(NSObject<TangibleObject>* a);
+void separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, lint distance);
+void separateObjectsByLater(NSObject<QueueableTangibleObject>* a, NSObject<QueueableTangibleObject>* b, lint distance);

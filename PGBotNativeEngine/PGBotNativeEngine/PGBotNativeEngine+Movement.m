@@ -1,5 +1,5 @@
 //
-//  PGBotNativeEngine+Movement.m
+//  PGBotNativeEngine+MovementPhase.m
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 8/1/12.
@@ -7,13 +7,23 @@
 //
 
 #import "PGBotNativeEngine+Movement.h"
+#import "GemBot.h"
+#import "Missile.h"
+#import "GemBot+Interface.h"
 #import "GemBot+Movement.h"
-#import "Missile+Movement.h"
+#import "Missile+Interface.h"
+
 @implementation PGBotNativeEngine (Movement)
-
-
 -(void) movementPhase {
-    for (
+    for (GemBot* bot in robots) {
+        if ([bot isAlive]) {
+            [bot updatePosition];
+        }
     }
+    for (Missile* missile in missiles) {
+        [missile updatePosition];
+    }
+    
+    
 }
 @end

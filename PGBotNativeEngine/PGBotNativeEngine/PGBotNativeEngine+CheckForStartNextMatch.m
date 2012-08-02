@@ -27,7 +27,7 @@
     isMatchCurrentlyActive = YES;
     currentMatch++;
     for (GemBot* bot in robots) {
-        []
+       
     }
     
     

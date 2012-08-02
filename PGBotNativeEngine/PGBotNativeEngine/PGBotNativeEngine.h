@@ -11,20 +11,29 @@
 #import "PGBotEngineProtocol.h"
 #import "Random.h"
 
+#import "GemBot.h"
+@class GemBot;
 @interface PGBotNativeEngine : NSObject <PGBotEngineProtocol,GameStateDescriptor> {
-    Random* random;
+    
+    // Book-keeping for match sets
     int currentMatch;
     int totalNumberOfMatches;
     int gameCycle;
     int maxGameCycles;
+    bool isMatchCurrentlyActive;
+    bool hasSetStarted;
+    bool hasSetEnded;
+    
+    
     NSMutableArray* robots;
     NSMutableArray* missiles;
     NSMutableArray* scans;
     NSMutableArray* explosions;
     NSMutableArray* soundEffectsInitiatedThisCycle;
     
-    bool isMatchCurrentlyActive;
+    Random* random;
     NSMutableSet* winnersOfLastMatch;
+    int numberOfExplosionsAppliedThisCycle;
 }
 
 @property (readwrite,assign) int currentMatch;
@@ -35,15 +44,10 @@
 
 -(id) init;
 
-
--(void) addRobotFromSourceCode:(NSString*) sourceCode;
--(void) addRobotFromBinary:(NSData*) robotData;
+-(void) setRobot:(GemBot*) g toTeam:(int) team;
 
 
--(void) setRobot:(NSString*) sessionUniqueRobotIdentifier toTeam:(int) team;
-
-
--(void) removeRobot:(NSString*) sessionUniqueRobotIdentifier;
+-(void) removeRobot:(GemBot*) g ;
 
 //Returns an array of GemBotDescriptions
 -(NSArray*) robots;

@@ -10,7 +10,8 @@
 
 @interface GemBot (Movement)
 
-
+-(lint) internal_speed;
+-(int) speedInCM;
 -(void) move;
-
+-(void) updatePosition;
 @end

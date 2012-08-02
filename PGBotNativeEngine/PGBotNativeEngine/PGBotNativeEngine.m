@@ -9,6 +9,7 @@
 #import "PGBotNativeEngine.h"
 #import "EngineUtility.h"
 #import "GemBot.h"
+
 @implementation PGBotNativeEngine
 
 @synthesize currentMatch;
@@ -34,16 +35,18 @@
     
 }
 
--(void) addRobotFromSourceCode:(NSString*) sourceCode {
-    
-}
--(void) addRobotFromBinary:(NSData*) robotData {
-    
+-(GemBot*) addRobotFromSource:(NSData*) source {
+    GemBot* g = [GemBot gemBotFromSource:source];
+    if (g) {
+        [robots addObject:g];
+    }
+    return g;
 }
 
 
--(void) removeRobot:(NSString*) sessionUniqueRobotIdentifier {
-    
+
+-(void) removeRobot:(GemBot*) g {
+    [robots removeObject:g];
 }
 
 

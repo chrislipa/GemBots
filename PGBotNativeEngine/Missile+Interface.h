@@ -10,4 +10,5 @@
 
 @interface Missile (Interface)
 -(void) updatePosition;
+-(void) explode;
 @end

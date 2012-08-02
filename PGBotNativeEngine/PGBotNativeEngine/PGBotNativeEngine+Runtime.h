@@ -11,5 +11,5 @@
 @interface PGBotNativeEngine (Runtime)
 
 
--(void) setUpNewRound;
+-(void) executeGameCycle;
 @end

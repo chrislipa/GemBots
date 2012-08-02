@@ -11,6 +11,7 @@
 #import "EngineUtility.h"
 #import "GemBot+Interface.h"
 #import "PGBotNativeEngine+Interface.h"
+#import "GemBot+Movement.h"
 @implementation GemBot (SystemCalls)
 
 
@@ -28,12 +29,12 @@
 }
 //2 1 collisions
 -(void) collisions {
-    [self setMemory:FX :collisions];
+    [self setMemory:FX :number_of_collisions];
 }
 
 //3 1 reset_collisions
 -(void) reset_collisions {
-    collisions = 0;
+    number_of_collisions = 0;
 }
 //4 1 reset_odometer
 -(void) reset_odometer {
@@ -65,9 +66,8 @@
 }
 //9 2 get_target_info
 -(void) get_target_info {
-    [self setMemory:EX :mostRecentlyScannedTank.speed];
-    
-    [self setMemory:FX :anglemod(mostRecentlyScannedTank.heading - self.heading)];
+    [self setMemory:EX :speedOfMostRecentlyScannedTankAtTimeOfScan];
+    [self setMemory:FX :relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan];
 }
 
     
@@ -95,7 +95,7 @@
 }
 //14 5 get_tank_info
 -(void) get_tank_info {
-    [self setMemory:DX :self.speed];
+    [self setMemory:DX :self.speedInCM];
     [self setMemory:EX :engine.gameCycle - gameCycleOfLastDamage];
     [self setMemory:FX :engine.gameCycle - lastTimeFiredShotHitATank];
 }

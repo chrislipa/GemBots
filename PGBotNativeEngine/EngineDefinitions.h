@@ -12,6 +12,9 @@
 #define BOT_MAX_MEMORY 67108864
 #define BOT_SOURCE_CODE_START 2048
 
+#define SPEED_OF_ROBOT 4
+#define SPEED_OF_MISSILE 32
+
 #define ARMOR_MULTIPLIER 0x40000000
 #define DISTANCE_MULTIPLIER 0x40000000
 #define HEAT_MULTIPLIER 0x40000000
@@ -24,10 +27,11 @@
 #define ROBOT_DEATH_EXPLOSION_RADIUS 25
 #define MINE_EXPLOSION_RADIUS 35
 #define MISSILE_EXPLOSION_RADIUS 14
+#define MISSILE_RADIUS 0
 
 typedef signed long long lint;
 
-
+#define ROBOT_RADIUS 2
 
 #define NOP 0
 #define SYS_CALL_NOP 20
@@ -45,7 +49,7 @@ extern int right_filled_mask[33];
 #define B0 0x000000FF
 #define B1 0x0000FF00
 #define B2 0x00FF0000
-#define B3  0x0FF00000
+#define B3  0xFF000000
 #define NOTB0 0xFFFFFF00
 #define NOTB1 0xFFFF00FF
 #define NOTB2 0xFF00FFFF
@@ -59,4 +63,6 @@ extern int right_filled_mask[33];
 #define COMMUNICATION_MEMORY_END 512
 
 #define SONAR_RADIUS 250
+
+#define SIZE_OF_ARENA 1024
 #endif

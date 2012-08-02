@@ -21,26 +21,29 @@
 #import "PGBotNativeEngine+CleanPhase.h"
 #import "PGBotNativeEngine+Movement.h"
 #import "PGBotNativeEngine+RobotDeath.h"
+#import "PGBotNativeEngine+CheckForEndOfMatch.h"
 
 @implementation PGBotNativeEngine (Runtime)
  
 
-
+-(bool) dealWithExplosions {
+    while (numberOfExplosionsAppliedThisCycle < [explosions count]) {
+        [self dealDamagePhase];
+        [self checkForRobotDeathPhase];
+    }
+    return ([self checkForEndMatchPhase]);
+}
 
 -(void) executeGameCycle {
     [self checkForStartNextMatchPhase];
     [self cleanPhase];
-    [self checkForRobotDeathPhase];
-    if ([self checkForEndMatchPhase]) {
-        return;
-    }
     [self robotCPUPhase];
+    if ([self dealWithExplosions]) return;
     [self communicationPhase];
     [self movementPhase];
     [self collisionPhase];
-    [self dealDamagePhase];
-    
-    
+    if ([self dealWithExplosions]) return;
     
 }
+
 @end

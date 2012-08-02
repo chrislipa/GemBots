@@ -7,9 +7,16 @@
 //
 
 #import "Missile+Interface.h"
+#import "EngineDefinitions.h"
+#import "PGBotNativeEngine+Interface.h"
+#import "EngineUtility.h"
 
 @implementation Missile (Interface)
 -(void) updatePosition {
     
+}
+-(void) explode {
+    [engine createExplosionAt:self ofRadius:distanceToInternalDistance(MISSILE_EXPLOSION_RADIUS)];
+    isAlive = NO;
 }
 @end

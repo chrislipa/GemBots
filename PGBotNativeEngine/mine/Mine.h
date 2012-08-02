@@ -1,8 +1,8 @@
 //
-//  Missile.h
+//  Mine.h
 //  PGBotNativeEngine
 //
-//  Created by Christopher Lipa on 7/30/12.
+//  Created by Christopher Lipa on 8/1/12.
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
@@ -12,15 +12,21 @@
 #import "OrientedObject.h"
 #import "PGBotNativeEngine.h"
 #import "GemBot.h"
-@interface Missile : NSObject <MissileDescription, TangibleObject, OrientedObject> {
-    int internal_x,internal_y,heading;
+
+@interface Mine : NSObject  <MineDescription, TangibleObject> {
+    lint internal_x,internal_y,internal_radius;
+    
     PGBotNativeEngine* engine;
     bool isAlive;
     GemBot* owner;
 }
-@property (readwrite,assign) int internal_x;
-@property (readwrite,assign) int internal_y;
-@property (readwrite,assign) int heading;
+@property (readwrite,assign) lint internal_x;
+@property (readwrite,assign) lint internal_y;
+@property (readwrite,assign) lint internal_radius;
 @property (readwrite,retain) PGBotNativeEngine* engine;
 @property (readwrite,retain) GemBot* owner;
+
+
+
+
 @end

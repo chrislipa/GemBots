@@ -14,7 +14,9 @@
 #import "OrientedObject.h"
 #import "TurretedObject.h"
 
-@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject,TurretedObject> {
+
+@class PGBotNativeEngine;
+@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject,TurretedObject,QueueableTangibleObject> {
     NSData* source;
     
     NSString* name;
@@ -49,7 +51,7 @@
     
     
     int unique_tank_id;
-    int collisions;
+    int number_of_collisions;
     int odometer;
     
     NSString* sessionUniqueRobotIdentifier;
@@ -61,7 +63,7 @@
     lint internal_heat;
     
     int heading, desiredHeading;
-    int internal_speed, throttle;
+    int speed_in_terms_of_throttle, throttle;
     bool shieldOn;
     bool overburnOn;
     bool keepshiftOn;
@@ -85,7 +87,7 @@
     int addressOfLastBytMaskedSet;
     int quarterClockCyclesIntoByteMaskedSet;
     
-    __weak PGBotNativeEngine* engine;
+    PGBotNativeEngine* engine;
     
     Opcode* opcode;
     Device* device;
@@ -94,10 +96,13 @@
     int op2;
     bool markForSelfDestruction;
     GemBot* mostRecentlyScannedTank;
+    int speedOfMostRecentlyScannedTankAtTimeOfScan;
+    int relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
+    
     int gameCycleOfLastDamage;
     int lastTimeFiredShotHitATank;
-    
-    bool alive;
+    int lastCollisionTime;
+    bool isAlive;
     
     ///
     //comm
@@ -111,19 +116,30 @@ int comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
 int number_of_comm_transmits_this_turn;
 int scan_arc_half_width;
     
+    // queued shift in position
+    lint queued_dx;
+    lint queued_dy;
 }
 
+@property (readwrite,assign) int relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
+@property (readwrite,assign) int speedOfMostRecentlyScannedTankAtTimeOfScan;
+@property (readwrite,assign) lint queued_dx;
+@property (readwrite,assign) lint queued_dy;
+
+@property (readwrite,assign) int lastCollisionTime;
+@property (readwrite,assign) int number_of_collisions;
+@property (readwrite,assign) lint internal_armor;
 @property (readwrite,retain) GemBot* mostRecentlyScannedTank;
 @property (readwrite, assign) lint internal_x;
 @property (readwrite, assign) lint internal_y;
-@property (readwrite,assign)  bool alive;
+@property (readwrite,assign)  bool isAlive;
 @property (readwrite,assign) int scan_arc_half_width;
 @property (readwrite,assign) int throttle;
 @property (readwrite,assign) int lastTimeFiredShotHitATank;
 @property (readwrite,assign) int gameCycleOfLastDamage;
 @property (readwrite,assign) int desiredHeading;
 
-@property (readwrite,assign) int internal_speed;
+@property (readwrite,assign) int speed_in_terms_of_throttle;
 @property (readwrite,assign) int unique_tank_id;
 @property (readwrite,weak)     PGBotNativeEngine* engine;
 @property (readwrite,assign) int* memory;
@@ -171,5 +187,5 @@ int scan_arc_half_width;
 
 
 
--(bool) isAlive;
+
 @end

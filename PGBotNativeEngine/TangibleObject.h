@@ -12,4 +12,14 @@
 @protocol TangibleObject <NSObject>
 -(lint) internal_x;
 -(lint) internal_y;
+-(lint) internal_radius;
+-(void) setInternal_x:(lint) z;
+-(void) setInternal_y:(lint) z;
+@end
+
+@protocol QueueableTangibleObject <TangibleObject>
+-(lint) queued_dx;
+-(lint) queued_dy;
+-(void) setQueued_dx:(lint)z;
+-(void) setQueued_dy:(lint)z;
 @end

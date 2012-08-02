@@ -16,6 +16,8 @@
 
 @synthesize sessionUniqueRobotIdentifier;
 
+@synthesize queued_dx;
+@synthesize queued_dy;
 @synthesize name;
 @synthesize descript;
 @synthesize author;
@@ -24,7 +26,7 @@
 @synthesize heading;
 @synthesize unique_tank_id;
 @synthesize desiredHeading;
-@synthesize internal_speed;
+@synthesize speed_in_terms_of_throttle;
 @synthesize lastTimeFiredShotHitATank;
 @synthesize mostRecentlyScannedTank;
 @synthesize kills;
@@ -33,6 +35,7 @@
 @synthesize loses;
 @synthesize shieldOn;
 @synthesize overburnOn;
+@synthesize lastCollisionTime;
 @synthesize numberOfMissilesFired;
 @synthesize numberOfMissilesConnected;
 @synthesize numberOfMinesLayed;
@@ -44,7 +47,7 @@
 @synthesize turretHeading;
 @synthesize memory;
 @synthesize gameCycleOfLastDamage;
-
+@synthesize number_of_collisions;
 @synthesize config_scanner;
 @synthesize config_weapon;
 @synthesize config_engine;
@@ -55,7 +58,11 @@
 @synthesize keepshiftOn;
 @synthesize throttle;
 @synthesize scan_arc_half_width;
-@synthesize alive;
+@synthesize isAlive;
+@synthesize internal_armor;
+@synthesize speedOfMostRecentlyScannedTankAtTimeOfScan;
+@synthesize relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
+
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;
     [self compile];
@@ -81,16 +88,16 @@
 
 
 
-
-
-
-
-
-
-
--(bool) isAlive {
-    return alive;
+-(lint) internal_radius {
+    return ROBOT_RADIUS;
 }
+
+
+
+
+
+
+
 -(int) armor {
     return roundInternalArmorToArmor(internal_armor);
 }

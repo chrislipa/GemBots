@@ -44,10 +44,16 @@
 
 
 @protocol MissileDescription <NSObject>
-
 -(int) x;
 -(int) y;
 -(int) heading;
+-(NSObject<RobotDescription>*) owner;
+@end
+
+@protocol MineDescription <NSObject>
+-(int) x;
+-(int) y;
+-(NSObject<RobotDescription>*) owner;
 @end
 
 @protocol ScanDescription <NSObject>

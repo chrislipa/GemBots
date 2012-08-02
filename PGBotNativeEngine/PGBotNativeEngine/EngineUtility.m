@@ -9,6 +9,9 @@
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
 
+lint roundedDivision(lint numerator, lint denominator) {
+    return (numerator+(denominator>>1))/denominator;
+}
 
 lint intsqrt(lint x) {
     lint rv = 0;
@@ -132,6 +135,27 @@ lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObj
     return sqrt(deltaX*deltaX+deltaY*deltaY);
 }
 
+bool isObjectOutOfBounds(NSObject<TangibleObject>* a) {
+    return a.internal_x < a.internal_radius ||
+            a.internal_y < a.internal_radius ||
+    a.internal_x > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius ||
+    a.internal_y > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius;
+    
+}
+void placeObjectBackInBounds(NSObject<TangibleObject>* a) {
+    if (a.internal_x < a.internal_radius) {
+        a.internal_x = a.internal_radius;
+    }
+    if (a.internal_y < a.internal_radius) {
+        a.internal_y = a.internal_radius;
+    }
+    if (a.internal_x >  distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius) {
+        a.internal_x =  distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius;
+    }
+    if (a.internal_y < a.internal_y > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius) {
+        a.internal_y = a.internal_y > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius;
+    }
+}
 int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
     lint d = internal_distance_between(a, b);
     return roundInternalDistanceToDistance(d);
@@ -152,7 +176,7 @@ int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>*
 }
 
 int roundInternalDistanceToDistance(lint d) {
-    return (int)(d + (DISTANCE_MULTIPLIER/2))/DISTANCE_MULTIPLIER;
+    return (int)roundedDivision(d, DISTANCE_MULTIPLIER);
 }
 
 lint distanceToInternalDistance(int d) {
@@ -160,7 +184,7 @@ lint distanceToInternalDistance(int d) {
 }
 
 int roundInternalHeatToHeat(lint d) {
-    return (int)(d + (HEAT_MULTIPLIER/2))/HEAT_MULTIPLIER;
+    return (int)roundedDivision(d, HEAT_MULTIPLIER);
 }
 
 lint heatToInternalHeat(int d) {
@@ -169,10 +193,44 @@ lint heatToInternalHeat(int d) {
 
 
 int roundInternalArmorToArmor(lint d) {
-    return (int)(d + (ARMOR_MULTIPLIER/2))/ARMOR_MULTIPLIER;
+    return (int)roundedDivision(d, ARMOR_MULTIPLIER);
 }
 
 lint armorToInternalArmor(int d) {
     return (((lint)d) *((lint) ARMOR_MULTIPLIER));
 }
+
+void private_separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, lint distance, lint *shiftx, lint* shifty) {
+    lint old_distance = distance_between(a, b);
+    lint dx, dy;
+    if (old_distance > 0) {
+        dx = b.internal_x - a.internal_x;
+        dy = b.internal_y - a.internal_y;
+    } else {
+        dx = 1;
+        dy = 0;
+        old_distance = 1;
+    }
+    *shiftx = (dx * distance) / (2*old_distance);
+    *shifty = (dy * distance) / (2*old_distance);
+}
+
+void separateObjectsByLater(NSObject<QueueableTangibleObject>* a, NSObject<QueueableTangibleObject>* b, lint distance) {
+    lint shiftx, shifty;
+    private_separateObjectsBy(a, b, distance, &shiftx, &shifty);
+    a.queued_dx -= shiftx;
+    a.queued_dy -= shifty;
+    b.queued_dx += shiftx;
+    b.queued_dy += shifty;
+}
+
+void separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, lint distance) {
+    lint shiftx, shifty;
+    private_separateObjectsBy(a, b, distance, &shiftx, &shifty);
+    a.internal_x -= shiftx;
+    a.internal_y -= shifty;
+    b.internal_x += shiftx;
+    b.internal_x += shifty;
+}
+
 

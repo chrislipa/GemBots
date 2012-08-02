@@ -1,5 +1,5 @@
 //
-//  PGBotNativeEngine+MovementPhase.h
+//  PGBotNativeEngine+CheckForEndOfMatch.h
 //  PGBotNativeEngine
 //
 //  Created by Christopher Lipa on 8/1/12.
@@ -8,6 +8,6 @@
 
 #import "PGBotNativeEngine.h"
 
-@interface PGBotNativeEngine (Movement)
--(void) movementPhase;
+@interface PGBotNativeEngine (CheckForEndOfMatch)
+-(bool) checkForEndMatchPhase;
 @end

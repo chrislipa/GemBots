@@ -10,7 +10,8 @@
 
 @interface GemBot (Stats)
 
--(int) scanRadius;
-
+-(lint) internalScanRadius;
+-(lint) maxSpeedNumerator;
+-(lint) maxSpeedDenomenator;
 
 @end

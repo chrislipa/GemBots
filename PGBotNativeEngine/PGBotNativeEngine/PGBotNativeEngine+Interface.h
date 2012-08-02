@@ -16,4 +16,7 @@
 -(int) computeWideRadarFromBot:(GemBot*)bot;
 -(int) computeSonarFromBot:(GemBot*)bot;
 
+
+-(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(lint)r;
+
 @end

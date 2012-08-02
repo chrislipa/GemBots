@@ -10,9 +10,13 @@
 
 @interface GemBot (Interface)
 
--(int) speed;
 
--(void) updatePosition;
+
 
 -(void) dealInternalDamage:(lint) damage ;
+
+-(void) die;
+
+-(void) hadCollision;
+-(void) setScanTargetData ;
 @end

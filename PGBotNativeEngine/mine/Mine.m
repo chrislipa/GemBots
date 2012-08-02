@@ -1,22 +1,18 @@
 //
-//  Missile.m
+//  Mine.m
 //  PGBotNativeEngine
 //
-//  Created by Christopher Lipa on 7/30/12.
+//  Created by Christopher Lipa on 8/1/12.
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
-#import "Missile.h"
+#import "Mine.h"
 #import "EngineUtility.h"
-@implementation Missile
+#import "EngineDefinitions.h"
+@implementation Mine
+@synthesize internal_radius;
 @synthesize internal_x;
 @synthesize internal_y;
-@synthesize heading;
-@synthesize engine;
-@synthesize owner;
--(lint) internal_radius {
-    return MISSILE_RADIUS;
-}
 
 -(int) x {
     return roundInternalDistanceToDistance(internal_x);
@@ -25,5 +21,8 @@
     return roundInternalDistanceToDistance(internal_y);
 }
 
+-(int) radius {
+    return roundInternalDistanceToDistance(internal_radius);
+}
 
 @end
