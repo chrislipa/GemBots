@@ -23,8 +23,9 @@
         s = [s stringByAppendingString:@" LOC"];
         [linesOfCode setStringValue:s];
     }
-    int team = 0;
-
+    int team = [robotCellViewController.documentController emptyTeamForRobot:b.robot];
+    
+    
 }
 
 

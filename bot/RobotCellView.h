@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BotDescription.h"
+#import "RobotCellViewController.h"
+@class RobotCellViewController;
 @interface RobotCellView : NSView {
     IBOutlet NSTextField* name;
     IBOutlet NSTextField* author;
@@ -15,6 +17,7 @@
     IBOutlet NSPopUpButton* teamPicker;
     IBOutlet NSColorWell* colorPicker;
     IBOutlet NSTextField* linesOfCode;
+    IBOutlet RobotCellViewController* robotCellViewController;
 }
 
 -(void) refreshWithBot:(BotDescription*) b;

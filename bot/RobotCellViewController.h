@@ -10,9 +10,10 @@
 #import "BattleDocumentViewController.h"
 
 @interface RobotCellViewController : NSViewController {
-    BattleDocumentViewController* controller;
+    BattleDocumentViewController* documentController;
 }
 
+@property (readonly) BattleDocumentViewController* documentController;
 - (id)initWithNibName:(NSString *)nibNameOrNil andController:(BattleDocumentViewController*) p_controller;
 
 @end

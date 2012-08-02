@@ -14,11 +14,13 @@
 
 @implementation RobotCellViewController
 
+@synthesize documentController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil andController:(BattleDocumentViewController*) p_controller
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
-        controller = p_controller;
+        documentController = p_controller;
     }
     
     return self;
