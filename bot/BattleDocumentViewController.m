@@ -48,7 +48,7 @@
 }
 
 -(void) loadRobotsFromURLs:(NSArray*) urls {
-    [self performSelector:@selector(loadRobotsFromURLs_internal:) withObject:urls afterDelay:1];
+    [self performSelector:@selector(loadRobotsFromURLs_internal:) withObject:urls afterDelay:0.1];
 }
 -(void) loadRobotsFromURLs_internal:(NSArray*) urls {
     for (NSURL* url in urls) {
@@ -63,7 +63,7 @@
     [self loadRobotsFromURLs:[NSArray arrayWithObject:url]];
 }
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    return 100;
+    return 200;
 }
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [robots count];
@@ -75,14 +75,31 @@
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
     
-    RobotCellViewController *myViewController = [[RobotCellViewController alloc] initWithNibName:@"RobotCellViewController" bundle:nil];
+    RobotCellViewController *myViewController = [[RobotCellViewController alloc] initWithNibName:@"RobotCellViewController" andController:self];
     RobotCellView* v = (RobotCellView*) myViewController.view;
     BotDescription* bd = [robots objectAtIndex:row];
     [v refreshWithBot:bd];
     return v;
+}
 
-    
-    
+-(int) numberOfTeams {
+    return (int)[robots count];
+}
+-(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot; {
+    for (int i = 0; ; i++) {
+        bool match = NO;
+        for (NSObject<RobotDescription>* r in robots) {
+            if (r != bot) {
+                if (r.team == i) {
+                    match = YES;
+                    break;
+                }
+            }
+        }
+        if (!match) {
+            return i;
+        }
+    }
 }
 
 @end

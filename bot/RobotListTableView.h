@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BattleDocumentViewController.h"
 
+@class BattleDocumentViewController;
 @interface RobotListTableView : NSTableView {
-    
+    IBOutlet BattleDocumentViewController* controller;
 }
 
 @end

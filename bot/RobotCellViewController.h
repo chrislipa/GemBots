@@ -7,7 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BattleDocumentViewController.h"
 
-@interface RobotCellViewController : NSViewController
+@interface RobotCellViewController : NSViewController {
+    BattleDocumentViewController* controller;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil andController:(BattleDocumentViewController*) p_controller;
 
 @end

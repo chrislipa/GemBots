@@ -41,6 +41,7 @@
 -(bool) compiledCorrectly;
 -(NSString*) compileError;
 -(int) team;
+-(void) setTeam:(int) newTeam;
 @end
 
 

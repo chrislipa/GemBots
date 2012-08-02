@@ -44,7 +44,7 @@
 -(void) compileSource {
     NSString* string = [[NSString alloc] initWithData:source encoding:NSUTF8StringEncoding];
     NSArray* lines = [self stripComments:string];
-    [self readDescription:lines];
+    lines = [self readDescription:lines];
     lines = [self tokenize:lines];
     lines = [self readCompilerDirectives:lines];
     

@@ -11,7 +11,9 @@
 #import "BattleDocument.h"
 #import "GameStateDescriptor.h"
 #import "PGBotEngineProtocol.h"
+#import "BotDescription.h"
 
+@class RobotListTableView;
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
@@ -21,4 +23,7 @@
 
 - (IBAction) addRobotButtonEvent:(id)sender;
 
+
+-(int) numberOfTeams;
+-(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot;
 @end

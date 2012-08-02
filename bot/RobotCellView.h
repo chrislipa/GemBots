@@ -11,8 +11,10 @@
 @interface RobotCellView : NSView {
     IBOutlet NSTextField* name;
     IBOutlet NSTextField* author;
-    IBOutlet NSTextField* descript;
-    
+    IBOutlet NSTextView* descript;
+    IBOutlet NSPopUpButton* teamPicker;
+    IBOutlet NSColorWell* colorPicker;
+    IBOutlet NSTextField* linesOfCode;
 }
 
 -(void) refreshWithBot:(BotDescription*) b;
