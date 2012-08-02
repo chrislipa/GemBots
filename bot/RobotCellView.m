@@ -12,6 +12,8 @@
 
 -(void) refreshWithBot:(BotDescription*) b {
     [name setStringValue:[b name]];
+    [author setStringValue:[b author]];
+    [descript setStringValue:[b descript]];
 }
 
 @end

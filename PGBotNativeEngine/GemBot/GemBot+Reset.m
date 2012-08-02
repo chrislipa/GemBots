@@ -17,10 +17,10 @@
     if (memory) {
         free(memory);
     }
-    memorySize = MAX(savedMemorySize,SOURCE_START);
+    memorySize = MAX(romMemorySize,SOURCE_START);
     memory = (int*)malloc(memorySize*sizeof(int));
-    memcpy(memory,savedMemory, savedMemorySize*sizeof(int));
-    for (int i =savedMemorySize; i<memorySize; i++) {
+    memcpy(memory,romMemory, romMemorySize*sizeof(int));
+    for (int i =romMemorySize; i<memorySize; i++) {
         memory[i] = 0;
     }
     [self setMemory:IP :SOURCE_START];
@@ -41,9 +41,30 @@
 }
 
 -(void) cleanForRecompile {
+    if (memory) {
+        free(memory);
+        memory = NULL;
+    }
+
+    if (romMemory) {
+        free(romMemory);
+        romMemory = NULL;
+    }
+
+    
+    memorySize = romMemorySize = 0;
+    name = nil;
+    descript = nil;
+    compiledCorrectly = NO;
+    compileErrors = [NSMutableArray array];
+    linesOfCode = 0;
+    
     config_armor = DEFAULT_ARMOR_CONFIG;
-    
-    
-    [self cleanForRecompile];
+    config_engine = DEFAULT_ENGINE_CONFIG;
+    config_heatsinks = DEFAULT_HEATSINKS_CONFIG;
+    config_mines = DEFAULT_MINES_CONFIG;
+    config_scanner = DEFAUL_SCANNER_CONFIG;
+    config_shield = DEFAULT_SHIELD_CONFIG;
+    config_weapon = DEFAULT_WEAPON_CONFIG;
 }
 @end

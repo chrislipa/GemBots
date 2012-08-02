@@ -18,18 +18,19 @@
     NSMutableArray* o = [[NSMutableArray alloc] init];
     for (NSString* s in lines) {
         NSString* t = nil;
-        
+        NSString* matchedTag = nil;
         NSArray* tags = [NSArray arrayWithObjects:@"#NAME ",@"#AUTHOR ",@"#DESCRIPTION ", nil];
         for (NSString* tag in tags) {
-            if  ([s hasPrefix:tag]) {
+            if  ([[s uppercaseString] hasPrefix:tag]) {
                 t = [s substringFromIndex:[tag length]];
+                matchedTag  = tag;
             }
         }
-        if ([s hasPrefix:@"#NAME "]) {
+        if ([matchedTag isEqualToString:@"#NAME "]) {
             self.name = t;
-        } else if ([s hasPrefix:@"#AUTHOR "]) {
+        } else if ([matchedTag isEqualToString:@"#AUTHOR "]) {
             self.author = t;
-        } else if ([s hasPrefix:@"#DESCRIPTION "]) {
+        } else if ([matchedTag isEqualToString:@"#DESCRIPTION "]) {
             self.descript = t;
         } else {
             [o addObject:s];
@@ -165,8 +166,8 @@
 }
 
 -(void) readmemory:(NSArray*) a withVariable:(NSMutableDictionary*) variables{
-    int numberOfInstructions = (int)[a count];
-    [self reallocRAM:numberOfInstructions*3+BOT_SOURCE_CODE_START];
+    
+    
     NSDictionary* constants = constantDictionary();
     NSMutableDictionary* labels = [NSMutableDictionary dictionary];
     NSMutableArray* pointersToLabels = [NSMutableArray array];
@@ -205,16 +206,15 @@
         }
         bytes[0] |= ((rtype[0] << 16) | (rtype[1] << 24));
         for (int i =0; i<3; i++) {
-            memory[pc++] = bytes[i];
+            [self setRomMemory:pc++ :bytes[i]];
         }
     }
     for (NSArray* a in pointersToLabels) {
         int memLoc = [[a objectAtIndex:0] intValue];
         NSString* label = [a objectAtIndex:1];
         int labelLoc = [[labels objectForKey:label] intValue];
-        memory[memLoc] = labelLoc;
+        [self setRomMemory:memLoc :labelLoc];
     }
-    linesOfCode = (pc - 1024 + 2) / 3;
 }
 
 

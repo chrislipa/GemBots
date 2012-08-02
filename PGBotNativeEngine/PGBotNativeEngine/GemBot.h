@@ -34,15 +34,15 @@
     int* memory;
     int memorySize;
     
-    int* savedMemory;
-    int savedMemorySize;
+    int* romMemory;
+    int romMemorySize;
 
     //////////////////////////////////////
     // Everything above this line comes from the bot description (source or binary
     /////////////////////////////////////
     
     bool compiledCorrectly;
-    NSString* compileError;
+    NSArray* compileErrors;
     int linesOfCode;
     
     //////////////////////////////////////

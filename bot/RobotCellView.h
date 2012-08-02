@@ -10,6 +10,8 @@
 #import "BotDescription.h"
 @interface RobotCellView : NSView {
     IBOutlet NSTextField* name;
+    IBOutlet NSTextField* author;
+    IBOutlet NSTextField* descript;
     
 }
 

@@ -12,46 +12,71 @@
 
 
 
--(void) reallocRAM:(int) targetSize {
-    if (memory == NULL) {
-        memory = (int*)malloc(targetSize * sizeof(int));
-        memorySize = targetSize;
-        for (int i = 0; i < memorySize; i++) {
-            memory[i] = 0;
+void reallocRAM(int** ivaraddr, int targetSize, int* memoryivaraddr) {
+    targetSize = MAX(targetSize, SOURCE_START);
+    if (*ivaraddr == NULL) {
+        *ivaraddr = (int*)malloc(targetSize * sizeof(int));
+        *memoryivaraddr = targetSize;
+        for (int i = 0; i < *memoryivaraddr; i++) {
+            (*ivaraddr)[i] = 0;
         }
     } else {
-        int old_size = memorySize;
-        int new_size = memorySize;
+        int old_size = *memoryivaraddr;
+        int new_size = *memoryivaraddr;
         while (new_size < targetSize) {
             new_size <<= 2;
         }
         new_size = MIN(new_size, BOT_MAX_MEMORY);
-        memory = (int*)realloc(memory, targetSize * sizeof(int));
-        memorySize = targetSize;
-        for (int i = old_size; i < memorySize; i++) {
-            memory[i] = 0;
+        *ivaraddr = (int*)realloc(*ivaraddr, targetSize * sizeof(int));
+        *memoryivaraddr = targetSize;
+        for (int i = old_size; i < *memoryivaraddr; i++) {
+            (*ivaraddr)[i] = 0;
         }
     }
 }
 
-
--(int) getMemory:(int) addr {
+int getMemory(int* array, int memorySize, int addr) {
     addr &= (BOT_MAX_MEMORY - 1);
     if (addr >=memorySize ) {
         return 0;
     } else {
-        return memory[addr];
+        return array[addr];
     }
 }
+
+
+void setMemory(int** array, int* memorySize,int addr ,int value ){
+    addr &= (BOT_MAX_MEMORY - 1);
+    if (addr >=(*memorySize)) {
+        reallocRAM(array, addr, memorySize);
+    }
+    (*array)[addr] = value;
+}
+
+-(void) reallocRAM:   (int) targetSize {
+    reallocRAM(&memory, targetSize, &memorySize);
+}
+-(void) reallocROM:   (int) targetSize {
+    reallocRAM(&romMemory, targetSize, &romMemorySize);
+}
+
+
+
+-(int) getMemory:(int) addr {
+    return getMemory(memory,memorySize, addr);
+}
+-(int) getRomMemory:(int) addr {
+    return getMemory(romMemory,romMemorySize ,addr);
+}
+
+
 
 -(void) setMemory:(int) addr :(int) value {
-    addr &= (BOT_MAX_MEMORY - 1);
-    if (addr >=memorySize ) {
-        [self reallocRAM:addr];
-    }
-    memory[addr] = value;
+    setMemory(&memory, &memorySize, addr, value);
 }
-
+-(void) setRomMemory:(int) addr :(int) value {
+    setMemory(&romMemory, &romMemorySize, addr, value);
+}
 
 
 @end

@@ -16,7 +16,7 @@
 @implementation GemBot (Compiler)
 
 -(void) compile {
-    [self cleanBetweenRounds];
+    [self cleanForRecompile];
     const char* bytes = [source bytes];
     int i = 0;
     for (int i = 0; i < [source length]; i++) {
@@ -29,17 +29,10 @@
     } else {
         [self compileSource];
     }
-    [self saveCompiledCode];
+    
 }
 
--(void) saveCompiledCode {
-    if (savedMemory) {
-        free(savedMemory);
-    }
-    savedMemorySize = memorySize;
-    savedMemory = (int*)malloc(memorySize*(sizeof(int)));
-    memccpy(savedMemory, memory, memorySize, sizeof(int));
-}
+
 
 
 

@@ -11,4 +11,5 @@
 @interface GemBot (Reset)
 -(void) reboot;
 -(void) cleanBetweenRounds;
+-(void) cleanForRecompile;
 @end

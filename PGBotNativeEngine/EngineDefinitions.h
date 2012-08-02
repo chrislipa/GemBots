@@ -65,4 +65,12 @@ extern int right_filled_mask[33];
 #define SONAR_RADIUS 250
 
 #define SIZE_OF_ARENA 1024
+
+#define DEFAULT_ARMOR_CONFIG 2;
+#define DEFAULT_ENGINE_CONFIG 2;
+#define DEFAULT_HEATSINKS_CONFIG 1;
+#define DEFAULT_MINES_CONFIG 0;
+#define DEFAUL_SCANNER_CONFIG 5;
+#define DEFAULT_SHIELD_CONFIG 0;
+#define DEFAULT_WEAPON_CONFIG 2;
 #endif
