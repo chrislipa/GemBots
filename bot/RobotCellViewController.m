@@ -7,7 +7,7 @@
 //
 
 #import "RobotCellViewController.h"
-
+#import "GemBotEditor.h"
 @interface RobotCellViewController ()
 
 @end
@@ -30,6 +30,10 @@
     return self;
 }
 
+
+-(IBAction) editButtonPressed:(id)sender {
+    [GemBotEditor spawnEditorWindowForURL:robot.url forBattleDocumentController:documentController];
+}
 
 
 @end

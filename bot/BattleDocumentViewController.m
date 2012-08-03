@@ -24,7 +24,9 @@
         // Initialization code here.
         robots = [NSMutableArray array];
         engine = [[PGBotNativeEngine alloc] init];
+        editors = [[NSMutableArray alloc] init];
     }
+    
     
     return self;
 }
@@ -68,7 +70,9 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [robots count];
 }
-
+-(void) addEditor:(id) editor {
+    [editors addObject:editor];
+}
 
 
 - (NSView *)tableView:(NSTableView *)tableView

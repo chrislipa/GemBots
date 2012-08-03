@@ -19,6 +19,7 @@
     IBOutlet RobotListTableView* robotList;
     NSMutableArray* robots;
     NSObject<PGBotEngineProtocol>* engine;
+    NSMutableArray* editors;
 }
 
 - (IBAction) addRobotButtonEvent:(id)sender;
@@ -26,4 +27,5 @@
 
 -(int) numberOfTeams;
 -(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot;
+-(void) addEditor:(id) editor;
 @end

@@ -97,7 +97,9 @@
 
 
 
-
+-(NSURL*) url {
+    return nil;
+}
 
 
 -(int) armor {

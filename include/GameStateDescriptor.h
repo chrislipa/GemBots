@@ -44,6 +44,7 @@
 -(void) setTeam:(int) newTeam;
 -(NSColor*) color;
 -(void) setColor:(NSColor*) color;
+-(NSURL*) url;
 @end
 
 
