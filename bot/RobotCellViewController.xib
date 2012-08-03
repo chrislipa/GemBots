@@ -26,7 +26,6 @@
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
 			<string>NSTextView</string>
-			<string>NSViewController</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -45,7 +44,6 @@
 			<object class="NSCustomObject" id="1004">
 				<string key="NSClassName">NSApplication</string>
 			</object>
-			<object class="NSViewController" id="957351833"/>
 			<object class="NSCustomView" id="1005">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
@@ -59,7 +57,6 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{3, 19}, {131, 17}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="89872429"/>
 								<string key="NSReuseIdentifierKey">_NS:1535</string>
 								<bool key="NSEnabled">YES</bool>
@@ -106,28 +103,8 @@
 											<object class="NSTextView" id="161673310">
 												<reference key="NSNextResponder" ref="695097470"/>
 												<int key="NSvFlags">2322</int>
-												<set class="NSMutableSet" key="NSDragTypes">
-													<string>Apple HTML pasteboard type</string>
-													<string>Apple PDF pasteboard type</string>
-													<string>Apple PICT pasteboard type</string>
-													<string>Apple PNG pasteboard type</string>
-													<string>Apple URL pasteboard type</string>
-													<string>CorePasteboardFlavorType 0x6D6F6F76</string>
-													<string>NSColor pasteboard type</string>
-													<string>NSFilenamesPboardType</string>
-													<string>NSStringPboardType</string>
-													<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-													<string>NeXT RTFD pasteboard type</string>
-													<string>NeXT Rich Text Format v1.0 pasteboard type</string>
-													<string>NeXT TIFF v4.0 pasteboard type</string>
-													<string>NeXT font pasteboard type</string>
-													<string>NeXT ruler pasteboard type</string>
-													<string>WebURLsWithTitlesPboardType</string>
-													<string>public.url</string>
-												</set>
 												<string key="NSFrameSize">{244, 70}</string>
 												<reference key="NSSuperview" ref="695097470"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="756165989"/>
 												<string key="NSReuseIdentifierKey">_NS:13</string>
 												<object class="NSTextContainer" key="NSTextContainer" id="223129724">
@@ -193,7 +170,6 @@
 										</array>
 										<string key="NSFrame">{{1, 1}, {244, 70}}</string>
 										<reference key="NSSuperview" ref="248274232"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="161673310"/>
 										<string key="NSReuseIdentifierKey">_NS:11</string>
 										<reference key="NSDocView" ref="161673310"/>
@@ -358,7 +334,6 @@ wGw</bytes>
 										<int key="NSvFlags">256</int>
 										<string key="NSFrame">{{245, 1}, {15, 70}}</string>
 										<reference key="NSSuperview" ref="248274232"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="284455847"/>
 										<string key="NSReuseIdentifierKey">_NS:83</string>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -371,7 +346,6 @@ wGw</bytes>
 										<int key="NSvFlags">-2147483392</int>
 										<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
 										<reference key="NSSuperview" ref="248274232"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="695097470"/>
 										<string key="NSReuseIdentifierKey">_NS:33</string>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -384,7 +358,6 @@ wGw</bytes>
 								</array>
 								<string key="NSFrame">{{6, 71}, {261, 72}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="694534925"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="NSsFlags">133138</int>
@@ -400,7 +373,6 @@ wGw</bytes>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{48, 43}, {61, 26}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="341818455"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
@@ -477,7 +449,6 @@ wGw</bytes>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{156, 6}, {111, 25}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:22</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="218654744">
@@ -501,7 +472,6 @@ wGw</bytes>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{165, 46}, {43, 17}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1047529746"/>
 								<string key="NSReuseIdentifierKey">_NS:1535</string>
 								<bool key="NSEnabled">YES</bool>
@@ -522,7 +492,6 @@ wGw</bytes>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{3, 50}, {43, 17}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="948204146"/>
 								<string key="NSReuseIdentifierKey">_NS:1535</string>
 								<bool key="NSEnabled">YES</bool>
@@ -546,7 +515,6 @@ wGw</bytes>
 								</set>
 								<string key="NSFrame">{{213, 46}, {44, 23}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="356368755"/>
 								<string key="NSReuseIdentifierKey">_NS:1116</string>
 								<bool key="NSEnabled">YES</bool>
@@ -562,7 +530,6 @@ wGw</bytes>
 								<int key="NSvFlags">264</int>
 								<string key="NSFrame">{{3, 151}, {257, 27}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="248274232"/>
 								<string key="NSReuseIdentifierKey">_NS:1535</string>
 								<bool key="NSEnabled">YES</bool>
@@ -587,7 +554,6 @@ wGw</bytes>
 								<int key="NSvFlags">266</int>
 								<string key="NSFrame">{{9, 138}, {251, 17}}</string>
 								<reference key="NSSuperview" ref="788798041"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="646561841"/>
 								<string key="NSReuseIdentifierKey">_NS:1535</string>
 								<bool key="NSEnabled">YES</bool>
@@ -610,7 +576,6 @@ wGw</bytes>
 						</array>
 						<string key="NSFrameSize">{277, 184}</string>
 						<reference key="NSSuperview" ref="1005"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="887828537"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">NSView</string>
@@ -618,7 +583,6 @@ wGw</bytes>
 				</array>
 				<string key="NSFrameSize">{277, 184}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="788798041"/>
 				<string key="NSClassName">RobotCellView</string>
 			</object>
@@ -632,6 +596,14 @@ wGw</bytes>
 						<reference key="destination" ref="1005"/>
 					</object>
 					<int key="connectionID">2</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">editButtonPressed:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="89872429"/>
+					</object>
+					<int key="connectionID">509</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -683,14 +655,6 @@ wGw</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">robotCellViewController</string>
-						<reference key="source" ref="1005"/>
-						<reference key="destination" ref="957351833"/>
-					</object>
-					<int key="connectionID">500</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">backingView</string>
 						<reference key="source" ref="1005"/>
 						<reference key="destination" ref="788798041"/>
@@ -699,19 +663,11 @@ wGw</bytes>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">view</string>
-						<reference key="source" ref="957351833"/>
-						<reference key="destination" ref="1005"/>
+						<string key="label">robotCellViewController</string>
+						<reference key="source" ref="1005"/>
+						<reference key="destination" ref="1001"/>
 					</object>
-					<int key="connectionID">23</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">editButtonPressed:</string>
-						<reference key="source" ref="957351833"/>
-						<reference key="destination" ref="89872429"/>
-					</object>
-					<int key="connectionID">508</int>
+					<int key="connectionID">510</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1650,11 +1606,6 @@ wGw</bytes>
 						<reference key="object" ref="1021762883"/>
 						<reference key="parent" ref="356368755"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">3</int>
-						<reference key="object" ref="957351833"/>
-						<reference key="parent" ref="0"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1741,8 +1692,6 @@ wGw</bytes>
 				<boolean value="NO" key="24.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="3.CustomClassName">RobotCellViewController</string>
-				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<array class="NSMutableArray" key="30.IBNSViewMetadataConstraints">
 					<reference ref="409873666"/>
 				</array>
@@ -1789,91 +1738,9 @@ wGw</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">508</int>
+			<int key="maxID">510</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">NSLayoutConstraint</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">RobotCellView</string>
-					<string key="superclassName">NSView</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="author">NSTextField</string>
-						<string key="backingView">NSView</string>
-						<string key="colorPicker">NSColorWell</string>
-						<string key="descript">NSTextView</string>
-						<string key="linesOfCode">NSTextField</string>
-						<string key="name">NSTextField</string>
-						<string key="robotCellViewController">RobotCellViewController</string>
-						<string key="teamPicker">NSPopUpButton</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="author">
-							<string key="name">author</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="backingView">
-							<string key="name">backingView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="colorPicker">
-							<string key="name">colorPicker</string>
-							<string key="candidateClassName">NSColorWell</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="descript">
-							<string key="name">descript</string>
-							<string key="candidateClassName">NSTextView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="linesOfCode">
-							<string key="name">linesOfCode</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="name">
-							<string key="name">name</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="robotCellViewController">
-							<string key="name">robotCellViewController</string>
-							<string key="candidateClassName">RobotCellViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="teamPicker">
-							<string key="name">teamPicker</string>
-							<string key="candidateClassName">NSPopUpButton</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/RobotCellView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">RobotCellViewController</string>
-					<string key="superclassName">NSViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">editButtonPressed:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">editButtonPressed:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">editButtonPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/RobotCellViewController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
