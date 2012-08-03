@@ -18,8 +18,10 @@
     IBOutlet NSColorWell* colorPicker;
     IBOutlet NSTextField* linesOfCode;
     IBOutlet RobotCellViewController* robotCellViewController;
+    IBOutlet NSView* backingView;
 }
 
+@property (readonly) NSColorWell* colorPicker;
 -(void) refreshWithBot:(BotDescription*) b;
-
+-(void) refreshColor;
 @end

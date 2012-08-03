@@ -42,6 +42,8 @@
 -(NSString*) compileError;
 -(int) team;
 -(void) setTeam:(int) newTeam;
+-(NSColor*) color;
+-(void) setColor:(NSColor*) color;
 @end
 
 
@@ -65,7 +67,7 @@
 -(int) radius;
 -(int) startAngle;
 -(int) endAngle;
-
+-(NSObject<RobotDescription>*) owner;
 @end
 
 @protocol ExplosionDescription <NSObject>

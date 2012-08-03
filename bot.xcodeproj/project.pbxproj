@@ -38,6 +38,8 @@
 		3670B92315C602DC00A38D46 /* ArenaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B92215C602DC00A38D46 /* ArenaViewController.m */; };
 		3670B92515C6115F00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
 		3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
+		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
+		369E2F7C15CB77F50065B3E7 /* GemBotEditor.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F6515CB77A50065B3E7 /* GemBotEditor.dylib */; };
 		36A8980515CA5CD00028CEB4 /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
@@ -58,6 +60,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 360892B315BE876D00A06C94;
 			remoteInfo = botImporter;
+		};
+		369E2F6415CB77A50065B3E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369E2F5D15CB77A40065B3E7 /* GemBotEditor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 369E2F3815CB77270065B3E7;
+			remoteInfo = GemBotEditor;
+		};
+		369E2F6615CB77AA0065B3E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369E2F5D15CB77A40065B3E7 /* GemBotEditor.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 369E2F3715CB77270065B3E7;
+			remoteInfo = GemBotEditor;
 		};
 		36A8980315CA5CC90028CEB4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -134,6 +150,8 @@
 		3670B92115C602DC00A38D46 /* ArenaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArenaViewController.h; sourceTree = "<group>"; };
 		3670B92215C602DC00A38D46 /* ArenaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArenaViewController.m; sourceTree = "<group>"; };
 		3670B92415C6115F00A38D46 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		369E2F5D15CB77A40065B3E7 /* GemBotEditor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GemBotEditor.xcodeproj; path = GemBotEditor/GemBotEditor.xcodeproj; sourceTree = "<group>"; };
 		36C3D8D615C71A45003CCD2A /* PGBotEngineProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PGBotEngineProtocol.h; path = include/PGBotEngineProtocol.h; sourceTree = "<group>"; };
 		36C3D8D715C71A66003CCD2A /* GameStateDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateDescriptor.h; path = include/GameStateDescriptor.h; sourceTree = "<group>"; };
 		36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PGBotNativeEngine.xcodeproj; path = PGBotNativeEngine/PGBotNativeEngine.xcodeproj; sourceTree = "<group>"; };
@@ -148,6 +166,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				369E2F7C15CB77F50065B3E7 /* GemBotEditor.dylib in Frameworks */,
+				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
 				36A8980515CA5CD00028CEB4 /* PGBotNativeEngine.dylib in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
 				3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */,
@@ -182,6 +202,8 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				369E2F5D15CB77A40065B3E7 /* GemBotEditor.xcodeproj */,
+				369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */,
 				36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */,
 				36C3D8D515C71A2A003CCD2A /* include */,
 				36C7945F15C63C6600D53ADB /* MasterController.h */,
@@ -338,6 +360,14 @@
 			name = Arena;
 			sourceTree = "<group>";
 		};
+		369E2F5E15CB77A40065B3E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				369E2F6515CB77A50065B3E7 /* GemBotEditor.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		36C3D8D515C71A2A003CCD2A /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +399,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				369E2F6715CB77AA0065B3E7 /* PBXTargetDependency */,
 				36A8980415CA5CC90028CEB4 /* PBXTargetDependency */,
 				360892B615BE876D00A06C94 /* PBXTargetDependency */,
 			);
@@ -434,6 +465,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 369E2F5E15CB77A40065B3E7 /* Products */;
+					ProjectRef = 369E2F5D15CB77A40065B3E7 /* GemBotEditor.xcodeproj */;
+				},
+				{
 					ProductGroup = 36C3D96D15C7406E003CCD2A /* Products */;
 					ProjectRef = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
 				},
@@ -448,6 +483,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		369E2F6515CB77A50065B3E7 /* GemBotEditor.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = GemBotEditor.dylib;
+			remoteRef = 369E2F6415CB77A50065B3E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
@@ -555,6 +597,11 @@
 			isa = PBXTargetDependency;
 			target = 360892B315BE876D00A06C94 /* botImporter */;
 			targetProxy = 360892B515BE876D00A06C94 /* PBXContainerItemProxy */;
+		};
+		369E2F6715CB77AA0065B3E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GemBotEditor;
+			targetProxy = 369E2F6615CB77AA0065B3E7 /* PBXContainerItemProxy */;
 		};
 		36A8980415CA5CC90028CEB4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

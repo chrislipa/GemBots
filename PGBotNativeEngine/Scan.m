@@ -14,4 +14,5 @@
 @synthesize radius;
 @synthesize startAngle;
 @synthesize endAngle;
+@synthesize owner;
 @end

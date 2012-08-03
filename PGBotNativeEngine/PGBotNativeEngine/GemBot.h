@@ -119,8 +119,9 @@ int scan_arc_half_width;
     // queued shift in position
     lint queued_dx;
     lint queued_dy;
+    NSColor* color;
 }
-
+@property (readwrite, retain) NSColor* color;
 @property (readwrite,assign) int relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
 @property (readwrite,assign) int speedOfMostRecentlyScannedTankAtTimeOfScan;
 @property (readwrite,assign) lint queued_dx;

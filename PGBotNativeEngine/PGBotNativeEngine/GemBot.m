@@ -63,6 +63,8 @@
 @synthesize speedOfMostRecentlyScannedTankAtTimeOfScan;
 @synthesize relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
 @synthesize linesOfCode;
+@synthesize color;
+
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;
     [self compile];

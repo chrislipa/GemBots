@@ -1,0 +1,253 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		369E2F3C15CB77270065B3E7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F3B15CB77270065B3E7 /* Cocoa.framework */; };
+		369E2F4615CB77270065B3E7 /* GemBotEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E2F4515CB77270065B3E7 /* GemBotEditor.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		369E2F3815CB77270065B3E7 /* GemBotEditor.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = GemBotEditor.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		369E2F3B15CB77270065B3E7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		369E2F3E15CB77270065B3E7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		369E2F3F15CB77270065B3E7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		369E2F4015CB77270065B3E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		369E2F4315CB77270065B3E7 /* GemBotEditor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GemBotEditor-Prefix.pch"; sourceTree = "<group>"; };
+		369E2F4415CB77270065B3E7 /* GemBotEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GemBotEditor.h; sourceTree = "<group>"; };
+		369E2F4515CB77270065B3E7 /* GemBotEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GemBotEditor.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		369E2F3515CB77270065B3E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				369E2F3C15CB77270065B3E7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		369E2F2D15CB77270065B3E7 = {
+			isa = PBXGroup;
+			children = (
+				369E2F4115CB77270065B3E7 /* GemBotEditor */,
+				369E2F3A15CB77270065B3E7 /* Frameworks */,
+				369E2F3915CB77270065B3E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		369E2F3915CB77270065B3E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				369E2F3815CB77270065B3E7 /* GemBotEditor.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		369E2F3A15CB77270065B3E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				369E2F3B15CB77270065B3E7 /* Cocoa.framework */,
+				369E2F3D15CB77270065B3E7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		369E2F3D15CB77270065B3E7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				369E2F3E15CB77270065B3E7 /* AppKit.framework */,
+				369E2F3F15CB77270065B3E7 /* CoreData.framework */,
+				369E2F4015CB77270065B3E7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		369E2F4115CB77270065B3E7 /* GemBotEditor */ = {
+			isa = PBXGroup;
+			children = (
+				369E2F4415CB77270065B3E7 /* GemBotEditor.h */,
+				369E2F4515CB77270065B3E7 /* GemBotEditor.m */,
+				369E2F4215CB77270065B3E7 /* Supporting Files */,
+			);
+			path = GemBotEditor;
+			sourceTree = "<group>";
+		};
+		369E2F4215CB77270065B3E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				369E2F4315CB77270065B3E7 /* GemBotEditor-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		369E2F3615CB77270065B3E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		369E2F3715CB77270065B3E7 /* GemBotEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 369E2F4915CB77270065B3E7 /* Build configuration list for PBXNativeTarget "GemBotEditor" */;
+			buildPhases = (
+				369E2F3415CB77270065B3E7 /* Sources */,
+				369E2F3515CB77270065B3E7 /* Frameworks */,
+				369E2F3615CB77270065B3E7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GemBotEditor;
+			productName = GemBotEditor;
+			productReference = 369E2F3815CB77270065B3E7 /* GemBotEditor.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		369E2F2F15CB77270065B3E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Christopher Lipa";
+			};
+			buildConfigurationList = 369E2F3215CB77270065B3E7 /* Build configuration list for PBXProject "GemBotEditor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 369E2F2D15CB77270065B3E7;
+			productRefGroup = 369E2F3915CB77270065B3E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				369E2F3715CB77270065B3E7 /* GemBotEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		369E2F3415CB77270065B3E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				369E2F4615CB77270065B3E7 /* GemBotEditor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		369E2F4715CB77270065B3E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		369E2F4815CB77270065B3E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		369E2F4A15CB77270065B3E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GemBotEditor/GemBotEditor-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		369E2F4B15CB77270065B3E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GemBotEditor/GemBotEditor-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		369E2F3215CB77270065B3E7 /* Build configuration list for PBXProject "GemBotEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				369E2F4715CB77270065B3E7 /* Debug */,
+				369E2F4815CB77270065B3E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		369E2F4915CB77270065B3E7 /* Build configuration list for PBXNativeTarget "GemBotEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				369E2F4A15CB77270065B3E7 /* Debug */,
+				369E2F4B15CB77270065B3E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 369E2F2F15CB77270065B3E7 /* Project object */;
+}
