@@ -53,6 +53,9 @@
 		367ECAFC15CDD879003692BB /* icon_256x256@2x.icns in Resources */ = {isa = PBXBuildFile; fileRef = 367ECAF015CDD879003692BB /* icon_256x256@2x.icns */; };
 		367ECAFD15CDD879003692BB /* icon_512x512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 367ECAF115CDD879003692BB /* icon_512x512.icns */; };
 		367ECB0315CDDC7E003692BB /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 367ECB0215CDDC7E003692BB /* SBJson.framework */; };
+		367ECB0615CDE50C003692BB /* close_button_red_icon_160.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0415CDE50C003692BB /* close_button_red_icon_160.png */; };
+		367ECB0715CDE50C003692BB /* close_button_red_icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0515CDE50C003692BB /* close_button_red_icon_80.png */; };
+		367ECB0915CDE57E003692BB /* close_button_red_icon_160@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0815CDE57E003692BB /* close_button_red_icon_160@2x.png */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
 		36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
@@ -177,6 +180,9 @@
 		367ECAF015CDD879003692BB /* icon_256x256@2x.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "icon_256x256@2x.icns"; sourceTree = "<group>"; };
 		367ECAF115CDD879003692BB /* icon_512x512.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon_512x512.icns; sourceTree = "<group>"; };
 		367ECB0215CDDC7E003692BB /* SBJson.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SBJson.framework; path = PGBotNativeEngine/external/SBJson_3.1/build/Debug/SBJson.framework; sourceTree = "<group>"; };
+		367ECB0415CDE50C003692BB /* close_button_red_icon_160.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button_red_icon_160.png; sourceTree = "<group>"; };
+		367ECB0515CDE50C003692BB /* close_button_red_icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button_red_icon_80.png; sourceTree = "<group>"; };
+		367ECB0815CDE57E003692BB /* close_button_red_icon_160@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_button_red_icon_160@2x.png"; sourceTree = "<group>"; };
 		369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		36C3D8D615C71A45003CCD2A /* PGBotEngineProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PGBotEngineProtocol.h; path = include/PGBotEngineProtocol.h; sourceTree = "<group>"; };
 		36C3D8D715C71A66003CCD2A /* GameStateDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateDescriptor.h; path = include/GameStateDescriptor.h; sourceTree = "<group>"; };
@@ -427,6 +433,9 @@
 		367ECA6215CDD0F7003692BB /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				367ECB0815CDE57E003692BB /* close_button_red_icon_160@2x.png */,
+				367ECB0415CDE50C003692BB /* close_button_red_icon_160.png */,
+				367ECB0515CDE50C003692BB /* close_button_red_icon_80.png */,
 				367ECA6815CDD0F7003692BB /* close_button_red_icon_40.png */,
 				367ECA6915CDD0F7003692BB /* close_button_red_icon_40@2x.png */,
 			);
@@ -601,6 +610,9 @@
 				367ECAFB15CDD879003692BB /* icon_256x256.icns in Resources */,
 				367ECAFC15CDD879003692BB /* icon_256x256@2x.icns in Resources */,
 				367ECAFD15CDD879003692BB /* icon_512x512.icns in Resources */,
+				367ECB0615CDE50C003692BB /* close_button_red_icon_160.png in Resources */,
+				367ECB0715CDE50C003692BB /* close_button_red_icon_80.png in Resources */,
+				367ECB0915CDE57E003692BB /* close_button_red_icon_160@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

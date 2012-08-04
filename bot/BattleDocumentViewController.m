@@ -211,4 +211,14 @@
     return teamTitles;
 }
 
+-(void) removeRobot:(BotContainer*) bot {
+    NSUInteger row = [robots indexOfObject:bot];
+    id key = [NSNumber numberWithLong:row];
+    
+    
+    [robots removeObject:bot];
+    [robotCellViewControllers removeObjectForKey:key];
+    [robotList reloadData];
+}
+
 @end

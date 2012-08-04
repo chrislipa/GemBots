@@ -22,6 +22,7 @@
 @property (readonly) BotContainer* botContainer;
 - (id)initWithNibName:(NSString *)nibNameOrNil andController:(BattleDocumentViewController*) p_controller  andRobot:(BotContainer*) bc;
 -(IBAction) editButtonPressed:(id)sender;
+-(IBAction) closeCallback:(id)sender;
 -(void) refresh ;
 
 @end

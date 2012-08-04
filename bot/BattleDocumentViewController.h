@@ -37,4 +37,5 @@
 -(void) reccompileRobot:(BotContainer*) bot;
 -(NSColor*) unusedColorForNewRobot;
 -(int) unusedTeamForRobot:(BotContainer*) bot;
+-(void) removeRobot:(BotContainer*) bot;
 @end

@@ -69,8 +69,8 @@
         [descriptionScrollView setHidden:NO];
     }
     [self refreshTeams];
-    
 }
+
 
 
 

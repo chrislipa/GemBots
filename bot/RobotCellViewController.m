@@ -48,4 +48,7 @@
     [cell refreshWithBot:botContainer];
 }
 
+-(IBAction) closeCallback:(id)sender {
+    [documentController removeRobot:botContainer];
+}
 @end
