@@ -8,6 +8,7 @@
 
 #import "Opcode.h"
 #import "EngineDefinitions.h"
+#import "EngineUtility.h"
 @implementation Opcode
 @synthesize opcode;
 @synthesize time;
@@ -34,7 +35,7 @@
 NSMutableArray* newOpcodesFromTextFile(NSString* file) {
     NSMutableArray* array = [[NSMutableArray alloc] init];
     
-    NSString* fileName = [[NSBundle mainBundle] pathForResource:file ofType:@"txt"];
+    NSString* fileName = pathToTextFile(file);
     NSString* contents =  [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     
     NSArray* lines = [contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
@@ -87,7 +88,7 @@ NSArray* opcodeArray() {
 NSArray* newDevicesFromTextFile(NSString* file, bool write) {
     NSMutableArray* array = [[NSMutableArray alloc] init];
     
-    NSString* fileName = [[NSBundle mainBundle] pathForResource:file ofType:@"txt"];
+    NSString* fileName = pathToTextFile(file);
     NSString* contents =  [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     
     NSArray* lines = [contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
@@ -146,7 +147,7 @@ NSArray* writeDeviceArray() {
 NSArray* newSystemCallsFromTextFile(NSString* file, bool write) {
     NSMutableArray* array = [[NSMutableArray alloc] init];
     
-    NSString* fileName = [[NSBundle mainBundle] pathForResource:file ofType:@"txt"];
+    NSString* fileName = pathToTextFile(file);
     NSString* contents =  [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     
     NSArray* lines = [contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];

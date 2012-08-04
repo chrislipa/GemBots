@@ -30,10 +30,37 @@
         [self compileSource];
     }
     
+    [self countLinesOfCode];
+    [self checkIfValid];
 }
 
 
 
+-(void) countLinesOfCode {
+    int x = romMemorySize-1;
+    while (x >= SOURCE_START && romMemory[x] == 0) {x--;}
+    linesOfCode = (x - SOURCE_START + 3) / 3;
+}
+
+
+-(void) verifyParameter:(int*) verifyParameter {
+    if (*verifyParameter < 0 || *verifyParameter > 5) {
+        compiledCorrectly = NO;
+    }
+}
+
+-(void) checkIfValid {
+    [self verifyParameter:&config_armor];
+    [self verifyParameter:&config_engine];
+    [self verifyParameter:&config_heatsinks];
+    [self verifyParameter:&config_mines];
+    [self verifyParameter:&config_scanner];
+    [self verifyParameter:&config_shield];
+    [self verifyParameter:&config_weapon];
+    if (config_armor + config_engine + config_heatsinks + config_mines + config_scanner + config_shield + config_weapon > MAX_ARMAMENT_WEIGHT) {
+        compiledCorrectly = NO;
+    }
+}
 
 
 @end

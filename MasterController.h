@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BotContainer.h"
+#import "BattleDocumentViewController.h"
 
-@interface MasterController : NSObject
+@interface MasterController : NSObject {
+    NSMutableDictionary* editorWindows;
+}
+
++(MasterController*) singleton;
+-(void) spawnEditorWindowForBotContainer:(BotContainer*) bc forBattleDocumentController:(BattleDocumentViewController*) controller;
 
 @end

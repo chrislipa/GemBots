@@ -6,13 +6,13 @@
 //
 //
 
-#import "BotDescription.h"
+#import "BotContainer.h"
 
 
 
 
 
-@implementation BotDescription
+@implementation BotContainer
 
 -(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) p_engine andURL:(NSURL*) url {
     if (self = [super init]) {
@@ -23,11 +23,17 @@
 }
 
 -(void) setSourceCode:(NSData*) source {
-    robot = [engine addRobotFromSource:source];
+    if (!robot) {
+        robot = [engine newRobot];
+    }
+    [engine recompileRobot:(NSObject<RobotDescription>*) robot withSource:source];
 }
 
 -(void) setURLToBot:(NSURL*) p_url {
     urlToBot = p_url;
+    [self recompile];
+}
+-(void) recompile {
     NSData* source = [NSData dataWithContentsOfURL:urlToBot];
     [self setSourceCode:source];
 }
@@ -37,15 +43,31 @@
 }
 
 -(NSString*) name {
-    return robot.name;
+    if (robot.name) {
+        return robot.name;
+    } else {
+        return @"";
+    }
+    
 }
 -(NSString*) descript {
-    return robot.descript;
+    if ( robot.descript) {
+        return robot.descript;
+    } else {
+        return @"";
+    }
+    
 }
 -(NSString*) author {
-    return robot.author;
+    if (robot.author) {
+        return robot.author;
+    } else {
+        return @"";
+    }
+    
 }
 -(int) linesOfCode {
     return robot.linesOfCode;
 }
+
 @end

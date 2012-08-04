@@ -41,15 +41,11 @@
 }
 
 -(void) cleanForRecompile {
-    if (memory) {
-        free(memory);
-        memory = NULL;
-    }
-
-    if (romMemory) {
-        free(romMemory);
-        romMemory = NULL;
-    }
+    compiledCorrectly = YES;
+    name = nil;
+    descript = nil;
+    author = nil;
+    [self cleanMemory];
 
     
     memorySize = romMemorySize = 0;

@@ -185,7 +185,8 @@ int scan_arc_half_width;
 
 +(GemBot*) gemBotFromSource:(NSData*) source;
 -(void) setGemBotSource:(NSData*)source;
-
+-(void) recompileWithSource:(NSData*) data;
++(GemBot*) gemBot;
 -(NSURL*) url;
 
 

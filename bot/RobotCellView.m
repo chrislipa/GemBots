@@ -28,17 +28,18 @@
 -(void) refreshColor {
     NSColor* color = [colorPicker color];
     CALayer *viewLayer = [CALayer layer];
-    [viewLayer setBackgroundColor:CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.4)]; //RGB plus Alpha Channel
+    [viewLayer setBackgroundColor:CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1)]; //RGB plus Alpha Channel
     [self setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
     [self setLayer:viewLayer];
 
 }
 
 
--(void) refreshWithBot:(BotDescription*) b {
+-(void) refreshWithBot:(BotContainer*) b {
     [name setStringValue:[b name]];
     [author setStringValue:[b author]];
-    [descript setString:[b descript]];
+    NSString* d = [b descript];
+    [descript setString:d];
     [descript setEditable:NO];
     int linesOfCodeInt = [b linesOfCode];
     if (linesOfCodeInt < 0) {
@@ -51,6 +52,11 @@
     //int team = [robotCellViewController.documentController emptyTeamForRobot:b.robot];
     [self refreshColor];
     [colorPicker addObserver:self forKeyPath:@"color" options:0 context:NULL];
+    if ([d length] ==0) {
+        [descriptionScrollView setHidden:YES];
+    } else {
+        [descriptionScrollView setHidden:NO];
+    }
 }
 
 

@@ -11,27 +11,40 @@
 @implementation GemBot (Memory)
 
 
+void clean(int** addressOfArray, int* addressOfCurrentArraySize) {
+    if ((*addressOfArray)) {
+        free(*addressOfArray);
+        *addressOfArray = NULL;
+    }
+    *addressOfCurrentArraySize = 0;
+}
 
-void reallocRAM(int** ivaraddr, int targetSize, int* memoryivaraddr) {
-    targetSize = MAX(targetSize, SOURCE_START);
-    if (*ivaraddr == NULL) {
-        *ivaraddr = (int*)malloc(targetSize * sizeof(int));
-        *memoryivaraddr = targetSize;
-        for (int i = 0; i < *memoryivaraddr; i++) {
-            (*ivaraddr)[i] = 0;
-        }
-    } else {
-        int old_size = *memoryivaraddr;
-        int new_size = *memoryivaraddr;
-        while (new_size < targetSize) {
-            new_size <<= 2;
-        }
-        new_size = MIN(new_size, BOT_MAX_MEMORY);
-        *ivaraddr = (int*)realloc(*ivaraddr, targetSize * sizeof(int));
-        *memoryivaraddr = targetSize;
-        for (int i = old_size; i < *memoryivaraddr; i++) {
-            (*ivaraddr)[i] = 0;
-        }
+-(void) cleanMemory {
+    clean(&memory, &memorySize);
+    clean(&romMemory, &romMemorySize);
+}
+
+void reallocRAM(int** addressOfArray,  int* addressOfCurrentArraySize, int targetSize) {
+    targetSize = MIN(BOT_MAX_MEMORY, MAX(SOURCE_START,targetSize ));
+    int old_size = *addressOfCurrentArraySize;
+    int new_size = MAX(1,*addressOfCurrentArraySize);
+    while (new_size < targetSize) {
+        new_size <<= 2;
+    }
+    int *pointerToOldArray = *addressOfArray;
+    (*addressOfArray) = (int*)malloc(new_size * sizeof(int));
+    
+    *addressOfCurrentArraySize = new_size;
+    int i = 0;
+    for (; i < old_size; i++) {
+        (*addressOfArray)[i] = pointerToOldArray[i];
+    }
+    for (; i < new_size; i++) {
+        (*addressOfArray)[i] = 0;
+    }
+    if (pointerToOldArray != NULL) {
+        free(pointerToOldArray);
+        
     }
 }
 
@@ -45,19 +58,19 @@ int getMemory(int* array, int memorySize, int addr) {
 }
 
 
-void setMemory(int** array, int* memorySize,int addr ,int value ){
+void setMemory(int** array, int* currentMemorySize,int addr ,int value ){
     addr &= (BOT_MAX_MEMORY - 1);
-    if (addr >=(*memorySize)) {
-        reallocRAM(array, addr, memorySize);
+    if (addr >=(*currentMemorySize)) {
+        reallocRAM(array,  currentMemorySize, addr);
     }
     (*array)[addr] = value;
 }
 
 -(void) reallocRAM:   (int) targetSize {
-    reallocRAM(&memory, targetSize, &memorySize);
+    reallocRAM(&memory,  &memorySize, targetSize);
 }
 -(void) reallocROM:   (int) targetSize {
-    reallocRAM(&romMemory, targetSize, &romMemorySize);
+    reallocRAM(&romMemory, &romMemorySize , targetSize);
 }
 
 

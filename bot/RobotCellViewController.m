@@ -8,6 +8,7 @@
 
 #import "RobotCellViewController.h"
 #import "GemBotEditor.h"
+#import "MasterController.h"
 @interface RobotCellViewController ()
 
 @end
@@ -15,16 +16,18 @@
 @implementation RobotCellViewController
 
 @synthesize documentController;
+@synthesize botContainer;
 
 
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil andController:(BattleDocumentViewController*) p_controller
+- (id)initWithNibName:(NSString *)nibNameOrNil andController:(BattleDocumentViewController*) p_controller  andRobot:(BotContainer*) bc
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
         documentController = p_controller;
-        
+        botContainer = bc;
+        [self view];
+        [cell refreshWithBot:bc];
     }
     
     return self;
@@ -38,8 +41,12 @@
 
 
 -(IBAction) editButtonPressed:(id)sender {
-    [GemBotEditor spawnEditorWindowForURL:robot.url forBattleDocumentController:documentController];
+    [[MasterController singleton] spawnEditorWindowForBotContainer:botContainer forBattleDocumentController:documentController];
+
 }
 
+-(void) refresh {
+    [cell refreshWithBot:botContainer];
+}
 
 @end

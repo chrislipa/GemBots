@@ -71,6 +71,13 @@
 }
 
 
+-(id) init {
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
 -(id) initGemBotWithSource:(NSData*) p_source {
     if (self = [super init]) {
         [self setGemBotSource:p_source];
@@ -78,8 +85,17 @@
     return self;
 }
 
-+(GemBot*) gemBotFromSource:(NSData*) source; {
++(GemBot*) gemBot {
+    return [[self alloc] init];
+}
+
+
++(GemBot*) gemBotFromSource:(NSData*)source {
     return [[self alloc] initGemBotWithSource:source];
+}
+
+-(void) recompileWithSource:(NSData*) data {
+    [self setGemBotSource:data];
 }
 
 

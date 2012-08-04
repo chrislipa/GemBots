@@ -55,6 +55,7 @@
     [self readmemory:lines withVariable:variables];
     
     
+    
 }
 
 -(NSArray*) tokenize:(NSArray*) inA {
@@ -180,7 +181,7 @@
         for (int i = (int)[p count]-1; i>=0; i--) {
             
             
-            NSString* s = [p objectAtIndex:i];
+            NSString* s = [[p objectAtIndex:i] uppercaseString];
             
             while ([s hasPrefix:@"*"] || [s hasPrefix:@"&"]) {
                 if  ([s hasPrefix:@"*"]) {

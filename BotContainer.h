@@ -10,10 +10,8 @@
 #import "GameStateDescriptor.h"
 #import "PGBotEngineProtocol.h"
 
-@interface BotDescription : NSObject {
+@interface BotContainer : NSObject {
     NSURL* urlToBot;
-    NSString* name;
-    NSString* description;
     NSObject<RobotDescription>* robot;
     NSObject<PGBotEngineProtocol>* engine;
 }
@@ -29,5 +27,5 @@
 
 -(void) setURLToBot:(NSURL*) url;
 -(NSURL*) urlToBot;
-
+-(void) recompile;
 @end

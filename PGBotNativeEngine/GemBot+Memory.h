@@ -9,6 +9,7 @@
 #import "GemBot.h"
 
 @interface GemBot (Memory)
+-(void) cleanMemory;
 -(void) reallocRAM:(int) targetSize;
 -(void) setMemory:(int) addr :(int) value;
 -(int) getMemory:(int) addr;

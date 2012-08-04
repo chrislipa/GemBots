@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BattleDocumentViewController.h"
+#import "BotContainer.h"
 
 @interface GemBotEditor : NSObject
 
-+(void) spawnEditorWindowForURL:(NSURL*) url forBattleDocumentController:(BattleDocumentViewController*) controller;
 
 @end

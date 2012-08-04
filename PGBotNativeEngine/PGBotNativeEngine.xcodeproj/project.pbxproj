@@ -83,6 +83,51 @@
 		36C3D9A915C77722003CCD2A /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D9A715C77722003CCD2A /* Explosion.m */; };
 		36C3D9C015C77F75003CCD2A /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D9B715C77F59003CCD2A /* SBJson.framework */; };
 		36C3D9C215C79671003CCD2A /* SBJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D9C115C79671003CCD2A /* SBJson.h */; };
+		36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */; };
+		36FE1B1115CCE787003310F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36FE1B0F15CCE787003310F0 /* InfoPlist.strings */; };
+		36FE1B1A15CCE7C1003310F0 /* EngineUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D98215C7434C003CCD2A /* EngineUtility.m */; };
+		36FE1B1B15CCE7C1003310F0 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B027515C8B27C006441FF /* Random.m */; };
+		36FE1B1C15CCE7C1003310F0 /* EngineDefinitions.c in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F7015C89097000FB3AE /* EngineDefinitions.c */; };
+		36FE1B1D15CCE7C1003310F0 /* Opcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F6215C7ECD4000FB3AE /* Opcode.m */; };
+		36FE1B1E15CCE7C1003310F0 /* Mine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3609A16E15CA13C5002E312A /* Mine.m */; };
+		36FE1B1F15CCE7C1003310F0 /* Mine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 3609A17615CA1489002E312A /* Mine+Interface.m */; };
+		36FE1B2015CCE7C1003310F0 /* Missile+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B027B15C8C080006441FF /* Missile+Interface.m */; };
+		36FE1B2115CCE7C1003310F0 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D99F15C776C6003CCD2A /* Missile.m */; };
+		36FE1B2215CCE7C1003310F0 /* GemBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D97915C74180003CCD2A /* GemBot.m */; };
+		36FE1B2315CCE7C1003310F0 /* GemBot+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F5D15C7E83B000FB3AE /* GemBot+Runtime.m */; };
+		36FE1B2415CCE7C1003310F0 /* GemBot+Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F6915C8681E000FB3AE /* GemBot+Memory.m */; };
+		36FE1B2515CCE7C1003310F0 /* GemBot+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F6D15C875AC000FB3AE /* GemBot+Operations.m */; };
+		36FE1B2615CCE7C1003310F0 /* GemBot+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F7315C890EB000FB3AE /* GemBot+Interface.m */; };
+		36FE1B2715CCE7C1003310F0 /* GemBot+SystemCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F7715C893A1000FB3AE /* GemBot+SystemCalls.m */; };
+		36FE1B2815CCE7C1003310F0 /* GemBot+Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F7F15C8A7AA000FB3AE /* GemBot+Communication.m */; };
+		36FE1B2915CCE7C1003310F0 /* GemBot+Devices.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F8315C8AA9C000FB3AE /* GemBot+Devices.m */; };
+		36FE1B2A15CCE7C1003310F0 /* GemBot+Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B027F15C8C0D7006441FF /* GemBot+Stats.m */; };
+		36FE1B2B15CCE7C1003310F0 /* GemBot+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029D15C9A037006441FF /* GemBot+Reset.m */; };
+		36FE1B2C15CCE7C1003310F0 /* GemBot+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02AE15C9A4A0006441FF /* GemBot+Movement.m */; };
+		36FE1B2D15CCE7C1003310F0 /* GemBot+Compiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F4B15C7DB47000FB3AE /* GemBot+Compiler.m */; };
+		36FE1B2E15CCE7C1003310F0 /* GemBot+SourceCodeCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F4F15C7DB56000FB3AE /* GemBot+SourceCodeCompiler.m */; };
+		36FE1B2F15CCE7C1003310F0 /* GemBot+BinaryCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F5315C7DB6A000FB3AE /* GemBot+BinaryCompiler.m */; };
+		36FE1B3015CCE7C1003310F0 /* Scan.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D9A315C776F4003CCD2A /* Scan.m */; };
+		36FE1B3115CCE7C1003310F0 /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D9A715C77722003CCD2A /* Explosion.m */; };
+		36FE1B3215CCE7C1003310F0 /* PGBotNativeEngine+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F5915C7E75E000FB3AE /* PGBotNativeEngine+Runtime.m */; };
+		36FE1B3315CCE7C1003310F0 /* PGBotNativeEngine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F7B15C8A1CF000FB3AE /* PGBotNativeEngine+Interface.m */; };
+		36FE1B3415CCE7C1003310F0 /* PGBotNativeEngine+DealDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028515C9968A006441FF /* PGBotNativeEngine+DealDamage.m */; };
+		36FE1B3515CCE7C1003310F0 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */; };
+		36FE1B3615CCE7C1003310F0 /* PGBotNativeEngine+CollisionPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */; };
+		36FE1B3715CCE7C1003310F0 /* PGBotNativeEngine+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029115C99C54006441FF /* PGBotNativeEngine+Movement.m */; };
+		36FE1B3815CCE7C1003310F0 /* PGBotNativeEngine+CommPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029515C99D33006441FF /* PGBotNativeEngine+CommPhase.m */; };
+		36FE1B3915CCE7C1003310F0 /* PGBotNativeEngine+CheckForStartNextMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029915C99F64006441FF /* PGBotNativeEngine+CheckForStartNextMatch.m */; };
+		36FE1B3A15CCE7C1003310F0 /* PGBotNativeEngine+CleanPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02A115C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.m */; };
+		36FE1B3B15CCE7C1003310F0 /* PGBotNativeEngine+RobotDeath.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02A615C9A1D1006441FF /* PGBotNativeEngine+RobotDeath.m */; };
+		36FE1B3C15CCE7C1003310F0 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3609A10215C9B93C002E312A /* PGBotNativeEngine+CheckForEndOfMatch.m */; };
+		36FE1B3D15CCE7C1003310F0 /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */; };
+		36FE1B4015CCE7E0003310F0 /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D9B715C77F59003CCD2A /* SBJson.framework */; };
+		36FE1B4115CCE7E9003310F0 /* DefaultVariables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36C3D98615C75FBA003CCD2A /* DefaultVariables.txt */; };
+		36FE1B4215CCE7E9003310F0 /* Constants.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36C3D98515C74458003CCD2A /* Constants.txt */; };
+		36FE1B4315CCE7E9003310F0 /* Opcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 363D8F6015C7EC2E000FB3AE /* Opcodes.txt */; };
+		36FE1B4415CCE7E9003310F0 /* SystemCalls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 363D8F6515C7F3CB000FB3AE /* SystemCalls.txt */; };
+		36FE1B4515CCE7E9003310F0 /* Devices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 363D8F6615C7F3EA000FB3AE /* Devices.txt */; };
+		36FE1B4D15CCE922003310F0 /* PGBotNativeEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D96415C74062003CCD2A /* PGBotNativeEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +160,13 @@
 			remoteInfo = "sbjson-iosTests";
 		};
 		36C3D9BE15C77F6F003CCD2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC12323C1391D5CC00131607;
+			remoteInfo = SBJson;
+		};
+		36FE1B3E15CCE7CB003310F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */;
 			proxyType = 1;
@@ -215,6 +267,11 @@
 		36C3D9AA15C77AAC003CCD2A /* EngineDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EngineDefinitions.h; sourceTree = "<group>"; };
 		36C3D9AC15C77F58003CCD2A /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = external/SBJson_3.1/SBJson.xcodeproj; sourceTree = "<group>"; };
 		36C3D9C115C79671003CCD2A /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = external/SBJson_3.1/Classes/SBJson.h; sourceTree = "<group>"; };
+		36FE1B0915CCE787003310F0 /* NativeEngine.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeEngine.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		36FE1B0E15CCE787003310F0 /* NativeEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NativeEngine-Info.plist"; sourceTree = "<group>"; };
+		36FE1B1015CCE787003310F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36FE1B1215CCE787003310F0 /* NativeEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NativeEngine-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +281,15 @@
 			files = (
 				36C3D9C015C77F75003CCD2A /* SBJson.framework in Frameworks */,
 				36C3D95C15C74062003CCD2A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36FE1B0615CCE787003310F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36FE1B4015CCE7E0003310F0 /* SBJson.framework in Frameworks */,
+				36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +420,7 @@
 				363D8F6215C7ECD4000FB3AE /* Opcode.m */,
 				36C3D98015C742B1003CCD2A /* GameState */,
 				36C3D96115C74062003CCD2A /* PGBotNativeEngine */,
+				36FE1B0C15CCE787003310F0 /* NativeEngine */,
 				36C3D95A15C74062003CCD2A /* Frameworks */,
 				36C3D95915C74062003CCD2A /* Products */,
 			);
@@ -363,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				36C3D95815C74062003CCD2A /* PGBotNativeEngine.dylib */,
+				36FE1B0915CCE787003310F0 /* NativeEngine.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				36C3D95B15C74062003CCD2A /* Cocoa.framework */,
+				36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */,
 				36C3D95D15C74062003CCD2A /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -451,6 +520,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36FE1B0C15CCE787003310F0 /* NativeEngine */ = {
+			isa = PBXGroup;
+			children = (
+				36FE1B0D15CCE787003310F0 /* Supporting Files */,
+			);
+			path = NativeEngine;
+			sourceTree = "<group>";
+		};
+		36FE1B0D15CCE787003310F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36FE1B0E15CCE787003310F0 /* NativeEngine-Info.plist */,
+				36FE1B0F15CCE787003310F0 /* InfoPlist.strings */,
+				36FE1B1215CCE787003310F0 /* NativeEngine-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -499,6 +586,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		36FE1B4C15CCE90F003310F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36FE1B4D15CCE922003310F0 /* PGBotNativeEngine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -519,6 +614,25 @@
 			productName = PGBotNativeEngine;
 			productReference = 36C3D95815C74062003CCD2A /* PGBotNativeEngine.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
+		};
+		36FE1B0815CCE787003310F0 /* NativeEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36FE1B1615CCE787003310F0 /* Build configuration list for PBXNativeTarget "NativeEngine" */;
+			buildPhases = (
+				36FE1B0515CCE787003310F0 /* Sources */,
+				36FE1B0615CCE787003310F0 /* Frameworks */,
+				36FE1B0715CCE787003310F0 /* Resources */,
+				36FE1B4C15CCE90F003310F0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36FE1B3F15CCE7CB003310F0 /* PBXTargetDependency */,
+			);
+			name = NativeEngine;
+			productName = NativeEngine;
+			productReference = 36FE1B0915CCE787003310F0 /* NativeEngine.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -548,6 +662,7 @@
 			projectRoot = "";
 			targets = (
 				36C3D95715C74062003CCD2A /* PGBotNativeEngine */,
+				36FE1B0815CCE787003310F0 /* NativeEngine */,
 			);
 		};
 /* End PBXProject section */
@@ -582,6 +697,22 @@
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36FE1B0715CCE787003310F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36FE1B4115CCE7E9003310F0 /* DefaultVariables.txt in Resources */,
+				36FE1B4215CCE7E9003310F0 /* Constants.txt in Resources */,
+				36FE1B4315CCE7E9003310F0 /* Opcodes.txt in Resources */,
+				36FE1B4415CCE7E9003310F0 /* SystemCalls.txt in Resources */,
+				36FE1B4515CCE7E9003310F0 /* Devices.txt in Resources */,
+				36FE1B1115CCE787003310F0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36C3D95415C74062003CCD2A /* Sources */ = {
@@ -627,6 +758,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		36FE1B0515CCE787003310F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36FE1B1A15CCE7C1003310F0 /* EngineUtility.m in Sources */,
+				36FE1B1B15CCE7C1003310F0 /* Random.m in Sources */,
+				36FE1B1C15CCE7C1003310F0 /* EngineDefinitions.c in Sources */,
+				36FE1B1D15CCE7C1003310F0 /* Opcode.m in Sources */,
+				36FE1B1E15CCE7C1003310F0 /* Mine.m in Sources */,
+				36FE1B1F15CCE7C1003310F0 /* Mine+Interface.m in Sources */,
+				36FE1B2015CCE7C1003310F0 /* Missile+Interface.m in Sources */,
+				36FE1B2115CCE7C1003310F0 /* Missile.m in Sources */,
+				36FE1B2215CCE7C1003310F0 /* GemBot.m in Sources */,
+				36FE1B2315CCE7C1003310F0 /* GemBot+Runtime.m in Sources */,
+				36FE1B2415CCE7C1003310F0 /* GemBot+Memory.m in Sources */,
+				36FE1B2515CCE7C1003310F0 /* GemBot+Operations.m in Sources */,
+				36FE1B2615CCE7C1003310F0 /* GemBot+Interface.m in Sources */,
+				36FE1B2715CCE7C1003310F0 /* GemBot+SystemCalls.m in Sources */,
+				36FE1B2815CCE7C1003310F0 /* GemBot+Communication.m in Sources */,
+				36FE1B2915CCE7C1003310F0 /* GemBot+Devices.m in Sources */,
+				36FE1B2A15CCE7C1003310F0 /* GemBot+Stats.m in Sources */,
+				36FE1B2B15CCE7C1003310F0 /* GemBot+Reset.m in Sources */,
+				36FE1B2C15CCE7C1003310F0 /* GemBot+Movement.m in Sources */,
+				36FE1B2D15CCE7C1003310F0 /* GemBot+Compiler.m in Sources */,
+				36FE1B2E15CCE7C1003310F0 /* GemBot+SourceCodeCompiler.m in Sources */,
+				36FE1B2F15CCE7C1003310F0 /* GemBot+BinaryCompiler.m in Sources */,
+				36FE1B3015CCE7C1003310F0 /* Scan.m in Sources */,
+				36FE1B3115CCE7C1003310F0 /* Explosion.m in Sources */,
+				36FE1B3215CCE7C1003310F0 /* PGBotNativeEngine+Runtime.m in Sources */,
+				36FE1B3315CCE7C1003310F0 /* PGBotNativeEngine+Interface.m in Sources */,
+				36FE1B3415CCE7C1003310F0 /* PGBotNativeEngine+DealDamage.m in Sources */,
+				36FE1B3515CCE7C1003310F0 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */,
+				36FE1B3615CCE7C1003310F0 /* PGBotNativeEngine+CollisionPhase.m in Sources */,
+				36FE1B3715CCE7C1003310F0 /* PGBotNativeEngine+Movement.m in Sources */,
+				36FE1B3815CCE7C1003310F0 /* PGBotNativeEngine+CommPhase.m in Sources */,
+				36FE1B3915CCE7C1003310F0 /* PGBotNativeEngine+CheckForStartNextMatch.m in Sources */,
+				36FE1B3A15CCE7C1003310F0 /* PGBotNativeEngine+CleanPhase.m in Sources */,
+				36FE1B3B15CCE7C1003310F0 /* PGBotNativeEngine+RobotDeath.m in Sources */,
+				36FE1B3C15CCE7C1003310F0 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */,
+				36FE1B3D15CCE7C1003310F0 /* PGBotNativeEngine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -635,7 +809,23 @@
 			name = SBJson;
 			targetProxy = 36C3D9BE15C77F6F003CCD2A /* PBXContainerItemProxy */;
 		};
+		36FE1B3F15CCE7CB003310F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SBJson;
+			targetProxy = 36FE1B3E15CCE7CB003310F0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36FE1B0F15CCE787003310F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36FE1B1015CCE787003310F0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		36C3D96715C74062003CCD2A /* Debug */ = {
@@ -714,6 +904,32 @@
 			};
 			name = Release;
 		};
+		36FE1B1715CCE787003310F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NativeEngine/NativeEngine-Prefix.pch";
+				INFOPLIST_FILE = "NativeEngine/NativeEngine-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		36FE1B1815CCE787003310F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NativeEngine/NativeEngine-Prefix.pch";
+				INFOPLIST_FILE = "NativeEngine/NativeEngine-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -731,6 +947,15 @@
 			buildConfigurations = (
 				36C3D96A15C74062003CCD2A /* Debug */,
 				36C3D96B15C74062003CCD2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36FE1B1615CCE787003310F0 /* Build configuration list for PBXNativeTarget "NativeEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36FE1B1715CCE787003310F0 /* Debug */,
+				36FE1B1815CCE787003310F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

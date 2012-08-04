@@ -13,6 +13,8 @@
 #import "OrientedObject.h"
 #import "TurretedObject.h"
 
+NSString* pathToTextFile(NSString* file) ;
+
 lint roundedDivision(lint numerator, lint denominator);
 NSDictionary* constantDictionary();
 NSDictionary* defaultVariablesDictionary();

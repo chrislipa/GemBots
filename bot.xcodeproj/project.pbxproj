@@ -31,7 +31,7 @@
 		364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDF815BEA01700A765D0 /* RobotListTableView.m */; };
 		364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFB15BF185F00A765D0 /* RobotCellView.m */; };
 		364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFE15BF18CE00A765D0 /* Utility.m */; };
-		3670B91115C5E6D900A38D46 /* BotDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91015C5E6D900A38D46 /* BotDescription.m */; };
+		3670B91115C5E6D900A38D46 /* BotContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91015C5E6D900A38D46 /* BotContainer.m */; };
 		3670B91815C5F09700A38D46 /* RobotCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91615C5F09700A38D46 /* RobotCellViewController.m */; };
 		3670B91915C5F09700A38D46 /* RobotCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670B91715C5F09700A38D46 /* RobotCellViewController.xib */; };
 		3670B92015C6027100A38D46 /* ArenaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670B91F15C6027100A38D46 /* ArenaView.m */; };
@@ -39,7 +39,6 @@
 		3670B92515C6115F00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
 		3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
-		36A8980515CA5CD00028CEB4 /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
 		36C7946115C63C6600D53ADB /* MasterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7946015C63C6600D53ADB /* MasterController.m */; };
@@ -47,6 +46,7 @@
 		36EBCFCF15CB81C300F955F6 /* EditWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EBCFC915CB81C300F955F6 /* EditWindowController.xib */; };
 		36EBCFD015CB81C300F955F6 /* EditWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFCB15CB81C300F955F6 /* EditWindowController.m */; };
 		36EBCFD115CB81C300F955F6 /* GemBotEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFCD15CB81C300F955F6 /* GemBotEditor.m */; };
+		36FE1B5615CCEA19003310F0 /* NativeEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36FE1B4815CCE7F6003310F0 /* NativeEngine.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +64,6 @@
 			remoteGlobalIDString = 360892B315BE876D00A06C94;
 			remoteInfo = botImporter;
 		};
-		36A8980315CA5CC90028CEB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 36C3D95715C74062003CCD2A;
-			remoteInfo = PGBotNativeEngine;
-		};
 		36C3D97315C7406F003CCD2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
@@ -84,6 +77,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 36C3D95715C74062003CCD2A;
 			remoteInfo = PGBotNativeEngine;
+		};
+		36FE1B4715CCE7F6003310F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36FE1B0915CCE787003310F0;
+			remoteInfo = NativeEngine;
+		};
+		36FE1B4915CCE7FD003310F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 36FE1B0815CCE787003310F0;
+			remoteInfo = NativeEngine;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -129,8 +136,8 @@
 		364DCDFB15BF185F00A765D0 /* RobotCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RobotCellView.m; path = bot/RobotCellView.m; sourceTree = "<group>"; };
 		364DCDFD15BF18CE00A765D0 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		364DCDFE15BF18CE00A765D0 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
-		3670B90F15C5E6D900A38D46 /* BotDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotDescription.h; sourceTree = "<group>"; };
-		3670B91015C5E6D900A38D46 /* BotDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotDescription.m; sourceTree = "<group>"; };
+		3670B90F15C5E6D900A38D46 /* BotContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotContainer.h; sourceTree = "<group>"; };
+		3670B91015C5E6D900A38D46 /* BotContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotContainer.m; sourceTree = "<group>"; };
 		3670B91515C5F09700A38D46 /* RobotCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotCellViewController.h; path = bot/RobotCellViewController.h; sourceTree = "<group>"; };
 		3670B91615C5F09700A38D46 /* RobotCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RobotCellViewController.m; path = bot/RobotCellViewController.m; sourceTree = "<group>"; };
 		3670B91715C5F09700A38D46 /* RobotCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RobotCellViewController.xib; path = bot/RobotCellViewController.xib; sourceTree = "<group>"; };
@@ -162,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
-				36A8980515CA5CD00028CEB4 /* PGBotNativeEngine.dylib in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
 				3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */,
 			);
@@ -325,8 +331,8 @@
 		3670B90E15C5E6BB00A38D46 /* botDescription */ = {
 			isa = PBXGroup;
 			children = (
-				3670B90F15C5E6D900A38D46 /* BotDescription.h */,
-				3670B91015C5E6D900A38D46 /* BotDescription.m */,
+				3670B90F15C5E6D900A38D46 /* BotContainer.h */,
+				3670B91015C5E6D900A38D46 /* BotContainer.m */,
 			);
 			name = botDescription;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */,
+				36FE1B4815CCE7F6003310F0 /* NativeEngine.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -399,7 +406,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				36A8980415CA5CC90028CEB4 /* PBXTargetDependency */,
+				36FE1B4A15CCE7FD003310F0 /* PBXTargetDependency */,
 				360892B615BE876D00A06C94 /* PBXTargetDependency */,
 			);
 			name = bot;
@@ -485,6 +492,13 @@
 			remoteRef = 36C3D97315C7406F003CCD2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		36FE1B4815CCE7F6003310F0 /* NativeEngine.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NativeEngine.bundle;
+			remoteRef = 36FE1B4715CCE7F6003310F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -492,6 +506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FE1B5615CCEA19003310F0 /* NativeEngine.bundle in Resources */,
 				3608928915BE876D00A06C94 /* InfoPlist.strings in Resources */,
 				3608928F15BE876D00A06C94 /* Credits.rtf in Resources */,
 				3608929515BE876D00A06C94 /* BattleDocument.xib in Resources */,
@@ -547,7 +562,7 @@
 				364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */,
 				364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */,
 				364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */,
-				3670B91115C5E6D900A38D46 /* BotDescription.m in Sources */,
+				3670B91115C5E6D900A38D46 /* BotContainer.m in Sources */,
 				3670B91815C5F09700A38D46 /* RobotCellViewController.m in Sources */,
 				3670B92015C6027100A38D46 /* ArenaView.m in Sources */,
 				3670B92315C602DC00A38D46 /* ArenaViewController.m in Sources */,
@@ -590,15 +605,15 @@
 			target = 360892B315BE876D00A06C94 /* botImporter */;
 			targetProxy = 360892B515BE876D00A06C94 /* PBXContainerItemProxy */;
 		};
-		36A8980415CA5CC90028CEB4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PGBotNativeEngine;
-			targetProxy = 36A8980315CA5CC90028CEB4 /* PBXContainerItemProxy */;
-		};
 		36C3D98815C76EFF003CCD2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PGBotNativeEngine;
 			targetProxy = 36C3D98715C76EFF003CCD2A /* PBXContainerItemProxy */;
+		};
+		36FE1B4A15CCE7FD003310F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NativeEngine;
+			targetProxy = 36FE1B4915CCE7FD003310F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

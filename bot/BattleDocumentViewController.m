@@ -9,8 +9,8 @@
 #import "BattleDocumentViewController.h"
 #import "RobotCellView.h"
 #import "RobotCellViewController.h"
-#import "BotDescription.h"
-#import "PGBotNativeEngine.h"
+#import "BotContainer.h"
+
 @interface BattleDocumentViewController ()
 
 @end
@@ -23,8 +23,10 @@
     if (self) {
         // Initialization code here.
         robots = [NSMutableArray array];
-        engine = [[PGBotNativeEngine alloc] init];
+        Class c = NSClassFromString(@"PGBotNativeEngine");
+        engine = [[c alloc] init];
         editors = [[NSMutableArray alloc] init];
+        robotCellViewControllers = [[NSMutableDictionary alloc] init];
     }
     
     
@@ -54,7 +56,7 @@
 }
 -(void) loadRobotsFromURLs_internal:(NSArray*) urls {
     for (NSURL* url in urls) {
-        BotDescription* d = [[BotDescription alloc] initWithEngine:engine andURL:url];
+        BotContainer* d = [[BotContainer alloc] initWithEngine:engine andURL:url];
         [robots addObject:d];
     }
     
@@ -78,12 +80,15 @@
 - (NSView *)tableView:(NSTableView *)tableView
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
+    id key = [NSNumber numberWithLong:row];
+    RobotCellViewController *controller = [robotCellViewControllers objectForKey:key];
+    if (!controller) {
+        BotContainer* robot = [robots objectAtIndex:row];
+        controller = [[RobotCellViewController alloc] initWithNibName:@"RobotCellViewController" andController:self andRobot:robot];
+        [robotCellViewControllers setObject:controller forKey:key];
+    }
     
-    RobotCellViewController *myViewController = [[RobotCellViewController alloc] initWithNibName:@"RobotCellViewController" andController:self];
-    RobotCellView* v = (RobotCellView*) myViewController.view;
-    BotDescription* bd = [robots objectAtIndex:row];
-    [v refreshWithBot:bd];
-    return v;
+    return controller.view;
 }
 
 -(int) numberOfTeams {
@@ -102,6 +107,17 @@
         }
         if (!match) {
             return i;
+        }
+    }
+}
+
+-(void) reccompileRobot:(BotContainer*) bot {
+    for(int i = 0; i < [robots count]; i++) {
+        id key = [NSNumber numberWithLong:i];
+        RobotCellViewController* cellController = [robotCellViewControllers objectForKey:key];
+        if ([bot.urlToBot isEqualTo:cellController.botContainer.urlToBot] || bot == cellController.botContainer) {
+            [cellController.botContainer recompile];
+            [cellController refresh];
         }
     }
 }

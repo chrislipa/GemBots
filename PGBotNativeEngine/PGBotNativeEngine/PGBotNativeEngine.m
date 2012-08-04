@@ -31,8 +31,19 @@
     [robots addObject:bot];
 }
 
+
+
 -(void) setRobot:(NSString*) sessionUniqueRobotIdentifier toTeam:(int) team {
     
+}
+
+
+-(NSObject<RobotDescription>*) newRobot {
+    return [GemBot gemBot];
+}
+
+-(void) recompileRobot:(NSObject<RobotDescription>*) bot  withSource:(NSData*) source {
+    [((GemBot*)bot) recompileWithSource:source];
 }
 
 -(GemBot*) addRobotFromSource:(NSData*) source {

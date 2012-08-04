@@ -16,20 +16,14 @@
 
 
 
--(NSObject<RobotDescription>*) addRobotFromSource:(NSData*) source;
+-(NSObject<RobotDescription>*) newRobot;
+-(void) recompileRobot:(NSObject<RobotDescription>*) robot withSource:(NSData*) source;
 
 -(void) setRobot:(NSObject<RobotDescription>*) robot toTeam:(int) team;
-
-
 -(void) removeRobot:(NSObject<RobotDescription>*) robot;
-
 //Returns an array of GemBotDescriptions
 -(NSArray*) robots;
-
-
 -(void) setGameCycleTimeout:(int) maxNumberOfGameCycles;
-
-
 -(void) setNumberOfMatches:(int) numberOfMatches;
 
 

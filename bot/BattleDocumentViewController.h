@@ -11,13 +11,16 @@
 #import "BattleDocument.h"
 #import "GameStateDescriptor.h"
 #import "PGBotEngineProtocol.h"
-#import "BotDescription.h"
+#import "BotContainer.h"
 
 @class RobotListTableView;
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
+    
     NSMutableArray* robots;
+    NSMutableDictionary* robotCellViewControllers;
+    
     NSObject<PGBotEngineProtocol>* engine;
     NSMutableArray* editors;
 }
@@ -28,4 +31,5 @@
 -(int) numberOfTeams;
 -(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot;
 -(void) addEditor:(id) editor;
+-(void) reccompileRobot:(BotContainer*) bot;
 @end

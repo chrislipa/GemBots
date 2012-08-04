@@ -9,6 +9,18 @@
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
 
+NSString* pathToTextFile(NSString* file) {
+    NSArray* a = [NSBundle allBundles];
+    for (NSBundle* b in a) {
+        NSString* p = [b pathForResource:file ofType:@"txt"];
+        if (p) {
+            return p;
+        }
+            
+    }
+    return nil;
+}
+
 lint roundedDivision(lint numerator, lint denominator) {
     return (numerator+(denominator>>1))/denominator;
 }
@@ -39,13 +51,13 @@ lint intsqrt(lint x) {
 
 int readInteger(NSString* valueStr) {
     int value;
-    if ([valueStr hasPrefix:@"0x"]) {
+    if ([valueStr hasPrefix:@"0X"]) {
         unsigned int uvalue;
         NSScanner *scanner = [NSScanner scannerWithString:valueStr];
         [scanner setScanLocation:2];
         [scanner scanHexInt:&uvalue];
         value = uvalue;
-    } else if ([valueStr hasPrefix:@"-0x"]) {
+    } else if ([valueStr hasPrefix:@"-0X"]) {
         unsigned int uvalue;
         NSScanner *scanner = [NSScanner scannerWithString:valueStr];
         [scanner setScanLocation:3];
@@ -59,10 +71,8 @@ int readInteger(NSString* valueStr) {
 
 NSDictionary* newDictionaryFromTextFile(NSString* file) {
     NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
-    
-    NSString* fileName = [[NSBundle mainBundle] pathForResource:file ofType:@"txt"];
+    NSString* fileName = pathToTextFile(file);
     NSString* contents =  [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
-    
     NSArray* lines = [contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
     
     for (NSString* line in lines) {
