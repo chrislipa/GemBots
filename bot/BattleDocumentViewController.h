@@ -36,4 +36,5 @@
 -(void) addEditor:(id) editor;
 -(void) reccompileRobot:(BotContainer*) bot;
 -(NSColor*) unusedColorForNewRobot;
+-(int) unusedTeamForRobot:(BotContainer*) bot;
 @end

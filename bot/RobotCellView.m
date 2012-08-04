@@ -35,7 +35,7 @@
 }
 
 -(void) refreshTeams {
-    int team = robotCellViewController.botContainer.robot.team;
+    int team = robotCellViewController.botContainer.team;
     NSArray* teams = [robotCellViewController.documentController teamTitles];
     [teamPicker removeAllItems];
     [teamPicker addItemsWithTitles:teams];

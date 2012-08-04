@@ -18,8 +18,9 @@
     NSObject<PGBotEngineProtocol>* engine;
     BattleDocumentViewController* documentController;
     NSColor* color;
+    int team;
 }
-
+@property (readwrite,assign) int team;
 @property (readwrite,retain) BattleDocumentViewController* documentController;
 @property (readwrite,retain) NSObject<RobotDescription>* robot;
 @property (readwrite,retain) NSColor* color;

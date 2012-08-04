@@ -153,6 +153,23 @@
     return lowestColor;
 }
 
+-(int) unusedTeamForRobot:(BotContainer*) bot {
+    for (int team = 1; ; team++) {
+        bool match = NO;
+        for (BotContainer* r in robots) {
+            if (bot != r) {
+                if (r.team == team) {
+                    match = YES;
+                    break;
+                }
+            }
+        }
+        if (!match) {
+            return team;
+        }
+    }
+}
+
 -(int) numberOfTeams {
     return (int)[robots count];
 }
