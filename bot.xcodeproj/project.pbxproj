@@ -44,7 +44,7 @@
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
 		36C7946115C63C6600D53ADB /* MasterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7946015C63C6600D53ADB /* MasterController.m */; };
 		36EBCFCE15CB81C300F955F6 /* EditWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFC815CB81C300F955F6 /* EditWindow.m */; };
-		36EBCFCF15CB81C300F955F6 /* EditWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EBCFC915CB81C300F955F6 /* EditWindow.xib */; };
+		36EBCFCF15CB81C300F955F6 /* EditWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EBCFC915CB81C300F955F6 /* EditWindowController.xib */; };
 		36EBCFD015CB81C300F955F6 /* EditWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFCB15CB81C300F955F6 /* EditWindowController.m */; };
 		36EBCFD115CB81C300F955F6 /* GemBotEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFCD15CB81C300F955F6 /* GemBotEditor.m */; };
 /* End PBXBuildFile section */
@@ -149,7 +149,7 @@
 		36C7946015C63C6600D53ADB /* MasterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterController.m; sourceTree = "<group>"; };
 		36EBCFC715CB81C300F955F6 /* EditWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditWindow.h; sourceTree = "<group>"; };
 		36EBCFC815CB81C300F955F6 /* EditWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWindow.m; sourceTree = "<group>"; };
-		36EBCFC915CB81C300F955F6 /* EditWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditWindow.xib; sourceTree = "<group>"; };
+		36EBCFC915CB81C300F955F6 /* EditWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditWindowController.xib; sourceTree = "<group>"; };
 		36EBCFCA15CB81C300F955F6 /* EditWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditWindowController.h; sourceTree = "<group>"; };
 		36EBCFCB15CB81C300F955F6 /* EditWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWindowController.m; sourceTree = "<group>"; };
 		36EBCFCC15CB81C300F955F6 /* GemBotEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemBotEditor.h; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 			children = (
 				36EBCFC715CB81C300F955F6 /* EditWindow.h */,
 				36EBCFC815CB81C300F955F6 /* EditWindow.m */,
-				36EBCFC915CB81C300F955F6 /* EditWindow.xib */,
+				36EBCFC915CB81C300F955F6 /* EditWindowController.xib */,
 				36EBCFCA15CB81C300F955F6 /* EditWindowController.h */,
 				36EBCFCB15CB81C300F955F6 /* EditWindowController.m */,
 				36EBCFCC15CB81C300F955F6 /* GemBotEditor.h */,
@@ -498,7 +498,7 @@
 				3608929815BE876D00A06C94 /* MainMenu.xib in Resources */,
 				360892B715BE876D00A06C94 /* botImporter.mdimporter in Resources */,
 				3670B91915C5F09700A38D46 /* RobotCellViewController.xib in Resources */,
-				36EBCFCF15CB81C300F955F6 /* EditWindow.xib in Resources */,
+				36EBCFCF15CB81C300F955F6 /* EditWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

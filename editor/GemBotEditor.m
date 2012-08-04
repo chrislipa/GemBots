@@ -16,7 +16,9 @@
 
 +(void) spawnEditorWindowForURL:(NSURL*) url forBattleDocumentController:(BattleDocumentViewController*) controller {
     
-    EditWindowController* editor = [[EditWindowController alloc] initWithNibName:@"EditWindow" bundle:nil];
+    EditWindowController* editor = [[EditWindowController alloc] initWithNibName:@"EditWindowController" bundle:nil];
+    [editor view];
+    [[editor editWindow] makeKeyAndOrderFront:nil];
     //[[NSBundle mainBundle] loadNibNamed:@"EditWindow" owner:nil topLevelObjects:nil];
     
     [controller addEditor:editor];

@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "BattleDocumentViewController.h"
+#import "EditWindow.h"
+@class EditWindow;
 @interface EditWindowController : NSViewController {
-    IBOutlet NSTextView* textView;
+    IBOutlet NSTextField* textView;
+    IBOutlet EditWindow* editWindow;
     BattleDocumentViewController* battleController;
 }
 
 @property (readwrite,retain) BattleDocumentViewController* battleController;
-
+@property (readwrite,retain) IBOutlet EditWindow* editWindow;
 
 -(IBAction) doneButtonPressed:(id) sender ;
 

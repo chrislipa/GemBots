@@ -14,10 +14,10 @@
 @class RobotCellView;
 @interface RobotCellViewController : NSViewController {
     BattleDocumentViewController* documentController;
-    RobotCellView* cell;
+    IBOutlet RobotCellView* cell;
     NSObject<RobotDescription>* robot;
 }
-
+@property (readwrite,retain) IBOutlet RobotCellView* cell;
 @property (readonly) BattleDocumentViewController* documentController;
 - (id)initWithNibName:(NSString *)nibNameOrNil andController:(BattleDocumentViewController*) p_controller;
 -(IBAction) editButtonPressed:(id)sender;

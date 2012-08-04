@@ -10,10 +10,12 @@
 
 @implementation EditWindowController
 @synthesize battleController;
-
+@synthesize editWindow;
 
 
 -(IBAction) doneButtonPressed:(id) sender {
     
 }
+
+
 @end

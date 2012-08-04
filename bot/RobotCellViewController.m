@@ -29,6 +29,12 @@
     
     return self;
 }
+-(RobotCellView*) cell {
+    return cell;
+}
+-(void) setCell:(RobotCellView *)p_cell {
+   cell = p_cell;
+}
 
 
 -(IBAction) editButtonPressed:(id)sender {

@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
-@interface EditWindow : NSWindow
+#import "EditWindowController.h"
+@class EditWindowController;
+@interface EditWindow : NSWindow {
+    IBOutlet EditWindowController* controller;
+}
 
 @end
