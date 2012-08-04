@@ -97,7 +97,7 @@
     [self loadRobotsFromURLs:[NSArray arrayWithObject:url]];
 }
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    return 125;
+    return 100;
 }
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [robots count];

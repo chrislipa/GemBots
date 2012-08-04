@@ -121,7 +121,6 @@
 		36FE1B3B15CCE7C1003310F0 /* PGBotNativeEngine+RobotDeath.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02A615C9A1D1006441FF /* PGBotNativeEngine+RobotDeath.m */; };
 		36FE1B3C15CCE7C1003310F0 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3609A10215C9B93C002E312A /* PGBotNativeEngine+CheckForEndOfMatch.m */; };
 		36FE1B3D15CCE7C1003310F0 /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */; };
-		36FE1B4015CCE7E0003310F0 /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D9B715C77F59003CCD2A /* SBJson.framework */; };
 		36FE1B4115CCE7E9003310F0 /* DefaultVariables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36C3D98615C75FBA003CCD2A /* DefaultVariables.txt */; };
 		36FE1B4215CCE7E9003310F0 /* Constants.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36C3D98515C74458003CCD2A /* Constants.txt */; };
 		36FE1B4315CCE7E9003310F0 /* Opcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 363D8F6015C7EC2E000FB3AE /* Opcodes.txt */; };
@@ -288,7 +287,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36FE1B4015CCE7E0003310F0 /* SBJson.framework in Frameworks */,
 				36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

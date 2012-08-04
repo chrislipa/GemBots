@@ -52,6 +52,7 @@
 		367ECAFB15CDD879003692BB /* icon_256x256.icns in Resources */ = {isa = PBXBuildFile; fileRef = 367ECAEF15CDD879003692BB /* icon_256x256.icns */; };
 		367ECAFC15CDD879003692BB /* icon_256x256@2x.icns in Resources */ = {isa = PBXBuildFile; fileRef = 367ECAF015CDD879003692BB /* icon_256x256@2x.icns */; };
 		367ECAFD15CDD879003692BB /* icon_512x512.icns in Resources */ = {isa = PBXBuildFile; fileRef = 367ECAF115CDD879003692BB /* icon_512x512.icns */; };
+		367ECB0315CDDC7E003692BB /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 367ECB0215CDDC7E003692BB /* SBJson.framework */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
 		36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
@@ -175,6 +176,7 @@
 		367ECAEF15CDD879003692BB /* icon_256x256.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon_256x256.icns; sourceTree = "<group>"; };
 		367ECAF015CDD879003692BB /* icon_256x256@2x.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "icon_256x256@2x.icns"; sourceTree = "<group>"; };
 		367ECAF115CDD879003692BB /* icon_512x512.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon_512x512.icns; sourceTree = "<group>"; };
+		367ECB0215CDDC7E003692BB /* SBJson.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SBJson.framework; path = PGBotNativeEngine/external/SBJson_3.1/build/Debug/SBJson.framework; sourceTree = "<group>"; };
 		369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		36C3D8D615C71A45003CCD2A /* PGBotEngineProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PGBotEngineProtocol.h; path = include/PGBotEngineProtocol.h; sourceTree = "<group>"; };
 		36C3D8D715C71A66003CCD2A /* GameStateDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateDescriptor.h; path = include/GameStateDescriptor.h; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				367ECB0315CDDC7E003692BB /* SBJson.framework in Frameworks */,
 				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
 				3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */,
@@ -231,9 +234,9 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				367ECB0215CDDC7E003692BB /* SBJson.framework */,
 				367ECA4F15CDD0F7003692BB /* images */,
 				36EBCFC615CB81C300F955F6 /* editor */,
-				369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */,
 				36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */,
 				36C3D8D515C71A2A003CCD2A /* include */,
 				36C7945F15C63C6600D53ADB /* MasterController.h */,
@@ -265,6 +268,7 @@
 		3608927D15BE876D00A06C94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */,
 				3670B92415C6115F00A38D46 /* OpenGL.framework */,
 				3608927E15BE876D00A06C94 /* Cocoa.framework */,
 				360892A215BE876D00A06C94 /* SenTestingKit.framework */,
@@ -290,7 +294,6 @@
 		3608928415BE876D00A06C94 /* bot */ = {
 			isa = PBXGroup;
 			children = (
-				36652F8A15CD0C3E00BB1E77 /* bot.entitlements */,
 				360892DA15BE8F5900A06C94 /* BattleDocumentViewController.h */,
 				360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */,
 				3608929015BE876D00A06C94 /* BattleDocument.h */,
@@ -308,6 +311,7 @@
 		3608928515BE876D00A06C94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				36652F8A15CD0C3E00BB1E77 /* bot.entitlements */,
 				3608928615BE876D00A06C94 /* bot-Info.plist */,
 				3608928715BE876D00A06C94 /* InfoPlist.strings */,
 				3608928A15BE876D00A06C94 /* main.m */,
@@ -844,6 +848,10 @@
 				CODE_SIGN_ENTITLEMENTS = bot/bot.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PGBotNativeEngine/external/SBJson_3.1/build/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
 				INFOPLIST_FILE = "bot/bot-Info.plist";
@@ -859,6 +867,10 @@
 				CODE_SIGN_ENTITLEMENTS = bot/bot.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PGBotNativeEngine/external/SBJson_3.1/build/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
 				INFOPLIST_FILE = "bot/bot-Info.plist";
