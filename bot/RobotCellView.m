@@ -60,6 +60,7 @@
         [linesOfCode setStringValue:s];
     }
     //int team = [robotCellViewController.documentController emptyTeamForRobot:b.robot];
+    [colorPicker setColor:b.color];
     [self refreshColor];
     [colorPicker addObserver:self forKeyPath:@"color" options:0 context:NULL];
     if ([d length] ==0) {
@@ -67,6 +68,7 @@
     } else {
         [descriptionScrollView setHidden:NO];
     }
+    [self refreshTeams];
     
 }
 

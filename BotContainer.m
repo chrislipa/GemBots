@@ -13,9 +13,12 @@
 
 
 @implementation BotContainer
+@synthesize color;
 
--(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) p_engine andURL:(NSURL*) url {
+-(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) p_engine andURL:(NSURL*) url andDocumentController:(BattleDocumentViewController*) pdocumentController {
     if (self = [super init]) {
+        self.documentController = pdocumentController;
+        self.color = [self.documentController unusedColorForNewRobot];
         engine = p_engine;
         [self setURLToBot:url];
     }

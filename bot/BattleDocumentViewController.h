@@ -13,6 +13,7 @@
 #import "PGBotEngineProtocol.h"
 #import "BotContainer.h"
 
+@class BotContainer;
 @class RobotListTableView;
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
@@ -34,4 +35,5 @@
 -(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot;
 -(void) addEditor:(id) editor;
 -(void) reccompileRobot:(BotContainer*) bot;
+-(NSColor*) unusedColorForNewRobot;
 @end

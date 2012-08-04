@@ -760,15 +760,13 @@
 		360892D515BE876D00A06C94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = bot/bot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lipa (G7FH8PL9R9)";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
 				INFOPLIST_FILE = "bot/bot-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -776,15 +774,13 @@
 		360892D615BE876D00A06C94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = bot/bot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lipa (G7FH8PL9R9)";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
 				INFOPLIST_FILE = "bot/bot-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
