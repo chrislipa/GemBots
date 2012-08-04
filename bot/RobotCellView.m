@@ -34,6 +34,16 @@
 
 }
 
+-(void) refreshTeams {
+    int team = robotCellViewController.botContainer.robot.team;
+    NSArray* teams = [robotCellViewController.documentController teamTitles];
+    [teamPicker removeAllItems];
+    [teamPicker addItemsWithTitles:teams];
+    if (team > 0) {
+        [teamPicker selectItemWithTitle:[NSString stringWithFormat:@"%d",team]];
+    }
+}
+
 
 -(void) refreshWithBot:(BotContainer*) b {
     [name setStringValue:[b name]];
@@ -57,6 +67,7 @@
     } else {
         [descriptionScrollView setHidden:NO];
     }
+    
 }
 
 

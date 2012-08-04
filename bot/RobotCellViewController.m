@@ -42,7 +42,6 @@
 
 -(IBAction) editButtonPressed:(id)sender {
     [[MasterController singleton] spawnEditorWindowForBotContainer:botContainer forBattleDocumentController:documentController];
-
 }
 
 -(void) refresh {

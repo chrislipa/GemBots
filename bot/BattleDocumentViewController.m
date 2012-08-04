@@ -27,6 +27,7 @@
         engine = [[c alloc] init];
         editors = [[NSMutableArray alloc] init];
         robotCellViewControllers = [[NSMutableDictionary alloc] init];
+        teamTitles = [NSMutableArray array];
     }
     
     
@@ -120,6 +121,16 @@
             [cellController refresh];
         }
     }
+}
+
+-(NSArray*) teamTitles {
+    while ([teamTitles count] < [robots count]) {
+        [teamTitles addObject:[NSString stringWithFormat:@"%ld",[teamTitles count]+1]];
+    }
+    while ([teamTitles count] > [robots count]) {
+        [teamTitles removeLastObject];
+    }
+    return teamTitles;
 }
 
 @end

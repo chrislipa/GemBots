@@ -23,12 +23,14 @@
     
     NSObject<PGBotEngineProtocol>* engine;
     NSMutableArray* editors;
+    NSMutableArray* teamTitles;
 }
 
 - (IBAction) addRobotButtonEvent:(id)sender;
 
 
 -(int) numberOfTeams;
+-(NSArray*) teamTitles ;
 -(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot;
 -(void) addEditor:(id) editor;
 -(void) reccompileRobot:(BotContainer*) bot;

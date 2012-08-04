@@ -136,6 +136,7 @@
 		364DCDFB15BF185F00A765D0 /* RobotCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RobotCellView.m; path = bot/RobotCellView.m; sourceTree = "<group>"; };
 		364DCDFD15BF18CE00A765D0 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		364DCDFE15BF18CE00A765D0 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		36652F8A15CD0C3E00BB1E77 /* bot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = bot.entitlements; sourceTree = "<group>"; };
 		3670B90F15C5E6D900A38D46 /* BotContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotContainer.h; sourceTree = "<group>"; };
 		3670B91015C5E6D900A38D46 /* BotContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BotContainer.m; sourceTree = "<group>"; };
 		3670B91515C5F09700A38D46 /* RobotCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotCellViewController.h; path = bot/RobotCellViewController.h; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 		3608928415BE876D00A06C94 /* bot */ = {
 			isa = PBXGroup;
 			children = (
+				36652F8A15CD0C3E00BB1E77 /* bot.entitlements */,
 				360892DA15BE8F5900A06C94 /* BattleDocumentViewController.h */,
 				360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */,
 				3608929015BE876D00A06C94 /* BattleDocument.h */,
@@ -717,6 +719,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = PGBotNativeEngine/PGBotNativeEngine;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
@@ -757,11 +760,15 @@
 		360892D515BE876D00A06C94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = bot/bot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lipa (G7FH8PL9R9)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
 				INFOPLIST_FILE = "bot/bot-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -769,11 +776,15 @@
 		360892D615BE876D00A06C94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = bot/bot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lipa (G7FH8PL9R9)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
 				INFOPLIST_FILE = "bot/bot-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

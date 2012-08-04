@@ -26,4 +26,5 @@
 @property (readonly) NSColorWell* colorPicker;
 -(void) refreshWithBot:(BotContainer*) b;
 -(void) refreshColor;
+-(void) refreshTeams ;
 @end
