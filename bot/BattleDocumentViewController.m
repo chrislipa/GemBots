@@ -34,7 +34,7 @@
         weightClass = [WeightClass defaultWeightClass];
         timeLimit = [TimeLimit defaultTimeLimit];
         numberOfMatches = 10;
-        
+        [[MasterController singleton] registerBattleDocument:self];
     }
     
     
@@ -237,6 +237,20 @@
 }
 -(IBAction)numberOfMatchesChanged:(id)sender {
     numberOfMatches = [[numberOfMatchesField stringValue] intValue];
+}
+
+-(void) dealloc {
+    [[MasterController singleton] registerBattleDocumentClosing:self];
+}
+
+-(void) notifyOfRecompile:(NSURL*) url {
+    for (int i = 0; i<[robots count]; i++ ){
+        BotContainer* b = [robots objectAtIndex:i];
+        if ([b.urlToBot isEqualTo:url]) {
+            RobotCellViewController* c = [robotCellViewControllers objectForKey:[NSNumber numberWithInt:i]];
+            [c refresh];
+        }
+    }
 }
 
 @end

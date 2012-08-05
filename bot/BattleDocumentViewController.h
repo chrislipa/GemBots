@@ -59,5 +59,6 @@
 -(IBAction)locPickerChanged:(id)sender;
 -(IBAction)timeLimitPickerChaged:(id)sender;
 -(IBAction)numberOfMatchesChanged:(id)sender;
+-(void) notifyOfRecompile:(NSURL*) url;
 
 @end

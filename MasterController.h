@@ -14,6 +14,7 @@
 @interface MasterController : NSObject {
     NSMutableDictionary* editorWindows;
     NSMutableDictionary* errorWindows;
+    NSMutableSet* battleDocuments;
 }
 
 +(MasterController*) singleton;
@@ -21,6 +22,9 @@
 
 -(void) spawnErrorWindowForBotContainer:(BotContainer*) bc forBattleDocumentController:(BattleDocumentViewController*) controller;
 
--(void) closeCompileErrorWindow:(CompileErrorWindowController*) controller;
+
 -(void) notifyOfRecompile:(NSURL*) url ;
+
+-(void) registerBattleDocument:(BattleDocumentViewController*) controller;
+-(void) registerBattleDocumentClosing:(BattleDocumentViewController*) controller;
 @end

@@ -63,9 +63,15 @@
         [compileErrorButton setHidden:NO];
         NSString* text;
         if (b.robot.numberOfCompileErrors > 0) {
-            text = [NSString stringWithFormat:@"%d Compile Errors",b.robot.numberOfCompileErrors];
+            text = [NSString stringWithFormat:@"%d Compile Error",b.robot.numberOfCompileErrors];
+            if (b.robot.numberOfCompileErrors > 1) {
+                text = [text stringByAppendingString:@"s"];
+            }
         } else if (b.robot.numberOfCompileWarnings) {
-            text = [NSString stringWithFormat:@"%d Compile Warnings",b.robot.numberOfCompileWarnings];
+            text = [NSString stringWithFormat:@"%d Warning",b.robot.numberOfCompileWarnings];
+            if (b.robot.numberOfCompileWarnings > 1) {
+                text = [text stringByAppendingString:@"s"];
+            }
         }
         [compileErrorButton setTitle:text];
     } else {

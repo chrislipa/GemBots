@@ -24,6 +24,6 @@
 @property (readwrite,retain) BotContainer* botContainer;
 -(id) initWithBotContainer:(BotContainer*)bc andBattleDocumentContriller:(BattleDocumentViewController*) controller ;
 
--(IBAction)closeWindowCallback:(id)sender;
+
 -(void) refresh;
 @end

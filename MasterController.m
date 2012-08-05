@@ -69,12 +69,12 @@ MasterController* staticMasterController = nil;
     if (errors) {
         [errors refresh];
     }
+    for (BattleDocumentViewController* c in battleDocuments) {
+        [c notifyOfRecompile:url];
+    }
 }
 
--(void) closeCompileErrorWindow:(CompileErrorWindowController*) controller {
-    
-    
-}
+
 
 -(void) closeEditorWindow:(EditWindowController*) controller {
     [errorWindows removeObjectForKey:controller.botContainer.urlToBot];
@@ -106,9 +106,17 @@ MasterController* staticMasterController = nil;
     staticMasterController = self;
     editorWindows = [[NSMutableDictionary alloc] init];
     errorWindows = [[NSMutableDictionary alloc] init];
+    battleDocuments = [[NSMutableSet alloc] init];
     [self loadEngine];
     NSError* error;
     [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay: YES error: &error];
+}
+
+-(void) registerBattleDocument:(BattleDocumentViewController*) controller {
+    [battleDocuments addObject:controller];
+}
+-(void) registerBattleDocumentClosing:(BattleDocumentViewController*) controller {
+    [battleDocuments removeObject:controller];
 }
 
 @end

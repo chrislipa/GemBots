@@ -14,6 +14,7 @@
 @synthesize errorWindow;
 @synthesize botContainer;
 @synthesize scrollView;
+@synthesize tableView;
 -(id) initWithBotContainer:(BotContainer*)bc andBattleDocumentContriller:(BattleDocumentViewController*) controller 
 {
     self = [super initWithNibName:@"CompilerErrorController" bundle:nil];
@@ -35,6 +36,8 @@
     title = [NSString stringWithFormat:@"%@ Errors",botContainer.urlToBot.lastPathComponent];
     [errorWindow setTitle:title];
     [tableView reloadData];
+    [tableView setNeedsDisplay];
+    [tableView setNeedsLayout:YES];
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
@@ -59,9 +62,6 @@
 }
 
 
--(IBAction)closeWindowCallback:(id)sender {
-    [[MasterController singleton] closeCompileErrorWindow:self];
-}
 
 
 @end
