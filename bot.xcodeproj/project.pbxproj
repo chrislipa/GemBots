@@ -117,7 +117,7 @@
 		3604DD0415CE19E70072B834 /* CompilerErrorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CompilerErrorController.xib; path = compilerError/CompilerErrorController.xib; sourceTree = "<group>"; };
 		3604DD0615CE1C2F0072B834 /* CompileErrorCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CompileErrorCellViewController.xib; path = compilerError/CompileErrorCellViewController.xib; sourceTree = "<group>"; };
 		3604DD0B15CE1F510072B834 /* CompileErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompileErrorProtocol.h; path = include/CompileErrorProtocol.h; sourceTree = "<group>"; };
-		3608927A15BE876D00A06C94 /* bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3608927A15BE876D00A06C94 /* Gem Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gem Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3608927E15BE876D00A06C94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3608928115BE876D00A06C94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3608928215BE876D00A06C94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -295,7 +295,7 @@
 		3608927B15BE876D00A06C94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3608927A15BE876D00A06C94 /* bot.app */,
+				3608927A15BE876D00A06C94 /* Gem Bot.app */,
 				360892A115BE876D00A06C94 /* botTests.octest */,
 				360892B415BE876D00A06C94 /* botImporter.mdimporter */,
 			);
@@ -520,9 +520,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3608927915BE876D00A06C94 /* bot */ = {
+		3608927915BE876D00A06C94 /* Gem Bot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 360892D415BE876D00A06C94 /* Build configuration list for PBXNativeTarget "bot" */;
+			buildConfigurationList = 360892D415BE876D00A06C94 /* Build configuration list for PBXNativeTarget "Gem Bot" */;
 			buildPhases = (
 				3608927615BE876D00A06C94 /* Sources */,
 				3608927715BE876D00A06C94 /* Frameworks */,
@@ -534,9 +534,9 @@
 				36FE1B4A15CCE7FD003310F0 /* PBXTargetDependency */,
 				360892B615BE876D00A06C94 /* PBXTargetDependency */,
 			);
-			name = bot;
+			name = "Gem Bot";
 			productName = bot;
-			productReference = 3608927A15BE876D00A06C94 /* bot.app */;
+			productReference = 3608927A15BE876D00A06C94 /* Gem Bot.app */;
 			productType = "com.apple.product-type.application";
 		};
 		360892A015BE876D00A06C94 /* botTests */ = {
@@ -601,7 +601,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				3608927915BE876D00A06C94 /* bot */,
+				3608927915BE876D00A06C94 /* Gem Bot */,
 				360892A015BE876D00A06C94 /* botTests */,
 				360892B315BE876D00A06C94 /* botImporter */,
 			);
@@ -743,7 +743,7 @@
 /* Begin PBXTargetDependency section */
 		360892A615BE876D00A06C94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3608927915BE876D00A06C94 /* bot */;
+			target = 3608927915BE876D00A06C94 /* Gem Bot */;
 			targetProxy = 360892A515BE876D00A06C94 /* PBXContainerItemProxy */;
 		};
 		360892B615BE876D00A06C94 /* PBXTargetDependency */ = {
@@ -985,7 +985,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		360892D415BE876D00A06C94 /* Build configuration list for PBXNativeTarget "bot" */ = {
+		360892D415BE876D00A06C94 /* Build configuration list for PBXNativeTarget "Gem Bot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				360892D515BE876D00A06C94 /* Debug */,

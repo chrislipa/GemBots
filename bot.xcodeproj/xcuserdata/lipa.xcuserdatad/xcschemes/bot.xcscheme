@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3608927915BE876D00A06C94"
-               BuildableName = "bot.app"
-               BlueprintName = "bot"
+               BuildableName = "Gem Bot.app"
+               BlueprintName = "Gem Bot"
                ReferencedContainer = "container:bot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3608927915BE876D00A06C94"
-            BuildableName = "bot.app"
-            BlueprintName = "bot"
+            BuildableName = "Gem Bot.app"
+            BlueprintName = "Gem Bot"
             ReferencedContainer = "container:bot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3608927915BE876D00A06C94"
-            BuildableName = "bot.app"
-            BlueprintName = "bot"
+            BuildableName = "Gem Bot.app"
+            BlueprintName = "Gem Bot"
             ReferencedContainer = "container:bot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3608927915BE876D00A06C94"
-            BuildableName = "bot.app"
-            BlueprintName = "bot"
+            BuildableName = "Gem Bot.app"
+            BlueprintName = "Gem Bot"
             ReferencedContainer = "container:bot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
