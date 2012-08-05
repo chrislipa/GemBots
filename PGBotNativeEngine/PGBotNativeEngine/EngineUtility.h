@@ -53,3 +53,10 @@ unit getRoundedAngleTo(unit nx, unit ny) ;
 unit convertGameCycleToUnit(int gameCycle);
 int roundUnitToGameCycle(unit x);
 void updatePositionForwardInTime(NSObject<MoveableObject>* object, unit dt);
+position internal_speed(NSObject<MoveableObject>* object);
+position scalarMultiply(position p, unit m) ;
+position internal_velocity(NSObject<MoveableObject>* object);
+position addPositions(position a, position b);
+unit sq(unit z);
+unit usqrt(unit z);
+#define MAX_UNIT DBL_MAX

@@ -5,7 +5,7 @@
 //  Created by Christopher Lipa on 8/1/12.
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
-
+#import "PGBotNativeEngine+Interface.h"
 #import "Mine.h"
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
@@ -25,11 +25,16 @@
 }
 
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
-    
+    [engine createExplosionAt:self ofRadius:MINE_EXPLOSION_RADIUS];
+    [engine removeMine:self];
 }
 
 -(unit) internal_speed {
     return distanceToInternalDistance(0);
+}
+
+-(int) heading {
+    return 0;
 }
 
 

@@ -50,10 +50,21 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
+CIRCLE COLLIION DETECTION
+
+The circle collision detection code was taken from CompSci.ca under 
+a Creative Commons Attribution-ShareAlike 2.5 Canada license, posted
+by "zylum".
+
+http://compsci.ca/v3/viewtopic.php?t=14897
+http://compsci.ca/ToU.html
+http://creativecommons.org/licenses/by-sa/2.5/ca/legalcode.en
+
+
+IMAGES
 
 The following images were downloaded from www.clker.com under the Creative 
 Commons CC0 Public Domain Dedication.
-
 
 http://www.clker.com/disclaimer.html
 http://creativecommons.org/publicdomain/zero/1.0/

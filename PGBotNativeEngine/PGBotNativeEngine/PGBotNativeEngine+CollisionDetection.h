@@ -12,6 +12,6 @@
 
 
 @interface PGBotNativeEngine (CollisionDetection)
-void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollisionTimeFound, NSObject<CollideableObject>** objectInCollisionA, NSObject<CollideableObject>** objectInCollisionB);
-void computeCircleCollision(NSObject<CollideableObject>* a, NSObject<CollideableObject>* b, unit* maximumCollisionTimeFound, NSObject<CollideableObject>** objectInCollisionA, NSObject<CollideableObject>** objectInCollisionB);
+void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollisionTimeFound, NSObject<CollideableObject>*  * objectInCollisionA, NSObject<CollideableObject>*  * objectInCollisionB);
+void computeCircleCollision(NSObject<CollideableObject>* a, NSObject<CollideableObject>* b, unit* maximumCollisionTimeFound,NSObject<CollideableObject>*  * objectInCollisionA,  NSObject<CollideableObject>*  * objectInCollisionB);
 @end

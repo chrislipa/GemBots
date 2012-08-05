@@ -8,6 +8,8 @@
 
 #import "PGBotNativeEngine.h"
 #import "GemBot.h"
+#import "Mine.h"
+#import "Missile.h"
 @interface PGBotNativeEngine (Interface)
 -(int) numberOfRobotsAlive;
 
@@ -19,4 +21,6 @@
 
 -(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(lint)r;
 
+-(void) removeMine:(Mine*) mine;
+-(void) removeMissile:(Missile*) missile ;
 @end

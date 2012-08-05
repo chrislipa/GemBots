@@ -27,6 +27,8 @@ NSString* pathToTextFile(NSString* file) {
     return nil;
 }
 
+
+
 unit roundedDivision(unit numerator, unit denominator) {
     return numerator/denominator;
 }
@@ -246,15 +248,46 @@ unit convertHeadingToUnit(int heading) {
     return convertIntToUnit(heading);
 }
 
-void updatePositionForwardInTime(NSObject<MoveableObject>* object, unit dt) {
-    position position = object.internal_position;
+position addPositions(position a, position b) {
+    position r;
+    r.x = a.x+b.x;
+    r.y = a.y+b.y;
+    return r;
+}
+
+position internal_velocity(NSObject<MoveableObject>* object) {
     unit speed = [object internal_speed];
-    // sin and cos are "backwards" here because Gem Bots uses a non-standard coordinate system;
     int heading = object.heading;
     unit internal_heading = convertHeadingToUnit(heading);
-    unit dx = speed * sin(internal_heading);
-    unit dy = speed * cos(internal_heading);
-    position.x += dx;
-    position.x += dy;
-    object.internal_position = position;
+    position internal_velocity;
+    // sin and cos are "backwards" here because Gem Bots uses a non-standard coordinate system;
+    internal_velocity.x = speed * sin(internal_heading);
+    internal_velocity.y = speed * cos(internal_heading);
+    return internal_velocity;
 }
+
+position scalarMultiply(position p, unit m) {
+    position r;
+    r.x = p.x*m;
+    r.y = p.y*m;
+    return r;
+}
+
+void updatePositionForwardInTime(NSObject<MoveableObject>* object, unit dt) {
+    position old_position = object.internal_position;
+    position velocity = internal_velocity(object);
+    position travel = scalarMultiply(velocity,dt);
+    position new_position = addPositions(old_position, travel);
+    object.internal_position = new_position;
+}
+
+unit sq(unit z) {
+    return z*z;
+}
+
+unit usqrt(unit z) {
+    return sqrt(z);
+}
+
+
+

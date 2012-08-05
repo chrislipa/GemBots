@@ -33,9 +33,10 @@
         [self updatePositionsForwardInTime:timeUntilNextCollision];
         timeLeftToDealWith -= timeUntilNextCollision;
         
-        [objectInCollisionA dealWithCollisionWithObject:objectInCollisionB];
-        [objectInCollisionB dealWithCollisionWithObject:objectInCollisionA];
+        
         if (objectInCollisionA || objectInCollisionB) {
+            [objectInCollisionA dealWithCollisionWithObject:objectInCollisionB];
+            [objectInCollisionB dealWithCollisionWithObject:objectInCollisionA];
             if ([self dealWithExplosions]) {
                 return YES;
             }
@@ -58,13 +59,13 @@
 
 
 
--(unit) timeUntilNextCollisionWithinTime:(unit)maxTime: (NSObject<CollideableObject>**) objectInCollisionA : (NSObject<CollideableObject>**) objectInCollisionB   {
+-(unit) timeUntilNextCollisionWithinTime:(unit)maxTime: (NSObject<CollideableObject>*  *) objectInCollisionA : (NSObject<CollideableObject>*  *) objectInCollisionB   {
     unit maximumCollisionTimeFound = maxTime;
     for (int i = 0; i< [robots count]; i++) {
         GemBot* robot = [robots objectAtIndex:i];
         for (int j = 0; j < i; j++) {
-            GemBot* b = [robots objectAtIndex:i];
-            computeCircleCollision(robot, b, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
+            GemBot* otherRobot = [robots objectAtIndex:i];
+            computeCircleCollision(robot, otherRobot, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
         }
         for (Missile* missile in missiles) {
             if (missile.owner != robot) {

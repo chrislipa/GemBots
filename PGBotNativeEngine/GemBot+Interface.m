@@ -28,13 +28,7 @@
     isAlive = NO;
 }
 
--(void) hadCollision {
-    throttle = 0;
-    speed_in_terms_of_throttle = 0;
-    number_of_collisions++;
-    lastCollisionTime = engine.gameCycle;
-    
-}
+
 -(void) setScanTargetData {
     relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan = anglemod(mostRecentlyScannedTank.heading - heading);
     speedOfMostRecentlyScannedTankAtTimeOfScan = mostRecentlyScannedTank.speedInCM;

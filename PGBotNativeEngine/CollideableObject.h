@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "EngineDefinitions.h"
+#import "MoveableObject.h"
 
-@protocol CollideableObject <NSObject>
+@protocol CollideableObject <MoveableObject>
 -(position) internal_position;
 -(unit) internal_radius;
 -(unit) internal_speed;
+
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object;
 @end

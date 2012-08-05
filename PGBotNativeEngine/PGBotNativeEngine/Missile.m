@@ -8,6 +8,7 @@
 
 #import "Missile.h"
 #import "EngineUtility.h"
+#import "PGBotNativeEngine+Interface.h"
 @implementation Missile
 @synthesize internal_position;
 @synthesize heading;
@@ -25,7 +26,9 @@
     return roundInternalDistanceToDistance(internal_position.y);
 }
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
-    
+    [engine createExplosionAt:self ofRadius:MISSILE_EXPLOSION_RADIUS];
+    [engine removeMissile:self];
 }
+
 
 @end

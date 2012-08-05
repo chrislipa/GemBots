@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "TangibleObject.h"
 @protocol MoveableObject <TangibleObject>
 -(unit) internal_speed;
 -(int) heading;

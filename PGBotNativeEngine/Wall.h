@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface Wall : NSObject
-
+#import "CollideableObject.h"
+@interface Wall : NSObject <CollideableObject>
++( Wall* __strong ) newWall;
 @end

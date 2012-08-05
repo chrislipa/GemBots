@@ -9,5 +9,5 @@
 #import "GemBot.h"
 
 @interface GemBot (Collision)
-
+-(void) hadCollision;
 @end

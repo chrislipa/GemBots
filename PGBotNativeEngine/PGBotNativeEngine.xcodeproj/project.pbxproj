@@ -48,7 +48,6 @@
 		36FE1B3315CCE7C1003310F0 /* PGBotNativeEngine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 363D8F7B15C8A1CF000FB3AE /* PGBotNativeEngine+Interface.m */; };
 		36FE1B3415CCE7C1003310F0 /* PGBotNativeEngine+DealDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028515C9968A006441FF /* PGBotNativeEngine+DealDamage.m */; };
 		36FE1B3515CCE7C1003310F0 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */; };
-		36FE1B3615CCE7C1003310F0 /* PGBotNativeEngine+CollisionPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */; };
 		36FE1B3715CCE7C1003310F0 /* PGBotNativeEngine+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029115C99C54006441FF /* PGBotNativeEngine+Movement.m */; };
 		36FE1B3815CCE7C1003310F0 /* PGBotNativeEngine+CommPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B029515C99D33006441FF /* PGBotNativeEngine+CommPhase.m */; };
 		36FE1B3A15CCE7C1003310F0 /* PGBotNativeEngine+CleanPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B02A115C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.m */; };
@@ -153,8 +152,6 @@
 		366B028515C9968A006441FF /* PGBotNativeEngine+DealDamage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+DealDamage.m"; sourceTree = "<group>"; };
 		366B028815C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+RobotCPUPhase.h"; sourceTree = "<group>"; };
 		366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+RobotCPUPhase.m"; sourceTree = "<group>"; };
-		366B028C15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CollisionPhase.h"; sourceTree = "<group>"; };
-		366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CollisionPhase.m"; sourceTree = "<group>"; };
 		366B029015C99C54006441FF /* PGBotNativeEngine+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Movement.h"; sourceTree = "<group>"; };
 		366B029115C99C54006441FF /* PGBotNativeEngine+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Movement.m"; sourceTree = "<group>"; };
 		366B029415C99D33006441FF /* PGBotNativeEngine+CommPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CommPhase.h"; sourceTree = "<group>"; };
@@ -318,8 +315,6 @@
 				366B028515C9968A006441FF /* PGBotNativeEngine+DealDamage.m */,
 				366B028815C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.h */,
 				366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */,
-				366B028C15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h */,
-				366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */,
 				366B029415C99D33006441FF /* PGBotNativeEngine+CommPhase.h */,
 				366B029515C99D33006441FF /* PGBotNativeEngine+CommPhase.m */,
 				366B02A015C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.h */,
@@ -636,7 +631,6 @@
 				36FE1B3315CCE7C1003310F0 /* PGBotNativeEngine+Interface.m in Sources */,
 				36FE1B3415CCE7C1003310F0 /* PGBotNativeEngine+DealDamage.m in Sources */,
 				36FE1B3515CCE7C1003310F0 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */,
-				36FE1B3615CCE7C1003310F0 /* PGBotNativeEngine+CollisionPhase.m in Sources */,
 				36FE1B3715CCE7C1003310F0 /* PGBotNativeEngine+Movement.m in Sources */,
 				36FE1B3815CCE7C1003310F0 /* PGBotNativeEngine+CommPhase.m in Sources */,
 				36FE1B3A15CCE7C1003310F0 /* PGBotNativeEngine+CleanPhase.m in Sources */,

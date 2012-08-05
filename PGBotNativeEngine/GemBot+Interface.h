@@ -17,6 +17,6 @@
 
 -(void) die;
 
--(void) hadCollision;
+
 -(void) setScanTargetData ;
 @end

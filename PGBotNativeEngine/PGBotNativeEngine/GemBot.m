@@ -14,7 +14,8 @@
 #import "GemBot+Stats.h"
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
-
+#import "Wall.h"
+#import "GemBot+Collision.h"
 @implementation GemBot
 
 
@@ -148,7 +149,9 @@
 }
 
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
-    
+    if ([object isKindOfClass:[Wall class]] || [object isKindOfClass:[GemBot class]]) {
+        [self hadCollision];
+    }
 }
 
 

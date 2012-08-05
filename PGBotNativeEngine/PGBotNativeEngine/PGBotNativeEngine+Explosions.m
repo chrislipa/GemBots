@@ -16,7 +16,7 @@
 #import "Explosion.h"
 #import "PGBotNativeEngine+DealDamage.h"
 #import "PGBotNativeEngine+RobotCPUPhase.h"
-#import "PGBotNativeEngine+CollisionPhase.h"
+
 #import "PGBotNativeEngine+CommPhase.h"
 
 #import "PGBotNativeEngine+CleanPhase.h"

@@ -125,4 +125,12 @@
     }
 }
 
+-(void) removeMissile:(Missile*) missile {
+    [missiles removeObject:missile];
+}
+
+-(void) removeMine:(Mine*) mine {
+    [mines removeObject:mine];
+}
+
 @end
