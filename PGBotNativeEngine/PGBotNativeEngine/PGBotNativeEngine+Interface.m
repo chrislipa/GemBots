@@ -13,6 +13,7 @@
 #import "GemBot+Stats.h"
 #import "Explosion.h"
 #import "GemBot+Interface.h"
+#import "GemBot+Communication.h"
 
 @implementation PGBotNativeEngine (Interface)
 -(int) numberOfRobotsAlive {
@@ -114,6 +115,14 @@
     Explosion* e = [[Explosion alloc] init];
     e.internal_position = a.internal_position;
     e.internal_radius = r;
+}
+
+-(void) transmit:(int)x onChannel:(int) comm_channel {
+    for (GemBot* b in robots) {
+        if (b.comm_channel == comm_channel) {
+            [b receiveCommunication:x];
+        }
+    }
 }
 
 @end

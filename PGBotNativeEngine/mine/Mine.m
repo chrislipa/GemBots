@@ -24,4 +24,6 @@
     return roundInternalDistanceToDistance(internal_radius);
 }
 
+
+
 @end

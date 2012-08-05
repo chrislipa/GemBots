@@ -10,6 +10,10 @@
 #import "EngineUtility.h"
 #import "SBJson.h"
 #import "GemBot+Compiler.h"
+#import "GemBot+Movement.h"
+#import "GemBot+Stats.h"
+#import "EngineDefinitions.h"
+#import "EngineUtility.h"
 
 @implementation GemBot
 
@@ -64,8 +68,8 @@
 @synthesize speedOfMostRecentlyScannedTankAtTimeOfScan;
 @synthesize relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
 @synthesize linesOfCode;
-
-
+@synthesize markForSelfDestruction;
+@synthesize comm_channel;
 
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;
@@ -137,6 +141,14 @@
 -(void) dealloc {
 
     free(memory);
+}
+
+-(unit) internal_speed {
+    return distanceToInternalDistance(speed_in_terms_of_throttle)*[self maxSpeedNumerator]/([self maxSpeedDenomenator]*100);
+}
+
+-(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
+    
 }
 
 

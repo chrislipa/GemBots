@@ -13,7 +13,7 @@
 #import "PGBotNativeEngine.h"
 #import "GemBot.h"
 
-@interface Mine : NSObject  <MineDescription, TangibleObject> {
+@interface Mine : NSObject  <MineDescription, TangibleObject,CollideableObject> {
     unit internal_radius;
     position internal_position;
     PGBotNativeEngine* engine;

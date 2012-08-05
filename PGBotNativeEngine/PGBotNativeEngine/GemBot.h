@@ -13,10 +13,11 @@
 #import "TangibleObject.h"
 #import "OrientedObject.h"
 #import "TurretedObject.h"
-
+#import "MoveableObject.h"
+#import "CollideableObject.h"
 
 @class PGBotNativeEngine;
-@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject,TurretedObject> {
+@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject,TurretedObject,MoveableObject,CollideableObject> {
     // Never refreshed
     
     NSString* sessionUniqueRobotIdentifier;
@@ -127,7 +128,8 @@
     
 
 }
-
+@property (readwrite,assign)     int comm_channel;
+@property (readwrite,assign) bool markForSelfDestruction;
 @property (readwrite,retain) NSMutableArray* compileErrors;
 @property (readwrite,assign) int numberOfCompileErrors;
 @property (readwrite,assign) int numberOfCompileWarnings;

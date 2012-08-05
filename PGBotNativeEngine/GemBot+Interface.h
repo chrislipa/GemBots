@@ -13,7 +13,7 @@
 
 
 
--(void) dealInternalDamage:(lint) damage ;
+-(void) dealInternalDamage:(unit) damage ;
 
 -(void) die;
 

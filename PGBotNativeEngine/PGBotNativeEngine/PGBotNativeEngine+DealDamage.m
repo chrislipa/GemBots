@@ -14,21 +14,23 @@
 @implementation PGBotNativeEngine (DealDamage)
 
 -(void) dealDamagePhase {
-    for (GemBot* bot in robots) {
-        if ([bot isAlive]) {
-            for (Explosion* explosion in explosions) {
+    for (; numberOfExplosionsAppliedThisCycle < [explosions count]; numberOfExplosionsAppliedThisCycle++) {
+        Explosion* explosion = [explosions objectAtIndex:numberOfExplosionsAppliedThisCycle];
+        for (GemBot* bot in robots) {
+            if ([bot isAlive]) {
                 [self checkForExplosion: explosion damagingRobot:bot];
+                
             }
         }
     }
 }
 
 -(void) checkForExplosion:(Explosion*) explosion damagingRobot:(GemBot*)bot {
-    lint distance = distance_between(explosion, bot);
+    unit distance = distance_between(explosion, bot);
     if (distance >= explosion.internal_radius) {
         return;
     }
-    lint internal_damage = explosion.internal_radius - distance;
+    unit internal_damage = explosion.internal_radius - distance;
     [bot dealInternalDamage:internal_damage];
 }
 

@@ -11,7 +11,11 @@
 @implementation PGBotNativeEngine (CleanPhase)
 
 -(void) cleanPhase {
-    
+    explosions = [NSMutableArray array];
+    numberOfExplosionsAppliedThisCycle = 0;
+    scans = [NSMutableArray array];
+    explosions =[NSMutableArray array];
+    soundEffectsInitiatedThisCycle = [NSMutableArray array];
 }
 
 @end

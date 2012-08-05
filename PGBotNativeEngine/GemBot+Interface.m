@@ -18,14 +18,14 @@
 
 
 
--(void) dealInternalDamage:(lint) damage  {
+-(void) dealInternalDamage:(unit) damage  {
     internal_armor -= damage;
 }
 
 -(void) die {
     internal_armor = 0;
+    internal_heat = 0;
     isAlive = NO;
-    [engine createExplosionAt:self ofRadius:distanceToInternalDistance(ROBOT_DEATH_EXPLOSION_RADIUS)];
 }
 
 -(void) hadCollision {

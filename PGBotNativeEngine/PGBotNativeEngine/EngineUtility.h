@@ -12,6 +12,7 @@
 #import "TangibleObject.h"
 #import "OrientedObject.h"
 #import "TurretedObject.h"
+#import "MoveableObject.h"
 
 NSString* pathToTextFile(NSString* file) ;
 
@@ -47,3 +48,8 @@ position positionWithInts(int x, int y);
 int roundUnitToInt(unit x) ;
 int roundUnitToHeading(unit heading) ;
 unit getRoundedAngleTo(unit nx, unit ny) ;
+
+
+unit convertGameCycleToUnit(int gameCycle);
+int roundUnitToGameCycle(unit x);
+void updatePositionForwardInTime(NSObject<MoveableObject>* object, unit dt);

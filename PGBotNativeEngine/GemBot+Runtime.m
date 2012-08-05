@@ -106,7 +106,7 @@
         }
         
         int clockCyclesRequiredForNext = [self clockCyclesRequiredForNextInstruction];
-        if (clockCyclesRequiredForNext > savedClockCycles) {
+        if (clockCyclesRequiredForNext > savedClockCycles || markForSelfDestruction) {
             [self setMemory:IP :[self getMemory:IP]-SIZE_OF_INSTRUCTION];
             break;
         }

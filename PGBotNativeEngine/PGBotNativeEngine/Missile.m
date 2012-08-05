@@ -13,6 +13,7 @@
 @synthesize heading;
 @synthesize engine;
 @synthesize owner;
+@synthesize internal_speed;
 -(lint) internal_radius {
     return MISSILE_RADIUS;
 }
@@ -23,6 +24,8 @@
 -(int) y {
     return roundInternalDistanceToDistance(internal_position.y);
 }
-
+-(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
+    
+}
 
 @end

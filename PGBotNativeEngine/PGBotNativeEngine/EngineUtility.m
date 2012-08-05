@@ -234,3 +234,27 @@ position positionWithUnits(unit px, unit py) {
     return p;
 }
 
+unit convertGameCycleToUnit(int gameCycle) {
+    return convertIntToUnit(gameCycle);
+}
+
+int roundUnitToGameCycle(unit x) {
+    return roundUnitToInt(x);
+}
+
+unit convertHeadingToUnit(int heading) {
+    return convertIntToUnit(heading);
+}
+
+void updatePositionForwardInTime(NSObject<MoveableObject>* object, unit dt) {
+    position position = object.internal_position;
+    unit speed = [object internal_speed];
+    // sin and cos are "backwards" here because Gem Bots uses a non-standard coordinate system;
+    int heading = object.heading;
+    unit internal_heading = convertHeadingToUnit(heading);
+    unit dx = speed * sin(internal_heading);
+    unit dy = speed * cos(internal_heading);
+    position.x += dx;
+    position.x += dy;
+    object.internal_position = position;
+}

@@ -11,5 +11,9 @@
 @interface GemBot (Communication)
 
 
--(void) communicationPhase;
+-(void) communicationPhaseSend;
+-(void) communicationPhaseSwitchChannels;
+-(void) receiveCommunication:(int) message ;
+
+
 @end

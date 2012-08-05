@@ -1,11 +1,12 @@
 //
-//  PGBotNativeEngine+Runtime.m
+//  PGBotNativeEngine+Explosions.m
 //  PGBotNativeEngine
 //
-//  Created by Christopher Lipa on 7/31/12.
+//  Created by Christopher Lipa on 8/5/12.
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
+#import "PGBotNativeEngine+Explosions.h"
 #import "PGBotNativeEngine+Runtime.h"
 #import "GemBot+Runtime.h"
 #import "Missile.h"
@@ -23,20 +24,26 @@
 #import "PGBotNativeEngine+RobotDeath.h"
 #import "PGBotNativeEngine+CheckForEndOfMatch.h"
 #import "PGBotNativeEngine+Interface.h"
-#import "PGBotNativeEngine+Explosions.h" 
-
-@implementation PGBotNativeEngine (Runtime)
- 
 
 
+@implementation PGBotNativeEngine (Explosions)
+-(bool) dealWithExplosions {
+    while (numberOfExplosionsAppliedThisCycle < [explosions count]) {
+        [self dealDamagePhase];
+        [self checkForRobotDeathPhase];
+    }
+    return ([self checkForEndMatchPhase]);
+}
 
--(bool) executeGameCycle {
-    [self cleanPhase];
-    [self robotCPUPhase];
-    if ([self checkForAndDealWithSelfDestructingRobots]) return YES;
-    [self communicationPhase];
-    if ([self movementAndExplosionPhase]) return YES;
-    return NO;
+
+-(bool) checkForAndDealWithSelfDestructingRobots {
+    for (GemBot* b in robots) {
+        if (b.markForSelfDestruction) {
+            [b die];
+            [self createExplosionAt:b ofRadius:ROBOT_DEATH_EXPLOSION_RADIUS];
+        }
+    }
+    return [self dealWithExplosions];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "GemBot+Communication.h"
 #import "GemBot+Memory.h"
+#import "PGBotNativeEngine+Interface.h"
 @implementation GemBot (Communication)
 
 
@@ -43,7 +44,32 @@
     [self setMemory:FX :v];
 }
 
--(void) communicationPhase {
-    
+-(void) communicationPhaseSend {
+    for(int i = 0; i< number_of_comm_transmits_this_turn;i++) {
+        [engine transmit:comm_transmits_this_turn[i] onChannel:comm_channel];
+    }
+}
+-(void) communicationPhaseSwitchChannels {
+    if (swtich_comm_channel_this_turn) {
+        comm_channel = comm_channel_to_switch_to;
+        for (int i = COMMUNICATION_MEMORY_START; i < COMMUNICATION_MEMORY_END; i++) {
+            memory[i] = 0;
+        }
+        swtich_comm_channel_this_turn = NO;
+        comm_read_ptr = comm_write_ptr = COMMUNICATION_MEMORY_START;
+    }
+}
+
+-(void) receiveCommunication:(int) message {
+    memory[comm_write_ptr++] = message;
+    if (comm_write_ptr == COMMUNICATION_MEMORY_END) {
+        comm_write_ptr = COMMUNICATION_MEMORY_START;
+    }
+    if (comm_write_ptr == comm_read_ptr) {
+        comm_read_ptr++;
+        if (comm_read_ptr == COMMUNICATION_MEMORY_END) {
+            comm_read_ptr = COMMUNICATION_MEMORY_START;
+        }
+    }
 }
 @end

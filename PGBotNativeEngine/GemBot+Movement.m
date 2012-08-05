@@ -13,9 +13,7 @@
 @implementation GemBot (Movement)
 
 
--(lint) internal_speed {
-    return distanceToInternalDistance(speed_in_terms_of_throttle)*[self maxSpeedNumerator]/([self maxSpeedDenomenator]*100);
-}
+
 -(int) speedInCM {
     return roundInternalDistanceToDistance(distanceToInternalDistance(speed_in_terms_of_throttle)*[self maxSpeedNumerator]/([self maxSpeedDenomenator]));
 }
@@ -26,13 +24,6 @@
     
 }
 
--(void) updatePosition {
-    
-}
 
--(void) move {
-    [self updateSpeedAndHeading];
-    [self updatePosition];
-}
 
 @end

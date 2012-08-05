@@ -11,10 +11,17 @@
 #import "GemBot+Communication.h"
 
 @implementation PGBotNativeEngine (CommPhase)
+
+
 -(void) communicationPhase {
     for (GemBot* bot in robots) {
         if ([bot isAlive]) {
-            [bot communicationPhase];
+            [bot communicationPhaseSend];
+        }
+    }
+    for (GemBot* bot in robots) {
+        if ([bot isAlive]) {
+            [bot communicationPhaseSwitchChannels];
         }
     }
 }

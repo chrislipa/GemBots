@@ -12,13 +12,15 @@
 #import "OrientedObject.h"
 #import "PGBotNativeEngine.h"
 #import "GemBot.h"
-@interface Missile : NSObject <MissileDescription, TangibleObject, OrientedObject> {
+@interface Missile : NSObject <MissileDescription, TangibleObject, OrientedObject,CollideableObject,MoveableObject> {
     int heading;
     position internal_position;
     PGBotNativeEngine* engine;
     bool isAlive;
     GemBot* owner;
+    unit internal_speed;
 }
+@property (readwrite,assign) unit internal_speed;
 @property (readwrite,assign) position internal_position;
 @property (readwrite,assign) int heading;
 @property (readwrite,retain) PGBotNativeEngine* engine;
