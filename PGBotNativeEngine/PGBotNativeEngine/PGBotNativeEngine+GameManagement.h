@@ -12,4 +12,6 @@
 -(void) resetAllRobotsForNextRound;
 -(void) giveRandomIDsToRobots ;
 -(void) placeRobotsInRandomPositionsAndHeadings;
+-(void) startNewMatchInternal;
+-(void) giveCreditForWinsAndLoses;
 @end

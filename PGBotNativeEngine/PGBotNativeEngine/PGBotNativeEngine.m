@@ -13,6 +13,7 @@
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
 #import "PGBotNativeEngine+GameManagement.h"
+#import "PGBotNativeEngine+Runtime.h"
 
 @implementation PGBotNativeEngine
 
@@ -92,7 +93,7 @@
 
 
 -(void) startNewSetOfMatches {
-    currentMatch = 1;
+    currentMatch = 0;
     
     isMatchCurrentlyActive = NO;
     hasSetStarted = YES;
@@ -102,21 +103,22 @@
     isMatchCurrentlySetUp = NO;
 }
 
-
 -(void) startNewMatch {
-    gameCycle = 0;
-    missiles = [NSMutableArray array];
-    [self resetAllRobotsForNextRound];
-    [self giveRandomIDsToRobots];
-    [self placeRobotsInRandomPositionsAndHeadings];
-    isMatchCurrentlyActive = YES;
-    isThisSetInitiated = YES;
-    
+    [self startNewMatchInternal];
+}
 
+-(void) endMatch {
+    [self giveCreditForWinsAndLoses];
+    isMatchCurrentlyActive = NO;
+    isThisSetInitiated = NO;
+    isMatchCurrentlySetUp = NO;
+    hasSetEnded = (currentMatch ==totalNumberOfMatches);
 }
 
 -(void) stepGameCycle {
-    
+    if (hasSetEnded || !hasSetStarted) {return;}
+    if (!isThisSetInitiated) { [self startNewMatch]; return;}
+    if ([self executeGameCycle]) {[self endMatch];}
 }
 
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription {
@@ -124,7 +126,7 @@
 }
 
 -(bool) isSetOfMatchesCompleted {
-    return NO;
+    return hasSetEnded;
 }
 
 -(bool) isMatchCurrentlyActive {

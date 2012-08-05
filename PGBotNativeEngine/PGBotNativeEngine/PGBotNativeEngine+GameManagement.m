@@ -13,6 +13,20 @@
 @implementation PGBotNativeEngine (GameManagement)
 
 
+-(void) startNewMatchInternal {
+    currentMatch++;
+    gameCycle = 0;
+    missiles = [NSMutableArray array];
+    [self resetAllRobotsForNextRound];
+    [self giveRandomIDsToRobots];
+    [self placeRobotsInRandomPositionsAndHeadings];
+    isMatchCurrentlyActive = YES;
+    isThisSetInitiated = YES;
+    
+    
+}
+
+
 -(void) resetAllRobotsForNextRound {
     for (GemBot* b in robots) {
         [b cleanBetweenRounds];
@@ -51,6 +65,18 @@
             }
         } while (match);
         b.heading = [random randomIntInInclusiveRange:0 :255];
+    }
+}
+
+-(void) giveCreditForWinsAndLoses {
+    winnersOfLastMatch = [NSMutableArray array];
+    for (GemBot* b in robots) {
+        if (b.isAlive) {
+            b.wins++;
+            [winnersOfLastMatch addObject:b];
+        } else {
+            b.loses++;
+        }
     }
 }
 

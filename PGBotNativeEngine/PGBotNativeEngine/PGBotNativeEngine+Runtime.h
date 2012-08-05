@@ -11,5 +11,5 @@
 @interface PGBotNativeEngine (Runtime)
 
 
--(void) executeGameCycle;
+-(bool) executeGameCycle;
 @end

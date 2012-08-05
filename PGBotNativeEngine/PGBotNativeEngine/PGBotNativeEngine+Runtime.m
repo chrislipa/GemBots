@@ -34,16 +34,16 @@
     return ([self checkForEndMatchPhase]);
 }
 
--(void) executeGameCycle {
+-(bool) executeGameCycle {
     [self checkForStartNextMatchPhase];
     [self cleanPhase];
     [self robotCPUPhase];
-    if ([self dealWithExplosions]) return;
+    if ([self dealWithExplosions]) return YES;
     [self communicationPhase];
     [self movementPhase];
     [self collisionPhase];
-    if ([self dealWithExplosions]) return;
-    
+    if ([self dealWithExplosions]) return YES;
+    return NO;
 }
 
 @end
