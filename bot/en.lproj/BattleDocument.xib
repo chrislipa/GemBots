@@ -329,7 +329,6 @@
 							<string key="NSFrame">{{785, 18}, {238, 56}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="747873701">
@@ -775,7 +774,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="748211811">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Label</string>
+								<string key="NSContents"/>
 								<reference key="NSSupport" ref="123439787"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="918338114"/>
@@ -887,6 +886,30 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">teamLabel</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="918338114"/>
+					</object>
+					<int key="connectionID">100596</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">teamText</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="748211811"/>
+					</object>
+					<int key="connectionID">100597</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">teamTextCell</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="748211811"/>
+					</object>
+					<int key="connectionID">100598</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="634943307"/>
 						<reference key="destination" ref="878140351"/>
@@ -970,11 +993,11 @@
 							<reference ref="6045682"/>
 							<reference ref="886359422"/>
 							<reference ref="229072224"/>
-							<reference ref="918338114"/>
 							<reference ref="262971128"/>
 							<reference ref="473772680"/>
 							<reference ref="499678298"/>
 							<reference ref="305569403"/>
+							<reference ref="918338114"/>
 						</array>
 						<reference key="parent" ref="891928962"/>
 					</object>
@@ -1386,7 +1409,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100595</int>
+			<int key="maxID">100598</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1450,6 +1473,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addRobotButtonEvent:">id</string>
 						<string key="locPickerChanged:">id</string>
+						<string key="numberOfMatchesChanged:">id</string>
 						<string key="startBattleCallback:">id</string>
 						<string key="timeLimitPickerChaged:">id</string>
 					</dictionary>
@@ -1460,6 +1484,10 @@
 						</object>
 						<object class="IBActionInfo" key="locPickerChanged:">
 							<string key="name">locPickerChanged:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="numberOfMatchesChanged:">
+							<string key="name">numberOfMatchesChanged:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="startBattleCallback:">
@@ -1476,6 +1504,7 @@
 						<string key="gameCycleTimeOutPicker">NSPopUpButton</string>
 						<string key="numberOfMatchesField">NSTextField</string>
 						<string key="robotList">RobotListTableView</string>
+						<string key="teamTextCell">NSTextFieldCell</string>
 						<string key="weightClassPicker">NSPopUpButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1494,6 +1523,10 @@
 						<object class="IBToOneOutletInfo" key="robotList">
 							<string key="name">robotList</string>
 							<string key="candidateClassName">RobotListTableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="teamTextCell">
+							<string key="name">teamTextCell</string>
+							<string key="candidateClassName">NSTextFieldCell</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="weightClassPicker">
 							<string key="name">weightClassPicker</string>

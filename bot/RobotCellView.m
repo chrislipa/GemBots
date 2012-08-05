@@ -90,6 +90,10 @@
     [self refreshTeams];
 }
 
+-(IBAction) chooseTeamCallback:(id) sender{
+    robotCellViewController.botContainer.team = [[teamPicker titleOfSelectedItem] intValue];
+    [robotCellViewController.documentController notifyOfTeamsChange];
+}
 
 
 

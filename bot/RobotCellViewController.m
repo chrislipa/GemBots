@@ -55,4 +55,6 @@
 -(IBAction) compilerErrorCallback:(id)sender {
     [[MasterController singleton] spawnErrorWindowForBotContainer:botContainer forBattleDocumentController:documentController];
 }
+
+
 @end

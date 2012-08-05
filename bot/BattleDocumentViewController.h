@@ -38,6 +38,7 @@
     IBOutlet NSTextField* numberOfMatchesField;
     IBOutlet NSPopUpButton* gameCycleTimeOutPicker;
     
+    IBOutlet NSTextFieldCell* teamTextCell;
     
 }
 
@@ -60,5 +61,5 @@
 -(IBAction)timeLimitPickerChaged:(id)sender;
 -(IBAction)numberOfMatchesChanged:(id)sender;
 -(void) notifyOfRecompile:(NSURL*) url;
-
+-(void) notifyOfTeamsChange;
 @end

@@ -35,13 +35,19 @@
         timeLimit = [TimeLimit defaultTimeLimit];
         numberOfMatches = 10;
         [[MasterController singleton] registerBattleDocument:self];
+
+        
     }
     
     
     return self;
 }
 
+-(void) awakeFromNib {
 
+
+    
+}
 - (IBAction) addRobotButtonEvent:(id)sender {
     [self promptUserToAddRobots];
    
@@ -77,7 +83,7 @@
         }
     } while (match);
     robot.robot.team = team;
-    
+    [self notifyOfTeamsChange];
 }
 
 -(void) addRobot:(BotContainer*) robot {
@@ -180,6 +186,50 @@
 -(int) numberOfTeams {
     return (int)[robots count];
 }
+
+-(void) notifyOfTeamsChange {
+    NSMutableDictionary* teams = [NSMutableDictionary dictionary];
+    for (BotContainer* bot in robots) {
+        NSNumber* k = [NSNumber numberWithInt:bot.team];
+        NSNumber* x = [teams objectForKey:k];
+        if (x == nil) {
+            x = [NSNumber numberWithInt:0];
+        }
+        x = [NSNumber numberWithInt:[x intValue]+1];
+        [teams setObject:x forKey:k];
+    }
+    NSMutableArray* a = [NSMutableArray array];
+    for (id k in teams) {
+        [a addObject:[teams objectForKey:k]];
+    }
+    [a sortUsingSelector:@selector(compare:)];
+    NSString* teamText;
+    bool all1 = YES;
+    for (NSNumber* x in a) {
+        if ([x intValue] != 1) {
+            all1 = NO;
+            break;
+        }
+    }
+    if ([a count] < 2) {
+        teamText = @"";
+    } else if ([a count] == 2 && all1) {
+        teamText = @"1v1";
+    } else if (all1) {
+        teamText = [NSString stringWithFormat:@"%ld Bot FFA", [a count]];
+    } else {
+        teamText = [NSMutableString stringWithString:@""];
+        for (long i = [a count]-1; i >=0;i--) {
+            [(NSMutableString*)teamText appendFormat:@"%dv",[[a objectAtIndex:i] intValue]];
+        }
+        teamText = [teamText substringToIndex:[teamText length]-1];
+    }
+    [teamTextCell setStringValue:teamText];
+    
+    
+}
+
+
 -(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot; {
     for (int i = 0; ; i++) {
         bool match = NO;
