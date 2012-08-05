@@ -12,7 +12,7 @@
 @interface EditWindow : NSWindow {
     IBOutlet EditWindowController* controller;
 }
-
+@property (readwrite,retain) EditWindowController* controller;
 -(IBAction) buildCallback:(id) sender ;
 -(IBAction) buildAndRunCallback:(id) sender ;
 

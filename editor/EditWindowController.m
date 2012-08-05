@@ -13,7 +13,7 @@
 @implementation EditWindowController
 @synthesize battleController;
 @synthesize editWindow;
-
+@synthesize botContainer;
 
 -(void) buildRequested {
     NSString* str = textView.stringValue;

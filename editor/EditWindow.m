@@ -9,7 +9,7 @@
 #import "EditWindow.h"
 
 @implementation EditWindow
-
+@synthesize controller;
 
 - (BOOL)control:(NSControl*)control textView:(NSTextView*)ptextView doCommandBySelector:(SEL)commandSelector
 {

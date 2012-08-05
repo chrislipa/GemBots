@@ -24,5 +24,5 @@
 -(IBAction) editButtonPressed:(id)sender;
 -(IBAction) closeCallback:(id)sender;
 -(void) refresh ;
-
+-(IBAction) compilerErrorCallback:(id)sender;
 @end

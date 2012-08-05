@@ -18,7 +18,7 @@
     BattleDocumentViewController* battleController;
     BotContainer* botContainer;
 }
-
+@property (readwrite,retain) BotContainer* botContainer;
 @property (readwrite,retain) BattleDocumentViewController* battleController;
 @property (readwrite,retain) IBOutlet EditWindow* editWindow;
 

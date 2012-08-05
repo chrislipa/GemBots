@@ -11,6 +11,7 @@
 #import "RobotCellViewController.h"
 #import "BotContainer.h"
 #import "BattleDocumentViewController+UserInterface.h"
+#import "MasterController.h"
 @interface BattleDocumentViewController ()
 
 @end
@@ -205,6 +206,7 @@
             [cellController refresh];
         }
     }
+    [[MasterController singleton] notifyOfRecompile:bot.urlToBot];
 }
 
 -(NSArray*) teamTitles {

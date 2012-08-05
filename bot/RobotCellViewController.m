@@ -7,7 +7,7 @@
 //
 
 #import "RobotCellViewController.h"
-#import "GemBotEditor.h"
+
 #import "MasterController.h"
 @interface RobotCellViewController ()
 
@@ -50,5 +50,9 @@
 
 -(IBAction) closeCallback:(id)sender {
     [documentController removeRobot:botContainer];
+}
+
+-(IBAction) compilerErrorCallback:(id)sender {
+    [[MasterController singleton] spawnErrorWindowForBotContainer:botContainer forBattleDocumentController:documentController];
 }
 @end

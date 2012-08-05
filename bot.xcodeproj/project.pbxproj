@@ -32,6 +32,9 @@
 		360892C915BE876D00A06C94 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892C815BE876D00A06C94 /* GetMetadataForFile.m */; };
 		360892CC15BE876D00A06C94 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892CB15BE876D00A06C94 /* MySpotlightImporter.m */; };
 		360892DC15BE8F5900A06C94 /* BattleDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */; };
+		3610461D15CE2FFD0064F381 /* CompileErrorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610461C15CE2FFD0064F381 /* CompileErrorWindow.m */; };
+		3610462015CE30320064F381 /* CompileErrorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610461F15CE30320064F381 /* CompileErrorWindowController.m */; };
+		3610462315CE3DE80064F381 /* CompileErrorCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610462215CE3DE80064F381 /* CompileErrorCellViewController.m */; };
 		364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDF815BEA01700A765D0 /* RobotListTableView.m */; };
 		364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFB15BF185F00A765D0 /* RobotCellView.m */; };
 		364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFE15BF18CE00A765D0 /* Utility.m */; };
@@ -72,7 +75,6 @@
 		36EBCFCE15CB81C300F955F6 /* EditWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFC815CB81C300F955F6 /* EditWindow.m */; };
 		36EBCFCF15CB81C300F955F6 /* EditWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EBCFC915CB81C300F955F6 /* EditWindowController.xib */; };
 		36EBCFD015CB81C300F955F6 /* EditWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFCB15CB81C300F955F6 /* EditWindowController.m */; };
-		36EBCFD115CB81C300F955F6 /* GemBotEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFCD15CB81C300F955F6 /* GemBotEditor.m */; };
 		36FE1B5615CCEA19003310F0 /* NativeEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36FE1B4815CCE7F6003310F0 /* NativeEngine.bundle */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +152,12 @@
 		360892CE15BE876D00A06C94 /* botImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "botImporter-Prefix.pch"; sourceTree = "<group>"; };
 		360892DA15BE8F5900A06C94 /* BattleDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentViewController.h; sourceTree = "<group>"; };
 		360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleDocumentViewController.m; sourceTree = "<group>"; };
+		3610461B15CE2FFD0064F381 /* CompileErrorWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompileErrorWindow.h; path = compilerError/CompileErrorWindow.h; sourceTree = "<group>"; };
+		3610461C15CE2FFD0064F381 /* CompileErrorWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompileErrorWindow.m; path = compilerError/CompileErrorWindow.m; sourceTree = "<group>"; };
+		3610461E15CE30320064F381 /* CompileErrorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompileErrorWindowController.h; path = compilerError/CompileErrorWindowController.h; sourceTree = "<group>"; };
+		3610461F15CE30320064F381 /* CompileErrorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompileErrorWindowController.m; path = compilerError/CompileErrorWindowController.m; sourceTree = "<group>"; };
+		3610462115CE3DE80064F381 /* CompileErrorCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompileErrorCellViewController.h; path = compilerError/CompileErrorCellViewController.h; sourceTree = "<group>"; };
+		3610462215CE3DE80064F381 /* CompileErrorCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompileErrorCellViewController.m; path = compilerError/CompileErrorCellViewController.m; sourceTree = "<group>"; };
 		364DCDF715BEA01700A765D0 /* RobotListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableView.h; sourceTree = "<group>"; };
 		364DCDF815BEA01700A765D0 /* RobotListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableView.m; sourceTree = "<group>"; };
 		364DCDFA15BF185F00A765D0 /* RobotCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotCellView.h; path = bot/RobotCellView.h; sourceTree = "<group>"; };
@@ -207,8 +215,6 @@
 		36EBCFC915CB81C300F955F6 /* EditWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditWindowController.xib; sourceTree = "<group>"; };
 		36EBCFCA15CB81C300F955F6 /* EditWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditWindowController.h; sourceTree = "<group>"; };
 		36EBCFCB15CB81C300F955F6 /* EditWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditWindowController.m; sourceTree = "<group>"; };
-		36EBCFCC15CB81C300F955F6 /* GemBotEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemBotEditor.h; sourceTree = "<group>"; };
-		36EBCFCD15CB81C300F955F6 /* GemBotEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemBotEditor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,8 +256,14 @@
 		3604DD0315CE19CD0072B834 /* compilerError */ = {
 			isa = PBXGroup;
 			children = (
+				3610461B15CE2FFD0064F381 /* CompileErrorWindow.h */,
+				3610461C15CE2FFD0064F381 /* CompileErrorWindow.m */,
+				3610461E15CE30320064F381 /* CompileErrorWindowController.h */,
+				3610461F15CE30320064F381 /* CompileErrorWindowController.m */,
 				3604DD0415CE19E70072B834 /* CompilerErrorController.xib */,
 				3604DD0615CE1C2F0072B834 /* CompileErrorCellViewController.xib */,
+				3610462115CE3DE80064F381 /* CompileErrorCellViewController.h */,
+				3610462215CE3DE80064F381 /* CompileErrorCellViewController.m */,
 			);
 			name = compilerError;
 			sourceTree = "<group>";
@@ -501,8 +513,6 @@
 				36EBCFC915CB81C300F955F6 /* EditWindowController.xib */,
 				36EBCFCA15CB81C300F955F6 /* EditWindowController.h */,
 				36EBCFCB15CB81C300F955F6 /* EditWindowController.m */,
-				36EBCFCC15CB81C300F955F6 /* GemBotEditor.h */,
-				36EBCFCD15CB81C300F955F6 /* GemBotEditor.m */,
 			);
 			path = editor;
 			sourceTree = "<group>";
@@ -699,12 +709,14 @@
 				36C7946115C63C6600D53ADB /* MasterController.m in Sources */,
 				36EBCFCE15CB81C300F955F6 /* EditWindow.m in Sources */,
 				36EBCFD015CB81C300F955F6 /* EditWindowController.m in Sources */,
-				36EBCFD115CB81C300F955F6 /* GemBotEditor.m in Sources */,
 				36B3DFFB15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m in Sources */,
 				36B3DFFE15CDECB10077E9A0 /* WeightClass.m in Sources */,
 				36B3E01415CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m in Sources */,
 				3604DCF215CE0A4B0072B834 /* BattleDocumentView.m in Sources */,
 				3604DCF515CE0C150072B834 /* TimeLimit.m in Sources */,
+				3610461D15CE2FFD0064F381 /* CompileErrorWindow.m in Sources */,
+				3610462015CE30320064F381 /* CompileErrorWindowController.m in Sources */,
+				3610462315CE3DE80064F381 /* CompileErrorCellViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
