@@ -57,6 +57,12 @@
 		367ECB0715CDE50C003692BB /* close_button_red_icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0515CDE50C003692BB /* close_button_red_icon_80.png */; };
 		367ECB0915CDE57E003692BB /* close_button_red_icon_160@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0815CDE57E003692BB /* close_button_red_icon_160@2x.png */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
+		36B3DFFB15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3DFFA15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m */; };
+		36B3DFFE15CDECB10077E9A0 /* WeightClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3DFFD15CDECB10077E9A0 /* WeightClass.m */; };
+		36B3E00F15CDF7650077E9A0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 36B3E00C15CDF7650077E9A0 /* README.md */; };
+		36B3E01015CDF7650077E9A0 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 36B3E00D15CDF7650077E9A0 /* LICENSE.md */; };
+		36B3E01115CDF7650077E9A0 /* CREDITS.md in Resources */ = {isa = PBXBuildFile; fileRef = 36B3E00E15CDF7650077E9A0 /* CREDITS.md */; };
+		36B3E01415CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3E01315CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m */; };
 		36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
 		36C7946115C63C6600D53ADB /* MasterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7946015C63C6600D53ADB /* MasterController.m */; };
@@ -184,6 +190,15 @@
 		367ECB0515CDE50C003692BB /* close_button_red_icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button_red_icon_80.png; sourceTree = "<group>"; };
 		367ECB0815CDE57E003692BB /* close_button_red_icon_160@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_button_red_icon_160@2x.png"; sourceTree = "<group>"; };
 		369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		36B3DFF915CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BattleDocumentViewController+BattleManager.h"; sourceTree = "<group>"; };
+		36B3DFFA15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BattleDocumentViewController+BattleManager.m"; sourceTree = "<group>"; };
+		36B3DFFC15CDECB10077E9A0 /* WeightClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightClass.h; sourceTree = "<group>"; };
+		36B3DFFD15CDECB10077E9A0 /* WeightClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightClass.m; sourceTree = "<group>"; };
+		36B3E00C15CDF7650077E9A0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		36B3E00D15CDF7650077E9A0 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
+		36B3E00E15CDF7650077E9A0 /* CREDITS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CREDITS.md; sourceTree = SOURCE_ROOT; };
+		36B3E01215CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BattleDocumentViewController+UserInterface.h"; sourceTree = "<group>"; };
+		36B3E01315CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BattleDocumentViewController+UserInterface.m"; sourceTree = "<group>"; };
 		36C3D8D615C71A45003CCD2A /* PGBotEngineProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PGBotEngineProtocol.h; path = include/PGBotEngineProtocol.h; sourceTree = "<group>"; };
 		36C3D8D715C71A66003CCD2A /* GameStateDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameStateDescriptor.h; path = include/GameStateDescriptor.h; sourceTree = "<group>"; };
 		36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PGBotNativeEngine.xcodeproj; path = PGBotNativeEngine/PGBotNativeEngine.xcodeproj; sourceTree = "<group>"; };
@@ -240,7 +255,6 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
-				367ECB0215CDDC7E003692BB /* SBJson.framework */,
 				367ECA4F15CDD0F7003692BB /* images */,
 				36EBCFC615CB81C300F955F6 /* editor */,
 				36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */,
@@ -274,6 +288,7 @@
 		3608927D15BE876D00A06C94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				367ECB0215CDDC7E003692BB /* SBJson.framework */,
 				369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */,
 				3670B92415C6115F00A38D46 /* OpenGL.framework */,
 				3608927E15BE876D00A06C94 /* Cocoa.framework */,
@@ -310,6 +325,12 @@
 				364DCDF815BEA01700A765D0 /* RobotListTableView.m */,
 				364DCDFD15BF18CE00A765D0 /* Utility.h */,
 				364DCDFE15BF18CE00A765D0 /* Utility.m */,
+				36B3DFF915CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.h */,
+				36B3DFFA15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m */,
+				36B3DFFC15CDECB10077E9A0 /* WeightClass.h */,
+				36B3DFFD15CDECB10077E9A0 /* WeightClass.m */,
+				36B3E01215CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.h */,
+				36B3E01315CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m */,
 			);
 			path = bot;
 			sourceTree = "<group>";
@@ -317,6 +338,9 @@
 		3608928515BE876D00A06C94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				36B3E00C15CDF7650077E9A0 /* README.md */,
+				36B3E00D15CDF7650077E9A0 /* LICENSE.md */,
+				36B3E00E15CDF7650077E9A0 /* CREDITS.md */,
 				36652F8A15CD0C3E00BB1E77 /* bot.entitlements */,
 				3608928615BE876D00A06C94 /* bot-Info.plist */,
 				3608928715BE876D00A06C94 /* InfoPlist.strings */,
@@ -613,6 +637,9 @@
 				367ECB0615CDE50C003692BB /* close_button_red_icon_160.png in Resources */,
 				367ECB0715CDE50C003692BB /* close_button_red_icon_80.png in Resources */,
 				367ECB0915CDE57E003692BB /* close_button_red_icon_160@2x.png in Resources */,
+				36B3E00F15CDF7650077E9A0 /* README.md in Resources */,
+				36B3E01015CDF7650077E9A0 /* LICENSE.md in Resources */,
+				36B3E01115CDF7650077E9A0 /* CREDITS.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +697,9 @@
 				36EBCFCE15CB81C300F955F6 /* EditWindow.m in Sources */,
 				36EBCFD015CB81C300F955F6 /* EditWindowController.m in Sources */,
 				36EBCFD115CB81C300F955F6 /* GemBotEditor.m in Sources */,
+				36B3DFFB15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m in Sources */,
+				36B3DFFE15CDECB10077E9A0 /* WeightClass.m in Sources */,
+				36B3E01415CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

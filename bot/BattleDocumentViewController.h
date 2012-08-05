@@ -12,12 +12,15 @@
 #import "GameStateDescriptor.h"
 #import "PGBotEngineProtocol.h"
 #import "BotContainer.h"
-
+#import "WeightClass.h"
 @class BotContainer;
 @class RobotListTableView;
+@class BattleDocument;
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
+    
+    
     
     NSMutableArray* robots;
     NSMutableDictionary* robotCellViewControllers;
@@ -25,7 +28,16 @@
     NSObject<PGBotEngineProtocol>* engine;
     NSMutableArray* editors;
     NSMutableArray* teamTitles;
+    bool battleCurrentlyInProgress;
+    WeightClass* weightClass;
+    
+
+    IBOutlet NSPopUpButton* weightClassPicker;
+    IBOutlet NSTextField* numberOfMatchesField;
+    IBOutlet NSPopUpButton* gameCycleTimeOutPicker;
 }
+
+@property (readwrite,retain)    WeightClass* weightClass;
 
 - (IBAction) addRobotButtonEvent:(id)sender;
 
@@ -38,4 +50,6 @@
 -(NSColor*) unusedColorForNewRobot;
 -(int) unusedTeamForRobot:(BotContainer*) bot;
 -(void) removeRobot:(BotContainer*) bot;
+
+
 @end

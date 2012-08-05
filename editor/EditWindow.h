@@ -13,4 +13,7 @@
     IBOutlet EditWindowController* controller;
 }
 
+-(IBAction) buildCallback:(id) sender ;
+-(IBAction) buildAndRunCallback:(id) sender ;
+
 @end

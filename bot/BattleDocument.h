@@ -7,12 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "BattleDocumentViewController.h"
+@class BattleDocumentViewController;
 @interface BattleDocument : NSDocument {
-    
+
 }
 
 
-
+-(void) refreshViews;
 
 @end

@@ -10,12 +10,14 @@
 #import "RobotCellView.h"
 #import "RobotCellViewController.h"
 #import "BotContainer.h"
-
+#import "BattleDocumentViewController+UserInterface.h"
 @interface BattleDocumentViewController ()
 
 @end
 
 @implementation BattleDocumentViewController
+@synthesize weightClass;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +30,11 @@
         editors = [[NSMutableArray alloc] init];
         robotCellViewControllers = [[NSMutableDictionary alloc] init];
         teamTitles = [NSMutableArray array];
+        weightClass = [[WeightClass standardWeightClasses] lastObject];
+        
+        [self view];
+        [self refreshView];
+        //[battleDocument refreshViews];
     }
     
     

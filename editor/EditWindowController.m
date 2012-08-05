@@ -15,12 +15,19 @@
 @synthesize editWindow;
 
 
--(IBAction) doneButtonPressed:(id) sender {
+-(void) buildRequested {
     NSString* str = textView.stringValue;
     [str writeToURL:botContainer.urlToBot atomically:YES encoding:NSUTF8StringEncoding error:nil];
     [battleController reccompileRobot:botContainer];
 }
 
+
+-(void) buildCallback {
+    [self buildRequested];
+}
+-(void) buildAndRunCallback {
+     [self buildRequested];
+}
 
 
 
@@ -47,6 +54,8 @@
     }
     [textView setStringValue:str];
     [editWindow setTitle:name];
+    [textCell setHighlighted:NO];
+
 }
 
 - (BOOL)control:(NSControl*)control textView:(NSTextView*)ptextView doCommandBySelector:(SEL)commandSelector

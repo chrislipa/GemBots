@@ -166,12 +166,12 @@
 												<string key="NSFrame">{{224, 0}, {16, 17}}</string>
 												<reference key="NSSuperview" ref="886359422"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="434282077"/>
+												<reference key="NSNextKeyView" ref="281351878"/>
 												<string key="NSReuseIdentifierKey">_NS:19</string>
 											</object>
 											<array class="NSMutableArray" key="NSTableColumns">
 												<object class="NSTableColumn" id="455904250">
-													<double key="NSWidth">238</double>
+													<double key="NSWidth">240.5</double>
 													<double key="NSMinWidth">40</double>
 													<double key="NSMaxWidth">1000</double>
 													<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -225,7 +225,7 @@
 													<reference key="NSTableView" ref="634943307"/>
 												</object>
 											</array>
-											<double key="NSIntercellSpacingWidth">3</double>
+											<double key="NSIntercellSpacingWidth">0.0</double>
 											<double key="NSIntercellSpacingHeight">2</double>
 											<object class="NSColor" key="NSBackgroundColor" id="548414511">
 												<int key="NSColorSpace">3</int>
@@ -240,7 +240,7 @@
 													<bytes key="NSWhite">MC41AA</bytes>
 												</object>
 											</object>
-											<double key="NSRowHeight">17</double>
+											<double key="NSRowHeight">20</double>
 											<int key="NSTvFlags">-700448768</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
@@ -252,7 +252,7 @@
 											<int key="NSTableViewGroupRowStyle">1</int>
 										</object>
 									</array>
-									<string key="NSFrame">{{1.5, 17}, {241, 482}}</string>
+									<string key="NSFrame">{{1, 17}, {241, 482}}</string>
 									<reference key="NSSuperview" ref="886359422"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="634943307"/>
@@ -267,12 +267,12 @@
 									<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 									<reference key="NSSuperview" ref="886359422"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="305569403"/>
+									<reference key="NSNextKeyView" ref="434282077"/>
 									<string key="NSReuseIdentifierKey">_NS:58</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<reference key="NSTarget" ref="886359422"/>
 									<string key="NSAction">_doScroller:</string>
-									<double key="NSPercent">0.87179487179487181</double>
+									<double key="NSPercent">0.96887966804979253</double>
 								</object>
 								<object class="NSScroller" id="434282077">
 									<reference key="NSNextResponder" ref="886359422"/>
@@ -280,7 +280,7 @@
 									<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 									<reference key="NSSuperview" ref="886359422"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="281351878"/>
+									<reference key="NSNextKeyView" ref="305569403"/>
 									<string key="NSReuseIdentifierKey">_NS:60</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<int key="NSsFlags">1</int>
@@ -295,7 +295,8 @@
 									<array class="NSMutableArray" key="NSSubviews">
 										<reference ref="757282884"/>
 									</array>
-									<string key="NSFrame">{{1.5, 0}, {241, 17}}</string>
+									<string key="NSFrame">{{1, 0}, {241, 17}}</string>
+									<string key="NSBounds">{{0.5, 0}, {241, 17}}</string>
 									<reference key="NSSuperview" ref="886359422"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="757282884"/>
@@ -306,18 +307,18 @@
 								</object>
 								<reference ref="344985986"/>
 							</array>
-							<string key="NSFrame">{{526.5, 20}, {243, 500}}</string>
+							<string key="NSFrame">{{527, 20}, {243, 500}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="317779853"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
-							<int key="NSsFlags">133682</int>
+							<int key="NSsFlags">84530</int>
 							<reference key="NSVScroller" ref="315845178"/>
 							<reference key="NSHScroller" ref="434282077"/>
 							<reference key="NSContentView" ref="281351878"/>
 							<reference key="NSHeaderClipView" ref="317779853"/>
 							<reference key="NSCornerView" ref="344985986"/>
-							<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
+							<bytes key="NSScrollAmts">QSAAAEEgAABBsAAAQbAAAA</bytes>
 							<double key="NSMinMagnification">0.25</double>
 							<double key="NSMaxMagnification">4</double>
 							<double key="NSMagnification">1</double>
@@ -328,7 +329,6 @@
 							<string key="NSFrame">{{785, 18}, {238, 56}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="747873701">
@@ -813,12 +813,52 @@
 					<int key="connectionID">100385</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="468700778"/>
+					</object>
+					<int key="connectionID">100584</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">addRobotButtonEvent:</string>
 						<reference key="source" ref="878140351"/>
 						<reference key="destination" ref="229072224"/>
 					</object>
-					<int key="connectionID">100394</int>
+					<int key="connectionID">100585</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">startBattleCallback:</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="499936143"/>
+					</object>
+					<int key="connectionID">100586</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">weightClassPicker</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="856161340"/>
+					</object>
+					<int key="connectionID">100587</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">gameCycleTimeOutPicker</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="499678298"/>
+					</object>
+					<int key="connectionID">100588</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">numberOfMatchesField</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="833553549"/>
+					</object>
+					<int key="connectionID">100589</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1320,7 +1360,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100526</int>
+			<int key="maxID">100589</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1362,29 +1402,47 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">BattleDocumentViewController</string>
 					<string key="superclassName">NSViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">addRobotButtonEvent:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">addRobotButtonEvent:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addRobotButtonEvent:">id</string>
+						<string key="startBattleCallback:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addRobotButtonEvent:">
 							<string key="name">addRobotButtonEvent:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="startBattleCallback:">
+							<string key="name">startBattleCallback:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="battleDocument">BattleDocument</string>
+						<string key="gameCycleTimeOutPicker">NSPopUpButton</string>
+						<string key="numberOfMatchesField">NSTextField</string>
 						<string key="robotList">RobotListTableView</string>
+						<string key="weightClassPicker">NSPopUpButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="battleDocument">
 							<string key="name">battleDocument</string>
 							<string key="candidateClassName">BattleDocument</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="gameCycleTimeOutPicker">
+							<string key="name">gameCycleTimeOutPicker</string>
+							<string key="candidateClassName">NSPopUpButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="numberOfMatchesField">
+							<string key="name">numberOfMatchesField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="robotList">
 							<string key="name">robotList</string>
 							<string key="candidateClassName">RobotListTableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="weightClassPicker">
+							<string key="name">weightClassPicker</string>
+							<string key="candidateClassName">NSPopUpButton</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

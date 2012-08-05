@@ -33,4 +33,10 @@
     return result;
 }
 
+-(IBAction) buildCallback:(id) sender {
+    [controller buildCallback];
+}
+-(IBAction) buildAndRunCallback:(id) sender {
+    [controller buildAndRunCallback];
+}
 @end

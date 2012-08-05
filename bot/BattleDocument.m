@@ -7,17 +7,25 @@
 //
 
 #import "BattleDocument.h"
-
+#import "WeightClass.h"
 @implementation BattleDocument
+
+
+
 
 - (id)init
 {
     self = [super init];
     if (self) {
+       
+        
+        
         // Add your subclass-specific initialization here.
     }
     return self;
 }
+
+
 
 - (NSString *)windowNibName
 {
@@ -30,6 +38,7 @@
 {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
+
 }
 
 + (BOOL)autosavesInPlace
