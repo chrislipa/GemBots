@@ -15,6 +15,8 @@
 @implementation BotContainer
 @synthesize color;
 @synthesize team;
+@synthesize robot;
+@synthesize documentController;
 
 -(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) p_engine andURL:(NSURL*) url andDocumentController:(BattleDocumentViewController*) pdocumentController {
     if (self = [super init]) {

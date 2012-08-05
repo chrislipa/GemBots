@@ -17,6 +17,7 @@
 @synthesize sessionUniqueRobotIdentifier;
 @synthesize numberOfCompileErrors;
 @synthesize numberOfCompileWarnings;
+@synthesize compileErrors;
 @synthesize queued_dx;
 @synthesize queued_dy;
 @synthesize name;

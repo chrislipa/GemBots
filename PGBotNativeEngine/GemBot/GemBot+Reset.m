@@ -57,7 +57,7 @@
     name = nil;
     descript = nil;
     compiledCorrectly = NO;
-    compileErrors = [NSMutableArray array];
+    
     linesOfCode = 0;
     
     config_armor = DEFAULT_ARMOR_CONFIG;

@@ -59,6 +59,19 @@
         s = [s stringByAppendingString:@" LOC"];
         [linesOfCode setStringValue:s];
     }
+    if (b.robot.compileErrors.count > 0) {
+        [compileErrorButton setHidden:NO];
+        NSString* text;
+        if (b.robot.numberOfCompileErrors > 0) {
+            text = [NSString stringWithFormat:@"%d Compile Errors",b.robot.numberOfCompileErrors];
+        } else if (b.robot.numberOfCompileWarnings) {
+            text = [NSString stringWithFormat:@"%d Compile Warnings",b.robot.numberOfCompileWarnings];
+        }
+        [compileErrorButton setTitle:text];
+    } else {
+        [compileErrorButton setHidden:YES];
+    }
+    
     //int team = [robotCellViewController.documentController emptyTeamForRobot:b.robot];
     [colorPicker setColor:b.color];
     [self refreshColor];

@@ -21,6 +21,7 @@
     IBOutlet NSTextField* linesOfCode;
     IBOutlet RobotCellViewController* robotCellViewController;
     IBOutlet NSView* backingView;
+    IBOutlet NSButton* compileErrorButton;
 }
 
 @property (readonly) NSColorWell* colorPicker;
