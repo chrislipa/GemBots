@@ -3,3 +3,5 @@ build/*
 build/
 build
 .DS_Store
+*.xcuserdata
+*.xcuserstate
