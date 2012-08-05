@@ -4,13 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>bot.xcscheme</key>
+		<key>Gem Bot.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>botImporter.xcscheme</key>
+		<key>Gem BotImporter.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>

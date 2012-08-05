@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "360892B315BE876D00A06C94"
-               BuildableName = "botImporter.mdimporter"
-               BlueprintName = "botImporter"
-               ReferencedContainer = "container:bot.xcodeproj">
+               BuildableName = "Gem BotImporter.mdimporter"
+               BlueprintName = "Gem BotImporter"
+               ReferencedContainer = "container:Gem Bot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

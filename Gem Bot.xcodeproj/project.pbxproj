@@ -22,7 +22,7 @@
 		360892A415BE876D00A06C94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608927E15BE876D00A06C94 /* Cocoa.framework */; };
 		360892AC15BE876D00A06C94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 360892AA15BE876D00A06C94 /* InfoPlist.strings */; };
 		360892AF15BE876D00A06C94 /* botTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 360892AE15BE876D00A06C94 /* botTests.m */; };
-		360892B715BE876D00A06C94 /* botImporter.mdimporter in Resources */ = {isa = PBXBuildFile; fileRef = 360892B415BE876D00A06C94 /* botImporter.mdimporter */; };
+		360892B715BE876D00A06C94 /* Gem BotImporter.mdimporter in Resources */ = {isa = PBXBuildFile; fileRef = 360892B415BE876D00A06C94 /* Gem BotImporter.mdimporter */; };
 		360892B915BE876D00A06C94 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360892B815BE876D00A06C94 /* CoreServices.framework */; };
 		360892BB15BE876D00A06C94 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360892BA15BE876D00A06C94 /* CoreFoundation.framework */; };
 		360892BD15BE876D00A06C94 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360892BC15BE876D00A06C94 /* CoreData.framework */; };
@@ -122,34 +122,34 @@
 		3608928115BE876D00A06C94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3608928215BE876D00A06C94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3608928315BE876D00A06C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3608928615BE876D00A06C94 /* bot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bot-Info.plist"; sourceTree = "<group>"; };
+		3608928615BE876D00A06C94 /* Gem Bot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gem Bot-Info.plist"; sourceTree = "<group>"; };
 		3608928815BE876D00A06C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3608928A15BE876D00A06C94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3608928C15BE876D00A06C94 /* bot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bot-Prefix.pch"; sourceTree = "<group>"; };
+		3608928C15BE876D00A06C94 /* Gem Bot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gem Bot-Prefix.pch"; sourceTree = "<group>"; };
 		3608928E15BE876D00A06C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		3608929015BE876D00A06C94 /* BattleDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleDocument.h; sourceTree = "<group>"; };
 		3608929115BE876D00A06C94 /* BattleDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BattleDocument.m; sourceTree = "<group>"; };
 		3608929415BE876D00A06C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BattleDocument.xib; sourceTree = "<group>"; };
 		3608929715BE876D00A06C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		360892A115BE876D00A06C94 /* botTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = botTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		360892A115BE876D00A06C94 /* Gem BotTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gem BotTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		360892A215BE876D00A06C94 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		360892A915BE876D00A06C94 /* botTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "botTests-Info.plist"; sourceTree = "<group>"; };
+		360892A915BE876D00A06C94 /* Gem BotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gem BotTests-Info.plist"; sourceTree = "<group>"; };
 		360892AB15BE876D00A06C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		360892AD15BE876D00A06C94 /* botTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = botTests.h; sourceTree = "<group>"; };
 		360892AE15BE876D00A06C94 /* botTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = botTests.m; sourceTree = "<group>"; };
-		360892B415BE876D00A06C94 /* botImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = botImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		360892B415BE876D00A06C94 /* Gem BotImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gem BotImporter.mdimporter"; sourceTree = BUILT_PRODUCTS_DIR; };
 		360892B815BE876D00A06C94 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		360892BA15BE876D00A06C94 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		360892BC15BE876D00A06C94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		360892BE15BE876D00A06C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		360892C215BE876D00A06C94 /* botImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "botImporter-Info.plist"; sourceTree = "<group>"; };
+		360892C215BE876D00A06C94 /* Gem BotImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gem BotImporter-Info.plist"; sourceTree = "<group>"; };
 		360892C415BE876D00A06C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		360892C615BE876D00A06C94 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		360892C815BE876D00A06C94 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
 		360892CA15BE876D00A06C94 /* MySpotlightImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySpotlightImporter.h; sourceTree = "<group>"; };
 		360892CB15BE876D00A06C94 /* MySpotlightImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySpotlightImporter.m; sourceTree = "<group>"; };
 		360892CD15BE876D00A06C94 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
-		360892CE15BE876D00A06C94 /* botImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "botImporter-Prefix.pch"; sourceTree = "<group>"; };
+		360892CE15BE876D00A06C94 /* Gem BotImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gem BotImporter-Prefix.pch"; sourceTree = "<group>"; };
 		360892DA15BE8F5900A06C94 /* BattleDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentViewController.h; sourceTree = "<group>"; };
 		360892DB15BE8F5900A06C94 /* BattleDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleDocumentViewController.m; sourceTree = "<group>"; };
 		3610461B15CE2FFD0064F381 /* CompileErrorWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompileErrorWindow.h; path = compilerError/CompileErrorWindow.h; sourceTree = "<group>"; };
@@ -296,8 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				3608927A15BE876D00A06C94 /* Gem Bot.app */,
-				360892A115BE876D00A06C94 /* botTests.octest */,
-				360892B415BE876D00A06C94 /* botImporter.mdimporter */,
+				360892A115BE876D00A06C94 /* Gem BotTests.octest */,
+				360892B415BE876D00A06C94 /* Gem BotImporter.mdimporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,10 +363,10 @@
 				36B3E00D15CDF7650077E9A0 /* LICENSE.md */,
 				36B3E00E15CDF7650077E9A0 /* CREDITS.md */,
 				36652F8A15CD0C3E00BB1E77 /* bot.entitlements */,
-				3608928615BE876D00A06C94 /* bot-Info.plist */,
+				3608928615BE876D00A06C94 /* Gem Bot-Info.plist */,
 				3608928715BE876D00A06C94 /* InfoPlist.strings */,
 				3608928A15BE876D00A06C94 /* main.m */,
-				3608928C15BE876D00A06C94 /* bot-Prefix.pch */,
+				3608928C15BE876D00A06C94 /* Gem Bot-Prefix.pch */,
 				3608928D15BE876D00A06C94 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -386,7 +386,7 @@
 		360892A815BE876D00A06C94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				360892A915BE876D00A06C94 /* botTests-Info.plist */,
+				360892A915BE876D00A06C94 /* Gem BotTests-Info.plist */,
 				360892AA15BE876D00A06C94 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -407,10 +407,10 @@
 		360892C115BE876D00A06C94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				360892C215BE876D00A06C94 /* botImporter-Info.plist */,
+				360892C215BE876D00A06C94 /* Gem BotImporter-Info.plist */,
 				360892C315BE876D00A06C94 /* InfoPlist.strings */,
 				360892C615BE876D00A06C94 /* main.c */,
-				360892CE15BE876D00A06C94 /* botImporter-Prefix.pch */,
+				360892CE15BE876D00A06C94 /* Gem BotImporter-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -539,9 +539,9 @@
 			productReference = 3608927A15BE876D00A06C94 /* Gem Bot.app */;
 			productType = "com.apple.product-type.application";
 		};
-		360892A015BE876D00A06C94 /* botTests */ = {
+		360892A015BE876D00A06C94 /* Gem BotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 360892D715BE876D00A06C94 /* Build configuration list for PBXNativeTarget "botTests" */;
+			buildConfigurationList = 360892D715BE876D00A06C94 /* Build configuration list for PBXNativeTarget "Gem BotTests" */;
 			buildPhases = (
 				3608929C15BE876D00A06C94 /* Sources */,
 				3608929D15BE876D00A06C94 /* Frameworks */,
@@ -553,14 +553,14 @@
 			dependencies = (
 				360892A615BE876D00A06C94 /* PBXTargetDependency */,
 			);
-			name = botTests;
+			name = "Gem BotTests";
 			productName = botTests;
-			productReference = 360892A115BE876D00A06C94 /* botTests.octest */;
+			productReference = 360892A115BE876D00A06C94 /* Gem BotTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		360892B315BE876D00A06C94 /* botImporter */ = {
+		360892B315BE876D00A06C94 /* Gem BotImporter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 360892D115BE876D00A06C94 /* Build configuration list for PBXNativeTarget "botImporter" */;
+			buildConfigurationList = 360892D115BE876D00A06C94 /* Build configuration list for PBXNativeTarget "Gem BotImporter" */;
 			buildPhases = (
 				360892B015BE876D00A06C94 /* Sources */,
 				360892B115BE876D00A06C94 /* Frameworks */,
@@ -570,9 +570,9 @@
 			);
 			dependencies = (
 			);
-			name = botImporter;
+			name = "Gem BotImporter";
 			productName = botImporter;
-			productReference = 360892B415BE876D00A06C94 /* botImporter.mdimporter */;
+			productReference = 360892B415BE876D00A06C94 /* Gem BotImporter.mdimporter */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -583,7 +583,7 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 			};
-			buildConfigurationList = 3608927415BE876D00A06C94 /* Build configuration list for PBXProject "bot" */;
+			buildConfigurationList = 3608927415BE876D00A06C94 /* Build configuration list for PBXProject "Gem Bot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -602,8 +602,8 @@
 			projectRoot = "";
 			targets = (
 				3608927915BE876D00A06C94 /* Gem Bot */,
-				360892A015BE876D00A06C94 /* botTests */,
-				360892B315BE876D00A06C94 /* botImporter */,
+				360892A015BE876D00A06C94 /* Gem BotTests */,
+				360892B315BE876D00A06C94 /* Gem BotImporter */,
 			);
 		};
 /* End PBXProject section */
@@ -628,7 +628,7 @@
 				3608928F15BE876D00A06C94 /* Credits.rtf in Resources */,
 				3608929515BE876D00A06C94 /* BattleDocument.xib in Resources */,
 				3608929815BE876D00A06C94 /* MainMenu.xib in Resources */,
-				360892B715BE876D00A06C94 /* botImporter.mdimporter in Resources */,
+				360892B715BE876D00A06C94 /* Gem BotImporter.mdimporter in Resources */,
 				3670B91915C5F09700A38D46 /* RobotCellViewController.xib in Resources */,
 				36EBCFCF15CB81C300F955F6 /* EditWindowController.xib in Resources */,
 				367ECA7E15CDD0F7003692BB /* close_button_red_icon_40.png in Resources */,
@@ -748,7 +748,7 @@
 		};
 		360892B615BE876D00A06C94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 360892B315BE876D00A06C94 /* botImporter */;
+			target = 360892B315BE876D00A06C94 /* Gem BotImporter */;
 			targetProxy = 360892B515BE876D00A06C94 /* PBXContainerItemProxy */;
 		};
 		36FE1B4A15CCE7FD003310F0 /* PBXTargetDependency */ = {
@@ -870,11 +870,11 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "botImporter/botImporter-Prefix.pch";
-				INFOPLIST_FILE = "botImporter/botImporter-Info.plist";
+				GCC_PREFIX_HEADER = "botImporter/Gem BotImporter-Prefix.pch";
+				INFOPLIST_FILE = "botImporter/Gem BotImporter-Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gem BotImporter";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
 			};
@@ -886,11 +886,11 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "botImporter/botImporter-Prefix.pch";
-				INFOPLIST_FILE = "botImporter/botImporter-Info.plist";
+				GCC_PREFIX_HEADER = "botImporter/Gem BotImporter-Prefix.pch";
+				INFOPLIST_FILE = "botImporter/Gem BotImporter-Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gem BotImporter";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
 			};
@@ -907,8 +907,8 @@
 					"\"$(SRCROOT)/PGBotNativeEngine/external/SBJson_3.1/build/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
-				INFOPLIST_FILE = "bot/bot-Info.plist";
+				GCC_PREFIX_HEADER = "bot/Gem Bot-Prefix.pch";
+				INFOPLIST_FILE = "bot/Gem Bot-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -926,8 +926,8 @@
 					"\"$(SRCROOT)/PGBotNativeEngine/external/SBJson_3.1/build/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
-				INFOPLIST_FILE = "bot/bot-Info.plist";
+				GCC_PREFIX_HEADER = "bot/Gem Bot-Prefix.pch";
+				INFOPLIST_FILE = "bot/Gem Bot-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -942,8 +942,8 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
-				INFOPLIST_FILE = "botTests/botTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "botTests/Gem BotTests-Info.plist";
+				PRODUCT_NAME = "Gem BotTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -957,8 +957,8 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "bot/bot-Prefix.pch";
-				INFOPLIST_FILE = "botTests/botTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "botTests/Gem BotTests-Info.plist";
+				PRODUCT_NAME = "Gem BotTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -967,7 +967,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3608927415BE876D00A06C94 /* Build configuration list for PBXProject "bot" */ = {
+		3608927415BE876D00A06C94 /* Build configuration list for PBXProject "Gem Bot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				360892CF15BE876D00A06C94 /* Debug */,
@@ -976,7 +976,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		360892D115BE876D00A06C94 /* Build configuration list for PBXNativeTarget "botImporter" */ = {
+		360892D115BE876D00A06C94 /* Build configuration list for PBXNativeTarget "Gem BotImporter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				360892D215BE876D00A06C94 /* Debug */,
@@ -994,7 +994,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		360892D715BE876D00A06C94 /* Build configuration list for PBXNativeTarget "botTests" */ = {
+		360892D715BE876D00A06C94 /* Build configuration list for PBXNativeTarget "Gem BotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				360892D815BE876D00A06C94 /* Debug */,

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "3608927915BE876D00A06C94"
                BuildableName = "Gem Bot.app"
                BlueprintName = "Gem Bot"
-               ReferencedContainer = "container:bot.xcodeproj">
+               ReferencedContainer = "container:Gem Bot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "360892A015BE876D00A06C94"
-               BuildableName = "botTests.octest"
-               BlueprintName = "botTests"
-               ReferencedContainer = "container:bot.xcodeproj">
+               BuildableName = "Gem BotTests.octest"
+               BlueprintName = "Gem BotTests"
+               ReferencedContainer = "container:Gem Bot.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "3608927915BE876D00A06C94"
             BuildableName = "Gem Bot.app"
             BlueprintName = "Gem Bot"
-            ReferencedContainer = "container:bot.xcodeproj">
+            ReferencedContainer = "container:Gem Bot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "3608927915BE876D00A06C94"
             BuildableName = "Gem Bot.app"
             BlueprintName = "Gem Bot"
-            ReferencedContainer = "container:bot.xcodeproj">
+            ReferencedContainer = "container:Gem Bot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "3608927915BE876D00A06C94"
             BuildableName = "Gem Bot.app"
             BlueprintName = "Gem Bot"
-            ReferencedContainer = "container:bot.xcodeproj">
+            ReferencedContainer = "container:Gem Bot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
