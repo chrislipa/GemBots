@@ -17,6 +17,7 @@
     currentMatch++;
     gameCycle = 0;
     missiles = [NSMutableArray array];
+    mines = [NSMutableArray array];
     [self resetAllRobotsForNextRound];
     [self giveRandomIDsToRobots];
     [self placeRobotsInRandomPositionsAndHeadings];

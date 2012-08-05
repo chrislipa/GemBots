@@ -15,17 +15,15 @@
 #import "EngineUtility.h"
 #import "PGBotNativeEngine+Explosions.h"
 #import "CollideableObject.h"
+#import "Mine.h"
+#import "PGBotNativeEngine+CollisionDetection.h"
 @implementation PGBotNativeEngine (Movement)
 
 
--(unit) timeUntilNextCollisionWithinTime:(unit)maxTime: (NSObject<CollideableObject>**) objectInCollisionA : (NSObject<CollideableObject>**) objectInCollisionB   {
-    
-    
-    
-}
+
 
 -(bool) movementAndExplosionPhase {
-    unit timeLeftToDealWith = convertGameCycleToUnit(1);
+    unit timeLeftToDealWith = AMOUNT_OF_TIME_THAT_PASSES_PER_GAME_LOOP;
     
     
     while (timeLeftToDealWith > 0) {
@@ -42,9 +40,6 @@
                 return YES;
             }
         }
-        
-        
-        
     }
     return NO;
     
@@ -60,4 +55,37 @@
     }
     
 }
+
+
+
+-(unit) timeUntilNextCollisionWithinTime:(unit)maxTime: (NSObject<CollideableObject>**) objectInCollisionA : (NSObject<CollideableObject>**) objectInCollisionB   {
+    unit maximumCollisionTimeFound = maxTime;
+    for (int i = 0; i< [robots count]; i++) {
+        GemBot* robot = [robots objectAtIndex:i];
+        for (int j = 0; j < i; j++) {
+            GemBot* b = [robots objectAtIndex:i];
+            computeCircleCollision(robot, b, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
+        }
+        for (Missile* missile in missiles) {
+            if (missile.owner != robot) {
+                computeCircleCollision(robot, missile, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
+            }
+        }
+        for (Mine* mine in mines) {
+            if (mine.owner != robot) {
+                computeCircleCollision(robot, mine, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
+            }
+        }
+        computeWallCollision(robot, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
+    }
+    for (Missile* missile in missiles) {
+        computeWallCollision(missile, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
+    }
+    
+    return maximumCollisionTimeFound;
+}
+
+
+
+
 @end

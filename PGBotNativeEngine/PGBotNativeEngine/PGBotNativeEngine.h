@@ -41,6 +41,7 @@
     int numberOfExplosionsAppliedThisCycle;
     NSMutableArray* scans;
     NSMutableArray* explosions;
+    NSMutableArray* mines;
     NSMutableArray* soundEffectsInitiatedThisCycle;
     
     

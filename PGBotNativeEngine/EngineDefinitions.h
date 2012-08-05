@@ -47,6 +47,7 @@ typedef struct {
 #define SETS0 48
 #define SETS1 49
 
+#define AMOUNT_OF_TIME_THAT_PASSES_PER_GAME_LOOP ((unit)1.0)
 
 extern int left_filled_mask[33];
 

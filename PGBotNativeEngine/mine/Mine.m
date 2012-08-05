@@ -24,6 +24,13 @@
     return roundInternalDistanceToDistance(internal_radius);
 }
 
+-(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
+    
+}
+
+-(unit) internal_speed {
+    return distanceToInternalDistance(0);
+}
 
 
 @end

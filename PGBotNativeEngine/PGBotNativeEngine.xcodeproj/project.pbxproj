@@ -16,6 +16,8 @@
 		36CEB08715CF08D800275B4A /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CEB08515CF08D800275B4A /* Wall.m */; };
 		36CEB08A15CF09DB00275B4A /* GemBot+Collision.h in Headers */ = {isa = PBXBuildFile; fileRef = 36CEB08815CF09DA00275B4A /* GemBot+Collision.h */; };
 		36CEB08B15CF09DB00275B4A /* GemBot+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CEB08915CF09DA00275B4A /* GemBot+Collision.m */; };
+		36CEB08E15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.h in Headers */ = {isa = PBXBuildFile; fileRef = 36CEB08C15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.h */; };
+		36CEB08F15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 36CEB08D15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.m */; };
 		36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */; };
 		36FE1B1115CCE787003310F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36FE1B0F15CCE787003310F0 /* InfoPlist.strings */; };
 		36FE1B1A15CCE7C1003310F0 /* EngineUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D98215C7434C003CCD2A /* EngineUtility.m */; };
@@ -200,6 +202,8 @@
 		36CEB08515CF08D800275B4A /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
 		36CEB08815CF09DA00275B4A /* GemBot+Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GemBot+Collision.h"; path = "GemBot/GemBot+Collision.h"; sourceTree = "<group>"; };
 		36CEB08915CF09DA00275B4A /* GemBot+Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GemBot+Collision.m"; path = "GemBot/GemBot+Collision.m"; sourceTree = "<group>"; };
+		36CEB08C15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CollisionDetection.h"; sourceTree = "<group>"; };
+		36CEB08D15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CollisionDetection.m"; sourceTree = "<group>"; };
 		36FE1B0915CCE787003310F0 /* NativeEngine.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeEngine.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		36FE1B0E15CCE787003310F0 /* NativeEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NativeEngine-Info.plist"; sourceTree = "<group>"; };
@@ -316,8 +320,6 @@
 				366B028915C99B99006441FF /* PGBotNativeEngine+RobotCPUPhase.m */,
 				366B028C15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.h */,
 				366B028D15C99BFC006441FF /* PGBotNativeEngine+CollisionPhase.m */,
-				366B029015C99C54006441FF /* PGBotNativeEngine+Movement.h */,
-				366B029115C99C54006441FF /* PGBotNativeEngine+Movement.m */,
 				366B029415C99D33006441FF /* PGBotNativeEngine+CommPhase.h */,
 				366B029515C99D33006441FF /* PGBotNativeEngine+CommPhase.m */,
 				366B02A015C9A0DE006441FF /* PGBotNativeEngine+CleanPhase.h */,
@@ -330,6 +332,10 @@
 				36CEB07A15CEE0F700275B4A /* PGBotNativeEngine+GameManagement.m */,
 				36CEB07D15CEFC4000275B4A /* PGBotNativeEngine+Explosions.h */,
 				36CEB07E15CEFC4000275B4A /* PGBotNativeEngine+Explosions.m */,
+				366B029015C99C54006441FF /* PGBotNativeEngine+Movement.h */,
+				366B029115C99C54006441FF /* PGBotNativeEngine+Movement.m */,
+				36CEB08C15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.h */,
+				36CEB08D15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.m */,
 			);
 			name = runtime;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				36CEB07F15CEFC4100275B4A /* PGBotNativeEngine+Explosions.h in Headers */,
 				36CEB08615CF08D800275B4A /* Wall.h in Headers */,
 				36CEB08A15CF09DB00275B4A /* GemBot+Collision.h in Headers */,
+				36CEB08E15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +647,7 @@
 				36CEB08015CEFC4100275B4A /* PGBotNativeEngine+Explosions.m in Sources */,
 				36CEB08715CF08D800275B4A /* Wall.m in Sources */,
 				36CEB08B15CF09DB00275B4A /* GemBot+Collision.m in Sources */,
+				36CEB08F15CF0F0800275B4A /* PGBotNativeEngine+CollisionDetection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
