@@ -330,7 +330,6 @@
 				363D8F6215C7ECD4000FB3AE /* Opcode.m */,
 				36C3D98015C742B1003CCD2A /* GameState */,
 				36C3D96115C74062003CCD2A /* PGBotNativeEngine */,
-				36FE1B0C15CCE787003310F0 /* NativeEngine */,
 				36C3D95A15C74062003CCD2A /* Frameworks */,
 				36C3D95915C74062003CCD2A /* Products */,
 			);
@@ -367,6 +366,7 @@
 		36C3D96115C74062003CCD2A /* PGBotNativeEngine */ = {
 			isa = PBXGroup;
 			children = (
+				36FE1B0C15CCE787003310F0 /* NativeEngine */,
 				366B02A415C9A180006441FF /* runtime */,
 				36C3D96415C74062003CCD2A /* PGBotNativeEngine.h */,
 				36C3D96515C74062003CCD2A /* PGBotNativeEngine.m */,
@@ -434,7 +434,8 @@
 			children = (
 				36FE1B0D15CCE787003310F0 /* Supporting Files */,
 			);
-			path = NativeEngine;
+			name = NativeEngine;
+			path = ../NativeEngine;
 			sourceTree = "<group>";
 		};
 		36FE1B0D15CCE787003310F0 /* Supporting Files */ = {

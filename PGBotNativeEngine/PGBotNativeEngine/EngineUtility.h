@@ -21,7 +21,7 @@ NSDictionary* defaultVariablesDictionary();
 int readInteger(NSString* s);
 NSString* uuid();
 
-int getAngleTo(lint x, lint y);
+unit getAngleTo(lint x, lint y);
 int anglemod(int a);
 lint intsqrt(lint x);
 lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
@@ -39,6 +39,11 @@ int roundInternalArmorToArmor(lint d) ;
 lint armorToInternalArmor(int d) ;
 
 bool isObjectOutOfBounds(NSObject<TangibleObject>* a);
-void placeObjectBackInBounds(NSObject<TangibleObject>* a);
+
 void separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, lint distance);
-void separateObjectsByLater(NSObject<QueueableTangibleObject>* a, NSObject<QueueableTangibleObject>* b, lint distance);
+
+position positionWithUnits(unit px, unit py);
+position positionWithInts(int x, int y);
+int roundUnitToInt(unit x) ;
+int roundUnitToHeading(unit heading) ;
+unit getRoundedAngleTo(unit nx, unit ny) ;

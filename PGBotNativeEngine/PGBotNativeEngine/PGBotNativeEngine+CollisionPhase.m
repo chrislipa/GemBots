@@ -27,14 +27,14 @@
 
 -(void) checkForMissileCollidingAgainstWall:(Missile*) missile {
     if (isObjectOutOfBounds(missile)) {
-        placeObjectBackInBounds(missile);
+        
         [missile explode];
     }
 }
 
 -(void) checkForBotCollidingAgainstWall:(GemBot*) bot {
     if  (isObjectOutOfBounds(bot)) {
-        placeObjectBackInBounds(bot);
+        
         [bot hadCollision];
     }
 }
@@ -45,7 +45,7 @@
     if (distance_between(a, b) > distanceToInternalDistance(ROBOT_RADIUS*2)) {
         return;
     }
-    separateObjectsByLater(a,b,distanceToInternalDistance(ROBOT_RADIUS*2));
+    
     [a hadCollision];
     [b hadCollision];
 }
@@ -78,11 +78,6 @@
             [self checkForRobot:a collidingAgainstRobot:b];
         }
     }
-    for (GemBot* bot in robots) {
-        if ([bot isAlive]) {
-            bot.internal_y += bot.queued_dy;
-            bot.internal_x += bot.queued_dx;
-        }
-    }
+    
 }
 @end

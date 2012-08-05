@@ -15,26 +15,37 @@
 
 @class GemBot;
 @interface PGBotNativeEngine : NSObject <PGBotEngineProtocol,GameStateDescriptor> {
-    
-    // Book-keeping for match sets
-    int currentMatch;
+    // Persisted across Match sets
+    NSObject<RandomProtocol>* random;
+    NSMutableArray* robots;
     int totalNumberOfMatches;
-    int gameCycle;
     int maxGameCycles;
-    bool isMatchCurrentlyActive;
+    
+    
+    // Initialized at beginning of match set
+    int currentMatch;
     bool hasSetStarted;
+    bool isThisSetInitiated;
     bool hasSetEnded;
     
     
-    NSMutableArray* robots;
+    // Initialized every match;
+    bool isMatchCurrentlyActive;
+    bool isMatchCurrentlySetUp;
+
+    int gameCycle;
+    NSMutableSet* winnersOfLastMatch;
     NSMutableArray* missiles;
+    
+    // Initalized every cycle
+    int numberOfExplosionsAppliedThisCycle;
     NSMutableArray* scans;
     NSMutableArray* explosions;
     NSMutableArray* soundEffectsInitiatedThisCycle;
     
-    NSObject<RandomProtocol>* random;
-    NSMutableSet* winnersOfLastMatch;
-    int numberOfExplosionsAppliedThisCycle;
+    
+   
+    
 }
 
 @property (readwrite,assign) int currentMatch;

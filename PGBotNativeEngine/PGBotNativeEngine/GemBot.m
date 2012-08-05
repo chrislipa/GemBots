@@ -23,8 +23,7 @@
 @synthesize name;
 @synthesize descript;
 @synthesize author;
-@synthesize internal_x;
-@synthesize internal_y;
+@synthesize internal_position;
 @synthesize heading;
 @synthesize unique_tank_id;
 @synthesize desiredHeading;
@@ -65,7 +64,8 @@
 @synthesize speedOfMostRecentlyScannedTankAtTimeOfScan;
 @synthesize relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
 @synthesize linesOfCode;
-@synthesize color;
+
+
 
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;
@@ -127,10 +127,10 @@
     return roundInternalHeatToHeat(internal_heat);
 }
 -(int) x {
-    return roundInternalDistanceToDistance(internal_x);
+    return roundInternalDistanceToDistance(internal_position.x);
 }
 -(int) y {
-    return roundInternalDistanceToDistance(internal_y);
+    return roundInternalDistanceToDistance(internal_position.y);
 }
 
 

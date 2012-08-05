@@ -21,6 +21,7 @@
     bool foundTwoTeams = NO;
     for(BotContainer* bot in robots) {
         if  (!bot.robot.compiledCorrectly) {
+            
             return NO;
         }
         if  (weightClass.loc > 0 && bot.linesOfCode > weightClass.loc) {

@@ -22,6 +22,7 @@
 -(int) clockCyclesRequiredForSystemCall {
     systemCall = getSystemCall(op1);
     return systemCall.time;
+    NSLog(@" //");
 }
 
 -(int) clockCyclesRequiredForReadDevice {

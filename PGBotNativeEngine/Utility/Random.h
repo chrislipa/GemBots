@@ -17,7 +17,9 @@
 
 
 
--(int) random;
+-(int) randomInt;
+-(int) randomIntInInclusiveRange:(int) lowerBound: (int) upperBound;
+
 -(void) setDeterministic:(bool) deterministic;
 -(bool) deterministic;
 -(void) setDeterministicSeed:(unsigned int) seed;

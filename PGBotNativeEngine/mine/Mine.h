@@ -14,15 +14,14 @@
 #import "GemBot.h"
 
 @interface Mine : NSObject  <MineDescription, TangibleObject> {
-    lint internal_x,internal_y,internal_radius;
-    
+    unit internal_radius;
+    position internal_position;
     PGBotNativeEngine* engine;
     bool isAlive;
     GemBot* owner;
 }
-@property (readwrite,assign) lint internal_x;
-@property (readwrite,assign) lint internal_y;
-@property (readwrite,assign) lint internal_radius;
+@property (readwrite,assign) position internal_position;
+@property (readwrite,assign) unit internal_radius;
 @property (readwrite,retain) PGBotNativeEngine* engine;
 @property (readwrite,retain) GemBot* owner;
 

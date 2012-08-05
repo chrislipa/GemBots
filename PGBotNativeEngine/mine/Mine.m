@@ -11,14 +11,13 @@
 #import "EngineDefinitions.h"
 @implementation Mine
 @synthesize internal_radius;
-@synthesize internal_x;
-@synthesize internal_y;
+@synthesize internal_position;
 
 -(int) x {
-    return roundInternalDistanceToDistance(internal_x);
+    return roundInternalDistanceToDistance(internal_position.x);
 }
 -(int) y {
-    return roundInternalDistanceToDistance(internal_y);
+    return roundInternalDistanceToDistance(internal_position.y);
 }
 
 -(int) radius {

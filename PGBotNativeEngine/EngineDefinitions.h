@@ -29,7 +29,13 @@
 #define MISSILE_EXPLOSION_RADIUS 14
 #define MISSILE_RADIUS 0
 
-typedef signed long long lint;
+typedef double lint;
+
+typedef double unit;
+
+typedef struct {
+    unit x,y;
+} position;
 
 #define ROBOT_RADIUS 2
 

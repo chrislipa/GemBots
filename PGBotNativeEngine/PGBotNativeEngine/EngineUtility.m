@@ -9,6 +9,12 @@
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
 
+void swap (unit *a, unit *b) {
+    unit temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 NSString* pathToTextFile(NSString* file) {
     NSArray* a = [NSBundle allBundles];
     for (NSBundle* b in a) {
@@ -21,31 +27,12 @@ NSString* pathToTextFile(NSString* file) {
     return nil;
 }
 
-lint roundedDivision(lint numerator, lint denominator) {
-    return (numerator+(denominator>>1))/denominator;
+unit roundedDivision(unit numerator, unit denominator) {
+    return numerator/denominator;
 }
 
-lint intsqrt(lint x) {
-    lint rv = 0;
-    lint b = 1uL << 64-2;
-    while (b > x) {
-        b >>= 2;
-    }
-    while (b != 0) {
-        if (x >= rv + b) {
-            x = x - (rv + b);
-            rv = rv + b<<1;
-        }
-        rv >>= 1;
-        b >>= 2;
-    }
-    
-    
-    if (x > rv) {
-        return rv+1;
-    } else {
-        return rv;
-    }
+unit intsqrt(unit x) {
+    return sqrt(x);
 }
 
 
@@ -112,15 +99,25 @@ NSString* uuid() {
     return uuidString;
 }
 
-int getAngleTo(lint nx, lint ny) {
-    lint x = ABS(nx)>>10;
-    lint y = ABS(ny)>>10;
-    if (x+y == 0) {
-        return 0;
+
+
+unit getAngleToPosition(position p) {
+    unit nx = p.x;
+    unit ny = p.y;
+    lint x = ABS(nx);
+    lint y = ABS(ny);
+    bool swapped = NO;
+    if (y < x) {
+        swap(&y,&x);
+        swapped = YES;
     }
-    lint norm = intsqrt(x*x+y*y);
     
-    int nangle = (int)lround((256.0/(M_2_PI)) *(asin(((double)y)/norm)));
+    unit nangle = atan(x/y);
+    if (swapped) {
+        nangle = 64.0 - nangle;
+    }
+    
+    
     nangle = 64 - nangle;
     if (nx < 0 && ny >= 0) {
         nangle = 256 - nangle;
@@ -131,6 +128,17 @@ int getAngleTo(lint nx, lint ny) {
     }
     return nangle;
 }
+
+
+unit getAngleTo(unit nx, unit ny) {
+    return getAngleToPosition(positionWithUnits(nx, ny));
+}
+
+unit getRoundedAngleTo(unit nx, unit ny) {
+    return roundUnitToHeading(getAngleToPosition(positionWithUnits(nx, ny)));
+}
+
+
 int anglemod(int a) {
     a %= 256;
     if (a < 0) {
@@ -140,32 +148,19 @@ int anglemod(int a) {
 }
 
 lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
-    lint deltaX = (a.internal_x - b.internal_x) >> 10;
-    lint deltaY = (a.internal_y - b.internal_y) >> 10;
+    unit deltaX = (a.internal_position.x - b.internal_position.x);
+    unit deltaY = (a.internal_position.y - b.internal_position.y);
     return sqrt(deltaX*deltaX+deltaY*deltaY);
 }
 
 bool isObjectOutOfBounds(NSObject<TangibleObject>* a) {
-    return a.internal_x < a.internal_radius ||
-            a.internal_y < a.internal_radius ||
-    a.internal_x > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius ||
-    a.internal_y > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius;
+    return a.internal_position.x < a.internal_radius ||
+            a.internal_position.y < a.internal_radius ||
+    a.internal_position.x > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius ||
+    a.internal_position.y > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius;
     
 }
-void placeObjectBackInBounds(NSObject<TangibleObject>* a) {
-    if (a.internal_x < a.internal_radius) {
-        a.internal_x = a.internal_radius;
-    }
-    if (a.internal_y < a.internal_radius) {
-        a.internal_y = a.internal_radius;
-    }
-    if (a.internal_x >  distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius) {
-        a.internal_x =  distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius;
-    }
-    if (a.internal_y < a.internal_y > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius) {
-        a.internal_y = a.internal_y > distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius;
-    }
-}
+
 int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
     lint d = internal_distance_between(a, b);
     return roundInternalDistanceToDistance(d);
@@ -176,8 +171,16 @@ int relativeHeading(NSObject<OrientedObject>* a, NSObject<TangibleObject>* b) {
     return anglemod(absHeading - a.heading);
 }
 
+int roundUnitToInt(unit x) {
+    return (int)round(x);
+}
+
+int roundUnitToHeading(unit heading) {
+    return roundUnitToInt(heading)&0xFF;
+}
+
 int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
-    return getAngleTo(b.internal_x-a.internal_x, b.internal_y-a.internal_y);
+    return roundUnitToHeading(getAngleTo( b.internal_position.x-a.internal_position.x, b.internal_position.y-a.internal_position.y));
 }
 
 int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b) {
@@ -210,37 +213,24 @@ lint armorToInternalArmor(int d) {
     return (((lint)d) *((lint) ARMOR_MULTIPLIER));
 }
 
-void private_separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, lint distance, lint *shiftx, lint* shifty) {
-    lint old_distance = distance_between(a, b);
-    lint dx, dy;
-    if (old_distance > 0) {
-        dx = b.internal_x - a.internal_x;
-        dy = b.internal_y - a.internal_y;
-    } else {
-        dx = 1;
-        dy = 0;
-        old_distance = 1;
-    }
-    *shiftx = (dx * distance) / (2*old_distance);
-    *shifty = (dy * distance) / (2*old_distance);
+
+
+
+
+unit convertIntToUnit(int z) {
+    return (unit)z;
 }
 
-void separateObjectsByLater(NSObject<QueueableTangibleObject>* a, NSObject<QueueableTangibleObject>* b, lint distance) {
-    lint shiftx, shifty;
-    private_separateObjectsBy(a, b, distance, &shiftx, &shifty);
-    a.queued_dx -= shiftx;
-    a.queued_dy -= shifty;
-    b.queued_dx += shiftx;
-    b.queued_dy += shifty;
+position positionWithInts(int x, int y) {
+    position p;
+    p.x = convertIntToUnit(x);
+    p.y = convertIntToUnit(y);
+    return p;
 }
-
-void separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, lint distance) {
-    lint shiftx, shifty;
-    private_separateObjectsBy(a, b, distance, &shiftx, &shifty);
-    a.internal_x -= shiftx;
-    a.internal_y -= shifty;
-    b.internal_x += shiftx;
-    b.internal_x += shifty;
+position positionWithUnits(unit px, unit py) {
+    position p;
+    p.x = px;
+    p.y = py;
+    return p;
 }
-
 

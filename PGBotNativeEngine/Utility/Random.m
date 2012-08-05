@@ -12,13 +12,17 @@
 
 @implementation Random
 
--(int) random {
+-(int) randomInt {
     if (isDeterministic == 0) {
-        return arc4random();
+        return (int)arc4random();
     }
     return 0;
 }
 
+
+-(int) randomIntInInclusiveRange:(int) lowerBound: (int) upperBound {
+    return lowerBound + [self randomInt] % (upperBound + 1 -lowerBound);
+}
 -(void) setDeterministic:(bool)deterministic {
     isDeterministic = deterministic;
 }

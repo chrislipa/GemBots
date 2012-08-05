@@ -12,14 +12,12 @@
 #import "EngineDefinitions.h"
 
 @interface Explosion : NSObject <ExplosionDescription, TangibleObject> {
-    lint internal_radius;
-    lint internal_x;
-    lint internal_y;
+    unit internal_radius;
+    position internal_position;
 }
 
-@property (readwrite,assign) lint internal_x;
-@property (readwrite,assign) lint internal_y;
-@property (readwrite,assign) lint internal_radius;
+@property (readwrite,assign) position internal_position;
+@property (readwrite,assign) unit internal_radius;
 
 
 

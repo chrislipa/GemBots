@@ -14,10 +14,10 @@
 }
 
 -(int) gameCycleTimeout {
-    return 0;
+    return timeLimit.cycles;
 }
 -(int) numberOfMatches {
-    return 0;
+    return numberOfMatches;
 }
 -(void) setNumberOfMatches:(int) number {
    

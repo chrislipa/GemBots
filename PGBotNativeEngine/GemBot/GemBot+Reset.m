@@ -34,8 +34,6 @@
     [self reboot];
     
     internal_armor =  [self initialInternalArmor];
-    internal_x = 0;
-    internal_y = 0;
     internal_heat =  0;
     
 }
@@ -56,7 +54,7 @@
     memorySize = romMemorySize = 0;
     name = nil;
     descript = nil;
-    compiledCorrectly = NO;
+    
     
     linesOfCode = 0;
     

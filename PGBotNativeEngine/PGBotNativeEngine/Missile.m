@@ -9,8 +9,7 @@
 #import "Missile.h"
 #import "EngineUtility.h"
 @implementation Missile
-@synthesize internal_x;
-@synthesize internal_y;
+@synthesize internal_position;
 @synthesize heading;
 @synthesize engine;
 @synthesize owner;
@@ -19,10 +18,10 @@
 }
 
 -(int) x {
-    return roundInternalDistanceToDistance(internal_x);
+    return roundInternalDistanceToDistance(internal_position.x);
 }
 -(int) y {
-    return roundInternalDistanceToDistance(internal_y);
+    return roundInternalDistanceToDistance(internal_position.y);
 }
 
 

@@ -10,16 +10,9 @@
 #import "EngineDefinitions.h"
 
 @protocol TangibleObject <NSObject>
--(lint) internal_x;
--(lint) internal_y;
--(lint) internal_radius;
--(void) setInternal_x:(lint) z;
--(void) setInternal_y:(lint) z;
+-(position) internal_position;
+-(unit) internal_radius;
+-(void) setInternal_position:(position) position;
 @end
 
-@protocol QueueableTangibleObject <TangibleObject>
--(lint) queued_dx;
--(lint) queued_dy;
--(void) setQueued_dx:(lint)z;
--(void) setQueued_dy:(lint)z;
-@end
+

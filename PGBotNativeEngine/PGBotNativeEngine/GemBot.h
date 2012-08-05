@@ -16,7 +16,14 @@
 
 
 @class PGBotNativeEngine;
-@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject,TurretedObject,QueueableTangibleObject> {
+@interface GemBot : NSObject <RobotDescription,TangibleObject, OrientedObject,TurretedObject> {
+    // Never refreshed
+    
+    NSString* sessionUniqueRobotIdentifier;
+    PGBotNativeEngine* engine;
+    
+    // Refreshed on compile
+    
     NSData* source;
     
     NSString* name;
@@ -31,36 +38,33 @@
     int config_shield;
     int config_armor;
     
-    int* memory;
-    int memorySize;
-    
     int* romMemory;
     int romMemorySize;
-
-    //////////////////////////////////////
-    // Everything above this line comes from the bot description (source or binary
-    /////////////////////////////////////
-    
-    bool compiledCorrectly;
-
     int linesOfCode;
+    bool compiledCorrectly;
     
-    //////////////////////////////////////
-    // 
-    /////////////////////////////////////
+    NSMutableArray* compileErrors;
+    int numberOfCompileErrors;
+    int numberOfCompileWarnings;
+    int highestAddressofRomWrittenTo;
     
-    
+    // Refreshed on new set
+    int killsThisMatch;
+        int team;
+
+    int kills, deaths, wins, losses;
+    // Refreshed on new match
+
+    int* memory;
+    int memorySize;
     int unique_tank_id;
     int number_of_collisions;
     int odometer;
     
-    NSString* sessionUniqueRobotIdentifier;
-    int team;
-    
-    lint internal_armor;
-    lint internal_x;
-    lint internal_y;
-    lint internal_heat;
+    unit internal_armor;
+    position internal_position;
+
+    unit internal_heat;
     
     int heading, desiredHeading;
     int speed_in_terms_of_throttle, throttle;
@@ -68,71 +72,66 @@
     bool overburnOn;
     bool keepshiftOn;
     int turretHeading;
+    int gameCycleOfLastDamage;
     
-    
-    int kills, deaths, wins, losses;
-    int killsThisMatch;
     int numberOfMissilesFired, numberOfMissilesConnected;
     int numberOfMinesLayed, numberOfMinesConnected;
     int numberOfTimesHit;
+    int lastTimeFiredShotHitATank;
     
+    int lastCollisionTime;
+    bool isAlive;
+    int scan_arc_half_width;
     
-    
-    
-    
+    // reset on instruction execution
     int savedClockCycles;
     int numberOfConsecutiveConditionalJumps;
-    
     bool wasLastInstructionAByteMaskedSet;
     int addressOfLastBytMaskedSet;
     int quarterClockCyclesIntoByteMaskedSet;
     
-    PGBotNativeEngine* engine;
+    
+    // temp decoding of opcodes
+    
     
     Opcode* opcode;
     Device* device;
     SystemCall* systemCall;
     int op1;
     int op2;
+    
+    
+    // misc
+    
     bool markForSelfDestruction;
     GemBot* mostRecentlyScannedTank;
     int speedOfMostRecentlyScannedTankAtTimeOfScan;
     int relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
     
-    int gameCycleOfLastDamage;
-    int lastTimeFiredShotHitATank;
-    int lastCollisionTime;
-    bool isAlive;
+    
     
     ///
     //comm
     ///
-int comm_channel;
-int comm_channel_to_switch_to;
-bool swtich_comm_channel_this_turn;
-int comm_write_ptr;
-int comm_read_ptr;
-int comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
-int number_of_comm_transmits_this_turn;
-int scan_arc_half_width;
+    int comm_channel;
+    int comm_channel_to_switch_to;
+    bool swtich_comm_channel_this_turn;
+    int comm_write_ptr;
+    int comm_read_ptr;
+    int comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
+    int number_of_comm_transmits_this_turn;
     
-    // queued shift in position
-    lint queued_dx;
-    lint queued_dy;
-    NSColor* color;
     
-    NSMutableArray* compileErrors;
-    int numberOfCompileErrors;
-    int numberOfCompileWarnings;
     
-    int highestAddressofRomWrittenTo;
+    
     
 
 }
+
 @property (readwrite,retain) NSMutableArray* compileErrors;
 @property (readwrite,assign) int numberOfCompileErrors;
 @property (readwrite,assign) int numberOfCompileWarnings;
-@property (readwrite, retain) NSColor* color;
+
 @property (readwrite,assign) int relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
 @property (readwrite,assign) int speedOfMostRecentlyScannedTankAtTimeOfScan;
 @property (readwrite,assign) lint queued_dx;
@@ -142,8 +141,7 @@ int scan_arc_half_width;
 @property (readwrite,assign) int number_of_collisions;
 @property (readwrite,assign) lint internal_armor;
 @property (readwrite,retain) GemBot* mostRecentlyScannedTank;
-@property (readwrite, assign) lint internal_x;
-@property (readwrite, assign) lint internal_y;
+@property (readwrite, assign) position internal_position;
 @property (readwrite,assign)  bool isAlive;
 @property (readwrite,assign) int scan_arc_half_width;
 @property (readwrite,assign) int throttle;

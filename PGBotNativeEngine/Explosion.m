@@ -9,16 +9,15 @@
 #import "Explosion.h"
 #import "EngineUtility.h"
 @implementation Explosion
-@synthesize internal_x;
-@synthesize internal_y;
+@synthesize internal_position;
 @synthesize internal_radius;
 
 
 -(int) x {
-    return roundInternalDistanceToDistance(internal_x);
+    return roundInternalDistanceToDistance(internal_position.x);
 }
 -(int) y {
-    return roundInternalDistanceToDistance(internal_y);
+    return roundInternalDistanceToDistance(internal_position.y);
 }
 -(int) radius {
     return roundInternalDistanceToDistance(internal_radius);

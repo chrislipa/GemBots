@@ -112,8 +112,7 @@
 
 -(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(lint)r {
     Explosion* e = [[Explosion alloc] init];
-    e.internal_x = a.internal_x;
-    e.internal_y = a.internal_y;
+    e.internal_position = a.internal_position;
     e.internal_radius = r;
 }
 
