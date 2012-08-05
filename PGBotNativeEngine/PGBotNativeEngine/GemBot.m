@@ -58,7 +58,7 @@
 @synthesize config_armor;
 @synthesize keepshiftOn;
 @synthesize throttle;
-@synthesize scan_arc_half_width;
+@synthesize scan_arc_width;
 @synthesize isAlive;
 @synthesize internal_armor;
 @synthesize speedOfMostRecentlyScannedTankAtTimeOfScan;

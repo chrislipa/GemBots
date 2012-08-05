@@ -35,7 +35,7 @@
             lint distance = internal_distance_between(g, bot);
             if (distance <= internalScanRadius) {
                 int angle = turretRelativeHeading(bot, g);
-                if (angle <= bot.scan_arc_half_width || angle >= 256 - bot.scan_arc_half_width) {
+                if (angle <= bot.scan_arc_width || angle >= 256 - bot.scan_arc_width) {
                     if (distance < internal_rv || internal_rv == -1) {
                         internal_rv = distance;
                         bot.mostRecentlyScannedTank = g;
@@ -50,8 +50,8 @@
     Scan* scan = [[Scan alloc] init];
     scan.centerX = bot.x;
     scan.centerY = bot.y;
-    scan.startAngle = anglemod( bot.turretHeading + bot.scan_arc_half_width);
-    scan.endAngle = anglemod( bot.turretHeading - bot.scan_arc_half_width);
+    scan.startAngle = anglemod( bot.turretHeading + bot.scan_arc_width);
+    scan.endAngle = anglemod( bot.turretHeading - bot.scan_arc_width);
     scan.radius = roundInternalDistanceToDistance(internalScanRadius);
     [scans addObject:scan];
     

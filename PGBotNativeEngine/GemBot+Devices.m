@@ -39,10 +39,10 @@
 
 //3 0 scan_arc rw
 -(void) scan_arcr {
-    [self setMemory:op2 :self.scan_arc_half_width];
+    [self setMemory:op2 :self.scan_arc_width];
 }
 -(void) scan_arcw {
-    self.scan_arc_half_width = op2;
+    self.scan_arc_width = op2;
 }
 
 

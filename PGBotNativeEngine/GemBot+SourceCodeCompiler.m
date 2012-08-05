@@ -184,7 +184,7 @@
         
         int rtype[2] = {0,0};
         int bytes[3] = {0,0,0};
-        bool isLabel = NO;
+        
         for (int i = (int)[p count]-1; i>=0; i--) {
             
             
@@ -200,7 +200,6 @@
             }
             if (i == 0 && [s hasSuffix:@":"]) {
                 [labels setObject:[NSNumber numberWithInt:pc] forKey:s];
-                isLabel = YES;
             } else if ([s hasSuffix:@":"]) {
                 [pointersToLabels addObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:pc], s, nil ]];
             } else if ([variables objectForKey:s]) {

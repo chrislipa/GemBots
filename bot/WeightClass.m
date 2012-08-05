@@ -28,9 +28,10 @@
 
 +(NSArray*) standardWeightClassesGeneration {
     NSArray* a = @[ @[ @16, @"Flyweight", @"Flyweight (16 LOC)" ,@0],
-                    @[ @32, @"Lightweight", @"Welterweight (32 LOC)",@0 ],
-                    @[ @64, @"Middleweight", @"Middleweight (64 LOC)",@0 ],
-                    @[ @-1, @"Heavyweight", [NSString stringWithUTF8String:"Heavyweight (No Limit)"], @1]
+                    @[ @32, @"LightWeight", @"LightWeight (32 LOC)",@0 ],
+                    @[ @64, @"Welterweight", @"Welterweight (64 LOC)",@0 ],
+                    @[ @256, @"Middleweight", @"Middleweight (256 LOC)",@0 ],
+                    @[ @0, @"Heavyweight", @"Heavyweight (No Limit)", @1]
     ];
     NSMutableArray* c = [NSMutableArray array];
     for (NSArray* b in a) {

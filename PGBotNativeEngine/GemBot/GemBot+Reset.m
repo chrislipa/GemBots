@@ -36,6 +36,64 @@
     internal_armor =  [self initialInternalArmor];
     internal_heat =  0;
     
+    
+    
+    number_of_collisions = 0;
+    odometer = 0;
+    
+   
+   
+    
+    turretHeading = desiredHeading = heading;
+    
+    
+    speed_in_terms_of_throttle =  throttle = 0;
+    shieldOn = 0;
+    overburnOn = 0;
+    keepshiftOn = NO;
+
+    gameCycleOfLastDamage = 0;
+    
+    numberOfMissilesFired =  numberOfMissilesConnected = 0;
+    numberOfMinesLayed = numberOfMinesConnected = 0;
+    numberOfTimesHit = 0;
+    lastTimeFiredShotHitATank = 0;
+    
+    lastCollisionTime = 0;
+    isAlive = 0;
+    scan_arc_width = 128;
+    
+    // reset on instruction execution
+    savedClockCycles = 0;
+    numberOfConsecutiveConditionalJumps = 0;
+    wasLastInstructionAByteMaskedSet = NO;
+    addressOfLastBytMaskedSet  = 0;
+    quarterClockCyclesIntoByteMaskedSet = 0;
+    
+    
+    // temp decoding of opcodes
+    
+  
+    
+    // misc
+    
+    markForSelfDestruction = YES;
+    mostRecentlyScannedTank = nil;
+    speedOfMostRecentlyScannedTankAtTimeOfScan = 0;
+    relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan = 0;
+    
+    
+    
+    ///
+    //comm
+    ///
+    comm_channel = 0;
+    comm_channel_to_switch_to = 0;
+    swtich_comm_channel_this_turn = NO;
+    comm_write_ptr = COMMUNICATION_MEMORY_START;
+    comm_read_ptr = COMMUNICATION_MEMORY_START;
+    //comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
+    number_of_comm_transmits_this_turn = 0;
 }
 
 -(void) cleanForRecompile {

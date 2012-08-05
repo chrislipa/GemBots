@@ -81,7 +81,7 @@
     
     int lastCollisionTime;
     bool isAlive;
-    int scan_arc_half_width;
+    int scan_arc_width;
     
     // reset on instruction execution
     int savedClockCycles;
@@ -143,7 +143,7 @@
 @property (readwrite,retain) GemBot* mostRecentlyScannedTank;
 @property (readwrite, assign) position internal_position;
 @property (readwrite,assign)  bool isAlive;
-@property (readwrite,assign) int scan_arc_half_width;
+@property (readwrite,assign) int scan_arc_width;
 @property (readwrite,assign) int throttle;
 @property (readwrite,assign) int lastTimeFiredShotHitATank;
 @property (readwrite,assign) int gameCycleOfLastDamage;
