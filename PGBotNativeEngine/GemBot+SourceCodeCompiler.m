@@ -10,6 +10,7 @@
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
 #import "GemBot+Memory.h"
+#import "GemBot+Compiler.h"
 
 @implementation GemBot (SourceCodeCompiler)
 
@@ -91,13 +92,13 @@
     for (NSArray* l in a) {
         NSString* firstToken = nil, *secondToken = nil, *thirdToken = nil;
         if ([l count] > 0) {
-            firstToken = [l objectAtIndex:0];
+            firstToken = [[l objectAtIndex:0] uppercaseString];
         }
         if ([l count] > 1) {
-            secondToken = [l objectAtIndex:1];
+            secondToken = [[l objectAtIndex:1] uppercaseString];
         }
         if ([l count] > 2) {
-            thirdToken = [l objectAtIndex:2];
+            thirdToken = [[l objectAtIndex:2] uppercaseString];
         }
         
         if (firstToken && [firstToken isEqual:@"#ARMAMENT"] && secondToken && thirdToken) {
@@ -116,7 +117,13 @@
                 self.config_mines = v;
             }  else if ([secondToken isEqualToString:@"SHIELD"]) {
                 self.config_shield = v;
+            } else {
+                [self compileWarning:@"Unrecognized armament: %@", [l objectAtIndex:1]];
             }
+        } else if (firstToken && [firstToken isEqual:@"#ARMAMENT"] && secondToken) {
+            [self compileWarning:@"Missing value for %@ %@", [l objectAtIndex:0], [l objectAtIndex:1]];
+        } else if (firstToken && [firstToken isEqual:@"#ARMAMENT"]) {
+            [self compileWarning:@"Missing value for #@", [l objectAtIndex:0]];
         } else {
             [o addObject:l];
         }

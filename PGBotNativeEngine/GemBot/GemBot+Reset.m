@@ -41,10 +41,15 @@
 }
 
 -(void) cleanForRecompile {
+    highestAddressofRomWrittenTo= 0;
+    numberOfCompileErrors = 0;
+    numberOfCompileWarnings = 0;
+    compileErrors = [NSMutableArray array];
     compiledCorrectly = YES;
     name = nil;
     descript = nil;
     author = nil;
+    
     [self cleanMemory];
 
     

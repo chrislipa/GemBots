@@ -13,5 +13,5 @@
 -(int) gameCycleTimeout;
 -(int) numberOfMatches;
 -(void) setNumberOfMatches:(int) number;
--(void) refreshView ;
+-(void) refreshView;
 @end

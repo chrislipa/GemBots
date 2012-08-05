@@ -15,7 +15,8 @@
 
 
 @synthesize sessionUniqueRobotIdentifier;
-
+@synthesize numberOfCompileErrors;
+@synthesize numberOfCompileWarnings;
 @synthesize queued_dx;
 @synthesize queued_dy;
 @synthesize name;
@@ -136,4 +137,6 @@
 
     free(memory);
 }
+
+
 @end

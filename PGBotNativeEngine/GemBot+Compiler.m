@@ -12,6 +12,7 @@
 #import "GemBot+Memory.h"
 #import "EngineUtility.h"
 #import "Gembot+Reset.h"
+#import "CompileError.h"
 
 @implementation GemBot (Compiler)
 
@@ -43,23 +44,45 @@
 }
 
 
--(void) verifyParameter:(int*) verifyParameter {
+-(void) verifyParameter:(int*) verifyParameter :(NSString*) armname {
     if (*verifyParameter < 0 || *verifyParameter > 5) {
-        compiledCorrectly = NO;
+        [self compileError:@"%@ armament set to %d", armname, *verifyParameter];
     }
 }
 
 -(void) checkIfValid {
-    [self verifyParameter:&config_armor];
-    [self verifyParameter:&config_engine];
-    [self verifyParameter:&config_heatsinks];
-    [self verifyParameter:&config_mines];
-    [self verifyParameter:&config_scanner];
-    [self verifyParameter:&config_shield];
-    [self verifyParameter:&config_weapon];
-    if (config_armor + config_engine + config_heatsinks + config_mines + config_scanner + config_shield + config_weapon > MAX_ARMAMENT_WEIGHT) {
-        compiledCorrectly = NO;
+    [self verifyParameter:&config_armor:@"armor"];
+    [self verifyParameter:&config_engine:@"engine"];
+    [self verifyParameter:&config_heatsinks:@"heatsink"];
+    [self verifyParameter:&config_mines:@"mines"];
+    [self verifyParameter:&config_scanner:@"scanner"];
+    [self verifyParameter:&config_shield:@"shield"];
+    [self verifyParameter:&config_weapon:@"weapon"];
+    int sumOfArms = config_armor + config_engine + config_heatsinks + config_mines + config_scanner + config_shield + config_weapon;
+    if (sumOfArms > MAX_ARMAMENT_WEIGHT) {
+        [self compileError:@"Sum of armaments is %d", sumOfArms];
     }
+    if (highestAddressofRomWrittenTo >= BOT_MAX_MEMORY ) {
+        [self compileError:@"Robot too large (%d > %@)",highestAddressofRomWrittenTo, BOT_MAX_MEMORY-1];
+    }
+}
+
+-(void) compileError:(NSString*) format , ... {
+    compiledCorrectly = NO;
+    numberOfCompileErrors++;
+    va_list args;
+    va_start(args, format);
+    NSString* string = [[NSString alloc] initWithFormat:format  arguments: args];
+    [compileErrors addObject:[CompileError errorWithText:string]];
+    
+}
+
+-(void) compileWarning:(NSString*) format , ... {
+    numberOfCompileWarnings++;
+    va_list args;
+    va_start(args, format);
+    NSString* string = [[NSString alloc] initWithFormat:format arguments: args];
+    [compileErrors addObject:[CompileError errorWithText:string]];
 }
 
 

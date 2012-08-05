@@ -88,6 +88,7 @@ void setMemory(int** array, int* currentMemorySize,int addr ,int value ){
     setMemory(&memory, &memorySize, addr, value);
 }
 -(void) setRomMemory:(int) addr :(int) value {
+    highestAddressofRomWrittenTo = MAX(addr,highestAddressofRomWrittenTo);
     setMemory(&romMemory, &romMemorySize, addr, value);
 }
 

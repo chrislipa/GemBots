@@ -1,24 +1,24 @@
 //
-//  WeightClass.h
+//  TimeLimit.h
 //  bot
 //
 //  Created by Christopher Lipa on 8/4/12.
 //
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
-@interface WeightClass : NSObject {
-    int loc;
+@interface TimeLimit : NSView {
+    int cycles;
     NSString* shortStringDescription;
     NSString* longStringDescription;
     bool isDefault;
 }
 @property (readwrite) bool isDefault;
-@property (readwrite) int loc;
+@property (readwrite) int cycles;
 @property (readwrite) NSString* shortStringDescription;
 @property (readwrite) NSString* longStringDescription;
-+(NSArray*) standardWeightClasses;
-+(WeightClass*) defaultWeightClass;
-+(WeightClass*) classWithTitle:(NSString*)d;
++(NSArray*) standardTimeLimits;
++(TimeLimit*) defaultTimeLimit;
++(TimeLimit*) timeLimitWithTitle:(NSString*)t;
 @end

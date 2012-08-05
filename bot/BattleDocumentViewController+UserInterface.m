@@ -7,7 +7,7 @@
 //
 
 #import "BattleDocumentViewController+UserInterface.h"
-
+#import "TimeLimit.h"
 @implementation BattleDocumentViewController (UserInterface)
 -(void) setGameCycleTimeout:(int) number {
     
@@ -26,6 +26,12 @@
 
 -(void) refreshView {
     [self refreshWeighClassPicker];
+    [self refreshTimeLimitPicker];
+    [self refreshNumberOfMatches];
+}
+
+-(void) refreshNumberOfMatches {
+    [numberOfMatchesField setStringValue:[NSString stringWithFormat:@"%d",numberOfMatches]];
 }
 
 -(void) refreshWeighClassPicker {
@@ -36,6 +42,15 @@
     }
     if (weightClass) {
         [weightClassPicker selectItemWithTitle:weightClass.longStringDescription];
+    }
+}
+-(void) refreshTimeLimitPicker {
+    [gameCycleTimeOutPicker removeAllItems];
+    for (TimeLimit* t in [TimeLimit standardTimeLimits]) {
+        [gameCycleTimeOutPicker addItemWithTitle:t.longStringDescription];
+    }
+    if (timeLimit) {
+        [gameCycleTimeOutPicker selectItemWithTitle:timeLimit.longStringDescription];
     }
 }
 

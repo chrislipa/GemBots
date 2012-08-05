@@ -30,11 +30,10 @@
         editors = [[NSMutableArray alloc] init];
         robotCellViewControllers = [[NSMutableDictionary alloc] init];
         teamTitles = [NSMutableArray array];
-        weightClass = [[WeightClass standardWeightClasses] lastObject];
+        weightClass = [WeightClass defaultWeightClass];
+        timeLimit = [TimeLimit defaultTimeLimit];
+        numberOfMatches = 10;
         
-        [self view];
-        [self refreshView];
-        //[battleDocument refreshViews];
     }
     
     
@@ -226,6 +225,16 @@
     [robots removeObject:bot];
     [robotCellViewControllers removeObjectForKey:key];
     [robotList reloadData];
+}
+
+-(IBAction)locPickerChanged:(id)sender {
+    weightClass = [WeightClass classWithTitle: [weightClassPicker selectedItem].title];
+}
+-(IBAction)timeLimitPickerChaged:(id)sender {
+    timeLimit = [TimeLimit timeLimitWithTitle:[gameCycleTimeOutPicker selectedItem].title];
+}
+-(IBAction)numberOfMatchesChanged:(id)sender {
+    numberOfMatches = [[numberOfMatchesField stringValue] intValue];
 }
 
 @end

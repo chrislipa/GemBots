@@ -75,7 +75,7 @@
 							<object class="NSButtonCell" key="NSCell" id="634421318">
 								<int key="NSCellFlags">-2080374784</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Open Bot</string>
+								<string key="NSContents">Open Bot (⌘O)</string>
 								<object class="NSFont" key="NSSupport" id="123439787">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">13</double>
@@ -104,7 +104,7 @@
 							<object class="NSButtonCell" key="NSCell" id="34226073">
 								<int key="NSCellFlags">-2080374784</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">New Bot </string>
+								<string type="base64-UTF8" key="NSContents">TmV3IEJvdCAoEeKMmE4pA</string>
 								<reference key="NSSupport" ref="123439787"/>
 								<string key="NSCellIdentifier">_NS:22</string>
 								<reference key="NSControlView" ref="305569403"/>
@@ -329,19 +329,20 @@
 							<string key="NSFrame">{{785, 18}, {238, 56}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="747873701">
 								<int key="NSCellFlags">-2080374784</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Start!</string>
+								<string type="base64-UTF8" key="NSContents">U3RhcnQhICgR4oyYUyk</string>
 								<reference key="NSSupport" ref="123439787"/>
 								<string key="NSCellIdentifier">_NS:22</string>
 								<reference key="NSControlView" ref="499936143"/>
 								<int key="NSButtonFlags">-2033434624</int>
-								<int key="NSButtonFlags2">160</int>
+								<int key="NSButtonFlags2">268435616</int>
 								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
+								<string key="NSKeyEquivalent">s</string>
 								<int key="NSPeriodicDelay">400</int>
 								<int key="NSPeriodicInterval">75</int>
 							</object>
@@ -397,7 +398,7 @@
 						<object class="NSTextField" id="262971128">
 							<reference key="NSNextResponder" ref="468700778"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{825, 354}, {89, 17}}</string>
+							<string key="NSFrame">{{780, 354}, {70, 17}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="856161340"/>
@@ -406,7 +407,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="791950919">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Weight Class:</string>
+								<string key="NSContents">LOC Limit:</string>
 								<reference key="NSSupport" ref="123439787"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="262971128"/>
@@ -450,7 +451,7 @@
 						<object class="NSPopUpButton" id="856161340">
 							<reference key="NSNextResponder" ref="468700778"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{913, 351}, {113, 26}}</string>
+							<string key="NSFrame">{{852, 348}, {174, 26}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="473772680"/>
@@ -526,7 +527,7 @@
 						<object class="NSPopUpButton" id="499678298">
 							<reference key="NSNextResponder" ref="468700778"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{913, 302}, {113, 26}}</string>
+							<string key="NSFrame">{{852, 302}, {174, 26}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="43740286"/>
@@ -596,7 +597,7 @@
 						<object class="NSTextField" id="473772680">
 							<reference key="NSNextResponder" ref="468700778"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{845, 305}, {69, 21}}</string>
+							<string key="NSFrame">{{780, 305}, {69, 21}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="499678298"/>
@@ -806,6 +807,14 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">controller</string>
+						<reference key="source" ref="468700778"/>
+						<reference key="destination" ref="878140351"/>
+					</object>
+					<int key="connectionID">100593</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">robotList</string>
 						<reference key="source" ref="878140351"/>
 						<reference key="destination" ref="634943307"/>
@@ -859,6 +868,22 @@
 						<reference key="destination" ref="833553549"/>
 					</object>
 					<int key="connectionID">100589</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">locPickerChanged:</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="856161340"/>
+					</object>
+					<int key="connectionID">100594</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">timeLimitPickerChaged:</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="499678298"/>
+					</object>
+					<int key="connectionID">100595</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -934,22 +959,22 @@
 							<reference ref="868502498"/>
 							<reference ref="751162322"/>
 							<reference ref="856161340"/>
-							<reference ref="499678298"/>
 							<reference ref="833553549"/>
 							<reference ref="499936143"/>
 							<reference ref="927545279"/>
 							<reference ref="488128832"/>
 							<reference ref="59522083"/>
-							<reference ref="262971128"/>
-							<reference ref="473772680"/>
 							<reference ref="328627183"/>
 							<reference ref="721018284"/>
 							<reference ref="43740286"/>
 							<reference ref="6045682"/>
 							<reference ref="886359422"/>
-							<reference ref="305569403"/>
 							<reference ref="229072224"/>
 							<reference ref="918338114"/>
+							<reference ref="262971128"/>
+							<reference ref="473772680"/>
+							<reference ref="499678298"/>
+							<reference ref="305569403"/>
 						</array>
 						<reference key="parent" ref="891928962"/>
 					</object>
@@ -1300,6 +1325,7 @@
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100325.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="100325.NSWindowTemplate.visibleAtLaunch"/>
+				<string key="100326.CustomClassName">BattleDocumentView</string>
 				<string key="100326.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100327.CustomClassName">ArenaView</string>
 				<string key="100327.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1360,7 +1386,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100589</int>
+			<int key="maxID">100595</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1400,19 +1426,48 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">BattleDocumentView</string>
+					<string key="superclassName">NSView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">controller</string>
+						<string key="NS.object.0">BattleDocumentViewController</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">controller</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">controller</string>
+							<string key="candidateClassName">BattleDocumentViewController</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BattleDocumentView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">BattleDocumentViewController</string>
 					<string key="superclassName">NSViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addRobotButtonEvent:">id</string>
+						<string key="locPickerChanged:">id</string>
 						<string key="startBattleCallback:">id</string>
+						<string key="timeLimitPickerChaged:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addRobotButtonEvent:">
 							<string key="name">addRobotButtonEvent:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="locPickerChanged:">
+							<string key="name">locPickerChanged:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="startBattleCallback:">
 							<string key="name">startBattleCallback:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="timeLimitPickerChaged:">
+							<string key="name">timeLimitPickerChaged:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

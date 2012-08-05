@@ -13,6 +13,7 @@
 #import "PGBotEngineProtocol.h"
 #import "BotContainer.h"
 #import "WeightClass.h"
+#import "TimeLimit.h"
 @class BotContainer;
 @class RobotListTableView;
 @class BattleDocument;
@@ -30,11 +31,14 @@
     NSMutableArray* teamTitles;
     bool battleCurrentlyInProgress;
     WeightClass* weightClass;
-    
+    TimeLimit* timeLimit;
+    int numberOfMatches;
 
     IBOutlet NSPopUpButton* weightClassPicker;
     IBOutlet NSTextField* numberOfMatchesField;
     IBOutlet NSPopUpButton* gameCycleTimeOutPicker;
+    
+    
 }
 
 @property (readwrite,retain)    WeightClass* weightClass;
@@ -51,5 +55,9 @@
 -(int) unusedTeamForRobot:(BotContainer*) bot;
 -(void) removeRobot:(BotContainer*) bot;
 
+
+-(IBAction)locPickerChanged:(id)sender;
+-(IBAction)timeLimitPickerChaged:(id)sender;
+-(IBAction)numberOfMatchesChanged:(id)sender;
 
 @end

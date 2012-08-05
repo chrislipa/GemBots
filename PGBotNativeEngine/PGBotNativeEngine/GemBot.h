@@ -42,7 +42,7 @@
     /////////////////////////////////////
     
     bool compiledCorrectly;
-    NSArray* compileErrors;
+
     int linesOfCode;
     
     //////////////////////////////////////
@@ -120,7 +120,18 @@ int scan_arc_half_width;
     lint queued_dx;
     lint queued_dy;
     NSColor* color;
+    
+    NSMutableArray* compileErrors;
+    int numberOfCompileErrors;
+    int numberOfCompileWarnings;
+    
+    int highestAddressofRomWrittenTo;
+    
+
 }
+@property (readwrite,retain) NSMutableArray* compileErrors;
+@property (readwrite,assign) int numberOfCompileErrors;
+@property (readwrite,assign) int numberOfCompileWarnings;
 @property (readwrite, retain) NSColor* color;
 @property (readwrite,assign) int relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
 @property (readwrite,assign) int speedOfMostRecentlyScannedTankAtTimeOfScan;

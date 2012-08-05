@@ -14,6 +14,6 @@
 }
 
 
--(void) refreshViews;
+
 
 @end

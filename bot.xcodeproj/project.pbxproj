@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3604DCF215CE0A4B0072B834 /* BattleDocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3604DCF115CE0A4B0072B834 /* BattleDocumentView.m */; };
+		3604DCF515CE0C150072B834 /* TimeLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3604DCF415CE0C150072B834 /* TimeLimit.m */; };
+		3604DD0515CE19E70072B834 /* CompilerErrorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3604DD0415CE19E70072B834 /* CompilerErrorController.xib */; };
+		3604DD0715CE1C2F0072B834 /* CompileErrorCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3604DD0615CE1C2F0072B834 /* CompileErrorCellViewController.xib */; };
 		3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608927E15BE876D00A06C94 /* Cocoa.framework */; };
 		3608928915BE876D00A06C94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3608928715BE876D00A06C94 /* InfoPlist.strings */; };
 		3608928B15BE876D00A06C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3608928A15BE876D00A06C94 /* main.m */; };
@@ -63,7 +67,6 @@
 		36B3E01015CDF7650077E9A0 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 36B3E00D15CDF7650077E9A0 /* LICENSE.md */; };
 		36B3E01115CDF7650077E9A0 /* CREDITS.md in Resources */ = {isa = PBXBuildFile; fileRef = 36B3E00E15CDF7650077E9A0 /* CREDITS.md */; };
 		36B3E01415CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3E01315CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m */; };
-		36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */; };
 		36C7945E15C63B1F00D53ADB /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7945D15C63B1F00D53ADB /* PGBotApplication.m */; };
 		36C7946115C63C6600D53ADB /* MasterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7946015C63C6600D53ADB /* MasterController.m */; };
 		36EBCFCE15CB81C300F955F6 /* EditWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCFC815CB81C300F955F6 /* EditWindow.m */; };
@@ -88,20 +91,6 @@
 			remoteGlobalIDString = 360892B315BE876D00A06C94;
 			remoteInfo = botImporter;
 		};
-		36C3D97315C7406F003CCD2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 36C3D95815C74062003CCD2A;
-			remoteInfo = PGBotNativeEngine;
-		};
-		36C3D98715C76EFF003CCD2A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 36C3D95715C74062003CCD2A;
-			remoteInfo = PGBotNativeEngine;
-		};
 		36FE1B4715CCE7F6003310F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */;
@@ -119,6 +108,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3604DCF015CE0A4B0072B834 /* BattleDocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentView.h; sourceTree = "<group>"; };
+		3604DCF115CE0A4B0072B834 /* BattleDocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleDocumentView.m; sourceTree = "<group>"; };
+		3604DCF315CE0C150072B834 /* TimeLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLimit.h; sourceTree = "<group>"; };
+		3604DCF415CE0C150072B834 /* TimeLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLimit.m; sourceTree = "<group>"; };
+		3604DD0415CE19E70072B834 /* CompilerErrorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CompilerErrorController.xib; path = compilerError/CompilerErrorController.xib; sourceTree = "<group>"; };
+		3604DD0615CE1C2F0072B834 /* CompileErrorCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CompileErrorCellViewController.xib; path = compilerError/CompileErrorCellViewController.xib; sourceTree = "<group>"; };
+		3604DD0B15CE1F510072B834 /* CompileErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompileErrorProtocol.h; path = include/CompileErrorProtocol.h; sourceTree = "<group>"; };
 		3608927A15BE876D00A06C94 /* bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3608927E15BE876D00A06C94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3608928115BE876D00A06C94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -241,7 +237,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C3D98915C76F06003CCD2A /* PGBotNativeEngine.dylib in Frameworks */,
 				360892B915BE876D00A06C94 /* CoreServices.framework in Frameworks */,
 				360892BB15BE876D00A06C94 /* CoreFoundation.framework in Frameworks */,
 				360892BD15BE876D00A06C94 /* CoreData.framework in Frameworks */,
@@ -252,9 +247,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3604DD0315CE19CD0072B834 /* compilerError */ = {
+			isa = PBXGroup;
+			children = (
+				3604DD0415CE19E70072B834 /* CompilerErrorController.xib */,
+				3604DD0615CE1C2F0072B834 /* CompileErrorCellViewController.xib */,
+			);
+			name = compilerError;
+			sourceTree = "<group>";
+		};
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				3604DD0315CE19CD0072B834 /* compilerError */,
 				367ECA4F15CDD0F7003692BB /* images */,
 				36EBCFC615CB81C300F955F6 /* editor */,
 				36C3D96C15C7406E003CCD2A /* PGBotNativeEngine.xcodeproj */,
@@ -320,7 +325,6 @@
 				3608929015BE876D00A06C94 /* BattleDocument.h */,
 				3608929115BE876D00A06C94 /* BattleDocument.m */,
 				3608929315BE876D00A06C94 /* BattleDocument.xib */,
-				3608929615BE876D00A06C94 /* MainMenu.xib */,
 				364DCDF715BEA01700A765D0 /* RobotListTableView.h */,
 				364DCDF815BEA01700A765D0 /* RobotListTableView.m */,
 				364DCDFD15BF18CE00A765D0 /* Utility.h */,
@@ -328,9 +332,14 @@
 				36B3DFF915CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.h */,
 				36B3DFFA15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m */,
 				36B3DFFC15CDECB10077E9A0 /* WeightClass.h */,
+				3608929615BE876D00A06C94 /* MainMenu.xib */,
 				36B3DFFD15CDECB10077E9A0 /* WeightClass.m */,
 				36B3E01215CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.h */,
 				36B3E01315CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m */,
+				3604DCF015CE0A4B0072B834 /* BattleDocumentView.h */,
+				3604DCF115CE0A4B0072B834 /* BattleDocumentView.m */,
+				3604DCF315CE0C150072B834 /* TimeLimit.h */,
+				3604DCF415CE0C150072B834 /* TimeLimit.m */,
 			);
 			path = bot;
 			sourceTree = "<group>";
@@ -471,6 +480,7 @@
 			children = (
 				36C3D8D715C71A66003CCD2A /* GameStateDescriptor.h */,
 				36C3D8D615C71A45003CCD2A /* PGBotEngineProtocol.h */,
+				3604DD0B15CE1F510072B834 /* CompileErrorProtocol.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -478,7 +488,6 @@
 		36C3D96D15C7406E003CCD2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */,
 				36FE1B4815CCE7F6003310F0 /* NativeEngine.bundle */,
 			);
 			name = Products;
@@ -550,7 +559,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				36C3D98815C76EFF003CCD2A /* PBXTargetDependency */,
 			);
 			name = botImporter;
 			productName = botImporter;
@@ -591,13 +599,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		36C3D97415C7406F003CCD2A /* PGBotNativeEngine.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = PGBotNativeEngine.dylib;
-			remoteRef = 36C3D97315C7406F003CCD2A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		36FE1B4815CCE7F6003310F0 /* NativeEngine.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -640,6 +641,8 @@
 				36B3E00F15CDF7650077E9A0 /* README.md in Resources */,
 				36B3E01015CDF7650077E9A0 /* LICENSE.md in Resources */,
 				36B3E01115CDF7650077E9A0 /* CREDITS.md in Resources */,
+				3604DD0515CE19E70072B834 /* CompilerErrorController.xib in Resources */,
+				3604DD0715CE1C2F0072B834 /* CompileErrorCellViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +703,8 @@
 				36B3DFFB15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m in Sources */,
 				36B3DFFE15CDECB10077E9A0 /* WeightClass.m in Sources */,
 				36B3E01415CDF96F0077E9A0 /* BattleDocumentViewController+UserInterface.m in Sources */,
+				3604DCF215CE0A4B0072B834 /* BattleDocumentView.m in Sources */,
+				3604DCF515CE0C150072B834 /* TimeLimit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,11 +738,6 @@
 			isa = PBXTargetDependency;
 			target = 360892B315BE876D00A06C94 /* botImporter */;
 			targetProxy = 360892B515BE876D00A06C94 /* PBXContainerItemProxy */;
-		};
-		36C3D98815C76EFF003CCD2A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PGBotNativeEngine;
-			targetProxy = 36C3D98715C76EFF003CCD2A /* PBXContainerItemProxy */;
 		};
 		36FE1B4A15CCE7FD003310F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
+
 @protocol RobotDescription <NSObject>
 
 -(NSString*) sessionUniqueRobotIdentifier;
@@ -39,7 +40,9 @@
 
 -(bool) isAlive;
 -(bool) compiledCorrectly;
--(NSString*) compileError;
+-(NSArray*) compileErrors;
+-(int) numberOfCompileErrors;
+-(int) numberOfCompileWarnings;
 -(int) team;
 -(void) setTeam:(int) newTeam;
 -(NSColor*) color;

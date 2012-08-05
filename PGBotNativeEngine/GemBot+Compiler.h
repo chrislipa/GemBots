@@ -11,5 +11,7 @@
 @interface GemBot (Compiler)
 
 -(void) compile;
+-(void) compileWarning:(NSString*) format , ... ;
+-(void) compileError:(NSString*) format , ... ;
 
 @end
