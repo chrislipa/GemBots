@@ -19,4 +19,7 @@ void setColorTo(NSColor* pcolor) {
     
     glColor3f(colorf[0],colorf[1],colorf[2]);
 }
+NSString* formatInt(int x) {
+    return [[[NSNumberFormatter alloc] init] stringFromNumber:[NSNumber numberWithInt:x]];
+}
 @end

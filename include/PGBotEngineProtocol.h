@@ -30,7 +30,8 @@
 -(void) startNewSetOfMatches;
 
 -(void) stepGameCycle;
-
+-(int) gameCycle;
+-(int) currentMatch;
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription;
 
 -(bool) isSetOfMatchesCompleted;

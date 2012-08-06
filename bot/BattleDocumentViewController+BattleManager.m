@@ -49,10 +49,14 @@
 
 
 -(IBAction) startBattleCallback:(id)sender {
-    if (![self readyToStartBattle]) {
-        return;
+    if (battleCurrentlyInProgress) {
+        [self stopBattleLoop];
     } else {
-        [self startBattle];
+        if (![self readyToStartBattle]) {
+            return;
+        } else {
+            [self startBattle];
+        }
     }
 }
 
@@ -101,6 +105,8 @@
 }
 
 -(void) stopBattleLoop {
+    battleCurrentlyInProgress = NO;
+    [self refreshViewForEndBattle];
     [gameTimer invalidate];
     gameTimer = nil;
 }
@@ -112,7 +118,11 @@
             [c refreshForMatch];
         }
         [c refreshForGameCycle];
-        
+    }
+    [self refreshUIForGameCycle];
+    
+    if (![engine isMatchCurrentlyActive]) {
+        [self refreshForMatch];
     }
     
 }
@@ -125,9 +135,9 @@
     
     [self refreshUI];
     
-    
-    
-
+    if (arenaView.gameStateDescriptor.isSetOfMatchesCompleted) {
+        [self stopBattleLoop];
+    }
 }
 
 

@@ -53,6 +53,8 @@
     IBOutlet NSTextFieldCell* matchesTextCell;
     IBOutlet NSTextFieldCell* gameCycleSlashCell;
     IBOutlet NSTextFieldCell* matchesSlashCell;
+    
+    IBOutlet NSSlider* gamespeedSlider;
 }
 
 @property (readwrite,retain)    WeightClass* weightClass;
@@ -75,4 +77,6 @@
 -(IBAction)numberOfMatchesChanged:(id)sender;
 -(void) notifyOfRecompile:(NSURL*) url;
 -(void) notifyOfTeamsChange;
+
+-(IBAction) gamespeedSliderCallback:(id)sender;
 @end

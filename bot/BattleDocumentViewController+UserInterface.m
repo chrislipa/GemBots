@@ -62,14 +62,29 @@
     }
     [startStopButtonCell setTitle:@"Stop!"];
     
+
+    [matchesDenominatorCell setStringValue:(numberOfMatches>0?[NSString stringWithFormat:@"%d", numberOfMatches]:@"")];
+    [gameCycleDenominatorCell setStringValue:(timeLimit.cycles>0?[NSString stringWithFormat:@"%d", timeLimit.cycles]:@"")];
+    
+    
 }
 
 
 -(void) refreshViewForEndBattle {
-    for (RobotCellViewController* c in robotCellViewControllers) {
+    for (NSNumber* n in robotCellViewControllers) {
+        RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
         [c notifyOfBattleEnding];
     }
     [startStopButtonCell setTitle:@"Start!"];
 }
+
+-(void) refreshUIForGameCycle {
+    [gameCycleNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.gameCycle]];
+}
+-(void) refreshForMatch {
+    [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
+    
+}
+
 
 @end

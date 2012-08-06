@@ -145,7 +145,11 @@
 -(void) stepGameCycle {
     if (hasSetEnded || !hasSetStarted) {return;}
     if (!isThisSetInitiated) { [self startNewMatch]; return;}
-    if ([self executeGameCycle]) {[self endMatch];}
+    bool finishedMatch = [self executeGameCycle];
+    gameCycle++;
+    if (finishedMatch) {
+        [self endMatch];
+    }
 }
 
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription {

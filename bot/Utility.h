@@ -10,4 +10,5 @@
 
 @interface Utility : NSObject
 void setColorTo(NSColor* pcolor);
+NSString* formatInt(int x);
 @end
