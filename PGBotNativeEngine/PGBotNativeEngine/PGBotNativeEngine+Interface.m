@@ -124,6 +124,7 @@
     e.internal_position = a.internal_position;
     e.internal_radius = r;
     e.damageMultiplier = multiplier;
+    [explosions addObject:e];
 }
 
 -(void) transmit:(int)x onChannel:(int) comm_channel {
@@ -149,6 +150,7 @@
     m.engine = self;
     m.internal_speed = [bot internal_speed_for_missile];
     m.damageMultipiler = [bot missileDamageMultiplier];
+    [missiles addObject:m];
 }
 -(int) howManyMinesHaveThisOwner:(GemBot*) owner {
     int c = 0;

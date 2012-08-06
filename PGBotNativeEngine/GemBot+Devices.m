@@ -76,12 +76,12 @@
     [self setMemory:op2 : turretHeading];
 }
 -(void) turret_headingw {
-    turretHeading = op2;
+    turretHeading = 255 & op2;
 }
 
 //9 3 fire_missile w
 -(void) fire_missilew {
-    [engine fireMissileFrom:internal_position inDirection:heading+op2 withOwner:self];
+    [engine fireMissileFrom:internal_position inDirection:turretHeading+op2 withOwner:self];
 }
 
 //10 0 mine w

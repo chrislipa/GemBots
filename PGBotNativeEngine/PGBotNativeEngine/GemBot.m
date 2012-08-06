@@ -66,6 +66,7 @@
 @synthesize config_mines;
 @synthesize config_shield;
 @synthesize config_armor;
+@synthesize engine;
 @synthesize keepshiftOn;
 @synthesize throttle;
 @synthesize scan_arc_width;

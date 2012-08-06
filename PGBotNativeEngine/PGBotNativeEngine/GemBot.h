@@ -166,7 +166,7 @@
 
 @property (readwrite,assign) int speed_in_terms_of_throttle;
 @property (readwrite,assign) int unique_tank_id;
-@property (readwrite,weak)     PGBotNativeEngine* engine;
+@property (readwrite,retain)     PGBotNativeEngine* engine;
 @property (readwrite,assign) int* memory;
 @property (readwrite,assign) int linesOfCode;
 @property (readwrite,assign) int config_scanner;

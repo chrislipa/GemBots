@@ -165,7 +165,7 @@ int rotateLeft(int x, int d) {
 
 //26 1 jump R {
 -(void) jump {
-    [self setMemory:IP :op1 - SIZE_OF_INSTRUCTION];
+    [self setMemory:IP :op1];
 }
 
 //27 -2 jle R

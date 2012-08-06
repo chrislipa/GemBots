@@ -64,7 +64,7 @@ lint indexInto(const lint a[][2], lint v) {
 }
 
 -(unit) internal_speed_for_missile {
-    return distanceToInternalDistance(DEFAULT_MISSILE_SPEED) * weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn?1.25:1.0);
+    return ((double)(DEFAULT_MISSILE_SPEED) )* weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn?1.25:1.0);
 }
 -(unit) missileDamageMultiplier {
     return weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn? 1.25:1.0);

@@ -77,6 +77,7 @@
 
 -(NSObject<RobotDescription>*) newRobot {
     GemBot* g = [GemBot gemBot];
+    g.engine = self;
     [externalOrderingOfRobots addObject:g];
     return g;
 }

@@ -18,7 +18,7 @@
 @synthesize gameStateDescriptor;
 
 float convert_angle(int hexangle) {
-    return (((float)hexangle)/256.0) * M_2_PI;
+    return (((float)hexangle)/256.0) * M_PI * 2;
 }
 
 - (id)initWithFrame:(NSRect)frame
@@ -64,8 +64,11 @@ void setColorTo(NSColor* pcolor) {
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0, 0);
-    for (float angle = 0; angle < M_2_PI; angle += M_2_PI/16) {
-        glVertex2f(((float)(15.0)) * sinf(angle),((float)(15.0))* cosf(angle));
+    double r = 2.0;
+    for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
+        double x = ((double)(r)) * sin(angle);
+        double y = ((double)(r)) * cos(angle);
+        glVertex2f((float)x,(float)y );
     }
     glEnd();
     /*
@@ -80,8 +83,11 @@ void setColorTo(NSColor* pcolor) {
     setColorTo([NSColor whiteColor]);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0, 0);
-    for (float angle = 0; angle < M_2_PI; angle += M_2_PI/16.0) {
-        glVertex2f(((float)(explosion.radius)) * sinf(angle),((float)(explosion.radius))* cosf(angle));
+    double r = 30.0;
+    for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
+        double x = ((double)(r)) * sin(angle);
+        double y = ((double)(r)) * cos(angle);
+        glVertex2f((float)x,(float)y );
     }
     glEnd();
 }

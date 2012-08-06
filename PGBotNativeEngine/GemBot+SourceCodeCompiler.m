@@ -205,7 +205,7 @@
             if (i == 0 && [s hasSuffix:@":"]) {
                 [labels setObject:[NSNumber numberWithInt:pc] forKey:s];
             } else if ([s hasSuffix:@":"]) {
-                [pointersToLabels addObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:pc], s, nil ]];
+                [pointersToLabels addObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:pc+1], s, nil ]];
             } else if ([variables objectForKey:s]) {
                 bytes[i] = [[variables objectForKey:s] intValue];
                 rtype[i-1]++;
