@@ -49,7 +49,8 @@
 
 -(void) updatePositionsForwardInTime:(unit) dt {
     for (GemBot* gem in robots) {
-        updatePositionForwardInTime(gem, dt);
+        if (gem.isAlive) 
+            updatePositionForwardInTime(gem, dt);
     }
     for (Missile* m in missiles) {
         updatePositionForwardInTime(m, dt);
@@ -63,8 +64,12 @@
     unit maximumCollisionTimeFound = maxTime;
     for (int i = 0; i< [robots count]; i++) {
         GemBot* robot = [robots objectAtIndex:i];
+        if (!robot.isAlive)
+            continue;
         for (int j = 0; j < i; j++) {
             GemBot* otherRobot = [robots objectAtIndex:i];
+            if (!otherRobot.isAlive)
+                continue;
             computeCircleCollision(robot, otherRobot, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);
         }
         for (Missile* missile in missiles) {
