@@ -25,4 +25,6 @@
 -(IBAction) closeCallback:(id)sender;
 -(void) refresh ;
 -(IBAction) compilerErrorCallback:(id)sender;
+-(void) notifyOfBattleStarting;
+-(void) notifyOfBattleEnding;
 @end

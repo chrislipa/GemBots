@@ -130,8 +130,9 @@
         controller = [[RobotCellViewController alloc] initWithNibName:@"RobotCellViewController" andController:self andRobot:robot];
         [robotCellViewControllers setObject:controller forKey:key];
     }
-    
+    [(RobotCellViewController*)controller notifyOfBattleEnding];
     return controller.view;
+    
 }
 
 -(NSColor*) unusedColorForNewRobot {

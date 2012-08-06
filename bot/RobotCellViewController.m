@@ -28,6 +28,7 @@
         botContainer = bc;
         [self view];
         [cell refreshWithBot:bc];
+        [self notifyOfBattleEnding];
     }
     
     return self;
@@ -54,6 +55,14 @@
 
 -(IBAction) compilerErrorCallback:(id)sender {
     [[MasterController singleton] spawnErrorWindowForBotContainer:botContainer forBattleDocumentController:documentController];
+}
+
+-(void) notifyOfBattleStarting {
+    [cell notifyOfBattleStarting];
+}
+-(void) notifyOfBattleEnding {
+    [cell notifyOfBattleEnding];
+    
 }
 
 

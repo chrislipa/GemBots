@@ -14,4 +14,7 @@
 -(int) numberOfMatches;
 -(void) setNumberOfMatches:(int) number;
 -(void) refreshView;
+-(void) refreshViewForStartBattle ;
+-(void) refreshViewForEndBattle ;
 @end
+

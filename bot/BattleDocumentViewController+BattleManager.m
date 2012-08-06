@@ -11,7 +11,15 @@
 #import "GameStateDescriptor.h"
 #import "BattleDocumentViewController+UserInterface.h"
 #import "BattleDocumentViewController+Draw.h"
+#import "RobotCellViewController.h"
+#import "BattleDocumentViewController+UserInterface.h"
+
 @implementation BattleDocumentViewController (BattleManager)
+
+
+
+
+
 
 -(bool) readyToStartBattle {
     if (battleCurrentlyInProgress) {
@@ -52,9 +60,20 @@
 
 -(void) startBattle {
     [self setUpTeamsAndColors];
+    [self refreshViewForStartBattle];
+    
+    
     [self setUpEngine];
     [self startBattleLoop];
 }
+
+
+-(void) endBattle {
+    for (RobotCellViewController* c in robotCellViewControllers) {
+        [c notifyOfBattleEnding];
+    }
+}
+
 
 -(void) setUpTeamsAndColors {
     for (BotContainer* bot in robots) {

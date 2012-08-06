@@ -8,6 +8,7 @@
 
 #import "BattleDocumentViewController+UserInterface.h"
 #import "TimeLimit.h"
+#import "RobotCellViewController.h"
 @implementation BattleDocumentViewController (UserInterface)
 -(void) setGameCycleTimeout:(int) number {
     
@@ -52,6 +53,23 @@
     if (timeLimit) {
         [gameCycleTimeOutPicker selectItemWithTitle:timeLimit.longStringDescription];
     }
+}
+
+-(void) refreshViewForStartBattle {
+    for (NSNumber* n in robotCellViewControllers) {
+        RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
+        [c notifyOfBattleStarting];
+    }
+    [startStopButtonCell setTitle:@"Stop!"];
+    
+}
+
+
+-(void) refreshViewForEndBattle {
+    for (RobotCellViewController* c in robotCellViewControllers) {
+        [c notifyOfBattleEnding];
+    }
+    [startStopButtonCell setTitle:@"Start!"];
 }
 
 @end

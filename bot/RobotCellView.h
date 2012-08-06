@@ -14,6 +14,11 @@
 
 @class RobotCellViewController;
 @interface RobotCellView : NSView {
+    IBOutlet NSTabView* tabview;
+    IBOutlet NSView* view1;
+    IBOutlet NSView* view2;
+    //
+    
     IBOutlet NSScrollView* descriptionScrollView;
     IBOutlet NSTextField* name;
     IBOutlet NSTextField* author;
@@ -30,8 +35,8 @@
     //
     
     
-    
-    IBOutlet ProgressBar* progressBar2;
+    IBOutlet ProgressBar* armorProgressBar2;
+    IBOutlet ProgressBar* heatProgressBar2;
     IBOutlet NSTextField* name2;
     IBOutlet NSTextField* author2;
     IBOutlet NSTextField* teamLabel2;
@@ -44,4 +49,9 @@
 -(void) refreshTeams ;
 
 -(IBAction) chooseTeamCallback:(id) sender;
+
+
+-(void) notifyOfBattleStarting;
+-(void) notifyOfBattleEnding;
+
 @end

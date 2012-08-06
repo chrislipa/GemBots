@@ -25,4 +25,12 @@
     // Drawing code here.
 }
 
+
+-(void) setPercentageComplete:(float) percent {
+    percentageComplete = percent;
+}
+
+-(float) percentageComplete {
+    return percentageComplete;
+}
 @end

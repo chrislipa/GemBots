@@ -31,11 +31,23 @@
     NSColor* color = robotCellViewController.botContainer.color;
     CALayer *viewLayer = [CALayer layer];
     [viewLayer setBackgroundColor:CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1)]; //RGB plus Alpha Channel
-    [self setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
-    [self setLayer:viewLayer];
+    [view1 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
+    [view1 setLayer:viewLayer];
 
+    [view2 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
+    [view2 setLayer:viewLayer];
+    
 
 }
+
+
+-(void) refreshHeatAndArmor  {
+    float heat = ((float)robotCellViewController.botContainer.robot.heat)/ 500.0;
+    float armor = ((float)robotCellViewController.botContainer.robot.heat)/ 100.0;
+    [heatProgressBar2 setPercentageComplete:heat];
+    [armorProgressBar2 setPercentageComplete:armor];
+}
+
 
 -(void) refreshTeams {
     int team = robotCellViewController.botContainer.team;
@@ -45,12 +57,16 @@
     if (team > 0) {
         [teamPicker selectItemWithTitle:[NSString stringWithFormat:@"%d",team]];
     }
+    [teamLabel2 setStringValue:[NSString stringWithFormat:@"Team %d", team]];
+    [self refreshHeatAndArmor];
 }
 
 
 -(void) refreshWithBot:(BotContainer*) b {
     [name setStringValue:[b name]];
+    [name2 setStringValue:[b name]];
     [author setStringValue:[b author]];
+    [author2 setStringValue:[b author]];
     NSString* d = [b descript];
     [descript setString:d];
     [descript setEditable:NO];
@@ -96,6 +112,20 @@
 -(IBAction) chooseTeamCallback:(id) sender {
     robotCellViewController.botContainer.team = [[teamPicker titleOfSelectedItem] intValue];
     [robotCellViewController.documentController notifyOfTeamsChange];
+}
+
+-(void) notifyOfBattleStarting {
+    //[view1 setHidden:NO];
+    //[view2 setHidden:YES];
+    
+    [tabview selectTabViewItemAtIndex:1];
+}
+
+-(void) notifyOfBattleEnding {
+    //[view2 setHidden:YES];
+    //[view2 setHidden:NO];
+    
+    [tabview selectTabViewItemAtIndex:0];
 }
 
 

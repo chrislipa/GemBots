@@ -43,6 +43,7 @@
     IBOutlet ArenaView* arenaView;
     NSTimer* gameTimer;
     NSObject<GameStateDescriptor>* currentGameStateDescription;
+    IBOutlet NSButtonCell* startStopButtonCell;
 }
 
 @property (readwrite,retain)    WeightClass* weightClass;

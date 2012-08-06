@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ProgressBar : NSView
+@interface ProgressBar : NSView {
+    float percentageComplete;
+}
 
+
+-(void) setPercentageComplete:(float) percent;
+-(float) percentageComplete;
 @end
