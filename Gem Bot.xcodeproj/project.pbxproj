@@ -64,6 +64,7 @@
 		367ECB0615CDE50C003692BB /* close_button_red_icon_160.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0415CDE50C003692BB /* close_button_red_icon_160.png */; };
 		367ECB0715CDE50C003692BB /* close_button_red_icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0515CDE50C003692BB /* close_button_red_icon_80.png */; };
 		367ECB0915CDE57E003692BB /* close_button_red_icon_160@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 367ECB0815CDE57E003692BB /* close_button_red_icon_160@2x.png */; };
+		368AA11015CFA19400563767 /* ProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 368AA10F15CFA19400563767 /* ProgressBar.m */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
 		36B3DFFB15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3DFFA15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m */; };
 		36B3DFFE15CDECB10077E9A0 /* WeightClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B3DFFD15CDECB10077E9A0 /* WeightClass.m */; };
@@ -196,6 +197,8 @@
 		367ECB0415CDE50C003692BB /* close_button_red_icon_160.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button_red_icon_160.png; sourceTree = "<group>"; };
 		367ECB0515CDE50C003692BB /* close_button_red_icon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_button_red_icon_80.png; sourceTree = "<group>"; };
 		367ECB0815CDE57E003692BB /* close_button_red_icon_160@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_button_red_icon_160@2x.png"; sourceTree = "<group>"; };
+		368AA10E15CFA19400563767 /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
+		368AA10F15CFA19400563767 /* ProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBar.m; sourceTree = "<group>"; };
 		369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		36B3DFF915CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BattleDocumentViewController+BattleManager.h"; sourceTree = "<group>"; };
 		36B3DFFA15CDEAF70077E9A0 /* BattleDocumentViewController+BattleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BattleDocumentViewController+BattleManager.m"; sourceTree = "<group>"; };
@@ -437,6 +440,8 @@
 				3670B91515C5F09700A38D46 /* RobotCellViewController.h */,
 				3670B91615C5F09700A38D46 /* RobotCellViewController.m */,
 				3670B91715C5F09700A38D46 /* RobotCellViewController.xib */,
+				368AA10E15CFA19400563767 /* ProgressBar.h */,
+				368AA10F15CFA19400563767 /* ProgressBar.m */,
 			);
 			name = RobotCell;
 			sourceTree = "<group>";
@@ -723,6 +728,7 @@
 				3610462015CE30320064F381 /* CompileErrorWindowController.m in Sources */,
 				3610462315CE3DE80064F381 /* CompileErrorCellViewController.m in Sources */,
 				363BA04215CF3D1C000BC400 /* BattleDocumentViewController+Draw.m in Sources */,
+				368AA11015CFA19400563767 /* ProgressBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

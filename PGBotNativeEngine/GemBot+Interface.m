@@ -17,6 +17,24 @@
 @implementation GemBot (Interface)
 
 
+-(void) updateThrottle {
+    if (ABS(speed_in_terms_of_throttle -throttle) <= MAX_THROTTLE_MOVEMENT_PER_TURN) {
+        speed_in_terms_of_throttle = throttle;
+    } else  if (throttle > speed_in_terms_of_throttle) {
+        speed_in_terms_of_throttle = MIN(MAX_THROTTLE, speed_in_terms_of_throttle+ MAX_THROTTLE_MOVEMENT_PER_TURN);
+    } else {
+        speed_in_terms_of_throttle = MIN(MAX_THROTTLE, speed_in_terms_of_throttle-MAX_THROTTLE_MOVEMENT_PER_TURN);
+    }
+    
+    if (ABS((heading -desiredHeading)&255) <= MAX_HEADING_MOVEMENT_PER_TURN) {
+        heading = desiredHeading;
+    } else  if (desiredHeading > heading) {
+        heading = heading+ MAX_HEADING_MOVEMENT_PER_TURN;
+    } else {
+        heading =  heading-MAX_HEADING_MOVEMENT_PER_TURN;
+    }
+    heading = heading & 255;
+}
 
 -(void) dealInternalDamage:(unit) damage  {
     internal_armor -= damage;

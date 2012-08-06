@@ -35,6 +35,7 @@
     [self robotCPUPhase];
     if ([self checkForAndDealWithSelfDestructingRobots]) return YES;
     [self communicationPhase];
+    [self updateThrottlesPhase];
     if ([self movementAndExplosionPhase]) return YES;
     return NO;
 }

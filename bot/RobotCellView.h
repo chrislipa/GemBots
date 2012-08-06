@@ -10,6 +10,8 @@
 #import "BotContainer.h"
 #import "RobotCellViewController.h"
 #import "BotContainer.h"
+#import "ProgressBar.h"
+
 @class RobotCellViewController;
 @interface RobotCellView : NSView {
     IBOutlet NSScrollView* descriptionScrollView;
@@ -22,6 +24,18 @@
     IBOutlet RobotCellViewController* robotCellViewController;
     IBOutlet NSView* backingView;
     IBOutlet NSButton* compileErrorButton;
+    
+    
+    
+    //
+    
+    
+    
+    IBOutlet ProgressBar* progressBar2;
+    IBOutlet NSTextField* name2;
+    IBOutlet NSTextField* author2;
+    IBOutlet NSTextField* teamLabel2;
+    
 }
 
 @property (readonly) NSColorWell* colorPicker;

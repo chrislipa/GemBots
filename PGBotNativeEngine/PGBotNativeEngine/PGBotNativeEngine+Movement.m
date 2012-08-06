@@ -23,9 +23,9 @@
 
 
 -(bool) movementAndExplosionPhase {
+    
+    
     unit timeLeftToDealWith = AMOUNT_OF_TIME_THAT_PASSES_PER_GAME_LOOP;
-    
-    
     while (timeLeftToDealWith > 0) {
         NSObject<CollideableObject> *objectInCollisionA=nil, *objectInCollisionB=nil;
         unit timeUntilNextCollision = [self timeUntilNextCollisionWithinTime: timeLeftToDealWith : &objectInCollisionA : &objectInCollisionB] ;
@@ -46,7 +46,12 @@
     
 }
 
-
+-(void) updateThrottlesPhase {
+    for (GemBot* gem in robots) {
+        if (gem.isAlive)
+            [gem updateThrottle];
+    }
+}
 -(void) updatePositionsForwardInTime:(unit) dt {
     for (GemBot* gem in robots) {
         if (gem.isAlive) 

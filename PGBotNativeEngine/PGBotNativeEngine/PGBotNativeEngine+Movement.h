@@ -9,5 +9,6 @@
 #import "PGBotNativeEngine.h"
 
 @interface PGBotNativeEngine (Movement)
+-(void) updateThrottlesPhase;
 -(bool) movementAndExplosionPhase;
 @end

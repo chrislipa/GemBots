@@ -19,4 +19,7 @@
 
 
 -(void) setScanTargetData ;
+
+-(void) updateThrottle;
+
 @end
