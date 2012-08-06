@@ -29,12 +29,13 @@
     [self setMemory:op2 :self.desiredHeading];
 }
 -(void) headingw {
-    self.desiredHeading = op2;
+    self.desiredHeading = (((op2 % 256)+256) & 255);
 }
 //2 1 steer w
 
 -(void) steerw {
     self.desiredHeading += op2;
+    self.desiredHeading = (((self.desiredHeading % 256)+256) & 255);
 }
 
 

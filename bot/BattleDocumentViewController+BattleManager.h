@@ -11,5 +11,5 @@
 @interface BattleDocumentViewController (BattleManager)
 
 -(IBAction) startBattleCallback:(id)sender;
-
+-(void) notifyOfGameSpeedChange ;
 @end

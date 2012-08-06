@@ -55,6 +55,9 @@
     IBOutlet NSTextFieldCell* matchesSlashCell;
     
     IBOutlet NSSlider* gamespeedSlider;
+    
+    float delayBetweenGameCycles;
+    bool flagToCreateNewTimer;
 }
 
 @property (readwrite,retain)    WeightClass* weightClass;
@@ -77,6 +80,6 @@
 -(IBAction)numberOfMatchesChanged:(id)sender;
 -(void) notifyOfRecompile:(NSURL*) url;
 -(void) notifyOfTeamsChange;
-
+-(void) computeGameSpeedBasedOnSlider;
 -(IBAction) gamespeedSliderCallback:(id)sender;
 @end

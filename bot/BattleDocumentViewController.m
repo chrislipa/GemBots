@@ -12,6 +12,7 @@
 #import "BotContainer.h"
 #import "BattleDocumentViewController+UserInterface.h"
 #import "MasterController.h"
+#import "BattleDocumentViewController+BattleManager.h"
 @interface BattleDocumentViewController ()
 
 @end
@@ -305,7 +306,14 @@
 }
 
 -(IBAction) gamespeedSliderCallback:(id)sender {
-    
+    [self computeGameSpeedBasedOnSlider];
+}
+-(void) computeGameSpeedBasedOnSlider {
+    float x =[gamespeedSlider floatValue];
+    float n = (x+50) /150.0;
+    delayBetweenGameCycles = 1/(n)-1.0;
+    delayBetweenGameCycles /= 3;
+    [self notifyOfGameSpeedChange];
 }
 
 @end

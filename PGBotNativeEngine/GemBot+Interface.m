@@ -26,14 +26,16 @@
         speed_in_terms_of_throttle = MIN(MAX_THROTTLE, speed_in_terms_of_throttle-MAX_THROTTLE_MOVEMENT_PER_TURN);
     }
     
-    if (ABS((heading -desiredHeading)&255) <= MAX_HEADING_MOVEMENT_PER_TURN) {
+    int angleOff = ABS(heading -desiredHeading);
+    if  (angleOff > 128) { angleOff = 256-angleOff;}
+    if (angleOff <= MAX_HEADING_MOVEMENT_PER_TURN) {
         heading = desiredHeading;
-    } else  if (desiredHeading > heading) {
-        heading = heading+ MAX_HEADING_MOVEMENT_PER_TURN;
+    } else  if (((desiredHeading - heading+256)&255) < ((heading -desiredHeading+256)&255)) {
+        heading = (256+heading+ MAX_HEADING_MOVEMENT_PER_TURN)&255;
     } else {
-        heading =  heading-MAX_HEADING_MOVEMENT_PER_TURN;
+        heading =  (256+heading-MAX_HEADING_MOVEMENT_PER_TURN)&255;
     }
-    heading = heading & 255;
+    heading = heading;
 }
 
 -(void) dealInternalDamage:(unit) damage  {

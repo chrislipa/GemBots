@@ -94,14 +94,40 @@
 }
 
 -(void) startBattleLoop {
+    [self computeGameSpeedBasedOnSlider];
+    flagToCreateNewTimer = NO;
     battleCurrentlyInProgress = YES;
     [gameTimer invalidate];
-    gameTimer = [NSTimer scheduledTimerWithTimeInterval:0
+    
+    gameTimer = [NSTimer scheduledTimerWithTimeInterval:delayBetweenGameCycles
                                                 target:self
                                               selector:@selector(battleStep:)
                                               userInfo:nil
                                                repeats:YES];
     
+}
+
+
+-(void) createNewTimer {
+    flagToCreateNewTimer = NO;
+    
+    [gameTimer invalidate];
+    
+    gameTimer = [NSTimer scheduledTimerWithTimeInterval:delayBetweenGameCycles
+                                                 target:self
+                                               selector:@selector(battleStep:)
+                                               userInfo:nil
+                                                repeats:YES];
+}
+
+-(void) notifyOfGameSpeedChange {
+    [gameTimer invalidate];
+    
+    gameTimer = [NSTimer scheduledTimerWithTimeInterval:delayBetweenGameCycles
+                                                 target:self
+                                               selector:@selector(battleStep:)
+                                               userInfo:nil
+                                                repeats:YES];
 }
 
 -(void) stopBattleLoop {
@@ -128,6 +154,8 @@
 }
 
 -(void) battleStep:(NSTimer*) timer {
+   
+    
     [engine stepGameCycle];
     currentGameStateDescription = [engine currentGameStateDescription];
     arenaView.gameStateDescriptor = currentGameStateDescription;
@@ -137,6 +165,10 @@
     
     if (arenaView.gameStateDescriptor.isSetOfMatchesCompleted) {
         [self stopBattleLoop];
+    }
+    
+    if  (flagToCreateNewTimer) {
+        [self createNewTimer];
     }
 }
 
