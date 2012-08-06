@@ -13,10 +13,19 @@
 
 
 @implementation BotContainer
-@synthesize color;
+
 @synthesize team;
 @synthesize robot;
 @synthesize documentController;
+
+-(void) setColor:(NSColor*) c {
+    color = c;
+    robot.color = c;
+}
+
+-(NSColor*) color {
+    return color;
+}
 
 -(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) p_engine andURL:(NSURL*) url andDocumentController:(BattleDocumentViewController*) pdocumentController {
     if (self = [super init]) {

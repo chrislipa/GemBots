@@ -35,18 +35,21 @@ void setColorTo(NSColor* pcolor) {
     GLfloat colorf[3];
     NSColor* color = [pcolor colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]];
     colorf[0] = [color redComponent];
-    colorf[1] = [color blueComponent];
-    colorf[2] = [color greenComponent];
+    colorf[1] = [color greenComponent];
+    colorf[2] = [color blueComponent];
     
-    glColor3fv(colorf);
+    glColor3f(colorf[0],colorf[1],colorf[2]);
 }
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0, 0);
-    for (float angle = 0; angle < M_2_PI; angle += M_2_PI/16) {
-        glVertex2f(((float)(5.0)) * sinf(angle),((float)(5.0))* cosf(angle));
+    double r = 2.0;
+    for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
+        double x = ((double)(r)) * sin(angle);
+        double y = ((double)(r)) * cos(angle);
+        glVertex2f((float)x,(float)y );
     }
     glEnd();
 }

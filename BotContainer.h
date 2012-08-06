@@ -23,7 +23,7 @@
 @property (readwrite,assign) int team;
 @property (readwrite,retain) BattleDocumentViewController* documentController;
 @property (readwrite,retain) NSObject<RobotDescription>* robot;
-@property (readwrite,retain) NSColor* color;
+@property (readwrite,retain,nonatomic) NSColor* color;
 
 -(id) initWithEngine:(NSObject<PGBotEngineProtocol>*) engine andURL:(NSURL*) url andDocumentController:(BattleDocumentViewController*) documentController;
 

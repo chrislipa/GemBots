@@ -21,16 +21,19 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == colorPicker) {
+        NSColor* color = [colorPicker color];
+        [robotCellViewController.botContainer setColor:color];
         [self refreshColor];
     }
 }
 
 -(void) refreshColor {
-    NSColor* color = [colorPicker color];
+    NSColor* color = robotCellViewController.botContainer.color;
     CALayer *viewLayer = [CALayer layer];
     [viewLayer setBackgroundColor:CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1)]; //RGB plus Alpha Channel
     [self setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
     [self setLayer:viewLayer];
+
 
 }
 
