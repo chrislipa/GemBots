@@ -311,7 +311,7 @@
 -(void) computeGameSpeedBasedOnSlider {
     float x =[gamespeedSlider floatValue];
     float n = (x+50) /150.0;
-    delayBetweenGameCycles = 1/(n)-1.0;
+    delayBetweenGameCycles = 1/(sqrt(n))-1.0;
     delayBetweenGameCycles /= 3;
     [self notifyOfGameSpeedChange];
 }

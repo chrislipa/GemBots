@@ -61,4 +61,5 @@ unit sq(unit z);
 unit usqrt(unit z);
 unit convertIntToUnit(int z);
 NSArray* delimit(NSString* s);
+float convert_angle(int hexangle);
 #define MAX_UNIT DBL_MAX

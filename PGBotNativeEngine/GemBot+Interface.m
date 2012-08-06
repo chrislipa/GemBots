@@ -35,7 +35,6 @@
     } else {
         heading =  (256+heading-MAX_HEADING_MOVEMENT_PER_TURN)&255;
     }
-    heading = heading;
 }
 
 -(void) dealInternalDamage:(unit) damage  {

@@ -36,7 +36,7 @@ float convert_angle(int hexangle) {
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0, 0);
-    double r = 2.0;
+    double r = 6.0;
     for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
         double x = ((double)(r)) * sin(angle);
         double y = ((double)(r)) * cos(angle);
@@ -170,7 +170,10 @@ void rotateTo(int x, int y, int heading) {
     }
     
     for (NSObject<RobotDescription>* bot in gameStateDescriptor.robots) {
-        [self drawRobot:bot];
+        if (bot.isAlive) {
+            [self drawRobot:bot];
+        }
+        
     }
     
     for (NSObject<MissileDescription>* miss in gameStateDescriptor.missiles) {

@@ -27,7 +27,9 @@ NSString* pathToTextFile(NSString* file) {
     return nil;
 }
 
-
+float convert_angle(int hexangle) {
+    return (((float)hexangle)/256.0) * M_PI * 2;
+}
 
 unit roundedDivision(unit numerator, unit denominator) {
     return numerator/denominator;
@@ -281,8 +283,8 @@ position internal_velocity(NSObject<MoveableObject>* object) {
     unit internal_heading = convertHeadingToUnit(heading);
     position internal_velocity;
     // sin and cos are "backwards" here because Gem Bots uses a non-standard coordinate system;
-    internal_velocity.x = speed * sin(internal_heading);
-    internal_velocity.y = speed * cos(internal_heading);
+    internal_velocity.x = speed * sin(convert_angle( internal_heading));
+    internal_velocity.y = speed * cos(convert_angle(internal_heading));
     return internal_velocity;
 }
 
