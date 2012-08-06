@@ -12,7 +12,7 @@
 #include <OpenGL/gl.h>
 #import "GameStateDescriptor.h"
 
-
+#import "Utility.h"
 
 @implementation ArenaView
 @synthesize gameStateDescriptor;
@@ -30,16 +30,7 @@ float convert_angle(int hexangle) {
     
     return self;
 }
-void setColorTo(NSColor* pcolor) {
-    
-    GLfloat colorf[3];
-    NSColor* color = [pcolor colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]];
-    colorf[0] = [color redComponent];
-    colorf[1] = [color greenComponent];
-    colorf[2] = [color blueComponent];
-    
-    glColor3f(colorf[0],colorf[1],colorf[2]);
-}
+
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
     setColorTo(bot.color);
@@ -166,7 +157,7 @@ void rotateTo(int x, int y, int heading) {
 - (void)drawRect:(NSRect)dirtyRect
 {
     const int width = 1024, height = 1024;
-    glMatrixMode (GL_PROJECTION);
+    
     glLoadIdentity ();
     glOrtho (0, width, height, 0, 0, 1);
     glMatrixMode (GL_MODELVIEW);

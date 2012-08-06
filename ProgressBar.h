@@ -7,12 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
-@interface ProgressBar : NSView {
+#import "RobotCellViewController.h"
+@class RobotCellViewController;
+@interface ProgressBar : NSOpenGLView {
+    IBOutlet RobotCellViewController* controller;
     float percentageComplete;
 }
 
 
 -(void) setPercentageComplete:(float) percent;
 -(float) percentageComplete;
+-(void) refreshForGameCycle ;
 @end

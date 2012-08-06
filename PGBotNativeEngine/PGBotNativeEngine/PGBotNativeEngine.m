@@ -135,7 +135,7 @@
 }
 
 -(void) endMatch {
-    [self giveCreditForWinsAndLoses];
+    [self giveCreditForWinsAndLosses];
     isMatchCurrentlyActive = NO;
     isThisSetInitiated = NO;
     isMatchCurrentlySetUp = NO;

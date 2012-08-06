@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Utility : NSObject
-
+void setColorTo(NSColor* pcolor);
 @end

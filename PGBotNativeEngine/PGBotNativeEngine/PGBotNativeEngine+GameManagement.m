@@ -88,14 +88,14 @@
     }
 }
 
--(void) giveCreditForWinsAndLoses {
+-(void) giveCreditForWinsAndLosses {
     winnersOfLastMatch = [NSMutableArray array];
     for (GemBot* b in robots) {
         if (b.isAlive) {
             b.wins++;
             [winnersOfLastMatch addObject:b];
         } else {
-            b.loses++;
+            b.losses++;
         }
     }
 }

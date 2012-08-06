@@ -24,6 +24,7 @@
 #import "PGBotNativeEngine+CheckForEndOfMatch.h"
 #import "PGBotNativeEngine+Interface.h"
 #import "PGBotNativeEngine+Explosions.h" 
+#import "PGBotNativeEngine+Heat.h"
 
 @implementation PGBotNativeEngine (Runtime)
  
@@ -33,6 +34,7 @@
 -(bool) executeGameCycle {
     [self cleanPhase];
     [self robotCPUPhase];
+    [self heatPhase];
     if ([self checkForAndDealWithSelfDestructingRobots]) return YES;
     [self communicationPhase];
     [self updateThrottlesPhase];

@@ -44,6 +44,15 @@
     NSTimer* gameTimer;
     NSObject<GameStateDescriptor>* currentGameStateDescription;
     IBOutlet NSButtonCell* startStopButtonCell;
+    
+    IBOutlet NSTextFieldCell* matchesNumeratorCell;
+    IBOutlet NSTextFieldCell* matchesDenominatorCell;
+    IBOutlet NSTextFieldCell* gameCycleNumeratorCell;
+    IBOutlet NSTextFieldCell* gameCycleDenominatorCell;
+    IBOutlet NSTextFieldCell* gameCycleTextCell;
+    IBOutlet NSTextFieldCell* matchesTextCell;
+    IBOutlet NSTextFieldCell* gameCycleSlashCell;
+    IBOutlet NSTextFieldCell* matchesSlashCell;
 }
 
 @property (readwrite,retain)    WeightClass* weightClass;

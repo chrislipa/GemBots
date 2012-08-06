@@ -43,7 +43,7 @@
 @synthesize kills;
 @synthesize deaths;
 @synthesize wins;
-@synthesize loses;
+@synthesize losses;
 @synthesize shieldOn;
 @synthesize overburnOn;
 @synthesize lastCollisionTime;

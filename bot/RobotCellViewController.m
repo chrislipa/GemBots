@@ -47,6 +47,7 @@
 
 -(void) refresh {
     [cell refreshWithBot:botContainer];
+    
 }
 
 -(IBAction) closeCallback:(id)sender {
@@ -65,5 +66,12 @@
     
 }
 
+-(void) refreshForGameCycle {
+    [cell refreshForGameCycle];
+}
+
+-(void) refreshForMatch {
+    [cell refreshForMatch];
+}
 
 @end

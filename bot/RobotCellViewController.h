@@ -27,4 +27,6 @@
 -(IBAction) compilerErrorCallback:(id)sender;
 -(void) notifyOfBattleStarting;
 -(void) notifyOfBattleEnding;
+-(void) refreshForGameCycle;
+-(void) refreshForMatch;
 @end

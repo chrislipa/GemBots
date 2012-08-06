@@ -13,7 +13,11 @@
 #import "ProgressBar.h"
 
 @class RobotCellViewController;
+@class ProgressBar;
 @interface RobotCellView : NSView {
+    bool showingBattleView;
+    //
+    
     IBOutlet NSTabView* tabview;
     IBOutlet NSView* view1;
     IBOutlet NSView* view2;
@@ -28,6 +32,7 @@
     IBOutlet NSTextField* linesOfCode;
     IBOutlet RobotCellViewController* robotCellViewController;
     IBOutlet NSView* backingView;
+    IBOutlet NSView* backingView2;
     IBOutlet NSButton* compileErrorButton;
     
     
@@ -41,6 +46,8 @@
     IBOutlet NSTextField* author2;
     IBOutlet NSTextField* teamLabel2;
     
+    IBOutlet NSTextField* winsTextField;
+    IBOutlet NSTextField* lossesTextField;
 }
 
 @property (readonly) NSColorWell* colorPicker;
@@ -53,5 +60,6 @@
 
 -(void) notifyOfBattleStarting;
 -(void) notifyOfBattleEnding;
-
+-(void) refreshForGameCycle;
+-(void) refreshForMatch;
 @end

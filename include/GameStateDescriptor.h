@@ -33,7 +33,7 @@
 -(int) kills;
 -(int) deaths;
 -(int) wins;
--(int) loses;
+-(int) losses;
 -(int) shieldOn;
 -(int) overburnOn;
 

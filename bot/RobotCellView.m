@@ -31,11 +31,16 @@
     NSColor* color = robotCellViewController.botContainer.color;
     CALayer *viewLayer = [CALayer layer];
     [viewLayer setBackgroundColor:CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1)]; //RGB plus Alpha Channel
-    [view1 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
-    [view1 setLayer:viewLayer];
-
-    [view2 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
-    [view2 setLayer:viewLayer];
+    
+    if (!showingBattleView) {
+        [view1 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
+        [view1 setLayer:viewLayer];
+    } else {
+        
+        [view2 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
+        [view2 setLayer:viewLayer];
+        
+    }
     
 
 }
@@ -43,9 +48,12 @@
 
 -(void) refreshHeatAndArmor  {
     float heat = ((float)robotCellViewController.botContainer.robot.heat)/ 500.0;
-    float armor = ((float)robotCellViewController.botContainer.robot.heat)/ 100.0;
+    float armor = ((float)robotCellViewController.botContainer.robot.armor)/ 100.0;
+    
     [heatProgressBar2 setPercentageComplete:heat];
     [armorProgressBar2 setPercentageComplete:armor];
+    [heatProgressBar2 setNeedsDisplay:YES];
+    [armorProgressBar2 setNeedsDisplay:YES];
 }
 
 
@@ -107,6 +115,9 @@
         [descriptionScrollView setHidden:NO];
     }
     [self refreshTeams];
+    
+    [self refreshForGameCycle];
+    [self refreshForMatch];
 }
 
 -(IBAction) chooseTeamCallback:(id) sender {
@@ -119,6 +130,9 @@
     //[view2 setHidden:YES];
     
     [tabview selectTabViewItemAtIndex:1];
+    showingBattleView = YES;
+    
+    [self refreshWithBot:robotCellViewController.botContainer];
 }
 
 -(void) notifyOfBattleEnding {
@@ -126,8 +140,20 @@
     //[view2 setHidden:NO];
     
     [tabview selectTabViewItemAtIndex:0];
+    showingBattleView = NO;
+    
+    [self refreshWithBot:robotCellViewController.botContainer];
 }
 
+-(void) refreshForGameCycle {
+    [self refreshHeatAndArmor];
+}
 
+-(void) refreshForMatch {
+    [winsTextField setStringValue:[NSString stringWithFormat:@"%d", robotCellViewController.botContainer.robot.wins ] ];
+    [winsTextField setNeedsDisplay:YES];
+    [lossesTextField setStringValue:[NSString stringWithFormat:@"%d", robotCellViewController.botContainer.robot.losses ] ];
+    [lossesTextField setNeedsDisplay:YES];
+}
 
 @end

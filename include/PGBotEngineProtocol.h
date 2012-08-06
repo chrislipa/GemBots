@@ -34,5 +34,5 @@
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription;
 
 -(bool) isSetOfMatchesCompleted;
-
+-(bool) isMatchCurrentlyActive;
 @end

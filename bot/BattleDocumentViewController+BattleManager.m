@@ -105,11 +105,29 @@
     gameTimer = nil;
 }
 
+-(void) refreshUI {
+    for (NSNumber* n in robotCellViewControllers) {
+        RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
+        if (![engine isMatchCurrentlyActive]) {
+            [c refreshForMatch];
+        }
+        [c refreshForGameCycle];
+        
+    }
+    
+}
+
 -(void) battleStep:(NSTimer*) timer {
     [engine stepGameCycle];
     currentGameStateDescription = [engine currentGameStateDescription];
     arenaView.gameStateDescriptor = currentGameStateDescription;
     [arenaView setNeedsDisplay:YES];
+    
+    [self refreshUI];
+    
+    
+    
+
 }
 
 

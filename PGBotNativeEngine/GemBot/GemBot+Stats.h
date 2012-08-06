@@ -17,4 +17,7 @@
 -(unit) internal_speed_for_missile;
 -(unit) missileDamageMultiplier;
 -(int) numberOfMinesConfig;
+-(unit) heatFromFiringMissile;
+-(unit) damageFromHeatPerGameCycle;
+-(unit) heatReductionPerGameCycle;
 @end

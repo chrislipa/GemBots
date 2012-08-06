@@ -227,8 +227,8 @@ lint heatToInternalHeat(int d) {
 }
 
 
-int roundInternalArmorToArmor(lint d) {
-    return convertIntToUnit(d);
+int roundInternalArmorToArmor(unit d) {
+    return roundUnitToInt(d);
 }
 
 unit armorToInternalArmor(int d) {

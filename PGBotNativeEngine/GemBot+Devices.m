@@ -82,6 +82,7 @@
 //9 3 fire_missile w
 -(void) fire_missilew {
     [engine fireMissileFrom:internal_position inDirection:turretHeading+op2 withOwner:self];
+    internal_heat += [self heatFromFiringMissile];
 }
 
 //10 0 mine w

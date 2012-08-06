@@ -13,5 +13,5 @@
 -(void) giveRandomIDsToRobots ;
 -(void) placeRobotsInRandomPositionsAndHeadings;
 -(void) startNewMatchInternal;
--(void) giveCreditForWinsAndLoses;
+-(void) giveCreditForWinsAndLosses;
 @end

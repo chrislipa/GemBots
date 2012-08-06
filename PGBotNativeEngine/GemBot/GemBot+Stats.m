@@ -54,7 +54,12 @@ lint indexInto(const lint a[][2], lint v) {
 }
 
 
-
+-(unit) heatFromFiringMissile {
+    return heatToInternalHeat(HEAT_FROM_FIRING_MISSILE)*weapon_percentage_config_options[config_weapon]/100.0*(overburnOn?1.25:1);
+}
+-(unit) heatDissipationPerRound {
+    return 1;
+}
 
 -(lint) maxSpeedNumerator {
     return distanceToInternalDistance( SPEED_OF_ROBOT )  * armor_speed_percentage_config_options[config_armor] * engine_config_options[config_engine] * (overburnOn?13:10) * indexInto(speedPercentageMultiplierFromHeat, internal_heat) ;
@@ -69,4 +74,12 @@ lint indexInto(const lint a[][2], lint v) {
 -(unit) missileDamageMultiplier {
     return weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn? 1.25:1.0);
 }
+
+-(unit) damageFromHeatPerGameCycle {
+    return 0;
+}
+-(unit) heatReductionPerGameCycle {
+    return 1;
+}
+
 @end
