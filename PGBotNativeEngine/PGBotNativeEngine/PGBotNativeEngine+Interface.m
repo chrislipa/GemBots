@@ -33,10 +33,10 @@
     lint internalScanRadius = bot.internalScanRadius;
     for (GemBot* g in robots) {
         if ([g isAlive] && g != bot) {
-            lint distance = internal_distance_between(g, bot);
+            unit distance = internal_distance_between(g, bot);
             if (distance <= internalScanRadius) {
-                int angle = turretRelativeHeading(bot, g);
-                if (angle <= bot.scan_arc_width || angle >= 256 - bot.scan_arc_width) {
+                int angle = turretRelativeInternalHeading(bot, g);
+                if (angle <= bot.scan_arc_width / 2 || angle >= 256 - bot.scan_arc_width/2) {
                     if (distance < internal_rv || internal_rv == -1) {
                         internal_rv = distance;
                         bot.mostRecentlyScannedTank = g;
@@ -51,8 +51,8 @@
     Scan* scan = [[Scan alloc] init];
     scan.x = bot.x;
     scan.y = bot.y;
-    scan.startAngle = anglemod( bot.turretHeading + bot.scan_arc_width);
-    scan.endAngle = anglemod( bot.turretHeading - bot.scan_arc_width);
+    scan.startAngle = anglemod( bot.turretHeading + bot.scan_arc_width/2.0);
+    scan.endAngle = anglemod( bot.turretHeading - bot.scan_arc_width/2.0);
     scan.radius = roundInternalDistanceToDistance(internalScanRadius);
     [scans addObject:scan];
     

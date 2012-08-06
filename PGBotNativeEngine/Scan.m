@@ -18,6 +18,7 @@
 @synthesize owner;
 
 -(int) heading {
+    return 0;
     int half_heading = (startAngle + endAngle) / 2;
     if (endAngle < startAngle) {
         half_heading += 256 / 2;

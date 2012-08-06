@@ -19,6 +19,8 @@
     speed_in_terms_of_throttle = 0;
     number_of_collisions++;
     lastCollisionTime = engine.gameCycle;
+    internal_position.x = MIN(SIZE_OF_ARENA-ROBOT_RADIUS,MAX(ROBOT_RADIUS, internal_position.x ));
+    internal_position.y = MIN(SIZE_OF_ARENA-ROBOT_RADIUS,MAX(ROBOT_RADIUS, internal_position.y ));
 }
 
 @end

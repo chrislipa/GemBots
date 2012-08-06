@@ -10,6 +10,7 @@
 #import "EngineUtility.h"
 #import "Wall.h"
 #import "MoveableObject.h"
+#import "GemBot.h"
 
 @implementation PGBotNativeEngine (CollisionDetection)
 
@@ -18,8 +19,21 @@ typedef enum {
     IS_Y
 } coordinate;
 
+typedef enum {
+    IS_HIGH,
+    IS_LOW
+} highorlow;
 
-unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coord, unit wallPosition) {
+
+unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coord, unit wallPosition, highorlow hl) {
+    
+    if (a.internal_position.x < 2 || a.internal_position.x > 1022 || a.internal_position.y < 2 || a.internal_position.y > 1022) {
+        if ([a isKindOfClass:[GemBot class]]) {
+        NSLog(@"");
+        }
+        
+    }
+    
     unit speed_in_coordinate;
     unit position_in_coordinate;
     if (coord == IS_X) {
@@ -30,11 +44,35 @@ unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coord, unit wallPo
         position_in_coordinate = a.internal_position.y;
     }
     unit distance_to_go = wallPosition - position_in_coordinate;
+    
+    if (speed_in_coordinate == 0) {
+        return MAXINT;
+    }
+    if  (speed_in_coordinate < 0 && hl ==IS_HIGH) {
+        return MAXINT;
+    }
+    
+    
+    if (speed_in_coordinate > 0 && hl== IS_LOW) {
+        return MAXINT;
+    }
+    
+    
+    if  (speed_in_coordinate < 0 && hl == IS_LOW && distance_to_go > 0) {
+        return 0;
+    }
+    if(speed_in_coordinate > 0 && hl ==IS_HIGH && distance_to_go < 0 ) {
+        return 0;
+    }
+    
+    
+    
     if ((speed_in_coordinate <= 0 && distance_to_go >= 0) ||
         (speed_in_coordinate >= 0 && distance_to_go <= 0)) {
         return MAX_UNIT;
     }
     unit timeToCollision = distance_to_go / speed_in_coordinate;
+    
     return timeToCollision;
 }
 
@@ -43,10 +81,10 @@ void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollision
     
     unit min_time_to_hit_wall = MAX_UNIT;
     
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(0) + a.internal_radius));
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(0) + a.internal_radius));
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius));
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius));
+    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
+    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
+    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
+    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
     
     if (min_time_to_hit_wall < *maximumCollisionTimeFound) {
         *maximumCollisionTimeFound = min_time_to_hit_wall;

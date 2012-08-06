@@ -23,6 +23,7 @@ int readInteger(NSString* s);
 NSString* uuid();
 
 unit getAngleTo(lint x, lint y);
+int turretRelativeInternalHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b) ;
 int anglemod(int a);
 unit intsqrt(lint x);
 unit internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
@@ -61,5 +62,5 @@ unit sq(unit z);
 unit usqrt(unit z);
 unit convertIntToUnit(int z);
 NSArray* delimit(NSString* s);
-float convert_angle(int hexangle);
+unit convert_angle(int hexangle);
 #define MAX_UNIT DBL_MAX

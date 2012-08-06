@@ -60,6 +60,7 @@
     [p setAllowedFileTypes:[NSArray arrayWithObjects:@"gembot", nil]];
     [p setCanChooseDirectories:NO];
     [p setResolvesAliases:YES];
+    [p setAllowsMultipleSelection:YES];
     [p runModal];
     NSArray* paths = [p URLs];
     

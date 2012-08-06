@@ -17,7 +17,7 @@
 @implementation ArenaView
 @synthesize gameStateDescriptor;
 
-float convert_angle(int hexangle) {
+double convert_angle(int hexangle) {
     return (((float)hexangle)/256.0) * M_PI * 2;
 }
 
@@ -85,12 +85,15 @@ float convert_angle(int hexangle) {
 
 -(void) internalDrawScan:(NSObject<ScanDescription>*) scan {
     setColorTo([NSColor whiteColor]);
-    float startAngle = convert_angle(scan.startAngle);
-    float endAngle = convert_angle(scan.endAngle);
+    double startAngle = convert_angle(-128-scan.startAngle);
+    double endAngle = convert_angle(-128-scan.endAngle);
     glBegin(GL_LINES);
-    glVertex2f(((float)(scan.radius)) * sinf(startAngle),((float)(scan.radius))* cosf(startAngle));
+    glVertex2f(((float)(scan.radius)) * sin(startAngle),((float)(scan.radius))* cos(startAngle));
     glVertex2f(0,0);
-    glVertex2f(((float)(scan.radius)) * sinf(endAngle),((float)(scan.radius))* cosf(endAngle));
+    glEnd();
+    glBegin(GL_LINES);
+    glVertex2f(((float)(scan.radius)) * sin(endAngle),((float)(scan.radius))* cos(endAngle));
+    glVertex2f(0,0);
     glEnd();
     
     float widthOfScanArc = endAngle - startAngle;
@@ -99,9 +102,9 @@ float convert_angle(int hexangle) {
     }
     glBegin(GL_LINES);
     for (float dangle = 0; dangle < widthOfScanArc; dangle += M_2_PI/32.0) {
-        glVertex2f(((float)(scan.radius)) * sinf(dangle+startAngle),((float)(scan.radius))* cosf(dangle+startAngle));
+        glVertex2f(((float)(scan.radius)) * sin(dangle+startAngle),((float)(scan.radius))* cos(dangle+startAngle));
     }
-    glVertex2f(((float)(scan.radius)) * sinf(endAngle),((float)(scan.radius))* cosf(endAngle));
+    glVertex2f(((float)(scan.radius)) * sin(endAngle),((float)(scan.radius))* cos(endAngle));
     glEnd();
 }
 

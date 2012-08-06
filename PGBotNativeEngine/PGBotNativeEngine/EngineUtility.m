@@ -27,7 +27,7 @@ NSString* pathToTextFile(NSString* file) {
     return nil;
 }
 
-float convert_angle(int hexangle) {
+double convert_angle(int hexangle) {
     return (((float)hexangle)/256.0) * M_PI * 2;
 }
 
@@ -125,34 +125,53 @@ NSString* uuid() {
 
 
 
-unit getAngleToPosition(position p) {
+
+unit angleInNormalCoordinatesAndRadians(position p) {
     unit nx = p.x;
     unit ny = p.y;
     lint x = ABS(nx);
     lint y = ABS(ny);
     bool swapped = NO;
-    if (y < x) {
+    if (x < y) {
         swap(&y,&x);
         swapped = YES;
     }
     
-    unit nangle = atan(x/y);
+    unit nangle = atan(y/x)  ;
     if (swapped) {
-        nangle = 64.0 - nangle;
+        nangle =( M_PI/2.0) - nangle;
     }
     
+    unit return_angle;
     
-    nangle = 64 - nangle;
-    if (nx < 0 && ny >= 0) {
-        nangle = 256 - nangle;
-    } else if (nx < 0 && ny < 0) {
-        nangle = 128 + nangle;
-    } else if (nx >= 0 && ny < 0) {
-        nangle = 64 + (64-nangle);
+    if  (nx >= 0 && ny >= 0) {
+        return_angle = nangle;
+    } else if (nx <= 0 && ny >= 0) {
+         return_angle = M_PI - nangle ;
+    } else if (nx < 0 && ny <= 0) {
+        return_angle = M_PI + nangle;
+    } else if (nx >= 0 && ny <= 0) {
+        return_angle = M_PI*2 - nangle;
     }
-    return nangle;
+    return return_angle;
 }
 
+
+unit getAngleToPosition(position p) {
+    position normal_coord_transform;
+    normal_coord_transform.x = p.x;
+    normal_coord_transform.y = -p.y;
+    
+    unit angleInNormalCordinatesAndRadians = angleInNormalCoordinatesAndRadians(normal_coord_transform);
+    
+    unit angleInNormalCoordinatesAndBegrees = angleInNormalCordinatesAndRadians / (2 * M_PI) * 256.0;
+    
+    unit angle = (-angleInNormalCoordinatesAndBegrees) +64 + 256 ;
+    if (angle >= 256) {
+        angle -= 256;
+    }
+    return angle;
+}
 
 unit getAngleTo(unit nx, unit ny) {
     return getAngleToPosition(positionWithUnits(nx, ny));
@@ -203,8 +222,19 @@ int roundUnitToHeading(unit heading) {
     return roundUnitToInt(heading)&0xFF;
 }
 
+int internalHeadingFromTo(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
+    return getAngleTo( b.internal_position.x-a.internal_position.x, b.internal_position.y-a.internal_position.y);
+}
+
 int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
     return roundUnitToHeading(getAngleTo( b.internal_position.x-a.internal_position.x, b.internal_position.y-a.internal_position.y));
+}
+
+int turretRelativeInternalHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b) {
+    unit absHeading = internalHeadingFromTo(a,b);
+    unit turret = (unit) a.turretHeading;
+    int r = anglemod(absHeading - turret);
+    return r;
 }
 
 int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b) {
@@ -284,7 +314,7 @@ position internal_velocity(NSObject<MoveableObject>* object) {
     position internal_velocity;
     // sin and cos are "backwards" here because Gem Bots uses a non-standard coordinate system;
     internal_velocity.x = speed * sin(convert_angle( internal_heading));
-    internal_velocity.y = speed * cos(convert_angle(internal_heading));
+    internal_velocity.y = - speed * cos(convert_angle(internal_heading));
     return internal_velocity;
 }
 

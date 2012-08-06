@@ -39,7 +39,7 @@
     [self communicationPhase];
     [self updateThrottlesPhase];
     if ([self movementAndExplosionPhase]) return YES;
-    return NO;
+    return [self checkForEndMatchPhase];
 }
 
 @end
