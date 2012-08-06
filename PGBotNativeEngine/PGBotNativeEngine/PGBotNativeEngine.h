@@ -18,6 +18,7 @@
     // Persisted across Match sets
     NSObject<RandomProtocol>* random;
     NSMutableArray* robots;
+    NSMutableArray* externalOrderingOfRobots;
     int totalNumberOfMatches;
     int maxGameCycles;
     
@@ -48,7 +49,7 @@
    
     
 }
-
+@property (readwrite,retain) NSMutableArray* mines;
 @property (readwrite,assign) int currentMatch;
 @property (readwrite,assign) int totalNumberOfMatches;
 @property (readwrite,assign) int gameCycle;

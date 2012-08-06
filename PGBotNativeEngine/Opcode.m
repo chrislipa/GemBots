@@ -41,8 +41,8 @@ NSMutableArray* newOpcodesFromTextFile(NSString* file) {
     NSArray* lines = [contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
     
     for (NSString* line in lines) {
-        NSArray* lineComps = [line componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([lineComps count] == 3) {
+        NSArray* lineComps = delimit(line);
+        if ([lineComps count] >= 3) {
             int opcode = [[lineComps objectAtIndex:0] intValue];
             int time = [[lineComps objectAtIndex:1] intValue];
             NSString* selectorStr = [lineComps objectAtIndex:2];
@@ -94,8 +94,8 @@ NSArray* newDevicesFromTextFile(NSString* file, bool write) {
     NSArray* lines = [contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
     
     for (NSString* line in lines) {
-        NSArray* lineComps = [line componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([lineComps count] == 3) {
+        NSArray* lineComps = delimit(line);
+        if ([lineComps count] >= 3) {
             int device = [[lineComps objectAtIndex:0] intValue];
             int time = [[lineComps objectAtIndex:1] intValue];
             NSString* selectorStr = [lineComps objectAtIndex:2];
@@ -153,7 +153,7 @@ NSArray* newSystemCallsFromTextFile(NSString* file, bool write) {
     NSArray* lines = [contents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
     
     for (NSString* line in lines) {
-        NSArray* lineComps = [line componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSArray* lineComps = delimit(line);
         if ([lineComps count] == 3) {
             int number = [[lineComps objectAtIndex:0] intValue];
             int time = [[lineComps objectAtIndex:1] intValue];

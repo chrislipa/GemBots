@@ -42,7 +42,7 @@ lint indexInto(const lint a[][2], lint v) {
 
 @implementation GemBot (Stats)
 -(lint) initialInternalArmor {
-    return armorToInternalArmor(INITIAL_ARMOR * armor_percentage_config_options[config_armor])/100;
+    return armorToInternalArmor(INITIAL_ARMOR) * convertIntToUnit( armor_percentage_config_options[config_armor])/100.0;
 }
 -(lint) internalScanRadius {
     return distanceToInternalDistance(scan_radius_config_options[config_scanner]);

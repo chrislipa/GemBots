@@ -14,7 +14,7 @@
 #import "EngineDefinitions.h"
 #import "PGBotNativeEngine+GameManagement.h"
 #import "PGBotNativeEngine+Runtime.h"
-
+#import "Random.h"
 @implementation PGBotNativeEngine
 
 @synthesize currentMatch;
@@ -22,10 +22,12 @@
 @synthesize gameCycle;
 @synthesize maxGameCycles;
 
-
+@synthesize mines;
 -(id) init {
     if  (self = [super init]) {
-        
+        random = [[Random alloc] init];
+
+        externalOrderingOfRobots = [NSMutableArray array];
     }
     return self;
 }
@@ -33,7 +35,7 @@
 
 -(void) addRobot:(GemBot*) bot {
     bot.sessionUniqueRobotIdentifier = uuid();
-    [robots addObject:bot];
+    [externalOrderingOfRobots addObject:bot];
 }
 
 
@@ -44,30 +46,24 @@
 
 
 -(NSObject<RobotDescription>*) newRobot {
-    return [GemBot gemBot];
+    GemBot* g = [GemBot gemBot];
+    [externalOrderingOfRobots addObject:g];
+    return g;
 }
 
 -(void) recompileRobot:(NSObject<RobotDescription>*) bot  withSource:(NSData*) source {
     [((GemBot*)bot) recompileWithSource:source];
 }
 
--(GemBot*) addRobotFromSource:(NSData*) source {
-    GemBot* g = [GemBot gemBotFromSource:source];
-    if (g) {
-        [robots addObject:g];
-    }
-    return g;
-}
-
 
 
 -(void) removeRobot:(GemBot*) g {
-    [robots removeObject:g];
+    [externalOrderingOfRobots removeObject:g];
 }
 
 
 -(NSArray*) robots {
-    return robots;
+    return externalOrderingOfRobots;
 }
 -(NSArray*) missiles {
     return missiles;

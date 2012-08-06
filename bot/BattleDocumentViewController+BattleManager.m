@@ -10,7 +10,7 @@
 #import "BotContainer.h"
 #import "GameStateDescriptor.h"
 #import "BattleDocumentViewController+UserInterface.h"
-
+#import "BattleDocumentViewController+Draw.h"
 @implementation BattleDocumentViewController (BattleManager)
 
 -(bool) readyToStartBattle {
@@ -51,14 +51,15 @@
 
 
 -(void) startBattle {
-    [self setUpTeams];
+    [self setUpTeamsAndColors];
     [self setUpEngine];
     [self startBattleLoop];
 }
 
--(void) setUpTeams {
+-(void) setUpTeamsAndColors {
     for (BotContainer* bot in robots) {
         bot.robot.team = bot.team;
+        bot.robot.color = bot.color;
     }
 }
 
@@ -71,16 +72,28 @@
 
 -(void) startBattleLoop {
     battleCurrentlyInProgress = YES;
-    
-    
+    [gameTimer invalidate];
+    gameTimer = [NSTimer scheduledTimerWithTimeInterval:0
+                                                target:self
+                                              selector:@selector(battleStep:)
+                                              userInfo:nil
+                                               repeats:YES];
     
 }
 
-
--(void) battleStep {
-    
-    
+-(void) stopBattleLoop {
+    [gameTimer invalidate];
+    gameTimer = nil;
 }
+
+-(void) battleStep:(NSTimer*) timer {
+    [engine stepGameCycle];
+    currentGameStateDescription = [engine currentGameStateDescription];
+    arenaView.gameStateDescriptor = currentGameStateDescription;
+    [arenaView setNeedsDisplay:YES];
+}
+
+
 
 
 

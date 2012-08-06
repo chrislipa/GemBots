@@ -62,9 +62,10 @@
 -(NSArray*) tokenize:(NSArray*) inA {
     NSMutableArray* o = [[NSMutableArray alloc] init];
     for (NSString* line in inA) {
-        NSArray* a = [line componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        if ([a count] > 0) {
-            [o addObject:a];
+        
+        NSArray* lineComps = delimit(line);
+        if ([lineComps count] > 0) {
+            [o addObject:lineComps];
         }
     }
     return o;
@@ -181,9 +182,12 @@
     NSMutableArray* pointersToLabels = [NSMutableArray array];
     int pc = BOT_SOURCE_CODE_START;
     for (NSArray* p in a) {
-        
+        if ([p count] == 0) {
+            continue;
+        }
         int rtype[2] = {0,0};
         int bytes[3] = {0,0,0};
+        bool instructionThisLine = NO;
         
         for (int i = (int)[p count]-1; i>=0; i--) {
             
@@ -205,15 +209,22 @@
             } else if ([variables objectForKey:s]) {
                 bytes[i] = [[variables objectForKey:s] intValue];
                 rtype[i-1]++;
+                instructionThisLine = YES;
             } else if ([constants objectForKey:s]) {
                 bytes[i] = [[constants objectForKey:s] intValue];
-            } else {
+                instructionThisLine = YES;
+            } else if (isInteger(s)) {
                 bytes[i] = readInteger(s);
+                instructionThisLine = YES;
+            } else {
+                [self compileWarning:@"Unrecognized token: '%@'.  Ignoring.",s ];
             }
         }
-        bytes[0] |= ((rtype[0] << 16) | (rtype[1] << 24));
-        for (int i =0; i<3; i++) {
-            [self setRomMemory:pc++ :bytes[i]];
+        if (instructionThisLine) {
+            bytes[0] |= ((rtype[0] << 16) | (rtype[1] << 24));
+            for (int i =0; i<3; i++) {
+                [self setRomMemory:pc++ :bytes[i]];
+            }
         }
     }
     for (NSArray* a in pointersToLabels) {

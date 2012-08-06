@@ -49,8 +49,8 @@
         [bot setScanTargetData];
     }
     Scan* scan = [[Scan alloc] init];
-    scan.centerX = bot.x;
-    scan.centerY = bot.y;
+    scan.x = bot.x;
+    scan.y = bot.y;
     scan.startAngle = anglemod( bot.turretHeading + bot.scan_arc_width);
     scan.endAngle = anglemod( bot.turretHeading - bot.scan_arc_width);
     scan.radius = roundInternalDistanceToDistance(internalScanRadius);
@@ -77,8 +77,8 @@
         [bot setScanTargetData];
     }
     Scan* scan = [[Scan alloc] init];
-    scan.centerX = bot.x;
-    scan.centerY = bot.y;
+    scan.x = bot.x;
+    scan.y = bot.y;
     scan.radius = radius;
     [scans addObject:scan];
     
@@ -102,8 +102,8 @@
         [bot setScanTargetData];
     }
     Scan* scan = [[Scan alloc] init];
-    scan.centerX = bot.x;
-    scan.centerY = bot.y;
+    scan.x = bot.x;
+    scan.y = bot.y;
     scan.radius = SONAR_RADIUS;
     [scans addObject:scan];
         

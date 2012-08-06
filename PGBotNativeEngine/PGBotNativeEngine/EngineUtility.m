@@ -58,6 +58,23 @@ int readInteger(NSString* valueStr) {
     return value;
 }
 
+bool isDecimalInteger(NSString* s) {
+    NSScanner* scan = [NSScanner scannerWithString:s];
+    int val;
+    return [scan scanInt:&val] && [scan isAtEnd];
+}
+bool isHexInteger(NSString* s) {
+    NSScanner* scan = [NSScanner scannerWithString:s];
+    unsigned int val;
+    return [scan scanHexInt:&val] && [scan isAtEnd];
+}
+bool isInteger(NSString* s) {
+    return (([s hasPrefix:@"0X"] && isHexInteger([s substringFromIndex:2])) ||
+            ([s hasPrefix:@"-0X"] && isHexInteger([s substringFromIndex:3])) ||
+            (isDecimalInteger(s)));
+
+}
+
 NSDictionary* newDictionaryFromTextFile(NSString* file) {
     NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
     NSString* fileName = pathToTextFile(file);
@@ -149,7 +166,7 @@ int anglemod(int a) {
     return a;
 }
 
-lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
+unit internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
     unit deltaX = (a.internal_position.x - b.internal_position.x);
     unit deltaY = (a.internal_position.y - b.internal_position.y);
     return sqrt(deltaX*deltaX+deltaY*deltaY);
@@ -164,7 +181,7 @@ bool isObjectOutOfBounds(NSObject<TangibleObject>* a) {
 }
 
 int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b) {
-    lint d = internal_distance_between(a, b);
+    unit d = internal_distance_between(a, b);
     return roundInternalDistanceToDistance(d);
 }
 
@@ -190,29 +207,29 @@ int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>*
     return anglemod(absHeading - a.turretHeading);
 }
 
-int roundInternalDistanceToDistance(lint d) {
-    return (int)roundedDivision(d, DISTANCE_MULTIPLIER);
+int roundInternalDistanceToDistance(unit d) {
+    return roundUnitToInt(d);
 }
 
 lint distanceToInternalDistance(int d) {
-    return (((lint)d) *((lint) DISTANCE_MULTIPLIER));
+    return convertIntToUnit(d);
 }
 
 int roundInternalHeatToHeat(lint d) {
-    return (int)roundedDivision(d, HEAT_MULTIPLIER);
+    return roundUnitToInt(d);
 }
 
 lint heatToInternalHeat(int d) {
-    return (((lint)d) *((lint) HEAT_MULTIPLIER));
+    return convertIntToUnit(d);
 }
 
 
 int roundInternalArmorToArmor(lint d) {
-    return (int)roundedDivision(d, ARMOR_MULTIPLIER);
+    return convertIntToUnit(d);
 }
 
-lint armorToInternalArmor(int d) {
-    return (((lint)d) *((lint) ARMOR_MULTIPLIER));
+unit armorToInternalArmor(int d) {
+    return d;
 }
 
 
@@ -289,5 +306,14 @@ unit usqrt(unit z) {
     return sqrt(z);
 }
 
-
+NSArray* delimit(NSString* s) {
+    NSArray* a = [s componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSMutableArray* lineComps = [NSMutableArray array];
+    for (NSString* s in a) {
+        if (s.length > 0) {
+            [lineComps addObject:s];
+        }
+    }
+    return lineComps;
+}
 

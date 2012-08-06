@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ArenaViewController.h"
-
+#import "GameStateDescriptor.h"
 @class ArenaViewController;
 @interface ArenaView : NSOpenGLView {
     IBOutlet ArenaViewController* arenaViewController;
+    NSObject<GameStateDescriptor>* gameStateDescriptor;
 }
+
+@property (readwrite,retain)  NSObject<GameStateDescriptor>* gameStateDescriptor;
 
 @end

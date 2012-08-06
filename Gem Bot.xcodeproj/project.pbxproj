@@ -35,6 +35,7 @@
 		3610461D15CE2FFD0064F381 /* CompileErrorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610461C15CE2FFD0064F381 /* CompileErrorWindow.m */; };
 		3610462015CE30320064F381 /* CompileErrorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610461F15CE30320064F381 /* CompileErrorWindowController.m */; };
 		3610462315CE3DE80064F381 /* CompileErrorCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610462215CE3DE80064F381 /* CompileErrorCellViewController.m */; };
+		363BA04215CF3D1C000BC400 /* BattleDocumentViewController+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 363BA04115CF3D1C000BC400 /* BattleDocumentViewController+Draw.m */; };
 		364DCDF915BEA01700A765D0 /* RobotListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDF815BEA01700A765D0 /* RobotListTableView.m */; };
 		364DCDFC15BF185F00A765D0 /* RobotCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFB15BF185F00A765D0 /* RobotCellView.m */; };
 		364DCDFF15BF18CE00A765D0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DCDFE15BF18CE00A765D0 /* Utility.m */; };
@@ -158,6 +159,8 @@
 		3610461F15CE30320064F381 /* CompileErrorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompileErrorWindowController.m; path = compilerError/CompileErrorWindowController.m; sourceTree = "<group>"; };
 		3610462115CE3DE80064F381 /* CompileErrorCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompileErrorCellViewController.h; path = compilerError/CompileErrorCellViewController.h; sourceTree = "<group>"; };
 		3610462215CE3DE80064F381 /* CompileErrorCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompileErrorCellViewController.m; path = compilerError/CompileErrorCellViewController.m; sourceTree = "<group>"; };
+		363BA04015CF3D1C000BC400 /* BattleDocumentViewController+Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BattleDocumentViewController+Draw.h"; sourceTree = "<group>"; };
+		363BA04115CF3D1C000BC400 /* BattleDocumentViewController+Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BattleDocumentViewController+Draw.m"; sourceTree = "<group>"; };
 		364DCDF715BEA01700A765D0 /* RobotListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableView.h; sourceTree = "<group>"; };
 		364DCDF815BEA01700A765D0 /* RobotListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableView.m; sourceTree = "<group>"; };
 		364DCDFA15BF185F00A765D0 /* RobotCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobotCellView.h; path = bot/RobotCellView.h; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				3604DCF115CE0A4B0072B834 /* BattleDocumentView.m */,
 				3604DCF315CE0C150072B834 /* TimeLimit.h */,
 				3604DCF415CE0C150072B834 /* TimeLimit.m */,
+				363BA04015CF3D1C000BC400 /* BattleDocumentViewController+Draw.h */,
+				363BA04115CF3D1C000BC400 /* BattleDocumentViewController+Draw.m */,
 			);
 			path = bot;
 			sourceTree = "<group>";
@@ -717,6 +722,7 @@
 				3610461D15CE2FFD0064F381 /* CompileErrorWindow.m in Sources */,
 				3610462015CE30320064F381 /* CompileErrorWindowController.m in Sources */,
 				3610462315CE3DE80064F381 /* CompileErrorCellViewController.m in Sources */,
+				363BA04215CF3D1C000BC400 /* BattleDocumentViewController+Draw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

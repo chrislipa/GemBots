@@ -1,4 +1,4 @@
-0 1  nop
+0 1 nop
 1 -1 delay R
 2 1 add L R
 3 1 sub L R

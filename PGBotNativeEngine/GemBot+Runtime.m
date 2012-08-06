@@ -76,12 +76,12 @@
     
     while (TRUE) {
         
+        int ip = memory[IP];
+        int extended_opcode = [self getMemory:ip];
+        op1 = [self getMemory:ip+1];
+        op2 = [self getMemory:ip+2];
         
-        int extended_opcode = [self getMemory:IP];
-        op1 = [self getMemory:IP+1];
-        op2 = [self getMemory:IP+2];
-        
-        [self setMemory:IP :[self getMemory:IP]+SIZE_OF_INSTRUCTION];
+        [self setMemory:IP :ip+SIZE_OF_INSTRUCTION];
         
         int opcodenum = extended_opcode & 0x000000ff;
         opcode = getOpcode(opcodenum);

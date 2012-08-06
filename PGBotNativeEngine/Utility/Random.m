@@ -21,7 +21,12 @@
 
 
 -(int) randomIntInInclusiveRange:(int) lowerBound: (int) upperBound {
-    return lowerBound + [self randomInt] % (upperBound + 1 -lowerBound);
+    int size = (upperBound + 1 -lowerBound);
+    int modulo = [self randomInt] % size;
+    if (modulo < 0) {
+        modulo += size;
+    }
+    return lowerBound + modulo;
 }
 -(void) setDeterministic:(bool)deterministic {
     isDeterministic = deterministic;

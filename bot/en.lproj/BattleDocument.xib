@@ -329,6 +329,7 @@
 							<string key="NSFrame">{{785, 18}, {238, 56}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:22</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="747873701">
@@ -806,6 +807,54 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">arenaView</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="868502498"/>
+					</object>
+					<int key="connectionID">100599</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">gameCycleTimeOutPicker</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="499678298"/>
+					</object>
+					<int key="connectionID">100600</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">numberOfMatchesField</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="833553549"/>
+					</object>
+					<int key="connectionID">100601</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">robotList</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="634943307"/>
+					</object>
+					<int key="connectionID">100602</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">teamTextCell</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="748211811"/>
+					</object>
+					<int key="connectionID">100603</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">weightClassPicker</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="856161340"/>
+					</object>
+					<int key="connectionID">100604</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">controller</string>
 						<reference key="source" ref="468700778"/>
 						<reference key="destination" ref="878140351"/>
@@ -907,6 +956,14 @@
 						<reference key="destination" ref="748211811"/>
 					</object>
 					<int key="connectionID">100598</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">arenaView</string>
+						<reference key="source" ref="878140351"/>
+						<reference key="destination" ref="868502498"/>
+					</object>
+					<int key="connectionID">100605</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1409,7 +1466,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100598</int>
+			<int key="maxID">100605</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1500,6 +1557,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="arenaView">ArenaView</string>
 						<string key="battleDocument">BattleDocument</string>
 						<string key="gameCycleTimeOutPicker">NSPopUpButton</string>
 						<string key="numberOfMatchesField">NSTextField</string>
@@ -1508,6 +1566,10 @@
 						<string key="weightClassPicker">NSPopUpButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="arenaView">
+							<string key="name">arenaView</string>
+							<string key="candidateClassName">ArenaView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="battleDocument">
 							<string key="name">battleDocument</string>
 							<string key="candidateClassName">BattleDocument</string>

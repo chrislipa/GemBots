@@ -11,14 +11,14 @@
 #import "GemBot.h"
 @class GemBot;
 @interface Scan : NSObject <ScanDescription> {
-    int centerX, centerY;
+    int x, y;
     int radius;
     int startAngle, endAngle;
     GemBot* owner;
 }
 @property (readwrite,retain) GemBot* owner;
-@property (readwrite,assign) int centerX;
-@property (readwrite,assign) int centerY;
+@property (readwrite,assign) int x;
+@property (readwrite,assign) int y;
 @property (readwrite,assign) int radius;
 @property (readwrite,assign) int startAngle;
 @property (readwrite,assign) int endAngle;

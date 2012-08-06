@@ -53,15 +53,17 @@
     keepshiftOn = NO;
 
     gameCycleOfLastDamage = 0;
-    
+    everTakenDamage = NO;
     numberOfMissilesFired =  numberOfMissilesConnected = 0;
     numberOfMinesLayed = numberOfMinesConnected = 0;
     numberOfTimesHit = 0;
     lastTimeFiredShotHitATank = 0;
+    hasFiredShotEverHitTank = NO;
     
     lastCollisionTime = 0;
-    isAlive = 0;
-    scan_arc_width = 128;
+    hasEverCollided = NO;
+    isAlive = YES;
+    scan_arc_width = INITIAL_SCAN_ARC_WIDTH;
     
     // reset on instruction execution
     savedClockCycles = 0;
@@ -77,7 +79,7 @@
     
     // misc
     
-    markForSelfDestruction = YES;
+    markForSelfDestruction = NO;
     mostRecentlyScannedTank = nil;
     speedOfMostRecentlyScannedTankAtTimeOfScan = 0;
     relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan = 0;

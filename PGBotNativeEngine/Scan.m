@@ -7,12 +7,21 @@
 //
 
 #import "Scan.h"
+#import "EngineUtility.h"
 
 @implementation Scan
-@synthesize centerX;
-@synthesize centerY;
+@synthesize x;
+@synthesize y;
 @synthesize radius;
 @synthesize startAngle;
 @synthesize endAngle;
 @synthesize owner;
+
+-(int) heading {
+    int half_heading = (startAngle + endAngle) / 2;
+    if (endAngle < startAngle) {
+        half_heading += 256 / 2;
+    }
+    return half_heading;
+}
 @end

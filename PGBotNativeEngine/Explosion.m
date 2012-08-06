@@ -22,4 +22,7 @@
 -(int) radius {
     return roundInternalDistanceToDistance(internal_radius);
 }
+-(int) heading {
+    return 0;
+}
 @end

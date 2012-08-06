@@ -22,7 +22,7 @@
     
     NSString* sessionUniqueRobotIdentifier;
     PGBotNativeEngine* engine;
-    
+    NSColor* color;
     // Refreshed on compile
     
     NSData* source;
@@ -74,13 +74,16 @@
     bool keepshiftOn;
     int turretHeading;
     int gameCycleOfLastDamage;
+    bool everTakenDamage;
     
     int numberOfMissilesFired, numberOfMissilesConnected;
     int numberOfMinesLayed, numberOfMinesConnected;
     int numberOfTimesHit;
     int lastTimeFiredShotHitATank;
+    bool hasFiredShotEverHitTank;
     
     int lastCollisionTime;
+    bool hasEverCollided;
     bool isAlive;
     int scan_arc_width;
     
@@ -126,8 +129,18 @@
     
     
     
-
+    
+    int order;
+    int orderingInt;
 }
+@property (readwrite,assign) int order;
+@property (readwrite,assign) int orderingInt;
+
+@property (readwrite,retain) NSData* source;
+@property (readwrite,assign) bool hasEverCollided;
+@property (readwrite,assign) bool hasFiredShotEverHitTank;
+@property (readwrite,assign) bool everTakenDamage;
+@property (readwrite,retain) NSColor* color;
 @property (readwrite,assign)     int comm_channel;
 @property (readwrite,assign) bool markForSelfDestruction;
 @property (readwrite,retain) NSMutableArray* compileErrors;

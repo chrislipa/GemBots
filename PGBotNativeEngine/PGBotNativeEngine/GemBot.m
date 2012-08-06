@@ -17,8 +17,13 @@
 #import "Wall.h"
 #import "GemBot+Collision.h"
 @implementation GemBot
-
-
+@synthesize order;
+@synthesize orderingInt;
+@synthesize source;
+@synthesize hasEverCollided;
+@synthesize hasFiredShotEverHitTank;
+@synthesize everTakenDamage;
+@synthesize color;
 @synthesize sessionUniqueRobotIdentifier;
 @synthesize numberOfCompileErrors;
 @synthesize numberOfCompileWarnings;

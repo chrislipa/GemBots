@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol OrientableObject <NSObject>
 
+-(int) x;
+-(int) y;
+-(int) heading;
 
-@protocol RobotDescription <NSObject>
+@end
+
+@protocol RobotDescription <NSObject,OrientableObject>
 
 -(NSString*) sessionUniqueRobotIdentifier;
 
@@ -45,11 +51,14 @@
 -(int) numberOfCompileWarnings;
 -(int) team;
 -(void) setTeam:(int) newTeam;
+-(NSColor*) color;
+-(void) setColor:(NSColor*) color;
 -(NSURL*) url;
+
 @end
 
 
-@protocol MissileDescription <NSObject>
+@protocol MissileDescription <NSObject,OrientableObject>
 -(int) x;
 -(int) y;
 -(int) heading;
@@ -62,17 +71,17 @@
 -(NSObject<RobotDescription>*) owner;
 @end
 
-@protocol ScanDescription <NSObject>
+@protocol ScanDescription <NSObject,OrientableObject>
 
--(int) centerX;
--(int) centerY;
+-(int) x;
+-(int) y;
 -(int) radius;
 -(int) startAngle;
 -(int) endAngle;
 -(NSObject<RobotDescription>*) owner;
 @end
 
-@protocol ExplosionDescription <NSObject>
+@protocol ExplosionDescription <NSObject,OrientableObject>
 
 -(int) x;
 -(int) y;
@@ -88,6 +97,7 @@
 -(int) totalNumberOfMatches;
 -(int) gameCycle;
 -(int) maxGameCycles;
+-(NSArray*) mines;
 -(NSArray*) robots;
 -(NSArray*) missiles;
 -(NSArray*) scans;

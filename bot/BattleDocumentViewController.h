@@ -14,6 +14,7 @@
 #import "BotContainer.h"
 #import "WeightClass.h"
 #import "TimeLimit.h"
+#import "ArenaView.h"
 @class BotContainer;
 @class RobotListTableView;
 @class BattleDocument;
@@ -39,7 +40,9 @@
     IBOutlet NSPopUpButton* gameCycleTimeOutPicker;
     
     IBOutlet NSTextFieldCell* teamTextCell;
-    
+    IBOutlet ArenaView* arenaView;
+    NSTimer* gameTimer;
+    NSObject<GameStateDescriptor>* currentGameStateDescription;
 }
 
 @property (readwrite,retain)    WeightClass* weightClass;

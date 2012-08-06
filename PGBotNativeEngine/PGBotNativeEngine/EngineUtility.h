@@ -24,8 +24,8 @@ NSString* uuid();
 
 unit getAngleTo(lint x, lint y);
 int anglemod(int a);
-lint intsqrt(lint x);
-lint internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
+unit intsqrt(lint x);
+unit internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int relativeHeading(NSObject<OrientedObject>* a, NSObject<TangibleObject>* b);
@@ -48,7 +48,7 @@ position positionWithInts(int x, int y);
 int roundUnitToInt(unit x) ;
 int roundUnitToHeading(unit heading) ;
 unit getRoundedAngleTo(unit nx, unit ny) ;
-
+bool isInteger(NSString* s) ;
 
 unit convertGameCycleToUnit(int gameCycle);
 int roundUnitToGameCycle(unit x);
@@ -59,4 +59,6 @@ position internal_velocity(NSObject<MoveableObject>* object);
 position addPositions(position a, position b);
 unit sq(unit z);
 unit usqrt(unit z);
+unit convertIntToUnit(int z);
+NSArray* delimit(NSString* s);
 #define MAX_UNIT DBL_MAX

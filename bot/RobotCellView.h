@@ -29,5 +29,5 @@
 -(void) refreshColor;
 -(void) refreshTeams ;
 
--(IBAction) chooseTeamCallback;
+-(IBAction) chooseTeamCallback:(id) sender;
 @end

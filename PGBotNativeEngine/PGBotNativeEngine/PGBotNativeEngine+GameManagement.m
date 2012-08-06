@@ -14,6 +14,7 @@
 
 
 -(void) startNewMatchInternal {
+    [self createInternalOrderingOfRobots];
     currentMatch++;
     gameCycle = 0;
     missiles = [NSMutableArray array];
@@ -23,10 +24,28 @@
     [self placeRobotsInRandomPositionsAndHeadings];
     isMatchCurrentlyActive = YES;
     isThisSetInitiated = YES;
-    
-    
 }
 
+-(void) createInternalOrderingOfRobots {
+    NSArray* tmprobots = [externalOrderingOfRobots sortedArrayUsingSelector:@selector(source)];
+    for (int i = 0; i < tmprobots.count; i++) {
+        GemBot* a = [tmprobots objectAtIndex:i];
+        bool match;
+        do {
+            match = NO;
+            a.orderingInt = [random randomInt];
+            for (int j = 0; j <i; j++) {
+                if (a.orderingInt == ((GemBot*)[tmprobots objectAtIndex:j]).orderingInt) {
+                    match = YES;
+                }
+            }
+        } while(match);
+    }
+    robots = [NSMutableArray arrayWithArray:[tmprobots sortedArrayUsingSelector:@selector(orderingInt)]];
+    for (int i =0; i < robots.count; i++) {
+        ((GemBot*)[robots objectAtIndex:i]).order = i;
+    }
+}
 
 -(void) resetAllRobotsForNextRound {
     for (GemBot* b in robots) {
@@ -56,11 +75,11 @@
         bool match = NO;
         GemBot* b = [robots objectAtIndex:i];
         do {
-            b.internal_position = positionWithInts([random randomIntInInclusiveRange:0+ROBOT_RADIUS : SIZE_OF_ARENA-ROBOT_RADIUS] ,
-                                                   [random randomIntInInclusiveRange:0+ROBOT_RADIUS : SIZE_OF_ARENA-ROBOT_RADIUS] );
+            b.internal_position = positionWithInts(distanceToInternalDistance([random randomIntInInclusiveRange:0+ROBOT_RADIUS : SIZE_OF_ARENA-ROBOT_RADIUS]),
+                                                   distanceToInternalDistance([random randomIntInInclusiveRange:0+ROBOT_RADIUS : SIZE_OF_ARENA-ROBOT_RADIUS]));
             
             for (int j = 0; j<i; j++) {
-                if (distance_between(b, [robots objectAtIndex:j]) < 2 * ROBOT_RADIUS) {
+                if (internal_distance_between(b, [robots objectAtIndex:j]) < 2 * distanceToInternalDistance(ROBOT_RADIUS)) {
                     match = YES;
                 }
             }

@@ -42,7 +42,7 @@ typedef struct {
 } position;
 
 #define ROBOT_RADIUS 2
-
+#define INITIAL_SCAN_ARC_WIDTH 128
 #define NOP 0
 #define SYS_CALL_NOP 20
 #define READ_DEVICE_NOP 20
