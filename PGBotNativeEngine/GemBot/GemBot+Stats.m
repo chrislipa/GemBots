@@ -41,6 +41,11 @@ lint indexInto(const lint a[][2], lint v) {
 
 
 @implementation GemBot (Stats)
+
+-(int) numberOfMinesConfig {
+    return number_of_mines_config_options[config_mines];
+}
+
 -(lint) initialInternalArmor {
     return armorToInternalArmor(INITIAL_ARMOR) * convertIntToUnit( armor_percentage_config_options[config_armor])/100.0;
 }
@@ -56,5 +61,12 @@ lint indexInto(const lint a[][2], lint v) {
 }
 -(lint) maxSpeedDenomenator {
     return 100 * 100 * 10 * 100;
+}
+
+-(unit) internal_speed_for_missile {
+    return distanceToInternalDistance(DEFAULT_MISSILE_SPEED) * weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn?1.25:1.0);
+}
+-(unit) missileDamageMultiplier {
+    return weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn? 1.25:1.0);
 }
 @end

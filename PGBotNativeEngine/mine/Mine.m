@@ -12,6 +12,7 @@
 @implementation Mine
 @synthesize internal_radius;
 @synthesize internal_position;
+@synthesize detonationTriggered;
 
 -(int) x {
     return roundInternalDistanceToDistance(internal_position.x);
@@ -24,9 +25,13 @@
     return roundInternalDistanceToDistance(internal_radius);
 }
 
--(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
-    [engine createExplosionAt:self ofRadius:MINE_EXPLOSION_RADIUS];
+-(void) explode {
+    [engine createExplosionAt:self ofRadius:MINE_EXPLOSION_RADIUS andDamageMultiplier:1.0];
     [engine removeMine:self];
+}
+
+-(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
+    [self explode];
 }
 
 -(unit) internal_speed {

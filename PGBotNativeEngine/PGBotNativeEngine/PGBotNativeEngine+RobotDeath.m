@@ -19,7 +19,7 @@
     for (GemBot* bot in robots) {
         if ([bot isAlive] && bot.internal_armor <= 0) {
             [bot die];
-            [self createExplosionAt:bot ofRadius:distanceToInternalDistance(ROBOT_DEATH_EXPLOSION_RADIUS)];
+            [self createExplosionAt:bot ofRadius:distanceToInternalDistance(ROBOT_DEATH_EXPLOSION_RADIUS) andDamageMultiplier:1.0];
         }
     }
 }

@@ -10,6 +10,7 @@
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
 @implementation Opcode
+@synthesize name;
 @synthesize opcode;
 @synthesize time;
 @synthesize selector;
@@ -19,6 +20,7 @@
 @end
 
 @implementation Device
+@synthesize name;
 @synthesize deviceNumber;
 @synthesize time;
 @synthesize selector;
@@ -27,6 +29,7 @@
 @end
 
 @implementation SystemCall
+@synthesize name;
 @synthesize number;
 @synthesize time;
 @synthesize selector;
@@ -45,25 +48,30 @@ NSMutableArray* newOpcodesFromTextFile(NSString* file) {
         if ([lineComps count] >= 3) {
             int opcode = [[lineComps objectAtIndex:0] intValue];
             int time = [[lineComps objectAtIndex:1] intValue];
-            NSString* selectorStr = [lineComps objectAtIndex:2];
-            
+            NSString* name = [lineComps objectAtIndex:2];
+            NSString* selectorStr = name;
             NSString* op1 = nil, *op2 = nil;
             int numberOfOperands = 0;
+            
             if ([lineComps count] > 3) {
-                op1 = [lineComps objectAtIndex:3];
                 
+                op1 = [lineComps objectAtIndex:3];
                 numberOfOperands++;
             }
             
             if ([lineComps count] > 4) {
                 op2 = [lineComps objectAtIndex:4];
-                
                 numberOfOperands++;
+            }
+            NSString* last = [lineComps lastObject];
+            if (![last isEqualToString:@"L"] && ![last isEqualToString:@"R"]) {
+                selectorStr = last;
             }
             SEL sel = NSSelectorFromString(selectorStr);
             Opcode* o = [[Opcode alloc] init];
             o.opcode = opcode;
             o.time = time;
+            o.name = [name uppercaseString];
             o.selector = sel;
             o.op1dereferenced = ([op1 isEqualToString:@"L"]);
             o.op2dereferenced = ([op2 isEqualToString:@"L"]);
@@ -107,7 +115,7 @@ NSArray* newDevicesFromTextFile(NSString* file, bool write) {
                 
                 search = @"r";
             }
-            SEL sel = NSSelectorFromString(selectorStr);
+            SEL sel = NSSelectorFromString([selectorStr stringByAppendingString:search]);
             if  (((NSRange)[(NSString*)[lineComps objectAtIndex:3] rangeOfString:search]).location != NSNotFound)  {
                 Device* d = [[Device alloc] init];
                 d.deviceNumber = device;
@@ -115,6 +123,7 @@ NSArray* newDevicesFromTextFile(NSString* file, bool write) {
                 d.selector = sel;
                 d.isWrite = write;
                 d.op1dereferenced = write;
+                d.name = [selectorStr uppercaseString];
                 while ([array count] <= device) {
                     [array addObject:[NSNull null]];
                 }
@@ -164,7 +173,7 @@ NSArray* newSystemCallsFromTextFile(NSString* file, bool write) {
             s.number = number;
             s.time = time;
             s.selector = sel;
-            
+            s.name = [selectorStr uppercaseString];
             while ([array count] <= number) {
                 [array addObject:[NSNull null]];
             }
@@ -209,9 +218,39 @@ Device* getWriteDevice(int deviceNumber) {
 }
 
 SystemCall* getSystemCall(int sysCallNumber) {
-    return indexIntoArray(writeDeviceArray(), sysCallNumber, SYS_CALL_NOP);
+    return indexIntoArray(systemCallsArray(), sysCallNumber, SYS_CALL_NOP);
 }
 
+
+
+NSMutableDictionary* getConstantsFromOpcodes() {
+    NSMutableDictionary* d = [NSMutableDictionary dictionary];
+    for (Opcode* op in opcodeArray()) {
+        if ((NSNull*)op != [NSNull null])
+            [d setObject:[NSNumber numberWithInt:op.opcode] forKey:op.name];
+    }
+    return d;
+}
+NSMutableDictionary* getConstantsFromDevices() {
+    NSMutableDictionary* d = [NSMutableDictionary dictionary];
+    for (Device* dev in readDeviceArray()) {
+        if ((NSNull*)dev != [NSNull null])
+            [d setObject:[NSNumber numberWithInt:dev.deviceNumber] forKey:dev.name];
+    }
+    for (Device* dev in writeDeviceArray()) {
+        if ((NSNull*)dev != [NSNull null])
+            [d setObject:[NSNumber numberWithInt:dev.deviceNumber] forKey:dev.name];
+    }
+    return d;
+}
+NSMutableDictionary* getConstantsFromSystemCalls() {
+    NSMutableDictionary* d = [NSMutableDictionary dictionary];
+    for (SystemCall* sys in systemCallsArray()) {
+        if ((NSNull*)sys != [NSNull null])
+            [d setObject:[NSNumber numberWithInt:sys.number] forKey:sys.name];
+    }
+    return d;
+}
 
 
 

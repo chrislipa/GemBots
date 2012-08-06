@@ -49,6 +49,7 @@
    
     
 }
+@property (readonly) NSObject<RandomProtocol>* random;
 @property (readwrite,retain) NSMutableArray* mines;
 @property (readwrite,assign) int currentMatch;
 @property (readwrite,assign) int totalNumberOfMatches;

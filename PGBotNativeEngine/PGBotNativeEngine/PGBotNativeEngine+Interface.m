@@ -14,7 +14,7 @@
 #import "Explosion.h"
 #import "GemBot+Interface.h"
 #import "GemBot+Communication.h"
-
+#import "GemBot+Stats.h"
 @implementation PGBotNativeEngine (Interface)
 -(int) numberOfRobotsAlive {
     int count = 0;
@@ -111,10 +111,19 @@
 }
 
 
--(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(lint)r {
+-(void) layMineAt: (position)internal_position withOwner:(GemBot*) bot andRadius:(unit) internal_radius{
+    Mine* mine = [[Mine alloc] init];
+    mine.internal_position = internal_position;
+    mine.owner = bot;
+    mine.internal_radius = internal_radius;
+    [mines addObject:mine];
+}
+
+-(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(lint)r andDamageMultiplier:(unit)multiplier {
     Explosion* e = [[Explosion alloc] init];
     e.internal_position = a.internal_position;
     e.internal_radius = r;
+    e.damageMultiplier = multiplier;
 }
 
 -(void) transmit:(int)x onChannel:(int) comm_channel {
@@ -132,5 +141,25 @@
 -(void) removeMine:(Mine*) mine {
     [mines removeObject:mine];
 }
-
+-(void) fireMissileFrom:(position)internal_position inDirection:(int)heading withOwner:(GemBot*) bot {
+    Missile* m = [[Missile alloc] init];
+    m.internal_position = internal_position;
+    m.heading = heading;
+    m.owner = bot;
+    m.engine = self;
+    m.internal_speed = [bot internal_speed_for_missile];
+    m.damageMultipiler = [bot missileDamageMultiplier];
+}
+-(int) howManyMinesHaveThisOwner:(GemBot*) owner {
+    int c = 0;
+    for (Mine*m in mines) {
+        if (m.owner == owner) c++;
+    }
+    return c;
+}
+-(void) detonateAllMinesWithOwner:(GemBot*) owner  {
+    for (Mine*m in mines) {
+        if (m.owner == owner) m.detonationTriggered = YES;
+    }
+}
 @end

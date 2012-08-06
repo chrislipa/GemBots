@@ -11,7 +11,7 @@
 @implementation Explosion
 @synthesize internal_position;
 @synthesize internal_radius;
-
+@synthesize damageMultiplier;
 
 -(int) x {
     return roundInternalDistanceToDistance(internal_position.x);

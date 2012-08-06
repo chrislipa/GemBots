@@ -14,8 +14,9 @@
 @interface Explosion : NSObject <ExplosionDescription, TangibleObject> {
     unit internal_radius;
     position internal_position;
+    unit damageMultiplier;
 }
-
+@property (readwrite,assign) unit damageMultiplier;
 @property (readwrite,assign) position internal_position;
 @property (readwrite,assign) unit internal_radius;
 

@@ -14,4 +14,7 @@
 -(lint) maxSpeedNumerator;
 -(lint) maxSpeedDenomenator;
 -(lint) initialInternalArmor;
+-(unit) internal_speed_for_missile;
+-(unit) missileDamageMultiplier;
+-(int) numberOfMinesConfig;
 @end

@@ -304,4 +304,7 @@ int rotateLeft(int x, int d) {
     int z = ([self getMemory:op1]& NOTS1) | ((op2 & S0)<<16);
     [self setMemory:op1 :z];
 }
+-(void) log {
+    [self executionLog:[NSString stringWithFormat:@"%d",op1]];
+}
 @end

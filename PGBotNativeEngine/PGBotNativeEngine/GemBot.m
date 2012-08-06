@@ -159,5 +159,12 @@
     }
 }
 
+-(void) executionError:(NSString*) str {
+    
+}
+-(void) executionLog:(NSString*) str {
+    
+}
+
 
 @end

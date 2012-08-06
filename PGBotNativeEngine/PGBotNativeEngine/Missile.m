@@ -15,6 +15,7 @@
 @synthesize engine;
 @synthesize owner;
 @synthesize internal_speed;
+@synthesize damageMultipiler;
 -(lint) internal_radius {
     return MISSILE_RADIUS;
 }
@@ -26,7 +27,7 @@
     return roundInternalDistanceToDistance(internal_position.y);
 }
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
-    [engine createExplosionAt:self ofRadius:MISSILE_EXPLOSION_RADIUS];
+    [engine createExplosionAt:self ofRadius:MISSILE_EXPLOSION_RADIUS andDamageMultiplier:damageMultipiler];
     [engine removeMissile:self];
 }
 

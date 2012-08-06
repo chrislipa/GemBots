@@ -19,7 +19,9 @@
     PGBotNativeEngine* engine;
     bool isAlive;
     GemBot* owner;
+    bool detonationTriggered;
 }
+@property (readwrite,assign) bool detonationTriggered;
 @property (readwrite,assign) position internal_position;
 @property (readwrite,assign) unit internal_radius;
 @property (readwrite,retain) PGBotNativeEngine* engine;

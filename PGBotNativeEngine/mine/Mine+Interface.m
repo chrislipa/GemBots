@@ -13,8 +13,5 @@
 
 @implementation Mine (Interface)
 
--(void) explode {
-    [engine createExplosionAt:self ofRadius:distanceToInternalDistance(MINE_EXPLOSION_RADIUS)];
-    isAlive = NO;
-}
+
 @end

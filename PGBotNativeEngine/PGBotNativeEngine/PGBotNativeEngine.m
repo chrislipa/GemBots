@@ -15,19 +15,49 @@
 #import "PGBotNativeEngine+GameManagement.h"
 #import "PGBotNativeEngine+Runtime.h"
 #import "Random.h"
+#import "Opcode.h"
 @implementation PGBotNativeEngine
-
+@synthesize random;
 @synthesize currentMatch;
 @synthesize totalNumberOfMatches;
 @synthesize gameCycle;
 @synthesize maxGameCycles;
 
 @synthesize mines;
+
+-(void) testSelector:(SEL) sel {
+    GemBot* gem = [[GemBot alloc] init];
+    if (![gem respondsToSelector:sel]) {
+        NSLog(@"Select %@ has not been implemented.",NSStringFromSelector(sel));
+    }
+}
+
+-(void) powerOnSelfTest {
+    for(Opcode* op in opcodeArray()) {
+        if ((NSNull*)op != [NSNull null])
+            [self testSelector:op.selector];
+    }
+    for(Device* op in readDeviceArray()) {
+        if ((NSNull*)op != [NSNull null])
+            [self testSelector:op.selector];
+    }
+    for(Device* op in writeDeviceArray()) {
+        if ((NSNull*)op != [NSNull null])
+            [self testSelector:op.selector];
+    }
+    for(SystemCall* op in systemCallsArray()) {
+        if ((NSNull*)op != [NSNull null])
+            [self testSelector:op.selector];
+    }
+}
 -(id) init {
     if  (self = [super init]) {
         random = [[Random alloc] init];
 
         externalOrderingOfRobots = [NSMutableArray array];
+#ifdef DEBUG
+        [self powerOnSelfTest];
+#endif
     }
     return self;
 }

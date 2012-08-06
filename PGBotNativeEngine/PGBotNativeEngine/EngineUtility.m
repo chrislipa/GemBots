@@ -8,7 +8,7 @@
 
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
-
+#import "Opcode.h"
 void swap (unit *a, unit *b) {
     unit temp = *a;
     *a = *b;
@@ -95,9 +95,12 @@ NSDictionary* newDictionaryFromTextFile(NSString* file) {
 }
 
 NSDictionary* constantDictionary() {
-     __strong static NSDictionary* constantDictionary = nil;
+     __strong static NSMutableDictionary* constantDictionary = nil;
     if (constantDictionary == nil) {
-        constantDictionary = newDictionaryFromTextFile(@"Constants");
+        constantDictionary = [NSMutableDictionary dictionaryWithDictionary:newDictionaryFromTextFile(@"Constants")];
+        [constantDictionary addEntriesFromDictionary:getConstantsFromOpcodes() ];
+        [constantDictionary addEntriesFromDictionary:getConstantsFromDevices() ];
+        [constantDictionary addEntriesFromDictionary:getConstantsFromSystemCalls() ];
     }
     return constantDictionary;
 }

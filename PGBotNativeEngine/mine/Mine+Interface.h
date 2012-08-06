@@ -10,5 +10,5 @@
 
 @interface Mine (Interface)
 
--(void) explode;
+
 @end

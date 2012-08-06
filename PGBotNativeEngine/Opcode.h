@@ -40,7 +40,9 @@
     int numberOfOperands;
     bool op1dereferenced;
     bool op2dereferenced;
+    NSString* name;
 }
+@property (readwrite,retain) NSString* name;
 @property (readwrite,assign) int opcode;
 @property (readwrite,assign) int time;
 @property (readwrite,assign) SEL selector;
@@ -55,7 +57,9 @@
     SEL selector;
     bool isWrite;
     bool op1dereferenced;
+    NSString* name;
 }
+@property (readwrite,retain) NSString* name;
 @property (readwrite,assign) int deviceNumber;
 @property (readwrite,assign) int time;
 @property (readwrite,assign) SEL selector;
@@ -67,7 +71,9 @@
     int number;
     int time;
     SEL selector;
+    NSString* name;
 }
+@property (readwrite,retain) NSString* name;
 @property (readwrite,assign) int number;
 @property (readwrite,assign) int time;
 @property (readwrite,assign) SEL selector;
@@ -84,4 +90,8 @@ Opcode* getOpcode(int opcodeNumber);
 Device* getReadDevice(int deviceNumber);
 Device* getWriteDevice(int deviceNumber) ;
 SystemCall* getSystemCall(int sysCallNumber);
+
+NSMutableDictionary* getConstantsFromOpcodes();
+NSMutableDictionary* getConstantsFromDevices();
+NSMutableDictionary* getConstantsFromSystemCalls();
 #endif

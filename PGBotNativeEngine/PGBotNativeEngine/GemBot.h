@@ -125,7 +125,7 @@
     int comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
     int number_of_comm_transmits_this_turn;
     
-    
+    int internal_shutdown_temp;
     
     
     
@@ -212,6 +212,9 @@
 -(void) recompileWithSource:(NSData*) data;
 +(GemBot*) gemBot;
 -(NSURL*) url;
+
+-(void) executionError:(NSString*) str;
+-(void) executionLog:(NSString*) str;
 
 
 @end

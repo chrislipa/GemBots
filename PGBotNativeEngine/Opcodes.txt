@@ -39,13 +39,16 @@
 38 -4 rd R L
 39 -5 wr R R
 40 1 call R
-41 1 returnI
-42 1 doI R
-43 1 loopI R
+41 1 return returnI
+42 1 do R doI
+43 1 loop R loopI
 44 -6 setb0 L R
 45 -6 setb1 L R
 46 -6 setb2 L R
 47 -6 setb3 L R
 48 -6 sets0 L R
 49 -6 sets1 L R
+50 0 logv R logvalue
+50 0 log R
+
  

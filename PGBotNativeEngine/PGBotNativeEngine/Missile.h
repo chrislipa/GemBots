@@ -19,7 +19,9 @@
     bool isAlive;
     GemBot* owner;
     unit internal_speed;
+    unit damageMultipiler;
 }
+@property (readwrite,assign) unit damageMultipiler;
 @property (readwrite,assign) unit internal_speed;
 @property (readwrite,assign) position internal_position;
 @property (readwrite,assign) int heading;
