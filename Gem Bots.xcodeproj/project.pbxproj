@@ -806,10 +806,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/PGBotNativeEngine/external/SBJson_3.1/build/Debug\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "classes/application/Gem Bots-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
@@ -824,10 +821,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/PGBotNativeEngine/external/SBJson_3.1/build/Debug\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "classes/application/Gem Bots-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
