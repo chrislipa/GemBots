@@ -1,6 +1,0 @@
-//
-// Prefix header for all source files of the 'botImporter' target in the 'botImporter' project
-//
-
-#ifdef __OBJC__
-#endif

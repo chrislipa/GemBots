@@ -1,0 +1,876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36255DD915D0C8A800B222DA /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36255DD815D0C8A700B222DA /* GLKit.framework */; };
+		369C5B0715D0C14F002028C8 /* CompileError.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5A9F15D0C14F002028C8 /* CompileError.h */; };
+		369C5B0815D0C14F002028C8 /* CompileError.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AA015D0C14F002028C8 /* CompileError.m */; };
+		369C5B0915D0C14F002028C8 /* GemBot+BinaryCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AA215D0C14F002028C8 /* GemBot+BinaryCompiler.h */; };
+		369C5B0A15D0C14F002028C8 /* GemBot+BinaryCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AA315D0C14F002028C8 /* GemBot+BinaryCompiler.m */; };
+		369C5B0B15D0C14F002028C8 /* GemBot+Compiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AA415D0C14F002028C8 /* GemBot+Compiler.h */; };
+		369C5B0C15D0C14F002028C8 /* GemBot+Compiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AA515D0C14F002028C8 /* GemBot+Compiler.m */; };
+		369C5B0D15D0C14F002028C8 /* GemBot+SourceCodeCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AA615D0C14F002028C8 /* GemBot+SourceCodeCompiler.h */; };
+		369C5B0E15D0C14F002028C8 /* GemBot+SourceCodeCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AA715D0C14F002028C8 /* GemBot+SourceCodeCompiler.m */; };
+		369C5B0F15D0C14F002028C8 /* Opcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AA815D0C14F002028C8 /* Opcode.h */; };
+		369C5B1015D0C14F002028C8 /* Opcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AA915D0C14F002028C8 /* Opcode.m */; };
+		369C5B1115D0C14F002028C8 /* GemBot+Collision.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AAB15D0C14F002028C8 /* GemBot+Collision.h */; };
+		369C5B1215D0C14F002028C8 /* GemBot+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AAC15D0C14F002028C8 /* GemBot+Collision.m */; };
+		369C5B1315D0C14F002028C8 /* GemBot+Communication.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AAD15D0C14F002028C8 /* GemBot+Communication.h */; };
+		369C5B1415D0C14F002028C8 /* GemBot+Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AAE15D0C14F002028C8 /* GemBot+Communication.m */; };
+		369C5B1515D0C14F002028C8 /* GemBot+Devices.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AAF15D0C14F002028C8 /* GemBot+Devices.h */; };
+		369C5B1615D0C14F002028C8 /* GemBot+Devices.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AB015D0C14F002028C8 /* GemBot+Devices.m */; };
+		369C5B1715D0C14F002028C8 /* GemBot+Heat.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AB115D0C14F002028C8 /* GemBot+Heat.h */; };
+		369C5B1815D0C14F002028C8 /* GemBot+Heat.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AB215D0C14F002028C8 /* GemBot+Heat.m */; };
+		369C5B1915D0C14F002028C8 /* GemBot+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AB315D0C14F002028C8 /* GemBot+Interface.h */; };
+		369C5B1A15D0C14F002028C8 /* GemBot+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AB415D0C14F002028C8 /* GemBot+Interface.m */; };
+		369C5B1B15D0C14F002028C8 /* GemBot+Memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AB515D0C14F002028C8 /* GemBot+Memory.h */; };
+		369C5B1C15D0C14F002028C8 /* GemBot+Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AB615D0C14F002028C8 /* GemBot+Memory.m */; };
+		369C5B1D15D0C14F002028C8 /* GemBot+Movement.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AB715D0C14F002028C8 /* GemBot+Movement.h */; };
+		369C5B1E15D0C14F002028C8 /* GemBot+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AB815D0C14F002028C8 /* GemBot+Movement.m */; };
+		369C5B1F15D0C14F002028C8 /* GemBot+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AB915D0C14F002028C8 /* GemBot+Operations.h */; };
+		369C5B2015D0C14F002028C8 /* GemBot+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ABA15D0C14F002028C8 /* GemBot+Operations.m */; };
+		369C5B2115D0C14F002028C8 /* GemBot+Reset.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ABB15D0C14F002028C8 /* GemBot+Reset.h */; };
+		369C5B2215D0C14F002028C8 /* GemBot+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ABC15D0C14F002028C8 /* GemBot+Reset.m */; };
+		369C5B2315D0C14F002028C8 /* GemBot+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ABD15D0C14F002028C8 /* GemBot+Runtime.h */; };
+		369C5B2415D0C14F002028C8 /* GemBot+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ABE15D0C14F002028C8 /* GemBot+Runtime.m */; };
+		369C5B2515D0C14F002028C8 /* GemBot+Stats.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ABF15D0C14F002028C8 /* GemBot+Stats.h */; };
+		369C5B2615D0C14F002028C8 /* GemBot+Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AC015D0C14F002028C8 /* GemBot+Stats.m */; };
+		369C5B2715D0C14F002028C8 /* GemBot+SystemCalls.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AC115D0C14F002028C8 /* GemBot+SystemCalls.h */; };
+		369C5B2815D0C14F002028C8 /* GemBot+SystemCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AC215D0C14F002028C8 /* GemBot+SystemCalls.m */; };
+		369C5B2915D0C14F002028C8 /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AC315D0C14F002028C8 /* GemBot.h */; };
+		369C5B2A15D0C14F002028C8 /* GemBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AC415D0C14F002028C8 /* GemBot.m */; };
+		369C5B2B15D0C14F002028C8 /* NativeEngine-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AC615D0C14F002028C8 /* NativeEngine-Prefix.pch */; };
+		369C5B2C15D0C14F002028C8 /* Explosion.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AC815D0C14F002028C8 /* Explosion.h */; };
+		369C5B2D15D0C14F002028C8 /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AC915D0C14F002028C8 /* Explosion.m */; };
+		369C5B2E15D0C14F002028C8 /* Mine+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ACA15D0C14F002028C8 /* Mine+Interface.h */; };
+		369C5B2F15D0C14F002028C8 /* Mine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ACB15D0C14F002028C8 /* Mine+Interface.m */; };
+		369C5B3015D0C14F002028C8 /* Mine.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ACC15D0C14F002028C8 /* Mine.h */; };
+		369C5B3115D0C14F002028C8 /* Mine.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ACD15D0C14F002028C8 /* Mine.m */; };
+		369C5B3215D0C14F002028C8 /* Missile+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ACE15D0C14F002028C8 /* Missile+Interface.h */; };
+		369C5B3315D0C14F002028C8 /* Missile+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ACF15D0C14F002028C8 /* Missile+Interface.m */; };
+		369C5B3415D0C14F002028C8 /* Missile.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AD015D0C14F002028C8 /* Missile.h */; };
+		369C5B3515D0C14F002028C8 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AD115D0C14F002028C8 /* Missile.m */; };
+		369C5B3615D0C14F002028C8 /* Scan.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AD215D0C14F002028C8 /* Scan.h */; };
+		369C5B3715D0C14F002028C8 /* Scan.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AD315D0C14F002028C8 /* Scan.m */; };
+		369C5B3815D0C14F002028C8 /* Wall.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AD415D0C14F002028C8 /* Wall.h */; };
+		369C5B3915D0C14F002028C8 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AD515D0C14F002028C8 /* Wall.m */; };
+		369C5B3A15D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AD715D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.h */; };
+		369C5B3B15D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AD815D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.m */; };
+		369C5B3C15D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AD915D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.h */; };
+		369C5B3D15D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ADA15D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.m */; };
+		369C5B3E15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ADB15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.h */; };
+		369C5B3F15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ADC15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.m */; };
+		369C5B4015D0C14F002028C8 /* PGBotNativeEngine+CommPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ADD15D0C14F002028C8 /* PGBotNativeEngine+CommPhase.h */; };
+		369C5B4115D0C14F002028C8 /* PGBotNativeEngine+CommPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5ADE15D0C14F002028C8 /* PGBotNativeEngine+CommPhase.m */; };
+		369C5B4215D0C14F002028C8 /* PGBotNativeEngine+DealDamage.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5ADF15D0C14F002028C8 /* PGBotNativeEngine+DealDamage.h */; };
+		369C5B4315D0C14F002028C8 /* PGBotNativeEngine+DealDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AE015D0C14F002028C8 /* PGBotNativeEngine+DealDamage.m */; };
+		369C5B4415D0C14F002028C8 /* PGBotNativeEngine+Explosions.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AE115D0C14F002028C8 /* PGBotNativeEngine+Explosions.h */; };
+		369C5B4515D0C14F002028C8 /* PGBotNativeEngine+Explosions.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AE215D0C14F002028C8 /* PGBotNativeEngine+Explosions.m */; };
+		369C5B4615D0C14F002028C8 /* PGBotNativeEngine+GameManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AE315D0C14F002028C8 /* PGBotNativeEngine+GameManagement.h */; };
+		369C5B4715D0C14F002028C8 /* PGBotNativeEngine+GameManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AE415D0C14F002028C8 /* PGBotNativeEngine+GameManagement.m */; };
+		369C5B4815D0C14F002028C8 /* PGBotNativeEngine+Heat.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AE515D0C14F002028C8 /* PGBotNativeEngine+Heat.h */; };
+		369C5B4915D0C14F002028C8 /* PGBotNativeEngine+Heat.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AE615D0C14F002028C8 /* PGBotNativeEngine+Heat.m */; };
+		369C5B4A15D0C14F002028C8 /* PGBotNativeEngine+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AE715D0C14F002028C8 /* PGBotNativeEngine+Interface.h */; };
+		369C5B4B15D0C14F002028C8 /* PGBotNativeEngine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AE815D0C14F002028C8 /* PGBotNativeEngine+Interface.m */; };
+		369C5B4C15D0C14F002028C8 /* PGBotNativeEngine+Movement.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AE915D0C14F002028C8 /* PGBotNativeEngine+Movement.h */; };
+		369C5B4D15D0C14F002028C8 /* PGBotNativeEngine+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AEA15D0C14F002028C8 /* PGBotNativeEngine+Movement.m */; };
+		369C5B4E15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AEB15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.h */; };
+		369C5B4F15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AEC15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.m */; };
+		369C5B5015D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AED15D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.h */; };
+		369C5B5115D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AEE15D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.m */; };
+		369C5B5215D0C14F002028C8 /* PGBotNativeEngine+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AEF15D0C14F002028C8 /* PGBotNativeEngine+Runtime.h */; };
+		369C5B5315D0C14F002028C8 /* PGBotNativeEngine+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AF015D0C14F002028C8 /* PGBotNativeEngine+Runtime.m */; };
+		369C5B5415D0C14F002028C8 /* PGBotNativeEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AF115D0C14F002028C8 /* PGBotNativeEngine.h */; };
+		369C5B5515D0C14F002028C8 /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AF215D0C14F002028C8 /* PGBotNativeEngine.m */; };
+		369C5B5615D0C14F002028C8 /* CollideableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AF415D0C14F002028C8 /* CollideableObject.h */; };
+		369C5B5715D0C14F002028C8 /* RandomProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AF515D0C14F002028C8 /* RandomProtocol.h */; };
+		369C5B5815D0C14F002028C8 /* TangibleObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AF615D0C14F002028C8 /* TangibleObject.h */; };
+		369C5B5915D0C14F002028C8 /* EngineDefinitions.c in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AF815D0C14F002028C8 /* EngineDefinitions.c */; };
+		369C5B5A15D0C14F002028C8 /* EngineDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AF915D0C14F002028C8 /* EngineDefinitions.h */; };
+		369C5B5B15D0C14F002028C8 /* EngineUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AFA15D0C14F002028C8 /* EngineUtility.h */; };
+		369C5B5C15D0C14F002028C8 /* EngineUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AFB15D0C14F002028C8 /* EngineUtility.m */; };
+		369C5B5D15D0C14F002028C8 /* MoveableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AFC15D0C14F002028C8 /* MoveableObject.h */; };
+		369C5B5E15D0C14F002028C8 /* OrientedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AFD15D0C14F002028C8 /* OrientedObject.h */; };
+		369C5B5F15D0C14F002028C8 /* Random.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5AFE15D0C14F002028C8 /* Random.h */; };
+		369C5B6015D0C14F002028C8 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 369C5AFF15D0C14F002028C8 /* Random.m */; };
+		369C5B6115D0C14F002028C8 /* TurretedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 369C5B0015D0C14F002028C8 /* TurretedObject.h */; };
+		369C5B6215D0C14F002028C8 /* Constants.txt in Resources */ = {isa = PBXBuildFile; fileRef = 369C5B0215D0C14F002028C8 /* Constants.txt */; };
+		369C5B6315D0C14F002028C8 /* DefaultVariables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 369C5B0315D0C14F002028C8 /* DefaultVariables.txt */; };
+		369C5B6415D0C14F002028C8 /* Devices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 369C5B0415D0C14F002028C8 /* Devices.txt */; };
+		369C5B6515D0C14F002028C8 /* Opcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 369C5B0515D0C14F002028C8 /* Opcodes.txt */; };
+		369C5B6615D0C14F002028C8 /* SystemCalls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 369C5B0615D0C14F002028C8 /* SystemCalls.txt */; };
+		369C5EBB15D0C1B7002028C8 /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369C5EA615D0C18C002028C8 /* SBJson.framework */; };
+		369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D96015C74062003CCD2A /* Foundation.framework */; };
+		369C5EE415D0C787002028C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95B15C74062003CCD2A /* Cocoa.framework */; };
+		369C5EE615D0C7A7002028C8 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369C5EE515D0C7A7002028C8 /* Quartz.framework */; };
+		369C5EE715D0C7C0002028C8 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95E15C74062003CCD2A /* AppKit.framework */; };
+		36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		369C5EA515D0C18C002028C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC12323D1391D5CC00131607;
+			remoteInfo = SBJson;
+		};
+		369C5EA715D0C18C002028C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC1232521391D5CC00131607;
+			remoteInfo = SBJsonTests;
+		};
+		369C5EA915D0C18C002028C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2626913920FC7003D9994;
+			remoteInfo = "sbjson-ios";
+		};
+		369C5EAB15D0C18C002028C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2627313920FC7003D9994;
+			remoteInfo = "sbjson-iosTests";
+		};
+		369C5EB915D0C1B0002028C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC12323C1391D5CC00131607;
+			remoteInfo = SBJson;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36255DD815D0C8A700B222DA /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		369C5A9F15D0C14F002028C8 /* CompileError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompileError.h; sourceTree = "<group>"; };
+		369C5AA015D0C14F002028C8 /* CompileError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompileError.m; sourceTree = "<group>"; };
+		369C5AA215D0C14F002028C8 /* GemBot+BinaryCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+BinaryCompiler.h"; sourceTree = "<group>"; };
+		369C5AA315D0C14F002028C8 /* GemBot+BinaryCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+BinaryCompiler.m"; sourceTree = "<group>"; };
+		369C5AA415D0C14F002028C8 /* GemBot+Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Compiler.h"; sourceTree = "<group>"; };
+		369C5AA515D0C14F002028C8 /* GemBot+Compiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Compiler.m"; sourceTree = "<group>"; };
+		369C5AA615D0C14F002028C8 /* GemBot+SourceCodeCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+SourceCodeCompiler.h"; sourceTree = "<group>"; };
+		369C5AA715D0C14F002028C8 /* GemBot+SourceCodeCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+SourceCodeCompiler.m"; sourceTree = "<group>"; };
+		369C5AA815D0C14F002028C8 /* Opcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opcode.h; sourceTree = "<group>"; };
+		369C5AA915D0C14F002028C8 /* Opcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opcode.m; sourceTree = "<group>"; };
+		369C5AAB15D0C14F002028C8 /* GemBot+Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Collision.h"; sourceTree = "<group>"; };
+		369C5AAC15D0C14F002028C8 /* GemBot+Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Collision.m"; sourceTree = "<group>"; };
+		369C5AAD15D0C14F002028C8 /* GemBot+Communication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Communication.h"; sourceTree = "<group>"; };
+		369C5AAE15D0C14F002028C8 /* GemBot+Communication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Communication.m"; sourceTree = "<group>"; };
+		369C5AAF15D0C14F002028C8 /* GemBot+Devices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Devices.h"; sourceTree = "<group>"; };
+		369C5AB015D0C14F002028C8 /* GemBot+Devices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Devices.m"; sourceTree = "<group>"; };
+		369C5AB115D0C14F002028C8 /* GemBot+Heat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Heat.h"; sourceTree = "<group>"; };
+		369C5AB215D0C14F002028C8 /* GemBot+Heat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Heat.m"; sourceTree = "<group>"; };
+		369C5AB315D0C14F002028C8 /* GemBot+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Interface.h"; sourceTree = "<group>"; };
+		369C5AB415D0C14F002028C8 /* GemBot+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Interface.m"; sourceTree = "<group>"; };
+		369C5AB515D0C14F002028C8 /* GemBot+Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Memory.h"; sourceTree = "<group>"; };
+		369C5AB615D0C14F002028C8 /* GemBot+Memory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Memory.m"; sourceTree = "<group>"; };
+		369C5AB715D0C14F002028C8 /* GemBot+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Movement.h"; sourceTree = "<group>"; };
+		369C5AB815D0C14F002028C8 /* GemBot+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Movement.m"; sourceTree = "<group>"; };
+		369C5AB915D0C14F002028C8 /* GemBot+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Operations.h"; sourceTree = "<group>"; };
+		369C5ABA15D0C14F002028C8 /* GemBot+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Operations.m"; sourceTree = "<group>"; };
+		369C5ABB15D0C14F002028C8 /* GemBot+Reset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Reset.h"; sourceTree = "<group>"; };
+		369C5ABC15D0C14F002028C8 /* GemBot+Reset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Reset.m"; sourceTree = "<group>"; };
+		369C5ABD15D0C14F002028C8 /* GemBot+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Runtime.h"; sourceTree = "<group>"; };
+		369C5ABE15D0C14F002028C8 /* GemBot+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Runtime.m"; sourceTree = "<group>"; };
+		369C5ABF15D0C14F002028C8 /* GemBot+Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Stats.h"; sourceTree = "<group>"; };
+		369C5AC015D0C14F002028C8 /* GemBot+Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Stats.m"; sourceTree = "<group>"; };
+		369C5AC115D0C14F002028C8 /* GemBot+SystemCalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+SystemCalls.h"; sourceTree = "<group>"; };
+		369C5AC215D0C14F002028C8 /* GemBot+SystemCalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+SystemCalls.m"; sourceTree = "<group>"; };
+		369C5AC315D0C14F002028C8 /* GemBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemBot.h; sourceTree = "<group>"; };
+		369C5AC415D0C14F002028C8 /* GemBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemBot.m; sourceTree = "<group>"; };
+		369C5AC615D0C14F002028C8 /* NativeEngine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NativeEngine-Prefix.pch"; sourceTree = "<group>"; };
+		369C5AC815D0C14F002028C8 /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
+		369C5AC915D0C14F002028C8 /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explosion.m; sourceTree = "<group>"; };
+		369C5ACA15D0C14F002028C8 /* Mine+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mine+Interface.h"; sourceTree = "<group>"; };
+		369C5ACB15D0C14F002028C8 /* Mine+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mine+Interface.m"; sourceTree = "<group>"; };
+		369C5ACC15D0C14F002028C8 /* Mine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mine.h; sourceTree = "<group>"; };
+		369C5ACD15D0C14F002028C8 /* Mine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mine.m; sourceTree = "<group>"; };
+		369C5ACE15D0C14F002028C8 /* Missile+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Missile+Interface.h"; sourceTree = "<group>"; };
+		369C5ACF15D0C14F002028C8 /* Missile+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Missile+Interface.m"; sourceTree = "<group>"; };
+		369C5AD015D0C14F002028C8 /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Missile.h; sourceTree = "<group>"; };
+		369C5AD115D0C14F002028C8 /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Missile.m; sourceTree = "<group>"; };
+		369C5AD215D0C14F002028C8 /* Scan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scan.h; sourceTree = "<group>"; };
+		369C5AD315D0C14F002028C8 /* Scan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scan.m; sourceTree = "<group>"; };
+		369C5AD415D0C14F002028C8 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
+		369C5AD515D0C14F002028C8 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
+		369C5AD715D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CheckForEndOfMatch.h"; sourceTree = "<group>"; };
+		369C5AD815D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CheckForEndOfMatch.m"; sourceTree = "<group>"; };
+		369C5AD915D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CleanPhase.h"; sourceTree = "<group>"; };
+		369C5ADA15D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CleanPhase.m"; sourceTree = "<group>"; };
+		369C5ADB15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CollisionDetection.h"; sourceTree = "<group>"; };
+		369C5ADC15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CollisionDetection.m"; sourceTree = "<group>"; };
+		369C5ADD15D0C14F002028C8 /* PGBotNativeEngine+CommPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CommPhase.h"; sourceTree = "<group>"; };
+		369C5ADE15D0C14F002028C8 /* PGBotNativeEngine+CommPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CommPhase.m"; sourceTree = "<group>"; };
+		369C5ADF15D0C14F002028C8 /* PGBotNativeEngine+DealDamage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+DealDamage.h"; sourceTree = "<group>"; };
+		369C5AE015D0C14F002028C8 /* PGBotNativeEngine+DealDamage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+DealDamage.m"; sourceTree = "<group>"; };
+		369C5AE115D0C14F002028C8 /* PGBotNativeEngine+Explosions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Explosions.h"; sourceTree = "<group>"; };
+		369C5AE215D0C14F002028C8 /* PGBotNativeEngine+Explosions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Explosions.m"; sourceTree = "<group>"; };
+		369C5AE315D0C14F002028C8 /* PGBotNativeEngine+GameManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+GameManagement.h"; sourceTree = "<group>"; };
+		369C5AE415D0C14F002028C8 /* PGBotNativeEngine+GameManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+GameManagement.m"; sourceTree = "<group>"; };
+		369C5AE515D0C14F002028C8 /* PGBotNativeEngine+Heat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Heat.h"; sourceTree = "<group>"; };
+		369C5AE615D0C14F002028C8 /* PGBotNativeEngine+Heat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Heat.m"; sourceTree = "<group>"; };
+		369C5AE715D0C14F002028C8 /* PGBotNativeEngine+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Interface.h"; sourceTree = "<group>"; };
+		369C5AE815D0C14F002028C8 /* PGBotNativeEngine+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Interface.m"; sourceTree = "<group>"; };
+		369C5AE915D0C14F002028C8 /* PGBotNativeEngine+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Movement.h"; sourceTree = "<group>"; };
+		369C5AEA15D0C14F002028C8 /* PGBotNativeEngine+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Movement.m"; sourceTree = "<group>"; };
+		369C5AEB15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+RobotCPUPhase.h"; sourceTree = "<group>"; };
+		369C5AEC15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+RobotCPUPhase.m"; sourceTree = "<group>"; };
+		369C5AED15D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+RobotDeath.h"; sourceTree = "<group>"; };
+		369C5AEE15D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+RobotDeath.m"; sourceTree = "<group>"; };
+		369C5AEF15D0C14F002028C8 /* PGBotNativeEngine+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Runtime.h"; sourceTree = "<group>"; };
+		369C5AF015D0C14F002028C8 /* PGBotNativeEngine+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Runtime.m"; sourceTree = "<group>"; };
+		369C5AF115D0C14F002028C8 /* PGBotNativeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotNativeEngine.h; sourceTree = "<group>"; };
+		369C5AF215D0C14F002028C8 /* PGBotNativeEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGBotNativeEngine.m; sourceTree = "<group>"; };
+		369C5AF415D0C14F002028C8 /* CollideableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollideableObject.h; sourceTree = "<group>"; };
+		369C5AF515D0C14F002028C8 /* RandomProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomProtocol.h; sourceTree = "<group>"; };
+		369C5AF615D0C14F002028C8 /* TangibleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangibleObject.h; sourceTree = "<group>"; };
+		369C5AF815D0C14F002028C8 /* EngineDefinitions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EngineDefinitions.c; sourceTree = "<group>"; };
+		369C5AF915D0C14F002028C8 /* EngineDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngineDefinitions.h; sourceTree = "<group>"; };
+		369C5AFA15D0C14F002028C8 /* EngineUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngineUtility.h; sourceTree = "<group>"; };
+		369C5AFB15D0C14F002028C8 /* EngineUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineUtility.m; sourceTree = "<group>"; };
+		369C5AFC15D0C14F002028C8 /* MoveableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveableObject.h; sourceTree = "<group>"; };
+		369C5AFD15D0C14F002028C8 /* OrientedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientedObject.h; sourceTree = "<group>"; };
+		369C5AFE15D0C14F002028C8 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
+		369C5AFF15D0C14F002028C8 /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Random.m; sourceTree = "<group>"; };
+		369C5B0015D0C14F002028C8 /* TurretedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurretedObject.h; sourceTree = "<group>"; };
+		369C5B0215D0C14F002028C8 /* Constants.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Constants.txt; sourceTree = "<group>"; };
+		369C5B0315D0C14F002028C8 /* DefaultVariables.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DefaultVariables.txt; sourceTree = "<group>"; };
+		369C5B0415D0C14F002028C8 /* Devices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Devices.txt; sourceTree = "<group>"; };
+		369C5B0515D0C14F002028C8 /* Opcodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Opcodes.txt; sourceTree = "<group>"; };
+		369C5B0615D0C14F002028C8 /* SystemCalls.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SystemCalls.txt; sourceTree = "<group>"; };
+		369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = ../external/sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
+		369C5EC415D0C6C0002028C8 /* aa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "aa-Prefix.pch"; sourceTree = "<group>"; };
+		369C5EC515D0C6C0002028C8 /* aa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aa.h; sourceTree = "<group>"; };
+		369C5EC615D0C6C0002028C8 /* aa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aa.m; sourceTree = "<group>"; };
+		369C5EE515D0C7A7002028C8 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		36C3D95F15C74062003CCD2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		36C3D96015C74062003CCD2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36C3D99715C771FC003CCD2A /* GameStateDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateDescriptor.h; sourceTree = "<group>"; };
+		36C3D99915C771FC003CCD2A /* PGBotEngineProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotEngineProtocol.h; sourceTree = "<group>"; };
+		36FE1B0915CCE787003310F0 /* GemBotEngine.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GemBotEngine.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36FE1B0615CCE787003310F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36255DD915D0C8A800B222DA /* GLKit.framework in Frameworks */,
+				369C5EE415D0C787002028C8 /* Cocoa.framework in Frameworks */,
+				369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */,
+				369C5EE715D0C7C0002028C8 /* AppKit.framework in Frameworks */,
+				369C5EE615D0C7A7002028C8 /* Quartz.framework in Frameworks */,
+				369C5EBB15D0C1B7002028C8 /* SBJson.framework in Frameworks */,
+				36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		369C5A9D15D0C14F002028C8 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				369C5A9E15D0C14F002028C8 /* compileerror */,
+				369C5AA115D0C14F002028C8 /* compiler */,
+				369C5AAA15D0C14F002028C8 /* GemBot */,
+				369C5AC515D0C14F002028C8 /* NativeEngine */,
+				369C5AC715D0C14F002028C8 /* objects */,
+				369C5AD615D0C14F002028C8 /* PGBotNativeEngine */,
+				369C5AF315D0C14F002028C8 /* protocols */,
+				369C5AF715D0C14F002028C8 /* utility */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		369C5A9E15D0C14F002028C8 /* compileerror */ = {
+			isa = PBXGroup;
+			children = (
+				369C5A9F15D0C14F002028C8 /* CompileError.h */,
+				369C5AA015D0C14F002028C8 /* CompileError.m */,
+			);
+			path = compileerror;
+			sourceTree = "<group>";
+		};
+		369C5AA115D0C14F002028C8 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				369C5AA215D0C14F002028C8 /* GemBot+BinaryCompiler.h */,
+				369C5AA315D0C14F002028C8 /* GemBot+BinaryCompiler.m */,
+				369C5AA415D0C14F002028C8 /* GemBot+Compiler.h */,
+				369C5AA515D0C14F002028C8 /* GemBot+Compiler.m */,
+				369C5AA615D0C14F002028C8 /* GemBot+SourceCodeCompiler.h */,
+				369C5AA715D0C14F002028C8 /* GemBot+SourceCodeCompiler.m */,
+				369C5AA815D0C14F002028C8 /* Opcode.h */,
+				369C5AA915D0C14F002028C8 /* Opcode.m */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		369C5AAA15D0C14F002028C8 /* GemBot */ = {
+			isa = PBXGroup;
+			children = (
+				369C5AAB15D0C14F002028C8 /* GemBot+Collision.h */,
+				369C5AAC15D0C14F002028C8 /* GemBot+Collision.m */,
+				369C5AAD15D0C14F002028C8 /* GemBot+Communication.h */,
+				369C5AAE15D0C14F002028C8 /* GemBot+Communication.m */,
+				369C5AAF15D0C14F002028C8 /* GemBot+Devices.h */,
+				369C5AB015D0C14F002028C8 /* GemBot+Devices.m */,
+				369C5AB115D0C14F002028C8 /* GemBot+Heat.h */,
+				369C5AB215D0C14F002028C8 /* GemBot+Heat.m */,
+				369C5AB315D0C14F002028C8 /* GemBot+Interface.h */,
+				369C5AB415D0C14F002028C8 /* GemBot+Interface.m */,
+				369C5AB515D0C14F002028C8 /* GemBot+Memory.h */,
+				369C5AB615D0C14F002028C8 /* GemBot+Memory.m */,
+				369C5AB715D0C14F002028C8 /* GemBot+Movement.h */,
+				369C5AB815D0C14F002028C8 /* GemBot+Movement.m */,
+				369C5AB915D0C14F002028C8 /* GemBot+Operations.h */,
+				369C5ABA15D0C14F002028C8 /* GemBot+Operations.m */,
+				369C5ABB15D0C14F002028C8 /* GemBot+Reset.h */,
+				369C5ABC15D0C14F002028C8 /* GemBot+Reset.m */,
+				369C5ABD15D0C14F002028C8 /* GemBot+Runtime.h */,
+				369C5ABE15D0C14F002028C8 /* GemBot+Runtime.m */,
+				369C5ABF15D0C14F002028C8 /* GemBot+Stats.h */,
+				369C5AC015D0C14F002028C8 /* GemBot+Stats.m */,
+				369C5AC115D0C14F002028C8 /* GemBot+SystemCalls.h */,
+				369C5AC215D0C14F002028C8 /* GemBot+SystemCalls.m */,
+				369C5AC315D0C14F002028C8 /* GemBot.h */,
+				369C5AC415D0C14F002028C8 /* GemBot.m */,
+			);
+			path = GemBot;
+			sourceTree = "<group>";
+		};
+		369C5AC515D0C14F002028C8 /* NativeEngine */ = {
+			isa = PBXGroup;
+			children = (
+				369C5AC615D0C14F002028C8 /* NativeEngine-Prefix.pch */,
+			);
+			path = NativeEngine;
+			sourceTree = "<group>";
+		};
+		369C5AC715D0C14F002028C8 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				369C5AC815D0C14F002028C8 /* Explosion.h */,
+				369C5AC915D0C14F002028C8 /* Explosion.m */,
+				369C5ACA15D0C14F002028C8 /* Mine+Interface.h */,
+				369C5ACB15D0C14F002028C8 /* Mine+Interface.m */,
+				369C5ACC15D0C14F002028C8 /* Mine.h */,
+				369C5ACD15D0C14F002028C8 /* Mine.m */,
+				369C5ACE15D0C14F002028C8 /* Missile+Interface.h */,
+				369C5ACF15D0C14F002028C8 /* Missile+Interface.m */,
+				369C5AD015D0C14F002028C8 /* Missile.h */,
+				369C5AD115D0C14F002028C8 /* Missile.m */,
+				369C5AD215D0C14F002028C8 /* Scan.h */,
+				369C5AD315D0C14F002028C8 /* Scan.m */,
+				369C5AD415D0C14F002028C8 /* Wall.h */,
+				369C5AD515D0C14F002028C8 /* Wall.m */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		369C5AD615D0C14F002028C8 /* PGBotNativeEngine */ = {
+			isa = PBXGroup;
+			children = (
+				369C5AD715D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.h */,
+				369C5AD815D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.m */,
+				369C5AD915D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.h */,
+				369C5ADA15D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.m */,
+				369C5ADB15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.h */,
+				369C5ADC15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.m */,
+				369C5ADD15D0C14F002028C8 /* PGBotNativeEngine+CommPhase.h */,
+				369C5ADE15D0C14F002028C8 /* PGBotNativeEngine+CommPhase.m */,
+				369C5ADF15D0C14F002028C8 /* PGBotNativeEngine+DealDamage.h */,
+				369C5AE015D0C14F002028C8 /* PGBotNativeEngine+DealDamage.m */,
+				369C5AE115D0C14F002028C8 /* PGBotNativeEngine+Explosions.h */,
+				369C5AE215D0C14F002028C8 /* PGBotNativeEngine+Explosions.m */,
+				369C5AE315D0C14F002028C8 /* PGBotNativeEngine+GameManagement.h */,
+				369C5AE415D0C14F002028C8 /* PGBotNativeEngine+GameManagement.m */,
+				369C5AE515D0C14F002028C8 /* PGBotNativeEngine+Heat.h */,
+				369C5AE615D0C14F002028C8 /* PGBotNativeEngine+Heat.m */,
+				369C5AE715D0C14F002028C8 /* PGBotNativeEngine+Interface.h */,
+				369C5AE815D0C14F002028C8 /* PGBotNativeEngine+Interface.m */,
+				369C5AE915D0C14F002028C8 /* PGBotNativeEngine+Movement.h */,
+				369C5AEA15D0C14F002028C8 /* PGBotNativeEngine+Movement.m */,
+				369C5AEB15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.h */,
+				369C5AEC15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.m */,
+				369C5AED15D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.h */,
+				369C5AEE15D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.m */,
+				369C5AEF15D0C14F002028C8 /* PGBotNativeEngine+Runtime.h */,
+				369C5AF015D0C14F002028C8 /* PGBotNativeEngine+Runtime.m */,
+				369C5AF115D0C14F002028C8 /* PGBotNativeEngine.h */,
+				369C5AF215D0C14F002028C8 /* PGBotNativeEngine.m */,
+			);
+			path = PGBotNativeEngine;
+			sourceTree = "<group>";
+		};
+		369C5AF315D0C14F002028C8 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				369C5AF415D0C14F002028C8 /* CollideableObject.h */,
+				369C5AF515D0C14F002028C8 /* RandomProtocol.h */,
+				369C5AF615D0C14F002028C8 /* TangibleObject.h */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		369C5AF715D0C14F002028C8 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				369C5AF815D0C14F002028C8 /* EngineDefinitions.c */,
+				369C5AF915D0C14F002028C8 /* EngineDefinitions.h */,
+				369C5AFA15D0C14F002028C8 /* EngineUtility.h */,
+				369C5AFB15D0C14F002028C8 /* EngineUtility.m */,
+				369C5AFC15D0C14F002028C8 /* MoveableObject.h */,
+				369C5AFD15D0C14F002028C8 /* OrientedObject.h */,
+				369C5AFE15D0C14F002028C8 /* Random.h */,
+				369C5AFF15D0C14F002028C8 /* Random.m */,
+				369C5B0015D0C14F002028C8 /* TurretedObject.h */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		369C5B0115D0C14F002028C8 /* languagedefs */ = {
+			isa = PBXGroup;
+			children = (
+				369C5B0215D0C14F002028C8 /* Constants.txt */,
+				369C5B0315D0C14F002028C8 /* DefaultVariables.txt */,
+				369C5B0415D0C14F002028C8 /* Devices.txt */,
+				369C5B0515D0C14F002028C8 /* Opcodes.txt */,
+				369C5B0615D0C14F002028C8 /* SystemCalls.txt */,
+			);
+			path = languagedefs;
+			sourceTree = "<group>";
+		};
+		369C5B6715D0C16D002028C8 /* external */ = {
+			isa = PBXGroup;
+			children = (
+				369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */,
+			);
+			name = external;
+			sourceTree = "<group>";
+		};
+		369C5E9F15D0C18C002028C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				369C5EA615D0C18C002028C8 /* SBJson.framework */,
+				369C5EA815D0C18C002028C8 /* SBJsonTests.octest */,
+				369C5EAA15D0C18C002028C8 /* libsbjson-ios.a */,
+				369C5EAC15D0C18C002028C8 /* sbjson-iosTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		369C5EC215D0C6C0002028C8 /* aa */ = {
+			isa = PBXGroup;
+			children = (
+				369C5EC515D0C6C0002028C8 /* aa.h */,
+				369C5EC615D0C6C0002028C8 /* aa.m */,
+				369C5EC315D0C6C0002028C8 /* Supporting Files */,
+			);
+			path = aa;
+			sourceTree = "<group>";
+		};
+		369C5EC315D0C6C0002028C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				369C5EC415D0C6C0002028C8 /* aa-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36C3D94D15C74062003CCD2A = {
+			isa = PBXGroup;
+			children = (
+				36255DD815D0C8A700B222DA /* GLKit.framework */,
+				369C5EE515D0C7A7002028C8 /* Quartz.framework */,
+				369C5A9D15D0C14F002028C8 /* classes */,
+				369C5B0115D0C14F002028C8 /* languagedefs */,
+				36C3D99615C771FC003CCD2A /* include */,
+				369C5B6715D0C16D002028C8 /* external */,
+				369C5EC215D0C6C0002028C8 /* aa */,
+				36C3D95A15C74062003CCD2A /* Frameworks */,
+				36C3D95915C74062003CCD2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36C3D95915C74062003CCD2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36FE1B0915CCE787003310F0 /* GemBotEngine.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36C3D95A15C74062003CCD2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D95B15C74062003CCD2A /* Cocoa.framework */,
+				36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */,
+				36C3D95D15C74062003CCD2A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36C3D95D15C74062003CCD2A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D95E15C74062003CCD2A /* AppKit.framework */,
+				36C3D95F15C74062003CCD2A /* CoreData.framework */,
+				36C3D96015C74062003CCD2A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		36C3D99615C771FC003CCD2A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D99715C771FC003CCD2A /* GameStateDescriptor.h */,
+				36C3D99915C771FC003CCD2A /* PGBotEngineProtocol.h */,
+			);
+			name = include;
+			path = ../include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36FE1B4C15CCE90F003310F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				369C5B0715D0C14F002028C8 /* CompileError.h in Headers */,
+				369C5B0915D0C14F002028C8 /* GemBot+BinaryCompiler.h in Headers */,
+				369C5B0B15D0C14F002028C8 /* GemBot+Compiler.h in Headers */,
+				369C5B0D15D0C14F002028C8 /* GemBot+SourceCodeCompiler.h in Headers */,
+				369C5B0F15D0C14F002028C8 /* Opcode.h in Headers */,
+				369C5B1115D0C14F002028C8 /* GemBot+Collision.h in Headers */,
+				369C5B1315D0C14F002028C8 /* GemBot+Communication.h in Headers */,
+				369C5B1515D0C14F002028C8 /* GemBot+Devices.h in Headers */,
+				369C5B1715D0C14F002028C8 /* GemBot+Heat.h in Headers */,
+				369C5B1915D0C14F002028C8 /* GemBot+Interface.h in Headers */,
+				369C5B1B15D0C14F002028C8 /* GemBot+Memory.h in Headers */,
+				369C5B1D15D0C14F002028C8 /* GemBot+Movement.h in Headers */,
+				369C5B1F15D0C14F002028C8 /* GemBot+Operations.h in Headers */,
+				369C5B2115D0C14F002028C8 /* GemBot+Reset.h in Headers */,
+				369C5B2315D0C14F002028C8 /* GemBot+Runtime.h in Headers */,
+				369C5B2515D0C14F002028C8 /* GemBot+Stats.h in Headers */,
+				369C5B2715D0C14F002028C8 /* GemBot+SystemCalls.h in Headers */,
+				369C5B2915D0C14F002028C8 /* GemBot.h in Headers */,
+				369C5B2B15D0C14F002028C8 /* NativeEngine-Prefix.pch in Headers */,
+				369C5B2C15D0C14F002028C8 /* Explosion.h in Headers */,
+				369C5B2E15D0C14F002028C8 /* Mine+Interface.h in Headers */,
+				369C5B3015D0C14F002028C8 /* Mine.h in Headers */,
+				369C5B3215D0C14F002028C8 /* Missile+Interface.h in Headers */,
+				369C5B3415D0C14F002028C8 /* Missile.h in Headers */,
+				369C5B3615D0C14F002028C8 /* Scan.h in Headers */,
+				369C5B3815D0C14F002028C8 /* Wall.h in Headers */,
+				369C5B3A15D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.h in Headers */,
+				369C5B3C15D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.h in Headers */,
+				369C5B3E15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.h in Headers */,
+				369C5B4015D0C14F002028C8 /* PGBotNativeEngine+CommPhase.h in Headers */,
+				369C5B4215D0C14F002028C8 /* PGBotNativeEngine+DealDamage.h in Headers */,
+				369C5B4415D0C14F002028C8 /* PGBotNativeEngine+Explosions.h in Headers */,
+				369C5B4615D0C14F002028C8 /* PGBotNativeEngine+GameManagement.h in Headers */,
+				369C5B4815D0C14F002028C8 /* PGBotNativeEngine+Heat.h in Headers */,
+				369C5B4A15D0C14F002028C8 /* PGBotNativeEngine+Interface.h in Headers */,
+				369C5B4C15D0C14F002028C8 /* PGBotNativeEngine+Movement.h in Headers */,
+				369C5B4E15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.h in Headers */,
+				369C5B5015D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.h in Headers */,
+				369C5B5215D0C14F002028C8 /* PGBotNativeEngine+Runtime.h in Headers */,
+				369C5B5415D0C14F002028C8 /* PGBotNativeEngine.h in Headers */,
+				369C5B5615D0C14F002028C8 /* CollideableObject.h in Headers */,
+				369C5B5715D0C14F002028C8 /* RandomProtocol.h in Headers */,
+				369C5B5815D0C14F002028C8 /* TangibleObject.h in Headers */,
+				369C5B5A15D0C14F002028C8 /* EngineDefinitions.h in Headers */,
+				369C5B5B15D0C14F002028C8 /* EngineUtility.h in Headers */,
+				369C5B5D15D0C14F002028C8 /* MoveableObject.h in Headers */,
+				369C5B5E15D0C14F002028C8 /* OrientedObject.h in Headers */,
+				369C5B5F15D0C14F002028C8 /* Random.h in Headers */,
+				369C5B6115D0C14F002028C8 /* TurretedObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		36FE1B0815CCE787003310F0 /* GemBotEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36FE1B1615CCE787003310F0 /* Build configuration list for PBXNativeTarget "GemBotEngine" */;
+			buildPhases = (
+				36FE1B0515CCE787003310F0 /* Sources */,
+				36FE1B0615CCE787003310F0 /* Frameworks */,
+				36FE1B0715CCE787003310F0 /* Resources */,
+				36FE1B4C15CCE90F003310F0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				369C5EBA15D0C1B0002028C8 /* PBXTargetDependency */,
+			);
+			name = GemBotEngine;
+			productName = NativeEngine;
+			productReference = 36FE1B0915CCE787003310F0 /* GemBotEngine.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36C3D94F15C74062003CCD2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Christopher Lipa";
+			};
+			buildConfigurationList = 36C3D95215C74062003CCD2A /* Build configuration list for PBXProject "GemBotEngine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 36C3D94D15C74062003CCD2A;
+			productRefGroup = 36C3D95915C74062003CCD2A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 369C5E9F15D0C18C002028C8 /* Products */;
+					ProjectRef = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				36FE1B0815CCE787003310F0 /* GemBotEngine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		369C5EA615D0C18C002028C8 /* SBJson.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SBJson.framework;
+			remoteRef = 369C5EA515D0C18C002028C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		369C5EA815D0C18C002028C8 /* SBJsonTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SBJsonTests.octest;
+			remoteRef = 369C5EA715D0C18C002028C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		369C5EAA15D0C18C002028C8 /* libsbjson-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libsbjson-ios.a";
+			remoteRef = 369C5EA915D0C18C002028C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		369C5EAC15D0C18C002028C8 /* sbjson-iosTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "sbjson-iosTests.octest";
+			remoteRef = 369C5EAB15D0C18C002028C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36FE1B0715CCE787003310F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				369C5B6215D0C14F002028C8 /* Constants.txt in Resources */,
+				369C5B6315D0C14F002028C8 /* DefaultVariables.txt in Resources */,
+				369C5B6415D0C14F002028C8 /* Devices.txt in Resources */,
+				369C5B6515D0C14F002028C8 /* Opcodes.txt in Resources */,
+				369C5B6615D0C14F002028C8 /* SystemCalls.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36FE1B0515CCE787003310F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				369C5B0815D0C14F002028C8 /* CompileError.m in Sources */,
+				369C5B0A15D0C14F002028C8 /* GemBot+BinaryCompiler.m in Sources */,
+				369C5B0C15D0C14F002028C8 /* GemBot+Compiler.m in Sources */,
+				369C5B0E15D0C14F002028C8 /* GemBot+SourceCodeCompiler.m in Sources */,
+				369C5B1015D0C14F002028C8 /* Opcode.m in Sources */,
+				369C5B1215D0C14F002028C8 /* GemBot+Collision.m in Sources */,
+				369C5B1415D0C14F002028C8 /* GemBot+Communication.m in Sources */,
+				369C5B1615D0C14F002028C8 /* GemBot+Devices.m in Sources */,
+				369C5B1815D0C14F002028C8 /* GemBot+Heat.m in Sources */,
+				369C5B1A15D0C14F002028C8 /* GemBot+Interface.m in Sources */,
+				369C5B1C15D0C14F002028C8 /* GemBot+Memory.m in Sources */,
+				369C5B1E15D0C14F002028C8 /* GemBot+Movement.m in Sources */,
+				369C5B2015D0C14F002028C8 /* GemBot+Operations.m in Sources */,
+				369C5B2215D0C14F002028C8 /* GemBot+Reset.m in Sources */,
+				369C5B2415D0C14F002028C8 /* GemBot+Runtime.m in Sources */,
+				369C5B2615D0C14F002028C8 /* GemBot+Stats.m in Sources */,
+				369C5B2815D0C14F002028C8 /* GemBot+SystemCalls.m in Sources */,
+				369C5B2A15D0C14F002028C8 /* GemBot.m in Sources */,
+				369C5B2D15D0C14F002028C8 /* Explosion.m in Sources */,
+				369C5B2F15D0C14F002028C8 /* Mine+Interface.m in Sources */,
+				369C5B3115D0C14F002028C8 /* Mine.m in Sources */,
+				369C5B3315D0C14F002028C8 /* Missile+Interface.m in Sources */,
+				369C5B3515D0C14F002028C8 /* Missile.m in Sources */,
+				369C5B3715D0C14F002028C8 /* Scan.m in Sources */,
+				369C5B3915D0C14F002028C8 /* Wall.m in Sources */,
+				369C5B3B15D0C14F002028C8 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */,
+				369C5B3D15D0C14F002028C8 /* PGBotNativeEngine+CleanPhase.m in Sources */,
+				369C5B3F15D0C14F002028C8 /* PGBotNativeEngine+CollisionDetection.m in Sources */,
+				369C5B4115D0C14F002028C8 /* PGBotNativeEngine+CommPhase.m in Sources */,
+				369C5B4315D0C14F002028C8 /* PGBotNativeEngine+DealDamage.m in Sources */,
+				369C5B4515D0C14F002028C8 /* PGBotNativeEngine+Explosions.m in Sources */,
+				369C5B4715D0C14F002028C8 /* PGBotNativeEngine+GameManagement.m in Sources */,
+				369C5B4915D0C14F002028C8 /* PGBotNativeEngine+Heat.m in Sources */,
+				369C5B4B15D0C14F002028C8 /* PGBotNativeEngine+Interface.m in Sources */,
+				369C5B4D15D0C14F002028C8 /* PGBotNativeEngine+Movement.m in Sources */,
+				369C5B4F15D0C14F002028C8 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */,
+				369C5B5115D0C14F002028C8 /* PGBotNativeEngine+RobotDeath.m in Sources */,
+				369C5B5315D0C14F002028C8 /* PGBotNativeEngine+Runtime.m in Sources */,
+				369C5B5515D0C14F002028C8 /* PGBotNativeEngine.m in Sources */,
+				369C5B5915D0C14F002028C8 /* EngineDefinitions.c in Sources */,
+				369C5B5C15D0C14F002028C8 /* EngineUtility.m in Sources */,
+				369C5B6015D0C14F002028C8 /* Random.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		369C5EBA15D0C1B0002028C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SBJson;
+			targetProxy = 369C5EB915D0C1B0002028C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		36C3D96715C74062003CCD2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../include/,
+					"../external/**",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		36C3D96815C74062003CCD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../include/,
+					"../external/**",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		36FE1B1715CCE787003310F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "resources/GemBotEngine-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		36FE1B1815CCE787003310F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "resources/GemBotEngine-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C3D95215C74062003CCD2A /* Build configuration list for PBXProject "GemBotEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C3D96715C74062003CCD2A /* Debug */,
+				36C3D96815C74062003CCD2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36FE1B1615CCE787003310F0 /* Build configuration list for PBXNativeTarget "GemBotEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36FE1B1715CCE787003310F0 /* Debug */,
+				36FE1B1815CCE787003310F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36C3D94F15C74062003CCD2A /* Project object */;
+}

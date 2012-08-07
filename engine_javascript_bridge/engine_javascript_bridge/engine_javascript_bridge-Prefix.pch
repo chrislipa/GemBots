@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'engine_javascript_bridge' target in the 'engine_javascript_bridge' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
