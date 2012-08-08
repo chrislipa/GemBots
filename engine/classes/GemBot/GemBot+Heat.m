@@ -8,9 +8,11 @@
 
 #import "GemBot+Heat.h"
 #import "GemBot+Stats.h"
+#import "GemBot+Interface.h"
+
 @implementation GemBot (Heat)
 -(void) heatPhase {
-    internal_armor += [self damageFromHeatPerGameCycle];
-    internal_heat -= [self heatReductionPerGameCycle];
+    [self dealInternalDamage:[self damagePerGameCycle]];
+    [self dealInternalHeat:[self deltaHeatPerGameCycle]];
 }
 @end

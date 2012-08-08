@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
+
+#ifndef UtilityEngineH
+#define UtilityEngineH
 #import <Foundation/Foundation.h>
 
 #import "EngineDefinitions.h"
@@ -16,33 +19,33 @@
 
 NSString* pathToTextFile(NSString* file) ;
 
-lint roundedDivision(lint numerator, lint denominator);
+unit roundedDivision(unit numerator, unit denominator);
 NSDictionary* constantDictionary();
 NSDictionary* defaultVariablesDictionary();
 int readInteger(NSString* s);
 NSString* uuid();
 
-unit getAngleTo(lint x, lint y);
+unit getAngleTo(unit x, unit y);
 int turretRelativeInternalHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b) ;
 int anglemod(int a);
-unit intsqrt(lint x);
+unit intsqrt(unit x);
 unit internal_distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int distance_between(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int heading(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b);
 int relativeHeading(NSObject<OrientedObject>* a, NSObject<TangibleObject>* b);
 int turretRelativeHeading(NSObject<TurretedObject>* a, NSObject<TangibleObject>* b);
-int roundInternalDistanceToDistance(lint d);
-lint distanceToInternalDistance(int d) ;
+int roundInternalDistanceToDistance(unit d);
+unit distanceToInternalDistance(int d) ;
 
-int roundInternalHeatToHeat(lint d);
-lint heatToInternalHeat(int d) ;
+int roundInternalHeatToHeat(unit d);
+const unit heatToInternalHeat(const int d) ;
 
-int roundInternalArmorToArmor(lint d) ;
-lint armorToInternalArmor(int d) ;
+int roundInternalArmorToArmor(unit d) ;
+unit armorToInternalArmor(int d) ;
 
 bool isObjectOutOfBounds(NSObject<TangibleObject>* a);
 
-void separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, lint distance);
+void separateObjectsBy(NSObject<TangibleObject>* a, NSObject<TangibleObject>* b, unit distance);
 
 position positionWithUnits(unit px, unit py);
 position positionWithInts(int x, int y);
@@ -64,3 +67,5 @@ unit convertIntToUnit(int z);
 NSArray* delimit(NSString* s);
 unit convert_angle(int hexangle);
 #define MAX_UNIT DBL_MAX
+
+#endif

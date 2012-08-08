@@ -78,6 +78,7 @@
     
     int numberOfMissilesFired, numberOfMissilesConnected;
     int numberOfMinesLayed, numberOfMinesConnected;
+    int numberOfMinesRemaining;
     int numberOfTimesHit;
     int lastTimeFiredShotHitATank;
     bool hasFiredShotEverHitTank;
@@ -128,7 +129,8 @@
     int internal_shutdown_temp;
     
     
-    
+    int gameCycleOfLastDetection;
+    bool hasEverBeenDetected;
     
     int order;
     int orderingInt;
@@ -149,12 +151,12 @@
 
 @property (readwrite,assign) int relativeHeadingOfMostRecentlyScannedTankAtTimeOfScan;
 @property (readwrite,assign) int speedOfMostRecentlyScannedTankAtTimeOfScan;
-@property (readwrite,assign) lint queued_dx;
-@property (readwrite,assign) lint queued_dy;
+@property (readwrite,assign) unit queued_dx;
+@property (readwrite,assign) unit queued_dy;
 
 @property (readwrite,assign) int lastCollisionTime;
 @property (readwrite,assign) int number_of_collisions;
-@property (readwrite,assign) lint internal_armor;
+@property (readwrite,assign) unit internal_armor;
 @property (readwrite,retain) GemBot* mostRecentlyScannedTank;
 @property (readwrite, assign) position internal_position;
 @property (readwrite,assign)  bool isAlive;
@@ -199,6 +201,7 @@
 @property (readwrite,assign) int numberOfMissilesFired;
 @property (readwrite,assign) int numberOfMissilesConnected;
 @property (readwrite,assign) int numberOfMinesLayed;
+@property (readwrite,assign) int numberOfMinesRemaining;
 @property (readwrite,assign) int numberOfMinesConnected;
 @property (readwrite,assign) int numberOfTimesHit;
 

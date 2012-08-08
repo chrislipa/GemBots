@@ -92,7 +92,7 @@ MasterController* staticMasterController = nil;
     appBundle = [NSBundle mainBundle];
     bundlePaths = [appBundle pathsForResourcesOfType:@"bundle" inDirectory:nil];
     for (NSString* path in bundlePaths) {
-        if ([[path lastPathComponent] isEqualTo:@"NativeEngine.bundle"]) {
+        if ([[path lastPathComponent] isEqualTo:@"GemBotEngine.bundle"]) {
             NSBundle* bundle = [NSBundle bundleWithPath:path];
             [bundle load];
             return;

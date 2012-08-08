@@ -16,8 +16,8 @@
 @synthesize owner;
 @synthesize internal_speed;
 @synthesize damageMultipiler;
--(lint) internal_radius {
-    return MISSILE_RADIUS;
+-(unit) internal_radius {
+    return MISSILE_INTERNAL_RADIUS;
 }
 
 -(int) x {

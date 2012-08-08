@@ -76,6 +76,7 @@
 		362A929515D0B75200E2817F /* close_button_red_icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 362A924B15D0B75200E2817F /* close_button_red_icon_40.png */; };
 		362A929615D0B75200E2817F /* close_button_red_icon_40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362A924C15D0B75200E2817F /* close_button_red_icon_40@2x.png */; };
 		362A929715D0B75200E2817F /* close_button_red_icon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 362A924D15D0B75200E2817F /* close_button_red_icon_80.png */; };
+		3651727F15D22042005C5D0F /* GemBotEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */; };
 		3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
 		369C5ED715D0C761002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608928315BE876D00A06C94 /* Foundation.framework */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
@@ -84,6 +85,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3613070415D0D9DB00AE5610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36FE1B0915CCE787003310F0;
+			remoteInfo = GemBotEngine;
+		};
+		3651727D15D21FFC005C5D0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 36FE1B0815CCE787003310F0;
+			remoteInfo = GemBotEngine;
+		};
 		36C1915215D0BC6600A79D5F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
@@ -132,6 +147,7 @@
 		360892BA15BE876D00A06C94 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		360892BC15BE876D00A06C94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		360892BE15BE876D00A06C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GemBotEngine.xcodeproj; path = engine/GemBotEngine.xcodeproj; sourceTree = "<group>"; };
 		362A91E015D0B75200E2817F /* Gem Bots-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Gem Bots-Prefix.pch"; sourceTree = "<group>"; };
 		362A91E115D0B75200E2817F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		362A91E215D0B75200E2817F /* PGBotApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotApplication.h; sourceTree = "<group>"; };
@@ -254,6 +270,7 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */,
 				362A91DE15D0B75200E2817F /* classes */,
 				362A921B15D0B75200E2817F /* resources */,
 				362A924E15D0B75200E2817F /* include */,
@@ -296,6 +313,14 @@
 				3608928315BE876D00A06C94 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		361306FD15D0D9DA00AE5610 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		362A91DE15D0B75200E2817F /* classes */ = {
@@ -553,6 +578,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3651727E15D21FFC005C5D0F /* PBXTargetDependency */,
 				36C1915B15D0BC7700A79D5F /* PBXTargetDependency */,
 			);
 			name = "Gem Bots";
@@ -580,6 +606,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 361306FD15D0D9DA00AE5610 /* Products */;
+					ProjectRef = 361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */;
+				},
+				{
 					ProductGroup = 36C1914915D0BC6500A79D5F /* Products */;
 					ProjectRef = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
 				},
@@ -592,6 +622,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GemBotEngine.bundle;
+			remoteRef = 3613070415D0D9DB00AE5610 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		36C1915315D0BC6600A79D5F /* SBJson.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -672,6 +709,7 @@
 				362A929615D0B75200E2817F /* close_button_red_icon_40@2x.png in Resources */,
 				362A929715D0B75200E2817F /* close_button_red_icon_80.png in Resources */,
 				36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */,
+				3651727F15D22042005C5D0F /* GemBotEngine.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +750,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3651727E15D21FFC005C5D0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GemBotEngine;
+			targetProxy = 3651727D15D21FFC005C5D0F /* PBXContainerItemProxy */;
+		};
 		36C1915B15D0BC7700A79D5F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SBJson;

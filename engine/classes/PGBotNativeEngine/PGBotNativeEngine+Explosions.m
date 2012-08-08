@@ -40,7 +40,6 @@
     for (GemBot* b in robots) {
         if (b.markForSelfDestruction) {
             [b die];
-            [self createExplosionAt:b ofRadius:ROBOT_DEATH_EXPLOSION_RADIUS andDamageMultiplier:1.0];
         }
     }
     return [self dealWithExplosions];

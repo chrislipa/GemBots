@@ -6,8 +6,12 @@
 //  Copyright (c) 2012 Christopher Lipa. All rights reserved.
 //
 
-#include <stdio.h>
-const int left_filled_mask[33] = {
+
+
+
+#include "EngineDefinitions.h"
+
+int left_filled_mask[33] = {
     0b00000000000000000000000000000000,
     0b10000000000000000000000000000000,
     0b11000000000000000000000000000000,
@@ -43,7 +47,7 @@ const int left_filled_mask[33] = {
     0b11111111111111111111111111111111
 };
 
-const int right_filled_mask[33] = {
+int right_filled_mask[33] = {
     0x00000000,
     0x00000001,
     0x00000003,
@@ -78,3 +82,5 @@ const int right_filled_mask[33] = {
     0x7FFFFFFF,
     0xFFFFFFFF
 };
+
+

@@ -13,6 +13,7 @@
 #import "Explosion.h"
 #import "GemBot+Stats.h"
 #import "GemBot+Movement.h"
+#import "GemBot+Stats.h"
 
 @implementation GemBot (Interface)
 
@@ -38,13 +39,23 @@
 }
 
 -(void) dealInternalDamage:(unit) damage  {
-    internal_armor -= damage;
+    internal_armor = MAX(0,internal_armor- damage);
+}
+
+-(void) dealInternalHeat:(unit) delta_heat {
+    internal_heat = MAX(0, MIN(500, internal_heat+ delta_heat));
+}
+
+-(void) notifyOfDetectionByOtherRobot {
+    hasEverBeenDetected = YES;
+    gameCycleOfLastDetection = [engine gameCycle];
 }
 
 -(void) die {
     internal_armor = 0;
     internal_heat = 0;
     isAlive = NO;
+    [engine createExplosionAt:self ofRadius:ROBOT_DEATH_EXPLOSION_RADIUS andDamageMultiplier:[self  tankExplosionDamageMultiplier]];
 }
 
 

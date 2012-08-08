@@ -9,77 +9,65 @@
 #import "GemBot+Stats.h"
 #import "EngineUtility.h"
 #import "EngineDefinitions.h"
-
-const int scan_radius_config_options[6] = {250,500,750,1000,1250,1500};
-const lint weapon_percentage_config_options[6] = {50,80,100,120,135,150};
-const lint number_of_mines_config_options[6] = {2,4,6,10,16,24};
-const int armor_percentage_config_options[6] = {50,66,100,120,130,150};
-const lint armor_speed_percentage_config_options[6] = {133,120,100,85,75,66};
-const lint shield_config_options[6] = {0,0,0,67,50,33};
-const lint heatsink_config_options[6] = {750,1000,1125,1250,1330,1500};
-const lint engine_config_options[6] = {50,80,100,120,135,150};
-
-
-const lint speedPercentageMultiplierFromHeat[5][2] ={
-    {80*HEAT_MULTIPLIER,100},
-    {100*HEAT_MULTIPLIER,98},
-    {150*HEAT_MULTIPLIER,85},
-    {200*HEAT_MULTIPLIER,70},
-    {INT64_MAX,50}
-};
-    
-
-
-lint indexInto(const lint a[][2], lint v) {
-    for (int i =0; ; i++) {
-        if (v < a[i][0]) {
-            return a[i][1];
-        }
-    }
-    return 0;
-}
-
+#import "gameparameters.h"
 
 @implementation GemBot (Stats)
 
--(int) numberOfMinesConfig {
+-(int) numberOfStartingMines {
     return number_of_mines_config_options[config_mines];
 }
 
--(lint) initialInternalArmor {
-    return armorToInternalArmor(INITIAL_ARMOR) * convertIntToUnit( armor_percentage_config_options[config_armor])/100.0;
+-(unit) initialInternalArmor {
+    return armorToInternalArmor(INITIAL_ARMOR) * armor_percentage_config_options[config_armor];
 }
--(lint) internalScanRadius {
+-(unit) internalScanRadius {
     return distanceToInternalDistance(scan_radius_config_options[config_scanner]);
 }
 
 
 -(unit) heatFromFiringMissile {
-    return heatToInternalHeat(HEAT_FROM_FIRING_MISSILE)*weapon_percentage_config_options[config_weapon]/100.0*(overburnOn?1.25:1);
-}
--(unit) heatDissipationPerRound {
-    return 1;
+    return heatToInternalHeat(HEAT_FROM_FIRING_MISSILE)*weapon_percentage_config_options[config_weapon]*(overburnOn?1.25:1);
 }
 
--(lint) maxSpeedNumerator {
-    return distanceToInternalDistance( SPEED_OF_ROBOT )  * armor_speed_percentage_config_options[config_armor] * engine_config_options[config_engine] * (overburnOn?13:10) * indexInto(speedPercentageMultiplierFromHeat, internal_heat) ;
-}
--(lint) maxSpeedDenomenator {
-    return 100 * 100 * 10 * 100;
+
+-(unit) internalMaxSpeed {
+    return distanceToInternalDistance( DEFAULT_ROBOT_SPEED )  * armor_speed_percentage_config_options[config_armor] * engine_config_options[config_engine] * (overburnOn?OVER_DRIVE_MODIFICATION_TO_SPEED:1.0) * distanceToInternalDistance(indexInto(speedPercentageMultiplierFromHeat, internal_heat)) ;
 }
 
 -(unit) internal_speed_for_missile {
-    return ((double)(DEFAULT_MISSILE_SPEED) )* weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn?1.25:1.0);
+    return (distanceToInternalDistance(DEFAULT_MISSILE_SPEED) )* weapon_percentage_config_options[config_weapon] * (overburnOn?OVER_DRIVE_MODIFICATION_TO_MISSILE_VELOCITY:1.0);
 }
 -(unit) missileDamageMultiplier {
-    return weapon_percentage_config_options[config_weapon] / 100.0 * (overburnOn? 1.25:1.0);
+    return weapon_percentage_config_options[config_weapon] * (overburnOn? OVER_DRIVE_MODIFICATION_TO_MISSILE_DAMAGE:1.0);
 }
 
--(unit) damageFromHeatPerGameCycle {
-    return 0;
+-(unit) damagePerGameCycle {
+    unit damageFromHeatPerGameCycle = armorToInternalArmor(indexInto(damagePerTurnFromHeat, internal_heat));
+    
+    return damageFromHeatPerGameCycle;
 }
--(unit) heatReductionPerGameCycle {
-    return 1;
+
+-(unit) tankExplosionDamageMultiplier {
+    return (overburnOn?OVER_DRIVE_MODIFICATION_TO_DAMAGE_FROM_TANK_EXPLOSION:1.0);
+}
+
+-(unit) deltaHeatPerGameCycle {
+
+    unit heatDissapation=0 , heatIncrease = 0;
+    if (ABS(throttle) <= THROTTLE_THRESHHOLD_FOR_SLOW_HEAT_DISSAPATION) {
+        heatDissapation += heatToInternalHeat(HEAT_DISSAPATION_WHILE_SLOW);
+    } else {
+        heatDissapation += heatToInternalHeat(STANDARD_HEAT_DISSAPATION);
+    }
+    heatDissapation *= heatsink_config_options[config_heatsinks];
+    if (overburnOn) {
+        heatDissapation *= OVER_DRIVE_HEAT_GENERATION_MULTIPLIER;
+    }
+    if (shieldOn) {
+        heatDissapation = 0;
+        heatIncrease += HEAT_EACH_TURN_FROM_SHIELD;
+    }
+    return heatIncrease - heatDissapation;
 }
 
 @end

@@ -19,7 +19,7 @@
 }
 
 -(void) throttlew {
-    self.throttle = op2;
+    self.throttle = MAX(MIN_THROTTLE, MIN(MAX_THROTTLE, op2));
 }
 
 
@@ -90,9 +90,10 @@
 //10 0 mine w
 
 -(void) minew {
-    if (numberOfMinesLayed < [self numberOfMinesConfig]) {
+    if (numberOfMinesRemaining > 0) {
         [engine layMineAt:internal_position withOwner:self andRadius:distanceToInternalDistance(op2)];
         numberOfMinesLayed++;
+        numberOfMinesRemaining--;
     } else {
         [self executionError:@"No mines to lay."];
     }

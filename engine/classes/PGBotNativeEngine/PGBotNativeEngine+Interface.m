@@ -29,8 +29,8 @@
 
 
 -(int) computeRadarFromBot:(GemBot*)bot {
-    lint internal_rv = -1;
-    lint internalScanRadius = bot.internalScanRadius;
+    unit internal_rv = -1;
+    unit internalScanRadius = bot.internalScanRadius;
     for (GemBot* g in robots) {
         if ([g isAlive] && g != bot) {
             unit distance = internal_distance_between(g, bot);
@@ -60,11 +60,11 @@
 }
 
 -(int) computeWideRadarFromBot:(GemBot*)bot {
-    lint internal_rv = -1;
-    lint radius = bot.internalScanRadius;
+    unit internal_rv = -1;
+    unit radius = bot.internalScanRadius;
     for (GemBot* g in robots) {
         if ([g isAlive] && g != bot) {
-            lint distance = internal_distance_between(g, bot);
+            unit distance = internal_distance_between(g, bot);
             if (distance <= radius ) {
                 if (distance < internal_rv || internal_rv == -1) {
                     internal_rv = distance;
@@ -87,7 +87,7 @@
 
 
 -(int) computeSonarFromBot:(GemBot*)bot {
-    lint internal_rv = -1;
+    unit internal_rv = -1;
     for (GemBot* g in robots) {
         if ([g isAlive] && g != bot) {
             int distance = distance_between(g, bot);
@@ -119,7 +119,7 @@
     [mines addObject:mine];
 }
 
--(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(lint)r andDamageMultiplier:(unit)multiplier {
+-(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(unit)r andDamageMultiplier:(unit)multiplier {
     Explosion* e = [[Explosion alloc] init];
     e.internal_position = a.internal_position;
     e.internal_radius = r;

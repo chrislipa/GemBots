@@ -41,6 +41,7 @@
 -(int) numberOfMissilesFired;
 -(int) numberOfMissilesConnected;
 -(int) numberOfMinesLayed;
+-(int) numberOfMinesRemaining;
 -(int) numberOfMinesConnected;
 -(int) numberOfTimesHit;
 

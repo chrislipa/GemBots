@@ -69,12 +69,22 @@
     }
 }
 
+-(void) resetROMMemory {
+    memory[DESIRED_HEADING] = desiredHeading;
+    memory[DESIRED_THROTTLE] = throttle;
+    memory[TURRET_OFFSET] = turretHeading;
+    memory[TIME_SINCE_DETECTION] = (hasEverBeenDetected?[engine gameCycle] - gameCycleOfLastDetection:MAX_ROBOT_MEMORY_VALUE);
+    
+}
+
 
 
 -(void) executeClockCycles:(int) clockCycles  {
     savedClockCycles += clockCycles;
     
     while (TRUE) {
+        [self resetROMMemory];
+        
         
         int ip = memory[IP];
         int extended_opcode = [self getMemory:ip];

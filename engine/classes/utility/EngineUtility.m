@@ -127,33 +127,29 @@ NSString* uuid() {
 
 
 unit angleInNormalCoordinatesAndRadians(position p) {
-    unit nx = p.x;
-    unit ny = p.y;
-    lint x = ABS(nx);
-    lint y = ABS(ny);
+    
+    unit x = ABS(p.x);
+    unit y = ABS(p.y);
     bool swapped = NO;
     if (x < y) {
         swap(&y,&x);
         swapped = YES;
     }
     
-    unit nangle = atan(y/x)  ;
+    unit angle = atan(y/x)  ;
+    
     if (swapped) {
-        nangle =( M_PI/2.0) - nangle;
+        angle =( M_PI/2.0) - angle;
+    }
+    if (p.x <= 0) {
+        angle = M_PI - angle ;
+    }
+    if (p.y <= 0) {
+        angle = 2 * M_PI - angle ;
     }
     
-    unit return_angle;
     
-    if  (nx >= 0 && ny >= 0) {
-        return_angle = nangle;
-    } else if (nx <= 0 && ny >= 0) {
-         return_angle = M_PI - nangle ;
-    } else if (nx < 0 && ny <= 0) {
-        return_angle = M_PI + nangle;
-    } else if (nx >= 0 && ny <= 0) {
-        return_angle = M_PI*2 - nangle;
-    }
-    return return_angle;
+    return angle;
 }
 
 
@@ -246,15 +242,15 @@ int roundInternalDistanceToDistance(unit d) {
     return roundUnitToInt(d);
 }
 
-lint distanceToInternalDistance(int d) {
+unit distanceToInternalDistance(int d) {
     return convertIntToUnit(d);
 }
 
-int roundInternalHeatToHeat(lint d) {
+int roundInternalHeatToHeat(unit d) {
     return roundUnitToInt(d);
 }
 
-lint heatToInternalHeat(int d) {
+const unit heatToInternalHeat(const int d) {
     return convertIntToUnit(d);
 }
 

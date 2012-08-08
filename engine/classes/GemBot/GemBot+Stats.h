@@ -8,16 +8,17 @@
 
 #import "GemBot.h"
 
+
 @interface GemBot (Stats)
 
--(lint) internalScanRadius;
--(lint) maxSpeedNumerator;
--(lint) maxSpeedDenomenator;
--(lint) initialInternalArmor;
+-(unit) internalScanRadius;
+-(unit) internalMaxSpeed;
+-(unit) initialInternalArmor;
 -(unit) internal_speed_for_missile;
 -(unit) missileDamageMultiplier;
--(int) numberOfMinesConfig;
+-(int)  numberOfStartingMines;
 -(unit) heatFromFiringMissile;
--(unit) damageFromHeatPerGameCycle;
--(unit) heatReductionPerGameCycle;
+-(unit) damagePerGameCycle;
+-(unit) tankExplosionDamageMultiplier;
+-(unit) deltaHeatPerGameCycle ;
 @end

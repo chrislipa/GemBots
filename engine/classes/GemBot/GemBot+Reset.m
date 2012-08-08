@@ -34,7 +34,7 @@
     [self reboot];
     
     internal_armor =  [self initialInternalArmor];
-    internal_heat =  0;
+    internal_heat =  heatToInternalHeat(INITIAL_HEAT);
     
     
     
@@ -47,7 +47,7 @@
     turretHeading = desiredHeading = heading;
     
     
-    speed_in_terms_of_throttle =  throttle = 0;
+    speed_in_terms_of_throttle =  throttle = STARTING_THROTTLE;
     shieldOn = 0;
     overburnOn = 0;
     keepshiftOn = NO;
@@ -56,6 +56,7 @@
     everTakenDamage = NO;
     numberOfMissilesFired =  numberOfMissilesConnected = 0;
     numberOfMinesLayed = numberOfMinesConnected = 0;
+    numberOfMinesRemaining = [self numberOfStartingMines];
     numberOfTimesHit = 0;
     lastTimeFiredShotHitATank = 0;
     hasFiredShotEverHitTank = NO;

@@ -22,4 +22,7 @@
 
 -(void) updateThrottle;
 
+-(void) notifyOfDetectionByOtherRobot;
+
+-(void) dealInternalHeat:(unit) heat ;
 @end

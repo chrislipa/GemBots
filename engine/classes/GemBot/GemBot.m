@@ -15,7 +15,9 @@
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
 #import "Wall.h"
+#import "GameParameters.h"
 #import "GemBot+Collision.h"
+#import "EngineDefinitions.h"
 @implementation GemBot
 @synthesize order;
 @synthesize orderingInt;
@@ -50,6 +52,7 @@
 @synthesize numberOfMissilesFired;
 @synthesize numberOfMissilesConnected;
 @synthesize numberOfMinesLayed;
+@synthesize numberOfMinesRemaining;
 @synthesize numberOfMinesConnected;
 @synthesize numberOfTimesHit;
 @synthesize team;
@@ -119,7 +122,7 @@
 
 
 
--(lint) internal_radius {
+-(unit) internal_radius {
     return ROBOT_RADIUS;
 }
 
@@ -132,7 +135,7 @@
 
 
 -(int) armor {
-    return roundInternalArmorToArmor(internal_armor);
+    return (int)round((STARTING_ARMOR_FOR_UI * internal_armor) / [self initialInternalArmor]);
 }
 -(int) heat {
     return roundInternalHeatToHeat(internal_heat);
@@ -146,12 +149,12 @@
 
 
 -(void) dealloc {
-
     free(memory);
+    free(romMemory);
 }
 
 -(unit) internal_speed {
-    return distanceToInternalDistance(speed_in_terms_of_throttle)*[self maxSpeedNumerator]/([self maxSpeedDenomenator]*100);
+    return ((unit)speed_in_terms_of_throttle)/((unit)MAX_THROTTLE) *[self internalMaxSpeed];
 }
 
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {

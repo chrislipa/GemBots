@@ -10,12 +10,14 @@
 #import "GemBot+Stats.h"
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
+#import "GemBot+Stats.h"
+
 @implementation GemBot (Movement)
 
 
 
 -(int) speedInCM {
-    return roundInternalDistanceToDistance(distanceToInternalDistance(speed_in_terms_of_throttle)*[self maxSpeedNumerator]/([self maxSpeedDenomenator]));
+    return [self internalMaxSpeed] * speed_in_terms_of_throttle / MAX_THROTTLE * NUMBER_OF_CM_IN_M;
 }
 
 

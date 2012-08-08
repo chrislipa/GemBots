@@ -54,8 +54,8 @@
 -(void) find_angle {
     unit targetX = distanceToInternalDistance([self getMemory:EX]);
     unit targetY = distanceToInternalDistance([self getMemory:FX]);
-    lint deltaX = targetX - internal_position.x;
-    lint deltaY = targetY - internal_position.y;
+    unit deltaX = targetX - internal_position.x;
+    unit deltaY = targetY - internal_position.y;
     int angle = getRoundedAngleTo(deltaX,deltaY);
     [self setMemory:AX :angle];
 }
