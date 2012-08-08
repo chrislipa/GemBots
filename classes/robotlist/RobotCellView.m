@@ -146,8 +146,8 @@
 }
 
 -(void) refreshForGameCycle {
-    if (robotCellViewController.botContainer.robot.e) {
-        <#statements#>
+    if (robotCellViewController.botContainer.robot.executionLogString) {
+        [loggingLine setStringValue:robotCellViewController.botContainer.robot.executionLogString];
     }
     [self refreshHeatAndArmor];
 }

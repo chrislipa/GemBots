@@ -26,5 +26,5 @@
 
 -(void) dealInternalHeat:(unit) heat ;
 
--(void) loggingStatement:(int) x;
+
 @end

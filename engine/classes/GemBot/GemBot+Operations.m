@@ -14,6 +14,9 @@
 
 @implementation GemBot (Operations)
 
+
+
+
 //
 //0 1  nop
 -(void) nop {
@@ -274,44 +277,52 @@ int rotateLeft(int x, int d) {
     }
 }
 
-//44 -6 setb0 L R
--(void) setb0 {
+//44 -6 movb0 L R
+-(void) movb0 {
     int z = ([self getMemory:op1]& NOTB0) | ((op2 & B0)<<0);
     [self setMemory:op1 :z];
 }
-//45 -6 setb1 L R
--(void) setb1 {
+//45 -6 movb1 L R
+-(void) movb1 {
     int z = ([self getMemory:op1]& NOTB1) | ((op2 & B0)<<8);
     [self setMemory:op1 :z];
 }
-//46 -6 setb2 L R
--(void) setb2 {
+//46 -6 movb2 L R
+-(void) movb2 {
     int z = ([self getMemory:op1]& NOTB2) | ((op2 & B0)<<16);
     [self setMemory:op1 :z];
 }
-//47 -6 setb3 L R
--(void) setb3 {
+//47 -6 movb3 L R
+-(void) movb3 {
     int z = ([self getMemory:op1]& NOTB3) | ((op2 & B0)<<24);
     [self setMemory:op1 :z];
 }
-//48 -6 sets0 L R
--(void) sets0 {
+//48 -6 movs0 L R
+-(void) movs0 {
     int z = ([self getMemory:op1]& NOTS0) | ((op2 & S0)<<0);
     [self setMemory:op1 :z];
 }
-//49 -6 sets1 L R
--(void) sets1 {
+//49 -6 movs1 L R
+-(void) movs1 {
     int z = ([self getMemory:op1]& NOTS1) | ((op2 & S0)<<16);
     [self setMemory:op1 :z];
 }
 -(void) log {
-    [self executionLog:[NSString stringWithFormat:@"%d",op1]];
+    NSString* string = [strings objectForKey:[NSNumber numberWithInt:op2]];
+    if (string) {
+        [self executionLog:string];
+    } else {
+        [self executionError:[NSString stringWithFormat:@"Could not find string #%d", op2]];
+    }
 }
 
 -(void) logvalue {
-    [self executionLog:[NSString stringWithFormat:@"%@",[self loggingStatement:op2]]];
+    [self executionLog:[NSString stringWithFormat:@"Log Value: %d",op1]];
 }
 
+-(void) invalidopcode {
+    [self executionError:[NSString stringWithFormat:@"Invalid Opcode"]];
+}
 
 
 @end

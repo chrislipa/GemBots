@@ -19,6 +19,7 @@
 #import "GemBot+Collision.h"
 #import "EngineDefinitions.h"
 @implementation GemBot
+@synthesize strings;
 @synthesize executionLogString;
 @synthesize order;
 @synthesize orderingInt;
@@ -165,7 +166,7 @@
 }
 
 -(void) executionError:(NSString*) str {
-    
+    executionLogString = [NSString stringWithFormat:@"ERROR: %@", str];
 }
 -(void) executionLog:(NSString*) str {
     executionLogString = str;

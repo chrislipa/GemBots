@@ -24,7 +24,7 @@
 -(NSString*) descript;
 -(int) linesOfCode;
 -(NSString*) author;
-
+-(NSString*) executionLogString;
 -(int) x;
 -(int) y;
 -(int) heading;

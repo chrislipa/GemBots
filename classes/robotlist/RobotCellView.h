@@ -35,7 +35,7 @@
     IBOutlet NSView* backingView2;
     IBOutlet NSButton* compileErrorButton;
     
-    
+    IBOutlet NSTextField* loggingLine;
     
     //
     

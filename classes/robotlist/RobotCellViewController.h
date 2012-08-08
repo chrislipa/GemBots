@@ -16,6 +16,7 @@
     BattleDocumentViewController* documentController;
     IBOutlet RobotCellView* cell;
     BotContainer* botContainer;
+     
 }
 @property (readwrite,retain) IBOutlet RobotCellView* cell;
 @property (readonly) BattleDocumentViewController* documentController;

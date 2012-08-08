@@ -264,9 +264,6 @@
 		369C5AFF15D0C14F002028C8 /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Random.m; sourceTree = "<group>"; };
 		369C5B0015D0C14F002028C8 /* TurretedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurretedObject.h; sourceTree = "<group>"; };
 		369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = ../external/sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
-		369C5EC415D0C6C0002028C8 /* aa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "aa-Prefix.pch"; sourceTree = "<group>"; };
-		369C5EC515D0C6C0002028C8 /* aa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aa.h; sourceTree = "<group>"; };
-		369C5EC615D0C6C0002028C8 /* aa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aa.m; sourceTree = "<group>"; };
 		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		36C3D95F15C74062003CCD2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -572,24 +569,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		369C5EC215D0C6C0002028C8 /* aa */ = {
-			isa = PBXGroup;
-			children = (
-				369C5EC515D0C6C0002028C8 /* aa.h */,
-				369C5EC615D0C6C0002028C8 /* aa.m */,
-				369C5EC315D0C6C0002028C8 /* Supporting Files */,
-			);
-			path = aa;
-			sourceTree = "<group>";
-		};
-		369C5EC315D0C6C0002028C8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				369C5EC415D0C6C0002028C8 /* aa-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		36C3D94D15C74062003CCD2A = {
 			isa = PBXGroup;
 			children = (
@@ -597,7 +576,6 @@
 				369C5A9D15D0C14F002028C8 /* classes */,
 				36C3D99615C771FC003CCD2A /* include */,
 				369C5B6715D0C16D002028C8 /* external */,
-				369C5EC215D0C6C0002028C8 /* aa */,
 				36C3D95A15C74062003CCD2A /* Frameworks */,
 				36C3D95915C74062003CCD2A /* Products */,
 			);
