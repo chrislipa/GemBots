@@ -64,4 +64,8 @@
     speedOfMostRecentlyScannedTankAtTimeOfScan = mostRecentlyScannedTank.speedInCM;
 }
 
+-(NSString*) loggingStatement:(int) x {
+    return @"";
+}
+
 @end

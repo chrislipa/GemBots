@@ -134,7 +134,10 @@
     
     int order;
     int orderingInt;
+    
+    NSString* executionLogString;
 }
+@property (readwrite,retain) NSString* executionLogString;
 @property (readwrite,assign) int order;
 @property (readwrite,assign) int orderingInt;
 

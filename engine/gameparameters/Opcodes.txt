@@ -13,7 +13,7 @@
 12 1 rl L R
 13 1 rr L R
 14 2 swap L L
-15 1 set L R
+15 1 mov L R
 16 2 addr L L
 17 2 get L R
 18 2 put L R
@@ -42,12 +42,12 @@
 41 1 return returnI
 42 1 do R doI
 43 1 loop R loopI
-44 -6 setb0 L R
-45 -6 setb1 L R
-46 -6 setb2 L R
-47 -6 setb3 L R
-48 -6 sets0 L R
-49 -6 sets1 L R
+44 -6 movb0 L R
+45 -6 movb1 L R
+46 -6 movb2 L R
+47 -6 movb3 L R
+48 -6 movs0 L R
+49 -6 movs1 L R
 50 0 logv R logvalue
 50 0 log R
 

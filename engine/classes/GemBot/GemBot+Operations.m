@@ -112,7 +112,7 @@ int rotateLeft(int x, int d) {
     [self setMemory:op2 :tmp];
 }
 //15 1 set L R
--(void) set {
+-(void) mov {
     [self setMemory:op1 :op2];
 }
 //16 2 addr L L
@@ -307,4 +307,11 @@ int rotateLeft(int x, int d) {
 -(void) log {
     [self executionLog:[NSString stringWithFormat:@"%d",op1]];
 }
+
+-(void) logvalue {
+    [self executionLog:[NSString stringWithFormat:@"%@",[self loggingStatement:op2]]];
+}
+
+
+
 @end

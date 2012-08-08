@@ -17,8 +17,8 @@
 @implementation ArenaView
 @synthesize gameStateDescriptor;
 
-double convert_angle(int hexangle) {
-    return (((float)hexangle)/256.0) * M_PI * 2;
+double convert_angle_to_degrees(int hexangle) {
+    return (((float)(128.0+hexangle))/256.0) * 360.0;
 }
 
 - (id)initWithFrame:(NSRect)frame
@@ -33,16 +33,31 @@ double convert_angle(int hexangle) {
 
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
+    double botscale_scale =  3;
+    double turretscale_scale = 3;
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(0, 0);
-    double r = 6.0;
-    for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
-        double x = ((double)(r)) * sin(angle);
-        double y = ((double)(r)) * cos(angle);
-        glVertex2f((float)x,(float)y );
-    }
+    glVertex2f(0*botscale_scale, 14*botscale_scale);
+    glVertex2f(6*botscale_scale, -10*botscale_scale);
+    glVertex2f(-6*botscale_scale, -10*botscale_scale);
     glEnd();
+    
+    glPushMatrix() ;
+    double angle =  (bot.turretHeading - bot.heading) / 256.0 * 360.0;
+    glRotatef(angle , 0, 0, 1);
+    
+    setColorTo([NSColor whiteColor]);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2f(0*turretscale_scale, 6*turretscale_scale);
+    glVertex2f(3*turretscale_scale, -3*turretscale_scale);
+    glVertex2f(-3*turretscale_scale, -3*turretscale_scale);
+    glEnd();
+    
+    glPopMatrix();
+    
+    
+    
+    
 }
 -(void) internalDrawMine:(NSObject<MineDescription>*) mine {
     setColorTo(mine.owner.color);
@@ -85,8 +100,10 @@ double convert_angle(int hexangle) {
 
 -(void) internalDrawScan:(NSObject<ScanDescription>*) scan {
     setColorTo([NSColor whiteColor]);
-    double startAngle = convert_angle(-128-scan.startAngle);
-    double endAngle = convert_angle(-128-scan.endAngle);
+
+    double startAngle = (-scan.startAngle+128) / 256.0 * 2 * M_PI;
+    double endAngle = (-scan.endAngle+128) / 256.0 * 2 * M_PI;
+
     glBegin(GL_LINES);
     glVertex2f(((float)(scan.radius)) * sin(startAngle),((float)(scan.radius))* cos(startAngle));
     glVertex2f(0,0);
@@ -116,7 +133,9 @@ void translateTo(int x, int y) {
 
 void rotateTo(int x, int y, int heading) {
     translateTo(x, y);
-    float angle = convert_angle(heading);
+    float angle = convert_angle_to_degrees(heading);
+    
+    
     glRotatef(angle, 0.0, 0.0, 1.0);
 }
 

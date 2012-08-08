@@ -28,6 +28,7 @@
 -(int) x;
 -(int) y;
 -(int) heading;
+-(int) turretHeading;
 -(int) armor;
 -(int) heat;
 -(int) kills;

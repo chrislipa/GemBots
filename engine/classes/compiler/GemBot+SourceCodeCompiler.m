@@ -48,6 +48,7 @@
     lines = [self readDescription:lines];
     lines = [self tokenize:lines];
     lines = [self readCompilerDirectives:lines];
+    lines = [self readLoggingLines:lines];
     
     NSMutableDictionary* variables;
     
@@ -58,6 +59,23 @@
     
     
 }
+
+-(NSMutableArray*) readLoggingLines:(NSArray*) a {
+    NSMutableArray* o = [NSMutableArray array];
+    for (NSArray* b in a) {
+        if (false) {
+            
+        } else {
+            NSMutableArray* p = [NSMutableArray array];
+            for (NSString* c in b) {
+                [p addObject:[c uppercaseString]];
+            }
+            [o addObject:p];
+        }
+    }
+    return o;
+}
+
 
 -(NSArray*) tokenize:(NSArray*) inA {
     NSMutableArray* o = [[NSMutableArray alloc] init];

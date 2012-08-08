@@ -86,7 +86,7 @@ NSDictionary* newDictionaryFromTextFile(NSString* file) {
     for (NSString* line in lines) {
         NSArray* lineComps = [line componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if ([lineComps count] == 2) {
-            NSString* key = [lineComps objectAtIndex:0];
+            NSString* key = [[lineComps objectAtIndex:0] uppercaseString];
             NSString* valueStr = [lineComps objectAtIndex:1];
             int value = readInteger(valueStr);
             NSNumber* numberValue = [NSNumber numberWithInt:value];

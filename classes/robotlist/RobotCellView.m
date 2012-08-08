@@ -146,6 +146,9 @@
 }
 
 -(void) refreshForGameCycle {
+    if (robotCellViewController.botContainer.robot.e) {
+        <#statements#>
+    }
     [self refreshHeatAndArmor];
 }
 
