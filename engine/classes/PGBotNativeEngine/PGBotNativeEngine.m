@@ -140,12 +140,17 @@
     isThisSetInitiated = NO;
     isMatchCurrentlySetUp = NO;
     hasSetEnded = (currentMatch ==totalNumberOfMatches);
+    
 }
 
 -(void) stepGameCycle {
-    if (gameCycle == maxGameCycles) {[self endMatch];return; }
+    
     if (hasSetEnded || !hasSetStarted) {return;}
     if (!isThisSetInitiated) { [self startNewMatch]; return;}
+    if (gameCycle == maxGameCycles) {
+        [self endMatch];
+        return;
+    }
     bool finishedMatch = [self executeGameCycle];
     gameCycle++;
     if (finishedMatch) {
