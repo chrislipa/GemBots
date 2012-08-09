@@ -68,6 +68,7 @@
     
     
     [self setUpEngine];
+    [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
     [self startBattleLoop];
 }
 

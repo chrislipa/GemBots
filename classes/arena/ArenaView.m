@@ -49,7 +49,7 @@ double convert_angle_to_degrees(int hexangle) {
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
     double botscale_scale =  1;
-    double turretscale_scale = 1;
+    //double turretscale_scale = 1;
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0*botscale_scale, 2*botscale_scale);
@@ -61,13 +61,14 @@ double convert_angle_to_degrees(int hexangle) {
     double angle =  (bot.turretHeading - bot.heading) / 256.0 * 360.0;
     glRotatef(angle , 0, 0, 1);
     
+    /*
     setColorTo([NSColor whiteColor]);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0*turretscale_scale, 1.5*turretscale_scale);
     glVertex2f(1.5*turretscale_scale, -1.5*turretscale_scale);
     glVertex2f(-1.5*turretscale_scale, -1.5*turretscale_scale);
     glEnd();
-    
+    */
     glPopMatrix();
     
     
@@ -85,7 +86,7 @@ double convert_angle_to_degrees(int hexangle) {
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
     float width = 0.5;
-    float height = 10.0;
+    float height = 8.0;
     glVertex2f(width, height);
     glVertex2f(width, -height);
     glVertex2f(-width, -height);
@@ -110,8 +111,9 @@ double convert_angle_to_degrees(int hexangle) {
     setColorTo([NSColor whiteColor]);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0, 0);
-    double r = 30.0;
-    for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
+    double r = 14.0;
+    double delta =  M_2_PI/8;
+    for (double angle = 0; angle < M_PI*2+delta; angle +=delta) {
         double x = ((double)(r)) * sin(angle);
         double y = ((double)(r)) * cos(angle);
         glVertex2f((float)x,(float)y );
@@ -235,6 +237,7 @@ void rotateTo(int x, int y, int heading) {
     for (NSObject<MissileDescription>* miss in gameStateDescriptor.missiles) {
         [self drawMissile:miss];
     }
+
     for (NSObject<ScanDescription>*scan in gameStateDescriptor.scans) {
         [self drawScan:scan];
     }

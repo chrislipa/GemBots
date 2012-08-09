@@ -15,7 +15,7 @@
 
 -(void) startNewMatchInternal {
     [self createInternalOrderingOfRobots];
-    currentMatch++;
+
     gameCycle = 0;
     missiles = [NSMutableArray array];
     mines = [NSMutableArray array];

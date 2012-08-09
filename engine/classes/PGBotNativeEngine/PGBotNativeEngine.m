@@ -120,7 +120,7 @@
 
 
 -(void) startNewSetOfMatches {
-    currentMatch = 0;
+    currentMatch = 1;
     
     isMatchCurrentlyActive = NO;
     hasSetStarted = YES;
@@ -140,6 +140,9 @@
     isThisSetInitiated = NO;
     isMatchCurrentlySetUp = NO;
     hasSetEnded = (currentMatch ==totalNumberOfMatches);
+    if (!hasSetEnded) {
+        currentMatch++;
+    }
     
 }
 
