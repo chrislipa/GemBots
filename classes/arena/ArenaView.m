@@ -69,13 +69,19 @@ double convert_angle_to_degrees(int hexangle) {
 -(void) internalDrawMissile:(NSObject<MissileDescription>*) missile {
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(0, 0);
-    double r = 2.0;
-    for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
-        double x = ((double)(r)) * sin(angle);
-        double y = ((double)(r)) * cos(angle);
-        glVertex2f((float)x,(float)y );
-    }
+    float width = 1.5;
+    float height = 16.0;
+    glVertex2f(width, height);
+    glVertex2f(width, -height);
+    glVertex2f(-width, -height);
+    glVertex2f(-width, height);
+    
+//    double r = 2.0;
+//    for (double angle = 0; angle < M_PI*2; angle += M_2_PI/16) {
+//        double x = ((double)(r)) * sin(angle);
+//        double y = ((double)(r)) * cos(angle);
+//        glVertex2f((float)x,(float)y );
+//    }
     glEnd();
     /*
     setColorTo([NSColor whiteColor]);

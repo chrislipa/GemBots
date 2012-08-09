@@ -308,7 +308,7 @@ int rotateLeft(int x, int d) {
     [self setMemory:op1 :z];
 }
 -(void) log {
-    NSString* string = [strings objectForKey:[NSNumber numberWithInt:op2]];
+    NSString* string = [logStrings objectForKey:[NSNumber numberWithInt:op1]];
     if (string) {
         [self executionLog:string];
     } else {
@@ -319,6 +319,18 @@ int rotateLeft(int x, int d) {
 -(void) logvalue {
     [self executionLog:[NSString stringWithFormat:@"Log Value: %d",op1]];
 }
+
+-(void) logf {
+    NSString* string = [logStrings objectForKey:[NSNumber numberWithInt:op2]];
+    if (string) {
+        [self executionLog:[string stringByReplacingOccurrencesOfString:@"%d" withString:[NSString stringWithFormat:@"%d",op1] ] ];
+    } else {
+        [self executionError:[NSString stringWithFormat:@"Could not find string #%d", op2]];
+    }
+    
+}
+
+
 
 -(void) invalidopcode {
     [self executionError:[NSString stringWithFormat:@"Invalid Opcode"]];

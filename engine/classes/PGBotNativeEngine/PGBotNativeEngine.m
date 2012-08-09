@@ -143,6 +143,7 @@
 }
 
 -(void) stepGameCycle {
+    if (gameCycle == maxGameCycles) {[self endMatch];return; }
     if (hasSetEnded || !hasSetStarted) {return;}
     if (!isThisSetInitiated) { [self startNewMatch]; return;}
     bool finishedMatch = [self executeGameCycle];

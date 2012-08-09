@@ -137,7 +137,7 @@
     
     NSString* executionLogString;
     
-    NSDictionary* strings;
+    NSMutableDictionary* logStrings;;
 }
 
 @property (readwrite,retain) NSDictionary* strings;

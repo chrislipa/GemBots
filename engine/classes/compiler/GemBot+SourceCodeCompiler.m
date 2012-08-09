@@ -171,15 +171,16 @@
     NSMutableDictionary* userVariables;
     NSMutableDictionary* userConstants;
     NSMutableDictionary* labels;
-    NSMutableDictionary* logStrings;
+    NSMutableDictionary* strings;
     int sizeOfCode;
     [self readConstants:lines intoConstants:&userConstants];
     [self identifyLabels:lines withConstants:userConstants intoLabels:&labels];
     [self identifyVariables:lines withConstants:userConstants andLabels:labels intoVariables:&userVariables];
-    [self readLogStrings:lines intoLogStrings:&logStrings];
+    [self readLogStrings:lines intoLogStrings:&strings];
     [self readmemory:lines withConstants:userConstants andLabels:labels andVariables:userVariables andSize:&sizeOfCode];
     [self populateLabels:labels];
     [self populateVariables:userVariables at:sizeOfCode];
+    logStrings = [NSDictionary dictionaryWithDictionary:strings];
 }
 
 
@@ -216,7 +217,7 @@
 }
 
 -(void) readLogStrings:(NSMutableArray*)lines intoLogStrings:(NSMutableDictionary**) plogStrings {
-    NSMutableDictionary* logStrings = [NSMutableDictionary dictionary];
+    NSMutableDictionary* zlogStrings = [NSMutableDictionary dictionary];
     for (SourceLine* line in lines) {
         if (line.tokens.count >= 1) {
             NSString* op = [line.tokens objectAtIndex:0];
@@ -247,14 +248,15 @@
                         rangeOfText = NSMakeRange(0, 0);
                     }
                     NSString* text = [line.originalCaseLine substringWithRange:rangeOfText];
-                    NSNumber* newLogNumber = [NSNumber numberWithInt:(int)logStrings.count];
-                    [logStrings setObject:text forKey:newLogNumber];
-                    NSMutableArray* replacementTokens = [NSArray array];
+                    NSNumber* newLogNumber = [NSNumber numberWithInt:(int)zlogStrings.count];
+                    [zlogStrings setObject:text forKey:newLogNumber];
+                    NSMutableArray* replacementTokens = [NSMutableArray array];
                     for (int i = 0; i < indexOfString; i++) {
                         [replacementTokens addObject:[line.tokens objectAtIndex:i]];
                     }
                     [replacementTokens addObject:[NSString stringWithFormat:@"%d",[newLogNumber intValue] ]];
                     line.tokens = replacementTokens;
+                    
                 }
                 
             }
@@ -262,7 +264,7 @@
     }
     
     
-    *plogStrings = logStrings;
+    *plogStrings = zlogStrings;
 }
 
 -(void) identifyVariables:(NSMutableArray*) lines withConstants:(NSDictionary*) userConstants andLabels:(NSMutableDictionary*) labels intoVariables:(NSMutableDictionary**) pvariables {
