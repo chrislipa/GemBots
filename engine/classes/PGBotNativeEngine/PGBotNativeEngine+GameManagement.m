@@ -90,11 +90,30 @@
 
 -(void) giveCreditForWinsAndLosses {
     winnersOfLastMatch = [NSMutableArray array];
+    int winningTeam  = -1;
+    int numberOfTeamsAlive  = 0;
     for (GemBot* b in robots) {
         if (b.isAlive) {
-            b.wins++;
-            [winnersOfLastMatch addObject:b];
-        } else {
+            if (numberOfTeamsAlive == 0) {
+                numberOfTeamsAlive++;
+                winningTeam = b.team;
+            } else if (winningTeam == b.team) {
+                
+            } else {
+                numberOfTeamsAlive++;
+            }
+        }
+    }
+    if (numberOfTeamsAlive == 1) {
+        for (GemBot* b in robots) {
+            if  (b.team == winningTeam) {
+                b.wins++;
+            } else {
+                b.losses++;
+            }
+        }
+    } else {
+        for (GemBot* b in robots) {
             b.losses++;
         }
     }
