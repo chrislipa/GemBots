@@ -11,88 +11,110 @@
 #import "EngineUtility.h"
 #import "GemBot+Memory.h"
 #import "GemBot+Compiler.h"
+#import "EngineUtility.h"
+
+@interface SourceLine : NSObject {
+    int lineNumber;
+    NSString* originalCaseLine;
+    NSString* upperCaseLine;
+    NSArray* tokens;
+    NSArray* originalCaseTokens;
+    NSMutableArray* rangesOfTokens;
+}
+@property (readwrite,retain) NSString* originalCaseLine;
+@property (readwrite,retain) NSString* upperCaseLine;
+@property (readwrite,assign) int lineNumber;
+@property (readwrite,retain) NSArray* tokens;
+@property (readwrite,retain) NSArray* originalCaseTokens;
+@property (readwrite,retain) NSMutableArray* rangesOfTokens;
+@end
+
+@implementation SourceLine
+@synthesize originalCaseLine;
+@synthesize lineNumber;
+@synthesize upperCaseLine;
+@synthesize tokens;
+@synthesize originalCaseTokens;
+@synthesize rangesOfTokens;
+@end
+
+
+@interface UserVariable : NSObject {
+    NSString* name;
+    bool in_line;
+    int location;
+    int size;
+    NSMutableArray* initialValue;
+    NSMutableArray* memoryLocationsOfReferences;
+}
+@property (readwrite,retain) NSString* name;
+@property (readwrite,assign) bool in_line;
+@property (readwrite,assign) int location;
+@property (readwrite,assign) int size;
+@property (readwrite,retain) NSMutableArray* initialValue;
+
+@property (readwrite,retain) NSMutableArray* memoryLocationsOfReferences;
+
+@end
+
+@implementation UserVariable
+
+@synthesize name;
+@synthesize in_line;
+@synthesize location;
+@synthesize size;
+@synthesize initialValue;
+@synthesize memoryLocationsOfReferences;
+@end
+
+
+@interface Label : NSObject {
+    NSString* name;
+    NSString* strippedName;
+    int location;
+    NSMutableArray* memoryLocationsOfReferences;
+}
+@property (readwrite,retain) NSString* strippedName;
+@property (readwrite,retain) NSString* name;
+@property (readwrite,assign) int location;
+@property (readwrite,retain) NSMutableArray* memoryLocationsOfReferences;
+@end
+
+@implementation Label
+@synthesize name;
+@synthesize location;
+@synthesize memoryLocationsOfReferences;
+@end
+
 
 @implementation GemBot (SourceCodeCompiler)
 
 
--(NSArray*) readDescription:(NSArray*) lines {
-    NSMutableArray* o = [[NSMutableArray alloc] init];
-    for (NSString* s in lines) {
-        NSString* t = nil;
-        NSString* matchedTag = nil;
-        NSArray* tags = [NSArray arrayWithObjects:@"#NAME ",@"#AUTHOR ",@"#DESCRIPTION ", nil];
-        for (NSString* tag in tags) {
-            if  ([[s uppercaseString] hasPrefix:tag]) {
-                t = [s substringFromIndex:[tag length]];
-                matchedTag  = tag;
-            }
+-(void) readDescription:(NSMutableArray*) lines {
+    for (int i = 0 ; i < lines.count; i++) {
+        SourceLine* s = [lines objectAtIndex:i];
+        if (s.tokens.count <1) {
+            continue;
         }
-        if ([matchedTag isEqualToString:@"#NAME "]) {
-            self.name = t;
-        } else if ([matchedTag isEqualToString:@"#AUTHOR "]) {
-            self.author = t;
-        } else if ([matchedTag isEqualToString:@"#DESCRIPTION "]) {
-            self.descript = t;
-        } else {
-            [o addObject:s];
+        NSString* token = [s.tokens objectAtIndex:0];
+        if ([token isEqualToString:@"#NAME "]) {
+            self.name = [s.originalCaseLine substringFromIndex:[token length]+1] ;
+            [lines removeObjectAtIndex:i]; i--;
+        } else if ([token isEqualToString:@"#AUTHOR "]) {
+            self.author = [s.originalCaseLine substringFromIndex:[token length]+1];
+            [lines removeObjectAtIndex:i]; i--;
+        } else if ([token isEqualToString:@"#DESCRIPTION "]) {
+            self.descript = [s.originalCaseLine substringFromIndex:[token length]+1];
+            [lines removeObjectAtIndex:i]; i--;
         }
     }
-    return o;
 }
 
-
-
--(void) compileSource {
-    NSString* string = [[NSString alloc] initWithData:source encoding:NSUTF8StringEncoding];
-    NSArray* lines = [self stripComments:string];
-    lines = [self readDescription:lines];
-    lines = [self tokenize:lines];
-    lines = [self readCompilerDirectives:lines];
-    lines = [self readLoggingLines:lines];
-    
-    NSMutableDictionary* variables;
-    
-    lines = [self readVariables:lines withVariable:&variables];
-    
-    [self readmemory:lines withVariable:variables];
-    
-    
-    
-}
-
--(NSMutableArray*) readLoggingLines:(NSArray*) a {
-    NSMutableArray* o = [NSMutableArray array];
-    for (NSArray* b in a) {
-        if (false) {
-            
-        } else {
-            NSMutableArray* p = [NSMutableArray array];
-            for (NSString* c in b) {
-                [p addObject:[c uppercaseString]];
-            }
-            [o addObject:p];
-        }
-    }
-    return o;
-}
-
-
--(NSArray*) tokenize:(NSArray*) inA {
-    NSMutableArray* o = [[NSMutableArray alloc] init];
-    for (NSString* line in inA) {
-        
-        NSArray* lineComps = delimit(line);
-        if ([lineComps count] > 0) {
-            [o addObject:lineComps];
-        }
-    }
-    return o;
-}
-
--(NSArray*) stripComments:(NSString*) s {
+-(NSMutableArray*) parse:(NSString*) s {
     NSArray* lines = [s componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    NSMutableArray* outputlines = [NSMutableArray array];
-    for (NSString* l in lines) {
+    NSMutableArray* parsedLines = [NSMutableArray array];
+    for (int lineNumber = 0; lineNumber< lines.count ; lineNumber++) {
+        NSString* l = [lines objectAtIndex:lineNumber];
         NSRange r = [l rangeOfString:@"//"];
         NSString* m;
         if (r.location != NSNotFound) {
@@ -100,27 +122,320 @@
         } else {
             m = l;
         }
-        [outputlines addObject:m];
+        NSRange nonwschar = [m rangeOfCharacterFromSet:[[NSCharacterSet whitespaceAndNewlineCharacterSet] invertedSet]];
+        if (nonwschar.location == NSNotFound) {
+            continue;
+        }
+        SourceLine* sl =[[SourceLine alloc] init];
+        sl.lineNumber = lineNumber;
+        sl.originalCaseLine = m;
+        sl.upperCaseLine = [m uppercaseString];
+        sl.tokens = [sl.upperCaseLine componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        sl.rangesOfTokens = [NSMutableArray array];
+        unsigned long col = 0;
+        for (NSString* token in sl.tokens) {
+            NSRange searchRange = NSMakeRange(col, sl.upperCaseLine.length - col);
+            NSRange rangeOfToken = [sl.upperCaseLine rangeOfString:token options:0 range:searchRange];
+            [sl.rangesOfTokens addObject:[NSValue valueWithRange:rangeOfToken]];
+            col = rangeOfToken.location + rangeOfToken.length;
+        }
+        
+        [parsedLines addObject:sl];
     }
-    return outputlines;
+    return parsedLines;
 }
 
 
--(NSArray*) readCompilerDirectives:(NSArray*) a {
-    NSMutableArray* o = [NSMutableArray array];
-    for (NSArray* l in a) {
-        NSString* firstToken = nil, *secondToken = nil, *thirdToken = nil;
-        if ([l count] > 0) {
-            firstToken = [[l objectAtIndex:0] uppercaseString];
+-(void) compileSource {
+    NSString* string = [[NSString alloc] initWithData:source encoding:NSUTF8StringEncoding];
+    NSMutableArray* lines = [self parse:string];
+    [self readDescription:lines];
+    [self readArmaments:lines];
+    
+    NSMutableDictionary* userVariables;
+    NSMutableDictionary* userConstants;
+    NSMutableDictionary* labels;
+    NSMutableDictionary* logStrings;
+    int sizeOfCode;
+    [self readConstants:lines intoConstants:&userConstants];
+    [self identifyLabels:lines withConstants:userConstants intoLabels:&labels];
+    [self identifyVariables:lines withConstants:userConstants andLabels:labels intoVariables:&userVariables];
+    [self readLogStrings:lines intoLogStrings:&logStrings];
+    [self readmemory:lines withConstants:userConstants andLabels:labels andVariables:userVariables andSize:&sizeOfCode];
+    [self populateLabels:labels];
+    [self populateVariables:userVariables at:sizeOfCode];
+}
+
+
+-(void) populateLabels:(NSMutableDictionary*) labels {
+    for (NSString* labelName in labels) {
+        Label* label = [labels objectForKey:labelName];
+        for (NSNumber* loc in label.memoryLocationsOfReferences) {
+            int intloc = [loc intValue];
+            memory[intloc] = label.location;
         }
-        if ([l count] > 1) {
-            secondToken = [[l objectAtIndex:1] uppercaseString];
+    }
+}
+
+
+-(void) populateVariables:(NSMutableDictionary*) variables at:(int) memloc {
+    
+    
+    for (NSString* variableName in variables) {
+        UserVariable* var = [variables objectForKey:variableName];
+        if (!var.in_line) {
+            var.location = memloc;
+            memloc += var.size;
         }
-        if ([l count] > 2) {
-            thirdToken = [[l objectAtIndex:2] uppercaseString];
+        for (int i = 0; i< var.size; i++) {
+            [self setMemory:var.location+i : [[var.initialValue objectAtIndex:i] intValue]];
         }
         
+        
+        for (NSNumber* loc in var.memoryLocationsOfReferences) {
+            int intloc = [loc intValue];
+            memory[intloc] = var.location;
+        }
+    }
+}
+
+-(void) readLogStrings:(NSMutableArray*)lines intoLogStrings:(NSMutableDictionary**) plogStrings {
+    NSMutableDictionary* logStrings = [NSMutableDictionary dictionary];
+    for (SourceLine* line in lines) {
+        if (line.tokens.count >= 1) {
+            NSString* op = [line.tokens objectAtIndex:0];
+            Opcode *opc = opcodeFromString(op);
+            if (opc) {
+                bool found = NO;
+                NSRange lastToken;
+                int indexOfString=0;
+                if (opc.isOp1String) {
+                    lastToken = [[line.rangesOfTokens objectAtIndex:0] rangeValue];
+                    found = YES;
+                    indexOfString = 1;
+                }
+                if (opc.isOp2String) {
+                    if (line.rangesOfTokens.count < 2) {
+                        [self compileError:line.lineNumber :NO_RANGE:@"Could not find token on line expecting token and string"];
+                        lastToken = [[line.rangesOfTokens objectAtIndex:0] rangeValue];
+                    } else {
+                        lastToken = [[line.rangesOfTokens objectAtIndex:1] rangeValue];
+                    }
+                    found = YES;
+                    indexOfString = 2;
+                }
+                if (found) {
+                    unsigned long col = lastToken.location + lastToken.length + 1;
+                    NSRange rangeOfText = NSMakeRange(col, line.originalCaseLine.length - col);
+                    if (rangeOfText.length > line.originalCaseLine.length) {
+                        rangeOfText = NSMakeRange(0, 0);
+                    }
+                    NSString* text = [line.originalCaseLine substringWithRange:rangeOfText];
+                    NSNumber* newLogNumber = [NSNumber numberWithInt:(int)logStrings.count];
+                    [logStrings setObject:text forKey:newLogNumber];
+                    NSMutableArray* replacementTokens = [NSArray array];
+                    for (int i = 0; i < indexOfString; i++) {
+                        [replacementTokens addObject:[line.tokens objectAtIndex:i]];
+                    }
+                    [replacementTokens addObject:[NSString stringWithFormat:@"%d",[newLogNumber intValue] ]];
+                    line.tokens = replacementTokens;
+                }
+                
+            }
+        }
+    }
+    
+    
+    *plogStrings = logStrings;
+}
+
+-(void) identifyVariables:(NSMutableArray*) lines withConstants:(NSDictionary*) userConstants andLabels:(NSMutableDictionary*) labels intoVariables:(NSMutableDictionary**) pvariables {
+    NSMutableDictionary* variables = [NSMutableDictionary dictionary];
+    NSDictionary* defaultconstants = constantDictionary();
+    for (int i = 0; i < lines.count; i++) {
+        SourceLine* line = [lines objectAtIndex:i];
+        if (line.tokens.count ==0) {
+            return;
+        }
+        NSString* token = [line.tokens objectAtIndex:0];
+        if ([token isEqualToString:@"#DEF"]) {
+            int index = 1;
+            bool in_line = NO;
+            if ([[line.tokens objectAtIndex:index] isEqualToString:@"INLINE"]) {
+                index++;
+                in_line = YES;
+            }
+            if (index >= line.tokens.count)  {
+                [self compileError:line.lineNumber :NO_RANGE:@"No name given for variable definition"];
+                [lines removeObjectAtIndex:i]; i--; continue;
+            }
+            NSString* ident = [line.tokens objectAtIndex:index];
+            
+            if ([labels objectForKey:ident]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:index] rangeValue]:@"Variable and label name conflict '%@'",ident];
+                [lines removeObjectAtIndex:i]; i--; continue;
+            }
+            if ([defaultconstants objectForKey:ident]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:index] rangeValue]:@"Variable conflicts with built-in constant '%@'",[line.originalCaseTokens objectAtIndex:index]];
+                [lines removeObjectAtIndex:i]; i--; continue;
+            }
+            if ([userConstants objectForKey:ident]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:index] rangeValue]:@"Label conflicts with user-defined constant '%@'",[line.originalCaseTokens objectAtIndex:index]];
+                [lines removeObjectAtIndex:i]; i--; continue;
+            }
+            if ([variables objectForKey:ident]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:index] rangeValue]:@"Redefinition of variable '%@'",[line.originalCaseTokens objectAtIndex:index]];
+                [lines removeObjectAtIndex:i]; i--; continue;
+            }
+            NSMutableArray* initialValue = [NSMutableArray array];
+            
+            bool hadError = NO;
+            for (index++; index < line.tokens.count; index++) {
+                NSString* ivs = [line.tokens objectAtIndex:index];
+                if ([ivs isEqualToString:@"="] ) {
+                    continue;
+                }
+                if (!isInteger(ivs)) {
+                    [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:index] rangeValue]:@"Variable definition with non-integer literal '%@'",[line.originalCaseTokens objectAtIndex:index]];
+                    hadError = YES;
+                    break;
+                }
+                NSNumber* v = [NSNumber numberWithInt:readInteger(ivs)];
+                [initialValue addObject:v];
+            }
+            if (hadError) {
+                [lines removeObjectAtIndex:i]; i--; continue;
+            }
+            
+            if (initialValue.count == 0) {
+                [initialValue addObject:[NSNumber numberWithInt:0]];
+            }
+            
+            UserVariable* var = [[UserVariable alloc] init];
+            var.name = ident;
+            var.in_line = in_line;
+            var.initialValue = initialValue;
+            var.size = initialValue.count;
+            var.memoryLocationsOfReferences = [NSMutableArray array];
+            [variables setObject:var forKey:ident];
+        }
+    }
+    
+    *pvariables = variables;
+}
+
+-(void) identifyLabels:(NSMutableArray*) lines withConstants:(NSDictionary*) userConstants intoLabels:(NSMutableDictionary**) plabels {
+    NSMutableDictionary* labels = [NSMutableDictionary dictionary];
+    NSDictionary* defaultconstants = constantDictionary();
+    for (int i = 0; i < lines.count; i++) {
+        SourceLine* line = [lines objectAtIndex:i];
+        if (line.tokens.count ==0) {
+            return;
+        }
+        NSString* token = [line.tokens objectAtIndex:0];
+        if ([token hasSuffix:@":"]) {
+            NSString* token = [token substringToIndex:token.length-1];
+            NSString* originalCaseToken = [[line.originalCaseTokens objectAtIndex:0] substringToIndex:token.length-1];
+            if (token.length == 0) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:0] rangeValue]:@"Cannot have zero-length label"];
+                [lines removeObjectAtIndex:i]; i--;
+                continue;
+            }
+            if (line.tokens.count > 1) {
+                [self compileWarning:line.lineNumber :[[line.rangesOfTokens objectAtIndex:0] rangeValue]:@"Extraneous token after label '%@'",originalCaseToken];
+            }
+            if ([labels objectForKey:token]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:0] rangeValue]:@"Duplicate label '%@'",originalCaseToken];
+                [lines removeObjectAtIndex:i]; i--;
+                continue;
+            }
+            if ([defaultconstants objectForKey:token]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:0] rangeValue]:@"Label conflicts with built-in constant '%@'",originalCaseToken];
+                [lines removeObjectAtIndex:i]; i--;
+                continue;
+            }
+            if ([userConstants objectForKey:token]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:0] rangeValue]:@"Label conflicts with user-defined constant '%@'",originalCaseToken];
+                [lines removeObjectAtIndex:i]; i--;
+                continue;
+            }
+            Label* label = [[Label alloc] init];
+            label.name = token;
+            label.memoryLocationsOfReferences = [NSMutableArray array];
+            [labels setObject:label forKey:token];
+        }
+    }
+    
+    *plabels = labels;
+}
+
+-(void) readConstants:(NSMutableArray*) lines intoConstants:(NSMutableDictionary**) pconstants {
+    NSDictionary* defaultconstants = constantDictionary();
+    NSMutableDictionary* constants = [NSDictionary dictionary];
+    
+    for (int i = 0; i<lines.count; i++) {
+        SourceLine* line = [lines objectAtIndex:i];
+        if (line.tokens.count >= 1 && [[line.tokens objectAtIndex:0] isEqualToString:@"#CONST"]) {
+            [lines removeObjectAtIndex:i]; i--;
+            if (line.tokens.count < 2) {
+                [self compileError:line.lineNumber :NO_RANGE :@"Constant declaration missing identifier"];
+                continue;
+            }
+            if (line.tokens.count < 3) {
+                [self compileError:line.lineNumber :NO_RANGE :@"Constant declaration missing value"];
+                continue;
+            }
+            NSString* constantIdentifier = [line.tokens objectAtIndex:1];
+            NSString* constantValueStr = [line.tokens objectAtIndex:2];
+            if (!isInteger(constantValueStr)) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:2] rangeValue] :@"Constant value '%@' is not integer literal", constantValueStr];
+                continue;
+            }
+            if ([defaultconstants objectForKey:constantIdentifier]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:1] rangeValue] :@"Constant name '%@' conflicts with built-in constant", constantIdentifier];
+                continue;
+            }
+            if ([constants objectForKey:constantIdentifier]) {
+                [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:1] rangeValue] :@"Constant name '%@' declared twice", constantIdentifier];
+                continue;
+            }
+            NSNumber* va = [NSNumber numberWithInt:readInteger(constantValueStr)];
+            [constants setObject:va forKey:constantIdentifier];
+        }
+    }
+    *pconstants = constants;
+}
+
+
+
+
+
+
+-(void) readArmaments:(NSMutableArray*) a {
+
+    for (int i = 0; i<a.count; i++) {
+        SourceLine* l = [a objectAtIndex:i];
+        NSString* firstToken = nil, *secondToken = nil, *thirdToken = nil;
+        if ([l.tokens count] > 0) {
+            firstToken = [l.tokens objectAtIndex:0];
+        }
+        if ([l.tokens count] > 1) {
+            secondToken = [l.tokens objectAtIndex:1];
+        }
+        if ([l.tokens count] > 2) {
+            thirdToken = [l.tokens objectAtIndex:2];
+        }
+        
+        
+        if (firstToken && [firstToken isEqual:@"#ARMAMENT"]) {
+            [a removeObjectAtIndex:i];
+            i--;
+        }
         if (firstToken && [firstToken isEqual:@"#ARMAMENT"] && secondToken && thirdToken) {
+            if (!isInteger(thirdToken)) {
+                [self compileError: (l.lineNumber) :[[l.rangesOfTokens objectAtIndex:2] rangeValue] :@"Bad armament value %@",[l.originalCaseTokens objectAtIndex:2]];
+                continue;
+            }
             int v = readInteger(thirdToken);
             if ([secondToken isEqualToString:@"RADAR"]) {
                 self.config_scanner = v;
@@ -137,120 +452,114 @@
             }  else if ([secondToken isEqualToString:@"SHIELD"]) {
                 self.config_shield = v;
             } else {
-                [self compileWarning:@"Unrecognized armament: %@", [l objectAtIndex:1]];
-            }
-        } else if (firstToken && [firstToken isEqual:@"#ARMAMENT"] && secondToken) {
-            [self compileWarning:@"Missing value for %@ %@", [l objectAtIndex:0], [l objectAtIndex:1]];
-        } else if (firstToken && [firstToken isEqual:@"#ARMAMENT"]) {
-            [self compileWarning:@"Missing value for #@", [l objectAtIndex:0]];
-        } else {
-            [o addObject:l];
-        }
-    }
-    return o;
-}
-
-
--(NSArray*) readVariables:(NSArray*) a withVariable:(NSMutableDictionary**) variablesPTR {
-    NSMutableDictionary* variables = [NSMutableDictionary dictionaryWithDictionary: defaultVariablesDictionary()];
-    NSMutableDictionary* variablesReverseLookup = [NSMutableDictionary dictionary];
-    int currentlyOpenVariableSlot = 512;
-    int maxVariableSlot = 1023;
-    
-    
-    NSMutableArray* o = [NSMutableArray array];
-    for (NSArray* p in a) {
-        if ([[p objectAtIndex:0] isEqualToString:@"#DEF"]) {
-            if ([p count] >= 2) {
-                int memLocation = -1;
-                if ([p count] >= 3) {
-                    memLocation = readInteger([p objectAtIndex:2]);
-                } else {
-                    while ([variablesReverseLookup objectForKey:[NSNumber numberWithInt:currentlyOpenVariableSlot] ]) {
-                        currentlyOpenVariableSlot++;
-                    }
-                    memLocation = currentlyOpenVariableSlot;
-                    if (memLocation > maxVariableSlot) {
-                        memLocation = -1;
-                    }
-                    
-                }
-                if (memLocation > 0) {
-                    NSString* varname = [p objectAtIndex:1];
-                    if ([variables objectForKey:name]==nil) {
-                        [variables setObject:[NSNumber numberWithInt:memLocation] forKey:varname];
-                        [variablesReverseLookup setObject:varname forKey:[NSNumber numberWithInt:memLocation]];
-                    }
-                }
+                [self compileError: (l.lineNumber) :[[l.rangesOfTokens objectAtIndex:1] rangeValue] :@"Bad armament type %@",[l.originalCaseTokens objectAtIndex:1]];
                 
             }
+        } else if (firstToken && [firstToken isEqual:@"#ARMAMENT"] && secondToken) {
+            [self compileError: (l.lineNumber) :NO_RANGE:@"Missing armament value"];
+            
+        } else if (firstToken && [firstToken isEqual:@"#ARMAMENT"]) {
+            [self compileError: (l.lineNumber) :NO_RANGE:@"Missing armament type and value"];
         } else {
-            [o addObject:p];
+            
         }
     }
-    (*variablesPTR) = variables;
-    return o;
+
 }
 
--(void) readmemory:(NSArray*) a withVariable:(NSMutableDictionary*) variables{
-    
-    
-    NSDictionary* constants = constantDictionary();
-    NSMutableDictionary* labels = [NSMutableDictionary dictionary];
-    NSMutableArray* pointersToLabels = [NSMutableArray array];
+
+
+
+-(void) readmemory:(NSArray*) a withConstants:(NSDictionary*) userConstants andLabels:(NSDictionary*) labels andVariables:(NSMutableDictionary*) userVariables andSize:(int*) size {
+
+    NSDictionary* defaultConstants = constantDictionary();
+    NSDictionary* defaultVariables = defaultVariablesDictionary();
+
     int pc = BOT_SOURCE_CODE_START;
-    for (NSArray* p in a) {
-        if ([p count] == 0) {
+    for (SourceLine* p in a) {
+        if ([p.tokens count] == 0) {
             continue;
         }
-        int rtype[2] = {0,0};
-        int bytes[3] = {0,0,0};
-        bool instructionThisLine = NO;
-        
-        for (int i = (int)[p count]-1; i>=0; i--) {
+        NSString* firstToken = [p.tokens objectAtIndex:0];
+        if ([firstToken hasSuffix:@":"]) {
+            Label* label = [labels objectForKey:firstToken];
+            label.location = pc;
+        } else if ([firstToken isEqualToString:@"#DEF"]) {
+            if ([[p.tokens objectAtIndex:1] isEqualToString:@"INLINE"]) {
+                UserVariable* var = [userVariables objectForKey:[p.tokens objectAtIndex:2]];
+                var.location = pc;
+                pc += var.size;
+            }
+        } else if ([firstToken hasSuffix:@":"]) {
+            NSString* strippedToken = [firstToken substringToIndex:firstToken.length-1];
+            Label* label = [labels objectForKey:strippedToken];
+            label.location = pc;
+        } else {
+            if ([p.tokens count] > 3) {
+                [self compileWarning: (p.lineNumber) :[[p.rangesOfTokens objectAtIndex:3] rangeValue] :@"Extraneous tokens on line"];
+            }
             
+            int rtype[2] = {0,0};
+            int bytes[3] = {0,0,0};
+            bool instructionThisLine = NO;
             
-            NSString* s = [[p objectAtIndex:i] uppercaseString];
-            
-            while ([s hasPrefix:@"*"] || [s hasPrefix:@"&"]) {
-                if  ([s hasPrefix:@"*"]) {
-                    rtype[i-1]++;
-                } else if ([s hasPrefix:@"&"]) {
-                    rtype[i-1]--;
+            for (int i = MIN(2, (int)[p.tokens count]-1); i>=0; i--) {
+                
+                
+                NSString* s = [p.tokens objectAtIndex:i];
+                
+                while ([s hasPrefix:@"*"] || [s hasPrefix:@"&"]) {
+                    if  ([s hasPrefix:@"*"]) {
+                        rtype[i-1]++;
+                    } else if ([s hasPrefix:@"&"]) {
+                        rtype[i-1]--;
+                    }
+                    s = [s substringFromIndex:1];
                 }
-                s = [s substringFromIndex:1];
+                
+                if ([s hasSuffix:@":"]) {
+                    s = [s substringToIndex:s.length-1];
+                }
+                
+                
+                if ([labels objectForKey:s]) {
+                    Label* label = [labels objectForKey:s];
+                    instructionThisLine = YES;
+                    [label.memoryLocationsOfReferences addObject:[NSNumber numberWithInt:pc]];
+                }
+                if ([defaultVariables objectForKey:s]) {
+                    bytes[i] = [[defaultVariables objectForKey:s] intValue];
+                    rtype[i-1]++;
+                    instructionThisLine = YES;
+                } else if ([userVariables objectForKey:s]) {
+                    
+                    UserVariable* var = [userVariables objectForKey:s];
+                    [var.memoryLocationsOfReferences addObject:[NSNumber numberWithInt:pc]];
+                    
+                    rtype[i-1]++;
+                    instructionThisLine = YES;
+                } else if ([defaultConstants objectForKey:s]) {
+                    bytes[i] = [[defaultConstants objectForKey:s] intValue];
+                    instructionThisLine = YES;
+                } else if ([userConstants objectForKey:s]) {
+                    bytes[i] = [[userConstants objectForKey:s] intValue];
+                    instructionThisLine = YES;
+                } else if (isInteger(s)) {
+                    bytes[i] = readInteger(s);
+                    instructionThisLine = YES;
+                } else {
+                    [self compileError:p.lineNumber:[[p.rangesOfTokens objectAtIndex:i] rangeValue]:   @"Unrecognized token: '%@'",s ];
+                }
             }
-            if (i == 0 && [s hasSuffix:@":"]) {
-                [labels setObject:[NSNumber numberWithInt:pc] forKey:s];
-            } else if ([s hasSuffix:@":"]) {
-                [pointersToLabels addObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:pc+1], s, nil ]];
-            } else if ([variables objectForKey:s]) {
-                bytes[i] = [[variables objectForKey:s] intValue];
-                rtype[i-1]++;
-                instructionThisLine = YES;
-            } else if ([constants objectForKey:s]) {
-                bytes[i] = [[constants objectForKey:s] intValue];
-                instructionThisLine = YES;
-            } else if (isInteger(s)) {
-                bytes[i] = readInteger(s);
-                instructionThisLine = YES;
-            } else {
-                [self compileWarning:@"Unrecognized token: '%@'.  Ignoring.",s ];
-            }
-        }
-        if (instructionThisLine) {
-            bytes[0] |= ((rtype[0] << 16) | (rtype[1] << 24));
-            for (int i =0; i<3; i++) {
-                [self setRomMemory:pc++ :bytes[i]];
+            if (instructionThisLine) {
+                bytes[0] |= ((rtype[0] << 16) | (rtype[1] << 24));
+                for (int i =0; i<3; i++) {
+                    [self setRomMemory:pc++ :bytes[i]];
+                }
             }
         }
     }
-    for (NSArray* a in pointersToLabels) {
-        int memLoc = [[a objectAtIndex:0] intValue];
-        NSString* label = [a objectAtIndex:1];
-        int labelLoc = [[labels objectForKey:label] intValue];
-        [self setRomMemory:memLoc :labelLoc];
-    }
+    *size = pc;
 }
 
 

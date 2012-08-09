@@ -46,7 +46,7 @@
 
 -(void) verifyParameter:(int*) verifyParameter :(NSString*) armname {
     if (*verifyParameter < 0 || *verifyParameter > 5) {
-        [self compileError:@"%@ armament set to %d", armname, *verifyParameter];
+        [self compileError:-1:NO_RANGE: @"%@ armament set to %d", armname, *verifyParameter];
     }
 }
 
@@ -60,29 +60,29 @@
     [self verifyParameter:&config_weapon:@"weapon"];
     int sumOfArms = config_armor + config_engine + config_heatsinks + config_mines + config_scanner + config_shield + config_weapon;
     if (sumOfArms > MAX_ARMAMENT_WEIGHT) {
-        [self compileError:@"Sum of armaments is %d", sumOfArms];
+        [self compileError:-1:NO_RANGE:@"Sum of armaments is %d", sumOfArms];
     }
     if (highestAddressofRomWrittenTo >= BOT_MAX_MEMORY ) {
-        [self compileError:@"Robot too large (%d > %@)",highestAddressofRomWrittenTo, BOT_MAX_MEMORY-1];
+        [self compileError:-1:NO_RANGE:@"Robot too large (%d > %@)",highestAddressofRomWrittenTo, BOT_MAX_MEMORY-1];
     }
 }
 
--(void) compileError:(NSString*) format , ... {
+-(void) compileError:(int) line :(NSRange) range:  (NSString*) format , ... {
     compiledCorrectly = NO;
     numberOfCompileErrors++;
     va_list args;
     va_start(args, format);
     NSString* string = [[NSString alloc] initWithFormat:format  arguments: args];
-    [compileErrors addObject:[CompileError errorWithText:string]];
+    [compileErrors addObject:[CompileError errorWithText:string : line : range]];
     
 }
 
--(void) compileWarning:(NSString*) format , ... {
+-(void) compileWarning:(int) line :(NSRange) range:  (NSString*) format , ... {
     numberOfCompileWarnings++;
     va_list args;
     va_start(args, format);
     NSString* string = [[NSString alloc] initWithFormat:format arguments: args];
-    [compileErrors addObject:[CompileError errorWithText:string]];
+    [compileErrors addObject:[CompileError errorWithText:string : line : range]];
 }
 
 

@@ -40,9 +40,13 @@
     int numberOfOperands;
     bool op1dereferenced;
     bool op2dereferenced;
+    bool isOp1String;
+    bool isOp2String;
     NSString* name;
 }
 @property (readwrite,retain) NSString* name;
+@property (readwrite,assign) bool isOp1String;
+@property (readwrite,assign) bool isOp2String;
 @property (readwrite,assign) int opcode;
 @property (readwrite,assign) int time;
 @property (readwrite,assign) SEL selector;
@@ -94,4 +98,7 @@ SystemCall* getSystemCall(int sysCallNumber);
 NSMutableDictionary* getConstantsFromOpcodes();
 NSMutableDictionary* getConstantsFromDevices();
 NSMutableDictionary* getConstantsFromSystemCalls();
+NSMutableDictionary* getAllConstants();
+
+Opcode* opcodeFromString(NSString* s);
 #endif

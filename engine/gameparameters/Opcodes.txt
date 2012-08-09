@@ -49,6 +49,7 @@
 48 -6 movs0 L R
 49 -6 movs1 L R
 50 0 logv R logvalue
-51 0 log R
+51 0 log S
+52 0 logf R S
 
  

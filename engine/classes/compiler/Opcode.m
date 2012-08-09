@@ -16,6 +16,8 @@
 @synthesize selector;
 @synthesize op1dereferenced;
 @synthesize op2dereferenced;
+@synthesize isOp1String;
+@synthesize isOp2String;
 @synthesize numberOfOperands;
 @end
 
@@ -64,7 +66,9 @@ NSMutableArray* newOpcodesFromTextFile(NSString* file) {
                 numberOfOperands++;
             }
             NSString* last = [lineComps lastObject];
-            if (![last isEqualToString:@"L"] && ![last isEqualToString:@"R"]) {
+            if (![last isEqualToString:@"L"] &&
+                ![last isEqualToString:@"R"] &&
+                ![last isEqualToString:@"S"]) {
                 selectorStr = last;
             }
             SEL sel = NSSelectorFromString(selectorStr);
@@ -75,6 +79,8 @@ NSMutableArray* newOpcodesFromTextFile(NSString* file) {
             o.selector = sel;
             o.op1dereferenced = ([op1 isEqualToString:@"L"]);
             o.op2dereferenced = ([op2 isEqualToString:@"L"]);
+            o.isOp1String = ([op1 isEqualToString:@"S"]);
+            o.isOp2String = ([op2 isEqualToString:@"S"]);
             o.numberOfOperands = numberOfOperands;
             while ([array count] <= opcode) {
                 [array addObject:[NSNull null]];
@@ -91,6 +97,18 @@ NSArray* opcodeArray() {
         opcodeArray = [[NSArray alloc] initWithArray: newOpcodesFromTextFile(@"Opcodes")];
     }
     return opcodeArray;
+}
+
+
+Opcode* opcodeFromString(NSString* s) {
+    __strong static NSMutableDictionary* opcodeDictionay = nil;
+    if (opcodeDictionay == nil) {
+        opcodeDictionay = [NSMutableDictionary dictionary];
+        for (Opcode* o in opcodeArray()) {
+            [opcodeDictionay setObject:o forKey:[o.name uppercaseString]];
+        }
+    }
+    return [opcodeDictionay objectForKey:s];
 }
 
 NSArray* newDevicesFromTextFile(NSString* file, bool write) {
@@ -251,6 +269,5 @@ NSMutableDictionary* getConstantsFromSystemCalls() {
     }
     return d;
 }
-
 
 

@@ -66,6 +66,7 @@ unit usqrt(unit z);
 unit convertIntToUnit(int z);
 NSArray* delimit(NSString* s);
 unit convert_angle(int hexangle);
+NSDictionary* constantDictionary();
 #define MAX_UNIT DBL_MAX
-
+#define NO_RANGE NSMakeRange(-1,0)
 #endif
