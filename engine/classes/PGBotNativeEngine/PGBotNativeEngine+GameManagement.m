@@ -84,7 +84,7 @@
                 }
             }
         } while (match);
-        b.heading = [random randomIntInInclusiveRange:0 :255];
+        b.heading = b.desiredHeading = b.turretHeading = [random randomIntInInclusiveRange:0 :255];
     }
 }
 

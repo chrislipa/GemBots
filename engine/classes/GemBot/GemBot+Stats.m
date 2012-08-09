@@ -31,7 +31,7 @@
 
 
 -(unit) internalMaxSpeed {
-    return distanceToInternalDistance( DEFAULT_ROBOT_SPEED )  * armor_speed_percentage_config_options[config_armor] * engine_config_options[config_engine] * (overburnOn?OVER_DRIVE_MODIFICATION_TO_SPEED:1.0) * distanceToInternalDistance(indexInto(speedPercentageMultiplierFromHeat, internal_heat)) ;
+    return distanceToInternalDistance( DEFAULT_ROBOT_SPEED )  * armor_speed_percentage_config_options[config_armor] * engine_config_options[config_engine] * (overburnOn?OVER_DRIVE_MODIFICATION_TO_SPEED:1.0) * indexInto(speedPercentageMultiplierFromHeat, internal_heat) ;
 }
 
 -(unit) internal_speed_for_missile {
@@ -42,7 +42,7 @@
 }
 
 -(unit) damagePerGameCycle {
-    unit damageFromHeatPerGameCycle = armorToInternalArmor(indexInto(damagePerTurnFromHeat, internal_heat));
+    unit damageFromHeatPerGameCycle = indexInto(damagePerTurnFromHeat, internal_heat);
     
     return damageFromHeatPerGameCycle;
 }

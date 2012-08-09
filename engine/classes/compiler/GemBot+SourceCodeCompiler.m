@@ -17,15 +17,15 @@
     int lineNumber;
     NSString* originalCaseLine;
     NSString* upperCaseLine;
-    NSArray* tokens;
-    NSArray* originalCaseTokens;
+    NSMutableArray* tokens;
+    NSMutableArray* originalCaseTokens;
     NSMutableArray* rangesOfTokens;
 }
 @property (readwrite,retain) NSString* originalCaseLine;
 @property (readwrite,retain) NSString* upperCaseLine;
 @property (readwrite,assign) int lineNumber;
-@property (readwrite,retain) NSArray* tokens;
-@property (readwrite,retain) NSArray* originalCaseTokens;
+@property (readwrite,retain) NSMutableArray* tokens;
+@property (readwrite,retain) NSMutableArray* originalCaseTokens;
 @property (readwrite,retain) NSMutableArray* rangesOfTokens;
 @end
 
@@ -70,11 +70,11 @@
 
 @interface Label : NSObject {
     NSString* name;
-    NSString* strippedName;
+
     int location;
     NSMutableArray* memoryLocationsOfReferences;
 }
-@property (readwrite,retain) NSString* strippedName;
+
 @property (readwrite,retain) NSString* name;
 @property (readwrite,assign) int location;
 @property (readwrite,retain) NSMutableArray* memoryLocationsOfReferences;
@@ -97,13 +97,13 @@
             continue;
         }
         NSString* token = [s.tokens objectAtIndex:0];
-        if ([token isEqualToString:@"#NAME "]) {
+        if ([token isEqualToString:@"#NAME"]) {
             self.name = [s.originalCaseLine substringFromIndex:[token length]+1] ;
             [lines removeObjectAtIndex:i]; i--;
-        } else if ([token isEqualToString:@"#AUTHOR "]) {
+        } else if ([token isEqualToString:@"#AUTHOR"]) {
             self.author = [s.originalCaseLine substringFromIndex:[token length]+1];
             [lines removeObjectAtIndex:i]; i--;
-        } else if ([token isEqualToString:@"#DESCRIPTION "]) {
+        } else if ([token isEqualToString:@"#DESCRIPTION"]) {
             self.descript = [s.originalCaseLine substringFromIndex:[token length]+1];
             [lines removeObjectAtIndex:i]; i--;
         }
@@ -130,7 +130,22 @@
         sl.lineNumber = lineNumber;
         sl.originalCaseLine = m;
         sl.upperCaseLine = [m uppercaseString];
-        sl.tokens = [sl.upperCaseLine componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSArray* tokensPlusWS = [sl.upperCaseLine componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        sl.tokens = [NSMutableArray array];
+        for (NSString* t in tokensPlusWS) {
+            if (t.length > 0) {
+                [sl.tokens addObject:t];
+            }
+        }
+        NSArray* octokensPlusWS = [sl.originalCaseLine componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        sl.originalCaseTokens = [NSMutableArray array];
+        for (NSString* t in octokensPlusWS) {
+            if (t.length > 0) {
+                [sl.originalCaseTokens addObject:t];
+            }
+        }
+        
+        
         sl.rangesOfTokens = [NSMutableArray array];
         unsigned long col = 0;
         for (NSString* token in sl.tokens) {
@@ -139,6 +154,7 @@
             [sl.rangesOfTokens addObject:[NSValue valueWithRange:rangeOfToken]];
             col = rangeOfToken.location + rangeOfToken.length;
         }
+        
         
         [parsedLines addObject:sl];
     }
@@ -172,7 +188,7 @@
         Label* label = [labels objectForKey:labelName];
         for (NSNumber* loc in label.memoryLocationsOfReferences) {
             int intloc = [loc intValue];
-            memory[intloc] = label.location;
+            [self setRomMemory:intloc :label.location];
         }
     }
 }
@@ -188,13 +204,13 @@
             memloc += var.size;
         }
         for (int i = 0; i< var.size; i++) {
-            [self setMemory:var.location+i : [[var.initialValue objectAtIndex:i] intValue]];
+            [self setRomMemory:var.location+i : [[var.initialValue objectAtIndex:i] intValue]];
         }
         
         
         for (NSNumber* loc in var.memoryLocationsOfReferences) {
             int intloc = [loc intValue];
-            memory[intloc] = var.location;
+            [self setRomMemory:intloc: var.location];
         }
     }
 }
@@ -334,7 +350,7 @@
         }
         NSString* token = [line.tokens objectAtIndex:0];
         if ([token hasSuffix:@":"]) {
-            NSString* token = [token substringToIndex:token.length-1];
+            token = [token substringToIndex:token.length-1];
             NSString* originalCaseToken = [[line.originalCaseTokens objectAtIndex:0] substringToIndex:token.length-1];
             if (token.length == 0) {
                 [self compileError:line.lineNumber :[[line.rangesOfTokens objectAtIndex:0] rangeValue]:@"Cannot have zero-length label"];
@@ -482,7 +498,8 @@
         }
         NSString* firstToken = [p.tokens objectAtIndex:0];
         if ([firstToken hasSuffix:@":"]) {
-            Label* label = [labels objectForKey:firstToken];
+            NSString* strippedToken = [firstToken substringToIndex:firstToken.length-1];
+            Label* label = [labels objectForKey:strippedToken];
             label.location = pc;
         } else if ([firstToken isEqualToString:@"#DEF"]) {
             if ([[p.tokens objectAtIndex:1] isEqualToString:@"INLINE"]) {
@@ -490,10 +507,6 @@
                 var.location = pc;
                 pc += var.size;
             }
-        } else if ([firstToken hasSuffix:@":"]) {
-            NSString* strippedToken = [firstToken substringToIndex:firstToken.length-1];
-            Label* label = [labels objectForKey:strippedToken];
-            label.location = pc;
         } else {
             if ([p.tokens count] > 3) {
                 [self compileWarning: (p.lineNumber) :[[p.rangesOfTokens objectAtIndex:3] rangeValue] :@"Extraneous tokens on line"];
@@ -525,16 +538,17 @@
                 if ([labels objectForKey:s]) {
                     Label* label = [labels objectForKey:s];
                     instructionThisLine = YES;
-                    [label.memoryLocationsOfReferences addObject:[NSNumber numberWithInt:pc]];
-                }
-                if ([defaultVariables objectForKey:s]) {
+                    [label.memoryLocationsOfReferences addObject:[NSNumber numberWithInt:pc+i]];
+                    
+                    
+                } else if ([defaultVariables objectForKey:s]) {
                     bytes[i] = [[defaultVariables objectForKey:s] intValue];
                     rtype[i-1]++;
                     instructionThisLine = YES;
                 } else if ([userVariables objectForKey:s]) {
                     
                     UserVariable* var = [userVariables objectForKey:s];
-                    [var.memoryLocationsOfReferences addObject:[NSNumber numberWithInt:pc]];
+                    [var.memoryLocationsOfReferences addObject:[NSNumber numberWithInt:pc+i]];
                     
                     rtype[i-1]++;
                     instructionThisLine = YES;
