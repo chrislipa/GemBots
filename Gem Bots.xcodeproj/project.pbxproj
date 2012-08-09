@@ -597,7 +597,7 @@
 		3608927115BE876D00A06C94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 3608927415BE876D00A06C94 /* Build configuration list for PBXProject "Gem Bots" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -821,7 +821,7 @@
 				HEADER_SEARCH_PATHS = PGBotNativeEngine/PGBotNativeEngine;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
@@ -845,7 +845,7 @@
 				HEADER_SEARCH_PATHS = PGBotNativeEngine/PGBotNativeEngine;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
 			name = Release;
