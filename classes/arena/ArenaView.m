@@ -48,13 +48,13 @@ double convert_angle_to_degrees(int hexangle) {
 
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
-    double botscale_scale =  3;
-    double turretscale_scale = 3;
+    double botscale_scale =  1;
+    double turretscale_scale = 1;
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(0*botscale_scale, 14*botscale_scale);
-    glVertex2f(6*botscale_scale, -10*botscale_scale);
-    glVertex2f(-6*botscale_scale, -10*botscale_scale);
+    glVertex2f(0*botscale_scale, 2*botscale_scale);
+    glVertex2f(2*botscale_scale, -2*botscale_scale);
+    glVertex2f(-2*botscale_scale, -2*botscale_scale);
     glEnd();
     
     glPushMatrix() ;
@@ -63,9 +63,9 @@ double convert_angle_to_degrees(int hexangle) {
     
     setColorTo([NSColor whiteColor]);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(0*turretscale_scale, 6*turretscale_scale);
-    glVertex2f(3*turretscale_scale, -3*turretscale_scale);
-    glVertex2f(-3*turretscale_scale, -3*turretscale_scale);
+    glVertex2f(0*turretscale_scale, 1.5*turretscale_scale);
+    glVertex2f(1.5*turretscale_scale, -1.5*turretscale_scale);
+    glVertex2f(-1.5*turretscale_scale, -1.5*turretscale_scale);
     glEnd();
     
     glPopMatrix();
@@ -84,8 +84,8 @@ double convert_angle_to_degrees(int hexangle) {
 -(void) internalDrawMissile:(NSObject<MissileDescription>*) missile {
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
-    float width = 1.5;
-    float height = 16.0;
+    float width = 0.5;
+    float height = 10.0;
     glVertex2f(width, height);
     glVertex2f(width, -height);
     glVertex2f(-width, -height);
@@ -120,7 +120,7 @@ double convert_angle_to_degrees(int hexangle) {
 }
 
 -(void) internalDrawScan:(NSObject<ScanDescription>*) scan {
-    setColorTo([NSColor whiteColor]);
+    setColorTo([NSColor grayColor]);
 
     double startAngle = (-scan.startAngle+128) / 256.0 * 2 * M_PI;
     double endAngle = (-scan.endAngle+128) / 256.0 * 2 * M_PI;
@@ -138,7 +138,7 @@ double convert_angle_to_degrees(int hexangle) {
     if (widthOfScanArc < 0) {
         widthOfScanArc += M_2_PI;
     }
-    glBegin(GL_LINES);
+    glBegin(GL_LINE);
     for (float dangle = 0; dangle < widthOfScanArc; dangle += M_2_PI/32.0) {
         glVertex2f(((float)(scan.radius)) * sin(dangle+startAngle),((float)(scan.radius))* cos(dangle+startAngle));
     }
@@ -198,22 +198,24 @@ void rotateTo(int x, int y, int heading) {
 - (void) reshape
 {
     [[self openGLContext] update];
+
+    
 }
 
 - (void)drawRect:(NSRect)dirtyRect
 {
 
     const float width = 1024, height = 1024;
-    NSLog(@"%f %f %f %f", dirtyRect.size.width, dirtyRect.size.width,dirtyRect.origin.x, dirtyRect.origin.y );
+    
     glLoadIdentity ();
-    float scalex = self.frame.size.width/500.0;
-    float scaley = self.frame.size.height/500.0;
-    //glScalef(scalex,scaley, 1.0);
     
     glOrtho (0, width   , height, 0, 0, 1);
     glMatrixMode (GL_MODELVIEW);
     
-    
+    NSRect rect = [self bounds];
+    rect.size = [self convertSize:rect.size toView:nil];
+    glViewport(0.0, 0.0, NSWidth(rect), NSHeight(rect));
+
     
     glClearColor(0, 0, 0, 0);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -244,6 +246,7 @@ void rotateTo(int x, int y, int heading) {
     
     
     glFlush();
+    glSwapAPPLE();
     
     
 }
