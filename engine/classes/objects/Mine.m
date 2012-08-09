@@ -13,7 +13,8 @@
 @synthesize internal_radius;
 @synthesize internal_position;
 @synthesize detonationTriggered;
-
+@synthesize engine;
+@synthesize owner;
 -(int) x {
     return roundInternalDistanceToDistance(internal_position.x);
 }
