@@ -19,7 +19,8 @@
 
 @implementation BattleDocumentViewController
 @synthesize weightClass;
-
+@synthesize arenaView;
+@synthesize robotList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

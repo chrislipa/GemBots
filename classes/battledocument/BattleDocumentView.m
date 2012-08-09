@@ -26,9 +26,30 @@
     // Drawing code here.
 }
 
+-(void) autolayout {
+    ArenaView* arenaView = controller.arenaView;
+    RobotListTableView* robotList = controller.robotList;
+    
+    [self addConstraint:[NSLayoutConstraint
+                         constraintWithItem:robotList
+                         attribute:NSLayoutAttributeLeft
+                         relatedBy:NSLayoutRelationEqual
+                         toItem:arenaView
+                         attribute:NSLayoutAttributeRight
+                         multiplier:1.0f constant:10.0f]];
+    /*[robotList addConstraint:[NSLayoutConstraint
+                         constraintWithItem:robotList
+                         attribute:NSLayoutAttributeWidth
+                         relatedBy:NSLayoutRelationEqual
+                         toItem:nil
+                         attribute:0
+                         multiplier:0.0f constant:246.0f]];*/
+}
+
 
 
 -(void) awakeFromNib {
     [controller refreshView];
+    [self autolayout];
 }
 @end

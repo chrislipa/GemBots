@@ -60,8 +60,9 @@
     bool flagToCreateNewTimer;
 }
 
-@property (readwrite,retain)    WeightClass* weightClass;
-
+@property (readwrite,retain) ArenaView* arenaView;
+@property (readwrite,retain)  WeightClass* weightClass;
+@property (readwrite,retain)  RobotListTableView* robotList;
 - (IBAction) addRobotButtonEvent:(id)sender;
 
 

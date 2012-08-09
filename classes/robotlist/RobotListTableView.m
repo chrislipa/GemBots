@@ -20,7 +20,19 @@
     return self;
 }
 
+-(void) autolayout {
+    [self addConstraint:[NSLayoutConstraint
+                         constraintWithItem:self
+                         attribute:NSLayoutAttributeWidth
+                         relatedBy:NSLayoutRelationEqual
+                         toItem:nil
+                         attribute:0
+                         multiplier:0.0f constant:270.0f]];
+}
 
+-(void) awakeFromNib {
+    //[self autolayout];
+}
 
 
 @end

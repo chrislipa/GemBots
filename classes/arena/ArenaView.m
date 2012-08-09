@@ -21,10 +21,25 @@ double convert_angle_to_degrees(int hexangle) {
     return (((float)(128.0+hexangle))/256.0) * 360.0;
 }
 
+-(void) autolayout {
+    [self addConstraint:[NSLayoutConstraint
+                         constraintWithItem:self
+                         attribute:NSLayoutAttributeWidth
+                         relatedBy:NSLayoutRelationEqual
+                         toItem:self
+                         attribute:NSLayoutAttributeHeight
+                         multiplier:1.0f constant:0.0f]];
+}
+
+-(void) awakeFromNib {
+    [(ArenaView*)self autolayout];
+}
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         // Initialization code here.
     }
     
@@ -180,18 +195,29 @@ void rotateTo(int x, int y, int heading) {
     glPopMatrix();
 }
 
-
+- (void) reshape
+{
+    [[self openGLContext] update];
+}
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    const int width = 1024, height = 1024;
-    
+
+    const float width = 1024, height = 1024;
+    NSLog(@"%f %f %f %f", dirtyRect.size.width, dirtyRect.size.width,dirtyRect.origin.x, dirtyRect.origin.y );
     glLoadIdentity ();
-    glOrtho (0, width, height, 0, 0, 1);
+    float scalex = self.frame.size.width/500.0;
+    float scaley = self.frame.size.height/500.0;
+    //glScalef(scalex,scaley, 1.0);
+    
+    glOrtho (0, width   , height, 0, 0, 1);
     glMatrixMode (GL_MODELVIEW);
+    
+    
     
     glClearColor(0, 0, 0, 0);
     glClear(GL_COLOR_BUFFER_BIT);
+    
     
     for (NSObject<MineDescription>* mine in gameStateDescriptor.mines) {
         [self drawMine:mine];

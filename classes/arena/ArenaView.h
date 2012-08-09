@@ -16,5 +16,5 @@
 }
 
 @property (readwrite,retain)  NSObject<GameStateDescriptor>* gameStateDescriptor;
-
+-(void) autolayout ;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3603D5C515D41930009F53AD /* BattleDocumentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3603D5C415D41930009F53AD /* BattleDocumentWindow.m */; };
 		3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608927E15BE876D00A06C94 /* Cocoa.framework */; };
 		362A925215D0B75200E2817F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E115D0B75200E2817F /* main.m */; };
 		362A925315D0B75200E2817F /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E315D0B75200E2817F /* PGBotApplication.m */; };
@@ -137,6 +138,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3603D5C315D41930009F53AD /* BattleDocumentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentWindow.h; sourceTree = "<group>"; };
+		3603D5C415D41930009F53AD /* BattleDocumentWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleDocumentWindow.m; sourceTree = "<group>"; };
 		3608927A15BE876D00A06C94 /* Gem Bots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gem Bots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3608927E15BE876D00A06C94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3608928115BE876D00A06C94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -375,6 +378,8 @@
 				362A91F315D0B75200E2817F /* BattleDocumentViewController+UserInterface.m */,
 				362A91F415D0B75200E2817F /* BattleDocumentViewController.h */,
 				362A91F515D0B75200E2817F /* BattleDocumentViewController.m */,
+				3603D5C315D41930009F53AD /* BattleDocumentWindow.h */,
+				3603D5C415D41930009F53AD /* BattleDocumentWindow.m */,
 			);
 			path = battledocument;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 				362A926B15D0B75200E2817F /* TimeLimit.m in Sources */,
 				362A926C15D0B75200E2817F /* Utility.m in Sources */,
 				362A926D15D0B75200E2817F /* WeightClass.m in Sources */,
+				3603D5C515D41930009F53AD /* BattleDocumentWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
