@@ -142,7 +142,7 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrameSize">{248, 482}</string>
 											<reference key="NSSuperview" ref="281351878"/>
-											<reference key="NSNextKeyView" ref="315845178"/>
+											<reference key="NSNextKeyView" ref="434282077"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<string key="NSHuggingPriority">{723, 750}</string>
 											<string key="NSAntiCompressionPriority">{615, 750}</string>
@@ -301,7 +301,7 @@
 							</array>
 							<string key="NSFrame">{{527, 20}, {265, 500}}</string>
 							<reference key="NSSuperview" ref="468700778"/>
-							<reference key="NSNextKeyView" ref="434282077"/>
+							<reference key="NSNextKeyView" ref="281351878"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSAntiCompressionPriority">{1000, 750}</string>
 							<int key="NSsFlags">83986</int>

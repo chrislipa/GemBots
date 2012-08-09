@@ -48,7 +48,8 @@ double convert_angle_to_degrees(int hexangle) {
 
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
-    double botscale_scale =  2;
+    #define ROBOT_RADIUS 2
+    double botscale_scale =  ROBOT_RADIUS/2.0;
     //double turretscale_scale = 1;
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
@@ -83,6 +84,7 @@ double convert_angle_to_degrees(int hexangle) {
 }
 
 -(void) internalDrawMissile:(NSObject<MissileDescription>*) missile {
+    
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
     float width = 0.5;
@@ -250,7 +252,7 @@ void rotateTo(int x, int y, int heading) {
     
     
     
-    glFlush();
+    //glFlush();
     glSwapAPPLE();
     
     

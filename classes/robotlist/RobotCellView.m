@@ -47,13 +47,22 @@
 
 
 -(void) refreshHeatAndArmor  {
-    float heat = ((float)robotCellViewController.botContainer.robot.heat)/ 500.0;
-    float armor = ((float)robotCellViewController.botContainer.robot.armor)/ 100.0;
     
-    [heatProgressBar2 setPercentageComplete:heat];
-    [armorProgressBar2 setPercentageComplete:armor];
-    [heatProgressBar2 setNeedsDisplay:YES];
-    [armorProgressBar2 setNeedsDisplay:YES];
+    float heatc = ((float)robotCellViewController.botContainer.robot.heat)/ 500.0;
+    float armorc = ((float)robotCellViewController.botContainer.robot.armor)/ 100.0;
+    
+    if (heatc != heat) {
+        heat = heatc;
+        [heatProgressBar2 setPercentageComplete:heat];
+        [heatProgressBar2 setNeedsDisplay:YES];
+    }
+    if (armorc != armor) {
+        armor = armorc;
+        [armorProgressBar2 setPercentageComplete:armor];
+        [armorProgressBar2 setNeedsDisplay:YES];
+    }
+    
+    
 }
 
 
@@ -146,17 +155,27 @@
 }
 
 -(void) refreshForGameCycle {
-    if (robotCellViewController.botContainer.robot.executionLogString) {
-        [loggingLine setStringValue:robotCellViewController.botContainer.robot.executionLogString];
-    }
+    if  ([executionLogString isEqualToString:robotCellViewController.botContainer.robot.executionLogString]) {
+        executionLogString =robotCellViewController.botContainer.robot.executionLogString;
+    
+        if (robotCellViewController.botContainer.robot.executionLogString) {
+            [loggingLine setStringValue:robotCellViewController.botContainer.robot.executionLogString];
+        }
+    }   
     [self refreshHeatAndArmor];
 }
 
 -(void) refreshForMatch {
-    [winsTextField setStringValue:[NSString stringWithFormat:@"%d", robotCellViewController.botContainer.robot.wins ] ];
-    [winsTextField setNeedsDisplay:YES];
-    [lossesTextField setStringValue:[NSString stringWithFormat:@"%d", robotCellViewController.botContainer.robot.losses ] ];
-    [lossesTextField setNeedsDisplay:YES];
+    if (wins !=robotCellViewController.botContainer.robot.wins  ) {
+        wins = robotCellViewController.botContainer.robot.wins  ;
+        [winsTextField setStringValue:[NSString stringWithFormat:@"%d", robotCellViewController.botContainer.robot.wins ] ];
+        [winsTextField setNeedsDisplay:YES];
+    }
+    if (losses != robotCellViewController.botContainer.robot.losses ) {
+        losses = robotCellViewController.botContainer.robot.losses ;
+        [lossesTextField setStringValue:[NSString stringWithFormat:@"%d", robotCellViewController.botContainer.robot.losses ] ];
+        [lossesTextField setNeedsDisplay:YES];
+    }
 }
 
 @end

@@ -58,6 +58,8 @@
     
     float delayBetweenGameCycles;
     bool flagToCreateNewTimer;
+    int gameCycleShown;
+    int matchShown;
 }
 
 @property (readwrite,retain) ArenaView* arenaView;

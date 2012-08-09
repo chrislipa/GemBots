@@ -48,6 +48,9 @@
     
     IBOutlet NSTextField* winsTextField;
     IBOutlet NSTextField* lossesTextField;
+    int wins, losses;
+    NSString* executionLogString;
+    float heat, armor;
 }
 
 @property (readonly) NSColorWell* colorPicker;

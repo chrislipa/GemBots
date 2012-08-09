@@ -79,10 +79,18 @@
 }
 
 -(void) refreshUIForGameCycle {
-    [gameCycleNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.gameCycle]];
+    
+    if (engine.gameCycle % 10 == 0 || gameCycleShown == 0 || gameCycleShown > engine.gameCycle) {
+        gameCycleShown = engine.gameCycle;
+        [gameCycleNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.gameCycle]];
+    }
 }
 -(void) refreshForMatch {
-    [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
+    if (matchShown == 0 || matchShown != engine.currentMatch) {
+            [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
+        matchShown = engine.currentMatch;
+    }
+
     
 }
 
