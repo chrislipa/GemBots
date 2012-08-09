@@ -48,7 +48,7 @@ double convert_angle_to_degrees(int hexangle) {
 
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
-    double botscale_scale =  1;
+    double botscale_scale =  2;
     //double turretscale_scale = 1;
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
@@ -121,8 +121,10 @@ double convert_angle_to_degrees(int hexangle) {
     glEnd();
 }
 
--(void) internalDrawScan:(NSObject<ScanDescription>*) scan {
-    setColorTo([NSColor grayColor]);
+-(void) internalDrawScan:(NSObject<ScanDescription>*) scan {;
+
+    float g = 0.3;
+    setColorTo([NSColor colorWithDeviceRed:g green:g blue:g alpha:g] );
 
     double startAngle = (-scan.startAngle+128) / 256.0 * 2 * M_PI;
     double endAngle = (-scan.endAngle+128) / 256.0 * 2 * M_PI;

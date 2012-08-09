@@ -72,7 +72,7 @@
         if (!robot.isAlive)
             continue;
         for (int j = 0; j < i; j++) {
-            GemBot* otherRobot = [robots objectAtIndex:i];
+            GemBot* otherRobot = [robots objectAtIndex:j];
             if (!otherRobot.isAlive)
                 continue;
             computeCircleCollision(robot, otherRobot, &maximumCollisionTimeFound, objectInCollisionA, objectInCollisionB);

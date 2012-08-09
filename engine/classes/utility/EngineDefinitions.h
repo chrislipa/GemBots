@@ -64,7 +64,7 @@ typedef struct {
 } position;
 
 #define MISSILE_INTERNAL_RADIUS ((unit)0.120)
-#define ROBOT_RADIUS 2
+#define ROBOT_RADIUS 4
 #define INITIAL_SCAN_ARC_WIDTH 128
 #define DEFAULT_MISSILE_SPEED 32
 #define DEFAULT_ROBOT_SPEED 4

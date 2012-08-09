@@ -96,9 +96,18 @@ void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollision
 
 bool quickNearnessCheck(unit b1x, unit b1y, unit b1vx, unit b1vy, unit b1r,
                         unit b2x, unit b2y, unit b2vx, unit b2vy, unit b2r) {
-    unit linfnorm = MAX(ABS(b1x-b2x),ABS(b1y-b2y));
+    uint dx = ABS(b1x-b2x);
+    unit dy = ABS(b1y-b2y);
+    unit r = b1r  + b2r + b1vx + b1vy + b2vx + b2vy;
+    if (MAX(dx,dy) > r) {
+        return NO;
+    }
+    if ((dx+dy)*sqrt(2) > r ) {
+        return NO;
+    }
     
-    return linfnorm < b1r + b2r;
+    
+    return YES;
     
     
 }
@@ -171,10 +180,20 @@ void computeCircleCollision(NSObject<CollideableObject>* i, NSObject<Collideable
     
     /* We want the smallest time */
 //        t :=    min (min (t, 0.5 * (2 * B - sqrt (DISC)) / A), 0.5 * (2 * B + sqrt (DISC)) / A)
-        unit t =  MIN (        0.5 * (2 * b -usqrt (disc)) / a , 0.5 * (2 * b + usqrt(disc)) / a);
-        
-        if (t < *maximumCollisionTimeFound) {
-            *maximumCollisionTimeFound = t;
+        unit t1 = 0.5 * (2 * b -usqrt (disc)) / a ;
+        unit t2 = 0.5 * (2 * b + usqrt(disc)) / a;
+        unit time;
+        if (t1 < 0 && t2 < 0 ) {
+            return;
+        } else if (t1 < 0) {
+            time = t2;
+        } else if (t2 < 0) {
+            time = t1;
+        } else {
+            time = MIN(t1,t2);
+        }
+        if (time < *maximumCollisionTimeFound) {
+            *maximumCollisionTimeFound = time;
             *objectInCollisionA = i;
             *objectInCollisionB = j;
         }
