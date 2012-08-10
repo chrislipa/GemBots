@@ -143,17 +143,17 @@
 }
 
 -(NSColor*) unusedColorForNewRobot {
-    //return [NSColor redColor];
+   
     NSArray* colors = [NSArray arrayWithObjects:
-                       [NSColor blueColor],
                        [NSColor redColor],
                        [NSColor greenColor],
                        [NSColor cyanColor],
                        [NSColor magentaColor],
+                       
                        [NSColor orangeColor],
                        [NSColor purpleColor],
-                       [NSColor whiteColor],
                        [NSColor yellowColor],
+                       [NSColor blueColor],
                        nil];
     NSMutableDictionary* d = [NSMutableDictionary dictionary];
     for (NSColor* c in colors) {
@@ -172,6 +172,7 @@
             smallest = [[d objectForKey:c] intValue];
         }
     }
+
     return lowestColor;
 }
 
