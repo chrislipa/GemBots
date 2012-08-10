@@ -210,7 +210,12 @@ void rotateTo(int x, int y, int heading) {
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-
+    CFTimeInterval currentTime = CACurrentMediaTime();
+    if (currentTime - lastTimeABufferSwapWasPerformed < 1.0/60.0) {
+        return;
+    }
+    lastTimeABufferSwapWasPerformed = currentTime;
+    
     const float width = 1024, height = 1024;
     
     glLoadIdentity ();
@@ -241,9 +246,10 @@ void rotateTo(int x, int y, int heading) {
     for (NSObject<MissileDescription>* miss in gameStateDescriptor.missiles) {
         [self drawMissile:miss];
     }
-
-    for (NSObject<ScanDescription>*scan in gameStateDescriptor.scans) {
-        [self drawScan:scan];
+    if (battleDocumentViewController.scanEnabled) {
+        for (NSObject<ScanDescription>*scan in gameStateDescriptor.scans) {
+            [self drawScan:scan];
+        }
     }
     
     for (NSObject<ExplosionDescription>* exp in gameStateDescriptor.explosions) {
@@ -253,6 +259,8 @@ void rotateTo(int x, int y, int heading) {
     
     
     //glFlush();
+    
+    
     glSwapAPPLE();
     
     
