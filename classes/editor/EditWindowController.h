@@ -12,7 +12,7 @@
 #import "BotContainer.h"
 @class EditWindow;
 @interface EditWindowController : NSViewController {
-    IBOutlet NSTextField* textView;
+    IBOutlet NSTextView* textView;
     IBOutlet NSTextFieldCell* textCell;
     IBOutlet EditWindow* editWindow;
     BattleDocumentViewController* battleController;

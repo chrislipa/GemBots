@@ -16,7 +16,7 @@
 @synthesize botContainer;
 
 -(void) buildRequested {
-    NSString* str = textView.stringValue;
+    NSString* str = [NSString stringWithString: textView.textStorage.string ];
     [str writeToURL:botContainer.urlToBot atomically:YES encoding:NSUTF8StringEncoding error:nil];
     [battleController reccompileRobot:botContainer];
 }
@@ -44,6 +44,12 @@
 }
 
 -(void) refreshTextFromDisk {
+    [textView setGrammarCheckingEnabled:NO];
+    //[textView setIncrementalSearchingEnabled:YES];
+    //[textView setRulerVisible:YES];
+    [textView setUsesFindBar:YES];
+    
+    
     NSString* str,*name;
     if  (botContainer.urlToBot != nil) {
         str = [NSString stringWithContentsOfURL:botContainer.urlToBot encoding:NSUTF8StringEncoding error:nil];
@@ -51,8 +57,11 @@
     } else {
         str = nil;
         name = @"Robot Editor";
+        
     }
-    [textView setStringValue:str];
+    [textView setString:str];
+    NSFont* f = [NSFont fontWithName:@"MONACO" size:14];
+    [textView.textStorage setFont:f];
     [editWindow setTitle:name];
     [textCell setHighlighted:NO];
 
