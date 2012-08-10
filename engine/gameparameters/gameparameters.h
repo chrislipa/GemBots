@@ -13,7 +13,7 @@
 extern int scan_radius_config_options[6];
 extern unit weapon_percentage_config_options[6];
 extern unit number_of_mines_config_options[6];
-extern int armor_percentage_config_options[6];
+extern unit armor_percentage_config_options[6];
 extern unit armor_speed_percentage_config_options[6];
 extern unit shield_heat_config_options[6];
 extern unit shield_damage_config_options[6];

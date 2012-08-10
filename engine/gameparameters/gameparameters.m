@@ -23,7 +23,7 @@ unit indexInto(const unit a[][2], unit v) {
 const int scan_radius_config_options[6] = {250,500,750,1000,1250,1500};
 const unit weapon_percentage_config_options[6] = {.50,.80,1.00,1.20,1.35,1.50};
 const unit number_of_mines_config_options[6] = {2,4,6,10,16,24};
-const int armor_percentage_config_options[6] = {.50,.66,1.00,1.20,1.30,1.50};
+const unit armor_percentage_config_options[6] = {.50,.66,1.00,1.20,1.30,1.50};
 const unit armor_speed_percentage_config_options[6] = {1.33,1.20,1.00,.85,.75,.66};
 const unit shield_heat_config_options[6] = {0,0,0,67,50,33};
 const unit shield_damage_config_options[6] = {1,1,1,.67,.50,.33};
