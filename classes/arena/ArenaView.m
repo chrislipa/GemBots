@@ -131,24 +131,23 @@ double convert_angle_to_degrees(int hexangle) {
     double startAngle = (-scan.startAngle+128) / 256.0 * 2 * M_PI;
     double endAngle = (-scan.endAngle+128) / 256.0 * 2 * M_PI;
 
-    glBegin(GL_LINES);
-    glVertex2f(((float)(scan.radius)) * sin(startAngle),((float)(scan.radius))* cos(startAngle));
-    glVertex2f(0,0);
-    glEnd();
-    glBegin(GL_LINES);
-    glVertex2f(((float)(scan.radius)) * sin(endAngle),((float)(scan.radius))* cos(endAngle));
-    glVertex2f(0,0);
-    glEnd();
-    
     float widthOfScanArc = endAngle - startAngle;
-    if (widthOfScanArc < 0) {
-        widthOfScanArc += M_2_PI;
+    if (widthOfScanArc < 0 || scan.isWholeCircle) {
+        widthOfScanArc += 2*M_PI;
     }
-    glBegin(GL_LINE);
-    for (float dangle = 0; dangle < widthOfScanArc; dangle += M_2_PI/32.0) {
+    float delta = M_2_PI/32.0;
+    
+    glBegin(GL_LINE_STRIP);
+    
+    glVertex2f(0,0);
+    
+    
+
+    for (float dangle = 0; dangle < widthOfScanArc-delta; dangle += delta) {
         glVertex2f(((float)(scan.radius)) * sin(dangle+startAngle),((float)(scan.radius))* cos(dangle+startAngle));
     }
     glVertex2f(((float)(scan.radius)) * sin(endAngle),((float)(scan.radius))* cos(endAngle));
+    glVertex2f(0,0);
     glEnd();
 }
 
@@ -210,11 +209,7 @@ void rotateTo(int x, int y, int heading) {
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    CFTimeInterval currentTime = CACurrentMediaTime();
-    if (currentTime - lastTimeABufferSwapWasPerformed < 1.0/60.0) {
-        return;
-    }
-    lastTimeABufferSwapWasPerformed = currentTime;
+    
     
     const float width = 1024, height = 1024;
     

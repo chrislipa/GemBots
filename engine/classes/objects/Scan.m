@@ -16,7 +16,7 @@
 @synthesize startAngle;
 @synthesize endAngle;
 @synthesize owner;
-
+@synthesize isWholeCircle;
 -(int) heading {
     return 0;
     int half_heading = (startAngle + endAngle) / 2;

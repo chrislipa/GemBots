@@ -51,6 +51,8 @@
     int wins, losses;
     NSString* executionLogString;
     float heat, armor;
+    
+    IBOutlet NSTextField* winslosses;
 }
 
 @property (readonly) NSColorWell* colorPicker;

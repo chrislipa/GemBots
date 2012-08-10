@@ -15,7 +15,9 @@
     int radius;
     int startAngle, endAngle;
     GemBot* owner;
+    bool isWholeCircle;
 }
+@property (readwrite,assign) bool isWholeCircle;
 @property (readwrite,retain) GemBot* owner;
 @property (readwrite,assign) int x;
 @property (readwrite,assign) int y;

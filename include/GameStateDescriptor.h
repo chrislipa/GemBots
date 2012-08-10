@@ -74,7 +74,7 @@
 @end
 
 @protocol ScanDescription <NSObject,OrientableObject>
-
+-(bool) isWholeCircle;
 -(int) x;
 -(int) y;
 -(int) radius;

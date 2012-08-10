@@ -54,7 +54,9 @@
     scan.startAngle = anglemod( bot.turretHeading + bot.scan_arc_width/2.0);
     scan.endAngle = anglemod( bot.turretHeading - bot.scan_arc_width/2.0);
     scan.radius = roundInternalDistanceToDistance(internalScanRadius);
+    scan.isWholeCircle = (bot.scan_arc_width >= 256);
     [scans addObject:scan];
+    
     
     return internal_rv==-1?-1:roundInternalDistanceToDistance(internal_rv);
 }
@@ -80,6 +82,7 @@
     scan.x = bot.x;
     scan.y = bot.y;
     scan.radius = radius;
+    scan.isWholeCircle = (bot.scan_arc_width >= 256);
     [scans addObject:scan];
     
     return internal_rv==-1?-1:roundInternalDistanceToDistance(internal_rv);
@@ -105,6 +108,7 @@
     scan.x = bot.x;
     scan.y = bot.y;
     scan.radius = SONAR_RADIUS;
+    scan.isWholeCircle = (bot.scan_arc_width >= 256);
     [scans addObject:scan];
         
     return internal_rv==-1?-1:roundInternalDistanceToDistance(internal_rv);

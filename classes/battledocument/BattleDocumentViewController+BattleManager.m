@@ -103,7 +103,7 @@
     flagToCreateNewTimer = NO;
     battleCurrentlyInProgress = YES;
     [gameTimer invalidate];
-    
+    [self refreshUI];
     gameTimer = [NSTimer scheduledTimerWithTimeInterval:delayBetweenGameCycles
                                                 target:self
                                               selector:@selector(battleStep:)
@@ -145,6 +145,14 @@
 }
 
 -(void) refreshUI {
+    if (![engine isMatchCurrentlyActive]) {
+        [self refreshForMatch];
+    }
+    CFTimeInterval currentTime = CACurrentMediaTime();
+    if (currentTime - lastTimeABufferSwapWasPerformed < 1.0/60.0) {
+        return;
+    }
+    lastTimeABufferSwapWasPerformed = currentTime;
     for (NSNumber* n in robotCellViewControllers) {
         RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
         if (![engine isMatchCurrentlyActive]) {
@@ -154,9 +162,7 @@
     }
     [self refreshUIForGameCycle];
     
-    if (![engine isMatchCurrentlyActive]) {
-        [self refreshForMatch];
-    }
+    
     
 }
 

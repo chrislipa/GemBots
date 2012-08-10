@@ -88,6 +88,7 @@
 -(void) refreshForMatch {
     if (matchShown == 0 || matchShown != engine.currentMatch) {
             [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
+        [matchesNumeratorView setNeedsDisplay:YES];
         matchShown = engine.currentMatch;
     }
 }

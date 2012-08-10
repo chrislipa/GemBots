@@ -49,7 +49,8 @@
     NSTimer* gameTimer;
     NSObject<GameStateDescriptor>* currentGameStateDescription;
     IBOutlet NSButtonCell* startStopButtonCell;
-    
+
+    IBOutlet NSTextField* matchesNumeratorView;
     IBOutlet NSTextFieldCell* matchesNumeratorCell;
     IBOutlet NSTextFieldCell* matchesDenominatorCell;
     IBOutlet NSTextFieldCell* gameCycleNumeratorCell;
@@ -76,6 +77,7 @@
     IBOutlet NSButton* scanButton;
     
     bool battleOngoing;
+    CFTimeInterval lastTimeABufferSwapWasPerformed;
 }
 
 @property (readwrite,assign) bool battleOngoing;
