@@ -93,21 +93,22 @@ void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollision
     }
 }
 
+unit unitabsunit(unit x) {
+    if (x < 0) {
+        return -x;
+    } else {
+        return x;
+    }
+}
+
 
 bool quickNearnessCheck(unit b1x, unit b1y, unit b1vx, unit b1vy, unit b1r,
                         unit b2x, unit b2y, unit b2vx, unit b2vy, unit b2r) {
-    uint dx = ABS(b1x-b2x);
-    unit dy = ABS(b1y-b2y);
-    unit r = b1r  + b2r + b1vx + b1vy + b2vx + b2vy;
-    if (MAX(dx,dy) > r) {
-        return NO;
-    }
-    if ((dx+dy)*sqrt(2) > r ) {
-        return NO;
-    }
     
+    unit distanceBetweenCenters = sqrt((b1x-b2x)*(b1x-b2x)+(b1y-b2y)*(b1y-b2y));
+    unit distanceTraveled = sqrt((b1vx-b2vx)*(b1vx-b2vx)+(b1vy-b2vy)*(b1vy-b2vy));
+    return distanceBetweenCenters <= distanceTraveled + b1r + b2r;
     
-    return YES;
     
     
 }
@@ -139,11 +140,13 @@ void computeCircleCollision(NSObject<CollideableObject>* i, NSObject<Collideable
     unit ir = i.internal_radius;
     unit jr = j.internal_radius;
     
-    if (!quickNearnessCheck(ix,iy,ivx,ivy,ir,jx,jy,jvx,jvy,jr)) {
+    bool qnc =!quickNearnessCheck(ix,iy,ivx,ivy,ir,jx,jy,jvx,jvy,jr);
+    if (qnc) {
         return;
     }
     
-    if (!areMovingTowardsEachOther(ix,iy,ivx,ivy,jx,jy,jvx,jvy)) {
+    bool mteo = !areMovingTowardsEachOther(ix,iy,ivx,ivy,jx,jy,jvx,jvy);
+    if (mteo) {
         return;
     }
     
@@ -174,7 +177,7 @@ void computeCircleCollision(NSObject<CollideableObject>* i, NSObject<Collideable
      * udate the time if we find a collision that has occurd earlier   *
      * than the previous one.                                          */
 //    if DISC >= 0 then
-    if (disc >= 0) {
+    if (disc >= 0 && a != 0) {
         
         
     
@@ -196,7 +199,9 @@ void computeCircleCollision(NSObject<CollideableObject>* i, NSObject<Collideable
             *maximumCollisionTimeFound = time;
             *objectInCollisionA = i;
             *objectInCollisionB = j;
+            
         }
+    
         
     }
 }
