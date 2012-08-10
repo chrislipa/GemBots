@@ -15,9 +15,12 @@
 #import "WeightClass.h"
 #import "TimeLimit.h"
 #import "ArenaView.h"
+
 @class BotContainer;
 @class RobotListTableView;
 @class BattleDocument;
+@class ArenaView;
+
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
@@ -40,7 +43,7 @@
     IBOutlet NSPopUpButton* gameCycleTimeOutPicker;
     
     IBOutlet NSTextFieldCell* teamTextCell;
-    IBOutlet ArenaView* arenaView;
+
     NSTimer* gameTimer;
     NSObject<GameStateDescriptor>* currentGameStateDescription;
     IBOutlet NSButtonCell* startStopButtonCell;
@@ -53,14 +56,27 @@
     IBOutlet NSTextFieldCell* matchesTextCell;
     IBOutlet NSTextFieldCell* gameCycleSlashCell;
     IBOutlet NSTextFieldCell* matchesSlashCell;
-    
+    IBOutlet ArenaView* arenaView;
     IBOutlet NSSlider* gamespeedSlider;
     
     float delayBetweenGameCycles;
     bool flagToCreateNewTimer;
     int gameCycleShown;
     int matchShown;
+    
+    
+    bool soundEnabled;
+    bool graphicsEnabled;
+    bool scanEnabled;
+    
+    IBOutlet NSButton* soundButton;
+    IBOutlet NSButton* graphicsButton;
+    IBOutlet NSButton* scanButton;
 }
+
+@property (readwrite,assign) bool soundEnabled;
+@property (readwrite,assign) bool graphicsEnabled;
+@property (readwrite,assign) bool scanEnabled;
 
 @property (readwrite,retain) ArenaView* arenaView;
 @property (readwrite,retain)  WeightClass* weightClass;
@@ -85,4 +101,10 @@
 -(void) notifyOfTeamsChange;
 -(void) computeGameSpeedBasedOnSlider;
 -(IBAction) gamespeedSliderCallback:(id)sender;
+
+
+-(IBAction)soundEnabledCallback:(id)sender ;
+-(IBAction)graphicsEnabledCallback:(id)sender ;
+-(IBAction)scanEnabledCallback:(id)sender ;
+
 @end

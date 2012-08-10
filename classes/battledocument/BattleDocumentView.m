@@ -44,6 +44,8 @@
                          toItem:nil
                          attribute:0
                          multiplier:0.0f constant:246.0f]];*/
+    
+
 }
 
 
@@ -51,5 +53,8 @@
 -(void) awakeFromNib {
     [controller refreshView];
     [self autolayout];
+    [controller soundEnabledCallback:nil];
+    [controller graphicsEnabledCallback:nil];
+    [controller scanEnabledCallback:nil];
 }
 @end

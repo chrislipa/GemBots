@@ -13,7 +13,7 @@
 #import "BattleDocumentViewController+Draw.h"
 #import "RobotCellViewController.h"
 #import "BattleDocumentViewController+UserInterface.h"
-
+#import "ArenaView.h"
 @implementation BattleDocumentViewController (BattleManager)
 
 
@@ -158,9 +158,14 @@
    
     
     [engine stepGameCycle];
-    currentGameStateDescription = [engine currentGameStateDescription];
-    arenaView.gameStateDescriptor = currentGameStateDescription;
-    [arenaView setNeedsDisplay:YES];
+    
+    if (graphicsEnabled) {
+        currentGameStateDescription = [engine currentGameStateDescription];
+        arenaView.gameStateDescriptor = currentGameStateDescription;
+        [arenaView setNeedsDisplay:YES];
+    }
+    
+    
     
     [self refreshUI];
     

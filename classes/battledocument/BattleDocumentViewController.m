@@ -21,6 +21,9 @@
 @synthesize weightClass;
 @synthesize arenaView;
 @synthesize robotList;
+@synthesize soundEnabled;
+@synthesize graphicsEnabled;
+@synthesize scanEnabled;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,7 +49,7 @@
 }
 
 -(void) awakeFromNib {
-
+   
 
     
 }
@@ -92,11 +95,12 @@
 -(void) addRobot:(BotContainer*) robot {
     [robots addObject:robot];
     [self setRobotToNewTeam:robot];
-    [robotList reloadData];
+    
     for (id key in robotCellViewControllers) {
         RobotCellViewController* rcvc = [robotCellViewControllers objectForKey:key];
         [rcvc.cell refreshTeams];
     }
+    
     
 }
 
@@ -105,7 +109,7 @@
         BotContainer* d = [[BotContainer alloc] initWithEngine:engine andURL:url andDocumentController:self];
         [self addRobot:d];
     }
-    
+    [robotList reloadData];
     
 }
 
@@ -139,6 +143,7 @@
 }
 
 -(NSColor*) unusedColorForNewRobot {
+    //return [NSColor redColor];
     NSArray* colors = [NSArray arrayWithObjects:
                        [NSColor blueColor],
                        [NSColor redColor],
@@ -171,6 +176,7 @@
 }
 
 -(int) unusedTeamForRobot:(BotContainer*) bot {
+
     for (int team = 1; ; team++) {
         bool match = NO;
         for (BotContainer* r in robots) {
@@ -192,6 +198,7 @@
 }
 
 -(void) notifyOfTeamsChange {
+
     NSMutableDictionary* teams = [NSMutableDictionary dictionary];
     for (BotContainer* bot in robots) {
         NSNumber* k = [NSNumber numberWithInt:bot.team];
@@ -235,6 +242,7 @@
 
 
 -(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot; {
+
     for (int i = 0; ; i++) {
         bool match = NO;
         for (NSObject<RobotDescription>* r in robots) {
@@ -264,6 +272,7 @@
 }
 
 -(NSArray*) teamTitles {
+
     NSUInteger t = [robots count];
     for (BotContainer* bot in robots) {
         t = MAX(t, bot.team);
@@ -323,6 +332,16 @@
     delayBetweenGameCycles = 1/(sqrt(n))-1.0;
     delayBetweenGameCycles /= 3;
     [self notifyOfGameSpeedChange];
+}
+
+-(IBAction)soundEnabledCallback:(id)sender {
+    soundEnabled = [soundButton intValue];
+}
+-(IBAction)graphicsEnabledCallback:(id)sender  {
+    graphicsEnabled = [graphicsButton intValue];
+}
+-(IBAction)scanEnabledCallback:(id)sender  {
+    scanEnabled = [scanButton intValue];
 }
 
 @end
