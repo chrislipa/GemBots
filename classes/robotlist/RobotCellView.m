@@ -65,6 +65,11 @@
     
 }
 
+-(void) dealloc {
+    
+}
+
+
 
 -(void) refreshTeams {
     int team = robotCellViewController.botContainer.team;
@@ -80,6 +85,7 @@
 
 
 -(void) refreshWithBot:(BotContainer*) b {
+    wins = losses = -1;
     [name setStringValue:[b name]];
     [name2 setStringValue:[b name]];
     [author setStringValue:[b author]];
@@ -135,8 +141,6 @@
 }
 
 -(void) notifyOfBattleStarting {
-    //[view1 setHidden:NO];
-    //[view2 setHidden:YES];
     
     [tabview selectTabViewItemAtIndex:1];
     showingBattleView = YES;
@@ -145,13 +149,11 @@
 }
 
 -(void) notifyOfBattleEnding {
-    //[view2 setHidden:YES];
-    //[view2 setHidden:NO];
     
-    [tabview selectTabViewItemAtIndex:0];
-    showingBattleView = NO;
+    //[tabview selectTabViewItemAtIndex:0];
+    //showingBattleView = NO;
     
-    [self refreshWithBot:robotCellViewController.botContainer];
+    //[self refreshWithBot:robotCellViewController.botContainer];
 }
 
 -(void) refreshForGameCycle {
