@@ -18,7 +18,9 @@
 }
 
 -(unit) initialInternalArmor {
-    return armorToInternalArmor(INITIAL_ARMOR) * armor_percentage_config_options[config_armor];
+    unit a = armorToInternalArmor(INITIAL_ARMOR);
+    unit b = armor_percentage_config_options[config_armor];
+    return a*b;
 }
 -(unit) internalScanRadius {
     return distanceToInternalDistance(scan_radius_config_options[config_scanner]);
