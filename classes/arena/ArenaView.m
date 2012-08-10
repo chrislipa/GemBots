@@ -87,7 +87,7 @@ double convert_angle_to_degrees(int hexangle) {
     
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
-    float width = 0.5;
+    float width = 0.3;
     float height = 8.0;
     glVertex2f(width, height);
     glVertex2f(width, -height);

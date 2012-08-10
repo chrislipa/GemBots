@@ -15,13 +15,14 @@
 #import "WeightClass.h"
 #import "TimeLimit.h"
 #import "ArenaView.h"
-
+#import "BattleDocumentWindow.h"
 @class BotContainer;
 @class RobotListTableView;
 @class BattleDocument;
 @class ArenaView;
 
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
+    IBOutlet BattleDocumentWindow* battleDocumentWindow;
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
     
@@ -84,7 +85,7 @@
 @property (readwrite,assign) bool soundEnabled;
 @property (readwrite,assign) bool graphicsEnabled;
 @property (readwrite,assign) bool scanEnabled;
-
+@property (readonly) BattleDocumentWindow* battleDocumentWindow;
 @property (readwrite,retain) ArenaView* arenaView;
 @property (readwrite,retain)  WeightClass* weightClass;
 @property (readwrite,retain)  RobotListTableView* robotList;

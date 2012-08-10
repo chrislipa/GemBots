@@ -119,4 +119,29 @@ MasterController* staticMasterController = nil;
     [battleDocuments removeObject:controller];
 }
 
+
+-(void) fullScreenHasBeenEntered {
+    [exitFullScreenMenuItem setHidden:NO];
+    [exitFullScreenMenuItem setHidden:YES];
+}
+
+-(void) fullScreenHasBeenExited {
+    fullScreenBattleDocumentViewController = nil;
+    [exitFullScreenMenuItem setHidden:YES];
+    [exitFullScreenMenuItem setHidden:NO];
+}
+
+
+
+-(IBAction) enterFullScreen:(id)sender {
+
+  
+            
+            [[[battleDocuments anyObject] battleDocumentWindow] toggleFullScreen:nil];
+   // [[NSApplication sharedApplication] setPresentationOptions:NSFullScreenWindowMask];
+}
+-(IBAction) exitFullScreen:(id)sender {
+    
+}
+
 @end

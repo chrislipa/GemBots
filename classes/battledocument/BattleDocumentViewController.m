@@ -25,6 +25,7 @@
 @synthesize graphicsEnabled;
 @synthesize scanEnabled;
 @synthesize battleOngoing;
+@synthesize battleDocumentWindow;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -343,7 +344,7 @@
     float x =[gamespeedSlider floatValue];
     float n = (x) /100.0;
     delayBetweenGameCycles = 1/(sqrt(n))-1.0;
-    delayBetweenGameCycles /= 3;
+    delayBetweenGameCycles /= 10;
     [self notifyOfGameSpeedChange];
 }
 

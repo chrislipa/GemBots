@@ -15,6 +15,10 @@
     NSMutableDictionary* editorWindows;
     NSMutableDictionary* errorWindows;
     NSMutableSet* battleDocuments;
+    
+    BattleDocumentViewController* fullScreenBattleDocumentViewController;
+    IBOutlet NSMenuItem* enterFullScreenMenuItem;
+    IBOutlet NSMenuItem* exitFullScreenMenuItem;
 }
 
 +(MasterController*) singleton;
@@ -27,4 +31,7 @@
 
 -(void) registerBattleDocument:(BattleDocumentViewController*) controller;
 -(void) registerBattleDocumentClosing:(BattleDocumentViewController*) controller;
+
+-(IBAction) enterFullScreen:(id)sender;
+-(IBAction) exitFullScreen:(id)sender;
 @end
