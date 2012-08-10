@@ -63,6 +63,7 @@
 
 
 -(void) startBattle {
+    battleOngoing = YES;
     [self setUpTeamsAndColors];
     [self refreshViewForStartBattle];
     
@@ -74,6 +75,8 @@
 
 
 -(void) endBattle {
+    battleOngoing = NO;
+    battleCurrentlyInProgress = NO;
     for (RobotCellViewController* c in robotCellViewControllers) {
         [c notifyOfBattleEnding];
     }
@@ -95,6 +98,7 @@
 }
 
 -(void) startBattleLoop {
+    [self disableUIButtons];
     [self computeGameSpeedBasedOnSlider];
     flagToCreateNewTimer = NO;
     battleCurrentlyInProgress = YES;
@@ -132,6 +136,8 @@
 }
 
 -(void) stopBattleLoop {
+    [self enableUIButtons];
+    battleOngoing = NO;
     battleCurrentlyInProgress = NO;
     [self refreshViewForEndBattle];
     [gameTimer invalidate];

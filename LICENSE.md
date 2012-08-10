@@ -78,5 +78,8 @@ http://creativecommons.org/publicdomain/zero/1.0/
 12919169981152723307gem-md.png
 12919169981152723307gem-th.png
 12919169981152723307gem.png
-
+green-plus-sign.svg
+green-plus-sign-hi.png
+green-plus-sign-md.png
+green-plus-sign-th.png
 

@@ -249,6 +249,7 @@ int rotateLeft(int x, int d) {
 
 //39 -5 wr R R
 -(void) wr {
+    
     objc_msgSend(self, device.selector);
 }
 //40 1 call R

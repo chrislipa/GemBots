@@ -133,6 +133,12 @@
     
     [self refreshForGameCycle];
     [self refreshForMatch];
+    
+    if (robotCellViewController.documentController.battleOngoing) {
+        [self uiviewforbattles];
+    } else {
+        [self uiviewforpeace];
+    }
 }
 
 -(IBAction) chooseTeamCallback:(id) sender {
@@ -141,19 +147,29 @@
 }
 
 -(void) notifyOfBattleStarting {
-    
-    [tabview selectTabViewItemAtIndex:1];
     showingBattleView = YES;
-    
     [self refreshWithBot:robotCellViewController.botContainer];
+    
+}
+
+-(void) uiviewforbattles {
+    [tabview selectTabViewItemAtIndex:1];
+    
+    
+    
 }
 
 -(void) notifyOfBattleEnding {
+    showingBattleView = NO;
+    [self refreshWithBot:robotCellViewController.botContainer];
     
-    //[tabview selectTabViewItemAtIndex:0];
-    //showingBattleView = NO;
+}
+
+-(void) uiviewforpeace {
+    [tabview selectTabViewItemAtIndex:0];
     
-    //[self refreshWithBot:robotCellViewController.botContainer];
+    
+    
 }
 
 -(void) refreshForGameCycle {
@@ -178,6 +194,17 @@
         [lossesTextField setStringValue:[NSString stringWithFormat:@"%d", robotCellViewController.botContainer.robot.losses ] ];
         [lossesTextField setNeedsDisplay:YES];
     }
+}
+-(IBAction)duplicateButtonCallback:(id)sender {
+    [robotCellViewController duplicateButtonCallback:sender];
+}
+
+-(void) enableUIButtons {
+    
+}
+
+-(void) disableUIButtons {
+    
 }
 
 @end

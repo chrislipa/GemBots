@@ -90,8 +90,32 @@
             [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
         matchShown = engine.currentMatch;
     }
+}
 
+-(void) enableUIButtons {
+    for (NSNumber* n in robotCellViewControllers) {
+        RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
+        [c enableUIButtons];
+    }
+        
+    [weightClassPicker setEnabled:YES];
     
+    [numberOfMatchesField setEnabled:YES];
+    [gameCycleTimeOutPicker setEnabled:YES];
+    [openButton setEnabled:YES];
+    [newButton setEnabled:YES];
+}
+-(void) disableUIButtons {
+    for (NSNumber* n in robotCellViewControllers) {
+        RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
+        [c disableUIButtons];
+    }
+    [weightClassPicker setEnabled:NO];
+    
+    [numberOfMatchesField setEnabled:NO];
+    [gameCycleTimeOutPicker setEnabled:NO];
+    [openButton setEnabled:NO];
+    [newButton setEnabled:NO];
 }
 
 

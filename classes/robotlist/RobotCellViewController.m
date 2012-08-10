@@ -73,5 +73,13 @@
 -(void) refreshForMatch {
     [cell refreshForMatch];
 }
-
+-(IBAction)duplicateButtonCallback:(id)sender {
+    [documentController addDuplicateOfRobot:botContainer];
+}
+-(void) enableUIButtons {
+    [cell enableUIButtons];
+}
+-(void) disableUIButtons {
+    [cell disableUIButtons];
+}
 @end

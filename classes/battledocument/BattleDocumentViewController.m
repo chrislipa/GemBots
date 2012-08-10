@@ -24,7 +24,7 @@
 @synthesize soundEnabled;
 @synthesize graphicsEnabled;
 @synthesize scanEnabled;
-
+@synthesize battleOngoing;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -69,6 +69,10 @@
     NSArray* paths = [p URLs];
     
     [self loadRobotsFromURLs:paths];
+}
+
+-(void) addDuplicateOfRobot:(BotContainer*) container {
+    [self loadRobotsFromURLs:[NSArray arrayWithObject:container.urlToBot]];
 }
 
 -(void) loadRobotsFromURLs:(NSArray*) urls {
@@ -137,7 +141,7 @@
         controller = [[RobotCellViewController alloc] initWithNibName:@"RobotCellViewController" andController:self andRobot:robot];
         [robotCellViewControllers setObject:controller forKey:key];
     }
-    [(RobotCellViewController*)controller notifyOfBattleEnding];
+    [(RobotCellViewController*)controller refresh];
     return controller.view;
     
 }
@@ -297,6 +301,14 @@
     
     [robots removeObject:bot];
     [robotCellViewControllers removeObjectForKey:key];
+    for (NSUInteger i = row; i < [robotCellViewControllers count]+2; i++) {
+        id x = [robotCellViewControllers objectForKey:[NSNumber numberWithLong:i+1]];
+        if (x != nil) {
+            [robotCellViewControllers setObject:x forKey:[NSNumber numberWithLong:i]];
+            [robotCellViewControllers removeObjectForKey:[NSNumber numberWithLong:i+1]];
+        }
+    }
+    
     [robotList reloadData];
 }
 

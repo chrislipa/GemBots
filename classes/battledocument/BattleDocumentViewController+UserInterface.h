@@ -18,5 +18,7 @@
 -(void) refreshViewForEndBattle ;
 -(void) refreshForMatch ;
 -(void) refreshUIForGameCycle ;
+-(void) enableUIButtons;
+-(void) disableUIButtons;
 @end
 

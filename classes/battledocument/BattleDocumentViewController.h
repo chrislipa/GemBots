@@ -25,6 +25,8 @@
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
     
+    IBOutlet NSButton* openButton;
+    IBOutlet NSButton* newButton;
     
     
     NSMutableArray* robots;
@@ -72,8 +74,11 @@
     IBOutlet NSButton* soundButton;
     IBOutlet NSButton* graphicsButton;
     IBOutlet NSButton* scanButton;
+    
+    bool battleOngoing;
 }
 
+@property (readwrite,assign) bool battleOngoing;
 @property (readwrite,assign) bool soundEnabled;
 @property (readwrite,assign) bool graphicsEnabled;
 @property (readwrite,assign) bool scanEnabled;
@@ -83,7 +88,7 @@
 @property (readwrite,retain)  RobotListTableView* robotList;
 - (IBAction) addRobotButtonEvent:(id)sender;
 
-
+-(void) addDuplicateOfRobot:(BotContainer*) container;
 -(int) numberOfTeams;
 -(NSArray*) teamTitles ;
 -(int) emptyTeamForRobot:(NSObject<RobotDescription>*) bot;

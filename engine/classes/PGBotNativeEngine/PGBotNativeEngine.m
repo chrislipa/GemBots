@@ -90,6 +90,7 @@
 
 -(void) removeRobot:(GemBot*) g {
     [externalOrderingOfRobots removeObject:g];
+    [robots removeObject:g];
 }
 
 
@@ -128,6 +129,9 @@
     hasSetEnded = NO;
     winnersOfLastMatch = [NSMutableSet set];
     isMatchCurrentlySetUp = NO;
+    for (GemBot* bot in robots) {
+        [bot resetForNewSetOfMatches];
+    }
 }
 
 -(void) startNewMatch {

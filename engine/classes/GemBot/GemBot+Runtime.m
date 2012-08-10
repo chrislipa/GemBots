@@ -74,7 +74,8 @@
     memory[DESIRED_THROTTLE] = throttle;
     memory[TURRET_OFFSET] = turretHeading;
     memory[TIME_SINCE_DETECTION] = (hasEverBeenDetected?[engine gameCycle] - gameCycleOfLastDetection:MAX_ROBOT_MEMORY_VALUE);
-    
+    memory[COLLISION_COUNT] = number_of_collisions;
+    memory[ODOMETER] = roundInternalDistanceToDistance(internal_odometer);
 }
 
 
@@ -100,9 +101,11 @@
         
         
         if (rtype1 == 3) {
+            [self executionError:[NSString stringWithFormat:@"Invalid RType0 = 3 at line %d (memory address %X)",(ip-SOURCE_START)/3,ip]];
             opcode = getOpcode(NOP);
         }
         if (rtype2 == 3) {
+            [self executionError:[NSString stringWithFormat:@"Invalid RType1 = 3 at line %d (memory address %X)",(ip-SOURCE_START)/3,ip]];
             opcode = getOpcode(NOP);
         }
         

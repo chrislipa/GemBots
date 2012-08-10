@@ -51,7 +51,7 @@
     
     // Refreshed on new set
     int killsThisMatch;
-        int team;
+    int team;
 
     int kills, deaths, wins, losses;
     // Refreshed on new match
@@ -137,9 +137,12 @@
     
     NSString* executionLogString;
     
-    NSMutableDictionary* logStrings;;
+    NSMutableDictionary* logStrings;
+    
+    unit internal_odometer;
+    
 }
-
+@property (readwrite,assign) unit internal_odometer;
 @property (readwrite,retain) NSDictionary* strings;
 @property (readwrite,retain) NSString* executionLogString;
 @property (readwrite,assign) int order;

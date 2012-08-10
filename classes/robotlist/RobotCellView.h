@@ -65,4 +65,8 @@
 -(void) notifyOfBattleEnding;
 -(void) refreshForGameCycle;
 -(void) refreshForMatch;
+-(IBAction)duplicateButtonCallback:(id)sender;
+
+-(void) enableUIButtons;
+-(void) disableUIButtons;
 @end

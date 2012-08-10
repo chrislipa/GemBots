@@ -35,7 +35,7 @@
     
     internal_armor =  [self initialInternalArmor];
     internal_heat =  heatToInternalHeat(INITIAL_HEAT);
-    
+
     
     
     number_of_collisions = 0;
@@ -98,6 +98,11 @@
     //comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
     number_of_comm_transmits_this_turn = 0;
 }
+
+-(void) resetForNewSetOfMatches {
+    wins = losses = kills = deaths = 0;
+}
+
 
 -(void) cleanForRecompile {
     highestAddressofRomWrittenTo= 0;

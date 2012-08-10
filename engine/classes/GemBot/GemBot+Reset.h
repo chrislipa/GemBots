@@ -12,4 +12,5 @@
 -(void) reboot;
 -(void) cleanBetweenRounds;
 -(void) cleanForRecompile;
+-(void) resetForNewSetOfMatches ;
 @end

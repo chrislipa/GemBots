@@ -54,8 +54,12 @@
 }
 -(void) updatePositionsForwardInTime:(unit) dt {
     for (GemBot* gem in robots) {
-        if (gem.isAlive) 
+        if (gem.isAlive) {
             updatePositionForwardInTime(gem, dt);
+            unit dx = gem.internal_position.x;
+            unit dy = gem.internal_position.y;
+            gem.internal_odometer += dt*sqrt(dx*dx+dy*dy);
+        }
     }
     for (Missile* m in missiles) {
         updatePositionForwardInTime(m, dt);
