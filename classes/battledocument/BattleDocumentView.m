@@ -29,14 +29,14 @@
 -(void) autolayout {
     ArenaView* arenaView = controller.arenaView;
     RobotListTableView* robotList = controller.robotList;
-    
+    /*
     [self addConstraint:[NSLayoutConstraint
                          constraintWithItem:robotList
                          attribute:NSLayoutAttributeLeft
                          relatedBy:NSLayoutRelationEqual
                          toItem:arenaView
                          attribute:NSLayoutAttributeRight
-                         multiplier:1.0f constant:10.0f]];
+                         multiplier:1.0f constant:10.0f]];*/
     /*[robotList addConstraint:[NSLayoutConstraint
                          constraintWithItem:robotList
                          attribute:NSLayoutAttributeWidth
