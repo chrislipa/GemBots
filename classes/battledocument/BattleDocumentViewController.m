@@ -52,29 +52,25 @@
 }
 
 -(void) awakeFromNib {
-    laserSoundEffects = [NSMutableArray array];
-    for (int i = 0; i < 40; i++) {
-        NSURL* url = [[NSBundle mainBundle] URLForResource:@"laser3-lipa-modified" withExtension:@"mp3"];
-        
-        AVAudioPlayer* s = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        [s prepareToPlay];
-        [laserSoundEffects addObject:s];
-        
-    }
-    explosionSoundEffects = [NSMutableArray array];
-    for (int i = 0; i < 40; i++) {
-        NSURL* url = [[NSBundle mainBundle] URLForResource:@"21410_21830-lq-short-lipa" withExtension:@"mp3"];
-        
-        AVAudioPlayer* s = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        [s prepareToPlay];
-        [explosionSoundEffects addObject:s];
-        
-    }
+    audio = [[AudioController alloc] init];
 }
 
 - (IBAction) addRobotButtonEvent:(id)sender {
     [self promptUserToAddRobots];
    
+}
+
+-(void) promptUserForNewRobot {
+    NSSavePanel* p = [NSSavePanel savePanel];
+
+    [p setAllowedFileTypes:[NSArray arrayWithObjects:@"gembot", nil]];
+    [p setCanCreateDirectories:YES];
+    [p setShowsHiddenFiles:NO];
+    
+    [p runModal];
+//    NSArray* paths = [p URL];
+    
+  //  [self loadRobotsFromURLs:paths];
 }
 
 -(void) promptUserToAddRobots {
@@ -84,10 +80,14 @@
     [p setCanChooseDirectories:NO];
     [p setResolvesAliases:YES];
     [p setAllowsMultipleSelection:YES];
-    [p runModal];
-    NSArray* paths = [p URLs];
+    [p beginWithCompletionHandler: ^(NSInteger result) {
+        NSArray* paths = [p URLs];
+        
+        [self loadRobotsFromURLs:paths];
+    }];
     
-    [self loadRobotsFromURLs:paths];
+    
+    
 }
 
 -(void) addDuplicateOfRobot:(BotContainer*) container {

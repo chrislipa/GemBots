@@ -16,6 +16,7 @@
 #import "TimeLimit.h"
 #import "ArenaView.h"
 #import "BattleDocumentWindow.h"
+#import "AudioController.h"
 @class BotContainer;
 @class RobotListTableView;
 @class BattleDocument;
@@ -81,11 +82,8 @@
     CFTimeInterval lastTimeABufferSwapWasPerformed;
     
     
-    NSMutableArray* laserSoundEffects;
-    int currentMissileFire;
     
-    NSMutableArray* explosionSoundEffects;
-    int currentExplosion;
+    AudioController* audio;
 }
 
 @property (readwrite,assign) bool battleOngoing;

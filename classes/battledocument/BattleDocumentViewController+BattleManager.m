@@ -187,28 +187,10 @@
                 missile_explosions++;
             }
         }
-        for (int i = 0; i < missiles_fired; i++) {
-            AVAudioPlayer* a = [laserSoundEffects objectAtIndex:currentMissileFire];
-            if ([a isPlaying]) {
-                break;
-            }
-            currentMissileFire = (currentMissileFire + 1) % [laserSoundEffects count];
-            double delay;
-            delay = 0+ i * delayBetweenGameCycles / missiles_fired;
-            //delay = .10*i;
-            [a playAtTime:a.deviceCurrentTime+delay];
-        }
-        for (int i = 0; i < missile_explosions; i++) {
-            AVAudioPlayer* a = [explosionSoundEffects objectAtIndex:currentExplosion];
-            if ([a isPlaying]) {
-                break;
-            }
-            currentExplosion = (currentExplosion + 1) % [explosionSoundEffects count];
-            double delay;
-            delay = 0+ i * delayBetweenGameCycles / missile_explosions;
-            //delay = .10*i;
-            [a playAtTime:a.deviceCurrentTime+delay];
-        }
+        [audio playMissileFireSound: missiles_fired : delayBetweenGameCycles ];
+        [audio playMissileExplodeSound: missile_explosions : delayBetweenGameCycles ];
+        
+        
     }
     
     
