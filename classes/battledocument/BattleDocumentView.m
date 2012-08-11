@@ -46,6 +46,14 @@
                          multiplier:0.0f constant:246.0f]];*/
     
 
+    [self addConstraint:[NSLayoutConstraint
+                     constraintWithItem:self
+                     attribute:NSLayoutAttributeWidth
+                     relatedBy:NSLayoutRelationGreaterThanOrEqual
+                     toItem:self
+                     attribute:NSLayoutAttributeHeight
+                     multiplier:1.0f constant:530.0f]];
+
 }
 
 
