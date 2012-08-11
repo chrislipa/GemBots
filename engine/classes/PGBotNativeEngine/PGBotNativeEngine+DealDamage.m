@@ -15,6 +15,7 @@
 
 -(void) dealDamagePhase {
     for (; numberOfExplosionsAppliedThisCycle < [explosions count]; numberOfExplosionsAppliedThisCycle++) {
+        [soundEffectsInitiatedThisCycle addObject:@"missile_exploded"];
         Explosion* explosion = [explosions objectAtIndex:numberOfExplosionsAppliedThisCycle];
         for (GemBot* bot in robots) {
             if ([bot isAlive]) {

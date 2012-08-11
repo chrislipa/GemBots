@@ -87,10 +87,19 @@
 		36499EB815D4D67800706EAF /* green-plus-sign-200.png in Resources */ = {isa = PBXBuildFile; fileRef = 36499EB615D4D67800706EAF /* green-plus-sign-200.png */; };
 		3651727F15D22042005C5D0F /* GemBotEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */; };
 		3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
+		369140B715D6239E005C3890 /* laser3-lipa-modified.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 369140B615D6239E005C3890 /* laser3-lipa-modified.mp3 */; };
+		369140EE15D62C0E005C3890 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140ED15D62C0E005C3890 /* CoreAudio.framework */; };
+		369140F315D62CB4005C3890 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140EF15D62CB3005C3890 /* AudioToolbox.framework */; };
+		369140F415D62CB4005C3890 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140F015D62CB3005C3890 /* AudioUnit.framework */; };
+		369140F515D62CB4005C3890 /* AudioVideoBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140F115D62CB4005C3890 /* AudioVideoBridging.framework */; };
+		369140F615D62CB4005C3890 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140F215D62CB4005C3890 /* CoreAudioKit.framework */; };
+		369140F815D62CE1005C3890 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140F715D62CE1005C3890 /* AVFoundation.framework */; };
+		369140FA15D635EA005C3890 /* Missile_Impact-Osama_bin_Laden-2012236287-modified-lipa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 369140F915D635EA005C3890 /* Missile_Impact-Osama_bin_Laden-2012236287-modified-lipa.mp3 */; };
 		369C5ED715D0C761002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608928315BE876D00A06C94 /* Foundation.framework */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
 		36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */; };
 		36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C1915315D0BC6600A79D5F /* SBJson.framework */; };
+		36F4337B15D63C1300623047 /* 21410_21830-lq-short-lipa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36F4337A15D63C1300623047 /* 21410_21830-lq-short-lipa.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,9 +274,18 @@
 		36499EB615D4D67800706EAF /* green-plus-sign-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-plus-sign-200.png"; sourceTree = "<group>"; };
 		3670B92415C6115F00A38D46 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		367ECB0215CDDC7E003692BB /* SBJson.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SBJson.framework; path = PGBotNativeEngine/external/SBJson_3.1/build/Debug/SBJson.framework; sourceTree = "<group>"; };
+		369140B615D6239E005C3890 /* laser3-lipa-modified.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "laser3-lipa-modified.mp3"; sourceTree = "<group>"; };
+		369140ED15D62C0E005C3890 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		369140EF15D62CB3005C3890 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		369140F015D62CB3005C3890 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		369140F115D62CB4005C3890 /* AudioVideoBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioVideoBridging.framework; path = System/Library/Frameworks/AudioVideoBridging.framework; sourceTree = SDKROOT; };
+		369140F215D62CB4005C3890 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		369140F715D62CE1005C3890 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		369140F915D635EA005C3890 /* Missile_Impact-Osama_bin_Laden-2012236287-modified-lipa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Missile_Impact-Osama_bin_Laden-2012236287-modified-lipa.mp3"; sourceTree = "<group>"; };
 		369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Gem Bots.entitlements"; sourceTree = "<group>"; };
 		36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = external/sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
+		36F4337A15D63C1300623047 /* 21410_21830-lq-short-lipa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "21410_21830-lq-short-lipa.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +293,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				369140F815D62CE1005C3890 /* AVFoundation.framework in Frameworks */,
+				369140F315D62CB4005C3890 /* AudioToolbox.framework in Frameworks */,
+				369140F415D62CB4005C3890 /* AudioUnit.framework in Frameworks */,
+				369140F515D62CB4005C3890 /* AudioVideoBridging.framework in Frameworks */,
+				369140F615D62CB4005C3890 /* CoreAudioKit.framework in Frameworks */,
+				369140EE15D62C0E005C3890 /* CoreAudio.framework in Frameworks */,
 				36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */,
 				369C5ED715D0C761002028C8 /* Foundation.framework in Frameworks */,
 				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
@@ -289,6 +313,12 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				369140F715D62CE1005C3890 /* AVFoundation.framework */,
+				369140EF15D62CB3005C3890 /* AudioToolbox.framework */,
+				369140F015D62CB3005C3890 /* AudioUnit.framework */,
+				369140F115D62CB4005C3890 /* AudioVideoBridging.framework */,
+				369140F215D62CB4005C3890 /* CoreAudioKit.framework */,
+				369140ED15D62C0E005C3890 /* CoreAudio.framework */,
 				361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */,
 				362A91DE15D0B75200E2817F /* classes */,
 				362A921B15D0B75200E2817F /* resources */,
@@ -470,6 +500,7 @@
 		362A921B15D0B75200E2817F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				369140B515D6239E005C3890 /* sounds */,
 				36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */,
 				362A921D15D0B75200E2817F /* BattleDocument.xib */,
 				362A921F15D0B75200E2817F /* InfoPlist.strings */,
@@ -580,6 +611,16 @@
 				36499EAE15D4D5E300706EAF /* green-plus-sign.svg */,
 			);
 			path = green_plus;
+			sourceTree = "<group>";
+		};
+		369140B515D6239E005C3890 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				36F4337A15D63C1300623047 /* 21410_21830-lq-short-lipa.mp3 */,
+				369140F915D635EA005C3890 /* Missile_Impact-Osama_bin_Laden-2012236287-modified-lipa.mp3 */,
+				369140B615D6239E005C3890 /* laser3-lipa-modified.mp3 */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 		36C1914715D0BC4400A79D5F /* external */ = {
@@ -755,6 +796,9 @@
 				36499EB415D4D5E300706EAF /* green-plus-sign.svg in Resources */,
 				36499EB715D4D67800706EAF /* green-plus-sign-200@2x.png in Resources */,
 				36499EB815D4D67800706EAF /* green-plus-sign-200.png in Resources */,
+				369140B715D6239E005C3890 /* laser3-lipa-modified.mp3 in Resources */,
+				369140FA15D635EA005C3890 /* Missile_Impact-Osama_bin_Laden-2012236287-modified-lipa.mp3 in Resources */,
+				36F4337B15D63C1300623047 /* 21410_21830-lq-short-lipa.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

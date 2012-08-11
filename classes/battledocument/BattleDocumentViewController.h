@@ -79,6 +79,13 @@
     
     bool battleOngoing;
     CFTimeInterval lastTimeABufferSwapWasPerformed;
+    
+    
+    NSMutableArray* laserSoundEffects;
+    int currentMissileFire;
+    
+    NSMutableArray* explosionSoundEffects;
+    int currentExplosion;
 }
 
 @property (readwrite,assign) bool battleOngoing;

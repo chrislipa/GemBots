@@ -13,6 +13,8 @@
 #import "BattleDocumentViewController+UserInterface.h"
 #import "MasterController.h"
 #import "BattleDocumentViewController+BattleManager.h"
+#import <AVFoundation/AVFoundation.h>
+
 @interface BattleDocumentViewController ()
 
 @end
@@ -50,10 +52,26 @@
 }
 
 -(void) awakeFromNib {
-   
-
-    
+    laserSoundEffects = [NSMutableArray array];
+    for (int i = 0; i < 40; i++) {
+        NSURL* url = [[NSBundle mainBundle] URLForResource:@"laser3-lipa-modified" withExtension:@"mp3"];
+        
+        AVAudioPlayer* s = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        [s prepareToPlay];
+        [laserSoundEffects addObject:s];
+        
+    }
+    explosionSoundEffects = [NSMutableArray array];
+    for (int i = 0; i < 40; i++) {
+        NSURL* url = [[NSBundle mainBundle] URLForResource:@"21410_21830-lq-short-lipa" withExtension:@"mp3"];
+        
+        AVAudioPlayer* s = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        [s prepareToPlay];
+        [explosionSoundEffects addObject:s];
+        
+    }
 }
+
 - (IBAction) addRobotButtonEvent:(id)sender {
     [self promptUserToAddRobots];
    

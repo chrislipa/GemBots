@@ -83,3 +83,18 @@ green-plus-sign-hi.png
 green-plus-sign-md.png
 green-plus-sign-th.png
 
+
+
+laser3.mp3 is from http://listpod.net/lists/Sound_Effects
+A short laser firing sound, created by Eric Poggel 
+License: Public Domain
+
+
+Missile_Impact-Osama_bin_Laden-2012236287.mp3 is from
+http://soundbible.com/1592-Missile-Impact.html
+License: Public Domain | Recorded by Osama bin Laden
+
+21410_21830-lq.mp3 "blow.aif"
+is from http://www.freesound.org/people/Heigh-hoo/sounds/21410/
+by Heigh-hoo distributed under a Creative Commons 0 License
+http://creativecommons.org/publicdomain/zero/1.0/

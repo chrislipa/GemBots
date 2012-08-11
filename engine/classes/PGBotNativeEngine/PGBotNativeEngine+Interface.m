@@ -147,6 +147,7 @@
     [mines removeObject:mine];
 }
 -(void) fireMissileFrom:(position)internal_position inDirection:(int)heading withOwner:(GemBot*) bot {
+    [soundEffectsInitiatedThisCycle addObject:@"missile_fired"];
     Missile* m = [[Missile alloc] init];
     m.internal_position = internal_position;
     m.heading = heading;
