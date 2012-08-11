@@ -163,4 +163,10 @@ MasterController* staticMasterController = nil;
     [self fullScreenHasBeenExited];
 }
 
+-(IBAction)spawnNewBattleDocument:(id)sender {
+    NSError* error = nil;
+    [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay: YES error: &error];
+}
+
+
 @end
