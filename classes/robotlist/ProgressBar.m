@@ -45,7 +45,8 @@
     
     glClearColor(0, 0, 0, 0);
     glClear(GL_COLOR_BUFFER_BIT);
-    setColorTo(controller.botContainer.color);  
+    //setColorTo(controller.botContainer.color);
+    glColor3f(r,g,b);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0, 0);
     glVertex2f(0, height );
@@ -56,8 +57,10 @@
     
     
     glFlush();
-    
-    
+}
+
+-(void) setColorR:(float) pr G:(float) pg B:(float) pb {
+    r = pr; g = pg; b = pb;
 }
 
 

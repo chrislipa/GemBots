@@ -33,4 +33,5 @@
 -(IBAction)duplicateButtonCallback:(id)sender;
 -(void) enableUIButtons;
 -(void) disableUIButtons;
+-(IBAction) debugButtonCallback:(id)sender;
 @end

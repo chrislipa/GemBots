@@ -146,6 +146,7 @@
     } else {
         [self uiviewforpeace];
     }
+[heatProgressBar2 setColorR:1.0 G:0.0 B:0.0];
 }
 
 -(IBAction) chooseTeamCallback:(id) sender {
@@ -214,4 +215,8 @@
     
 }
 
+
+-(IBAction) debugButtonCallback:(id)sender {
+    
+}
 @end

@@ -68,7 +68,7 @@
 -(void) refreshForGameCycle;
 -(void) refreshForMatch;
 -(IBAction)duplicateButtonCallback:(id)sender;
-
+-(IBAction) debugButtonCallback:(id)sender;
 -(void) enableUIButtons;
 -(void) disableUIButtons;
 @end

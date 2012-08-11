@@ -82,4 +82,8 @@
 -(void) disableUIButtons {
     [cell disableUIButtons];
 }
+
+-(IBAction) debugButtonCallback:(id)sender {
+
+}
 @end
