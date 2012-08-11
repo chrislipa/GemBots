@@ -339,6 +339,11 @@
 }
 -(IBAction)numberOfMatchesChanged:(id)sender {
     numberOfMatches = [[numberOfMatchesField stringValue] intValue];
+    if (numberOfMatches < 0) {
+        numberOfMatches = 0;
+    }
+    [numberOfMatchesField setStringValue:[NSString stringWithFormat:@"%d",numberOfMatches]];
+    [matchesDenominatorCell setStringValue:[NSString stringWithFormat:@"%d", numberOfMatches]];
 }
 
 -(void) dealloc {
