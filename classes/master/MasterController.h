@@ -34,4 +34,7 @@
 
 -(IBAction) enterFullScreen:(id)sender;
 -(IBAction) exitFullScreen:(id)sender;
+
+-(void) battleDocumentControllerExitedFullScreen:(BattleDocumentViewController*) bdvc ;
+-(void) battleDocumentControllerEnteredFullScreen:(BattleDocumentViewController*) bdvc ;
 @end

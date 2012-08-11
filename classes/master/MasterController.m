@@ -121,27 +121,46 @@ MasterController* staticMasterController = nil;
 
 
 -(void) fullScreenHasBeenEntered {
+    [enterFullScreenMenuItem setHidden:YES];
+    [enterFullScreenMenuItem setKeyEquivalent:@""];
+    
+    
     [exitFullScreenMenuItem setHidden:NO];
-    [exitFullScreenMenuItem setHidden:YES];
+    [exitFullScreenMenuItem setKeyEquivalent:@"f"];
+    [exitFullScreenMenuItem setKeyEquivalentModifierMask: NSControlKeyMask   |  NSCommandKeyMask ];
+    
+    
 }
 
 -(void) fullScreenHasBeenExited {
     fullScreenBattleDocumentViewController = nil;
     [exitFullScreenMenuItem setHidden:YES];
-    [exitFullScreenMenuItem setHidden:NO];
+    [exitFullScreenMenuItem setKeyEquivalent:@""];
+    
+    [enterFullScreenMenuItem setHidden:NO];
+    [enterFullScreenMenuItem setKeyEquivalent:@"f"];
+    [enterFullScreenMenuItem setKeyEquivalentModifierMask: NSControlKeyMask   |  NSCommandKeyMask ];
 }
 
 
+
+-(void) battleDocumentControllerEnteredFullScreen:(BattleDocumentViewController*) bdvc {
+    [self fullScreenHasBeenEntered];
+    
+}
+
+-(void) battleDocumentControllerExitedFullScreen:(BattleDocumentViewController*) bdvc {
+    [self fullScreenHasBeenExited];
+}
 
 -(IBAction) enterFullScreen:(id)sender {
-
-  
-            
-            [[[battleDocuments anyObject] battleDocumentWindow] toggleFullScreen:nil];
-   // [[NSApplication sharedApplication] setPresentationOptions:NSFullScreenWindowMask];
+    [[[battleDocuments anyObject] battleDocumentWindow] toggleFullScreen:nil];
+    [self fullScreenHasBeenEntered];
+   
 }
 -(IBAction) exitFullScreen:(id)sender {
-    
+    [[[battleDocuments anyObject] battleDocumentWindow] toggleFullScreen:nil];
+    [self fullScreenHasBeenExited];
 }
 
 @end

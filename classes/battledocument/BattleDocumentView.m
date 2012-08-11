@@ -27,8 +27,8 @@
 }
 
 -(void) autolayout {
-    ArenaView* arenaView = controller.arenaView;
-    RobotListTableView* robotList = controller.robotList;
+    //ArenaView* arenaView = controller.arenaView;
+    //RobotListTableView* robotList = controller.robotList;
     /*
     [self addConstraint:[NSLayoutConstraint
                          constraintWithItem:robotList

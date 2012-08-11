@@ -358,4 +358,18 @@
     scanEnabled = [scanButton intValue];
 }
 
+
+- (void)windowWillEnterFullScreen:(NSNotification *)notification {
+    
+}
+- (void)windowDidEnterFullScreen:(NSNotification *)notification {
+    [[MasterController singleton] battleDocumentControllerEnteredFullScreen:self];
+}
+- (void)windowWillExitFullScreen:(NSNotification *)notification {
+    
+}
+- (void)windowDidExitFullScreen:(NSNotification *)notification {
+    [[MasterController singleton] battleDocumentControllerExitedFullScreen:self];
+}
+
 @end

@@ -21,7 +21,7 @@
 @class BattleDocument;
 @class ArenaView;
 
-@interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
+@interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate,NSWindowDelegate> {
     IBOutlet BattleDocumentWindow* battleDocumentWindow;
     IBOutlet BattleDocument* battleDocument;
     IBOutlet RobotListTableView* robotList;
