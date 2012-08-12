@@ -17,4 +17,5 @@
 -(void) stepButtonCallbackInternal;
 -(void) playPauseButtonCallbackInternal ;
 -(void) setBattleState:(BattleState) newBattleState;
+-(void) runRequestedFromEditor;
 @end

@@ -70,6 +70,7 @@ typedef enum {
     IBOutlet NSTextFieldCell* matchesSlashCell;
     IBOutlet ArenaView* arenaView;
     IBOutlet NSSlider* gamespeedSlider;
+    IBOutlet NSTextField* gamespeedTex;
     
     float delayBetweenGameCycles;
     bool flagToCreateNewTimer;

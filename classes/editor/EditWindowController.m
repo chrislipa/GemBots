@@ -10,6 +10,7 @@
 #import "EditWindowController.h"
 #import "BotContainer.h"
 #import "BattleDocumentViewController.h"
+#import "BattleDocumentViewController+BattleManager.h"
 @implementation EditWindowController
 @synthesize battleController;
 @synthesize editWindow;
@@ -27,6 +28,7 @@
 }
 -(void) buildAndRunCallback {
      [self buildRequested];
+    [battleController runRequestedFromEditor];
 }
 
 

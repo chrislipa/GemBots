@@ -17,6 +17,20 @@
 #import <AVFoundation/AVFoundation.h>
 @implementation BattleDocumentViewController (BattleManager)
 
+
+-(void) runRequestedFromEditor {
+    if (battleState != nobattle) {
+        [self stopBattleLoop];
+    }
+    if (![self readyToStartBattle]) {
+        return;
+    } else {
+        [self startBattle];
+        [self startBattleLoop];
+        [self setBattleState:runningbattle];
+    }
+    
+}
 -(void)  stopButtonCallbackInternal {
     switch (battleState) {
         case nobattle:
@@ -92,8 +106,10 @@
     [playPauseButton setEnabled:YES];
     if (battleState == runningbattle) {
         [playPauseButton setImage:pauseButtonImage];
+        [playPauseButton setToolTip:@"Pause (P)"];
     } else {
         [playPauseButton setImage:playButtonImage];
+        [playPauseButton setToolTip:@"Play (P)"];
     }
 }
 

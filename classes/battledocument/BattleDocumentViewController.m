@@ -64,7 +64,13 @@
     [self setStartRunError:@""];
     [self setBattleState:nobattle];
     
+    [gamespeedSlider setToolTip:@"Speed (-,= to adjust)"];
+    [stopButton setToolTip:@"Terminate Battle (T)"];
+    [stepButton setToolTip:@"Step Game Cycle (S)"];
+    [gamespeedTex setToolTip:@"Speed (-,= to adjust)"];
+    
 }
+
 
 - (IBAction) addRobotButtonEvent:(id)sender {
     [self promptUserToAddExistingRobot];
