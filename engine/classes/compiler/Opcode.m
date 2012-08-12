@@ -19,6 +19,7 @@
 @synthesize isOp1String;
 @synthesize isOp2String;
 @synthesize numberOfOperands;
+@synthesize isJump;
 @end
 
 @implementation Device
@@ -82,6 +83,7 @@ NSMutableArray* newOpcodesFromTextFile(NSString* file) {
             o.isOp1String = ([op1 isEqualToString:@"S"]);
             o.isOp2String = ([op2 isEqualToString:@"S"]);
             o.numberOfOperands = numberOfOperands;
+            o.isJump = (opcode >= JUMP_OP_CODE && opcode <= JNZ_OP_CODE);
             while ([array count] <= opcode) {
                 [array addObject:[NSNull null]];
             }

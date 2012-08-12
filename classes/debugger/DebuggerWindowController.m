@@ -44,12 +44,27 @@
     [name setTextColor:color];
     
     
+    variableAddresses = [NSMutableArray array];
+    variableNames = [NSMutableArray array];
+    NSMutableArray* vars = [NSMutableArray arrayWithArray:[botContainer.robot.userVariables allValues]];
+    NSArray* sortedVars = [vars sortedArrayUsingComparator:^NSComparisonResult(NSObject<UserVariableProtocol>* ob1, NSObject<UserVariableProtocol>* ob2){
+        return [[NSNumber numberWithInt:ob1.location] compare:[NSNumber numberWithInt:ob2.location]];
+    }];
+        
     
+    for (NSObject<UserVariableProtocol>* var in sortedVars) {
+        
+        NSString* vname = var.name;
+        for (int i = 0; i < var.size; i++) {
+            [variableAddresses addObject:[NSNumber numberWithInt:var.location+i]];
+            [variableNames addObject:vname];
+            vname = @"";
+        }
+        
+    }
+    variableCells = [NSMutableDictionary dictionary];
     
-   
-    
-    
-    
+    [variables reloadData];
     [debuggerWindow setTitle:[NSString stringWithFormat:@"%@ Debugger",n]];
 }
 
@@ -59,8 +74,30 @@
         [self refreshRegisters];
         [self refreshNamedMemory];
         [self refreshSourceCode];
+        [self refreshVariables];
     }
     
+}
+
+-(void) refreshVariables {
+    /*NSFont* font = [NSFont fontWithName:@"CONSOLAS" size:14.0];
+    NSColor* color = [NSColor colorWithDeviceRed:(3.0*16.0+4.0)/255.0 green:(14.0*16.0+15.0)/255.0 blue:(2.0*16.0+8.0)/255.0 alpha:1.0 ];
+
+    for (int i = 0; i < [variableAddresses count]; i++) {
+        NSTextField* v =  [variableCells objectForKey:[NSNumber numberWithInt:i]];
+        int addr = [[variableAddresses objectAtIndex:i] intValue];
+        NSString* n = [variableNames objectAtIndex:i];
+        int value = [botContainer.robot getMemory:addr];
+        
+        NSString* text = [NSString stringWithFormat:@"%08X %@ %08X",addr, sizeTo10(n), value];
+        
+        [v setStringValue:text];
+        [v setFont:font];
+        [v setTextColor: color];
+        [v setNeedsDisplay:YES];
+    }*/
+    [variables setNeedsDisplay:YES];
+    [variables reloadData];
 }
 
 -(void) refreshRegisters {
@@ -105,6 +142,7 @@
 }
 
 -(void) refreshSourceCode {
+    
     int prefixLines = 5;
     int postfixLines = 5;
     NSObject<RobotDescription>* b = botContainer.robot;
@@ -149,11 +187,66 @@
         [self makeViewBlack:view1];
         [self makeViewBlack:view2];
         [self refreshForRecompile];
+        [variables setBackgroundColor:[NSColor blackColor]];
     }
     return self;
 }
 
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+    return 14;
+}
 
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return [variableAddresses count];
+}
 
+NSString* sizeTo10(NSString* s) {
+    if (s.length >= 10) {
+        return [s substringToIndex:10];
+    } else {
+        NSMutableString* t = [NSMutableString stringWithString:@""];
+        while (t.length+s.length < 10 ) {
+            [t appendString:@" "];
+        }
+        return [t stringByAppendingString:s];
+    }
+}
+
+-(NSTextField*) variableCell:(NSInteger) row {
+    
+    
+    NSFont* font = [NSFont fontWithName:@"CONSOLAS" size:14.0];
+    NSColor* color = [NSColor colorWithDeviceRed:(3.0*16.0+4.0)/255.0 green:(14.0*16.0+15.0)/255.0 blue:(2.0*16.0+8.0)/255.0 alpha:1.0 ];
+
+    NSTextField* v = [[NSTextField alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    [v setBordered:NO];
+
+    [v setFont:font];
+    [v setTextColor:color];
+    [v setBackgroundColor:[NSColor blackColor]];
+    
+    return v;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView
+   viewForTableColumn:(NSTableColumn *)tableColumn
+                  row:(NSInteger)row {
+    id key = [NSString stringWithFormat:@"%ld",row];
+    NSTextField* cell = [variableCells objectForKey:key];
+    if (!cell) {
+        cell = [self variableCell:row];
+        [variableCells setObject:cell forKey:key];
+    }
+    
+    int addr = [[variableAddresses objectAtIndex:row] intValue];
+    NSString* n = [variableNames objectAtIndex:row];
+    int value = [botContainer.robot getMemory:addr];
+    
+    NSString* text = [NSString stringWithFormat:@"%08X %@ %08X",addr, sizeTo10(n), value];
+    [cell setStringValue:text];
+
+    
+    return cell;
+}
 
 @end

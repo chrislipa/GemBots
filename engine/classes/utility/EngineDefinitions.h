@@ -72,6 +72,8 @@ typedef struct {
 #define SYSTEM_CALL_OPCODE 37
 #define READ_DEVICE_OPCODE 38
 #define WRITE_DEVICE_OPCODE 39
+#define JUMP_OP_CODE 26
+#define JNZ_OP_CODE 34
 
 
 #define INVALID_OP_CODE 53

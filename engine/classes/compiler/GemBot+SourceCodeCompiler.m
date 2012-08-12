@@ -39,7 +39,7 @@
 @end
 
 
-@interface UserVariable : NSObject {
+@interface UserVariable : NSObject <UserVariableProtocol> {
     NSString* name;
     bool in_line;
     int location;
@@ -168,19 +168,20 @@
     [self readDescription:lines];
     [self readArmaments:lines];
     
-    NSMutableDictionary* userVariables;
+
     NSMutableDictionary* userConstants;
     NSMutableDictionary* labels;
     NSMutableDictionary* strings;
     int sizeOfCode;
     [self readConstants:lines intoConstants:&userConstants];
     [self identifyLabels:lines withConstants:userConstants intoLabels:&labels];
-    [self identifyVariables:lines withConstants:userConstants andLabels:labels intoVariables:&userVariables];
+    [self identifyVariables:lines withConstants:userConstants andLabels:labels];
     [self readLogStrings:lines intoLogStrings:&strings];
-    [self readmemory:lines withConstants:userConstants andLabels:labels andVariables:userVariables andSize:&sizeOfCode];
+    [self readmemory:lines withConstants:userConstants andLabels:labels  andSize:&sizeOfCode];
     [self populateLabels:labels];
     [self populateVariables:userVariables at:sizeOfCode];
     logStrings = [NSDictionary dictionaryWithDictionary:strings];
+    
 }
 
 
@@ -276,7 +277,7 @@
     *plogStrings = zlogStrings;
 }
 
--(void) identifyVariables:(NSMutableArray*) lines withConstants:(NSDictionary*) userConstants andLabels:(NSMutableDictionary*) labels intoVariables:(NSMutableDictionary**) pvariables {
+-(void) identifyVariables:(NSMutableArray*) lines withConstants:(NSDictionary*) userConstants andLabels:(NSMutableDictionary*) labels  {
     NSMutableDictionary* variables = [NSMutableDictionary dictionary];
     
     NSDictionary* defaultconstants = constantDictionary();
@@ -350,7 +351,7 @@
         }
     }
         
-    *pvariables = variables;
+    userVariables = variables;
 }
 
 -(void) identifyLabels:(NSMutableArray*) lines withConstants:(NSDictionary*) userConstants intoLabels:(NSMutableDictionary**) plabels {
@@ -499,7 +500,7 @@
 
 
 
--(void) readmemory:(NSArray*) a withConstants:(NSDictionary*) userConstants andLabels:(NSDictionary*) labels andVariables:(NSMutableDictionary*) userVariables andSize:(int*) size {
+-(void) readmemory:(NSArray*) a withConstants:(NSDictionary*) userConstants andLabels:(NSDictionary*) labels  andSize:(int*) size {
 
     NSDictionary* defaultConstants = constantDictionary();
     NSDictionary* defaultVariables = defaultVariablesDictionary();

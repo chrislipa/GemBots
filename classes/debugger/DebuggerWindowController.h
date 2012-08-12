@@ -13,7 +13,7 @@
 #import "DebuggerWindow.h"
 
 @class DebuggerWindow;
-@interface DebuggerWindowController : NSViewController {
+@interface DebuggerWindowController : NSViewController <NSTableViewDelegate, NSTableViewDataSource> {
     BattleDocumentViewController* battleController;
     BotContainer* botContainer;
     IBOutlet DebuggerWindow* debuggerWindow;
@@ -26,7 +26,12 @@
     IBOutlet NSView* titleView;
     IBOutlet NSView* view1;
     IBOutlet NSView* view2;
+    IBOutlet NSTableView* variables;
     bool markedAsDead;
+
+    NSMutableArray* variableNames;
+    NSMutableArray* variableAddresses;
+    NSMutableDictionary* variableCells;
 }
 
 @property (readwrite,retain) BotContainer* botContainer;

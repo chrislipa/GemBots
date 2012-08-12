@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol UserVariableProtocol <NSObject>
+
+    -(NSString*) name;
+    -(bool) in_line;
+    -(int) location;
+    -(int) size;
+    -(NSMutableArray*) initialValue;
+    -(NSMutableArray*) memoryLocationsOfReferences;
+@end
+
 @protocol OrientableObject <NSObject>
 
 -(int) x;
@@ -17,9 +27,10 @@
 @end
 
 @protocol RobotDescription <NSObject,OrientableObject>
-
+-(int) getMemory:(int) addr;
+-(int) setMemory:(int) addr:(int) value;
 -(NSString*) sessionUniqueRobotIdentifier;
-
+-(NSDictionary*) userVariables;
 -(NSString*) name;
 -(NSString*) descript;
 -(int) linesOfCode;
@@ -72,7 +83,7 @@
 -(int) config_heatsinks;
 -(int) config_mines;
 -(int) config_shield;
--(int) numberOfMinesRemaining;
+
 @end
 
 

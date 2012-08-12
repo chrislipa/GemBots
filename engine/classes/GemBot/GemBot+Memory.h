@@ -11,10 +11,17 @@
 @interface GemBot (Memory)
 -(void) cleanMemory;
 -(void) reallocRAM:(int) targetSize;
--(void) setMemory:(int) addr :(int) value;
--(int) getMemory:(int) addr;
+
+
 
 -(void) reallocROM:(int) targetSize;
 -(void) setRomMemory:(int) addr :(int) value;
 -(int) getRomMemory:(int) addr;
+
+
+int getMemory(int* array, int memorySize, int addr) ;
+
+void setMemory(int** array, int* currentMemorySize,int addr ,int value );
+
+
 @end

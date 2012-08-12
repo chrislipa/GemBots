@@ -20,12 +20,16 @@
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
 #import "GemBot+Disassembly.h"
+#import "GemBot.h"
+#import "GemBot+Memory.h"
+
 @implementation GemBot
 @synthesize diedLastTurn;
 @synthesize hasEverBeenDetected;
 @synthesize strings;
 @synthesize executionLogString;
 @synthesize order;
+@synthesize userVariables;
 @synthesize orderingInt;
 @synthesize source;
 @synthesize hasEverCollided;
@@ -193,5 +197,13 @@
 
 -(NSArray*) disassembledSourceAtAddress:(int)pc{
     return [self internalDisassembledSourceAtAddress:pc];
+}
+
+-(int) getMemory:(int) addr {
+    return getMemory(memory,memorySize, addr);
+}
+
+-(void) setMemory:(int) addr :(int) value {
+    setMemory(&memory, &memorySize, addr, value);
 }
 @end

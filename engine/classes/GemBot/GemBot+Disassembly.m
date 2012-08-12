@@ -65,9 +65,11 @@ NSString* sizeTo10(NSString* s) {
             op1string = getWriteDevice(o1).name;
         } else if (opc.opcode == SYSTEM_CALL_OPCODE && rt1 == 0 && getSystemCall(o1).number != INVALID_SYS_CALL) {
             op1string = getSystemCall(o1).name;
+        } else if (opc.isJump && rt1 == 0 && [[labelsReverseLookup objectForKey:[NSNumber numberWithInt:o1]] count] > 0) {
+            op1string = [[labelsReverseLookup objectForKey:[NSNumber numberWithInt:o1]] anyObject];
         } else if (opc.numberOfOperands >= 1 || o1 !=0 || o2!=0 || rt1 !=0 || rt2!=0) {
             op1string = [self parseOperand:o1:rt1];
-        }
+        } 
         if (opc.numberOfOperands >= 2 || o2!=0 || rt2 !=0) {
             op2string = [self parseOperand:o2:rt2];
         }

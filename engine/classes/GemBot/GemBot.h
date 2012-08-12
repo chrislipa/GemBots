@@ -82,7 +82,7 @@
     int numberOfTimesHit;
     int lastTimeFiredShotHitATank;
     bool hasFiredShotEverHitTank;
-    
+    NSMutableDictionary* userVariables;
     int lastCollisionTime;
     bool hasEverCollided;
     bool isAlive;
@@ -202,7 +202,7 @@
 
 @property (readwrite,assign) int heading;
 
-
+@property (readwrite,retain) NSMutableDictionary* userVariables;
 @property (readwrite,assign) int kills;
 @property (readwrite,assign) int deaths;
 @property (readwrite,assign) int wins;
@@ -232,6 +232,7 @@
 
 -(void) executionError:(NSString*) str;
 -(void) executionLog:(NSString*) str;
-
+-(int) getMemory:(int) addr;
+-(void) setMemory:(int) addr :(int) value;
 
 @end

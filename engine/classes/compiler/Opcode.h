@@ -42,6 +42,7 @@
     bool op2dereferenced;
     bool isOp1String;
     bool isOp2String;
+    bool isJump;
     NSString* name;
 }
 @property (readwrite,retain) NSString* name;
@@ -53,6 +54,7 @@
 @property (readwrite,assign) int numberOfOperands;
 @property (readwrite,assign) bool op1dereferenced;
 @property (readwrite,assign) bool op2dereferenced;
+@property (readwrite,assign) bool isJump;
 @end
 
 @interface Device : NSObject {

@@ -105,6 +105,7 @@
 
 
 -(void) cleanForRecompile {
+    userVariables = [NSMutableDictionary dictionary];
     labelsReverseLookup = [NSMutableDictionary dictionary];
     userVariablesReverseLookup = [NSMutableDictionary dictionary];
     highestAddressofRomWrittenTo= 0;
