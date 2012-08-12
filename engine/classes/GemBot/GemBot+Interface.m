@@ -55,7 +55,9 @@
     internal_armor = 0;
     internal_heat = 0;
     isAlive = NO;
+    diedLastTurn = YES;
     [engine createExplosionAt:self ofRadius:ROBOT_DEATH_EXPLOSION_RADIUS andDamageMultiplier:[self  tankExplosionDamageMultiplier]];
+   
 }
 
 

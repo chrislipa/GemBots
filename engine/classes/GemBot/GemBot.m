@@ -19,6 +19,7 @@
 #import "GemBot+Collision.h"
 #import "EngineDefinitions.h"
 @implementation GemBot
+@synthesize diedLastTurn;
 @synthesize internal_odometer;
 @synthesize strings;
 @synthesize executionLogString;

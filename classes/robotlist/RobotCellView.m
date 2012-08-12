@@ -7,7 +7,7 @@
 //
 #import <CoreGraphics/CoreGraphics.h>
 #import <Quartz/Quartz.h>
-
+#import "GameStateDescriptor.h"
 #import "RobotCellView.h"
 
 @implementation RobotCellView
@@ -28,11 +28,20 @@
 }
 
 -(void) refreshColor {
-    NSColor* color = robotCellViewController.botContainer.color;
-    CALayer *viewLayer = [CALayer layer];
-    [viewLayer setBackgroundColor:CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1)]; //RGB plus Alpha Channel
+    CGColorRef colorRef;
     
-    if (!showingBattleView) {
+    if (robotCellViewController.documentController.battleOngoing && robotCellViewController.botContainer.robot && !robotCellViewController.botContainer.robot.isAlive && robotCellViewController.documentController.engine.gameCycle >0) {
+        colorRef = CGColorCreateGenericRGB(0, 0, 0, 0.25);
+        markedDead = YES;
+    } else {
+        NSColor* color = robotCellViewController.botContainer.color;
+        colorRef = CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1);
+        markedDead = NO;
+    }
+    CALayer *viewLayer = [CALayer layer];
+    [viewLayer setBackgroundColor:colorRef]; //RGB plus Alpha Channel
+    
+    if (!robotCellViewController.documentController.battleOngoing) {
         [view1 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
         [view1 setLayer:viewLayer];
     } else {
@@ -189,6 +198,9 @@
         }
     }   
     [self refreshHeatAndArmor];
+    if (!robotCellViewController.botContainer.robot.isAlive && !markedDead) {
+        [self refreshColor];
+    }
 }
 
 -(void) refreshForMatch {

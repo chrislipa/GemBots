@@ -7,7 +7,7 @@
 //
 
 #import "PGBotNativeEngine+CleanPhase.h"
-
+#import "GemBot.h"
 @implementation PGBotNativeEngine (CleanPhase)
 
 -(void) cleanPhase {
@@ -16,6 +16,9 @@
     scans = [NSMutableArray array];
     explosions =[NSMutableArray array];
     soundEffectsInitiatedThisCycle = [NSMutableArray array];
+    for (GemBot* bot in robots) {
+        bot.diedLastTurn = NO;
+    }
 }
 
 @end

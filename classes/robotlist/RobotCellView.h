@@ -53,6 +53,8 @@
     float heat, armor;
     
     IBOutlet NSTextField* winslosses;
+    
+    bool markedDead;
 }
 
 @property (readonly) NSColorWell* colorPicker;

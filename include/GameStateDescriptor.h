@@ -38,7 +38,7 @@
 -(int) shieldOn;
 -(int) overburnOn;
 
-
+-(bool) diedLastTurn;
 -(int) numberOfMissilesFired;
 -(int) numberOfMissilesConnected;
 -(int) numberOfMinesLayed;

@@ -100,6 +100,8 @@
         [matchesNumeratorView setNeedsDisplay:YES];
         matchShown = engine.currentMatch;
     }
+    
+    
 }
 
 -(void) enableUIButtons {

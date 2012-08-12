@@ -179,10 +179,11 @@
 -(void) startBattle {
     battleOngoing = YES;
     [self setUpTeamsAndColors];
-    [self refreshViewForStartBattle];
+    
     
     
     [self setUpEngine];
+    [self refreshViewForStartBattle];
     [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
     [self forceUpdateOfUIForGameCycle];
 }
@@ -242,14 +243,18 @@
 
 -(void) notifyOfGameSpeedChange {
     [self forceUpdateOfUIForGameCycle];
-    [gameTimer invalidate];
     
-    gameTimer = [NSTimer scheduledTimerWithTimeInterval:delayBetweenGameCycles
-                                                 target:self
-                                               selector:@selector(battleStep:)
-                                               userInfo:nil
-                                                repeats:YES];
-}
+    if (battleState == runningbattle) {
+        [gameTimer invalidate];
+        
+        gameTimer = [NSTimer scheduledTimerWithTimeInterval:delayBetweenGameCycles
+                                                     target:self
+                                                   selector:@selector(battleStep:)
+                                                   userInfo:nil
+                                                    repeats:YES];
+    }
+    }
+    
 
 -(void) pauseBattle {
     [self forceUpdateOfUIForGameCycle];
@@ -276,6 +281,7 @@
     if (![engine isMatchCurrentlyActive]) {
         [self refreshForMatch];
     }
+    
     CFTimeInterval currentTime = CACurrentMediaTime();
     if (currentTime - lastTimeABufferSwapWasPerformed < 1.0/60.0) {
         return;
@@ -289,9 +295,6 @@
         [c refreshForGameCycle];
     }
     [self refreshUIForGameCycle];
-    
-    
-    
 }
 
 -(void) battleStep:(NSTimer*) timer {
@@ -330,6 +333,14 @@
     
     if  (flagToCreateNewTimer) {
         [self createNewTimer];
+    }
+    if (currentGameStateDescription.gameCycle == 0) {
+        
+        
+        for (NSNumber* n in robotCellViewControllers) {
+            RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
+            [c.cell refreshColor];
+        }
     }
 }
 

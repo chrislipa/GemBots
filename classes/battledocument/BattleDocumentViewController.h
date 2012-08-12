@@ -105,8 +105,10 @@ typedef enum {
     NSImage* pauseButtonImage;
     
     CFTimeInterval lastTimeGameCycleWasUpdated;
+    
+    
 }
-
+@property (readonly) NSObject<PGBotEngineProtocol>* engine;
 @property (readwrite,assign) bool battleOngoing;
 @property (readwrite,assign) bool soundEnabled;
 @property (readwrite,assign) bool graphicsEnabled;
