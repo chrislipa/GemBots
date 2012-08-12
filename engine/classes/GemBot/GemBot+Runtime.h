@@ -12,6 +12,6 @@
 @interface GemBot (Runtime)
 
 
--(void) executeClockCycles:(int) clockCycles;
+-(bool) executeClockCycles:(int) clockCycles :(bool) executeZeroTimeInstructions;
 
 @end

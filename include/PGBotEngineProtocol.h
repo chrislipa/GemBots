@@ -29,7 +29,7 @@
 
 -(void) startNewSetOfMatches;
 
--(void) stepGameCycle;
+-(void) stepGameCycle:(NSArray*) robots;
 -(int) gameCycle;
 -(int) currentMatch;
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription;

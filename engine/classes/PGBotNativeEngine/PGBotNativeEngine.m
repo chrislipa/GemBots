@@ -150,19 +150,43 @@
     
 }
 
--(void) stepGameCycle {
-    
-    
-    if (hasSetEnded || !hasSetStarted) {return;}
-    if (!isThisSetInitiated) { [self startNewMatch]; return;}
-    
-    gameCycle++;
-    
-    bool finishedMatch = [self executeGameCycle];
-    
-    if (finishedMatch || gameCycle == maxGameCycles) {
-        [self endMatch];
+-(void) stepGameCycle:(NSArray*) trace {
+top_of_step_game_cycle:;
+    bool didFinishInstruction = NO;
+    if (gameCycleStatePosition==0) {
+        gameCycleStatePosition = 1;
+        if (hasSetEnded || !hasSetStarted) {gameCycleStatePosition=0;gameCycleStateCPUCyclesExecuted=0; gameCycleStateRuntimePosition=0;return;}
+        
     }
+    if (gameCycleStatePosition ==1) {
+        gameCycleStatePosition = 2;
+        if (!isThisSetInitiated) { gameCycleStatePosition=0;gameCycleStateCPUCyclesExecuted=0;gameCycleStateRuntimePosition=0;[self startNewMatch]; return;}
+    }
+    
+    if (gameCycleStatePosition==2) {
+        gameCycleStatePosition = 3;
+        gameCycle++;
+    }
+    
+    if (gameCycleStatePosition==3) {
+        finishedMatch = [self executeGameCycle:trace:&didFinishInstruction];
+        if (gameCycleStateRuntimePosition == 3) {
+            gameCycleStatePosition = 4;
+        }
+        
+    }
+    
+    if (gameCycleStatePosition == 4) {
+        gameCycleStatePosition=0;gameCycleStateCPUCyclesExecuted=0;gameCycleStateRuntimePosition=0;
+        if (finishedMatch || gameCycle == maxGameCycles) {
+            [self endMatch];
+        }
+    }
+    if (!didFinishInstruction) {
+        goto top_of_step_game_cycle;
+    }
+    
+    
 }
 
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription {

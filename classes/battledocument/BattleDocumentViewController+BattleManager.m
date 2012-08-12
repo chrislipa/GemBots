@@ -58,18 +58,18 @@
             } else {
                 [self setBattleState:pausedbattle];
                 [self startBattle];
-                [self battleStep:nil];
+                [self battleStepManual];
                 [self forceUpdateOfUIForGameCycle];
             }
             break;
         case runningbattle:
             [self pauseBattle];
             [self setBattleState:pausedbattle];
-            [self battleStep:nil];
+            [self battleStepManual];
             [self forceUpdateOfUIForGameCycle];
             break;
         case pausedbattle:
-            [self battleStep:nil];
+            [self battleStepManual];
             [self forceUpdateOfUIForGameCycle];
             break;
         default:
@@ -304,10 +304,17 @@
     [self refreshUIForGameCycle];
 }
 
+-(void) battleStepManual {
+    [self battleStepRobots:[debuggerWindows allKeys]];
+}
+
+
 -(void) battleStep:(NSTimer*) timer {
-   
-    
-    [engine stepGameCycle];
+    [self battleStepRobots:nil];
+}
+
+-(void) battleStepRobots:(NSArray*) robotsToStep {
+    [engine stepGameCycle:robotsToStep];
     currentGameStateDescription = [engine currentGameStateDescription];
     if (graphicsEnabled) {
         

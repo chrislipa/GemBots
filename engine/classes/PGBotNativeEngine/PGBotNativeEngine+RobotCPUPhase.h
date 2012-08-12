@@ -9,5 +9,5 @@
 #import "PGBotNativeEngine.h"
 
 @interface PGBotNativeEngine (RobotCPUPhase)
--(void) robotCPUPhase;
+-(bool) robotCPUPhase:(NSArray*) trace;
 @end

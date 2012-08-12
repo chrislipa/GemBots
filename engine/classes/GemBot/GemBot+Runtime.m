@@ -82,9 +82,9 @@
 
 
 
--(void) executeClockCycles:(int) clockCycles  {
+-(bool) executeClockCycles:(int) clockCycles :(bool)executeZeroTimeInstructions {
     savedClockCycles += clockCycles;
-    
+    bool didExecuteCommand = NO;
     while (TRUE) {
         [self resetROMMemory];
         
@@ -121,19 +121,22 @@
         }
         
         int clockCyclesRequiredForNext = [self clockCyclesRequiredForNextInstruction];
-        if (clockCyclesRequiredForNext > savedClockCycles || markForSelfDestruction) {
+        if (clockCyclesRequiredForNext > savedClockCycles || markForSelfDestruction ||
+            (clockCyclesRequiredForNext == 0 && !executeZeroTimeInstructions)
+            ) {
             [self setMemory:IP :[self getMemory:IP]-SIZE_OF_INSTRUCTION];
             break;
         }
         
         objc_msgSend(self, opcode.selector);
-        
+        didExecuteCommand = YES;
 
         savedClockCycles -= clockCyclesRequiredForNext;
         
         
         
     }
+    return didExecuteCommand;
     
 }
 @end

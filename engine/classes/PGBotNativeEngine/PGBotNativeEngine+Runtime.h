@@ -11,5 +11,5 @@
 @interface PGBotNativeEngine (Runtime)
 
 
--(bool) executeGameCycle;
+-(bool) executeGameCycle:(NSArray*) robots:(bool*) didFinishInstruction;
 @end

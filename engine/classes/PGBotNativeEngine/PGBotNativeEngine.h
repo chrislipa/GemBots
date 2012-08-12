@@ -45,8 +45,10 @@
     NSMutableArray* mines;
     NSMutableArray* soundEffectsInitiatedThisCycle;
     
-    
-   
+    bool finishedMatch;
+    int gameCycleStatePosition;
+    int gameCycleStateRuntimePosition;
+    int gameCycleStateCPUCyclesExecuted;
     
 }
 @property (readonly) NSObject<RandomProtocol>* random;
@@ -74,7 +76,7 @@
 
 -(void) startNewSetOfMatches;
 
--(void) stepGameCycle;
+-(void) stepGameCycle:(NSArray*) robots;
 
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription;
 

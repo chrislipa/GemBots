@@ -31,15 +31,28 @@
 
 
 
--(bool) executeGameCycle {
-    [self cleanPhase];
-    [self robotCPUPhase];
-    [self heatPhase];
-    if ([self checkForAndDealWithSelfDestructingRobots]) return YES;
-    [self communicationPhase];
-    [self updateThrottlesPhase];
-    if ([self movementAndExplosionPhase]) return YES;
-    return [self checkForEndMatchPhase];
+-(bool) executeGameCycle:(NSArray*) trace : (bool*) didFinishInstruction{
+    *didFinishInstruction = NO;
+    if (gameCycleStateRuntimePosition==0) {
+        [self cleanPhase];
+        gameCycleStateRuntimePosition = 1;
+    }
+    if (gameCycleStateRuntimePosition == 1) {
+        *didFinishInstruction = [self robotCPUPhase:trace];
+        if (gameCycleStateCPUCyclesExecuted == NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE) {
+            gameCycleStateRuntimePosition = 2;
+        }
+    }
+    if (gameCycleStateRuntimePosition == 2) {
+        gameCycleStateRuntimePosition = 3;
+        [self heatPhase];
+        if ([self checkForAndDealWithSelfDestructingRobots]) return YES;
+        [self communicationPhase];
+        [self updateThrottlesPhase];
+        if ([self movementAndExplosionPhase]) return YES;
+        return [self checkForEndMatchPhase];
+    }
+    return NO;
 }
 
 @end

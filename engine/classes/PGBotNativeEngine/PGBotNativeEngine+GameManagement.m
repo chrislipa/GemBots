@@ -15,6 +15,9 @@
 
 -(void) startNewMatchInternal {
     [self createInternalOrderingOfRobots];
+    
+    gameCycleStatePosition = 0;
+    gameCycleStateCPUCyclesExecuted =0;
 
     gameCycle = 0;
     missiles = [NSMutableArray array];
