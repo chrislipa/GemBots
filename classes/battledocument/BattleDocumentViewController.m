@@ -52,11 +52,18 @@
 }
 
 -(void) awakeFromNib {
+    NSURL* playImageURL = [[NSBundle mainBundle] URLForImageResource:@"play200"];
+    NSURL* pauseImageURL = [[NSBundle mainBundle] URLForImageResource:@"pause200"];
+    playButtonImage = [[NSImage alloc] initWithContentsOfURL:playImageURL];
+    pauseButtonImage = [[NSImage alloc] initWithContentsOfURL:pauseImageURL];
+    
     [startErrorField setWantsLayer:YES];
 
    // [[[self window] contentView] setWantsLayer:YES];
     audio = [[AudioController alloc] init];
     [self setStartRunError:@""];
+    [self setBattleState:nobattle];
+    
 }
 
 - (IBAction) addRobotButtonEvent:(id)sender {
@@ -417,6 +424,17 @@
 }
 - (void)windowDidExitFullScreen:(NSNotification *)notification {
     [[MasterController singleton] battleDocumentControllerExitedFullScreen:self];
+}
+
+
+-(IBAction) stopButtonCallback:(id)sender {
+    [self stopButtonCallbackInternal];
+}
+-(IBAction) stepButtonCallback:(id)sender {
+    [self stepButtonCallbackInternal];
+}
+-(IBAction) playPauseButtonCallback:(id)sender {
+    [self playPauseButtonCallbackInternal];
 }
 
 @end

@@ -82,6 +82,22 @@ green-plus-sign.svg
 green-plus-sign-hi.png
 green-plus-sign-md.png
 green-plus-sign-th.png
+1206570574308349122akiross_Audio_Button_Set_5.svg
+1206570574308349122akiross_Audio_Button_Set_5.svg.hi.png
+1206570574308349122akiross_Audio_Button_Set_5.svg.med.png
+1206570574308349122akiross_Audio_Button_Set_5.svg.thumb.png
+1206570558146836835akiross_Audio_Button_Set_2.svg
+1206570558146836835akiross_Audio_Button_Set_2.svg.hi.png
+1206570558146836835akiross_Audio_Button_Set_2.svg.med.png
+1206570558146836835akiross_Audio_Button_Set_2.svg.thumb.png
+1206570536270669982akiross_Audio_Button_Set_1.svg
+1206570536270669982akiross_Audio_Button_Set_1.svg.hi.png
+1206570536270669982akiross_Audio_Button_Set_1.svg.med.png
+1206570536270669982akiross_Audio_Button_Set_1.svg.thumb.png
+1194985614534001410pulsante_02_architetto_f_01.svg
+1194985614534001410pulsante_02_architetto_f_01.svg.hi.png
+1194985614534001410pulsante_02_architetto_f_01.svg.med.png
+1194985614534001410pulsante_02_architetto_f_01.svg.thumb.png
 
 
 

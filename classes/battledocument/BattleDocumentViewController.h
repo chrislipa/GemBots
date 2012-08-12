@@ -22,6 +22,13 @@
 @class BattleDocument;
 @class ArenaView;
 
+
+typedef enum {
+    nobattle,
+    runningbattle,
+    pausedbattle
+} BattleState;
+
 @interface BattleDocumentViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate,NSWindowDelegate> {
     IBOutlet BattleDocumentWindow* battleDocumentWindow;
     IBOutlet BattleDocument* battleDocument;
@@ -87,6 +94,14 @@
     AudioController* audio;
     
     IBOutlet NSTabView* battleControl;
+    
+    BattleState battleState;
+    
+    IBOutlet NSButton* stopButton;
+    IBOutlet NSButton* stepButton;
+    IBOutlet NSButton* playPauseButton;
+    NSImage* playButtonImage;
+    NSImage* pauseButtonImage;
 }
 
 @property (readwrite,assign) bool battleOngoing;
@@ -123,4 +138,8 @@
 -(IBAction)graphicsEnabledCallback:(id)sender ;
 -(IBAction)scanEnabledCallback:(id)sender ;
 
+
+-(IBAction) stopButtonCallback:(id)sender;
+-(IBAction) stepButtonCallback:(id)sender;
+-(IBAction) playPauseButtonCallback:(id)sender;
 @end

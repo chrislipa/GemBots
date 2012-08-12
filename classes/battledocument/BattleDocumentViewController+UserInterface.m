@@ -56,7 +56,7 @@
 }
 
 -(void) refreshViewForStartBattle {
-    [battleControl  selectTabViewItemAtIndex:1];
+    //[battleControl  selectTabViewItemAtIndex:1];
     for (NSNumber* n in robotCellViewControllers) {
         RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
         [c notifyOfBattleStarting];
@@ -72,7 +72,7 @@
 
 
 -(void) refreshViewForEndBattle {
-    [battleControl  selectTabViewItemAtIndex:0];
+    //[battleControl  selectTabViewItemAtIndex:0];
     for (NSNumber* n in robotCellViewControllers) {
         RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
         [c notifyOfBattleEnding];

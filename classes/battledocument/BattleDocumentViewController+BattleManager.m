@@ -17,6 +17,81 @@
 #import <AVFoundation/AVFoundation.h>
 @implementation BattleDocumentViewController (BattleManager)
 
+-(void)  stopButtonCallbackInternal {
+    switch (battleState) {
+        case nobattle:
+            
+            break;
+        case runningbattle:
+            [self stopBattleLoop];
+            [self setBattleState:nobattle];
+            break;
+        case pausedbattle:
+            [self stopBattleLoop];
+            [self setBattleState:nobattle];
+            break;
+        default:
+            break;
+    }
+}
+-(void) stepButtonCallbackInternal {
+    switch (battleState) {
+        case nobattle:
+            if (![self readyToStartBattle]) {
+                return;
+            } else {
+                [self startBattle];
+                [self setBattleState:runningbattle];
+            }
+            break;
+        case runningbattle:
+            [self pauseBattle];
+            [self setBattleState:pausedbattle];
+            break;
+        case pausedbattle:
+            [self battleStep:nil];
+            break;
+        default:
+            break;
+    }
+
+}
+-(void) playPauseButtonCallbackInternal {
+    switch (battleState) {
+        case nobattle:
+            if (![self readyToStartBattle]) {
+                return;
+            } else {
+                [self startBattle];
+                [self startBattleLoop];
+                [self setBattleState:runningbattle];
+            }
+            break;
+        case runningbattle:
+            [self pauseBattle];
+            [self setBattleState:pausedbattle];
+            break;
+        case pausedbattle:
+            [self startBattleLoop];
+            [self setBattleState:runningbattle];
+            break;
+        default:
+            break;
+    }
+}
+
+-(void) setBattleState:(BattleState) newBattleState {
+    battleState = newBattleState;
+    [stopButton setEnabled:(battleState == runningbattle)];
+    [stepButton setEnabled:YES];
+    [playPauseButton setEnabled:YES];
+    if (battleState == runningbattle) {
+        [playPauseButton setImage:pauseButtonImage];
+    } else {
+        [playPauseButton setImage:playButtonImage];
+    }
+}
+
 
 
 -(void) setStartRunError:(NSString*) s {
@@ -75,15 +150,7 @@
 
 
 -(IBAction) startBattleCallback:(id)sender {
-    if (battleCurrentlyInProgress) {
-        [self stopBattleLoop];
-    } else {
-        if (![self readyToStartBattle]) {
-            return;
-        } else {
-            [self startBattle];
-        }
-    }
+    
 }
 
 
@@ -96,7 +163,7 @@
     
     [self setUpEngine];
     [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
-    [self startBattleLoop];
+    
 }
 
 
@@ -159,6 +226,15 @@
                                                selector:@selector(battleStep:)
                                                userInfo:nil
                                                 repeats:YES];
+}
+
+-(void) pauseBattle {
+    [gameTimer invalidate];
+    gameTimer = nil;
+}
+
+-(void) resumeBattle {
+    [self createNewTimer];
 }
 
 -(void) stopBattleLoop {

@@ -13,4 +13,8 @@
 -(IBAction) startBattleCallback:(id)sender;
 -(void) notifyOfGameSpeedChange ;
 -(void) setStartRunError:(NSString*) s;
+-(void)  stopButtonCallbackInternal ;
+-(void) stepButtonCallbackInternal;
+-(void) playPauseButtonCallbackInternal ;
+-(void) setBattleState:(BattleState) newBattleState;
 @end
