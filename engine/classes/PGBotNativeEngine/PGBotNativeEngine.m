@@ -151,6 +151,7 @@
 }
 
 -(void) stepGameCycle:(NSArray*) trace {
+    int numberOfTimesLooped = 0;
 top_of_step_game_cycle:;
     bool didFinishInstruction = NO;
     if (gameCycleStatePosition==0) {
@@ -182,7 +183,8 @@ top_of_step_game_cycle:;
             [self endMatch];
         }
     }
-    if (!didFinishInstruction) {
+    if (!didFinishInstruction && numberOfTimesLooped < 12) {
+        numberOfTimesLooped++;
         goto top_of_step_game_cycle;
     }
     

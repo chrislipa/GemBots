@@ -24,6 +24,8 @@
     } else {
         int maxnumberToExecute = NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE - gameCycleStateCPUCyclesExecuted;
         int numberActuallyExecuted = 0;
+
+        
         bool tracedRobotExecutedInstruction = NO;
         
         
