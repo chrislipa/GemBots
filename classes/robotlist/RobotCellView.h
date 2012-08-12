@@ -57,6 +57,7 @@
     bool markedDead;
     
     IBOutlet NSButton* debugButton;
+    IBOutlet NSImageView* skullImage;
 }
 
 @property (readonly) NSColorWell* colorPicker;

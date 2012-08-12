@@ -33,6 +33,9 @@
     
     [self countLinesOfCode];
     [self checkIfValid];
+    
+    [self resetForNewSetOfMatches];
+    [self cleanBetweenRounds];
 }
 
 

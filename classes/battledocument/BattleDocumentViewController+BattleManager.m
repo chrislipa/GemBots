@@ -17,6 +17,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DebuggerWindowController.h"
 #import "DebuggerWindow.h"
+#import "MasterController.h"
 @implementation BattleDocumentViewController (BattleManager)
 
 
@@ -150,7 +151,7 @@
             return NO;
         }
         if  (weightClass.loc > 0 && bot.linesOfCode > weightClass.loc) {
-            [self setStartRunError:[NSString stringWithFormat:@"%@ has too many LOC.", (bot.name.length>0?bot.name:bot.urlToBot.lastPathComponent) ]];
+            [self setStartRunError:[NSString stringWithFormat:@"%@ has too many lines of code (LOC) for this division.", (bot.name.length>0?bot.name:bot.urlToBot.lastPathComponent) ]];
             return NO;
         }
         if (foundTeam == -1) {
@@ -179,6 +180,9 @@
 
 
 -(void) startBattle {
+    for (BotContainer* bot in robots) {
+        [[MasterController singleton] notifyOfBattleStartingUsingRobotAtURL:bot.urlToBot];
+    }
     battleOngoing = YES;
     [self setUpTeamsAndColors];
     
@@ -198,6 +202,7 @@
         [c notifyOfBattleEnding];
     }
     [self forceUpdateOfUIForGameCycle];
+    
 }
 
 
@@ -277,6 +282,9 @@
     [self refreshViewForEndBattle];
     [gameTimer invalidate];
     gameTimer = nil;
+    for (BotContainer* bot in robots) {
+        [[MasterController singleton] notifyOfBattleEndingUsingRobotAtURL:bot.urlToBot];
+    }
 }
 
 -(void) refreshUI {

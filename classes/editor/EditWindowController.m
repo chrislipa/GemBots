@@ -11,6 +11,7 @@
 #import "BotContainer.h"
 #import "BattleDocumentViewController.h"
 #import "BattleDocumentViewController+BattleManager.h"
+#import "MasterController.h"
 @implementation EditWindowController
 @synthesize battleController;
 @synthesize editWindow;
@@ -35,12 +36,19 @@
 
 -(id) initWithBotContainer:(BotContainer*)bc andBattleDocumentContriller:(BattleDocumentViewController*) controller {
     if (self = [super initWithNibName:@"EditWindowController" bundle:nil]) {
+        
         battleController = controller;
         botContainer = bc;
         [self view];
         [self refreshTextFromDisk];
         [textView setEditable:YES];
         [textView setSelectable:YES];
+        if  ([[MasterController singleton] canSafelyCompile:bc.urlToBot])  {
+            [self enableBuilding];
+        } else {
+            [self disableBuilding];
+        }
+        [editWindow setLevel:2];
     }
     return self;
 }
@@ -90,5 +98,16 @@
     
     return result;
 }
-
+-(void) enableBuilding {
+    [buildButton setEnabled:YES];
+    [buildButton setState:NSOnState];
+    [buildAndRunButton setEnabled:YES];
+    [buildAndRunButton setState:NSOnState];
+}
+-(void) disableBuilding {
+    [buildButton setEnabled:NO];
+    [buildButton setState:NSOffState];
+    [buildAndRunButton setEnabled:NO];
+    [buildAndRunButton setState:NSOffState];
+}
 @end

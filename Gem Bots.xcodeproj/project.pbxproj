@@ -10,6 +10,8 @@
 		3603D5C515D41930009F53AD /* BattleDocumentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3603D5C415D41930009F53AD /* BattleDocumentWindow.m */; };
 		3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608927E15BE876D00A06C94 /* Cocoa.framework */; };
 		3627793E15D7C6100074B903 /* BlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793D15D7C6100074B903 /* BlackView.m */; };
+		3627794115D862E00074B903 /* skull200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3627793F15D862E00074B903 /* skull200@2x.png */; };
+		3627794215D862E00074B903 /* skull200.png in Resources */ = {isa = PBXBuildFile; fileRef = 3627794015D862E00074B903 /* skull200.png */; };
 		362A925215D0B75200E2817F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E115D0B75200E2817F /* main.m */; };
 		362A925315D0B75200E2817F /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E315D0B75200E2817F /* PGBotApplication.m */; };
 		362A925415D0B75200E2817F /* ArenaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E615D0B75200E2817F /* ArenaView.m */; };
@@ -183,6 +185,8 @@
 		361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GemBotEngine.xcodeproj; path = engine/GemBotEngine.xcodeproj; sourceTree = "<group>"; };
 		3627793C15D7C6100074B903 /* BlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackView.h; path = debugger/BlackView.h; sourceTree = "<group>"; };
 		3627793D15D7C6100074B903 /* BlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackView.m; path = debugger/BlackView.m; sourceTree = "<group>"; };
+		3627793F15D862E00074B903 /* skull200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull200@2x.png"; sourceTree = "<group>"; };
+		3627794015D862E00074B903 /* skull200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skull200.png; sourceTree = "<group>"; };
 		362A91E015D0B75200E2817F /* Gem Bots-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Gem Bots-Prefix.pch"; sourceTree = "<group>"; };
 		362A91E115D0B75200E2817F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		362A91E215D0B75200E2817F /* PGBotApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotApplication.h; sourceTree = "<group>"; };
@@ -599,6 +603,8 @@
 		362A924315D0B75200E2817F /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				3627793F15D862E00074B903 /* skull200@2x.png */,
+				3627794015D862E00074B903 /* skull200.png */,
 				368C1E8615D746320093EE0E /* step200@2x.png */,
 				368C1E8715D746320093EE0E /* step200.png */,
 				368C1E8815D746320093EE0E /* stop200@2x.png */,
@@ -867,6 +873,8 @@
 				368C1E9315D746320093EE0E /* pause200.png in Resources */,
 				368C1E9415D746320093EE0E /* play200@2x.png in Resources */,
 				368C1E9515D746320093EE0E /* play200.png in Resources */,
+				3627794115D862E00074B903 /* skull200@2x.png in Resources */,
+				3627794215D862E00074B903 /* skull200.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

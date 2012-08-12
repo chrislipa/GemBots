@@ -69,7 +69,6 @@ Commons CC0 Public Domain Dedication.
 http://www.clker.com/disclaimer.html
 http://creativecommons.org/publicdomain/zero/1.0/
 
-
 11954453151817762013molumen_red_square_error_warning_icon.svg
 11954453151817762013molumen_red_square_error_warning_icon.svg.hi.png
 11954453151817762013molumen_red_square_error_warning_icon.svg.med.png
@@ -100,7 +99,8 @@ green-plus-sign-th.png
 1194985614534001410pulsante_02_architetto_f_01.svg.thumb.png
 1206570547560908424akiross_Audio_Button_Set_4.svg
 1206570547560908424akiross_Audio_Button_Set_4.svg.hi.png
-
+1317521295967271421babypirate_simple-hi.png
+1317521295967271421babypirate_simple.png
 
 laser3.mp3 is from http://listpod.net/lists/Sound_Effects
 A short laser firing sound, created by Eric Poggel 

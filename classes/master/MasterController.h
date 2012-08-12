@@ -19,6 +19,8 @@
     BattleDocumentViewController* fullScreenBattleDocumentViewController;
     IBOutlet NSMenuItem* enterFullScreenMenuItem;
     IBOutlet NSMenuItem* exitFullScreenMenuItem;
+    
+    NSMutableDictionary* referenceCountsToRobotURLs;
 }
 
 +(MasterController*) singleton;
@@ -35,6 +37,11 @@
 -(IBAction) enterFullScreen:(id)sender;
 -(IBAction) exitFullScreen:(id)sender;
 
--(void) battleDocumentControllerExitedFullScreen:(BattleDocumentViewController*) bdvc ;
--(void) battleDocumentControllerEnteredFullScreen:(BattleDocumentViewController*) bdvc ;
+-(void) battleDocumentControllerExitedFullScreen:(BattleDocumentViewController*) bdvc;
+-(void) battleDocumentControllerEnteredFullScreen:(BattleDocumentViewController*) bdvc;
+
+
+-(bool) canSafelyCompile:(NSURL*) url;
+-(void) notifyOfBattleStartingUsingRobotAtURL:(NSURL*) url;
+-(void) notifyOfBattleEndingUsingRobotAtURL:(NSURL*) url;
 @end

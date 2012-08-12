@@ -17,6 +17,8 @@
     IBOutlet EditWindow* editWindow;
     BattleDocumentViewController* battleController;
     BotContainer* botContainer;
+    IBOutlet NSButton* buildButton;
+    IBOutlet NSButton* buildAndRunButton;
 }
 @property (readwrite,retain) BotContainer* botContainer;
 @property (readwrite,retain) BattleDocumentViewController* battleController;
@@ -26,4 +28,7 @@
 -(void) buildAndRunCallback;
 
 -(id) initWithBotContainer:(BotContainer*)bc andBattleDocumentContriller:(BattleDocumentViewController*) controller;
+
+-(void) enableBuilding;
+-(void) disableBuilding;
 @end

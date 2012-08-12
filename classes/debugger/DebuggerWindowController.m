@@ -136,7 +136,7 @@
     [rs appendFormat:@"Shield    : %@      OverDrive: %@\n",([b shieldOn]?@"ON ":@"OFF"),([b overburnOn]?@"ON ":@"OFF")];
     [rs appendFormat:@"Mines Left: %3d\n",[b numberOfMinesRemaining]];
     [rs appendFormat:@"Collisions:%4d       Odometer: %d\n",[b number_of_collisions],[b odometer]];
-    [rs appendFormat:@"Time Since Detection: %@",(b.hasEverBeenDetected?[NSString stringWithFormat:@"%d",[b timeSinceDetection]]:@"Never")];
+    [rs appendFormat:@"Time Since Last Detection: %@",(b.hasEverBeenDetected?[NSString stringWithFormat:@"%d",[b timeSinceDetection]]:@"Never Detected")];
 
     [namedMemoryLocations setString:rs];
     
@@ -199,7 +199,7 @@
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return [variableAddresses count];
+    return [variableAddresses count]+2;
 }
 
 NSString* sizeTo10(NSString* s) {
@@ -241,12 +241,20 @@ NSString* sizeTo10(NSString* s) {
         cell = [self variableCell:row];
         [variableCells setObject:cell forKey:key];
     }
+    NSString* text;
+    if (row == 0) {
+        text = @" ADDRESS   VAR NAME    VALUE";
+    } else if (row == 1) {
+        text = @"----------------------------";
+    }else {
+        row -= 2;
+        int addr = [[variableAddresses objectAtIndex:row] intValue];
+        NSString* n = [variableNames objectAtIndex:row];
+        int value = [botContainer.robot getMemory:addr];
+        text = [NSString stringWithFormat:@"%08X %@ %08X",addr, sizeTo10(n), value];
+    }
     
-    int addr = [[variableAddresses objectAtIndex:row] intValue];
-    NSString* n = [variableNames objectAtIndex:row];
-    int value = [botContainer.robot getMemory:addr];
     
-    NSString* text = [NSString stringWithFormat:@"%08X %@ %08X",addr, sizeTo10(n), value];
     [cell setStringValue:text];
 
     

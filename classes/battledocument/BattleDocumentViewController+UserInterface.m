@@ -102,6 +102,10 @@
         [matchesNumeratorView setNeedsDisplay:YES];
         matchShown = engine.currentMatch;
     }
+    for (NSNumber* n in robotCellViewControllers) {
+        RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
+        [c refreshForMatch];
+    }
 }
 
 -(void) enableUIButtons {
@@ -117,6 +121,7 @@
     [openButton setEnabled:YES];
     [newButton setEnabled:YES];
 }
+
 -(void) disableUIButtons {
     for (NSNumber* n in robotCellViewControllers) {
         RobotCellViewController* c = [robotCellViewControllers objectForKey:n];

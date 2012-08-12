@@ -31,13 +31,14 @@
     CGColorRef colorRef;
     
     if (robotCellViewController.documentController.battleOngoing && robotCellViewController.botContainer.robot && !robotCellViewController.botContainer.robot.isAlive && robotCellViewController.documentController.engine.gameCycle >0) {
-        colorRef = CGColorCreateGenericRGB(0, 0, 0, 0.3);
+        colorRef = CGColorCreateGenericRGB(0, 0, 0, 0.4);
         markedDead = YES;
-
+        [skullImage setHidden:NO];
     } else {
         NSColor* color = robotCellViewController.botContainer.color;
-        colorRef = CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1);
+        colorRef = CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.2);
         markedDead = NO;
+        [skullImage setHidden:YES];
     }
     CALayer *viewLayer = [CALayer layer];
     [viewLayer setBackgroundColor:colorRef]; //RGB plus Alpha Channel

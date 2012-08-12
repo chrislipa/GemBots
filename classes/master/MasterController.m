@@ -109,6 +109,7 @@ MasterController* staticMasterController = nil;
     editorWindows = [[NSMutableDictionary alloc] init];
     errorWindows = [[NSMutableDictionary alloc] init];
     battleDocuments = [[NSMutableSet alloc] init];
+    referenceCountsToRobotURLs = [NSMutableDictionary dictionary];
     [self loadEngine];
     NSError* error;
     [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay: YES error: &error];
@@ -168,6 +169,24 @@ MasterController* staticMasterController = nil;
 -(IBAction)spawnNewBattleDocument:(id)sender {
     NSError* error = nil;
     [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay: YES error: &error];
+}
+
+-(bool) canSafelyCompile:(NSURL*) url {
+    return [[referenceCountsToRobotURLs objectForKey:url] intValue] == 0;
+}
+-(void) notifyOfBattleStartingUsingRobotAtURL:(NSURL*) url {
+    NSNumber* count = [referenceCountsToRobotURLs objectForKey:url] ;
+    [referenceCountsToRobotURLs setObject:[NSNumber numberWithInt:[count intValue]+1] forKey:url];
+    [[editorWindows objectForKey:url] disableBuilding];
+}
+-(void) notifyOfBattleEndingUsingRobotAtURL:(NSURL*) url {
+    NSNumber* count = [referenceCountsToRobotURLs objectForKey:url] ;
+    if ([count intValue] > 1) {
+        [referenceCountsToRobotURLs setObject:[NSNumber numberWithInt:[count intValue]-1] forKey:url];
+    } else {
+        [referenceCountsToRobotURLs removeObjectForKey:url];
+        [[editorWindows objectForKey:url] enableBuilding];
+    }
 }
 
 
