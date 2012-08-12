@@ -9,5 +9,5 @@
 #import "DebuggerWindow.h"
 
 @implementation DebuggerWindow
-
+@synthesize debuggerWindowController;
 @end

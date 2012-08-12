@@ -7,7 +7,7 @@
 //
 
 #import "RobotCellViewController.h"
-
+#import "BattleDocumentViewController+UserInterface.h"
 #import "MasterController.h"
 @interface RobotCellViewController ()
 
@@ -84,6 +84,6 @@
 }
 
 -(IBAction) debugButtonCallback:(id)sender {
-
+    [documentController spawnDebuggerWindowForBotContainer:self.botContainer];
 }
 @end

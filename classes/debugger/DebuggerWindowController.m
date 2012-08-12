@@ -21,7 +21,7 @@
 }
 
 -(id) initWithBotContainer:(BotContainer*)bc andBattleDocumentContriller:(BattleDocumentViewController*) controller {
-    if (self = [super initWithNibName:@"DebugerWindowController" bundle:nil]) {
+    if (self = [super initWithNibName:@"DebuggerWindowController" bundle:nil]) {
         battleController = controller;
         botContainer = bc;
         [self view];

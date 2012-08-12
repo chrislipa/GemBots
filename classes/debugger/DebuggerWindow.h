@@ -15,4 +15,6 @@
     IBOutlet DebuggerWindowController* debuggerWindowController;
 }
 
+@property (readonly) DebuggerWindowController* debuggerWindowController;
+
 @end

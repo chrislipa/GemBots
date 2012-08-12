@@ -130,6 +130,11 @@
     [newButton setEnabled:NO];
 }
 
+-(void) debuggerWindowClosing:(NSNotification*) notification {
+    DebuggerWindow* debuggerWindow = [notification object];
+    [debuggerWindows removeObjectForKey:debuggerWindow.debuggerWindowController.botContainer.robot.sessionUniqueRobotIdentifier];
+}
+
 
 
 -(void) spawnDebuggerWindowForBotContainer:(BotContainer*) bc {
@@ -141,7 +146,7 @@
     }
     [[debugger debuggerWindow] makeKeyAndOrderFront:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(editorWindowClosing:)
+                                             selector:@selector(debuggerWindowClosing:)
                                                  name:NSWindowWillCloseNotification
                                                object:debugger.debuggerWindow];
 }

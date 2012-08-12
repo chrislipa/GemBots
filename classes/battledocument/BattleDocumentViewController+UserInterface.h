@@ -21,5 +21,6 @@
 -(void) enableUIButtons;
 -(void) disableUIButtons;
 -(void) forceUpdateOfUIForGameCycle;
+-(void) spawnDebuggerWindowForBotContainer:(BotContainer*) bc;
 @end
 

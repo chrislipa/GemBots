@@ -16,7 +16,7 @@
 @interface DebuggerWindowController : NSViewController {
     BattleDocumentViewController* battleController;
     BotContainer* botContainer;
-    IBOutlet DebuggerWindow* debugerWindow;
+    IBOutlet DebuggerWindow* debuggerWindow;
 }
 
 @property (readwrite,retain) BotContainer* botContainer;

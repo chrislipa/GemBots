@@ -64,7 +64,7 @@
 
 
 -(void) addRobot:(GemBot*) bot {
-    bot.sessionUniqueRobotIdentifier = uuid();
+    
     [externalOrderingOfRobots addObject:bot];
 }
 

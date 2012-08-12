@@ -93,13 +93,13 @@
 
 -(id) init {
     if (self = [super init]) {
-        
+        sessionUniqueRobotIdentifier = uuid();
     }
     return self;
 }
 
 -(id) initGemBotWithSource:(NSData*) p_source {
-    if (self = [super init]) {
+    if (self = [self init]) {
         [self setGemBotSource:p_source];
     }
     return self;
