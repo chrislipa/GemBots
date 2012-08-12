@@ -1120,11 +1120,12 @@
 							<reference key="NSSuperview" ref="468700778"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="664130441"/>
+							<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:24</string>
 							<string key="NSHuggingPriority">{1, 1}</string>
 							<object class="NSOpenGLPixelFormat" key="NSPixelFormat">
 								<object class="NSMutableData" key="NSPixelAttributes">
-									<bytes key="NS.bytes">AAAAYAAAAAA</bytes>
+									<bytes key="NS.bytes">AAAABQAAADsAAABgAAAABwAAAAEAAAA4AAAACAAAADcAAAABAAAAAA</bytes>
 								</object>
 							</object>
 						</object>

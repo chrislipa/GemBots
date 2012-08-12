@@ -15,6 +15,8 @@
 #import "BattleDocumentViewController+UserInterface.h"
 #import "ArenaView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "DebuggerWindowController.h"
+#import "DebuggerWindow.h"
 @implementation BattleDocumentViewController (BattleManager)
 
 
@@ -294,6 +296,11 @@
         }
         [c refreshForGameCycle];
     }
+    for (id key in debuggerWindows) {
+        DebuggerWindowController* debuggerWindow = [debuggerWindows objectForKey:key];
+        [debuggerWindow refreshUI];
+    }
+    
     [self refreshUIForGameCycle];
 }
 

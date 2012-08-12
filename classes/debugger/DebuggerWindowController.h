@@ -17,6 +17,7 @@
     BattleDocumentViewController* battleController;
     BotContainer* botContainer;
     IBOutlet DebuggerWindow* debuggerWindow;
+    IBOutlet NSTextView* registers;
 }
 
 @property (readwrite,retain) BotContainer* botContainer;
@@ -25,6 +26,6 @@
 
 
 -(id) initWithBotContainer:(BotContainer*)bc andBattleDocumentContriller:(BattleDocumentViewController*) controller;
-
+-(void) refreshUI;
 
 @end

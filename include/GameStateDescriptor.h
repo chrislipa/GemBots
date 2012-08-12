@@ -56,7 +56,7 @@
 -(id) color;
 -(void) setColor:(id) color;
 -(NSURL*) url;
-
+-(int*) memory;
 @end
 
 
