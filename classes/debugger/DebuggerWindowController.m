@@ -186,6 +186,7 @@
         [self makeViewBlack:titleView];
         [self makeViewBlack:view1];
         [self makeViewBlack:view2];
+        [self makeViewBlack:view3];
         [self refreshForRecompile];
         [variables setBackgroundColor:[NSColor blackColor]];
     }

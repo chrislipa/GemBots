@@ -26,6 +26,7 @@
     IBOutlet NSView* titleView;
     IBOutlet NSView* view1;
     IBOutlet NSView* view2;
+    IBOutlet NSView* view3;
     IBOutlet NSTableView* variables;
     bool markedAsDead;
 
