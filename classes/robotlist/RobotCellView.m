@@ -31,8 +31,9 @@
     CGColorRef colorRef;
     
     if (robotCellViewController.documentController.battleOngoing && robotCellViewController.botContainer.robot && !robotCellViewController.botContainer.robot.isAlive && robotCellViewController.documentController.engine.gameCycle >0) {
-        colorRef = CGColorCreateGenericRGB(0, 0, 0, 0.25);
+        colorRef = CGColorCreateGenericRGB(0, 0, 0, 0.3);
         markedDead = YES;
+
     } else {
         NSColor* color = robotCellViewController.botContainer.color;
         colorRef = CGColorCreateGenericRGB(color.redComponent, color.greenComponent, color.blueComponent, 0.1);
@@ -48,7 +49,7 @@
         
         [view2 setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
         [view2 setLayer:viewLayer];
-        
+         [debugButton setHidden:NO];
     }
     
 

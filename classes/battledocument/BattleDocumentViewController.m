@@ -69,7 +69,7 @@
     [stopButton setToolTip:@"Terminate Battle (T)"];
     [stepButton setToolTip:@"Step Game Cycle (S)"];
     [gamespeedTex setToolTip:@"Speed (-,= to adjust)"];
-    
+    debuggerWindows = [NSMutableDictionary dictionary];
 }
 
 

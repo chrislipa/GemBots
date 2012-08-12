@@ -18,6 +18,8 @@
 MasterController* staticMasterController = nil;
 
 
+
+
 -(void) spawnEditorWindowForBotContainer:(BotContainer*) bc forBattleDocumentController:(BattleDocumentViewController*) controller {
     EditWindowController* editor = [editorWindows objectForKey:bc.urlToBot];
     if (!editor) {

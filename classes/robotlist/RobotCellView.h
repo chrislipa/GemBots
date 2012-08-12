@@ -55,6 +55,8 @@
     IBOutlet NSTextField* winslosses;
     
     bool markedDead;
+    
+    IBOutlet NSButton* debugButton;
 }
 
 @property (readonly) NSColorWell* colorPicker;

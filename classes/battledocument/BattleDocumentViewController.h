@@ -57,7 +57,7 @@ typedef enum {
 
     NSTimer* gameTimer;
     NSObject<GameStateDescriptor>* currentGameStateDescription;
-    IBOutlet NSButtonCell* startStopButtonCell;
+  
 
     IBOutlet NSTextField* matchesNumeratorView;
     IBOutlet NSTextFieldCell* matchesNumeratorCell;
@@ -105,8 +105,7 @@ typedef enum {
     NSImage* pauseButtonImage;
     
     CFTimeInterval lastTimeGameCycleWasUpdated;
-    
-    
+    NSMutableDictionary* debuggerWindows;
 }
 @property (readonly) NSObject<PGBotEngineProtocol>* engine;
 @property (readwrite,assign) bool battleOngoing;

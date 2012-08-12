@@ -9,6 +9,8 @@
 #import "BattleDocumentViewController+UserInterface.h"
 #import "TimeLimit.h"
 #import "RobotCellViewController.h"
+#import "DebuggerWindow.h"
+#import "DebuggerWindowController.h"
 @implementation BattleDocumentViewController (UserInterface)
 -(void) setGameCycleTimeout:(int) number {
     
@@ -61,7 +63,7 @@
         RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
         [c notifyOfBattleStarting];
     }
-    [startStopButtonCell setTitle:@"Stop!"];
+    
     
 
     [matchesDenominatorCell setStringValue:(numberOfMatches>0?[NSString stringWithFormat:@"%d", numberOfMatches]:@"")];
@@ -77,7 +79,7 @@
         RobotCellViewController* c = [robotCellViewControllers objectForKey:n];
         [c notifyOfBattleEnding];
     }
-    [startStopButtonCell setTitle:@"Start!"];
+    
 }
 
 -(void) refreshUIForGameCycle {
@@ -100,8 +102,6 @@
         [matchesNumeratorView setNeedsDisplay:YES];
         matchShown = engine.currentMatch;
     }
-    
-    
 }
 
 -(void) enableUIButtons {
@@ -130,5 +130,20 @@
     [newButton setEnabled:NO];
 }
 
+
+
+-(void) spawnDebuggerWindowForBotContainer:(BotContainer*) bc {
+    DebuggerWindowController* debugger = [debuggerWindows objectForKey:bc.robot.sessionUniqueRobotIdentifier];
+    if (!debugger) {
+        debugger = [[DebuggerWindowController alloc] initWithBotContainer:bc andBattleDocumentContriller:self];
+        [debugger view];
+        [debuggerWindows setObject:debugger forKey:bc.robot.sessionUniqueRobotIdentifier];
+    }
+    [[debugger debuggerWindow] makeKeyAndOrderFront:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(editorWindowClosing:)
+                                                 name:NSWindowWillCloseNotification
+                                               object:debugger.debuggerWindow];
+}
 
 @end

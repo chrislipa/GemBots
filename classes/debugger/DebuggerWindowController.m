@@ -8,27 +8,30 @@
 
 #import "DebuggerWindowController.h"
 
-@interface DebuggerWindowController ()
 
-@end
 
 @implementation DebuggerWindowController
 
-- (id)initWithWindow:(NSWindow *)window
-{
-    self = [super initWithWindow:window];
-    if (self) {
-        // Initialization code here.
-    }
+@synthesize botContainer;
+@synthesize battleController;
+@synthesize debuggerWindow;
+
+-(void) refreshFromBot {
     
+}
+
+-(id) initWithBotContainer:(BotContainer*)bc andBattleDocumentContriller:(BattleDocumentViewController*) controller {
+    if (self = [super initWithNibName:@"DebugerWindowController" bundle:nil]) {
+        battleController = controller;
+        botContainer = bc;
+        [self view];
+        [self refreshFromBot];
+       
+    }
     return self;
 }
 
-- (void)windowDidLoad
-{
-    [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-}
+
+
 
 @end
