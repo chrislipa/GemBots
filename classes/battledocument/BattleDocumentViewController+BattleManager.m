@@ -19,7 +19,20 @@
 
 
 
-
+-(void) setStartRunError:(NSString*) s {
+    [startError setStringValue:s];
+    CALayer *layer = [startErrorField layer];
+    if (s.length == 0) {
+        [layer setBackgroundColor:(__bridge CGColorRef)([NSColor clearColor])];
+    } else {
+        CABasicAnimation *anime = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+        anime.fromValue = (__bridge id)(CGColorCreateGenericRGB(1.0, 1.0, 0.0, 1.0));
+        anime.toValue = (__bridge id)(CGColorCreateGenericRGB(1.0, 1.0, 0.0, 0.0));
+        anime.duration = 0.5f;
+        anime.autoreverses = NO;
+        [layer addAnimation:anime forKey:@"backgroundColor"];
+    }
+}
 
 
 -(bool) readyToStartBattle {
@@ -28,12 +41,18 @@
     }
     int foundTeam = -1;
     bool foundTwoTeams = NO;
+    
+    
+    
+    
     for(BotContainer* bot in robots) {
         if  (!bot.robot.compiledCorrectly) {
             
+            [self setStartRunError:[NSString stringWithFormat:@"%@ did not compile.", (bot.name.length>0?bot.name:bot.urlToBot.lastPathComponent) ]];
             return NO;
         }
         if  (weightClass.loc > 0 && bot.linesOfCode > weightClass.loc) {
+            [self setStartRunError:[NSString stringWithFormat:@"%@ has too many LOC.", (bot.name.length>0?bot.name:bot.urlToBot.lastPathComponent) ]];
             return NO;
         }
         if (foundTeam == -1) {
@@ -42,9 +61,15 @@
             foundTwoTeams = YES;
         }
     }
-    if (!foundTwoTeams) {
+    if (robots.count <= 1) {
+        [self setStartRunError:@"At least two robots required to play."];
         return NO;
     }
+    if (!foundTwoTeams) {
+        [self setStartRunError:@"At least two teams required to play."];
+        return NO;
+    }
+    [self setStartRunError:@""];
     return YES;
 }
 

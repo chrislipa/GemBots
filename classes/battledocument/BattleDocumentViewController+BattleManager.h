@@ -12,4 +12,5 @@
 
 -(IBAction) startBattleCallback:(id)sender;
 -(void) notifyOfGameSpeedChange ;
+-(void) setStartRunError:(NSString*) s;
 @end

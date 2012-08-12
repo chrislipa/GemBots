@@ -138,7 +138,7 @@
     
     NSString* wls = [NSString stringWithFormat:@"Wins: %d    Losses:%d", wins, losses];
     [winslosses setStringValue:wls];
-    [winslosses setHidden:![compileErrorButton isHidden] && (wins > 0 || losses > 0)];
+    [winslosses setHidden:![compileErrorButton isHidden] || (wins == 0 && losses == 0)];
     
     
     if (robotCellViewController.documentController.battleOngoing) {

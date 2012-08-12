@@ -52,40 +52,60 @@
 }
 
 -(void) awakeFromNib {
+    [startErrorField setWantsLayer:YES];
+
+   // [[[self window] contentView] setWantsLayer:YES];
     audio = [[AudioController alloc] init];
+    [self setStartRunError:@""];
 }
 
 - (IBAction) addRobotButtonEvent:(id)sender {
-    [self promptUserToAddRobots];
+    [self promptUserToAddExistingRobot];
    
 }
 
--(void) promptUserForNewRobot {
+-(void) promptUserToAddNewRobot {
     NSSavePanel* p = [NSSavePanel savePanel];
 
     [p setAllowedFileTypes:[NSArray arrayWithObjects:@"gembot", nil]];
     [p setCanCreateDirectories:YES];
     [p setShowsHiddenFiles:NO];
     
-    [p runModal];
-//    NSArray* paths = [p URL];
+    /*
+    [p beginWithCompletionHandler:^(NSInteger result)  {
+        NSURL* path = [p URL];
+        
+    }];*/
     
-  //  [self loadRobotsFromURLs:paths];
+    [p runModal];
+    NSURL* path = [p URL];
+    if (path) {
+        [self makeNewRobotAtURL:path];
+    }
+
 }
 
--(void) promptUserToAddRobots {
+- (IBAction) newRobotButtonEvent:(id)sender {
+    [self promptUserToAddNewRobot];
+}
+
+-(void) promptUserToAddExistingRobot {
     NSOpenPanel* p = [NSOpenPanel openPanel];
     [p setCanChooseFiles:YES];
     [p setAllowedFileTypes:[NSArray arrayWithObjects:@"gembot", nil]];
     [p setCanChooseDirectories:NO];
     [p setResolvesAliases:YES];
     [p setAllowsMultipleSelection:YES];
+    
+    /*
     [p beginWithCompletionHandler: ^(NSInteger result) {
         NSArray* paths = [p URLs];
-        
-        [self loadRobotsFromURLs:paths];
-    }];
+        [self performSelector:@selector(loadRobotsFromURLs:) withObject:paths afterDelay:0.1];
+    }];*/
     
+    [p runModal];
+    NSArray* paths = [p URLs];
+    [self loadRobotsFromURLs:paths];
     
     
 }
@@ -93,9 +113,13 @@
 -(void) addDuplicateOfRobot:(BotContainer*) container {
     [self loadRobotsFromURLs:[NSArray arrayWithObject:container.urlToBot]];
 }
+-(void) makeNewRobotAtURL:(NSURL*) url {
+    [@"" writeToURL:url atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    [self loadRobotsFromURLs:@[url]];
+}
 
 -(void) loadRobotsFromURLs:(NSArray*) urls {
-    [self performSelector:@selector(loadRobotsFromURLs_internal:) withObject:urls afterDelay:0.1];
+    [self performSelector:@selector(loadRobotsFromURLs_internal:) withObject:urls afterDelay:0.0];
 }
 
 -(void) setRobotToNewTeam:(BotContainer*) robot {

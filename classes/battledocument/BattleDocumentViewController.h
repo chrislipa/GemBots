@@ -81,9 +81,12 @@
     bool battleOngoing;
     CFTimeInterval lastTimeABufferSwapWasPerformed;
     
-    
+    IBOutlet NSTextFieldCell* startError;
+    IBOutlet NSTextField* startErrorField;
     
     AudioController* audio;
+    
+    IBOutlet NSTabView* battleControl;
 }
 
 @property (readwrite,assign) bool battleOngoing;
@@ -95,7 +98,7 @@
 @property (readwrite,retain)  WeightClass* weightClass;
 @property (readwrite,retain)  RobotListTableView* robotList;
 - (IBAction) addRobotButtonEvent:(id)sender;
-
+- (IBAction) newRobotButtonEvent:(id)sender;
 -(void) addDuplicateOfRobot:(BotContainer*) container;
 -(int) numberOfTeams;
 -(NSArray*) teamTitles ;
