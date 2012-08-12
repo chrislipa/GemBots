@@ -305,7 +305,11 @@
 }
 
 -(void) battleStepManual {
-    [self battleStepRobots:[debuggerWindows allKeys]];
+    NSArray* debuggedBots = [debuggerWindows allKeys];
+    if ([debuggedBots count]==0) {
+        debuggedBots = nil;
+    }
+    [self battleStepRobots:debuggedBots];
 }
 
 

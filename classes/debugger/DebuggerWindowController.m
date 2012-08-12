@@ -110,7 +110,8 @@
     [rs appendFormat:@"IP: %08X  SP: %08X\n",memory[8],memory[7]];
     [rs appendFormat:@"       CmpResult: %08X\n",memory[6]];
     [rs appendFormat:@"         LoopCtr: %08X\n",memory[9]];
-    [rs appendFormat:@"         \n"];
+    [rs appendFormat:@"\n"];
+    [rs appendFormat:@"\n"];
     
     [rs appendFormat:@"WEAP:%d SCAN:%d ARMR:%d ENG:%d\n",b.config_weapon,b.config_scanner,b.config_armor,b.config_engine];
     [rs appendFormat:@"HEAT:%d MINE:%d SHLD:%d",b.config_heatsinks,b.config_mines,b.config_shield];
@@ -126,15 +127,15 @@
 -(void) refreshNamedMemory {
     NSObject<RobotDescription>* b = botContainer.robot;
     NSMutableString* rs = [NSMutableString stringWithString:@""];
-    [rs appendFormat:@"Armor     : %3d    Temp: %3d\n",[b armor],[b heat]];
+    [rs appendFormat:@"Armor     : %3d    Temperature: %3d\n",[b armor],[b heat]];
     [rs appendFormat:@"ScanArc   : %3d    \n",[b scan_arc_width]];
-    [rs appendFormat:@"X         : %-4d      Y: %-4d\n",[b x],[b y]];
-    [rs appendFormat:@"Throttle  : %3d   Speed: %1.2f (%d%%)\n",[b throttle],((float)[b speedInCM])/100.0,[b speed_in_terms_of_throttle]];
-    [rs appendFormat:@"DesireHead: %3d    Head: %3d\n",[b desiredHeading],[b heading]];
+    [rs appendFormat:@"X         : %-4d             Y: %-4d\n",[b x],[b y]];
+    [rs appendFormat:@"Throttle  : %3d          Speed: %1.2f (%d%%)\n",[b throttle],((float)[b speedInCM])/100.0,[b speed_in_terms_of_throttle]];
+    [rs appendFormat:@"DesirdHead: %3d        Heading: %3d\n",[b desiredHeading],[b heading]];
     [rs appendFormat:@"TurretHead: %3d\n" ,[b turretHeading]];
-    [rs appendFormat:@"Shield    : %@      OD: %@\n",([b shieldOn]?@"ON ":@"OFF"),([b overburnOn]?@"ON ":@"OFF")];
+    [rs appendFormat:@"Shield    : %@      OverDrive: %@\n",([b shieldOn]?@"ON ":@"OFF"),([b overburnOn]?@"ON ":@"OFF")];
     [rs appendFormat:@"Mines Left: %3d\n",[b numberOfMinesRemaining]];
-    [rs appendFormat:@"Collisions:%4d     Odo: %d\n",[b number_of_collisions],[b odometer]];
+    [rs appendFormat:@"Collisions:%4d       Odometer: %d\n",[b number_of_collisions],[b odometer]];
     [rs appendFormat:@"Time Since Detection: %@",(b.hasEverBeenDetected?[NSString stringWithFormat:@"%d",[b timeSinceDetection]]:@"Never")];
 
     [namedMemoryLocations setString:rs];
@@ -220,6 +221,8 @@ NSString* sizeTo10(NSString* s) {
     NSColor* color = [NSColor colorWithDeviceRed:(3.0*16.0+4.0)/255.0 green:(14.0*16.0+15.0)/255.0 blue:(2.0*16.0+8.0)/255.0 alpha:1.0 ];
 
     NSTextField* v = [[NSTextField alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    [v setEditable:NO];
+    
     [v setBordered:NO];
 
     [v setFont:font];
