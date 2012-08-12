@@ -40,16 +40,21 @@
             if (![self readyToStartBattle]) {
                 return;
             } else {
+                [self setBattleState:pausedbattle];
                 [self startBattle];
-                [self setBattleState:runningbattle];
+                [self battleStep:nil];
+                [self forceUpdateOfUIForGameCycle];
             }
             break;
         case runningbattle:
             [self pauseBattle];
             [self setBattleState:pausedbattle];
+            [self battleStep:nil];
+            [self forceUpdateOfUIForGameCycle];
             break;
         case pausedbattle:
             [self battleStep:nil];
+            [self forceUpdateOfUIForGameCycle];
             break;
         default:
             break;
@@ -82,7 +87,7 @@
 
 -(void) setBattleState:(BattleState) newBattleState {
     battleState = newBattleState;
-    [stopButton setEnabled:(battleState == runningbattle)];
+    [stopButton setEnabled:(battleState == runningbattle) || (battleState == pausedbattle) ];
     [stepButton setEnabled:YES];
     [playPauseButton setEnabled:YES];
     if (battleState == runningbattle) {
@@ -163,7 +168,7 @@
     
     [self setUpEngine];
     [matchesNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.currentMatch]];
-    
+    [self forceUpdateOfUIForGameCycle];
 }
 
 
@@ -173,6 +178,7 @@
     for (RobotCellViewController* c in robotCellViewControllers) {
         [c notifyOfBattleEnding];
     }
+    [self forceUpdateOfUIForGameCycle];
 }
 
 
@@ -219,6 +225,7 @@
 }
 
 -(void) notifyOfGameSpeedChange {
+    [self forceUpdateOfUIForGameCycle];
     [gameTimer invalidate];
     
     gameTimer = [NSTimer scheduledTimerWithTimeInterval:delayBetweenGameCycles
@@ -229,15 +236,18 @@
 }
 
 -(void) pauseBattle {
+    [self forceUpdateOfUIForGameCycle];
     [gameTimer invalidate];
     gameTimer = nil;
 }
 
 -(void) resumeBattle {
+    [self forceUpdateOfUIForGameCycle];
     [self createNewTimer];
 }
 
 -(void) stopBattleLoop {
+    [self forceUpdateOfUIForGameCycle];
     [self enableUIButtons];
     battleOngoing = NO;
     battleCurrentlyInProgress = NO;
@@ -298,6 +308,7 @@
     [self refreshUI];
     
     if (arenaView.gameStateDescriptor.isSetOfMatchesCompleted) {
+        [self setBattleState:nobattle];
         [self stopBattleLoop];
     }
     

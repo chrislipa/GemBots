@@ -102,6 +102,8 @@ typedef enum {
     IBOutlet NSButton* playPauseButton;
     NSImage* playButtonImage;
     NSImage* pauseButtonImage;
+    
+    CFTimeInterval lastTimeGameCycleWasUpdated;
 }
 
 @property (readwrite,assign) bool battleOngoing;
@@ -142,4 +144,7 @@ typedef enum {
 -(IBAction) stopButtonCallback:(id)sender;
 -(IBAction) stepButtonCallback:(id)sender;
 -(IBAction) playPauseButtonCallback:(id)sender;
+
+-(IBAction) increaseSpeedCallback:(id)sender;
+-(IBAction) decreaseSpeedCallback:(id)sender;
 @end

@@ -394,6 +394,22 @@
 -(IBAction) gamespeedSliderCallback:(id)sender {
     [self computeGameSpeedBasedOnSlider];
 }
+
+-(IBAction) increaseSpeedCallback:(id)sender {
+    float delta = 10;
+    float oldValue = [gamespeedSlider floatValue];
+    float newValue = MIN(100,oldValue+delta);
+    [gamespeedSlider setFloatValue:newValue];
+    [self gamespeedSliderCallback:nil];
+}
+-(IBAction) decreaseSpeedCallback:(id)sender {
+    float delta = 10;
+    float oldValue = [gamespeedSlider floatValue];
+    float newValue = MAX(0,oldValue-delta);
+    [gamespeedSlider setFloatValue:newValue];
+    [self gamespeedSliderCallback:nil];
+}
+
 -(void) computeGameSpeedBasedOnSlider {
     float x =[gamespeedSlider floatValue];
     float n = (x) /100.0;
@@ -436,5 +452,7 @@
 -(IBAction) playPauseButtonCallback:(id)sender {
     [self playPauseButtonCallbackInternal];
 }
+
+
 
 @end

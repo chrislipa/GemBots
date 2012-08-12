@@ -152,15 +152,15 @@
 
 -(void) stepGameCycle {
     
+    
     if (hasSetEnded || !hasSetStarted) {return;}
     if (!isThisSetInitiated) { [self startNewMatch]; return;}
-    if (gameCycle == maxGameCycles) {
-        [self endMatch];
-        return;
-    }
-    bool finishedMatch = [self executeGameCycle];
+    
     gameCycle++;
-    if (finishedMatch) {
+    
+    bool finishedMatch = [self executeGameCycle];
+    
+    if (finishedMatch || gameCycle == maxGameCycles) {
         [self endMatch];
     }
 }

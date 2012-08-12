@@ -14,7 +14,8 @@
 
 -(int) randomInt {
     if (isDeterministic == 0) {
-        return (int)arc4random();
+        int rv = (int)arc4random();
+        return rv;
     }
     return 0;
 }

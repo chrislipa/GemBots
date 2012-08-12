@@ -20,5 +20,6 @@
 -(void) refreshUIForGameCycle ;
 -(void) enableUIButtons;
 -(void) disableUIButtons;
+-(void) forceUpdateOfUIForGameCycle;
 @end
 

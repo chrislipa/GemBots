@@ -81,8 +81,15 @@
 }
 
 -(void) refreshUIForGameCycle {
+    CFTimeInterval curTime = CACurrentMediaTime();
+    if (lastTimeGameCycleWasUpdated < curTime - 0.5) {
+        lastTimeGameCycleWasUpdated = curTime;
+        [self forceUpdateOfUIForGameCycle];
+    }
+}
+-(void) forceUpdateOfUIForGameCycle {
     
-    if (engine.gameCycle % 10 == 0 || gameCycleShown == 0 || gameCycleShown > engine.gameCycle) {
+    if (gameCycleShown != engine.gameCycle || gameCycleShown == 0) {
         gameCycleShown = engine.gameCycle;
         [gameCycleNumeratorCell setStringValue:[NSString stringWithFormat:@"%d",engine.gameCycle]];
     }
