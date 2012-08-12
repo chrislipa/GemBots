@@ -22,6 +22,7 @@ NSString* pathToTextFile(NSString* file) ;
 unit roundedDivision(unit numerator, unit denominator);
 NSDictionary* constantDictionary();
 NSDictionary* defaultVariablesDictionary();
+NSDictionary* defaultVariablesReverseLookupDictionary() ;
 int readInteger(NSString* s);
 NSString* uuid();
 

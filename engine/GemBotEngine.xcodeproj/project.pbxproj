@@ -12,6 +12,8 @@
 		3610650A15D18DEA00117E33 /* Devices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610650515D18DEA00117E33 /* Devices.txt */; };
 		3610650B15D18DEA00117E33 /* Opcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610650615D18DEA00117E33 /* Opcodes.txt */; };
 		3610650C15D18DEA00117E33 /* SystemCalls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610650715D18DEA00117E33 /* SystemCalls.txt */; };
+		3627793A15D7A4F40074B903 /* GemBot+Disassembly.h in Headers */ = {isa = PBXBuildFile; fileRef = 3627793815D7A4F40074B903 /* GemBot+Disassembly.h */; };
+		3627793B15D7A4F40074B903 /* GemBot+Disassembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793915D7A4F40074B903 /* GemBot+Disassembly.m */; };
 		362E8F2915D2478A00DD3560 /* gameparameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610650E15D18E2700117E33 /* gameparameters.m */; };
 		369C5EBB15D0C1B7002028C8 /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369C5EA615D0C18C002028C8 /* SBJson.framework */; };
 		369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D96015C74062003CCD2A /* Foundation.framework */; };
@@ -168,6 +170,8 @@
 		3610650715D18DEA00117E33 /* SystemCalls.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SystemCalls.txt; sourceTree = "<group>"; };
 		3610650D15D18E0000117E33 /* gameparameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gameparameters.h; sourceTree = "<group>"; };
 		3610650E15D18E2700117E33 /* gameparameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameparameters.m; sourceTree = "<group>"; };
+		3627793815D7A4F40074B903 /* GemBot+Disassembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Disassembly.h"; sourceTree = "<group>"; };
+		3627793915D7A4F40074B903 /* GemBot+Disassembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Disassembly.m"; sourceTree = "<group>"; };
 		369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = ../external/sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
 		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -435,6 +439,8 @@
 				36C7247515D3FE8A005B6289 /* GemBot+SystemCalls.m */,
 				36C7247615D3FE8A005B6289 /* GemBot.h */,
 				36C7247715D3FE8A005B6289 /* GemBot.m */,
+				3627793815D7A4F40074B903 /* GemBot+Disassembly.h */,
+				3627793915D7A4F40074B903 /* GemBot+Disassembly.m */,
 			);
 			path = GemBot;
 			sourceTree = "<group>";
@@ -576,6 +582,7 @@
 				36C7250815D3FE8A005B6289 /* OrientedObject.h in Headers */,
 				36C7250915D3FE8A005B6289 /* Random.h in Headers */,
 				36C7250B15D3FE8A005B6289 /* TurretedObject.h in Headers */,
+				3627793A15D7A4F40074B903 /* GemBot+Disassembly.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +735,7 @@
 				36C7250415D3FE8A005B6289 /* EngineDefinitions.m in Sources */,
 				36C7250615D3FE8A005B6289 /* EngineUtility.m in Sources */,
 				36C7250A15D3FE8A005B6289 /* Random.m in Sources */,
+				3627793B15D7A4F40074B903 /* GemBot+Disassembly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

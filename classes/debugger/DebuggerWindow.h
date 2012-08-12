@@ -13,6 +13,7 @@
 
 @interface DebuggerWindow : NSWindow {
     IBOutlet DebuggerWindowController* debuggerWindowController;
+    IBOutlet NSView* titleView;
 }
 
 @property (readonly) DebuggerWindowController* debuggerWindowController;

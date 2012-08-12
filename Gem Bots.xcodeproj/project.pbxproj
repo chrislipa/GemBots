@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3603D5C515D41930009F53AD /* BattleDocumentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3603D5C415D41930009F53AD /* BattleDocumentWindow.m */; };
 		3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608927E15BE876D00A06C94 /* Cocoa.framework */; };
+		3627793E15D7C6100074B903 /* BlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793D15D7C6100074B903 /* BlackView.m */; };
 		362A925215D0B75200E2817F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E115D0B75200E2817F /* main.m */; };
 		362A925315D0B75200E2817F /* PGBotApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E315D0B75200E2817F /* PGBotApplication.m */; };
 		362A925415D0B75200E2817F /* ArenaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A91E615D0B75200E2817F /* ArenaView.m */; };
@@ -180,6 +181,8 @@
 		360892BC15BE876D00A06C94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		360892BE15BE876D00A06C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GemBotEngine.xcodeproj; path = engine/GemBotEngine.xcodeproj; sourceTree = "<group>"; };
+		3627793C15D7C6100074B903 /* BlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackView.h; path = debugger/BlackView.h; sourceTree = "<group>"; };
+		3627793D15D7C6100074B903 /* BlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackView.m; path = debugger/BlackView.m; sourceTree = "<group>"; };
 		362A91E015D0B75200E2817F /* Gem Bots-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Gem Bots-Prefix.pch"; sourceTree = "<group>"; };
 		362A91E115D0B75200E2817F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		362A91E215D0B75200E2817F /* PGBotApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotApplication.h; sourceTree = "<group>"; };
@@ -671,6 +674,8 @@
 				36974D6015D65E540051BA6E /* DebuggerWindowController.h */,
 				36974D6115D65E540051BA6E /* DebuggerWindowController.m */,
 				36974D6215D65E540051BA6E /* DebuggerWindowController.xib */,
+				3627793C15D7C6100074B903 /* BlackView.h */,
+				3627793D15D7C6100074B903 /* BlackView.m */,
 			);
 			name = debugger;
 			sourceTree = "<group>";
@@ -900,6 +905,7 @@
 				36974D6315D65E540051BA6E /* DebuggerWindowController.m in Sources */,
 				36974D6715D65E6A0051BA6E /* DebuggerWindow.m in Sources */,
 				36EEAD4F15D6FC92006A4A77 /* AudioController.m in Sources */,
+				3627793E15D7C6100074B903 /* BlackView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

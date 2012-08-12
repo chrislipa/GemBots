@@ -185,12 +185,20 @@
 
 
 -(void) populateLabels:(NSMutableDictionary*) labels {
+
     for (NSString* labelName in labels) {
         Label* label = [labels objectForKey:labelName];
         for (NSNumber* loc in label.memoryLocationsOfReferences) {
             int intloc = [loc intValue];
             [self setRomMemory:intloc :label.location];
         }
+        NSNumber* key = [NSNumber numberWithInt:label.location];
+        NSMutableSet* setOfLabelsAtPoint = [labelsReverseLookup objectForKey:key];
+        if (setOfLabelsAtPoint == nil) {
+            setOfLabelsAtPoint = [NSMutableSet set];
+            [labelsReverseLookup setObject:setOfLabelsAtPoint forKey:key];
+        }
+        [setOfLabelsAtPoint addObject:label.name];
     }
 }
 
@@ -213,6 +221,7 @@
             int intloc = [loc intValue];
             [self setRomMemory:intloc: var.location];
         }
+        [userVariablesReverseLookup setObject:var.name forKey:[NSNumber numberWithInt:var.location]];
     }
 }
 
@@ -269,6 +278,7 @@
 
 -(void) identifyVariables:(NSMutableArray*) lines withConstants:(NSDictionary*) userConstants andLabels:(NSMutableDictionary*) labels intoVariables:(NSMutableDictionary**) pvariables {
     NSMutableDictionary* variables = [NSMutableDictionary dictionary];
+    
     NSDictionary* defaultconstants = constantDictionary();
     for (int i = 0; i < lines.count; i++) {
         SourceLine* line = [lines objectAtIndex:i];
@@ -336,9 +346,10 @@
             var.size = initialValue.count;
             var.memoryLocationsOfReferences = [NSMutableArray array];
             [variables setObject:var forKey:ident];
+            
         }
     }
-    
+        
     *pvariables = variables;
 }
 

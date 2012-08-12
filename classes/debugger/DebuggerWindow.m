@@ -10,4 +10,10 @@
 
 @implementation DebuggerWindow
 @synthesize debuggerWindowController;
+
+-(void) awakeFromNib {
+
+}
+
+
 @end

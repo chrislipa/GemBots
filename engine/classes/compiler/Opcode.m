@@ -225,18 +225,18 @@ id indexIntoArray(NSArray* a, int index, int defaultIndex) {
 
 
 Opcode* getOpcode(int opcodeNumber) {
-    return indexIntoArray(opcodeArray(), opcodeNumber, NOP);
+    return indexIntoArray(opcodeArray(), opcodeNumber, INVALID_OP_CODE);
 }
 
 Device* getReadDevice(int deviceNumber) {
-    return indexIntoArray(readDeviceArray(), deviceNumber, READ_DEVICE_NOP);
+    return indexIntoArray(readDeviceArray(), deviceNumber, INVALID_READ_DEVICE);
 }
 Device* getWriteDevice(int deviceNumber) {
-   return indexIntoArray(writeDeviceArray(), deviceNumber, WRITE_DEVICE_NOP);
+   return indexIntoArray(writeDeviceArray(), deviceNumber, INVALID_WRITE_DEVICE);
 }
 
 SystemCall* getSystemCall(int sysCallNumber) {
-    return indexIntoArray(systemCallsArray(), sysCallNumber, SYS_CALL_NOP);
+    return indexIntoArray(systemCallsArray(), sysCallNumber, INVALID_SYS_CALL);
 }
 
 

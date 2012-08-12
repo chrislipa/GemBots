@@ -1,9 +1,3 @@
-shutdown temp
-
-TimeSinceDetection
-CollisionCount
-Odometer
-DataSegmentEndAddr
 
 
 

@@ -19,6 +19,14 @@
     IBOutlet DebuggerWindow* debuggerWindow;
     IBOutlet NSTextView* registers;
     IBOutlet NSTextView* namedMemoryLocations;
+    IBOutlet NSTextView* sourceCode;
+    IBOutlet NSTextFieldCell* name;
+    IBOutlet NSTextFieldCell* team;
+    IBOutlet NSColorWell* colorPicker;
+    IBOutlet NSView* titleView;
+    IBOutlet NSView* view1;
+    IBOutlet NSView* view2;
+    bool markedAsDead;
 }
 
 @property (readwrite,retain) BotContainer* botContainer;

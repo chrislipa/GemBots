@@ -333,6 +333,8 @@ int rotateLeft(int x, int d) {
 
 
 
+
+
 -(void) invalidopcode {
     [self executionError:[NSString stringWithFormat:@"Invalid Opcode"]];
 }

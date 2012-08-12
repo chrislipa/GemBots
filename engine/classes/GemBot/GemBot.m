@@ -19,9 +19,10 @@
 #import "GemBot+Collision.h"
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
+#import "GemBot+Disassembly.h"
 @implementation GemBot
 @synthesize diedLastTurn;
-
+@synthesize hasEverBeenDetected;
 @synthesize strings;
 @synthesize executionLogString;
 @synthesize order;
@@ -184,5 +185,13 @@
 -(int) odometer {
     return roundInternalDistanceToDistance(internal_odometer);
 }
+-(int) timeSinceDetection {
+    return  (hasEverBeenDetected?[engine gameCycle] - gameCycleOfLastDetection:MAX_ROBOT_MEMORY_VALUE);
+}
 
+
+
+-(NSArray*) disassembledSourceAtAddress:(int)pc{
+    return [self internalDisassembledSourceAtAddress:pc];
+}
 @end

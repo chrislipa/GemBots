@@ -37,6 +37,7 @@
             if (distance <= internalScanRadius) {
                 int angle = turretRelativeInternalHeading(bot, g);
                 if (angle <= bot.scan_arc_width / 2 || angle >= 256 - bot.scan_arc_width/2) {
+                    [g notifyOfDetectionByOtherRobot];
                     if (distance < internal_rv || internal_rv == -1) {
                         internal_rv = distance;
                         bot.mostRecentlyScannedTank = g;
@@ -68,6 +69,7 @@
         if ([g isAlive] && g != bot) {
             unit distance = internal_distance_between(g, bot);
             if (distance <= radius ) {
+                [g notifyOfDetectionByOtherRobot];
                 if (distance < internal_rv || internal_rv == -1) {
                     internal_rv = distance;
                     bot.mostRecentlyScannedTank = g;
@@ -95,6 +97,7 @@
         if ([g isAlive] && g != bot) {
             int distance = distance_between(g, bot);
             if (distance <= SONAR_RADIUS) {
+                [g notifyOfDetectionByOtherRobot];
                 if (distance < internal_rv || internal_rv == -1) {
                     internal_rv = distance;
                 }

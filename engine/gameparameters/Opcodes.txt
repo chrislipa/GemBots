@@ -51,5 +51,6 @@
 50 0 logv R logvalue
 51 0 log S
 52 0 logf R S
+53 1 invalidopcode
 
  

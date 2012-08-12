@@ -47,7 +47,8 @@
 -(int) numberOfMinesRemaining;
 -(int) numberOfMinesConnected;
 -(int) numberOfTimesHit;
-
+-(int) timeSinceDetection;
+-(bool) hasEverBeenDetected;
 -(bool) isAlive;
 -(bool) compiledCorrectly;
 -(NSArray*) compileErrors;
@@ -63,6 +64,15 @@
 -(int) speed_in_terms_of_throttle;
 -(int) throttle;
 -(int) speedInCM;
+-(NSArray*) disassembledSourceAtAddress:(int)pc ;
+-(int) config_scanner;
+-(int) config_weapon;
+-(int) config_armor;
+-(int) config_engine;
+-(int) config_heatsinks;
+-(int) config_mines;
+-(int) config_shield;
+-(int) numberOfMinesRemaining;
 @end
 
 

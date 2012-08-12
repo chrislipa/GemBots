@@ -96,6 +96,8 @@ NSDictionary* newDictionaryFromTextFile(NSString* file) {
     return dictionary;
 }
 
+
+
 NSDictionary* constantDictionary() {
      __strong static NSMutableDictionary* constantDictionary = nil;
     if (constantDictionary == nil) {
@@ -114,6 +116,17 @@ NSDictionary* defaultVariablesDictionary() {
         constantDictionary = newDictionaryFromTextFile(@"DefaultVariables");
     }
     return constantDictionary;
+}
+
+NSDictionary* defaultVariablesReverseLookupDictionary() {
+    static NSMutableDictionary* reverse = nil;
+    if (reverse == nil) {
+        reverse = [NSMutableDictionary dictionary];
+        for (NSString* name in defaultVariablesDictionary()) {
+            [reverse setObject:name forKey:[defaultVariablesDictionary() objectForKey:name]];
+        }
+    }
+    return reverse;
 }
 
 NSString* uuid() {

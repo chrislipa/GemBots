@@ -141,7 +141,10 @@
     
     unit internal_odometer;
     bool diedLastTurn;
+    NSMutableDictionary* userVariablesReverseLookup;
+    NSMutableDictionary* labelsReverseLookup;
 }
+@property (readwrite,assign)     bool hasEverBeenDetected;
 @property (readwrite,assign)     bool diedLastTurn;
 @property (readwrite,assign) unit internal_odometer;
 @property (readwrite,retain) NSDictionary* strings;
