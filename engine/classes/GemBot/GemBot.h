@@ -60,7 +60,7 @@
     int memorySize;
     int unique_tank_id;
     int number_of_collisions;
-    int odometer;
+
     
     unit internal_armor;
     position internal_position;

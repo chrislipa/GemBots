@@ -56,8 +56,9 @@
     for (GemBot* gem in robots) {
         if (gem.isAlive) {
             updatePositionForwardInTime(gem, dt);
-            unit dx = gem.internal_position.x;
-            unit dy = gem.internal_position.y;
+            position velocity = internal_velocity(gem);
+            unit dx = velocity.x;
+            unit dy = velocity.y;
             gem.internal_odometer += dt*sqrt(dx*dx+dy*dy);
         }
     }

@@ -38,7 +38,7 @@
 }
 //4 1 reset_odometer
 -(void) reset_odometer {
-    odometer = 0;
+    internal_odometer = 0;
 }
 
 //5 10 reboot <-- implemented in compiler

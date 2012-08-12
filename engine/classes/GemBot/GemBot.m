@@ -18,9 +18,10 @@
 #import "GameParameters.h"
 #import "GemBot+Collision.h"
 #import "EngineDefinitions.h"
+#import "EngineUtility.h"
 @implementation GemBot
 @synthesize diedLastTurn;
-@synthesize internal_odometer;
+
 @synthesize strings;
 @synthesize executionLogString;
 @synthesize order;
@@ -50,6 +51,7 @@
 @synthesize deaths;
 @synthesize wins;
 @synthesize losses;
+@synthesize internal_odometer;
 @synthesize shieldOn;
 @synthesize overburnOn;
 @synthesize lastCollisionTime;
@@ -174,5 +176,13 @@
     executionLogString = str;
 }
 
+
+-(int) speedInCM {
+    return [self internalMaxSpeed] * speed_in_terms_of_throttle / MAX_THROTTLE * NUMBER_OF_CM_IN_M;
+}
+
+-(int) odometer {
+    return roundInternalDistanceToDistance(internal_odometer);
+}
 
 @end

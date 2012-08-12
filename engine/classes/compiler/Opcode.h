@@ -17,10 +17,10 @@
 #define DX 3
 #define EX 4
 #define FX 5
-#define CMP_RESULT 7
-#define SP 8
-#define IP 9
-#define LOOP_CTR 10
+#define CMP_RESULT 6
+#define SP 7
+#define IP 8
+#define LOOP_CTR 9
 #define DESIRED_THROTTLE 100
 #define DESIRED_HEADING 101
 #define TURRET_OFFSET 102

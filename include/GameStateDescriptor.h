@@ -29,6 +29,7 @@
 -(int) y;
 -(int) heading;
 -(int) turretHeading;
+-(int) desiredHeading;
 -(int) armor;
 -(int) heat;
 -(int) kills;
@@ -37,7 +38,8 @@
 -(int) losses;
 -(int) shieldOn;
 -(int) overburnOn;
-
+-(int) number_of_collisions;
+-(int) odometer;
 -(bool) diedLastTurn;
 -(int) numberOfMissilesFired;
 -(int) numberOfMissilesConnected;
@@ -57,6 +59,10 @@
 -(void) setColor:(id) color;
 -(NSURL*) url;
 -(int*) memory;
+-(int) scan_arc_width;
+-(int) speed_in_terms_of_throttle;
+-(int) throttle;
+-(int) speedInCM;
 @end
 
 

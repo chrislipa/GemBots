@@ -11,6 +11,6 @@
 @interface GemBot (Movement)
 
 
--(int) speedInCM;
+
 
 @end

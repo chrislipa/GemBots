@@ -1,16 +1,5 @@
-
-
-armor
-temperature
-speed
-throttle
-heading
-desired heading
-turret heading
-shield status
-overdrive status
 shutdown temp
-scan arc width
+
 TimeSinceDetection
 CollisionCount
 Odometer
@@ -19,11 +8,6 @@ DataSegmentEndAddr
 
 
 
-registers
-ax,bx,cx,dx,ex,fx
-cmpresult
-sp,ip
-loopctr
 
 
 named variables

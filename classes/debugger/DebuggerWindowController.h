@@ -18,6 +18,7 @@
     BotContainer* botContainer;
     IBOutlet DebuggerWindow* debuggerWindow;
     IBOutlet NSTextView* registers;
+    IBOutlet NSTextView* namedMemoryLocations;
 }
 
 @property (readwrite,retain) BotContainer* botContainer;

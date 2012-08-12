@@ -35,11 +35,11 @@
     
     internal_armor =  [self initialInternalArmor];
     internal_heat =  heatToInternalHeat(INITIAL_HEAT);
-
+    internal_odometer = 0;
     
     
     number_of_collisions = 0;
-    odometer = 0;
+    
     
    
    

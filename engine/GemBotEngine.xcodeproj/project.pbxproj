@@ -27,31 +27,31 @@
 		36C724B915D3FE8A005B6289 /* GemBot+SourceCodeCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245A15D3FE8A005B6289 /* GemBot+SourceCodeCompiler.m */; };
 		36C724BA15D3FE8A005B6289 /* Opcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245B15D3FE8A005B6289 /* Opcode.h */; };
 		36C724BB15D3FE8A005B6289 /* Opcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245C15D3FE8A005B6289 /* Opcode.m */; };
-		36C724BC15D3FE8A005B6289 /* GemBot+Collision.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245E15D3FE8A005B6289 /* GemBot+Collision.h */; };
+		36C724BC15D3FE8A005B6289 /* GemBot+Collision.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245E15D3FE8A005B6289 /* GemBot+Collision.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724BD15D3FE8A005B6289 /* GemBot+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245F15D3FE8A005B6289 /* GemBot+Collision.m */; };
-		36C724BE15D3FE8A005B6289 /* GemBot+Communication.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246015D3FE8A005B6289 /* GemBot+Communication.h */; };
+		36C724BE15D3FE8A005B6289 /* GemBot+Communication.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246015D3FE8A005B6289 /* GemBot+Communication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724BF15D3FE8A005B6289 /* GemBot+Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246115D3FE8A005B6289 /* GemBot+Communication.m */; };
-		36C724C015D3FE8A005B6289 /* GemBot+Devices.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246215D3FE8A005B6289 /* GemBot+Devices.h */; };
+		36C724C015D3FE8A005B6289 /* GemBot+Devices.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246215D3FE8A005B6289 /* GemBot+Devices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724C115D3FE8A005B6289 /* GemBot+Devices.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246315D3FE8A005B6289 /* GemBot+Devices.m */; };
-		36C724C215D3FE8A005B6289 /* GemBot+Heat.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246415D3FE8A005B6289 /* GemBot+Heat.h */; };
+		36C724C215D3FE8A005B6289 /* GemBot+Heat.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246415D3FE8A005B6289 /* GemBot+Heat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724C315D3FE8A005B6289 /* GemBot+Heat.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246515D3FE8A005B6289 /* GemBot+Heat.m */; };
-		36C724C415D3FE8A005B6289 /* GemBot+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246615D3FE8A005B6289 /* GemBot+Interface.h */; };
+		36C724C415D3FE8A005B6289 /* GemBot+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246615D3FE8A005B6289 /* GemBot+Interface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724C515D3FE8A005B6289 /* GemBot+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246715D3FE8A005B6289 /* GemBot+Interface.m */; };
-		36C724C615D3FE8A005B6289 /* GemBot+Memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246815D3FE8A005B6289 /* GemBot+Memory.h */; };
+		36C724C615D3FE8A005B6289 /* GemBot+Memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246815D3FE8A005B6289 /* GemBot+Memory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724C715D3FE8A005B6289 /* GemBot+Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246915D3FE8A005B6289 /* GemBot+Memory.m */; };
-		36C724C815D3FE8A005B6289 /* GemBot+Movement.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246A15D3FE8A005B6289 /* GemBot+Movement.h */; };
+		36C724C815D3FE8A005B6289 /* GemBot+Movement.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246A15D3FE8A005B6289 /* GemBot+Movement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724C915D3FE8A005B6289 /* GemBot+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246B15D3FE8A005B6289 /* GemBot+Movement.m */; };
-		36C724CA15D3FE8A005B6289 /* GemBot+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246C15D3FE8A005B6289 /* GemBot+Operations.h */; };
+		36C724CA15D3FE8A005B6289 /* GemBot+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246C15D3FE8A005B6289 /* GemBot+Operations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724CB15D3FE8A005B6289 /* GemBot+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246D15D3FE8A005B6289 /* GemBot+Operations.m */; };
-		36C724CC15D3FE8A005B6289 /* GemBot+Reset.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246E15D3FE8A005B6289 /* GemBot+Reset.h */; };
+		36C724CC15D3FE8A005B6289 /* GemBot+Reset.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246E15D3FE8A005B6289 /* GemBot+Reset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724CD15D3FE8A005B6289 /* GemBot+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246F15D3FE8A005B6289 /* GemBot+Reset.m */; };
-		36C724CE15D3FE8A005B6289 /* GemBot+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247015D3FE8A005B6289 /* GemBot+Runtime.h */; };
+		36C724CE15D3FE8A005B6289 /* GemBot+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247015D3FE8A005B6289 /* GemBot+Runtime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724CF15D3FE8A005B6289 /* GemBot+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247115D3FE8A005B6289 /* GemBot+Runtime.m */; };
-		36C724D015D3FE8A005B6289 /* GemBot+Stats.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247215D3FE8A005B6289 /* GemBot+Stats.h */; };
+		36C724D015D3FE8A005B6289 /* GemBot+Stats.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247215D3FE8A005B6289 /* GemBot+Stats.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724D115D3FE8A005B6289 /* GemBot+Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247315D3FE8A005B6289 /* GemBot+Stats.m */; };
-		36C724D215D3FE8A005B6289 /* GemBot+SystemCalls.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247415D3FE8A005B6289 /* GemBot+SystemCalls.h */; };
+		36C724D215D3FE8A005B6289 /* GemBot+SystemCalls.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247415D3FE8A005B6289 /* GemBot+SystemCalls.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724D315D3FE8A005B6289 /* GemBot+SystemCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247515D3FE8A005B6289 /* GemBot+SystemCalls.m */; };
-		36C724D415D3FE8A005B6289 /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247615D3FE8A005B6289 /* GemBot.h */; };
+		36C724D415D3FE8A005B6289 /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247615D3FE8A005B6289 /* GemBot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C724D515D3FE8A005B6289 /* GemBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247715D3FE8A005B6289 /* GemBot.m */; };
 		36C724D615D3FE8A005B6289 /* Explosion.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247915D3FE8A005B6289 /* Explosion.h */; };
 		36C724D715D3FE8A005B6289 /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247A15D3FE8A005B6289 /* Explosion.m */; };
@@ -528,11 +528,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C724B215D3FE8A005B6289 /* CompileError.h in Headers */,
-				36C724B415D3FE8A005B6289 /* GemBot+BinaryCompiler.h in Headers */,
-				36C724B615D3FE8A005B6289 /* GemBot+Compiler.h in Headers */,
-				36C724B815D3FE8A005B6289 /* GemBot+SourceCodeCompiler.h in Headers */,
-				36C724BA15D3FE8A005B6289 /* Opcode.h in Headers */,
 				36C724BC15D3FE8A005B6289 /* GemBot+Collision.h in Headers */,
 				36C724BE15D3FE8A005B6289 /* GemBot+Communication.h in Headers */,
 				36C724C015D3FE8A005B6289 /* GemBot+Devices.h in Headers */,
@@ -546,6 +541,11 @@
 				36C724D015D3FE8A005B6289 /* GemBot+Stats.h in Headers */,
 				36C724D215D3FE8A005B6289 /* GemBot+SystemCalls.h in Headers */,
 				36C724D415D3FE8A005B6289 /* GemBot.h in Headers */,
+				36C724B215D3FE8A005B6289 /* CompileError.h in Headers */,
+				36C724B415D3FE8A005B6289 /* GemBot+BinaryCompiler.h in Headers */,
+				36C724B615D3FE8A005B6289 /* GemBot+Compiler.h in Headers */,
+				36C724B815D3FE8A005B6289 /* GemBot+SourceCodeCompiler.h in Headers */,
+				36C724BA15D3FE8A005B6289 /* Opcode.h in Headers */,
 				36C724D615D3FE8A005B6289 /* Explosion.h in Headers */,
 				36C724D815D3FE8A005B6289 /* Mine+Interface.h in Headers */,
 				36C724DA15D3FE8A005B6289 /* Mine.h in Headers */,

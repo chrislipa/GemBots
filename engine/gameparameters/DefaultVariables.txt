@@ -4,10 +4,10 @@ CX 2
 DX 3
 EX 4
 FX 5
-CmpResult 7
-SP 8
-IP 9
-LoopCtr 10
+CmpResult 6
+SP 7
+IP 8
+LoopCtr 9
 DesiredThrottle 100
 DesiredHeading 101
 TurretOffset 102

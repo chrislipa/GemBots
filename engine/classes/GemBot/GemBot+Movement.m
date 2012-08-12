@@ -16,16 +16,5 @@
 
 
 
--(int) speedInCM {
-    return [self internalMaxSpeed] * speed_in_terms_of_throttle / MAX_THROTTLE * NUMBER_OF_CM_IN_M;
-}
-
-
-
--(void) updateSpeedAndHeading {
-    
-}
-
-
 
 @end
