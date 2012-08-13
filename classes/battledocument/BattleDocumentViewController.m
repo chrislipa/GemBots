@@ -212,7 +212,7 @@
                        [NSColor magentaColor],
                        
                        [NSColor orangeColor],
-                       [NSColor purpleColor],
+                       
                        [NSColor yellowColor],
                        [NSColor blueColor],
                        nil];
