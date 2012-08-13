@@ -135,7 +135,7 @@
     int order;
     int orderingInt;
     
-    NSString* executionLogString;
+
     
     NSMutableDictionary* logStrings;
     
@@ -143,12 +143,17 @@
     bool diedLastTurn;
     NSMutableDictionary* userVariablesReverseLookup;
     NSMutableDictionary* labelsReverseLookup;
+    
+    NSMutableArray* internalLoggingArray;
+    int indexIntoInternalLoggingArray;
 }
+
 @property (readwrite,assign)     bool hasEverBeenDetected;
 @property (readwrite,assign)     bool diedLastTurn;
 @property (readwrite,assign) unit internal_odometer;
 @property (readwrite,retain) NSDictionary* strings;
-@property (readwrite,retain) NSString* executionLogString;
+
+
 @property (readwrite,assign) int order;
 @property (readwrite,assign) int orderingInt;
 

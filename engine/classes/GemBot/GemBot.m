@@ -23,11 +23,12 @@
 #import "GemBot.h"
 #import "GemBot+Memory.h"
 
+
 @implementation GemBot
 @synthesize diedLastTurn;
 @synthesize hasEverBeenDetected;
 @synthesize strings;
-@synthesize executionLogString;
+
 @synthesize order;
 @synthesize userVariables;
 @synthesize orderingInt;
@@ -174,11 +175,17 @@
     }
 }
 
+
 -(void) executionError:(NSString*) str {
-    executionLogString = [NSString stringWithFormat:@"ERROR: %@", str];
+    [self executionLog:[NSString stringWithFormat:@"ERROR: %@", str]];
 }
 -(void) executionLog:(NSString*) str {
-    executionLogString = str;
+    if  (indexIntoInternalLoggingArray >= internalLoggingArray.count) {
+        [internalLoggingArray addObject:str];
+    } else {
+        [internalLoggingArray replaceObjectAtIndex:indexIntoInternalLoggingArray withObject:str];
+    }
+    indexIntoInternalLoggingArray  = (indexIntoInternalLoggingArray+1) % 10;
 }
 
 
@@ -206,4 +213,16 @@
 -(void) setMemory:(int) addr :(int) value {
     setMemory(&memory, &memorySize, addr, value);
 }
+
+-(int) numberOfLogs {
+    return (int)internalLoggingArray.count;
+}
+-(NSString*) logNumber:(int) index {
+    index = ((indexIntoInternalLoggingArray-1-index % 10)+10)%10;
+    if (index >  (int)internalLoggingArray.count) {
+        return nil;
+    }
+    return [internalLoggingArray objectAtIndex: index];
+}
+
 @end

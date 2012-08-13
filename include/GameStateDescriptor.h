@@ -35,7 +35,10 @@
 -(NSString*) descript;
 -(int) linesOfCode;
 -(NSString*) author;
--(NSString*) executionLogString;
+
+-(int) numberOfLogs;
+-(NSString*) logNumber:(int) index;
+
 -(int) x;
 -(int) y;
 -(int) heading;

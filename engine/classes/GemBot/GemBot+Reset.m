@@ -42,7 +42,8 @@
     
     
    
-   
+    internalLoggingArray = [NSMutableArray array];
+    indexIntoInternalLoggingArray = 0;
     
     turretHeading = desiredHeading = heading;
     

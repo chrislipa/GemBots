@@ -192,12 +192,16 @@
 }
 
 -(void) refreshForGameCycle {
-    if  ([executionLogString isEqualToString:robotCellViewController.botContainer.robot.executionLogString]) {
-        executionLogString =robotCellViewController.botContainer.robot.executionLogString;
+    NSString* exs = [robotCellViewController.botContainer.robot logNumber:0];
+    if (exs == nil) {
+        exs = @"";
+    }
+    if  (![executionLogString isEqualToString:exs]) {
+        executionLogString =exs;
     
-        if (robotCellViewController.botContainer.robot.executionLogString) {
-            [loggingLine setStringValue:robotCellViewController.botContainer.robot.executionLogString];
-        }
+        
+        [loggingLine setStringValue:exs];
+        
     }   
     [self refreshHeatAndArmor];
     if (!robotCellViewController.botContainer.robot.isAlive && !markedDead) {
