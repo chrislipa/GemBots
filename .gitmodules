@@ -1,3 +1,6 @@
 [submodule "external/sbjson"]
 	path = external/sbjson
 	url = git://github.com/stig/json-framework.git
+[submodule "external/playfile"]
+	path = external/playfile
+	url = git@github.com:chrislipa/PlayFile.git
