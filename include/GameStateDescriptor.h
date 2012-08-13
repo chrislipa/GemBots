@@ -95,6 +95,7 @@
 -(int) y;
 -(int) heading;
 -(NSObject<RobotDescription>*) owner;
+-(double) internal_speed;
 @end
 
 @protocol MineDescription <NSObject>
