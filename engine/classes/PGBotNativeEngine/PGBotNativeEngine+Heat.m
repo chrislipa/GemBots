@@ -13,7 +13,9 @@
 
 -(void) heatPhase {
     for (GemBot* bot in robots) {
-        [bot heatPhase];
+        if  (bot.isAlive){
+            [bot heatPhase];
+        }
     }
 }
 

@@ -51,6 +51,7 @@ double convert_angle_to_degrees(int hexangle) {
     #define ROBOT_RADIUS 2
     double botscale_scale =  ROBOT_RADIUS/2.0;
     //double turretscale_scale = 1;
+    
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
     glVertex2f(0*botscale_scale, 2*botscale_scale);
@@ -70,6 +71,23 @@ double convert_angle_to_degrees(int hexangle) {
     glVertex2f(-1.5*turretscale_scale, -1.5*turretscale_scale);
     glEnd();
     */
+    if (bot.shieldOn) {
+        setColorTo([NSColor whiteColor]);
+        glBegin(GL_LINE_STRIP);
+        
+        
+        
+        double r = ROBOT_RADIUS;
+        double delta =  M_2_PI/8;
+        
+        
+        for (float dangle = 0; dangle < 2*M_PI+delta; dangle += delta) {
+            glVertex2f(((float)(r)) * sin(dangle+0),((float)(r))* cos(dangle+0));
+        }
+        
+        glEnd();
+        
+    }
     glPopMatrix();
     
     

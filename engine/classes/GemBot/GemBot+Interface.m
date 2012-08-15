@@ -40,6 +40,9 @@
 
 -(void) dealInternalDamage:(unit) damage  {
     internal_armor = MAX(0,internal_armor- damage);
+    if (internal_armor ==0) {
+        markForSelfDestruction = 1;
+    }
 }
 
 -(void) dealInternalHeat:(unit) delta_heat {
@@ -56,6 +59,7 @@
     internal_heat = 0;
     isAlive = NO;
     diedLastTurn = YES;
+    markForSelfDestruction = 0;
     [engine createExplosionAt:self ofRadius:ROBOT_DEATH_EXPLOSION_RADIUS andDamageMultiplier:[self  tankExplosionDamageMultiplier]];
    
 }
