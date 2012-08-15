@@ -11,6 +11,7 @@
 #import "EngineDefinitions.h"
 #import "EngineUtility.h"
 #import "GemBot+Memory.h"
+#import "GemBot+Compiler.h"
 @implementation GemBot (BinaryCompiler)
 
 
@@ -51,6 +52,15 @@
                     config_engine = value2;
                 }
             }
+        } else if ([upperCaseKey isEqualToString:@"LOG_TEXTS"]) {
+            logStrings = [NSMutableDictionary dictionary];
+            NSDictionary* inputDict = ( NSDictionary*)(value);
+            for (id x in inputDict) {
+                [logStrings setObject:[inputDict objectForKey:x] forKey:[NSNumber numberWithInt:[x intValue]]];
+            }
+        
+        } else {
+            [self compileWarning:0 :NSMakeRange(NSNotFound, 0) :@"Unrecognized key '%@'",upperCaseKey];
         }
     }
     

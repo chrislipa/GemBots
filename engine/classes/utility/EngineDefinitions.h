@@ -36,7 +36,7 @@ typedef double unit;
 
 #define INITIAL_ARMOR 100
 
-
+#define SIZE_OF_COMM_QUEUE 256
 #define NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE 5
 #define MAX_THROTTLE_MOVEMENT_PER_TURN 4
 #define MAX_HEADING_MOVEMENT_PER_TURN 8
@@ -92,8 +92,7 @@ extern int right_filled_mask[33];
 
 
 
-#define COMMUNICATION_MEMORY_START 256
-#define COMMUNICATION_MEMORY_END 512
+
 
 #define SONAR_RADIUS 250
 

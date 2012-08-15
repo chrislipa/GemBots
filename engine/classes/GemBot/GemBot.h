@@ -118,6 +118,7 @@
     ///
     //comm
     ///
+    int comm_queue[SIZE_OF_COMM_QUEUE];
     int comm_channel;
     int comm_channel_to_switch_to;
     bool swtich_comm_channel_this_turn;

@@ -24,22 +24,25 @@
 }
 //18 1 recieve
 -(void) recieve {
+    int r;
     if (comm_write_ptr == comm_read_ptr) {
-        return;
+        r = 0;
+    } else {
+        r = comm_queue[comm_read_ptr];
+        comm_read_ptr++;
+        if (comm_read_ptr == SIZE_OF_COMM_QUEUE) {
+            comm_read_ptr = 0;
+        }
     }
-    int r = [self getMemory:comm_read_ptr];
     [self setMemory:FX :r];
-    comm_read_ptr++;
-    if (comm_read_ptr == COMMUNICATION_MEMORY_END) {
-        comm_read_ptr = COMMUNICATION_MEMORY_START;
-    }
+    
 }
 //19 1 queued_data_size
 -(void) queued_data_size {
     int v;
     v = comm_write_ptr - comm_read_ptr;
     if (v < 0) {
-        v += COMMUNICATION_MEMORY_END - COMMUNICATION_MEMORY_START;
+        v += SIZE_OF_COMM_QUEUE;
     }
     [self setMemory:FX :v];
 }
@@ -52,23 +55,23 @@
 -(void) communicationPhaseSwitchChannels {
     if (swtich_comm_channel_this_turn) {
         comm_channel = comm_channel_to_switch_to;
-        for (int i = COMMUNICATION_MEMORY_START; i < COMMUNICATION_MEMORY_END; i++) {
+        for (int i = 0; i < SIZE_OF_COMM_QUEUE; i++) {
             memory[i] = 0;
         }
         swtich_comm_channel_this_turn = NO;
-        comm_read_ptr = comm_write_ptr = COMMUNICATION_MEMORY_START;
+        comm_read_ptr = comm_write_ptr = 0;
     }
 }
 
 -(void) receiveCommunication:(int) message {
-    memory[comm_write_ptr++] = message;
-    if (comm_write_ptr == COMMUNICATION_MEMORY_END) {
-        comm_write_ptr = COMMUNICATION_MEMORY_START;
+    comm_queue[comm_write_ptr++] = message;
+    if (comm_write_ptr == SIZE_OF_COMM_QUEUE) {
+        comm_write_ptr = 0;
     }
     if (comm_write_ptr == comm_read_ptr) {
         comm_read_ptr++;
-        if (comm_read_ptr == COMMUNICATION_MEMORY_END) {
-            comm_read_ptr = COMMUNICATION_MEMORY_START;
+        if (comm_read_ptr == SIZE_OF_COMM_QUEUE) {
+            comm_read_ptr = 0;
         }
     }
 }

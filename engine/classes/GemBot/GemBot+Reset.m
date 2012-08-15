@@ -28,6 +28,9 @@
     overburnOn = NO;
     savedClockCycles = 0;
     numberOfConsecutiveConditionalJumps = 0;
+    for (int i = 0; i < comm_write_ptr; i++) {
+        comm_queue[i] = 0;
+    }
 }
 
 -(void) cleanBetweenRounds {
@@ -94,8 +97,8 @@
     comm_channel = 0;
     comm_channel_to_switch_to = 0;
     swtich_comm_channel_this_turn = NO;
-    comm_write_ptr = COMMUNICATION_MEMORY_START;
-    comm_read_ptr = COMMUNICATION_MEMORY_START;
+    comm_write_ptr = 0 ;
+    comm_read_ptr = 0;
     //comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
     number_of_comm_transmits_this_turn = 0;
 }
