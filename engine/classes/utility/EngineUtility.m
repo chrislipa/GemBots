@@ -327,6 +327,22 @@ position internal_velocity(NSObject<MoveableObject>* object) {
     return internal_velocity;
 }
 
+unit internal_x_velocity(NSObject<MoveableObject>* object) {
+    unit speed = [object internal_speed];
+    int heading = object.heading;
+    unit internal_heading = convertHeadingToUnit(heading);
+    unit internal_x_velocity = speed * sin(convert_angle( internal_heading));
+    return internal_x_velocity;
+}
+
+unit internal_y_velocity(NSObject<MoveableObject>* object) {
+    unit speed = [object internal_speed];
+    int heading = object.heading;
+    unit internal_heading = convertHeadingToUnit(heading);
+    unit internal_y_velocity = - speed * cos(convert_angle( internal_heading));
+    return internal_y_velocity;
+}
+
 position scalarMultiply(position p, unit m) {
     position r;
     r.x = p.x*m;

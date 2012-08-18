@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
     bool fake = NO;
     if (fake) {
-        char* argvfake[] = {"script", "-d", "file:///Users/lipa/bot/", "-b", "sniper.gembot", "-b", "sniper.gembot", "-n" ,"4", "-o", "output.txt"};
+        char* argvfake[] = {"script", "-d", "file:///Users/lipa/bot/", "-b", "sniper.gembot", "-b", "sniper.gembot", "-n" ,"100", "-o", "output.txt"};
         int argcfake = 11;
         
         argv = argvfake;

@@ -13,16 +13,17 @@
 #import "PGBotEngineProtocol.h"
 #import "MasterController.h"
 #import <pthread.h>
-const int numberOfThreads = 4;
+const int numberOfThreadsMax = 4;
 static __strong NSMutableArray* engines = nil;
-static pthread_t asyncThread[numberOfThreads];
+static pthread_t asyncThread[numberOfThreadsMax];
 
 
 
 
 void* runEngineLoop(NSObject<PGBotEngineProtocol>* engine) {
     @autoreleasepool {
-
+        
+        
 
 
     
@@ -84,13 +85,14 @@ void gembotscript(int argc, char** argv) {
     
     
 
-    
+    int numberOfThreads = MIN(n,numberOfThreadsMax);
      
      
     
     for (int i =0; i<numberOfThreads; i++) {
         NSObject<PGBotEngineProtocol>* engine = [[c alloc] init];
         [engines addObject:engine];
+        [engine setHeadlessMode:YES];
         [engine setGameCycleTimeout:30000];
         [engine setNumberOfMatches:(n) /numberOfThreads+ ((n % numberOfThreads )< i)];
         int team = 1;

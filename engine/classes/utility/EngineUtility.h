@@ -67,6 +67,9 @@ unit usqrt(unit z);
 unit convertIntToUnit(int z);
 NSArray* delimit(NSString* s);
 unit convert_angle(int hexangle);
+
+unit internal_x_velocity(NSObject<MoveableObject>* object) ;
+unit internal_y_velocity(NSObject<MoveableObject>* object);
 NSDictionary* constantDictionary();
 #define MAX_UNIT DBL_MAX
 #define NO_RANGE NSMakeRange(-1,0)

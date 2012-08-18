@@ -11,11 +11,14 @@
 @implementation PGBotNativeEngine (CleanPhase)
 
 -(void) cleanPhase {
-    explosions = [NSMutableArray array];
+    internal_explosions_index = 0;
+
     numberOfExplosionsAppliedThisCycle = 0;
-    scans = [NSMutableArray array];
-    explosions =[NSMutableArray array];
-    soundEffectsInitiatedThisCycle = [NSMutableArray array];
+
+
+    internal_scans_index = 0;
+    internal_soundEffectsInitiatedThisCycle_index = 0;
+
     for (GemBot* bot in robots) {
         bot.diedLastTurn = NO;
     }

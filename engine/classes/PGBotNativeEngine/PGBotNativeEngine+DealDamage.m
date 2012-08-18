@@ -11,12 +11,15 @@
 #import "GemBot.h"
 #import "EngineUtility.h"
 #import "GemBot+Interface.h"
+#import "PGBotNativeEngine+Interface.h"
+
 @implementation PGBotNativeEngine (DealDamage)
 
 -(void) dealDamagePhase {
-    for (; numberOfExplosionsAppliedThisCycle < [explosions count]; numberOfExplosionsAppliedThisCycle++) {
-        [soundEffectsInitiatedThisCycle addObject:@"missile_exploded"];
-        Explosion* explosion = [explosions objectAtIndex:numberOfExplosionsAppliedThisCycle];
+    
+    for (; numberOfExplosionsAppliedThisCycle <internal_explosions_index; numberOfExplosionsAppliedThisCycle++) {
+        [self addSoundEffect:@"missile_exploded"];
+        Explosion* explosion = internal_explosions[numberOfExplosionsAppliedThisCycle];
         for (GemBot* bot in robots) {
             if ([bot isAlive]) {
                 [self checkForExplosion: explosion damagingRobot:bot];

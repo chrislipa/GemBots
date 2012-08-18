@@ -22,7 +22,7 @@
 @synthesize totalNumberOfMatches;
 @synthesize gameCycle;
 @synthesize maxGameCycles;
-
+@synthesize headlessMode;
 @synthesize mines;
 
 -(void) testSelector:(SEL) sel {
@@ -58,6 +58,18 @@
 #ifdef DEBUG
         [self powerOnSelfTest];
 #endif
+        internal_scans_max = 16;
+        internal_scans = (Scan* __strong*) calloc(internal_scans_max , sizeof(Scan*));
+        internal_scans_index = 0;
+        
+        internal_explosions_max = 16;
+        internal_explosions =(Explosion* __strong*) calloc(internal_scans_max , sizeof(Explosion*));
+        internal_explosions_index = 0;
+        
+        internal_soundEffectsInitiatedThisCycle_max = 16;
+        internal_soundEffectsInitiatedThisCycle =(NSString* __strong *) calloc(internal_soundEffectsInitiatedThisCycle_max , sizeof(NSString*));
+        internal_soundEffectsInitiatedThisCycle_index = 0;
+
     }
     return self;
 }
@@ -100,7 +112,9 @@
 -(NSArray*) missiles {
     return missiles;
 }
+/*
 -(NSArray*) scans {
+    
     return scans;
 }
 -(NSArray*) explosions {
@@ -109,7 +123,7 @@
 
 -(NSArray*) soundEffectsInitiatedThisCycle {
     return soundEffectsInitiatedThisCycle;
-}
+}*/
 
 -(void) setGameCycleTimeout:(int) maxNumberOfGameCycles {
     maxGameCycles = maxNumberOfGameCycles;
@@ -206,7 +220,27 @@ top_of_step_game_cycle:;
     return winnersOfLastMatch;
 }
 
+-(NSArray*) soundEffectsInitiatedThisCycle {
+    NSMutableArray* r = [NSMutableArray array];
+    for (int i = 0; i<internal_soundEffectsInitiatedThisCycle_index; i++) {
+        [r addObject:internal_soundEffectsInitiatedThisCycle[i]];
+    }
+    return r;
+}
 
+-(NSArray*) scans {
+    NSMutableArray* r = [NSMutableArray array];
+    for (int i = 0; i<internal_scans_index; i++) {
+        [r addObject:internal_scans[i]];
+    }
+    return r;
+}
 
-
+-(NSArray*) explosions {
+    NSMutableArray* r = [NSMutableArray array];
+    for (int i = 0; i<internal_explosions_index; i++) {
+        [r addObject:internal_explosions[i]];
+    }
+    return r;
+}
 @end

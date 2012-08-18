@@ -93,10 +93,19 @@ NSMutableArray* newOpcodesFromTextFile(NSString* file) {
     return array;
 }
 
+
+__strong static Opcode** globalOpcodeArray = nil;
+int globalOpcodeArraySize = 0;
 NSArray* opcodeArray() {
     __strong static NSArray* opcodeArray = nil;
     if (opcodeArray == nil) {
         opcodeArray = [[NSArray alloc] initWithArray: newOpcodesFromTextFile(@"Opcodes")];
+        globalOpcodeArray = (Opcode * __strong *)(calloc(opcodeArray.count,sizeof(Opcode*)));
+        globalOpcodeArraySize = (int) opcodeArray.count;
+        for (int i =0; i<opcodeArray.count; i++) {
+            globalOpcodeArray[i] = [opcodeArray objectAtIndex:i];
+        }
+        
     }
     return opcodeArray;
 }
@@ -227,7 +236,12 @@ id indexIntoArray(NSArray* a, int index, int defaultIndex) {
 
 
 Opcode* getOpcode(int opcodeNumber) {
-    return indexIntoArray(opcodeArray(), opcodeNumber, INVALID_OP_CODE);
+    if (opcodeNumber>0 && opcodeNumber<globalOpcodeArraySize) {
+        return globalOpcodeArray[opcodeNumber];
+    } else {
+        return globalOpcodeArray[INVALID_OP_CODE];
+    }
+    //return indexIntoArray(opcodeArray(), opcodeNumber, INVALID_OP_CODE);
 }
 
 Device* getReadDevice(int deviceNumber) {

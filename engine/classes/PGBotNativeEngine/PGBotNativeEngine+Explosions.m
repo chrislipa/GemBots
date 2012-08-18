@@ -28,7 +28,7 @@
 
 @implementation PGBotNativeEngine (Explosions)
 -(bool) dealWithExplosions {
-    while (numberOfExplosionsAppliedThisCycle < [explosions count]) {
+    while (numberOfExplosionsAppliedThisCycle < internal_explosions_index) {
         [self dealDamagePhase];
         [self checkForRobotDeathPhase];
     }

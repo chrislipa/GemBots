@@ -27,4 +27,6 @@
 -(void) layMineAt: (position)internal_position withOwner:(GemBot*) bot andRadius:(unit) internal_radius;
 -(int) howManyMinesHaveThisOwner:(GemBot*) owner ;
 -(void) detonateAllMinesWithOwner:(GemBot*) owner ;
+-(void) addSoundEffect:(NSString*)s ;
+
 @end

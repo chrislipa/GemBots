@@ -1,0 +1,2 @@
+sniper.gembot 41 62 46 62 1405
+sniper.gembot 58 45 61 45 1937

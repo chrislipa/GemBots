@@ -36,4 +36,5 @@
 
 -(bool) isSetOfMatchesCompleted;
 -(bool) isMatchCurrentlyActive;
+-(void) setHeadlessMode:(bool)x;
 @end

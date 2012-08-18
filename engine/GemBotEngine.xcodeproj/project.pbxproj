@@ -18,7 +18,7 @@
 		3627793B15D7A4F40074B903 /* GemBot+Disassembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793915D7A4F40074B903 /* GemBot+Disassembly.m */; };
 		362E8F2915D2478A00DD3560 /* gameparameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610650E15D18E2700117E33 /* gameparameters.m */; };
 		369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D96015C74062003CCD2A /* Foundation.framework */; };
-		36A2B28E15DF5C5B00DAB3DE /* SBJson copy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2B28B15DF5C3300DAB3DE /* SBJson copy.framework */; };
+		36A2B28E15DF5C5B00DAB3DE /* libSBJsonLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2B28B15DF5C3300DAB3DE /* libSBJsonLib.a */; };
 		36C724B215D3FE8A005B6289 /* CompileError.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245215D3FE8A005B6289 /* CompileError.h */; };
 		36C724B315D3FE8A005B6289 /* CompileError.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245315D3FE8A005B6289 /* CompileError.m */; };
 		36C724B415D3FE8A005B6289 /* GemBot+BinaryCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245515D3FE8A005B6289 /* GemBot+BinaryCompiler.h */; };
@@ -151,7 +151,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 36A2B26315DF5BF000DAB3DE;
+			remoteGlobalIDString = 36A2B29715DF5D9700DAB3DE;
 			remoteInfo = SBJsonLib;
 		};
 /* End PBXContainerItemProxy section */
@@ -286,7 +286,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36A2B28E15DF5C5B00DAB3DE /* SBJson copy.framework in Frameworks */,
+				36A2B28E15DF5C5B00DAB3DE /* libSBJsonLib.a in Frameworks */,
 				369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +323,7 @@
 				369C5EA815D0C18C002028C8 /* SBJsonTests.octest */,
 				369C5EAA15D0C18C002028C8 /* libsbjson-ios.a */,
 				369C5EAC15D0C18C002028C8 /* sbjson-iosTests.octest */,
-				36A2B28B15DF5C3300DAB3DE /* SBJson copy.framework */,
+				36A2B28B15DF5C3300DAB3DE /* libSBJsonLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -679,10 +679,10 @@
 			remoteRef = 369C5EAB15D0C18C002028C8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		36A2B28B15DF5C3300DAB3DE /* SBJson copy.framework */ = {
+		36A2B28B15DF5C3300DAB3DE /* libSBJsonLib.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = "SBJson copy.framework";
+			fileType = archive.ar;
+			path = libSBJsonLib.a;
 			remoteRef = 36A2B28A15DF5C3300DAB3DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -812,6 +812,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;

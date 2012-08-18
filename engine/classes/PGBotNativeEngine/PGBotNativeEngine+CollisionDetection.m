@@ -25,22 +25,30 @@ typedef enum {
 } highorlow;
 
 
-unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coord, unit wallPosition, highorlow hl) {
-    
-    if (a.internal_position.x < 2 || a.internal_position.x > 1022 || a.internal_position.y < 2 || a.internal_position.y > 1022) {
-        if ([a isKindOfClass:[GemBot class]]) {
-        NSLog(@"");
+
+static inline unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coord, unit wallPosition, highorlow hl) {
+    /*
+    ///position p = a.internal_position;
+    unit d = a.internal_speed;
+    if (hl == IS_HIGH) {
+        if (coord < wallPosition -d) {
+            return MAX_UNIT;
         }
-        
-    }
+    } else {
+        if (coord > d) {
+            return MAX_UNIT;
+        }
+    }*/
+    
+
     
     unit speed_in_coordinate;
     unit position_in_coordinate;
     if (coord == IS_X) {
-        speed_in_coordinate = internal_velocity(a).x;
+        speed_in_coordinate = internal_x_velocity(a);
         position_in_coordinate = a.internal_position.x;
     } else {
-        speed_in_coordinate = internal_velocity(a).y;
+        speed_in_coordinate = internal_y_velocity(a);
         position_in_coordinate = a.internal_position.y;
     }
     unit distance_to_go = wallPosition - position_in_coordinate;
@@ -77,14 +85,44 @@ unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coord, unit wallPo
 }
 
 
-void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollisionTimeFound, NSObject<CollideableObject>** objectInCollisionA,  NSObject<CollideableObject>** objectInCollisionB) {
-    
+ inline void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollisionTimeFound, NSObject<CollideableObject>** objectInCollisionA,  NSObject<CollideableObject>** objectInCollisionB) {
     unit min_time_to_hit_wall = MAX_UNIT;
+    position p = a.internal_position;
+    unit x = p.x;
+    unit y = p.y;
+    unit dx = internal_x_velocity(a);
+    unit dy = internal_y_velocity(a);
+    unit r = a.internal_radius;
+    if (dx > 0) {
+        if (x > SIZE_OF_ARENA-r-dx) {
+            min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
+        }
+    } else {
+        if (x < r+dx) {
+            min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
+        } 
+    }
     
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
-    min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
+    if (dy > 0) {
+        if (y > SIZE_OF_ARENA - r - dy) {
+            min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
+        }
+    } else {
+        if (y < r + dy) {
+            min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
+        }
+    }
+    
+    
+    
+    
+    if (min_time_to_hit_wall == MAX_UNIT) {
+        return;
+    }
+    
+    
+    
+    
     
     if (min_time_to_hit_wall < *maximumCollisionTimeFound) {
         *maximumCollisionTimeFound = min_time_to_hit_wall;
@@ -93,7 +131,7 @@ void computeWallCollision(NSObject<CollideableObject>* a, unit* maximumCollision
     }
 }
 
-unit unitabsunit(unit x) {
+static inline unit unitabsunit(unit x) {
     if (x < 0) {
         return -x;
     } else {
@@ -102,7 +140,7 @@ unit unitabsunit(unit x) {
 }
 
 
-bool quickNearnessCheck(unit b1x, unit b1y, unit b1vx, unit b1vy, unit b1r,
+static inline bool quickNearnessCheck(unit b1x, unit b1y, unit b1vx, unit b1vy, unit b1r,
                         unit b2x, unit b2y, unit b2vx, unit b2vy, unit b2r) {
     
     unit distanceBetweenCenters = sqrt((b1x-b2x)*(b1x-b2x)+(b1y-b2y)*(b1y-b2y));
@@ -118,14 +156,28 @@ bool quickNearnessCheck(unit b1x, unit b1y, unit b1vx, unit b1vy, unit b1r,
 // See LICENSE.md file for details.
 
 
-bool areMovingTowardsEachOther(unit b1x, unit b1y, unit b1vx, unit b1vy,
+static inline bool areMovingTowardsEachOther(unit b1x, unit b1y, unit b1vx, unit b1vy,
                                unit b2x, unit b2y, unit b2vx, unit b2vy) {
 
     //result (b2.x - b1.x) * (b1.vx - b2.vx) + (b2.y - b1.y) * (b1.vy - b2.vy) > 0
     return   (b2x  - b1x ) * (b1vx  - b2vx ) + (b2y  - b1y ) * (b1vy  - b2vy ) > 0;
 }
 
-void computeCircleCollision(NSObject<CollideableObject>* i, NSObject<CollideableObject>* j, unit* maximumCollisionTimeFound, NSObject<CollideableObject>*  * objectInCollisionA, NSObject<CollideableObject>*  * objectInCollisionB) {
+ inline void computeCircleCollision(NSObject<CollideableObject>* i, NSObject<CollideableObject>* j, unit* maximumCollisionTimeFound, NSObject<CollideableObject>*  * objectInCollisionA, NSObject<CollideableObject>*  * objectInCollisionB) {
+    
+    unit is = i.internal_speed;
+    unit js = j.internal_speed;
+    unit ix = i.internal_position.x;
+    unit iy = i.internal_position.y;
+    unit jx = j.internal_position.x;
+    unit jy = j.internal_position.y;
+    
+    unit md = MAX(ABS(ix-jx),(iy-jy));
+    
+    if (is + js < md) {
+        return;
+    }
+    
     
     position iv = internal_velocity(i);
     unit ivx = iv.x;
@@ -133,10 +185,6 @@ void computeCircleCollision(NSObject<CollideableObject>* i, NSObject<Collideable
     position jv = internal_velocity(j);
     unit jvx = jv.x;
     unit jvy = jv.y;
-    unit ix = i.internal_position.x;
-    unit iy = i.internal_position.y;
-    unit jx = j.internal_position.x;
-    unit jy = j.internal_position.y;
     unit ir = i.internal_radius;
     unit jr = j.internal_radius;
     

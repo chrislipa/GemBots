@@ -11,8 +11,10 @@
 #import "PGBotEngineProtocol.h"
 #import "RandomProtocol.h"
 #import "GameStateDescriptor.h"
-
-
+#import "Scan.h"
+#import "Explosion.h"
+@class Scan;
+@class Explosion;
 @class GemBot;
 @interface PGBotNativeEngine : NSObject <PGBotEngineProtocol,GameStateDescriptor> {
     // Persisted across Match sets
@@ -40,17 +42,29 @@
     
     // Initalized every cycle
     int numberOfExplosionsAppliedThisCycle;
-    NSMutableArray* scans;
-    NSMutableArray* explosions;
+    Scan *__strong* internal_scans;
+    int internal_scans_index;
+    int internal_scans_max;
+    Explosion*__strong* internal_explosions;
+    int internal_explosions_index;
+    int internal_explosions_max;
+    NSString*__strong* internal_soundEffectsInitiatedThisCycle;
+    int internal_soundEffectsInitiatedThisCycle_index;
+    int internal_soundEffectsInitiatedThisCycle_max;
+    
+    
     NSMutableArray* mines;
-    NSMutableArray* soundEffectsInitiatedThisCycle;
+    
     
     bool finishedMatch;
     int gameCycleStatePosition;
     int gameCycleStateRuntimePosition;
     int gameCycleStateCPUCyclesExecuted;
     
+    bool headlessMode;
+    
 }
+@property (readwrite,assign)     bool headlessMode;
 @property (readonly) NSObject<RandomProtocol>* random;
 @property (readwrite,retain) NSMutableArray* mines;
 @property (readwrite,assign) int currentMatch;
