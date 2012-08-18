@@ -24,6 +24,7 @@
 }
 
 +(MasterController*) singleton;
+-(void) loadEngine ;
 -(void) spawnEditorWindowForBotContainer:(BotContainer*) bc forBattleDocumentController:(BattleDocumentViewController*) controller;
 
 -(void) spawnErrorWindowForBotContainer:(BotContainer*) bc forBattleDocumentController:(BattleDocumentViewController*) controller;

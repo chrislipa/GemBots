@@ -7,8 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "gembotscript.h"
 
 int main(int argc, char *argv[])
 {
+    for (int i = 0; i<argc ; i++) {
+        if (strcmp(argv[i], "script") == 0) {
+            gembotscript(argc, argv);
+        }
+    }
     return NSApplicationMain(argc, (const char **)argv);
 }

@@ -84,6 +84,9 @@ MasterController* staticMasterController = nil;
 }
 
 +(MasterController*) singleton {
+    if (!staticMasterController) {
+        staticMasterController = [[MasterController alloc] init];
+    }
     return staticMasterController;
 }
 

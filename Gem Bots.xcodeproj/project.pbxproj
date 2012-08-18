@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3603D5C515D41930009F53AD /* BattleDocumentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3603D5C415D41930009F53AD /* BattleDocumentWindow.m */; };
+		3606303B15DF45E000CFFE07 /* gembotscript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3606303A15DF45E000CFFE07 /* gembotscript.m */; };
 		3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608927E15BE876D00A06C94 /* Cocoa.framework */; };
 		3627793E15D7C6100074B903 /* BlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793D15D7C6100074B903 /* BlackView.m */; };
 		3627794115D862E00074B903 /* skull200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3627793F15D862E00074B903 /* skull200@2x.png */; };
@@ -183,6 +184,8 @@
 /* Begin PBXFileReference section */
 		3603D5C315D41930009F53AD /* BattleDocumentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentWindow.h; sourceTree = "<group>"; };
 		3603D5C415D41930009F53AD /* BattleDocumentWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleDocumentWindow.m; sourceTree = "<group>"; };
+		3606303915DF45E000CFFE07 /* gembotscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gembotscript.h; sourceTree = "<group>"; };
+		3606303A15DF45E000CFFE07 /* gembotscript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gembotscript.m; sourceTree = "<group>"; };
 		3608927A15BE876D00A06C94 /* Gem Bots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gem Bots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3608927E15BE876D00A06C94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3608928115BE876D00A06C94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -344,12 +347,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				36C7F86E15D8A2D400DD1A75 /* AudioToolbox.framework in Frameworks */,
+				36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */,
 				369140F415D62CB4005C3890 /* AudioUnit.framework in Frameworks */,
 				36C7F86F15D8A2D400DD1A75 /* AudioVideoBridging.framework in Frameworks */,
 				369140EE15D62C0E005C3890 /* CoreAudio.framework in Frameworks */,
 				369140F615D62CB4005C3890 /* CoreAudioKit.framework in Frameworks */,
 				369140F815D62CE1005C3890 /* AVFoundation.framework in Frameworks */,
-				36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */,
 				369C5ED715D0C761002028C8 /* Foundation.framework in Frameworks */,
 				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
@@ -445,6 +448,8 @@
 				362A91E115D0B75200E2817F /* main.m */,
 				362A91E215D0B75200E2817F /* PGBotApplication.h */,
 				362A91E315D0B75200E2817F /* PGBotApplication.m */,
+				3606303915DF45E000CFFE07 /* gembotscript.h */,
+				3606303A15DF45E000CFFE07 /* gembotscript.m */,
 			);
 			path = application;
 			sourceTree = "<group>";
@@ -954,6 +959,7 @@
 				36974D6715D65E6A0051BA6E /* DebuggerWindow.m in Sources */,
 				36EEAD4F15D6FC92006A4A77 /* AudioController.m in Sources */,
 				3627793E15D7C6100074B903 /* BlackView.m in Sources */,
+				3606303B15DF45E000CFFE07 /* gembotscript.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,7 +1075,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "classes/application/Gem Bots-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Gem Bots";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1084,7 +1090,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "classes/application/Gem Bots-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Gem Bots";
 				WRAPPER_EXTENSION = app;
 			};
