@@ -158,7 +158,7 @@ void gembotscript(int argc, char** argv) {
     
     [s writeToURL:outputurl atomically:YES encoding:NSUTF8StringEncoding error:nil];
     CFTimeInterval end = CACurrentMediaTime();
-    NSLog(@"time = %0.2f   %0.3f / cycle",(end-start),(end - start)/n);
+    NSLog(@"time = %0.2fs total   %0.3fs / match",(end-start),(end - start)/n);
 }
     exit(0);
     

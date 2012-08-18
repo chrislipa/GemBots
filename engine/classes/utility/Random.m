@@ -44,8 +44,8 @@
 
 -(id) init {
     if (self = [super init]) {
-        seed = 1;
-        isDeterministic = 1;
+        seed = 10;
+        isDeterministic = 0;
     }
     return self;
 }
@@ -74,7 +74,7 @@
  */
 
 
-const int seedUniquifier_ = 0;
+
 
 const int A = 48271;
 
@@ -85,7 +85,7 @@ const int Q = 44488;
 
 const int R = 3399;
 
-const double ONE_OVER_M_MINUS_ONE = 1.0 / (M - 1);
+
 
 
 
