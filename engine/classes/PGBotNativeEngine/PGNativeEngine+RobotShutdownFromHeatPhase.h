@@ -9,5 +9,5 @@
 #import "PGBotNativeEngine.h"
 
 @interface PGBotNativeEngine (RobotShutdownFromHeatPhase)
--(void) robotShutdownFromHeatPhase;
+
 @end
