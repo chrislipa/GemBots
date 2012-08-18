@@ -111,7 +111,6 @@
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
 		36A2B24515DF59D300DAB3DE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140EF15D62CB3005C3890 /* AudioToolbox.framework */; };
 		36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */; };
-		36C7F86F15D8A2D400DD1A75 /* AudioVideoBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140F115D62CB4005C3890 /* AudioVideoBridging.framework */; };
 		36C7F87115D8A74E00DD1A75 /* laser3-lipa-modified.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F87015D8A74E00DD1A75 /* laser3-lipa-modified.caf */; };
 		36C7F8A115D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F8A015D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf */; };
 		36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C1915315D0BC6600A79D5F /* SBJson.framework */; };
@@ -339,7 +338,6 @@
 			files = (
 				36A2B24515DF59D300DAB3DE /* AudioToolbox.framework in Frameworks */,
 				36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */,
-				36C7F86F15D8A2D400DD1A75 /* AudioVideoBridging.framework in Frameworks */,
 				369140EE15D62C0E005C3890 /* CoreAudio.framework in Frameworks */,
 				369140F615D62CB4005C3890 /* CoreAudioKit.framework in Frameworks */,
 				369140F815D62CE1005C3890 /* AVFoundation.framework in Frameworks */,
