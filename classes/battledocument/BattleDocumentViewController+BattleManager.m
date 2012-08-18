@@ -322,6 +322,11 @@
 
 
 -(void) battleStep:(NSTimer*) timer {
+    if (delayBetweenGameCycles == 0) {
+        for (int i = 0; i < 100; i++) {
+            [self battleStepRobots:nil];
+        }
+    }
     [self battleStepRobots:nil];
 }
 
