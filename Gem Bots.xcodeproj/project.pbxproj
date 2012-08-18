@@ -104,7 +104,6 @@
 		36974D6315D65E540051BA6E /* DebuggerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36974D6115D65E540051BA6E /* DebuggerWindowController.m */; };
 		36974D6415D65E540051BA6E /* DebuggerWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36974D6215D65E540051BA6E /* DebuggerWindowController.xib */; };
 		36974D6715D65E6A0051BA6E /* DebuggerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 36974D6615D65E6A0051BA6E /* DebuggerWindow.m */; };
-		369C5ED715D0C761002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608928315BE876D00A06C94 /* Foundation.framework */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
 		36A2B24515DF59D300DAB3DE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140EF15D62CB3005C3890 /* AudioToolbox.framework */; };
 		36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */; };
@@ -335,7 +334,6 @@
 			files = (
 				36A2B24515DF59D300DAB3DE /* AudioToolbox.framework in Frameworks */,
 				36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */,
-				369C5ED715D0C761002028C8 /* Foundation.framework in Frameworks */,
 				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
 				3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */,
