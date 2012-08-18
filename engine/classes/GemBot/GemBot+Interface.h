@@ -13,7 +13,7 @@
 
 
 
--(void) dealInternalDamage:(unit) damage ;
+-(void) dealInternalDamage:(unit) damage :(GemBot*) damageDealer;
 
 -(void) die;
 

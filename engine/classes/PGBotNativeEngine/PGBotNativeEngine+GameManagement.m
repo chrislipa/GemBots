@@ -97,6 +97,7 @@
     int numberOfTeamsAlive  = 0;
     for (GemBot* b in robots) {
         if (b.isAlive) {
+            b.total_armor_remaining_from_set_of_matches += b.internal_armor;
             if (numberOfTeamsAlive == 0) {
                 numberOfTeamsAlive++;
                 winningTeam = b.team;
@@ -105,6 +106,8 @@
             } else {
                 numberOfTeamsAlive++;
             }
+        } else {
+            
         }
     }
     if (numberOfTeamsAlive == 1) {

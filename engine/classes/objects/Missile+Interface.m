@@ -16,7 +16,7 @@
     
 }
 -(void) explode {
-    [engine createExplosionAt:self ofRadius:distanceToInternalDistance(MISSILE_EXPLOSION_RADIUS) andDamageMultiplier:1.0];
+    [engine createExplosionAt:self ofRadius:distanceToInternalDistance(MISSILE_EXPLOSION_RADIUS) andDamageMultiplier:1.0 andOwner:owner];
     isAlive = NO;
 }
 @end

@@ -108,6 +108,7 @@
 
 -(void) resetForNewSetOfMatches {
     wins = losses = kills = deaths = 0;
+    total_armor_remaining_from_set_of_matches = 0;
 }
 
 

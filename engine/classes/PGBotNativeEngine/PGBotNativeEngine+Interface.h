@@ -19,7 +19,7 @@
 -(int) computeSonarFromBot:(GemBot*)bot;
 -(void) transmit:(int)x onChannel:(int) comm_channel;
 
--(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(unit)r andDamageMultiplier:(unit) multiplier;
+-(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(unit)r andDamageMultiplier:(unit)multiplier andOwner:(GemBot*) owner;
 
 -(void) removeMine:(Mine*) mine;
 -(void) removeMissile:(Missile*) missile ;

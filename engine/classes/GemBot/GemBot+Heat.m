@@ -14,9 +14,12 @@
 @implementation GemBot (Heat)
 -(void) heatPhase {
 
-    
-    [self dealInternalDamage:[self damagePerGameCycle]];
-    [self dealInternalHeat:[self deltaHeatPerGameCycle]];
+    unit damage = [self damagePerGameCycle] ;
+    if (damage) {
+        [self dealInternalDamage:damage:nil];
+    }
+    unit deltaheat = [self deltaHeatPerGameCycle];
+    [self dealInternalHeat:deltaheat];
     
     if (isShutDownFromHeat) {
         [self checkForReviveFromShutDownFromHeat];

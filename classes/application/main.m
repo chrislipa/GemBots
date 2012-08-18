@@ -11,9 +11,11 @@
 
 int main(int argc, char *argv[])
 {
+    
     for (int i = 0; i<argc ; i++) {
         if (strcmp(argv[i], "script") == 0) {
             gembotscript(argc, argv);
+            return 0;
         }
     }
     return NSApplicationMain(argc, (const char **)argv);

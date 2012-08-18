@@ -150,13 +150,14 @@
     
     int dataSegmentEndAddress;
     bool isShutDownFromHeat;
+    double total_armor_remaining_from_set_of_matches;
 }
 @property (readwrite,assign) bool isShutDownFromHeat;
 @property (readwrite,assign)     bool hasEverBeenDetected;
 @property (readwrite,assign)     bool diedLastTurn;
 @property (readwrite,assign) unit internal_odometer;
 @property (readwrite,retain) NSDictionary* strings;
-
+@property (readwrite,assign) double total_armor_remaining_from_set_of_matches;
 
 @property (readwrite,assign) int order;
 @property (readwrite,assign) int orderingInt;

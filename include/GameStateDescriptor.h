@@ -38,7 +38,7 @@
 
 -(int) numberOfLogs;
 -(NSString*) logNumber:(int) index;
-
+-(double) total_armor_remaining_from_set_of_matches;
 -(int) x;
 -(int) y;
 -(int) heading;

@@ -27,7 +27,7 @@
 }
 
 -(void) explode {
-    [engine createExplosionAt:self ofRadius:MINE_EXPLOSION_RADIUS andDamageMultiplier:1.0];
+    [engine createExplosionAt:self ofRadius:MINE_EXPLOSION_RADIUS andDamageMultiplier:1.0 andOwner:owner];
     [engine removeMine:self];
 }
 

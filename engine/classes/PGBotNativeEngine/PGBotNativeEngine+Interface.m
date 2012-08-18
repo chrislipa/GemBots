@@ -126,11 +126,12 @@
     [mines addObject:mine];
 }
 
--(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(unit)r andDamageMultiplier:(unit)multiplier {
+-(void) createExplosionAt:(NSObject<TangibleObject>*) a ofRadius:(unit)r andDamageMultiplier:(unit)multiplier andOwner:(GemBot*) owner {
     Explosion* e = [[Explosion alloc] init];
     e.internal_position = a.internal_position;
     e.internal_radius = r;
     e.damageMultiplier = multiplier;
+    e.owner = owner;
     [explosions addObject:e];
 }
 

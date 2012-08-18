@@ -17,10 +17,8 @@
 		3627793A15D7A4F40074B903 /* GemBot+Disassembly.h in Headers */ = {isa = PBXBuildFile; fileRef = 3627793815D7A4F40074B903 /* GemBot+Disassembly.h */; };
 		3627793B15D7A4F40074B903 /* GemBot+Disassembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793915D7A4F40074B903 /* GemBot+Disassembly.m */; };
 		362E8F2915D2478A00DD3560 /* gameparameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610650E15D18E2700117E33 /* gameparameters.m */; };
-		369C5EBB15D0C1B7002028C8 /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369C5EA615D0C18C002028C8 /* SBJson.framework */; };
 		369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D96015C74062003CCD2A /* Foundation.framework */; };
-		369C5EE415D0C787002028C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95B15C74062003CCD2A /* Cocoa.framework */; };
-		369C5EE715D0C7C0002028C8 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95E15C74062003CCD2A /* AppKit.framework */; };
+		36A2B28E15DF5C5B00DAB3DE /* SBJson copy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2B28B15DF5C3300DAB3DE /* SBJson copy.framework */; };
 		36C724B215D3FE8A005B6289 /* CompileError.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245215D3FE8A005B6289 /* CompileError.h */; };
 		36C724B315D3FE8A005B6289 /* CompileError.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245315D3FE8A005B6289 /* CompileError.m */; };
 		36C724B415D3FE8A005B6289 /* GemBot+BinaryCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245515D3FE8A005B6289 /* GemBot+BinaryCompiler.h */; };
@@ -111,7 +109,6 @@
 		36C7250915D3FE8A005B6289 /* Random.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724AF15D3FE8A005B6289 /* Random.h */; };
 		36C7250A15D3FE8A005B6289 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C724B015D3FE8A005B6289 /* Random.m */; };
 		36C7250B15D3FE8A005B6289 /* TurretedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724B115D3FE8A005B6289 /* TurretedObject.h */; };
-		36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FE1B0A15CCE787003310F0 /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,12 +140,19 @@
 			remoteGlobalIDString = BCC2627313920FC7003D9994;
 			remoteInfo = "sbjson-iosTests";
 		};
-		369C5EB915D0C1B0002028C8 /* PBXContainerItemProxy */ = {
+		36A2B28A15DF5C3300DAB3DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36A2B28615DF5BF000DAB3DE;
+			remoteInfo = SBJsonLib;
+		};
+		36A2B28C15DF5C3C00DAB3DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC12323C1391D5CC00131607;
-			remoteInfo = SBJson;
+			remoteGlobalIDString = 36A2B26315DF5BF000DAB3DE;
+			remoteInfo = SBJsonLib;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -282,11 +286,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				369C5EE415D0C787002028C8 /* Cocoa.framework in Frameworks */,
+				36A2B28E15DF5C5B00DAB3DE /* SBJson copy.framework in Frameworks */,
 				369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */,
-				369C5EE715D0C7C0002028C8 /* AppKit.framework in Frameworks */,
-				369C5EBB15D0C1B7002028C8 /* SBJson.framework in Frameworks */,
-				36FE1B0B15CCE787003310F0 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +323,7 @@
 				369C5EA815D0C18C002028C8 /* SBJsonTests.octest */,
 				369C5EAA15D0C18C002028C8 /* libsbjson-ios.a */,
 				369C5EAC15D0C18C002028C8 /* sbjson-iosTests.octest */,
+				36A2B28B15DF5C3300DAB3DE /* SBJson copy.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -609,7 +611,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				369C5EBA15D0C1B0002028C8 /* PBXTargetDependency */,
+				36A2B28D15DF5C3C00DAB3DE /* PBXTargetDependency */,
 			);
 			name = GemBotEngine;
 			productName = NativeEngine;
@@ -675,6 +677,13 @@
 			fileType = wrapper.cfbundle;
 			path = "sbjson-iosTests.octest";
 			remoteRef = 369C5EAB15D0C18C002028C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36A2B28B15DF5C3300DAB3DE /* SBJson copy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "SBJson copy.framework";
+			remoteRef = 36A2B28A15DF5C3300DAB3DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -750,10 +759,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		369C5EBA15D0C1B0002028C8 /* PBXTargetDependency */ = {
+		36A2B28D15DF5C3C00DAB3DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SBJson;
-			targetProxy = 369C5EB915D0C1B0002028C8 /* PBXContainerItemProxy */;
+			name = SBJsonLib;
+			targetProxy = 36A2B28C15DF5C3C00DAB3DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

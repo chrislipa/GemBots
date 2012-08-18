@@ -32,7 +32,7 @@
         return;
     }
     unit internal_damage = explosion.internal_radius - distance;
-    [bot dealInternalDamage:internal_damage];
+    [bot dealInternalDamage:internal_damage : explosion.owner];
 }
 
 @end

@@ -38,10 +38,13 @@
     }
 }
 
--(void) dealInternalDamage:(unit) damage  {
+-(void) dealInternalDamage:(unit) damage :(GemBot*) damageDealer {
     internal_armor = MAX(0,internal_armor- damage);
     if (internal_armor ==0) {
         markForSelfDestruction = 1;
+        if (damageDealer) {
+            damageDealer.kills++;
+        }
     }
 }
 
@@ -55,13 +58,15 @@
 }
 
 -(void) die {
+    
     internal_armor = 0;
     internal_heat = 0;
     isAlive = NO;
     diedLastTurn = YES;
     markForSelfDestruction = 0;
-    [engine createExplosionAt:self ofRadius:ROBOT_DEATH_EXPLOSION_RADIUS andDamageMultiplier:[self  tankExplosionDamageMultiplier]];
-   
+    deaths++;
+    [engine createExplosionAt:self ofRadius:ROBOT_DEATH_EXPLOSION_RADIUS andDamageMultiplier:[self  tankExplosionDamageMultiplier] andOwner:self];
+    
 }
 
 

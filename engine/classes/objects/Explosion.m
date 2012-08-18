@@ -12,7 +12,7 @@
 @synthesize internal_position;
 @synthesize internal_radius;
 @synthesize damageMultiplier;
-
+@synthesize owner;
 -(int) x {
     return roundInternalDistanceToDistance(internal_position.x);
 }

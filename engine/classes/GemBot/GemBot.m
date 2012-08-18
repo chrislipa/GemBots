@@ -28,7 +28,7 @@
 @synthesize diedLastTurn;
 @synthesize hasEverBeenDetected;
 @synthesize strings;
-
+@synthesize total_armor_remaining_from_set_of_matches;
 @synthesize order;
 @synthesize userVariables;
 @synthesize orderingInt;

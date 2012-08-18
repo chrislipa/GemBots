@@ -12,8 +12,12 @@
 
 #import "PGBotEngineProtocol.h"
 #import "MasterController.h"
+
+
+
 void gembotscript(int argc, char** argv) {
-   
+    CFTimeInterval start = CACurrentMediaTime();
+    
     NSMutableArray* botPaths = [NSMutableArray array];
     NSString* outputPath = nil;
     NSString* dir = nil;
@@ -37,9 +41,6 @@ void gembotscript(int argc, char** argv) {
         
     }
     
-    
-
-    
     [[MasterController singleton] loadEngine];
     Class c = NSClassFromString(@"PGBotNativeEngine");
     NSObject<PGBotEngineProtocol>* engine = [[c alloc] init];
@@ -47,8 +48,14 @@ void gembotscript(int argc, char** argv) {
     NSMutableDictionary* botToPath = [NSMutableDictionary dictionary];
     int team = 1;
     for(NSString* path in botPaths) {
-        NSURL* url = [[NSURL alloc] initWithString:[dir stringByAppendingString:path]];
+        NSString* pa = [dir stringByAppendingString:path];
+    
+        
+        NSURL* url = [NSURL URLWithString:pa];
+    
+    
         NSData* data = [NSData dataWithContentsOfURL:url];
+    
         NSObject<RobotDescription>* bot = [engine newRobot];
         [engine recompileRobot:bot withSource:data];
         [bot setTeam:team++];
@@ -65,11 +72,13 @@ void gembotscript(int argc, char** argv) {
     NSMutableString* s = [NSMutableString string];
     for (NSObject<RobotDescription>* bot in [engine robots]) {
         NSString* path = [botToPath objectForKey:[NSValue valueWithPointer:(void*)bot]];
-        [s appendFormat:@"%@ %d\n",path,bot.wins];
+        [s appendFormat:@"%@ %d %d %d %d %0.0f\n",path,bot.wins,bot.losses,bot.kills,bot.deaths, bot.total_armor_remaining_from_set_of_matches];
     }
-    
     NSURL* outputurl = [NSURL URLWithString:[dir stringByAppendingString:outputPath]];
-    [s writeToURL:outputurl atomically:NO encoding:NSUTF8StringEncoding error:nil];
+    
+    [s writeToURL:outputurl atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    CFTimeInterval end = CACurrentMediaTime();
+    NSLog(@"time = %0.2f   %0.3f / cycle",(end-start),(end - start)/n);
     exit(0);
 }
 

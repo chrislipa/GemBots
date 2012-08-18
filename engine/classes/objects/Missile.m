@@ -27,7 +27,7 @@
     return roundInternalDistanceToDistance(internal_position.y);
 }
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
-    [engine createExplosionAt:self ofRadius:MISSILE_EXPLOSION_RADIUS andDamageMultiplier:damageMultipiler];
+    [engine createExplosionAt:self ofRadius:MISSILE_EXPLOSION_RADIUS andDamageMultiplier:damageMultipiler andOwner:owner];
     [engine removeMissile:self];
 }
 

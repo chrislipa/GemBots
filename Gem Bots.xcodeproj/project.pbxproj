@@ -109,7 +109,6 @@
 		36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */; };
 		36C7F87115D8A74E00DD1A75 /* laser3-lipa-modified.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F87015D8A74E00DD1A75 /* laser3-lipa-modified.caf */; };
 		36C7F8A115D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F8A015D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf */; };
-		36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C1915315D0BC6600A79D5F /* SBJson.framework */; };
 		36EEAD4B15D6FAA5006A4A77 /* ex.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36EEAD4915D6FAA5006A4A77 /* ex.caf */; };
 		36EEAD4C15D6FAA5006A4A77 /* l.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36EEAD4A15D6FAA5006A4A77 /* l.caf */; };
 		36EEAD4F15D6FC92006A4A77 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EEAD4E15D6FC92006A4A77 /* AudioController.m */; };
@@ -130,6 +129,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 36FE1B0815CCE787003310F0;
 			remoteInfo = GemBotEngine;
+		};
+		36A2B29015DF5C6400DAB3DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 36A2B28615DF5BF000DAB3DE;
+			remoteInfo = SBJsonLib;
+		};
+		36A2B29215DF5D6D00DAB3DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 36A2B26315DF5BF000DAB3DE;
+			remoteInfo = SBJsonLib;
 		};
 		36C1915215D0BC6600A79D5F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -159,14 +172,19 @@
 			remoteGlobalIDString = BCC2627313920FC7003D9994;
 			remoteInfo = "sbjson-iosTests";
 		};
-		36C1915A15D0BC7700A79D5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC12323C1391D5CC00131607;
-			remoteInfo = SBJson;
-		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36A2B26115DF5BB400DAB3DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3603D5C315D41930009F53AD /* BattleDocumentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentWindow.h; sourceTree = "<group>"; };
@@ -333,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A2B24515DF59D300DAB3DE /* AudioToolbox.framework in Frameworks */,
-				36D8865015D0CA5A0070AE1D /* SBJson.framework in Frameworks */,
 				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
 				3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */,
@@ -704,6 +721,7 @@
 				36C1915515D0BC6600A79D5F /* SBJsonTests.octest */,
 				36C1915715D0BC6600A79D5F /* libsbjson-ios.a */,
 				36C1915915D0BC6600A79D5F /* sbjson-iosTests.octest */,
+				36A2B29115DF5C6400DAB3DE /* SBJsonLib.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -718,12 +736,13 @@
 				3608927615BE876D00A06C94 /* Sources */,
 				3608927715BE876D00A06C94 /* Frameworks */,
 				3608927815BE876D00A06C94 /* Resources */,
+				36A2B26115DF5BB400DAB3DE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				36A2B29315DF5D6D00DAB3DE /* PBXTargetDependency */,
 				3651727E15D21FFC005C5D0F /* PBXTargetDependency */,
-				36C1915B15D0BC7700A79D5F /* PBXTargetDependency */,
 			);
 			name = "Gem Bots";
 			productName = bot;
@@ -771,6 +790,13 @@
 			fileType = wrapper.cfbundle;
 			path = GemBotEngine.bundle;
 			remoteRef = 3613070415D0D9DB00AE5610 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36A2B29115DF5C6400DAB3DE /* SBJsonLib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SBJsonLib.framework;
+			remoteRef = 36A2B29015DF5C6400DAB3DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		36C1915315D0BC6600A79D5F /* SBJson.framework */ = {
@@ -931,10 +957,10 @@
 			name = GemBotEngine;
 			targetProxy = 3651727D15D21FFC005C5D0F /* PBXContainerItemProxy */;
 		};
-		36C1915B15D0BC7700A79D5F /* PBXTargetDependency */ = {
+		36A2B29315DF5D6D00DAB3DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SBJson;
-			targetProxy = 36C1915A15D0BC7700A79D5F /* PBXContainerItemProxy */;
+			name = SBJsonLib;
+			targetProxy = 36A2B29215DF5D6D00DAB3DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
