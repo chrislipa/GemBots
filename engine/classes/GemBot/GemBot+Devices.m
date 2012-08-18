@@ -78,11 +78,20 @@
     [self setMemory:op2 : turretHeading];
 }
 -(void) turret_headingw {
-    turretHeading = 255 & op2;
+    turretHeading = anglemod(op2);
+}
+
+-(void) turret_steerw {
+    turretHeading = anglemod(turretHeading + op2);
 }
 
 //9 3 fire_missile w
 -(void) fire_missilew {
+    if (op2 > 4) {
+        op2 = 4;
+    } else if (op2 < -4) {
+        op2 = -4;
+    }
     [engine fireMissileFrom:internal_position inDirection:turretHeading+op2 withOwner:self];
     internal_heat += [self heatFromFiringMissile];
 }

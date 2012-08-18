@@ -101,6 +101,9 @@
     comm_read_ptr = 0;
     //comm_transmits_this_turn[NUMBER_OF_CLOCK_CYCLES_PER_GAME_CYCLE];
     number_of_comm_transmits_this_turn = 0;
+    
+    internal_shutdown_temp = 350;
+    isShutDownFromHeat = NO;
 }
 
 -(void) resetForNewSetOfMatches {

@@ -15,6 +15,5 @@ TimeSinceDetection 104
 CollisionCount 104
 Odometer 105
 DataSegmentEndAddr 106
-
 StackStart 1024
 SourceStart 2048

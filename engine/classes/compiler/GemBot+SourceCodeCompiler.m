@@ -89,6 +89,26 @@
 
 @implementation GemBot (SourceCodeCompiler)
 
+NSString* stripQuotes(NSString* s) {
+    int firstQuote = -1, lastQuote = -1;
+    for (int i = 0; i < s.length; i++) {
+        if ([s characterAtIndex:i] == '\"') {
+            firstQuote = i;
+            break;
+        }
+    }
+    for (int i = (int)s.length-1; i >= 0; i--) {
+        if ([s characterAtIndex:i] == '\"') {
+            lastQuote = i;
+            break;
+        }
+    }
+    if (firstQuote < lastQuote) {
+        return [s substringWithRange:NSMakeRange(firstQuote+1, lastQuote-firstQuote-1)];
+    } else {
+        return s;
+    }
+}
 
 -(void) readDescription:(NSMutableArray*) lines {
     for (int i = 0 ; i < lines.count; i++) {
@@ -98,13 +118,13 @@
         }
         NSString* token = [s.tokens objectAtIndex:0];
         if ([token isEqualToString:@"#NAME"]) {
-            self.name = [s.originalCaseLine substringFromIndex:[token length]+1] ;
+            self.name = stripQuotes([s.originalCaseLine substringFromIndex:[token length]+1]) ;
             [lines removeObjectAtIndex:i]; i--;
         } else if ([token isEqualToString:@"#AUTHOR"]) {
-            self.author = [s.originalCaseLine substringFromIndex:[token length]+1];
+            self.author = stripQuotes([s.originalCaseLine substringFromIndex:[token length]+1]);
             [lines removeObjectAtIndex:i]; i--;
         } else if ([token isEqualToString:@"#DESCRIPTION"]) {
-            self.descript = [s.originalCaseLine substringFromIndex:[token length]+1];
+            self.descript = stripQuotes([s.originalCaseLine substringFromIndex:[token length]+1]);
             [lines removeObjectAtIndex:i]; i--;
         }
     }
@@ -224,6 +244,7 @@
         }
         [userVariablesReverseLookup setObject:var.name forKey:[NSNumber numberWithInt:var.location]];
     }
+    dataSegmentEndAddress = memloc-1;
 }
 
 -(void) readLogStrings:(NSMutableArray*)lines intoLogStrings:(NSMutableDictionary**) plogStrings {
@@ -257,7 +278,7 @@
                     if (rangeOfText.length > line.originalCaseLine.length) {
                         rangeOfText = NSMakeRange(0, 0);
                     }
-                    NSString* text = [line.originalCaseLine substringWithRange:rangeOfText];
+                    NSString* text = stripQuotes([line.originalCaseLine substringWithRange:rangeOfText]);
                     NSNumber* newLogNumber = [NSNumber numberWithInt:(int)zlogStrings.count];
                     [zlogStrings setObject:text forKey:newLogNumber];
                     NSMutableArray* replacementTokens = [NSMutableArray array];

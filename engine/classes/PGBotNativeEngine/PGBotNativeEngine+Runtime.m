@@ -46,6 +46,7 @@
     if (gameCycleStateRuntimePosition == 2) {
         gameCycleStateRuntimePosition = 3;
         [self heatPhase];
+       
         if ([self checkForAndDealWithSelfDestructingRobots]) return YES;
         [self communicationPhase];
         [self updateThrottlesPhase];

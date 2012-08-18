@@ -78,6 +78,7 @@
     memory[TIME_SINCE_DETECTION] = [self timeSinceDetection];
     memory[COLLISION_COUNT] = number_of_collisions;
     memory[ODOMETER] = roundInternalDistanceToDistance(internal_odometer);
+    memory[DATA_SEGMENT_END_ADDRESS] = dataSegmentEndAddress;
 }
 
 

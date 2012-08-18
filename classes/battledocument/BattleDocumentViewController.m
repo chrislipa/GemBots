@@ -70,6 +70,15 @@
     [stepButton setToolTip:@"Step Game Cycle (S)"];
     [gamespeedTex setToolTip:@"Speed (-,= to adjust)"];
     debuggerWindows = [NSMutableDictionary dictionary];
+    
+    
+    [matchesDenominatorCell setStringValue:(numberOfMatches>0?[NSString stringWithFormat:@"%d", numberOfMatches]:@"")];
+    [gameCycleDenominatorCell setStringValue:(timeLimit.cycles>0?[NSString stringWithFormat:@"%d", timeLimit.cycles]:@"")];
+    
+    [matchesNumeratorCell setStringValue:@"0"];
+    [gameCycleNumeratorCell setStringValue:@"0"];
+    
+
 }
 
 
@@ -374,6 +383,12 @@
 }
 -(IBAction)timeLimitPickerChaged:(id)sender {
     timeLimit = [TimeLimit timeLimitWithTitle:[gameCycleTimeOutPicker selectedItem].title];
+    
+    
+    
+
+    [gameCycleDenominatorCell setStringValue:(timeLimit.cycles>0?[NSString stringWithFormat:@"%d", timeLimit.cycles]:@"")];
+    
 }
 -(IBAction)numberOfMatchesChanged:(id)sender {
     numberOfMatches = [[numberOfMatchesField stringValue] intValue];
@@ -382,6 +397,10 @@
     }
     [numberOfMatchesField setStringValue:[NSString stringWithFormat:@"%d",numberOfMatches]];
     [matchesDenominatorCell setStringValue:[NSString stringWithFormat:@"%d", numberOfMatches]];
+    
+    
+    
+    
 }
 
 -(void) dealloc {

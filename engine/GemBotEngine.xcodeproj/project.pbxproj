@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3606303315DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3606303115DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.h */; };
+		3606303415DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3606303215DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.m */; };
 		3610650815D18DEA00117E33 /* Constants.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610650315D18DEA00117E33 /* Constants.txt */; };
 		3610650915D18DEA00117E33 /* DefaultVariables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610650415D18DEA00117E33 /* DefaultVariables.txt */; };
 		3610650A15D18DEA00117E33 /* Devices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610650515D18DEA00117E33 /* Devices.txt */; };
@@ -163,6 +165,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3606303115DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGNativeEngine+RobotShutdownFromHeatPhase.h"; sourceTree = "<group>"; };
+		3606303215DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGNativeEngine+RobotShutdownFromHeatPhase.m"; sourceTree = "<group>"; };
 		3610650315D18DEA00117E33 /* Constants.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Constants.txt; sourceTree = "<group>"; };
 		3610650415D18DEA00117E33 /* DefaultVariables.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DefaultVariables.txt; sourceTree = "<group>"; };
 		3610650515D18DEA00117E33 /* Devices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Devices.txt; sourceTree = "<group>"; };
@@ -497,6 +501,8 @@
 				36C724A115D3FE8A005B6289 /* PGBotNativeEngine+Runtime.m */,
 				36C724A215D3FE8A005B6289 /* PGBotNativeEngine.h */,
 				36C724A315D3FE8A005B6289 /* PGBotNativeEngine.m */,
+				3606303115DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.h */,
+				3606303215DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.m */,
 			);
 			path = PGBotNativeEngine;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				36C7250915D3FE8A005B6289 /* Random.h in Headers */,
 				36C7250B15D3FE8A005B6289 /* TurretedObject.h in Headers */,
 				3627793A15D7A4F40074B903 /* GemBot+Disassembly.h in Headers */,
+				3606303315DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +743,7 @@
 				36C7250615D3FE8A005B6289 /* EngineUtility.m in Sources */,
 				36C7250A15D3FE8A005B6289 /* Random.m in Sources */,
 				3627793B15D7A4F40074B903 /* GemBot+Disassembly.m in Sources */,
+				3606303415DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

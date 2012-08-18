@@ -75,6 +75,7 @@
         int word = (byte0) + (byte1<<8) + (byte2<<16) + (byte3 << 24);
         [self setRomMemory:i+BOT_SOURCE_CODE_START :word];
     }
+    dataSegmentEndAddress = (int)( codeLen + BOT_SOURCE_CODE_START -1);
     
     
 }

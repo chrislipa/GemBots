@@ -92,6 +92,7 @@
 @synthesize linesOfCode;
 @synthesize markForSelfDestruction;
 @synthesize comm_channel;
+@synthesize isShutDownFromHeat;
 
 -(void) setGemBotSource:(NSData *)p_source {
     source = p_source;

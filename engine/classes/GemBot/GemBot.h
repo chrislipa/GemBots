@@ -147,8 +147,11 @@
     
     NSMutableArray* internalLoggingArray;
     int indexIntoInternalLoggingArray;
+    
+    int dataSegmentEndAddress;
+    bool isShutDownFromHeat;
 }
-
+@property (readwrite,assign) bool isShutDownFromHeat;
 @property (readwrite,assign)     bool hasEverBeenDetected;
 @property (readwrite,assign)     bool diedLastTurn;
 @property (readwrite,assign) unit internal_odometer;
