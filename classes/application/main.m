@@ -11,9 +11,14 @@
 
 int main(int argc, char *argv[])
 {
-    /*
-    char* argvfake[] = {"script", "-d", "file:///Users/lipa/bot/", "-b", "sniper.gembot", "-b", "sniper.gembot", "-n" ,"160", "-o", "output.txt"};
-    int argcfake = 11;*/
+    bool fake = NO;
+    if (fake) {
+        char* argvfake[] = {"script", "-d", "file:///Users/lipa/bot/", "-b", "sniper.gembot", "-b", "sniper.gembot", "-n" ,"4", "-o", "output.txt"};
+        int argcfake = 11;
+        
+        argv = argvfake;
+        argc = argcfake;
+    }
     for (int i = 0; i<argc ; i++) {
         if (strcmp(argv[i], "script") == 0) {
             gembotscript(argc, argv);
