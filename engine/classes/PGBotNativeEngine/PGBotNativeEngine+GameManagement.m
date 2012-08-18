@@ -74,8 +74,9 @@
 }
 
 -(void) placeRobotsInRandomPositionsAndHeadings {
+    bool match;
     for (int i = 0; i < [robots count]; i ++ ) {
-        bool match = NO;
+        match = NO;
         GemBot* b = [robots objectAtIndex:i];
         do {
             b.internal_position = positionWithInts(distanceToInternalDistance([random randomIntInInclusiveRange:0+ROBOT_RADIUS : SIZE_OF_ARENA-ROBOT_RADIUS]),

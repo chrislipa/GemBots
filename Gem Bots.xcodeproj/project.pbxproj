@@ -141,7 +141,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 36A2B26315DF5BF000DAB3DE;
+			remoteGlobalIDString = 36A2B29715DF5D9700DAB3DE;
 			remoteInfo = SBJsonLib;
 		};
 		36C1915215D0BC6600A79D5F /* PBXContainerItemProxy */ = {
@@ -721,7 +721,7 @@
 				36C1915515D0BC6600A79D5F /* SBJsonTests.octest */,
 				36C1915715D0BC6600A79D5F /* libsbjson-ios.a */,
 				36C1915915D0BC6600A79D5F /* sbjson-iosTests.octest */,
-				36A2B29115DF5C6400DAB3DE /* SBJsonLib.framework */,
+				36A2B29115DF5C6400DAB3DE /* libSBJsonLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -792,10 +792,10 @@
 			remoteRef = 3613070415D0D9DB00AE5610 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		36A2B29115DF5C6400DAB3DE /* SBJsonLib.framework */ = {
+		36A2B29115DF5C6400DAB3DE /* libSBJsonLib.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SBJsonLib.framework;
+			fileType = archive.ar;
+			path = libSBJsonLib.a;
 			remoteRef = 36A2B29015DF5C6400DAB3DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1036,6 +1036,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1061,7 +1062,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "classes/application/Gem Bots-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "Gem Bots";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1076,7 +1077,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "classes/application/Gem Bots-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "Gem Bots";
 				WRAPPER_EXTENSION = app;
 			};
