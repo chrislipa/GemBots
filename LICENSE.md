@@ -137,7 +137,8 @@ Missile_Impact-Osama_bin_Laden-2012236287.mp3 is from
 http://soundbible.com/1592-Missile-Impact.html
 License: Public Domain | Recorded by Osama bin Laden
 
+76151_35187-lq.mp3
 21410_21830-lq.mp3 "blow.aif"
-is from http://www.freesound.org/people/Heigh-hoo/sounds/21410/
+are from http://www.freesound.org/people/Heigh-hoo/sounds/21410/
 by Heigh-hoo distributed under a Creative Commons 0 License
 http://creativecommons.org/publicdomain/zero/1.0/
