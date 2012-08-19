@@ -236,7 +236,7 @@ id indexIntoArray(NSArray* a, int index, int defaultIndex) {
 
 
 Opcode* getOpcode(int opcodeNumber) {
-    if (opcodeNumber>0 && opcodeNumber<globalOpcodeArraySize) {
+    if (opcodeNumber>=0 && opcodeNumber<globalOpcodeArraySize) {
         return globalOpcodeArray[opcodeNumber];
     } else {
         return globalOpcodeArray[INVALID_OP_CODE];
