@@ -19,5 +19,5 @@
 
 -(void) playMissileFireSound:(int) times :(double) timePeriod;
 -(void) playMissileExplodeSound:(int) times :(double) timePeriod;
-
+-(void) playBotExploded:(int) times :(double) timePeriod ;
 @end

@@ -58,7 +58,7 @@
 }
 
 -(void) die {
-    
+    [engine addSoundEffect:@"bot_exploded"];
     internal_armor = 0;
     internal_heat = 0;
     isAlive = NO;

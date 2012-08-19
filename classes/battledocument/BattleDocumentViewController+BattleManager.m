@@ -341,16 +341,19 @@
     if  (soundEnabled) {
         int missiles_fired = 0;
         int missile_explosions = 0;
+        int bot_exploded = 0;
         for (NSString* se in currentGameStateDescription.soundEffectsInitiatedThisCycle) {
             if ([se isEqualTo:@"missile_fired"]) {
                 missiles_fired++;
             } else if ([se isEqualTo:@"missile_exploded"]) {
                 missile_explosions++;
+            } else if ([se isEqualTo:@"bot_exploded"]) {
+                bot_exploded++;
             }
         }
         [audio playMissileFireSound: missiles_fired : delayBetweenGameCycles ];
         [audio playMissileExplodeSound: missile_explosions : delayBetweenGameCycles ];
-        
+        [audio playBotExploded:bot_exploded:delayBetweenGameCycles];
         
     }
     

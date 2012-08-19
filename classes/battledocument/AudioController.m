@@ -140,6 +140,13 @@ void playQueue(AudioQueueRef queue) {
     return self;
 }
 
+-(void) playBotExploded:(int) time :(double) timePeriod {
+    if (time > 0) {
+        playSoundEffect(@"76151_35187-lq",1.0);
+
+    }
+}
+
 -(void) playMissileFireSound:(int) times :(double) timePeriod {
     //playFromBuffer(buffer);
     
@@ -147,7 +154,7 @@ void playQueue(AudioQueueRef queue) {
         
     
     
-        playSoundEffect(@"laser3-lipa-modified",0.08);
+        playSoundEffect(@"laser3-lipa-modified",0.05);
         /*
         currentMissileFire = (currentMissileFire + 1) % [laserSoundEffects count];
         int old = (currentMissileFire + [laserSoundEffects count]/2) % [laserSoundEffects count];
@@ -163,7 +170,7 @@ void playQueue(AudioQueueRef queue) {
     
    
     if (times >= 1) {
-        playSoundEffect(@"21410_21830-lq-short-lipa",0.8);
+        playSoundEffect(@"21410_21830-lq-short-lipa",0.7);
     }
     
 
