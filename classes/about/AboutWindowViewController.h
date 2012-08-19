@@ -12,7 +12,7 @@
     IBOutlet NSWindow* aboutWindow;
     IBOutlet NSView* view2;
     IBOutlet NSTextFieldCell* version;
-    IBOutlet NSTextFieldCell* link;
+    IBOutlet NSTextView* link;
 }
 @property (readonly) NSWindow* aboutWindow;
 

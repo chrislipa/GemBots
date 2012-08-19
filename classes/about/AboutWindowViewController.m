@@ -40,12 +40,13 @@
     [version setStringValue:[NSString stringWithFormat:@"Version %@",v]];
     
     
-    [link setAllowsEditingTextAttributes: YES];
+    //[link setAllowsEditingTextAttributes: YES];
     [link setSelectable: YES];
     
     NSString* li = @"https://github.com/chrislipa/GemBots";
     NSAttributedString* l = [NSAttributedString hyperlinkFromString:li withURL:[[NSURL alloc] initWithString:li] ];
-    [link setAttributedStringValue:l];
+
+    [[link textStorage] setAttributedString:l];
     
 }
 
