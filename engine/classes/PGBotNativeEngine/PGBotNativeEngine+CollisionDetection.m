@@ -98,7 +98,7 @@ static inline unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coor
             min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
         }
     } else {
-        if (x < r+dx) {
+        if (x < r+ -dx) {
             min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_X, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
         } 
     }
@@ -108,7 +108,7 @@ static inline unit timeToHitWall(NSObject<CollideableObject>* a, coordinate coor
             min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(SIZE_OF_ARENA) - a.internal_radius, IS_HIGH));
         }
     } else {
-        if (y < r + dy) {
+        if (y < r + -dy) {
             min_time_to_hit_wall = MIN(min_time_to_hit_wall, timeToHitWall(a, IS_Y, distanceToInternalDistance(0) + a.internal_radius, IS_LOW));
         }
     }
