@@ -36,7 +36,7 @@ static UInt32 s[3];
 
 void initBuffer(NSString* name, AudioQueueBufferRef b[3]) {
     NSURL* url = [[NSBundle mainBundle] URLForResource:name withExtension:@"caf"];
-    CFURLRef theURL = (__bridge CFURLRef)(url);
+    CFURLRef theURL = (__bridge_retained CFURLRef)(url);
     AudioFileID audioFileID;
     AudioFileOpenURL(theURL, 0x01, kAudioFileCAFType, &audioFileID);
     CFRelease(theURL);
@@ -84,7 +84,7 @@ void playFromBuffer(AudioQueueBufferRef c[3]) {
 void playSoundEffect(NSString* name, float volume) {
     AudioQueueRef audioQueue;
     NSURL* url = [[NSBundle mainBundle] URLForResource:name withExtension:@"caf"];
-    CFURLRef theURL = (__bridge CFURLRef)(url);
+    CFURLRef theURL = (__bridge_retained CFURLRef)(url);
     AudioFileID audioFileID;
     AudioFileOpenURL(theURL, 0x01, kAudioFileCAFType, &audioFileID);
     CFRelease(theURL);
