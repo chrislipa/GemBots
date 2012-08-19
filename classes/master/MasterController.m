@@ -12,6 +12,7 @@
 #import "EditWindowController.h"
 #import "CompileErrorWindow.h"
 #import "CompileErrorWindowController.h"
+#import "AboutWindowViewController.h"
 
 @implementation MasterController
 
@@ -193,4 +194,55 @@ MasterController* staticMasterController = nil;
 }
 
 
+
+-(IBAction) displayAboutWindow:(id)sender{
+    
+    
+    if (!aboutWindowViewController) {
+        aboutWindowViewController = [[AboutWindowViewController alloc] initWithNibName:@"AboutWindowViewController" bundle:nil];
+    }
+    [aboutWindowViewController view];
+    [[aboutWindowViewController aboutWindow] makeKeyAndOrderFront:nil];
+    
+    
+
+}
+
+-(void) notifyOfAboutWindowClose {
+    [[aboutWindowViewController aboutWindow] orderOut:self];
+}
+
+-(IBAction) displayAcknoledgementsWindow {
+    
+    
+    if (!acknoledgementsViewController) {
+        acknoledgementsViewController = [[AcknoledgementsViewController alloc] initWithNibName:@"AcknoledgementsViewController" bundle:nil];
+    }
+    [acknoledgementsViewController view];
+    [[acknoledgementsViewController acknowledgementsWindow] makeKeyAndOrderFront:nil];
+    
+}
+
+-(void) displayLicenseWindow {
+    
+    if (!licenseViewController) {
+        licenseViewController = [[LicenseViewController alloc] initWithNibName:@"LicenseViewController" bundle:nil];
+    }
+    [licenseViewController view];
+    [[licenseViewController licenseWindow] makeKeyAndOrderFront:nil];
+    
+}
+-(void) notifyOfLicenseWindowClose {
+    [[licenseViewController licenseWindow] orderOut:self];
+}
+
+-(void) notifyOfAcknoledgementsWindowClose {
+    [[acknoledgementsViewController acknowledgementsWindow] orderOut:self];
+}
+-(IBAction) displayAcknowledgementWindow:(id)sender{
+    
+}
+-(IBAction) displayLicensingWindow:(id)sender{
+    
+}
 @end

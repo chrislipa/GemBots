@@ -52,7 +52,7 @@
 				<string key="NSWindowClass">DebuggerWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{576, 483}</string>
+				<string key="NSWindowContentMaxSize">{591, 485}</string>
 				<string key="NSWindowContentMinSize">{591, 485}</string>
 				<object class="NSView" key="NSWindowView" id="1006">
 					<reference key="NSNextResponder"/>
@@ -1243,7 +1243,7 @@ wGw</bytes>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{591, 507}</string>
-				<string key="NSMaxSize">{576, 505}</string>
+				<string key="NSMaxSize">{591, 507}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 		</array>

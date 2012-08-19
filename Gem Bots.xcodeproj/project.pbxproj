@@ -90,6 +90,19 @@
 		36499EB715D4D67800706EAF /* green-plus-sign-200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36499EB515D4D67800706EAF /* green-plus-sign-200@2x.png */; };
 		36499EB815D4D67800706EAF /* green-plus-sign-200.png in Resources */ = {isa = PBXBuildFile; fileRef = 36499EB615D4D67800706EAF /* green-plus-sign-200.png */; };
 		3651727F15D22042005C5D0F /* GemBotEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */; };
+		366F93C915E08DC200AAB479 /* AboutWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93C715E08DC200AAB479 /* AboutWindowViewController.m */; };
+		366F93CA15E08DC200AAB479 /* AboutWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366F93C815E08DC200AAB479 /* AboutWindowViewController.xib */; };
+		366F93CD15E0902500AAB479 /* AboutWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93CC15E0902500AAB479 /* AboutWindow.m */; };
+		366F93D015E0928800AAB479 /* NSAttributedString+Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93CF15E0928800AAB479 /* NSAttributedString+Link.m */; };
+		366F93D415E098D000AAB479 /* AcknoledgementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93D215E098D000AAB479 /* AcknoledgementsViewController.m */; };
+		366F93D515E098D000AAB479 /* AcknoledgementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366F93D315E098D000AAB479 /* AcknoledgementsViewController.xib */; };
+		366F93D915E099F500AAB479 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 366F93D615E099F500AAB479 /* LICENSE.md */; };
+		366F93DA15E099F500AAB479 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 366F93D715E099F500AAB479 /* README.md */; };
+		366F93DB15E099F500AAB479 /* CREDITS.md in Resources */ = {isa = PBXBuildFile; fileRef = 366F93D815E099F500AAB479 /* CREDITS.md */; };
+		366F93DE15E09A2100AAB479 /* AcknowledgementsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93DD15E09A2000AAB479 /* AcknowledgementsWindow.m */; };
+		366F93E215E09CF200AAB479 /* LicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93E015E09CF100AAB479 /* LicenseViewController.m */; };
+		366F93E315E09CF200AAB479 /* LicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366F93E115E09CF100AAB479 /* LicenseViewController.xib */; };
+		366F93E615E09D1200AAB479 /* LicenseWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93E515E09D1200AAB479 /* LicenseWindow.m */; };
 		3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B92415C6115F00A38D46 /* OpenGL.framework */; };
 		368C1E8E15D746320093EE0E /* step200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 368C1E8615D746320093EE0E /* step200@2x.png */; };
 		368C1E8F15D746320093EE0E /* step200.png in Resources */ = {isa = PBXBuildFile; fileRef = 368C1E8715D746320093EE0E /* step200.png */; };
@@ -311,6 +324,26 @@
 		36499EAE15D4D5E300706EAF /* green-plus-sign.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "green-plus-sign.svg"; sourceTree = "<group>"; };
 		36499EB515D4D67800706EAF /* green-plus-sign-200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-plus-sign-200@2x.png"; sourceTree = "<group>"; };
 		36499EB615D4D67800706EAF /* green-plus-sign-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-plus-sign-200.png"; sourceTree = "<group>"; };
+		366F93C615E08DC200AAB479 /* AboutWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutWindowViewController.h; path = about/AboutWindowViewController.h; sourceTree = "<group>"; };
+		366F93C715E08DC200AAB479 /* AboutWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutWindowViewController.m; path = about/AboutWindowViewController.m; sourceTree = "<group>"; };
+		366F93C815E08DC200AAB479 /* AboutWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutWindowViewController.xib; path = about/AboutWindowViewController.xib; sourceTree = "<group>"; };
+		366F93CB15E0902500AAB479 /* AboutWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutWindow.h; path = about/AboutWindow.h; sourceTree = "<group>"; };
+		366F93CC15E0902500AAB479 /* AboutWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutWindow.m; path = about/AboutWindow.m; sourceTree = "<group>"; };
+		366F93CE15E0928800AAB479 /* NSAttributedString+Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Link.h"; sourceTree = "<group>"; };
+		366F93CF15E0928800AAB479 /* NSAttributedString+Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Link.m"; sourceTree = "<group>"; };
+		366F93D115E098D000AAB479 /* AcknoledgementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcknoledgementsViewController.h; path = about/AcknoledgementsViewController.h; sourceTree = "<group>"; };
+		366F93D215E098D000AAB479 /* AcknoledgementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcknoledgementsViewController.m; path = about/AcknoledgementsViewController.m; sourceTree = "<group>"; };
+		366F93D315E098D000AAB479 /* AcknoledgementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AcknoledgementsViewController.xib; path = about/AcknoledgementsViewController.xib; sourceTree = "<group>"; };
+		366F93D615E099F500AAB479 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
+		366F93D715E099F500AAB479 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		366F93D815E099F500AAB479 /* CREDITS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CREDITS.md; sourceTree = SOURCE_ROOT; };
+		366F93DC15E09A2000AAB479 /* AcknowledgementsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcknowledgementsWindow.h; path = about/AcknowledgementsWindow.h; sourceTree = "<group>"; };
+		366F93DD15E09A2000AAB479 /* AcknowledgementsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcknowledgementsWindow.m; path = about/AcknowledgementsWindow.m; sourceTree = "<group>"; };
+		366F93DF15E09CF100AAB479 /* LicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LicenseViewController.h; path = about/LicenseViewController.h; sourceTree = "<group>"; };
+		366F93E015E09CF100AAB479 /* LicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LicenseViewController.m; path = about/LicenseViewController.m; sourceTree = "<group>"; };
+		366F93E115E09CF100AAB479 /* LicenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LicenseViewController.xib; path = about/LicenseViewController.xib; sourceTree = "<group>"; };
+		366F93E415E09D1100AAB479 /* LicenseWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LicenseWindow.h; path = about/LicenseWindow.h; sourceTree = "<group>"; };
+		366F93E515E09D1200AAB479 /* LicenseWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LicenseWindow.m; path = about/LicenseWindow.m; sourceTree = "<group>"; };
 		3670B92415C6115F00A38D46 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		367ECB0215CDDC7E003692BB /* SBJson.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SBJson.framework; path = PGBotNativeEngine/external/SBJson_3.1/build/Debug/SBJson.framework; sourceTree = "<group>"; };
 		368C1E8615D746320093EE0E /* step200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "step200@2x.png"; sourceTree = "<group>"; };
@@ -427,6 +460,7 @@
 		362A91DE15D0B75200E2817F /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				366F93C515E08D6A00AAB479 /* about */,
 				362A91DF15D0B75200E2817F /* application */,
 				362A91E415D0B75200E2817F /* arena */,
 				362A91E915D0B75200E2817F /* battledocument */,
@@ -550,6 +584,8 @@
 				362A921815D0B75200E2817F /* Utility.m */,
 				362A921915D0B75200E2817F /* WeightClass.h */,
 				362A921A15D0B75200E2817F /* WeightClass.m */,
+				366F93CE15E0928800AAB479 /* NSAttributedString+Link.h */,
+				366F93CF15E0928800AAB479 /* NSAttributedString+Link.m */,
 			);
 			path = utility;
 			sourceTree = "<group>";
@@ -557,6 +593,9 @@
 		362A921B15D0B75200E2817F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				366F93D615E099F500AAB479 /* LICENSE.md */,
+				366F93D715E099F500AAB479 /* README.md */,
+				366F93D815E099F500AAB479 /* CREDITS.md */,
 				369140B515D6239E005C3890 /* sounds */,
 				36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */,
 				362A921D15D0B75200E2817F /* BattleDocument.xib */,
@@ -678,6 +717,28 @@
 				36499EAE15D4D5E300706EAF /* green-plus-sign.svg */,
 			);
 			path = green_plus;
+			sourceTree = "<group>";
+		};
+		366F93C515E08D6A00AAB479 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				366F93C615E08DC200AAB479 /* AboutWindowViewController.h */,
+				366F93C715E08DC200AAB479 /* AboutWindowViewController.m */,
+				366F93C815E08DC200AAB479 /* AboutWindowViewController.xib */,
+				366F93CB15E0902500AAB479 /* AboutWindow.h */,
+				366F93CC15E0902500AAB479 /* AboutWindow.m */,
+				366F93D115E098D000AAB479 /* AcknoledgementsViewController.h */,
+				366F93D215E098D000AAB479 /* AcknoledgementsViewController.m */,
+				366F93D315E098D000AAB479 /* AcknoledgementsViewController.xib */,
+				366F93DC15E09A2000AAB479 /* AcknowledgementsWindow.h */,
+				366F93DD15E09A2000AAB479 /* AcknowledgementsWindow.m */,
+				366F93DF15E09CF100AAB479 /* LicenseViewController.h */,
+				366F93E015E09CF100AAB479 /* LicenseViewController.m */,
+				366F93E115E09CF100AAB479 /* LicenseViewController.xib */,
+				366F93E415E09D1100AAB479 /* LicenseWindow.h */,
+				366F93E515E09D1200AAB479 /* LicenseWindow.m */,
+			);
+			name = about;
 			sourceTree = "<group>";
 		};
 		369140B515D6239E005C3890 /* sounds */ = {
@@ -910,6 +971,12 @@
 				36C7F87115D8A74E00DD1A75 /* laser3-lipa-modified.caf in Resources */,
 				36C7F8A115D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf in Resources */,
 				36E3884F15E0798A00AB8BCA /* 76151_35187-lq.caf in Resources */,
+				366F93CA15E08DC200AAB479 /* AboutWindowViewController.xib in Resources */,
+				366F93D515E098D000AAB479 /* AcknoledgementsViewController.xib in Resources */,
+				366F93D915E099F500AAB479 /* LICENSE.md in Resources */,
+				366F93DA15E099F500AAB479 /* README.md in Resources */,
+				366F93DB15E099F500AAB479 /* CREDITS.md in Resources */,
+				366F93E315E09CF200AAB479 /* LicenseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +1017,13 @@
 				36EEAD4F15D6FC92006A4A77 /* AudioController.m in Sources */,
 				3627793E15D7C6100074B903 /* BlackView.m in Sources */,
 				3606303B15DF45E000CFFE07 /* gembotscript.m in Sources */,
+				366F93C915E08DC200AAB479 /* AboutWindowViewController.m in Sources */,
+				366F93CD15E0902500AAB479 /* AboutWindow.m in Sources */,
+				366F93D015E0928800AAB479 /* NSAttributedString+Link.m in Sources */,
+				366F93D415E098D000AAB479 /* AcknoledgementsViewController.m in Sources */,
+				366F93DE15E09A2100AAB479 /* AcknowledgementsWindow.m in Sources */,
+				366F93E215E09CF200AAB479 /* LicenseViewController.m in Sources */,
+				366F93E615E09D1200AAB479 /* LicenseWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

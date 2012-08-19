@@ -10,7 +10,9 @@
 #import "BotContainer.h"
 #import "BattleDocumentViewController.h"
 #import "CompileErrorWindowController.h"
-
+#import "AboutWindowViewController.h"
+#import "AcknoledgementsViewController.h"
+#import "LicenseViewController.h"
 @interface MasterController : NSObject {
     NSMutableDictionary* editorWindows;
     NSMutableDictionary* errorWindows;
@@ -21,6 +23,14 @@
     IBOutlet NSMenuItem* exitFullScreenMenuItem;
     
     NSMutableDictionary* referenceCountsToRobotURLs;
+    
+     NSWindow* aboutWindow;
+    IBOutlet NSWindow* acknoledgementWindow;
+    IBOutlet NSWindow* licensingWindow;
+    
+    __strong AboutWindowViewController* aboutWindowViewController;
+    AcknoledgementsViewController* acknoledgementsViewController;
+    LicenseViewController* licenseViewController;
 }
 
 +(MasterController*) singleton;
@@ -45,4 +55,13 @@
 -(bool) canSafelyCompile:(NSURL*) url;
 -(void) notifyOfBattleStartingUsingRobotAtURL:(NSURL*) url;
 -(void) notifyOfBattleEndingUsingRobotAtURL:(NSURL*) url;
+
+-(IBAction) displayAboutWindow:(id)sender;
+-(void) notifyOfAboutWindowClose;
+-(IBAction) displayAcknowledgementWindow:(id)sender;
+-(IBAction) displayLicensingWindow:(id)sender;
+-(void) displayLicenseWindow ;
+-(IBAction) displayAcknoledgementsWindow ;
+-(void) notifyOfAcknoledgementsWindowClose;
+-(void) notifyOfLicenseWindowClose;
 @end
