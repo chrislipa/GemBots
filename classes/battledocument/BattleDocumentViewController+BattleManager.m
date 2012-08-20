@@ -357,8 +357,9 @@
         
     }
     
-    
-    [self refreshUI];
+    if (graphicsEnabled || !currentGameStateDescription.isMatchCurrentlyActive) {
+        [self refreshUI];
+    }
     
     if (arenaView.gameStateDescriptor.isSetOfMatchesCompleted) {
         [self setBattleState:nobattle];
