@@ -27,7 +27,7 @@
             return variableName;
         }
     }
-    return [NSString stringWithFormat:@"*%@",[self parseOperand:[self getMemory:x] :r-1]];
+    return [NSString stringWithFormat:@"*%@",[self parseOperand:x :r-1]];
 }
 
 NSString* sizeTo10(NSString* s) {
