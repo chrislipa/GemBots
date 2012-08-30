@@ -72,6 +72,18 @@
 		362A929415D0B75200E2817F /* close_button_red_icon_160@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362A924A15D0B75200E2817F /* close_button_red_icon_160@2x.png */; };
 		36499EAF15D4D5E300706EAF /* green-plus-sign-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36499EA815D4D5E300706EAF /* green-plus-sign-50@2x.png */; };
 		36499EB015D4D5E300706EAF /* green-plus-sign-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 36499EA915D4D5E300706EAF /* green-plus-sign-50.png */; };
+		366243C515EFDD81003AC205 /* fire.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1015EF542D00A8A5A3 /* fire.gembot */; };
+		366243C615EFDD81003AC205 /* goodshot.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1115EF542D00A8A5A3 /* goodshot.gembot */; };
+		366243C715EFDD81003AC205 /* shotinthedark.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1215EF542D00A8A5A3 /* shotinthedark.gembot */; };
+		366243C815EFDD81003AC205 /* sittingsniper.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1315EF542D00A8A5A3 /* sittingsniper.gembot */; };
+		366243C915EFDD81003AC205 /* slow.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1415EF542D00A8A5A3 /* slow.gembot */; };
+		366243CA15EFDD81003AC205 /* sniper1.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1515EF542D00A8A5A3 /* sniper1.gembot */; };
+		366243CB15EFDD81003AC205 /* sniper2.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1615EF542D00A8A5A3 /* sniper2.gembot */; };
+		366243CC15EFDD81003AC205 /* sniper_shield.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1715EF542D00A8A5A3 /* sniper_shield.gembot */; };
+		366243CD15EFDD81003AC205 /* speedy.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1815EF542D00A8A5A3 /* speedy.gembot */; };
+		366243CE15EFDD81003AC205 /* speedyOD.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1915EF542D00A8A5A3 /* speedyOD.gembot */; };
+		366243CF15EFDD81003AC205 /* spray.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1A15EF542D00A8A5A3 /* spray.gembot */; };
+		366243D015EFDD81003AC205 /* x-1.gembot in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BE1B15EF542D00A8A5A3 /* x-1.gembot */; };
 		366F93C915E08DC200AAB479 /* AboutWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93C715E08DC200AAB479 /* AboutWindowViewController.m */; };
 		366F93CA15E08DC200AAB479 /* AboutWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366F93C815E08DC200AAB479 /* AboutWindowViewController.xib */; };
 		366F93CD15E0902500AAB479 /* AboutWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93CC15E0902500AAB479 /* AboutWindow.m */; };
@@ -99,18 +111,6 @@
 		36974D6715D65E6A0051BA6E /* DebuggerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 36974D6615D65E6A0051BA6E /* DebuggerWindow.m */; };
 		369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E2F2B15CB6A4D0065B3E7 /* Quartz.framework */; };
 		36A2B24515DF59D300DAB3DE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369140EF15D62CB3005C3890 /* AudioToolbox.framework */; };
-		36B5BE2815EF544700A8A5A3 /* fire.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1015EF542D00A8A5A3 /* fire.gembot */; };
-		36B5BE2915EF544700A8A5A3 /* goodshot.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1115EF542D00A8A5A3 /* goodshot.gembot */; };
-		36B5BE2A15EF544700A8A5A3 /* shotinthedark.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1215EF542D00A8A5A3 /* shotinthedark.gembot */; };
-		36B5BE2B15EF544700A8A5A3 /* sittingsniper.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1315EF542D00A8A5A3 /* sittingsniper.gembot */; };
-		36B5BE2C15EF544700A8A5A3 /* slow.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1415EF542D00A8A5A3 /* slow.gembot */; };
-		36B5BE2D15EF544700A8A5A3 /* sniper1.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1515EF542D00A8A5A3 /* sniper1.gembot */; };
-		36B5BE2E15EF544700A8A5A3 /* sniper2.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1615EF542D00A8A5A3 /* sniper2.gembot */; };
-		36B5BE2F15EF544700A8A5A3 /* sniper_shield.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1715EF542D00A8A5A3 /* sniper_shield.gembot */; };
-		36B5BE3015EF544700A8A5A3 /* speedy.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1815EF542D00A8A5A3 /* speedy.gembot */; };
-		36B5BE3115EF544700A8A5A3 /* speedyOD.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1915EF542D00A8A5A3 /* speedyOD.gembot */; };
-		36B5BE3215EF544700A8A5A3 /* spray.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1A15EF542D00A8A5A3 /* spray.gembot */; };
-		36B5BE3315EF544700A8A5A3 /* x-1.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1B15EF542D00A8A5A3 /* x-1.gembot */; };
 		36B5BEC815EFD97500A8A5A3 /* Constants.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC315EFD97500A8A5A3 /* Constants.txt */; };
 		36B5BEC915EFD97500A8A5A3 /* DefaultVariables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC415EFD97500A8A5A3 /* DefaultVariables.txt */; };
 		36B5BECA15EFD97500A8A5A3 /* Devices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC515EFD97500A8A5A3 /* Devices.txt */; };
@@ -213,30 +213,6 @@
 			remoteInfo = "sbjson-iosTests";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		36A2B26115DF5BB400DAB3DE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = samplebots;
-			dstSubfolderSpec = 7;
-			files = (
-				36B5BE2815EF544700A8A5A3 /* fire.gembot in CopyFiles */,
-				36B5BE2915EF544700A8A5A3 /* goodshot.gembot in CopyFiles */,
-				36B5BE2A15EF544700A8A5A3 /* shotinthedark.gembot in CopyFiles */,
-				36B5BE2B15EF544700A8A5A3 /* sittingsniper.gembot in CopyFiles */,
-				36B5BE2C15EF544700A8A5A3 /* slow.gembot in CopyFiles */,
-				36B5BE2D15EF544700A8A5A3 /* sniper1.gembot in CopyFiles */,
-				36B5BE2E15EF544700A8A5A3 /* sniper2.gembot in CopyFiles */,
-				36B5BE2F15EF544700A8A5A3 /* sniper_shield.gembot in CopyFiles */,
-				36B5BE3015EF544700A8A5A3 /* speedy.gembot in CopyFiles */,
-				36B5BE3115EF544700A8A5A3 /* speedyOD.gembot in CopyFiles */,
-				36B5BE3215EF544700A8A5A3 /* spray.gembot in CopyFiles */,
-				36B5BE3315EF544700A8A5A3 /* x-1.gembot in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3603D5C315D41930009F53AD /* BattleDocumentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleDocumentWindow.h; sourceTree = "<group>"; };
@@ -1087,7 +1063,6 @@
 				3608927615BE876D00A06C94 /* Sources */,
 				3608927715BE876D00A06C94 /* Frameworks */,
 				3608927815BE876D00A06C94 /* Resources */,
-				36A2B26115DF5BB400DAB3DE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1173,6 +1148,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366243C515EFDD81003AC205 /* fire.gembot in Resources */,
+				366243C615EFDD81003AC205 /* goodshot.gembot in Resources */,
+				366243C715EFDD81003AC205 /* shotinthedark.gembot in Resources */,
+				366243C815EFDD81003AC205 /* sittingsniper.gembot in Resources */,
+				366243C915EFDD81003AC205 /* slow.gembot in Resources */,
+				366243CA15EFDD81003AC205 /* sniper1.gembot in Resources */,
+				366243CB15EFDD81003AC205 /* sniper2.gembot in Resources */,
+				366243CC15EFDD81003AC205 /* sniper_shield.gembot in Resources */,
+				366243CD15EFDD81003AC205 /* speedy.gembot in Resources */,
+				366243CE15EFDD81003AC205 /* speedyOD.gembot in Resources */,
+				366243CF15EFDD81003AC205 /* spray.gembot in Resources */,
+				366243D015EFDD81003AC205 /* x-1.gembot in Resources */,
 				362A925D15D0B75200E2817F /* CompileErrorCellViewController.xib in Resources */,
 				362A926015D0B75200E2817F /* CompilerErrorController.xib in Resources */,
 				362A926315D0B75200E2817F /* EditWindowController.xib in Resources */,
@@ -1439,6 +1426,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Gem Bots";
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1454,6 +1442,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/resources/Gem Bots-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "Gem Bots";
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
