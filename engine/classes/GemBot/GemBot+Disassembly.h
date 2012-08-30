@@ -10,4 +10,5 @@
 
 @interface GemBot (Disassembly)
 -(NSArray*) internalDisassembledSourceAtAddress:(int)pc ;
+NSString* sizeTo10(NSString* s) ;
 @end

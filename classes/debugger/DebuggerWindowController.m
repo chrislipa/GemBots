@@ -7,7 +7,7 @@
 //
 
 #import "DebuggerWindowController.h"
-
+#import "GemBot+Disassembly.h"
 
 
 @implementation DebuggerWindowController
