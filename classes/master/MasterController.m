@@ -15,6 +15,7 @@
 #import "AboutWindowViewController.h"
 
 @implementation MasterController
+@synthesize pathToSampleBotDirectory;
 
 MasterController* staticMasterController = nil;
 
@@ -90,6 +91,28 @@ MasterController* staticMasterController = nil;
     }
     return staticMasterController;
 }
+-(NSURL*) urlToSampleBotDirectory {
+    return [NSURL fileURLWithPath:pathToSampleBotDirectory];
+}
+-(void) loadSampleBots {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *applicationSupportDirectory = [paths objectAtIndex:0];
+    NSString *programName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleExecutable"];
+    pathToSampleBotDirectory = [[applicationSupportDirectory stringByAppendingPathComponent:programName] stringByAppendingPathComponent:@"samplebots"];
+    NSFileManager* fm = [NSFileManager defaultManager];
+    if (![fm fileExistsAtPath:pathToSampleBotDirectory]) {
+        [fm createDirectoryAtPath:pathToSampleBotDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+        
+        NSString *resourcesPath = [[NSBundle mainBundle] resourcePath];
+        NSString* pathToSampleBotsBundle = [resourcesPath stringByAppendingPathComponent:@"samplebots"];
+        for (NSString* filename in [fm contentsOfDirectoryAtPath:pathToSampleBotsBundle error:nil]) {
+            NSString* src = [pathToSampleBotsBundle stringByAppendingPathComponent:filename];
+            NSString* dst = [pathToSampleBotDirectory stringByAppendingPathComponent:filename];
+            [fm copyItemAtPath:src toPath:dst error:nil];
+        }
+    }
+    
+}
 
 -(void) loadEngine {
     NSBundle *appBundle;
@@ -105,10 +128,12 @@ MasterController* staticMasterController = nil;
         }
     }
     
+    
 }
 
 
 - (void)awakeFromNib {
+    [self loadSampleBots];
     staticMasterController = self;
     editorWindows = [[NSMutableDictionary alloc] init];
     errorWindows = [[NSMutableDictionary alloc] init];
@@ -245,4 +270,13 @@ MasterController* staticMasterController = nil;
 -(IBAction) displayLicensingWindow:(id)sender{
     
 }
+
+-(IBAction)gemBotsHelp:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://gembots.com"]];
+}
+
+-(IBAction)gemBotsRules:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://gembots.pocketgems.com/rules"]];
+}
+
 @end

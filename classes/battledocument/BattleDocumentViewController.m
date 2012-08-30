@@ -119,7 +119,7 @@
     [p setCanChooseDirectories:NO];
     [p setResolvesAliases:YES];
     [p setAllowsMultipleSelection:YES];
-    
+    [p setDirectoryURL:[[MasterController singleton ] urlToSampleBotDirectory]];
     /*
     [p beginWithCompletionHandler: ^(NSInteger result) {
         NSArray* paths = [p URLs];

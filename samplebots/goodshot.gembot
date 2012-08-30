@@ -1,0 +1,23 @@
+#name "Bad Shot"
+#author "chris lpa"
+
+mov ax 1
+syscall SET_KEEPSHIFT
+wr SCAN_ARC 32
+
+top:
+rd random ax
+wr steer ax
+wr THROTTLE 100
+rd random ax
+wr TURRET_HEADING ax
+rd THERMOMETER ax
+cmp ax 100
+jge top:
+
+rd RADAR ax
+cmp ax -1
+jeq top:
+
+wr FIRE_MISSILE 0
+jump top:

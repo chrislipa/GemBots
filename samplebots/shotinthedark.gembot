@@ -1,0 +1,19 @@
+#name Blind
+#author chris
+
+
+
+
+top:
+rd random ax
+wr steer ax
+wr THROTTLE 100
+delay 10
+rd random ax
+wr TURRET_HEADING ax
+rd THERMOMETER ax
+cmp ax 100
+jge top:
+wr FIRE_MISSILE 0
+jump top:
+

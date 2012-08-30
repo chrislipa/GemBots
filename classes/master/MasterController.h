@@ -31,8 +31,12 @@
     __strong AboutWindowViewController* aboutWindowViewController;
     AcknoledgementsViewController* acknoledgementsViewController;
     LicenseViewController* licenseViewController;
+    
+    NSString* pathToSampleBotDirectory;
 }
+@property (readonly) NSString* pathToSampleBotDirectory;
 
+-(NSURL*) urlToSampleBotDirectory;
 +(MasterController*) singleton;
 -(void) loadEngine ;
 -(void) spawnEditorWindowForBotContainer:(BotContainer*) bc forBattleDocumentController:(BattleDocumentViewController*) controller;
@@ -64,4 +68,8 @@
 -(IBAction) displayAcknoledgementsWindow ;
 -(void) notifyOfAcknoledgementsWindowClose;
 -(void) notifyOfLicenseWindowClose;
+
+-(IBAction)gemBotsHelp:(id)sender;
+-(IBAction)gemBotsRules:(id)sender;
+
 @end

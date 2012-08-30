@@ -69,6 +69,10 @@
         name = @"Robot Editor";
         
     }
+    if (str == nil) {
+        str = @"";
+    }
+    
     [textView setString:str];
     NSFont* f = [NSFont fontWithName:@"MONACO" size:14];
     [textView.textStorage setFont:f];
