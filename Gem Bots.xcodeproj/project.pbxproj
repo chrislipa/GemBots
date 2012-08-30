@@ -72,7 +72,6 @@
 		362A929415D0B75200E2817F /* close_button_red_icon_160@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 362A924A15D0B75200E2817F /* close_button_red_icon_160@2x.png */; };
 		36499EAF15D4D5E300706EAF /* green-plus-sign-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36499EA815D4D5E300706EAF /* green-plus-sign-50@2x.png */; };
 		36499EB015D4D5E300706EAF /* green-plus-sign-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 36499EA915D4D5E300706EAF /* green-plus-sign-50.png */; };
-		3651727F15D22042005C5D0F /* GemBotEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */; };
 		366F93C915E08DC200AAB479 /* AboutWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93C715E08DC200AAB479 /* AboutWindowViewController.m */; };
 		366F93CA15E08DC200AAB479 /* AboutWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366F93C815E08DC200AAB479 /* AboutWindowViewController.xib */; };
 		366F93CD15E0902500AAB479 /* AboutWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 366F93CC15E0902500AAB479 /* AboutWindow.m */; };
@@ -112,6 +111,57 @@
 		36B5BE3115EF544700A8A5A3 /* speedyOD.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1915EF542D00A8A5A3 /* speedyOD.gembot */; };
 		36B5BE3215EF544700A8A5A3 /* spray.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1A15EF542D00A8A5A3 /* spray.gembot */; };
 		36B5BE3315EF544700A8A5A3 /* x-1.gembot in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36B5BE1B15EF542D00A8A5A3 /* x-1.gembot */; };
+		36B5BEC815EFD97500A8A5A3 /* Constants.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC315EFD97500A8A5A3 /* Constants.txt */; };
+		36B5BEC915EFD97500A8A5A3 /* DefaultVariables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC415EFD97500A8A5A3 /* DefaultVariables.txt */; };
+		36B5BECA15EFD97500A8A5A3 /* Devices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC515EFD97500A8A5A3 /* Devices.txt */; };
+		36B5BECB15EFD97500A8A5A3 /* Opcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC615EFD97500A8A5A3 /* Opcodes.txt */; };
+		36B5BECC15EFD97500A8A5A3 /* SystemCalls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5BEC715EFD97500A8A5A3 /* SystemCalls.txt */; };
+		36B5BF4015EFDA8400A8A5A3 /* CompileError.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BED515EFDA8400A8A5A3 /* CompileError.m */; };
+		36B5BF4115EFDA8400A8A5A3 /* GemBot+BinaryCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BED815EFDA8400A8A5A3 /* GemBot+BinaryCompiler.m */; };
+		36B5BF4215EFDA8400A8A5A3 /* GemBot+Compiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEDA15EFDA8400A8A5A3 /* GemBot+Compiler.m */; };
+		36B5BF4315EFDA8400A8A5A3 /* GemBot+SourceCodeCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEDC15EFDA8400A8A5A3 /* GemBot+SourceCodeCompiler.m */; };
+		36B5BF4415EFDA8400A8A5A3 /* Opcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEDE15EFDA8400A8A5A3 /* Opcode.m */; };
+		36B5BF4515EFDA8400A8A5A3 /* GemBot+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEE115EFDA8400A8A5A3 /* GemBot+Collision.m */; };
+		36B5BF4615EFDA8400A8A5A3 /* GemBot+Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEE315EFDA8400A8A5A3 /* GemBot+Communication.m */; };
+		36B5BF4715EFDA8400A8A5A3 /* GemBot+Devices.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEE515EFDA8400A8A5A3 /* GemBot+Devices.m */; };
+		36B5BF4815EFDA8400A8A5A3 /* GemBot+Disassembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEE715EFDA8400A8A5A3 /* GemBot+Disassembly.m */; };
+		36B5BF4915EFDA8400A8A5A3 /* GemBot+Heat.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEE915EFDA8400A8A5A3 /* GemBot+Heat.m */; };
+		36B5BF4A15EFDA8400A8A5A3 /* GemBot+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEEB15EFDA8400A8A5A3 /* GemBot+Interface.m */; };
+		36B5BF4B15EFDA8400A8A5A3 /* GemBot+Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEED15EFDA8400A8A5A3 /* GemBot+Memory.m */; };
+		36B5BF4C15EFDA8400A8A5A3 /* GemBot+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEEF15EFDA8400A8A5A3 /* GemBot+Movement.m */; };
+		36B5BF4D15EFDA8400A8A5A3 /* GemBot+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEF115EFDA8400A8A5A3 /* GemBot+Operations.m */; };
+		36B5BF4E15EFDA8400A8A5A3 /* GemBot+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEF315EFDA8400A8A5A3 /* GemBot+Reset.m */; };
+		36B5BF4F15EFDA8400A8A5A3 /* GemBot+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEF515EFDA8400A8A5A3 /* GemBot+Runtime.m */; };
+		36B5BF5015EFDA8400A8A5A3 /* GemBot+Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEF715EFDA8400A8A5A3 /* GemBot+Stats.m */; };
+		36B5BF5115EFDA8400A8A5A3 /* GemBot+SystemCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEF915EFDA8400A8A5A3 /* GemBot+SystemCalls.m */; };
+		36B5BF5215EFDA8400A8A5A3 /* GemBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEFB15EFDA8400A8A5A3 /* GemBot.m */; };
+		36B5BF5315EFDA8400A8A5A3 /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BEFE15EFDA8400A8A5A3 /* Explosion.m */; };
+		36B5BF5415EFDA8400A8A5A3 /* Mine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0015EFDA8400A8A5A3 /* Mine+Interface.m */; };
+		36B5BF5515EFDA8400A8A5A3 /* Mine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0215EFDA8400A8A5A3 /* Mine.m */; };
+		36B5BF5615EFDA8400A8A5A3 /* Missile+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0415EFDA8400A8A5A3 /* Missile+Interface.m */; };
+		36B5BF5715EFDA8400A8A5A3 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0615EFDA8400A8A5A3 /* Missile.m */; };
+		36B5BF5815EFDA8400A8A5A3 /* Scan.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0815EFDA8400A8A5A3 /* Scan.m */; };
+		36B5BF5915EFDA8400A8A5A3 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0A15EFDA8400A8A5A3 /* Wall.m */; };
+		36B5BF5A15EFDA8400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0D15EFDA8400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.m */; };
+		36B5BF5B15EFDA8400A8A5A3 /* PGBotNativeEngine+CleanPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF0F15EFDA8400A8A5A3 /* PGBotNativeEngine+CleanPhase.m */; };
+		36B5BF5C15EFDA8400A8A5A3 /* PGBotNativeEngine+CollisionDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1115EFDA8400A8A5A3 /* PGBotNativeEngine+CollisionDetection.m */; };
+		36B5BF5D15EFDA8400A8A5A3 /* PGBotNativeEngine+CommPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1315EFDA8400A8A5A3 /* PGBotNativeEngine+CommPhase.m */; };
+		36B5BF5E15EFDA8400A8A5A3 /* PGBotNativeEngine+DealDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1515EFDA8400A8A5A3 /* PGBotNativeEngine+DealDamage.m */; };
+		36B5BF5F15EFDA8400A8A5A3 /* PGBotNativeEngine+Explosions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1715EFDA8400A8A5A3 /* PGBotNativeEngine+Explosions.m */; };
+		36B5BF6015EFDA8400A8A5A3 /* PGBotNativeEngine+GameManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1915EFDA8400A8A5A3 /* PGBotNativeEngine+GameManagement.m */; };
+		36B5BF6115EFDA8400A8A5A3 /* PGBotNativeEngine+Heat.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1B15EFDA8400A8A5A3 /* PGBotNativeEngine+Heat.m */; };
+		36B5BF6215EFDA8400A8A5A3 /* PGBotNativeEngine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1D15EFDA8400A8A5A3 /* PGBotNativeEngine+Interface.m */; };
+		36B5BF6315EFDA8400A8A5A3 /* PGBotNativeEngine+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF1F15EFDA8400A8A5A3 /* PGBotNativeEngine+Movement.m */; };
+		36B5BF6415EFDA8400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF2115EFDA8400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.m */; };
+		36B5BF6515EFDA8400A8A5A3 /* PGBotNativeEngine+RobotDeath.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF2315EFDA8400A8A5A3 /* PGBotNativeEngine+RobotDeath.m */; };
+		36B5BF6615EFDA8400A8A5A3 /* PGBotNativeEngine+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF2515EFDA8400A8A5A3 /* PGBotNativeEngine+Runtime.m */; };
+		36B5BF6715EFDA8400A8A5A3 /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF2715EFDA8400A8A5A3 /* PGBotNativeEngine.m */; };
+		36B5BF6815EFDA8400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF2915EFDA8400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.m */; };
+		36B5BF6915EFDA8400A8A5A3 /* EngineDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF3015EFDA8400A8A5A3 /* EngineDefinitions.m */; };
+		36B5BF6A15EFDA8400A8A5A3 /* EngineUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF3215EFDA8400A8A5A3 /* EngineUtility.m */; };
+		36B5BF6B15EFDA8400A8A5A3 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF3615EFDA8400A8A5A3 /* Random.m */; };
+		36B5BF6F15EFDA8400A8A5A3 /* gameparameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF3D15EFDA8400A8A5A3 /* gameparameters.m */; };
+		36B5BF7215EFDAA200A8A5A3 /* libSBJsonLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2B29115DF5C6400DAB3DE /* libSBJsonLib.a */; };
 		36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */; };
 		36C7F87115D8A74E00DD1A75 /* laser3-lipa-modified.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F87015D8A74E00DD1A75 /* laser3-lipa-modified.caf */; };
 		36C7F8A115D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F8A015D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf */; };
@@ -120,20 +170,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3613070415D0D9DB00AE5610 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 36FE1B0915CCE787003310F0;
-			remoteInfo = GemBotEngine;
-		};
-		3651727D15D21FFC005C5D0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 36FE1B0815CCE787003310F0;
-			remoteInfo = GemBotEngine;
-		};
 		36A2B29015DF5C6400DAB3DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
@@ -217,7 +253,6 @@
 		360892BA15BE876D00A06C94 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		360892BC15BE876D00A06C94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		360892BE15BE876D00A06C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GemBotEngine.xcodeproj; path = engine/GemBotEngine.xcodeproj; sourceTree = "<group>"; };
 		3627793C15D7C6100074B903 /* BlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackView.h; path = debugger/BlackView.h; sourceTree = "<group>"; };
 		3627793D15D7C6100074B903 /* BlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackView.m; path = debugger/BlackView.m; sourceTree = "<group>"; };
 		3627793F15D862E00074B903 /* skull200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull200@2x.png"; sourceTree = "<group>"; };
@@ -363,6 +398,108 @@
 		36B5BE1915EF542D00A8A5A3 /* speedyOD.gembot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = speedyOD.gembot; sourceTree = "<group>"; };
 		36B5BE1A15EF542D00A8A5A3 /* spray.gembot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spray.gembot; sourceTree = "<group>"; };
 		36B5BE1B15EF542D00A8A5A3 /* x-1.gembot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "x-1.gembot"; sourceTree = "<group>"; };
+		36B5BEC315EFD97500A8A5A3 /* Constants.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Constants.txt; path = engine/gameparameters/Constants.txt; sourceTree = "<group>"; };
+		36B5BEC415EFD97500A8A5A3 /* DefaultVariables.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DefaultVariables.txt; path = engine/gameparameters/DefaultVariables.txt; sourceTree = "<group>"; };
+		36B5BEC515EFD97500A8A5A3 /* Devices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Devices.txt; path = engine/gameparameters/Devices.txt; sourceTree = "<group>"; };
+		36B5BEC615EFD97500A8A5A3 /* Opcodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Opcodes.txt; path = engine/gameparameters/Opcodes.txt; sourceTree = "<group>"; };
+		36B5BEC715EFD97500A8A5A3 /* SystemCalls.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SystemCalls.txt; path = engine/gameparameters/SystemCalls.txt; sourceTree = "<group>"; };
+		36B5BED415EFDA8400A8A5A3 /* CompileError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompileError.h; sourceTree = "<group>"; };
+		36B5BED515EFDA8400A8A5A3 /* CompileError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompileError.m; sourceTree = "<group>"; };
+		36B5BED715EFDA8400A8A5A3 /* GemBot+BinaryCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+BinaryCompiler.h"; sourceTree = "<group>"; };
+		36B5BED815EFDA8400A8A5A3 /* GemBot+BinaryCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+BinaryCompiler.m"; sourceTree = "<group>"; };
+		36B5BED915EFDA8400A8A5A3 /* GemBot+Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Compiler.h"; sourceTree = "<group>"; };
+		36B5BEDA15EFDA8400A8A5A3 /* GemBot+Compiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Compiler.m"; sourceTree = "<group>"; };
+		36B5BEDB15EFDA8400A8A5A3 /* GemBot+SourceCodeCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+SourceCodeCompiler.h"; sourceTree = "<group>"; };
+		36B5BEDC15EFDA8400A8A5A3 /* GemBot+SourceCodeCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+SourceCodeCompiler.m"; sourceTree = "<group>"; };
+		36B5BEDD15EFDA8400A8A5A3 /* Opcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Opcode.h; sourceTree = "<group>"; };
+		36B5BEDE15EFDA8400A8A5A3 /* Opcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opcode.m; sourceTree = "<group>"; };
+		36B5BEE015EFDA8400A8A5A3 /* GemBot+Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Collision.h"; sourceTree = "<group>"; };
+		36B5BEE115EFDA8400A8A5A3 /* GemBot+Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Collision.m"; sourceTree = "<group>"; };
+		36B5BEE215EFDA8400A8A5A3 /* GemBot+Communication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Communication.h"; sourceTree = "<group>"; };
+		36B5BEE315EFDA8400A8A5A3 /* GemBot+Communication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Communication.m"; sourceTree = "<group>"; };
+		36B5BEE415EFDA8400A8A5A3 /* GemBot+Devices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Devices.h"; sourceTree = "<group>"; };
+		36B5BEE515EFDA8400A8A5A3 /* GemBot+Devices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Devices.m"; sourceTree = "<group>"; };
+		36B5BEE615EFDA8400A8A5A3 /* GemBot+Disassembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Disassembly.h"; sourceTree = "<group>"; };
+		36B5BEE715EFDA8400A8A5A3 /* GemBot+Disassembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Disassembly.m"; sourceTree = "<group>"; };
+		36B5BEE815EFDA8400A8A5A3 /* GemBot+Heat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Heat.h"; sourceTree = "<group>"; };
+		36B5BEE915EFDA8400A8A5A3 /* GemBot+Heat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Heat.m"; sourceTree = "<group>"; };
+		36B5BEEA15EFDA8400A8A5A3 /* GemBot+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Interface.h"; sourceTree = "<group>"; };
+		36B5BEEB15EFDA8400A8A5A3 /* GemBot+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Interface.m"; sourceTree = "<group>"; };
+		36B5BEEC15EFDA8400A8A5A3 /* GemBot+Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Memory.h"; sourceTree = "<group>"; };
+		36B5BEED15EFDA8400A8A5A3 /* GemBot+Memory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Memory.m"; sourceTree = "<group>"; };
+		36B5BEEE15EFDA8400A8A5A3 /* GemBot+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Movement.h"; sourceTree = "<group>"; };
+		36B5BEEF15EFDA8400A8A5A3 /* GemBot+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Movement.m"; sourceTree = "<group>"; };
+		36B5BEF015EFDA8400A8A5A3 /* GemBot+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Operations.h"; sourceTree = "<group>"; };
+		36B5BEF115EFDA8400A8A5A3 /* GemBot+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Operations.m"; sourceTree = "<group>"; };
+		36B5BEF215EFDA8400A8A5A3 /* GemBot+Reset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Reset.h"; sourceTree = "<group>"; };
+		36B5BEF315EFDA8400A8A5A3 /* GemBot+Reset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Reset.m"; sourceTree = "<group>"; };
+		36B5BEF415EFDA8400A8A5A3 /* GemBot+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Runtime.h"; sourceTree = "<group>"; };
+		36B5BEF515EFDA8400A8A5A3 /* GemBot+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Runtime.m"; sourceTree = "<group>"; };
+		36B5BEF615EFDA8400A8A5A3 /* GemBot+Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Stats.h"; sourceTree = "<group>"; };
+		36B5BEF715EFDA8400A8A5A3 /* GemBot+Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Stats.m"; sourceTree = "<group>"; };
+		36B5BEF815EFDA8400A8A5A3 /* GemBot+SystemCalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+SystemCalls.h"; sourceTree = "<group>"; };
+		36B5BEF915EFDA8400A8A5A3 /* GemBot+SystemCalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+SystemCalls.m"; sourceTree = "<group>"; };
+		36B5BEFA15EFDA8400A8A5A3 /* GemBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemBot.h; sourceTree = "<group>"; };
+		36B5BEFB15EFDA8400A8A5A3 /* GemBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemBot.m; sourceTree = "<group>"; };
+		36B5BEFD15EFDA8400A8A5A3 /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
+		36B5BEFE15EFDA8400A8A5A3 /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explosion.m; sourceTree = "<group>"; };
+		36B5BEFF15EFDA8400A8A5A3 /* Mine+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mine+Interface.h"; sourceTree = "<group>"; };
+		36B5BF0015EFDA8400A8A5A3 /* Mine+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mine+Interface.m"; sourceTree = "<group>"; };
+		36B5BF0115EFDA8400A8A5A3 /* Mine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mine.h; sourceTree = "<group>"; };
+		36B5BF0215EFDA8400A8A5A3 /* Mine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mine.m; sourceTree = "<group>"; };
+		36B5BF0315EFDA8400A8A5A3 /* Missile+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Missile+Interface.h"; sourceTree = "<group>"; };
+		36B5BF0415EFDA8400A8A5A3 /* Missile+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Missile+Interface.m"; sourceTree = "<group>"; };
+		36B5BF0515EFDA8400A8A5A3 /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Missile.h; sourceTree = "<group>"; };
+		36B5BF0615EFDA8400A8A5A3 /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Missile.m; sourceTree = "<group>"; };
+		36B5BF0715EFDA8400A8A5A3 /* Scan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scan.h; sourceTree = "<group>"; };
+		36B5BF0815EFDA8400A8A5A3 /* Scan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scan.m; sourceTree = "<group>"; };
+		36B5BF0915EFDA8400A8A5A3 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
+		36B5BF0A15EFDA8400A8A5A3 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
+		36B5BF0C15EFDA8400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CheckForEndOfMatch.h"; sourceTree = "<group>"; };
+		36B5BF0D15EFDA8400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CheckForEndOfMatch.m"; sourceTree = "<group>"; };
+		36B5BF0E15EFDA8400A8A5A3 /* PGBotNativeEngine+CleanPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CleanPhase.h"; sourceTree = "<group>"; };
+		36B5BF0F15EFDA8400A8A5A3 /* PGBotNativeEngine+CleanPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CleanPhase.m"; sourceTree = "<group>"; };
+		36B5BF1015EFDA8400A8A5A3 /* PGBotNativeEngine+CollisionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CollisionDetection.h"; sourceTree = "<group>"; };
+		36B5BF1115EFDA8400A8A5A3 /* PGBotNativeEngine+CollisionDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CollisionDetection.m"; sourceTree = "<group>"; };
+		36B5BF1215EFDA8400A8A5A3 /* PGBotNativeEngine+CommPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+CommPhase.h"; sourceTree = "<group>"; };
+		36B5BF1315EFDA8400A8A5A3 /* PGBotNativeEngine+CommPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+CommPhase.m"; sourceTree = "<group>"; };
+		36B5BF1415EFDA8400A8A5A3 /* PGBotNativeEngine+DealDamage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+DealDamage.h"; sourceTree = "<group>"; };
+		36B5BF1515EFDA8400A8A5A3 /* PGBotNativeEngine+DealDamage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+DealDamage.m"; sourceTree = "<group>"; };
+		36B5BF1615EFDA8400A8A5A3 /* PGBotNativeEngine+Explosions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Explosions.h"; sourceTree = "<group>"; };
+		36B5BF1715EFDA8400A8A5A3 /* PGBotNativeEngine+Explosions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Explosions.m"; sourceTree = "<group>"; };
+		36B5BF1815EFDA8400A8A5A3 /* PGBotNativeEngine+GameManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+GameManagement.h"; sourceTree = "<group>"; };
+		36B5BF1915EFDA8400A8A5A3 /* PGBotNativeEngine+GameManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+GameManagement.m"; sourceTree = "<group>"; };
+		36B5BF1A15EFDA8400A8A5A3 /* PGBotNativeEngine+Heat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Heat.h"; sourceTree = "<group>"; };
+		36B5BF1B15EFDA8400A8A5A3 /* PGBotNativeEngine+Heat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Heat.m"; sourceTree = "<group>"; };
+		36B5BF1C15EFDA8400A8A5A3 /* PGBotNativeEngine+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Interface.h"; sourceTree = "<group>"; };
+		36B5BF1D15EFDA8400A8A5A3 /* PGBotNativeEngine+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Interface.m"; sourceTree = "<group>"; };
+		36B5BF1E15EFDA8400A8A5A3 /* PGBotNativeEngine+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Movement.h"; sourceTree = "<group>"; };
+		36B5BF1F15EFDA8400A8A5A3 /* PGBotNativeEngine+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Movement.m"; sourceTree = "<group>"; };
+		36B5BF2015EFDA8400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+RobotCPUPhase.h"; sourceTree = "<group>"; };
+		36B5BF2115EFDA8400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+RobotCPUPhase.m"; sourceTree = "<group>"; };
+		36B5BF2215EFDA8400A8A5A3 /* PGBotNativeEngine+RobotDeath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+RobotDeath.h"; sourceTree = "<group>"; };
+		36B5BF2315EFDA8400A8A5A3 /* PGBotNativeEngine+RobotDeath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+RobotDeath.m"; sourceTree = "<group>"; };
+		36B5BF2415EFDA8400A8A5A3 /* PGBotNativeEngine+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGBotNativeEngine+Runtime.h"; sourceTree = "<group>"; };
+		36B5BF2515EFDA8400A8A5A3 /* PGBotNativeEngine+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGBotNativeEngine+Runtime.m"; sourceTree = "<group>"; };
+		36B5BF2615EFDA8400A8A5A3 /* PGBotNativeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGBotNativeEngine.h; sourceTree = "<group>"; };
+		36B5BF2715EFDA8400A8A5A3 /* PGBotNativeEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGBotNativeEngine.m; sourceTree = "<group>"; };
+		36B5BF2815EFDA8400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGNativeEngine+RobotShutdownFromHeatPhase.h"; sourceTree = "<group>"; };
+		36B5BF2915EFDA8400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGNativeEngine+RobotShutdownFromHeatPhase.m"; sourceTree = "<group>"; };
+		36B5BF2B15EFDA8400A8A5A3 /* CollideableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollideableObject.h; sourceTree = "<group>"; };
+		36B5BF2C15EFDA8400A8A5A3 /* RandomProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomProtocol.h; sourceTree = "<group>"; };
+		36B5BF2D15EFDA8400A8A5A3 /* TangibleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangibleObject.h; sourceTree = "<group>"; };
+		36B5BF2F15EFDA8400A8A5A3 /* EngineDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngineDefinitions.h; sourceTree = "<group>"; };
+		36B5BF3015EFDA8400A8A5A3 /* EngineDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineDefinitions.m; sourceTree = "<group>"; };
+		36B5BF3115EFDA8400A8A5A3 /* EngineUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EngineUtility.h; sourceTree = "<group>"; };
+		36B5BF3215EFDA8400A8A5A3 /* EngineUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EngineUtility.m; sourceTree = "<group>"; };
+		36B5BF3315EFDA8400A8A5A3 /* MoveableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveableObject.h; sourceTree = "<group>"; };
+		36B5BF3415EFDA8400A8A5A3 /* OrientedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientedObject.h; sourceTree = "<group>"; };
+		36B5BF3515EFDA8400A8A5A3 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
+		36B5BF3615EFDA8400A8A5A3 /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Random.m; sourceTree = "<group>"; };
+		36B5BF3715EFDA8400A8A5A3 /* TurretedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurretedObject.h; sourceTree = "<group>"; };
+		36B5BF3C15EFDA8400A8A5A3 /* gameparameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameparameters.h; sourceTree = "<group>"; };
+		36B5BF3D15EFDA8400A8A5A3 /* gameparameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameparameters.m; sourceTree = "<group>"; };
+		36B5BF7415EFDB6300A8A5A3 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = external/sbjson/Classes/SBJson.h; sourceTree = "<group>"; };
 		36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Gem Bots.entitlements"; sourceTree = "<group>"; };
 		36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = external/sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
 		36C7F87015D8A74E00DD1A75 /* laser3-lipa-modified.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "laser3-lipa-modified.caf"; sourceTree = "<group>"; };
@@ -377,6 +514,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B5BF7215EFDAA200A8A5A3 /* libSBJsonLib.a in Frameworks */,
 				36A2B24515DF59D300DAB3DE /* AudioToolbox.framework in Frameworks */,
 				369E2F2C15CB6A4D0065B3E7 /* Quartz.framework in Frameworks */,
 				3670B92E15C627BA00A38D46 /* OpenGL.framework in Frameworks */,
@@ -390,6 +528,8 @@
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				36B5BED115EFDA6600A8A5A3 /* engine */,
+				36B5BEBF15EFD95C00A8A5A3 /* compileconfig */,
 				36B5BE0F15EF542D00A8A5A3 /* samplebots */,
 				369140F715D62CE1005C3890 /* AVFoundation.framework */,
 				369140EF15D62CB3005C3890 /* AudioToolbox.framework */,
@@ -397,7 +537,6 @@
 				369140F115D62CB4005C3890 /* AudioVideoBridging.framework */,
 				369140F215D62CB4005C3890 /* CoreAudioKit.framework */,
 				369140ED15D62C0E005C3890 /* CoreAudio.framework */,
-				361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */,
 				362A91DE15D0B75200E2817F /* classes */,
 				362A921B15D0B75200E2817F /* resources */,
 				362A924E15D0B75200E2817F /* include */,
@@ -440,14 +579,6 @@
 				3608928315BE876D00A06C94 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		361306FD15D0D9DA00AE5610 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		362A91DE15D0B75200E2817F /* classes */ = {
@@ -736,9 +867,199 @@
 			path = samplebots;
 			sourceTree = "<group>";
 		};
+		36B5BEBF15EFD95C00A8A5A3 /* compileconfig */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BEC315EFD97500A8A5A3 /* Constants.txt */,
+				36B5BEC415EFD97500A8A5A3 /* DefaultVariables.txt */,
+				36B5BEC515EFD97500A8A5A3 /* Devices.txt */,
+				36B5BEC615EFD97500A8A5A3 /* Opcodes.txt */,
+				36B5BEC715EFD97500A8A5A3 /* SystemCalls.txt */,
+			);
+			name = compileconfig;
+			sourceTree = "<group>";
+		};
+		36B5BED115EFDA6600A8A5A3 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BED215EFDA8400A8A5A3 /* classes */,
+				36B5BF3815EFDA8400A8A5A3 /* gameparameters */,
+			);
+			name = engine;
+			sourceTree = "<group>";
+		};
+		36B5BED215EFDA8400A8A5A3 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BED315EFDA8400A8A5A3 /* compileerror */,
+				36B5BED615EFDA8400A8A5A3 /* compiler */,
+				36B5BEDF15EFDA8400A8A5A3 /* GemBot */,
+				36B5BEFC15EFDA8400A8A5A3 /* objects */,
+				36B5BF0B15EFDA8400A8A5A3 /* PGBotNativeEngine */,
+				36B5BF2A15EFDA8400A8A5A3 /* protocols */,
+				36B5BF2E15EFDA8400A8A5A3 /* utility */,
+			);
+			name = classes;
+			path = engine/classes;
+			sourceTree = "<group>";
+		};
+		36B5BED315EFDA8400A8A5A3 /* compileerror */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BED415EFDA8400A8A5A3 /* CompileError.h */,
+				36B5BED515EFDA8400A8A5A3 /* CompileError.m */,
+			);
+			path = compileerror;
+			sourceTree = "<group>";
+		};
+		36B5BED615EFDA8400A8A5A3 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BED715EFDA8400A8A5A3 /* GemBot+BinaryCompiler.h */,
+				36B5BED815EFDA8400A8A5A3 /* GemBot+BinaryCompiler.m */,
+				36B5BED915EFDA8400A8A5A3 /* GemBot+Compiler.h */,
+				36B5BEDA15EFDA8400A8A5A3 /* GemBot+Compiler.m */,
+				36B5BEDB15EFDA8400A8A5A3 /* GemBot+SourceCodeCompiler.h */,
+				36B5BEDC15EFDA8400A8A5A3 /* GemBot+SourceCodeCompiler.m */,
+				36B5BEDD15EFDA8400A8A5A3 /* Opcode.h */,
+				36B5BEDE15EFDA8400A8A5A3 /* Opcode.m */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		36B5BEDF15EFDA8400A8A5A3 /* GemBot */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BEE015EFDA8400A8A5A3 /* GemBot+Collision.h */,
+				36B5BEE115EFDA8400A8A5A3 /* GemBot+Collision.m */,
+				36B5BEE215EFDA8400A8A5A3 /* GemBot+Communication.h */,
+				36B5BEE315EFDA8400A8A5A3 /* GemBot+Communication.m */,
+				36B5BEE415EFDA8400A8A5A3 /* GemBot+Devices.h */,
+				36B5BEE515EFDA8400A8A5A3 /* GemBot+Devices.m */,
+				36B5BEE615EFDA8400A8A5A3 /* GemBot+Disassembly.h */,
+				36B5BEE715EFDA8400A8A5A3 /* GemBot+Disassembly.m */,
+				36B5BEE815EFDA8400A8A5A3 /* GemBot+Heat.h */,
+				36B5BEE915EFDA8400A8A5A3 /* GemBot+Heat.m */,
+				36B5BEEA15EFDA8400A8A5A3 /* GemBot+Interface.h */,
+				36B5BEEB15EFDA8400A8A5A3 /* GemBot+Interface.m */,
+				36B5BEEC15EFDA8400A8A5A3 /* GemBot+Memory.h */,
+				36B5BEED15EFDA8400A8A5A3 /* GemBot+Memory.m */,
+				36B5BEEE15EFDA8400A8A5A3 /* GemBot+Movement.h */,
+				36B5BEEF15EFDA8400A8A5A3 /* GemBot+Movement.m */,
+				36B5BEF015EFDA8400A8A5A3 /* GemBot+Operations.h */,
+				36B5BEF115EFDA8400A8A5A3 /* GemBot+Operations.m */,
+				36B5BEF215EFDA8400A8A5A3 /* GemBot+Reset.h */,
+				36B5BEF315EFDA8400A8A5A3 /* GemBot+Reset.m */,
+				36B5BEF415EFDA8400A8A5A3 /* GemBot+Runtime.h */,
+				36B5BEF515EFDA8400A8A5A3 /* GemBot+Runtime.m */,
+				36B5BEF615EFDA8400A8A5A3 /* GemBot+Stats.h */,
+				36B5BEF715EFDA8400A8A5A3 /* GemBot+Stats.m */,
+				36B5BEF815EFDA8400A8A5A3 /* GemBot+SystemCalls.h */,
+				36B5BEF915EFDA8400A8A5A3 /* GemBot+SystemCalls.m */,
+				36B5BEFA15EFDA8400A8A5A3 /* GemBot.h */,
+				36B5BEFB15EFDA8400A8A5A3 /* GemBot.m */,
+			);
+			path = GemBot;
+			sourceTree = "<group>";
+		};
+		36B5BEFC15EFDA8400A8A5A3 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BEFD15EFDA8400A8A5A3 /* Explosion.h */,
+				36B5BEFE15EFDA8400A8A5A3 /* Explosion.m */,
+				36B5BEFF15EFDA8400A8A5A3 /* Mine+Interface.h */,
+				36B5BF0015EFDA8400A8A5A3 /* Mine+Interface.m */,
+				36B5BF0115EFDA8400A8A5A3 /* Mine.h */,
+				36B5BF0215EFDA8400A8A5A3 /* Mine.m */,
+				36B5BF0315EFDA8400A8A5A3 /* Missile+Interface.h */,
+				36B5BF0415EFDA8400A8A5A3 /* Missile+Interface.m */,
+				36B5BF0515EFDA8400A8A5A3 /* Missile.h */,
+				36B5BF0615EFDA8400A8A5A3 /* Missile.m */,
+				36B5BF0715EFDA8400A8A5A3 /* Scan.h */,
+				36B5BF0815EFDA8400A8A5A3 /* Scan.m */,
+				36B5BF0915EFDA8400A8A5A3 /* Wall.h */,
+				36B5BF0A15EFDA8400A8A5A3 /* Wall.m */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		36B5BF0B15EFDA8400A8A5A3 /* PGBotNativeEngine */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BF0C15EFDA8400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.h */,
+				36B5BF0D15EFDA8400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.m */,
+				36B5BF0E15EFDA8400A8A5A3 /* PGBotNativeEngine+CleanPhase.h */,
+				36B5BF0F15EFDA8400A8A5A3 /* PGBotNativeEngine+CleanPhase.m */,
+				36B5BF1015EFDA8400A8A5A3 /* PGBotNativeEngine+CollisionDetection.h */,
+				36B5BF1115EFDA8400A8A5A3 /* PGBotNativeEngine+CollisionDetection.m */,
+				36B5BF1215EFDA8400A8A5A3 /* PGBotNativeEngine+CommPhase.h */,
+				36B5BF1315EFDA8400A8A5A3 /* PGBotNativeEngine+CommPhase.m */,
+				36B5BF1415EFDA8400A8A5A3 /* PGBotNativeEngine+DealDamage.h */,
+				36B5BF1515EFDA8400A8A5A3 /* PGBotNativeEngine+DealDamage.m */,
+				36B5BF1615EFDA8400A8A5A3 /* PGBotNativeEngine+Explosions.h */,
+				36B5BF1715EFDA8400A8A5A3 /* PGBotNativeEngine+Explosions.m */,
+				36B5BF1815EFDA8400A8A5A3 /* PGBotNativeEngine+GameManagement.h */,
+				36B5BF1915EFDA8400A8A5A3 /* PGBotNativeEngine+GameManagement.m */,
+				36B5BF1A15EFDA8400A8A5A3 /* PGBotNativeEngine+Heat.h */,
+				36B5BF1B15EFDA8400A8A5A3 /* PGBotNativeEngine+Heat.m */,
+				36B5BF1C15EFDA8400A8A5A3 /* PGBotNativeEngine+Interface.h */,
+				36B5BF1D15EFDA8400A8A5A3 /* PGBotNativeEngine+Interface.m */,
+				36B5BF1E15EFDA8400A8A5A3 /* PGBotNativeEngine+Movement.h */,
+				36B5BF1F15EFDA8400A8A5A3 /* PGBotNativeEngine+Movement.m */,
+				36B5BF2015EFDA8400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.h */,
+				36B5BF2115EFDA8400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.m */,
+				36B5BF2215EFDA8400A8A5A3 /* PGBotNativeEngine+RobotDeath.h */,
+				36B5BF2315EFDA8400A8A5A3 /* PGBotNativeEngine+RobotDeath.m */,
+				36B5BF2415EFDA8400A8A5A3 /* PGBotNativeEngine+Runtime.h */,
+				36B5BF2515EFDA8400A8A5A3 /* PGBotNativeEngine+Runtime.m */,
+				36B5BF2615EFDA8400A8A5A3 /* PGBotNativeEngine.h */,
+				36B5BF2715EFDA8400A8A5A3 /* PGBotNativeEngine.m */,
+				36B5BF2815EFDA8400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.h */,
+				36B5BF2915EFDA8400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.m */,
+			);
+			path = PGBotNativeEngine;
+			sourceTree = "<group>";
+		};
+		36B5BF2A15EFDA8400A8A5A3 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BF2B15EFDA8400A8A5A3 /* CollideableObject.h */,
+				36B5BF2C15EFDA8400A8A5A3 /* RandomProtocol.h */,
+				36B5BF2D15EFDA8400A8A5A3 /* TangibleObject.h */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		36B5BF2E15EFDA8400A8A5A3 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BF2F15EFDA8400A8A5A3 /* EngineDefinitions.h */,
+				36B5BF3015EFDA8400A8A5A3 /* EngineDefinitions.m */,
+				36B5BF3115EFDA8400A8A5A3 /* EngineUtility.h */,
+				36B5BF3215EFDA8400A8A5A3 /* EngineUtility.m */,
+				36B5BF3315EFDA8400A8A5A3 /* MoveableObject.h */,
+				36B5BF3415EFDA8400A8A5A3 /* OrientedObject.h */,
+				36B5BF3515EFDA8400A8A5A3 /* Random.h */,
+				36B5BF3615EFDA8400A8A5A3 /* Random.m */,
+				36B5BF3715EFDA8400A8A5A3 /* TurretedObject.h */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		36B5BF3815EFDA8400A8A5A3 /* gameparameters */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BF3C15EFDA8400A8A5A3 /* gameparameters.h */,
+				36B5BF3D15EFDA8400A8A5A3 /* gameparameters.m */,
+			);
+			name = gameparameters;
+			path = engine/gameparameters;
+			sourceTree = "<group>";
+		};
 		36C1914715D0BC4400A79D5F /* external */ = {
 			isa = PBXGroup;
 			children = (
+				36B5BF7415EFDB6300A8A5A3 /* SBJson.h */,
 				36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */,
 			);
 			name = external;
@@ -772,7 +1093,6 @@
 			);
 			dependencies = (
 				36A2B29315DF5D6D00DAB3DE /* PBXTargetDependency */,
-				3651727E15D21FFC005C5D0F /* PBXTargetDependency */,
 			);
 			name = "Gem Bots";
 			productName = bot;
@@ -799,10 +1119,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 361306FD15D0D9DA00AE5610 /* Products */;
-					ProjectRef = 361306FC15D0D9DA00AE5610 /* GemBotEngine.xcodeproj */;
-				},
-				{
 					ProductGroup = 36C1914915D0BC6500A79D5F /* Products */;
 					ProjectRef = 36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */;
 				},
@@ -815,13 +1131,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3613070515D0D9DB00AE5610 /* GemBotEngine.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GemBotEngine.bundle;
-			remoteRef = 3613070415D0D9DB00AE5610 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		36A2B29115DF5C6400DAB3DE /* libSBJsonLib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -898,7 +1207,6 @@
 				362A929315D0B75200E2817F /* close_button_red_icon_160.png in Resources */,
 				362A929415D0B75200E2817F /* close_button_red_icon_160@2x.png in Resources */,
 				36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */,
-				3651727F15D22042005C5D0F /* GemBotEngine.bundle in Resources */,
 				36499EAF15D4D5E300706EAF /* green-plus-sign-50@2x.png in Resources */,
 				36499EB015D4D5E300706EAF /* green-plus-sign-50.png in Resources */,
 				36974D6415D65E540051BA6E /* DebuggerWindowController.xib in Resources */,
@@ -921,6 +1229,11 @@
 				366F93DA15E099F500AAB479 /* README.md in Resources */,
 				366F93DB15E099F500AAB479 /* CREDITS.md in Resources */,
 				366F93E315E09CF200AAB479 /* LicenseViewController.xib in Resources */,
+				36B5BEC815EFD97500A8A5A3 /* Constants.txt in Resources */,
+				36B5BEC915EFD97500A8A5A3 /* DefaultVariables.txt in Resources */,
+				36B5BECA15EFD97500A8A5A3 /* Devices.txt in Resources */,
+				36B5BECB15EFD97500A8A5A3 /* Opcodes.txt in Resources */,
+				36B5BECC15EFD97500A8A5A3 /* SystemCalls.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,17 +1281,57 @@
 				366F93DE15E09A2100AAB479 /* AcknowledgementsWindow.m in Sources */,
 				366F93E215E09CF200AAB479 /* LicenseViewController.m in Sources */,
 				366F93E615E09D1200AAB479 /* LicenseWindow.m in Sources */,
+				36B5BF4015EFDA8400A8A5A3 /* CompileError.m in Sources */,
+				36B5BF4115EFDA8400A8A5A3 /* GemBot+BinaryCompiler.m in Sources */,
+				36B5BF4215EFDA8400A8A5A3 /* GemBot+Compiler.m in Sources */,
+				36B5BF4315EFDA8400A8A5A3 /* GemBot+SourceCodeCompiler.m in Sources */,
+				36B5BF4415EFDA8400A8A5A3 /* Opcode.m in Sources */,
+				36B5BF4515EFDA8400A8A5A3 /* GemBot+Collision.m in Sources */,
+				36B5BF4615EFDA8400A8A5A3 /* GemBot+Communication.m in Sources */,
+				36B5BF4715EFDA8400A8A5A3 /* GemBot+Devices.m in Sources */,
+				36B5BF4815EFDA8400A8A5A3 /* GemBot+Disassembly.m in Sources */,
+				36B5BF4915EFDA8400A8A5A3 /* GemBot+Heat.m in Sources */,
+				36B5BF4A15EFDA8400A8A5A3 /* GemBot+Interface.m in Sources */,
+				36B5BF4B15EFDA8400A8A5A3 /* GemBot+Memory.m in Sources */,
+				36B5BF4C15EFDA8400A8A5A3 /* GemBot+Movement.m in Sources */,
+				36B5BF4D15EFDA8400A8A5A3 /* GemBot+Operations.m in Sources */,
+				36B5BF4E15EFDA8400A8A5A3 /* GemBot+Reset.m in Sources */,
+				36B5BF4F15EFDA8400A8A5A3 /* GemBot+Runtime.m in Sources */,
+				36B5BF5015EFDA8400A8A5A3 /* GemBot+Stats.m in Sources */,
+				36B5BF5115EFDA8400A8A5A3 /* GemBot+SystemCalls.m in Sources */,
+				36B5BF5215EFDA8400A8A5A3 /* GemBot.m in Sources */,
+				36B5BF5315EFDA8400A8A5A3 /* Explosion.m in Sources */,
+				36B5BF5415EFDA8400A8A5A3 /* Mine+Interface.m in Sources */,
+				36B5BF5515EFDA8400A8A5A3 /* Mine.m in Sources */,
+				36B5BF5615EFDA8400A8A5A3 /* Missile+Interface.m in Sources */,
+				36B5BF5715EFDA8400A8A5A3 /* Missile.m in Sources */,
+				36B5BF5815EFDA8400A8A5A3 /* Scan.m in Sources */,
+				36B5BF5915EFDA8400A8A5A3 /* Wall.m in Sources */,
+				36B5BF5A15EFDA8400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */,
+				36B5BF5B15EFDA8400A8A5A3 /* PGBotNativeEngine+CleanPhase.m in Sources */,
+				36B5BF5C15EFDA8400A8A5A3 /* PGBotNativeEngine+CollisionDetection.m in Sources */,
+				36B5BF5D15EFDA8400A8A5A3 /* PGBotNativeEngine+CommPhase.m in Sources */,
+				36B5BF5E15EFDA8400A8A5A3 /* PGBotNativeEngine+DealDamage.m in Sources */,
+				36B5BF5F15EFDA8400A8A5A3 /* PGBotNativeEngine+Explosions.m in Sources */,
+				36B5BF6015EFDA8400A8A5A3 /* PGBotNativeEngine+GameManagement.m in Sources */,
+				36B5BF6115EFDA8400A8A5A3 /* PGBotNativeEngine+Heat.m in Sources */,
+				36B5BF6215EFDA8400A8A5A3 /* PGBotNativeEngine+Interface.m in Sources */,
+				36B5BF6315EFDA8400A8A5A3 /* PGBotNativeEngine+Movement.m in Sources */,
+				36B5BF6415EFDA8400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */,
+				36B5BF6515EFDA8400A8A5A3 /* PGBotNativeEngine+RobotDeath.m in Sources */,
+				36B5BF6615EFDA8400A8A5A3 /* PGBotNativeEngine+Runtime.m in Sources */,
+				36B5BF6715EFDA8400A8A5A3 /* PGBotNativeEngine.m in Sources */,
+				36B5BF6815EFDA8400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.m in Sources */,
+				36B5BF6915EFDA8400A8A5A3 /* EngineDefinitions.m in Sources */,
+				36B5BF6A15EFDA8400A8A5A3 /* EngineUtility.m in Sources */,
+				36B5BF6B15EFDA8400A8A5A3 /* Random.m in Sources */,
+				36B5BF6F15EFDA8400A8A5A3 /* gameparameters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3651727E15D21FFC005C5D0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GemBotEngine;
-			targetProxy = 3651727D15D21FFC005C5D0F /* PBXContainerItemProxy */;
-		};
 		36A2B29315DF5D6D00DAB3DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SBJsonLib;

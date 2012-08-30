@@ -201,7 +201,7 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [variableAddresses count]+2;
 }
-
+/*
 NSString* sizeTo10(NSString* s) {
     if (s.length >= 10) {
         return [s substringToIndex:10];
@@ -212,7 +212,7 @@ NSString* sizeTo10(NSString* s) {
         }
         return [t stringByAppendingString:s];
     }
-}
+}*/
 
 -(NSTextField*) variableCell:(NSInteger) row {
     

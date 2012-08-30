@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>GemBotStaticEngine.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>36B5BE4915EFD87E00A8A5A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>36FE1B0815CCE787003310F0</key>
 		<dict>
 			<key>primary</key>

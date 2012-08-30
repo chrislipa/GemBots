@@ -19,6 +19,106 @@
 		362E8F2915D2478A00DD3560 /* gameparameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610650E15D18E2700117E33 /* gameparameters.m */; };
 		369C5EE315D0C77B002028C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D96015C74062003CCD2A /* Foundation.framework */; };
 		36A2B28E15DF5C5B00DAB3DE /* libSBJsonLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2B28B15DF5C3300DAB3DE /* libSBJsonLib.a */; };
+		36B5BE4B15EFD87E00A8A5A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C3D95B15C74062003CCD2A /* Cocoa.framework */; };
+		36B5BE5C15EFD89C00A8A5A3 /* CompileError.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245315D3FE8A005B6289 /* CompileError.m */; };
+		36B5BE5D15EFD89C00A8A5A3 /* GemBot+BinaryCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245615D3FE8A005B6289 /* GemBot+BinaryCompiler.m */; };
+		36B5BE5E15EFD89C00A8A5A3 /* GemBot+Compiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245815D3FE8A005B6289 /* GemBot+Compiler.m */; };
+		36B5BE5F15EFD89C00A8A5A3 /* GemBot+SourceCodeCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245A15D3FE8A005B6289 /* GemBot+SourceCodeCompiler.m */; };
+		36B5BE6015EFD89C00A8A5A3 /* Opcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245C15D3FE8A005B6289 /* Opcode.m */; };
+		36B5BE6115EFD89C00A8A5A3 /* GemBot+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245F15D3FE8A005B6289 /* GemBot+Collision.m */; };
+		36B5BE6215EFD89C00A8A5A3 /* GemBot+Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246115D3FE8A005B6289 /* GemBot+Communication.m */; };
+		36B5BE6315EFD89C00A8A5A3 /* GemBot+Devices.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246315D3FE8A005B6289 /* GemBot+Devices.m */; };
+		36B5BE6415EFD89C00A8A5A3 /* GemBot+Heat.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246515D3FE8A005B6289 /* GemBot+Heat.m */; };
+		36B5BE6515EFD89C00A8A5A3 /* GemBot+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246715D3FE8A005B6289 /* GemBot+Interface.m */; };
+		36B5BE6615EFD89C00A8A5A3 /* GemBot+Memory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246915D3FE8A005B6289 /* GemBot+Memory.m */; };
+		36B5BE6715EFD89C00A8A5A3 /* GemBot+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246B15D3FE8A005B6289 /* GemBot+Movement.m */; };
+		36B5BE6815EFD89C00A8A5A3 /* GemBot+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246D15D3FE8A005B6289 /* GemBot+Operations.m */; };
+		36B5BE6915EFD89C00A8A5A3 /* GemBot+Reset.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7246F15D3FE8A005B6289 /* GemBot+Reset.m */; };
+		36B5BE6A15EFD89C00A8A5A3 /* GemBot+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247115D3FE8A005B6289 /* GemBot+Runtime.m */; };
+		36B5BE6B15EFD89C00A8A5A3 /* GemBot+Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247315D3FE8A005B6289 /* GemBot+Stats.m */; };
+		36B5BE6C15EFD89C00A8A5A3 /* GemBot+SystemCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247515D3FE8A005B6289 /* GemBot+SystemCalls.m */; };
+		36B5BE6D15EFD89C00A8A5A3 /* GemBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247715D3FE8A005B6289 /* GemBot.m */; };
+		36B5BE6E15EFD89C00A8A5A3 /* GemBot+Disassembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793915D7A4F40074B903 /* GemBot+Disassembly.m */; };
+		36B5BE6F15EFD89C00A8A5A3 /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247A15D3FE8A005B6289 /* Explosion.m */; };
+		36B5BE7015EFD89C00A8A5A3 /* Mine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247C15D3FE8A005B6289 /* Mine+Interface.m */; };
+		36B5BE7115EFD89C00A8A5A3 /* Mine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7247E15D3FE8A005B6289 /* Mine.m */; };
+		36B5BE7215EFD89C00A8A5A3 /* Missile+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248015D3FE8A005B6289 /* Missile+Interface.m */; };
+		36B5BE7315EFD89C00A8A5A3 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248215D3FE8A005B6289 /* Missile.m */; };
+		36B5BE7415EFD89C00A8A5A3 /* Scan.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248415D3FE8A005B6289 /* Scan.m */; };
+		36B5BE7515EFD89C00A8A5A3 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248615D3FE8A005B6289 /* Wall.m */; };
+		36B5BE7615EFD89C00A8A5A3 /* EngineDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C724AA15D3FE8A005B6289 /* EngineDefinitions.m */; };
+		36B5BE7715EFD89C00A8A5A3 /* EngineUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C724AC15D3FE8A005B6289 /* EngineUtility.m */; };
+		36B5BE7815EFD89C00A8A5A3 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C724B015D3FE8A005B6289 /* Random.m */; };
+		36B5BE7915EFD89C00A8A5A3 /* gameparameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610650E15D18E2700117E33 /* gameparameters.m */; };
+		36B5BE7A15EFD8B400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248915D3FE8A005B6289 /* PGBotNativeEngine+CheckForEndOfMatch.m */; };
+		36B5BE7B15EFD8B400A8A5A3 /* PGBotNativeEngine+CleanPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248B15D3FE8A005B6289 /* PGBotNativeEngine+CleanPhase.m */; };
+		36B5BE7C15EFD8B400A8A5A3 /* PGBotNativeEngine+CollisionDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248D15D3FE8A005B6289 /* PGBotNativeEngine+CollisionDetection.m */; };
+		36B5BE7D15EFD8B400A8A5A3 /* PGBotNativeEngine+CommPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7248F15D3FE8A005B6289 /* PGBotNativeEngine+CommPhase.m */; };
+		36B5BE7E15EFD8B400A8A5A3 /* PGBotNativeEngine+DealDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249115D3FE8A005B6289 /* PGBotNativeEngine+DealDamage.m */; };
+		36B5BE7F15EFD8B400A8A5A3 /* PGBotNativeEngine+Explosions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249315D3FE8A005B6289 /* PGBotNativeEngine+Explosions.m */; };
+		36B5BE8015EFD8B400A8A5A3 /* PGBotNativeEngine+GameManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249515D3FE8A005B6289 /* PGBotNativeEngine+GameManagement.m */; };
+		36B5BE8115EFD8B400A8A5A3 /* PGBotNativeEngine+Heat.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249715D3FE8A005B6289 /* PGBotNativeEngine+Heat.m */; };
+		36B5BE8215EFD8B400A8A5A3 /* PGBotNativeEngine+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249915D3FE8A005B6289 /* PGBotNativeEngine+Interface.m */; };
+		36B5BE8315EFD8B400A8A5A3 /* PGBotNativeEngine+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249B15D3FE8A005B6289 /* PGBotNativeEngine+Movement.m */; };
+		36B5BE8415EFD8B400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249D15D3FE8A005B6289 /* PGBotNativeEngine+RobotCPUPhase.m */; };
+		36B5BE8515EFD8B400A8A5A3 /* PGBotNativeEngine+RobotDeath.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7249F15D3FE8A005B6289 /* PGBotNativeEngine+RobotDeath.m */; };
+		36B5BE8615EFD8B400A8A5A3 /* PGBotNativeEngine+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C724A115D3FE8A005B6289 /* PGBotNativeEngine+Runtime.m */; };
+		36B5BE8715EFD8B400A8A5A3 /* PGBotNativeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C724A315D3FE8A005B6289 /* PGBotNativeEngine.m */; };
+		36B5BE8815EFD8B400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3606303215DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.m */; };
+		36B5BE8915EFD8DB00A8A5A3 /* CompileError.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245215D3FE8A005B6289 /* CompileError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36B5BE8A15EFD8DB00A8A5A3 /* GemBot+BinaryCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245515D3FE8A005B6289 /* GemBot+BinaryCompiler.h */; };
+		36B5BE8B15EFD8DB00A8A5A3 /* GemBot+Compiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245715D3FE8A005B6289 /* GemBot+Compiler.h */; };
+		36B5BE8C15EFD8DB00A8A5A3 /* GemBot+SourceCodeCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245915D3FE8A005B6289 /* GemBot+SourceCodeCompiler.h */; };
+		36B5BE8D15EFD8DB00A8A5A3 /* Opcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245B15D3FE8A005B6289 /* Opcode.h */; };
+		36B5BE8E15EFD8DB00A8A5A3 /* GemBot+Collision.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245E15D3FE8A005B6289 /* GemBot+Collision.h */; };
+		36B5BE8F15EFD8DB00A8A5A3 /* GemBot+Communication.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246015D3FE8A005B6289 /* GemBot+Communication.h */; };
+		36B5BE9015EFD8DB00A8A5A3 /* GemBot+Devices.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246215D3FE8A005B6289 /* GemBot+Devices.h */; };
+		36B5BE9115EFD8DB00A8A5A3 /* GemBot+Heat.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246415D3FE8A005B6289 /* GemBot+Heat.h */; };
+		36B5BE9215EFD8DB00A8A5A3 /* GemBot+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246615D3FE8A005B6289 /* GemBot+Interface.h */; };
+		36B5BE9315EFD8DB00A8A5A3 /* GemBot+Memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246815D3FE8A005B6289 /* GemBot+Memory.h */; };
+		36B5BE9415EFD8DB00A8A5A3 /* GemBot+Movement.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246A15D3FE8A005B6289 /* GemBot+Movement.h */; };
+		36B5BE9515EFD8DB00A8A5A3 /* GemBot+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246C15D3FE8A005B6289 /* GemBot+Operations.h */; };
+		36B5BE9615EFD8DB00A8A5A3 /* GemBot+Reset.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7246E15D3FE8A005B6289 /* GemBot+Reset.h */; };
+		36B5BE9715EFD8DB00A8A5A3 /* GemBot+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247015D3FE8A005B6289 /* GemBot+Runtime.h */; };
+		36B5BE9815EFD8DB00A8A5A3 /* GemBot+Stats.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247215D3FE8A005B6289 /* GemBot+Stats.h */; };
+		36B5BE9915EFD8DB00A8A5A3 /* GemBot+SystemCalls.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247415D3FE8A005B6289 /* GemBot+SystemCalls.h */; };
+		36B5BE9A15EFD8DB00A8A5A3 /* GemBot.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247615D3FE8A005B6289 /* GemBot.h */; };
+		36B5BE9B15EFD8DB00A8A5A3 /* GemBot+Disassembly.h in Headers */ = {isa = PBXBuildFile; fileRef = 3627793815D7A4F40074B903 /* GemBot+Disassembly.h */; };
+		36B5BE9C15EFD8DB00A8A5A3 /* Explosion.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247915D3FE8A005B6289 /* Explosion.h */; };
+		36B5BE9D15EFD8DB00A8A5A3 /* Mine+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247B15D3FE8A005B6289 /* Mine+Interface.h */; };
+		36B5BE9E15EFD8DB00A8A5A3 /* Mine.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247D15D3FE8A005B6289 /* Mine.h */; };
+		36B5BE9F15EFD8DB00A8A5A3 /* Missile+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7247F15D3FE8A005B6289 /* Missile+Interface.h */; };
+		36B5BEA015EFD8DB00A8A5A3 /* Missile.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7248115D3FE8A005B6289 /* Missile.h */; };
+		36B5BEA115EFD8DB00A8A5A3 /* Scan.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7248315D3FE8A005B6289 /* Scan.h */; };
+		36B5BEA215EFD8DB00A8A5A3 /* Wall.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7248515D3FE8A005B6289 /* Wall.h */; };
+		36B5BEA315EFD8DB00A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7248815D3FE8A005B6289 /* PGBotNativeEngine+CheckForEndOfMatch.h */; };
+		36B5BEA415EFD8DB00A8A5A3 /* PGBotNativeEngine+CleanPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7248A15D3FE8A005B6289 /* PGBotNativeEngine+CleanPhase.h */; };
+		36B5BEA515EFD8DB00A8A5A3 /* PGBotNativeEngine+CollisionDetection.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7248C15D3FE8A005B6289 /* PGBotNativeEngine+CollisionDetection.h */; };
+		36B5BEA615EFD8DB00A8A5A3 /* PGBotNativeEngine+CommPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7248E15D3FE8A005B6289 /* PGBotNativeEngine+CommPhase.h */; };
+		36B5BEA715EFD8DB00A8A5A3 /* PGBotNativeEngine+DealDamage.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249015D3FE8A005B6289 /* PGBotNativeEngine+DealDamage.h */; };
+		36B5BEA815EFD8DB00A8A5A3 /* PGBotNativeEngine+Explosions.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249215D3FE8A005B6289 /* PGBotNativeEngine+Explosions.h */; };
+		36B5BEA915EFD8DB00A8A5A3 /* PGBotNativeEngine+GameManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249415D3FE8A005B6289 /* PGBotNativeEngine+GameManagement.h */; };
+		36B5BEAA15EFD8DB00A8A5A3 /* PGBotNativeEngine+Heat.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249615D3FE8A005B6289 /* PGBotNativeEngine+Heat.h */; };
+		36B5BEAB15EFD8DB00A8A5A3 /* PGBotNativeEngine+Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249815D3FE8A005B6289 /* PGBotNativeEngine+Interface.h */; };
+		36B5BEAC15EFD8DB00A8A5A3 /* PGBotNativeEngine+Movement.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249A15D3FE8A005B6289 /* PGBotNativeEngine+Movement.h */; };
+		36B5BEAD15EFD8DB00A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249C15D3FE8A005B6289 /* PGBotNativeEngine+RobotCPUPhase.h */; };
+		36B5BEAE15EFD8DB00A8A5A3 /* PGBotNativeEngine+RobotDeath.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7249E15D3FE8A005B6289 /* PGBotNativeEngine+RobotDeath.h */; };
+		36B5BEAF15EFD8DB00A8A5A3 /* PGBotNativeEngine+Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724A015D3FE8A005B6289 /* PGBotNativeEngine+Runtime.h */; };
+		36B5BEB015EFD8DB00A8A5A3 /* PGBotNativeEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724A215D3FE8A005B6289 /* PGBotNativeEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36B5BEB115EFD8DB00A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3606303115DF2AA800CFFE07 /* PGNativeEngine+RobotShutdownFromHeatPhase.h */; };
+		36B5BEB215EFD8DB00A8A5A3 /* CollideableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724A515D3FE8A005B6289 /* CollideableObject.h */; };
+		36B5BEB315EFD8DB00A8A5A3 /* RandomProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724A615D3FE8A005B6289 /* RandomProtocol.h */; };
+		36B5BEB415EFD8DB00A8A5A3 /* TangibleObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724A715D3FE8A005B6289 /* TangibleObject.h */; };
+		36B5BEB515EFD8DB00A8A5A3 /* EngineDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724A915D3FE8A005B6289 /* EngineDefinitions.h */; };
+		36B5BEB615EFD8DB00A8A5A3 /* EngineUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724AB15D3FE8A005B6289 /* EngineUtility.h */; };
+		36B5BEB715EFD8DB00A8A5A3 /* MoveableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724AD15D3FE8A005B6289 /* MoveableObject.h */; };
+		36B5BEB815EFD8DB00A8A5A3 /* OrientedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724AE15D3FE8A005B6289 /* OrientedObject.h */; };
+		36B5BEB915EFD8DB00A8A5A3 /* Random.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724AF15D3FE8A005B6289 /* Random.h */; };
+		36B5BEBA15EFD8DB00A8A5A3 /* TurretedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C724B115D3FE8A005B6289 /* TurretedObject.h */; };
+		36B5BEBB15EFD8DB00A8A5A3 /* gameparameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 3610650D15D18E0000117E33 /* gameparameters.h */; };
+		36B5BEBC15EFD8DB00A8A5A3 /* GameStateDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D99715C771FC003CCD2A /* GameStateDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36B5BEBD15EFD8DB00A8A5A3 /* PGBotEngineProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C3D99915C771FC003CCD2A /* PGBotEngineProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36B5BED015EFD9AD00A8A5A3 /* libSBJsonLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2B28B15DF5C3300DAB3DE /* libSBJsonLib.a */; };
 		36C724B215D3FE8A005B6289 /* CompileError.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245215D3FE8A005B6289 /* CompileError.h */; };
 		36C724B315D3FE8A005B6289 /* CompileError.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7245315D3FE8A005B6289 /* CompileError.m */; };
 		36C724B415D3FE8A005B6289 /* GemBot+BinaryCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 36C7245515D3FE8A005B6289 /* GemBot+BinaryCompiler.h */; };
@@ -154,6 +254,13 @@
 			remoteGlobalIDString = 36A2B29715DF5D9700DAB3DE;
 			remoteInfo = SBJsonLib;
 		};
+		36B5BE5A15EFD88E00A8A5A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 36A2B29715DF5D9700DAB3DE;
+			remoteInfo = SBJsonLib;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -181,6 +288,10 @@
 		3627793815D7A4F40074B903 /* GemBot+Disassembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GemBot+Disassembly.h"; sourceTree = "<group>"; };
 		3627793915D7A4F40074B903 /* GemBot+Disassembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GemBot+Disassembly.m"; sourceTree = "<group>"; };
 		369C5E9E15D0C18C002028C8 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = ../external/sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
+		36B5BE4A15EFD87E00A8A5A3 /* libGemBotStaticEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGemBotStaticEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		36B5BE4E15EFD87E00A8A5A3 /* GemBotStaticEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GemBotStaticEngine-Prefix.pch"; sourceTree = "<group>"; };
+		36B5BE4F15EFD87E00A8A5A3 /* GemBotStaticEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GemBotStaticEngine.h; sourceTree = "<group>"; };
+		36B5BE5015EFD87E00A8A5A3 /* GemBotStaticEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GemBotStaticEngine.m; sourceTree = "<group>"; };
 		36C3D95B15C74062003CCD2A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		36C3D95E15C74062003CCD2A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		36C3D95F15C74062003CCD2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -282,6 +393,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		36B5BE4715EFD87E00A8A5A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36B5BED015EFD9AD00A8A5A3 /* libSBJsonLib.a in Frameworks */,
+				36B5BE4B15EFD87E00A8A5A3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36FE1B0615CCE787003310F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,6 +448,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36B5BE4C15EFD87E00A8A5A3 /* GemBotStaticEngine */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BE4F15EFD87E00A8A5A3 /* GemBotStaticEngine.h */,
+				36B5BE5015EFD87E00A8A5A3 /* GemBotStaticEngine.m */,
+				36B5BE4D15EFD87E00A8A5A3 /* Supporting Files */,
+			);
+			path = GemBotStaticEngine;
+			sourceTree = "<group>";
+		};
+		36B5BE4D15EFD87E00A8A5A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36B5BE4E15EFD87E00A8A5A3 /* GemBotStaticEngine-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		36C3D94D15C74062003CCD2A = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +473,7 @@
 				3610650215D18DEA00117E33 /* gameparameters */,
 				36C3D99615C771FC003CCD2A /* include */,
 				369C5B6715D0C16D002028C8 /* external */,
+				36B5BE4C15EFD87E00A8A5A3 /* GemBotStaticEngine */,
 				36C3D95A15C74062003CCD2A /* Frameworks */,
 				36C3D95915C74062003CCD2A /* Products */,
 			);
@@ -344,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				36FE1B0915CCE787003310F0 /* GemBotEngine.bundle */,
+				36B5BE4A15EFD87E00A8A5A3 /* libGemBotStaticEngine.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -538,6 +678,66 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		36B5BE4815EFD87E00A8A5A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36B5BE8915EFD8DB00A8A5A3 /* CompileError.h in Headers */,
+				36B5BEB015EFD8DB00A8A5A3 /* PGBotNativeEngine.h in Headers */,
+				36B5BEBC15EFD8DB00A8A5A3 /* GameStateDescriptor.h in Headers */,
+				36B5BEBD15EFD8DB00A8A5A3 /* PGBotEngineProtocol.h in Headers */,
+				36B5BE8A15EFD8DB00A8A5A3 /* GemBot+BinaryCompiler.h in Headers */,
+				36B5BE8B15EFD8DB00A8A5A3 /* GemBot+Compiler.h in Headers */,
+				36B5BE8C15EFD8DB00A8A5A3 /* GemBot+SourceCodeCompiler.h in Headers */,
+				36B5BE8D15EFD8DB00A8A5A3 /* Opcode.h in Headers */,
+				36B5BE8E15EFD8DB00A8A5A3 /* GemBot+Collision.h in Headers */,
+				36B5BE8F15EFD8DB00A8A5A3 /* GemBot+Communication.h in Headers */,
+				36B5BE9015EFD8DB00A8A5A3 /* GemBot+Devices.h in Headers */,
+				36B5BE9115EFD8DB00A8A5A3 /* GemBot+Heat.h in Headers */,
+				36B5BE9215EFD8DB00A8A5A3 /* GemBot+Interface.h in Headers */,
+				36B5BE9315EFD8DB00A8A5A3 /* GemBot+Memory.h in Headers */,
+				36B5BE9415EFD8DB00A8A5A3 /* GemBot+Movement.h in Headers */,
+				36B5BE9515EFD8DB00A8A5A3 /* GemBot+Operations.h in Headers */,
+				36B5BE9615EFD8DB00A8A5A3 /* GemBot+Reset.h in Headers */,
+				36B5BE9715EFD8DB00A8A5A3 /* GemBot+Runtime.h in Headers */,
+				36B5BE9815EFD8DB00A8A5A3 /* GemBot+Stats.h in Headers */,
+				36B5BE9915EFD8DB00A8A5A3 /* GemBot+SystemCalls.h in Headers */,
+				36B5BE9A15EFD8DB00A8A5A3 /* GemBot.h in Headers */,
+				36B5BE9B15EFD8DB00A8A5A3 /* GemBot+Disassembly.h in Headers */,
+				36B5BE9C15EFD8DB00A8A5A3 /* Explosion.h in Headers */,
+				36B5BE9D15EFD8DB00A8A5A3 /* Mine+Interface.h in Headers */,
+				36B5BE9E15EFD8DB00A8A5A3 /* Mine.h in Headers */,
+				36B5BE9F15EFD8DB00A8A5A3 /* Missile+Interface.h in Headers */,
+				36B5BEA015EFD8DB00A8A5A3 /* Missile.h in Headers */,
+				36B5BEA115EFD8DB00A8A5A3 /* Scan.h in Headers */,
+				36B5BEA215EFD8DB00A8A5A3 /* Wall.h in Headers */,
+				36B5BEA315EFD8DB00A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.h in Headers */,
+				36B5BEA415EFD8DB00A8A5A3 /* PGBotNativeEngine+CleanPhase.h in Headers */,
+				36B5BEA515EFD8DB00A8A5A3 /* PGBotNativeEngine+CollisionDetection.h in Headers */,
+				36B5BEA615EFD8DB00A8A5A3 /* PGBotNativeEngine+CommPhase.h in Headers */,
+				36B5BEA715EFD8DB00A8A5A3 /* PGBotNativeEngine+DealDamage.h in Headers */,
+				36B5BEA815EFD8DB00A8A5A3 /* PGBotNativeEngine+Explosions.h in Headers */,
+				36B5BEA915EFD8DB00A8A5A3 /* PGBotNativeEngine+GameManagement.h in Headers */,
+				36B5BEAA15EFD8DB00A8A5A3 /* PGBotNativeEngine+Heat.h in Headers */,
+				36B5BEAB15EFD8DB00A8A5A3 /* PGBotNativeEngine+Interface.h in Headers */,
+				36B5BEAC15EFD8DB00A8A5A3 /* PGBotNativeEngine+Movement.h in Headers */,
+				36B5BEAD15EFD8DB00A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.h in Headers */,
+				36B5BEAE15EFD8DB00A8A5A3 /* PGBotNativeEngine+RobotDeath.h in Headers */,
+				36B5BEAF15EFD8DB00A8A5A3 /* PGBotNativeEngine+Runtime.h in Headers */,
+				36B5BEB115EFD8DB00A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.h in Headers */,
+				36B5BEB215EFD8DB00A8A5A3 /* CollideableObject.h in Headers */,
+				36B5BEB315EFD8DB00A8A5A3 /* RandomProtocol.h in Headers */,
+				36B5BEB415EFD8DB00A8A5A3 /* TangibleObject.h in Headers */,
+				36B5BEB515EFD8DB00A8A5A3 /* EngineDefinitions.h in Headers */,
+				36B5BEB615EFD8DB00A8A5A3 /* EngineUtility.h in Headers */,
+				36B5BEB715EFD8DB00A8A5A3 /* MoveableObject.h in Headers */,
+				36B5BEB815EFD8DB00A8A5A3 /* OrientedObject.h in Headers */,
+				36B5BEB915EFD8DB00A8A5A3 /* Random.h in Headers */,
+				36B5BEBA15EFD8DB00A8A5A3 /* TurretedObject.h in Headers */,
+				36B5BEBB15EFD8DB00A8A5A3 /* gameparameters.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36FE1B4C15CCE90F003310F0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -598,6 +798,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		36B5BE4915EFD87E00A8A5A3 /* GemBotStaticEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36B5BE5615EFD87E00A8A5A3 /* Build configuration list for PBXNativeTarget "GemBotStaticEngine" */;
+			buildPhases = (
+				36B5BE4615EFD87E00A8A5A3 /* Sources */,
+				36B5BE4715EFD87E00A8A5A3 /* Frameworks */,
+				36B5BE4815EFD87E00A8A5A3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36B5BE5B15EFD88E00A8A5A3 /* PBXTargetDependency */,
+			);
+			name = GemBotStaticEngine;
+			productName = GemBotStaticEngine;
+			productReference = 36B5BE4A15EFD87E00A8A5A3 /* libGemBotStaticEngine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		36FE1B0815CCE787003310F0 /* GemBotEngine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36FE1B1615CCE787003310F0 /* Build configuration list for PBXNativeTarget "GemBotEngine" */;
@@ -646,6 +864,7 @@
 			projectRoot = "";
 			targets = (
 				36FE1B0815CCE787003310F0 /* GemBotEngine */,
+				36B5BE4915EFD87E00A8A5A3 /* GemBotStaticEngine */,
 			);
 		};
 /* End PBXProject section */
@@ -704,6 +923,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		36B5BE4615EFD87E00A8A5A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36B5BE7A15EFD8B400A8A5A3 /* PGBotNativeEngine+CheckForEndOfMatch.m in Sources */,
+				36B5BE7B15EFD8B400A8A5A3 /* PGBotNativeEngine+CleanPhase.m in Sources */,
+				36B5BE7C15EFD8B400A8A5A3 /* PGBotNativeEngine+CollisionDetection.m in Sources */,
+				36B5BE7D15EFD8B400A8A5A3 /* PGBotNativeEngine+CommPhase.m in Sources */,
+				36B5BE7E15EFD8B400A8A5A3 /* PGBotNativeEngine+DealDamage.m in Sources */,
+				36B5BE7F15EFD8B400A8A5A3 /* PGBotNativeEngine+Explosions.m in Sources */,
+				36B5BE8015EFD8B400A8A5A3 /* PGBotNativeEngine+GameManagement.m in Sources */,
+				36B5BE8115EFD8B400A8A5A3 /* PGBotNativeEngine+Heat.m in Sources */,
+				36B5BE8215EFD8B400A8A5A3 /* PGBotNativeEngine+Interface.m in Sources */,
+				36B5BE8315EFD8B400A8A5A3 /* PGBotNativeEngine+Movement.m in Sources */,
+				36B5BE8415EFD8B400A8A5A3 /* PGBotNativeEngine+RobotCPUPhase.m in Sources */,
+				36B5BE8515EFD8B400A8A5A3 /* PGBotNativeEngine+RobotDeath.m in Sources */,
+				36B5BE8615EFD8B400A8A5A3 /* PGBotNativeEngine+Runtime.m in Sources */,
+				36B5BE8715EFD8B400A8A5A3 /* PGBotNativeEngine.m in Sources */,
+				36B5BE8815EFD8B400A8A5A3 /* PGNativeEngine+RobotShutdownFromHeatPhase.m in Sources */,
+				36B5BE5C15EFD89C00A8A5A3 /* CompileError.m in Sources */,
+				36B5BE5D15EFD89C00A8A5A3 /* GemBot+BinaryCompiler.m in Sources */,
+				36B5BE5E15EFD89C00A8A5A3 /* GemBot+Compiler.m in Sources */,
+				36B5BE5F15EFD89C00A8A5A3 /* GemBot+SourceCodeCompiler.m in Sources */,
+				36B5BE6015EFD89C00A8A5A3 /* Opcode.m in Sources */,
+				36B5BE6115EFD89C00A8A5A3 /* GemBot+Collision.m in Sources */,
+				36B5BE6215EFD89C00A8A5A3 /* GemBot+Communication.m in Sources */,
+				36B5BE6315EFD89C00A8A5A3 /* GemBot+Devices.m in Sources */,
+				36B5BE6415EFD89C00A8A5A3 /* GemBot+Heat.m in Sources */,
+				36B5BE6515EFD89C00A8A5A3 /* GemBot+Interface.m in Sources */,
+				36B5BE6615EFD89C00A8A5A3 /* GemBot+Memory.m in Sources */,
+				36B5BE6715EFD89C00A8A5A3 /* GemBot+Movement.m in Sources */,
+				36B5BE6815EFD89C00A8A5A3 /* GemBot+Operations.m in Sources */,
+				36B5BE6915EFD89C00A8A5A3 /* GemBot+Reset.m in Sources */,
+				36B5BE6A15EFD89C00A8A5A3 /* GemBot+Runtime.m in Sources */,
+				36B5BE6B15EFD89C00A8A5A3 /* GemBot+Stats.m in Sources */,
+				36B5BE6C15EFD89C00A8A5A3 /* GemBot+SystemCalls.m in Sources */,
+				36B5BE6D15EFD89C00A8A5A3 /* GemBot.m in Sources */,
+				36B5BE6E15EFD89C00A8A5A3 /* GemBot+Disassembly.m in Sources */,
+				36B5BE6F15EFD89C00A8A5A3 /* Explosion.m in Sources */,
+				36B5BE7015EFD89C00A8A5A3 /* Mine+Interface.m in Sources */,
+				36B5BE7115EFD89C00A8A5A3 /* Mine.m in Sources */,
+				36B5BE7215EFD89C00A8A5A3 /* Missile+Interface.m in Sources */,
+				36B5BE7315EFD89C00A8A5A3 /* Missile.m in Sources */,
+				36B5BE7415EFD89C00A8A5A3 /* Scan.m in Sources */,
+				36B5BE7515EFD89C00A8A5A3 /* Wall.m in Sources */,
+				36B5BE7615EFD89C00A8A5A3 /* EngineDefinitions.m in Sources */,
+				36B5BE7715EFD89C00A8A5A3 /* EngineUtility.m in Sources */,
+				36B5BE7815EFD89C00A8A5A3 /* Random.m in Sources */,
+				36B5BE7915EFD89C00A8A5A3 /* gameparameters.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36FE1B0515CCE787003310F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -764,9 +1035,36 @@
 			name = SBJsonLib;
 			targetProxy = 36A2B28C15DF5C3C00DAB3DE /* PBXContainerItemProxy */;
 		};
+		36B5BE5B15EFD88E00A8A5A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SBJsonLib;
+			targetProxy = 36B5BE5A15EFD88E00A8A5A3 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		36B5BE5715EFD87E00A8A5A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GemBotStaticEngine/GemBotStaticEngine-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		36B5BE5815EFD87E00A8A5A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GemBotStaticEngine/GemBotStaticEngine-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		36C3D96715C74062003CCD2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -855,6 +1153,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		36B5BE5615EFD87E00A8A5A3 /* Build configuration list for PBXNativeTarget "GemBotStaticEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36B5BE5715EFD87E00A8A5A3 /* Debug */,
+				36B5BE5815EFD87E00A8A5A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		36C3D95215C74062003CCD2A /* Build configuration list for PBXProject "GemBotEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

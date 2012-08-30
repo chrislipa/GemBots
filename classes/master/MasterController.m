@@ -139,7 +139,7 @@ MasterController* staticMasterController = nil;
     errorWindows = [[NSMutableDictionary alloc] init];
     battleDocuments = [[NSMutableSet alloc] init];
     referenceCountsToRobotURLs = [NSMutableDictionary dictionary];
-    [self loadEngine];
+    //[self loadEngine];
     NSError* error;
     [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay: YES error: &error];
 }

@@ -14,6 +14,7 @@
 #import "MasterController.h"
 #import "BattleDocumentViewController+BattleManager.h"
 #import <AVFoundation/AVFoundation.h>
+#import "PGBotNativeEngine.h"
 
 @interface BattleDocumentViewController ()
 
@@ -35,8 +36,9 @@
     if (self) {
         // Initialization code here.
         robots = [NSMutableArray array];
-        Class c = NSClassFromString(@"PGBotNativeEngine");
-        engine = [[c alloc] init];
+        //Class c = NSClassFromString(@"PGBotNativeEngine");
+        //engine = [[c alloc] init];
+        engine = [[PGBotNativeEngine alloc] init];
         editors = [[NSMutableArray alloc] init];
         robotCellViewControllers = [[NSMutableDictionary alloc] init];
         teamTitles = [NSMutableArray array];
