@@ -272,11 +272,11 @@ MasterController* staticMasterController = nil;
 }
 
 -(IBAction)gemBotsHelp:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://gembots.com"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://gemrobotgame.appspot.com/"]];
 }
 
 -(IBAction)gemBotsRules:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://gembots.pocketgems.com/rules"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://gemrobotgame.appspot.com/rules.html"]];
 }
 
 @end
