@@ -6,3 +6,4 @@ build
 *.xcuserdata
 *.xcuserstate
 *.xcbkptlist
+/gitcommit.txt
