@@ -2,23 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleIconFile</key>
-	<string>icon_512x512</string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>icon_16x16</string>
-		<string>icon_16x16@2x</string>
-		<string>icon_32x32</string>
-		<string>icon_32x32@2x</string>
-		<string>icon_64x64</string>
-		<string>icon_6464@2x</string>
-		<string>icon_128x128</string>
-		<string>icon_128x128@2x</string>
-		<string>icon_256x256</string>
-		<string>icon_256x256@2x</string>
-		<string>icon_512x512</string>
-		<string>icon_512x521@2x</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -60,8 +43,10 @@
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>icon</string>
 	<key>CFBundleIdentifier</key>
-	<string>77Z6VRW545.com.chrislipa.gembots</string>
+	<string>com.chrislipa.gembots</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
