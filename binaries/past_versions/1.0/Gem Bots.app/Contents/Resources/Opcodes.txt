@@ -1,0 +1,56 @@
+0 1 nop
+1 -1 delay R
+2 1 add L R
+3 1 sub L R
+4 1 inc L
+5 1 dec L
+6 10 mpy L R
+7 10 div L R
+8 10 mod L R
+9 1 sll L R
+10 1 slr L R
+11 1 sar L R
+12 1 rl L R
+13 1 rr L R
+14 2 swap L L
+15 1 mov L R
+16 2 addr L L
+17 2 get L R
+18 2 put L R
+19 1 or L R
+20 1 and L R
+21 1 xor L R
+22 1 not L
+23 1 neg L
+24 1 cmp R R
+25 2 test R R
+26 1 jump R
+27 -2 jle R
+28 -2 jlt R
+29 -2 jeq R
+30 -2 jne R
+31 -2 jgt R
+32 -2 jge R
+33 -2 jz R
+34 -2 jnz R
+35 1 push R
+36 1 pop L
+37 -3 syscall R
+38 -4 rd R L
+39 -5 wr R R
+40 1 call R
+41 1 return returnI
+42 1 do R doI
+43 1 loop R loopI
+44 -6 movb0 L R
+45 -6 movb1 L R
+46 -6 movb2 L R
+47 -6 movb3 L R
+48 -6 movs0 L R
+49 -6 movs1 L R
+50 0 logv R logvalue
+51 0 log S
+52 0 logf R S
+53 1 invalidopcode
+
+ 
