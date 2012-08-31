@@ -39,6 +39,12 @@
     
     [version setStringValue:[NSString stringWithFormat:@"Version %@",v]];
     
+    NSString *resourcesPath = [[NSBundle mainBundle] resourcePath];
+    NSString* pathToGitCommit = [resourcesPath stringByAppendingPathComponent:@"gitcommit.txt"];
+    NSString* gitCommitSha = [NSString stringWithContentsOfFile:pathToGitCommit encoding:NSUTF8StringEncoding error:nil];
+    
+    [gitcommit setStringValue:[NSString stringWithFormat:@"Build %@",[gitCommitSha substringToIndex:6]]];
+    
     
     //[link setAllowsEditingTextAttributes: YES];
     [link setSelectable: YES];
@@ -55,5 +61,9 @@
 }
 -(IBAction) licenseCallback:(id)sender {
      [[MasterController singleton] displayLicenseWindow];
+}
+
+-(IBAction) helpCallback:(id)sender {
+    [[MasterController singleton] gemBotsHelp:sender];
 }
 @end

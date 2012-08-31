@@ -11,6 +11,9 @@
 		3606303B15DF45E000CFFE07 /* gembotscript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3606303A15DF45E000CFFE07 /* gembotscript.m */; };
 		3608927F15BE876D00A06C94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3608927E15BE876D00A06C94 /* Cocoa.framework */; };
 		361096F415F049E8003B965B /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 361096F315F049E8003B965B /* icon.icns */; };
+		3610972715F04F1C003B965B /* gitcommit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610972615F04F1C003B965B /* gitcommit.txt */; };
+		3610972A15F04F69003B965B /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 3610972815F04F69003B965B /* icon_512x512.png */; };
+		3610972B15F04F69003B965B /* icon_512x512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3610972915F04F69003B965B /* icon_512x512@2x.png */; };
 		3627793E15D7C6100074B903 /* BlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793D15D7C6100074B903 /* BlackView.m */; };
 		3627794115D862E00074B903 /* skull200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3627793F15D862E00074B903 /* skull200@2x.png */; };
 		3627794215D862E00074B903 /* skull200.png in Resources */ = {isa = PBXBuildFile; fileRef = 3627794015D862E00074B903 /* skull200.png */; };
@@ -207,6 +210,9 @@
 		360892BC15BE876D00A06C94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		360892BE15BE876D00A06C94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		361096F315F049E8003B965B /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = resources/images/appicon/icon.icns; sourceTree = SOURCE_ROOT; };
+		3610972615F04F1C003B965B /* gitcommit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitcommit.txt; sourceTree = "<group>"; };
+		3610972815F04F69003B965B /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_512x512.png; path = appicon/icon_512x512.png; sourceTree = "<group>"; };
+		3610972915F04F69003B965B /* icon_512x512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_512x512@2x.png"; path = "appicon/icon_512x512@2x.png"; sourceTree = "<group>"; };
 		3627793C15D7C6100074B903 /* BlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackView.h; path = debugger/BlackView.h; sourceTree = "<group>"; };
 		3627793D15D7C6100074B903 /* BlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackView.m; path = debugger/BlackView.m; sourceTree = "<group>"; };
 		3627793F15D862E00074B903 /* skull200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull200@2x.png"; sourceTree = "<group>"; };
@@ -647,6 +653,7 @@
 		362A921B15D0B75200E2817F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3610972615F04F1C003B965B /* gitcommit.txt */,
 				366F93D615E099F500AAB479 /* LICENSE.md */,
 				366F93D715E099F500AAB479 /* README.md */,
 				366F93D815E099F500AAB479 /* CREDITS.md */,
@@ -664,6 +671,8 @@
 		362A922415D0B75200E2817F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3610972815F04F69003B965B /* icon_512x512.png */,
+				3610972915F04F69003B965B /* icon_512x512@2x.png */,
 				362A924315D0B75200E2817F /* Icons */,
 			);
 			path = images;
@@ -983,6 +992,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 360892D415BE876D00A06C94 /* Build configuration list for PBXNativeTarget "Gem Bots" */;
 			buildPhases = (
+				3610972515F04EFD003B965B /* ShellScript */,
 				3608927615BE876D00A06C94 /* Sources */,
 				3608927715BE876D00A06C94 /* Frameworks */,
 				3608927815BE876D00A06C94 /* Resources */,
@@ -1121,10 +1131,29 @@
 				36B5BECB15EFD97500A8A5A3 /* Opcodes.txt in Resources */,
 				36B5BECC15EFD97500A8A5A3 /* SystemCalls.txt in Resources */,
 				361096F415F049E8003B965B /* icon.icns in Resources */,
+				3610972715F04F1C003B965B /* gitcommit.txt in Resources */,
+				3610972A15F04F69003B965B /* icon_512x512.png in Resources */,
+				3610972B15F04F69003B965B /* icon_512x512@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3610972515F04EFD003B965B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python scripts/gitcommit.py";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3608927615BE876D00A06C94 /* Sources */ = {
