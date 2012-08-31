@@ -4,25 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Gem Bots.xcscheme</key>
+		<key>iGem Bot.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>iGem Bots.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3608927915BE876D00A06C94</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3610972F15F067ED003B965B</key>
+		<key>3668628815F0692600EE9D83</key>
 		<dict>
 			<key>primary</key>
 			<true/>

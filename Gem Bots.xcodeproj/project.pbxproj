@@ -14,6 +14,15 @@
 		3610972715F04F1C003B965B /* gitcommit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3610972615F04F1C003B965B /* gitcommit.txt */; };
 		3610972A15F04F69003B965B /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 3610972815F04F69003B965B /* icon_512x512.png */; };
 		3610972B15F04F69003B965B /* icon_512x512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3610972915F04F69003B965B /* icon_512x512@2x.png */; };
+		3610973315F067ED003B965B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3610973215F067ED003B965B /* UIKit.framework */; };
+		3610973415F067ED003B965B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360892BE15BE876D00A06C94 /* Foundation.framework */; };
+		3610973615F067ED003B965B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3610973515F067ED003B965B /* CoreGraphics.framework */; };
+		3610973C15F067ED003B965B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3610973A15F067ED003B965B /* InfoPlist.strings */; };
+		3610973E15F067ED003B965B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610973D15F067ED003B965B /* main.m */; };
+		3610974215F067ED003B965B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610974115F067ED003B965B /* AppDelegate.m */; };
+		3610974515F067ED003B965B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3610974415F067ED003B965B /* ViewController.m */; };
+		3610974815F067ED003B965B /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3610974615F067ED003B965B /* ViewController_iPhone.xib */; };
+		3610974B15F067ED003B965B /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3610974915F067ED003B965B /* ViewController_iPad.xib */; };
 		3627793E15D7C6100074B903 /* BlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627793D15D7C6100074B903 /* BlackView.m */; };
 		3627794115D862E00074B903 /* skull200@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3627793F15D862E00074B903 /* skull200@2x.png */; };
 		3627794215D862E00074B903 /* skull200.png in Resources */ = {isa = PBXBuildFile; fileRef = 3627794015D862E00074B903 /* skull200.png */; };
@@ -213,6 +222,19 @@
 		3610972615F04F1C003B965B /* gitcommit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitcommit.txt; sourceTree = "<group>"; };
 		3610972815F04F69003B965B /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_512x512.png; path = appicon/icon_512x512.png; sourceTree = "<group>"; };
 		3610972915F04F69003B965B /* icon_512x512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_512x512@2x.png"; path = "appicon/icon_512x512@2x.png"; sourceTree = "<group>"; };
+		3610973015F067ED003B965B /* iGem Bots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iGem Bots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3610973215F067ED003B965B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3610973515F067ED003B965B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		3610973915F067ED003B965B /* iGem Bots-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iGem Bots-Info.plist"; sourceTree = "<group>"; };
+		3610973B15F067ED003B965B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3610973D15F067ED003B965B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3610973F15F067ED003B965B /* iGem Bots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iGem Bots-Prefix.pch"; sourceTree = "<group>"; };
+		3610974015F067ED003B965B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3610974115F067ED003B965B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3610974315F067ED003B965B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3610974415F067ED003B965B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3610974715F067ED003B965B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		3610974A15F067ED003B965B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		3627793C15D7C6100074B903 /* BlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlackView.h; path = debugger/BlackView.h; sourceTree = "<group>"; };
 		3627793D15D7C6100074B903 /* BlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlackView.m; path = debugger/BlackView.m; sourceTree = "<group>"; };
 		3627793F15D862E00074B903 /* skull200@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skull200@2x.png"; sourceTree = "<group>"; };
@@ -458,12 +480,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3610972D15F067ED003B965B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3610973315F067ED003B965B /* UIKit.framework in Frameworks */,
+				3610973415F067ED003B965B /* Foundation.framework in Frameworks */,
+				3610973615F067ED003B965B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3608926F15BE876D00A06C94 = {
 			isa = PBXGroup;
 			children = (
+				3610974F15F0680D003B965B /* iOS */,
 				36B5BED115EFDA6600A8A5A3 /* engine */,
 				36B5BEBF15EFD95C00A8A5A3 /* compileconfig */,
 				36B5BE0F15EF542D00A8A5A3 /* samplebots */,
@@ -477,6 +510,7 @@
 				362A921B15D0B75200E2817F /* resources */,
 				362A924E15D0B75200E2817F /* include */,
 				36C1914715D0BC4400A79D5F /* external */,
+				3610973715F067ED003B965B /* iGem Bots */,
 				3608927D15BE876D00A06C94 /* Frameworks */,
 				3608927B15BE876D00A06C94 /* Products */,
 			);
@@ -486,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				3608927A15BE876D00A06C94 /* Gem Bots.app */,
+				3610973015F067ED003B965B /* iGem Bots.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -502,6 +537,8 @@
 				360892BA15BE876D00A06C94 /* CoreFoundation.framework */,
 				360892BC15BE876D00A06C94 /* CoreData.framework */,
 				360892BE15BE876D00A06C94 /* Foundation.framework */,
+				3610973215F067ED003B965B /* UIKit.framework */,
+				3610973515F067ED003B965B /* CoreGraphics.framework */,
 				3608928015BE876D00A06C94 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -515,6 +552,38 @@
 				3608928315BE876D00A06C94 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		3610973715F067ED003B965B /* iGem Bots */ = {
+			isa = PBXGroup;
+			children = (
+				3610974015F067ED003B965B /* AppDelegate.h */,
+				3610974115F067ED003B965B /* AppDelegate.m */,
+				3610974315F067ED003B965B /* ViewController.h */,
+				3610974415F067ED003B965B /* ViewController.m */,
+				3610974615F067ED003B965B /* ViewController_iPhone.xib */,
+				3610974915F067ED003B965B /* ViewController_iPad.xib */,
+				3610973815F067ED003B965B /* Supporting Files */,
+			);
+			path = "iGem Bots";
+			sourceTree = "<group>";
+		};
+		3610973815F067ED003B965B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3610973915F067ED003B965B /* iGem Bots-Info.plist */,
+				3610973A15F067ED003B965B /* InfoPlist.strings */,
+				3610973D15F067ED003B965B /* main.m */,
+				3610973F15F067ED003B965B /* iGem Bots-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3610974F15F0680D003B965B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		362A91DE15D0B75200E2817F /* classes */ = {
@@ -1007,6 +1076,23 @@
 			productReference = 3608927A15BE876D00A06C94 /* Gem Bots.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3610972F15F067ED003B965B /* iGem Bots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3610974C15F067ED003B965B /* Build configuration list for PBXNativeTarget "iGem Bots" */;
+			buildPhases = (
+				3610972C15F067ED003B965B /* Sources */,
+				3610972D15F067ED003B965B /* Frameworks */,
+				3610972E15F067ED003B965B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iGem Bots";
+			productName = "iGem Bots";
+			productReference = 3610973015F067ED003B965B /* iGem Bots.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1034,6 +1120,7 @@
 			projectRoot = "";
 			targets = (
 				3608927915BE876D00A06C94 /* Gem Bots */,
+				3610972F15F067ED003B965B /* iGem Bots */,
 			);
 		};
 /* End PBXProject section */
@@ -1134,6 +1221,16 @@
 				3610972715F04F1C003B965B /* gitcommit.txt in Resources */,
 				3610972A15F04F69003B965B /* icon_512x512.png in Resources */,
 				3610972B15F04F69003B965B /* icon_512x512@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3610972E15F067ED003B965B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3610973C15F067ED003B965B /* InfoPlist.strings in Resources */,
+				3610974815F067ED003B965B /* ViewController_iPhone.xib in Resources */,
+				3610974B15F067ED003B965B /* ViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1245,6 +1342,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3610972C15F067ED003B965B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3610973E15F067ED003B965B /* main.m in Sources */,
+				3610974215F067ED003B965B /* AppDelegate.m in Sources */,
+				3610974515F067ED003B965B /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1256,6 +1363,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3610973A15F067ED003B965B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3610973B15F067ED003B965B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3610974615F067ED003B965B /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3610974715F067ED003B965B /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		3610974915F067ED003B965B /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3610974A15F067ED003B965B /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
 		362A921D15D0B75200E2817F /* BattleDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1380,6 +1511,52 @@
 			};
 			name = Release;
 		};
+		3610974D15F067ED003B965B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iGem Bots/iGem Bots-Prefix.pch";
+				INFOPLIST_FILE = "iGem Bots/iGem Bots-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3610974E15F067ED003B965B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iGem Bots/iGem Bots-Prefix.pch";
+				INFOPLIST_FILE = "iGem Bots/iGem Bots-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1400,6 +1577,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3610974C15F067ED003B965B /* Build configuration list for PBXNativeTarget "iGem Bots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3610974D15F067ED003B965B /* Debug */,
+				3610974E15F067ED003B965B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
