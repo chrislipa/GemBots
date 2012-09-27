@@ -141,19 +141,21 @@
 
 
 -(int) computeSonarFromBot:(GemBot*)bot {
-    unit internal_rv = -1;
+    int internal_rv = -1;
+    unit closest_distance = -1;
     for (GemBot* g in robots) {
         if ([g isAlive] && g != bot) {
             int distance = distance_between(g, bot);
             if (distance <= SONAR_RADIUS) {
                 [g notifyOfDetectionByOtherRobot];
-                if (distance < internal_rv || internal_rv == -1) {
-                    internal_rv = distance;
+                if (distance < closest_distance || closest_distance == -1) {
+                    internal_rv = heading(bot, g);
+                    closest_distance = distance;
                 }
             }
         }
     }
-    if (internal_rv >= 0){
+    if (closest_distance >= 0){
         [bot setScanTargetData];
     }
     if (!headlessMode) {
@@ -165,7 +167,7 @@
         [self addScan:scan];
     }
     
-    return internal_rv==-1?-1:roundInternalDistanceToDistance(internal_rv);
+    return internal_rv;
 }
 
 
