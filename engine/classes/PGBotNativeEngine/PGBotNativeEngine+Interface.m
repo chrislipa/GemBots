@@ -16,6 +16,9 @@
 #import "GemBot+Communication.h"
 #import "GemBot+Stats.h"
 #include "stdlib.h"
+#import "Random.h"
+#import "gameparameters.h"
+
 @implementation PGBotNativeEngine (Interface)
 -(int) numberOfRobotsAlive {
     int count = 0;
@@ -149,7 +152,7 @@
             if (distance <= SONAR_RADIUS) {
                 [g notifyOfDetectionByOtherRobot];
                 if (distance < closest_distance || closest_distance == -1) {
-                    internal_rv = heading(bot, g);
+                    internal_rv = heading(bot, g) ;
                     closest_distance = distance;
                 }
             }
@@ -166,8 +169,7 @@
         scan.isWholeCircle = (bot.scan_arc_width >= 256);
         [self addScan:scan];
     }
-    
-    return internal_rv;
+    return internal_rv==-1?-1:(internal_rv + [random randomIntInInclusiveRange:-SONAR_INACCURACY:SONAR_INACCURACY]);
 }
 
 
