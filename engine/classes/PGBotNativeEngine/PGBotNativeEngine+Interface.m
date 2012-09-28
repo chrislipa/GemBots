@@ -148,8 +148,9 @@
     unit closest_distance = -1;
     for (GemBot* g in robots) {
         if ([g isAlive] && g != bot) {
-            int distance = distance_between(g, bot);
-            if (distance <= SONAR_RADIUS) {
+            int internal_distance = internal_distance_between(g, bot);
+            int distance = roundInternalDistanceToDistance(internal_distance);
+            if (distance <= bot.internalScanRadius) {
                 [g notifyOfDetectionByOtherRobot];
                 if (distance < closest_distance || closest_distance == -1) {
                     internal_rv = heading(bot, g) ;

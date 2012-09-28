@@ -26,7 +26,7 @@ const unit speedPercentageMultiplierFromHeat[5][2];
 const unit damagePerTurnFromHeat[6][2];
 
 
-#define SONAR_INACCURACY 32
+#define SONAR_INACCURACY 16
 
 
 unit indexInto(const unit a[][2], unit v);
