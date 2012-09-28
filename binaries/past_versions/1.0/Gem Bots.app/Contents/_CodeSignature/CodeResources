@@ -218,6 +218,13 @@
 			<key>weight</key>
 			<real>1100</real>
 		</dict>
+		<key>^_MASReceipt/</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
 		<key>^version.plist$</key>
 		<true/>
 	</dict>

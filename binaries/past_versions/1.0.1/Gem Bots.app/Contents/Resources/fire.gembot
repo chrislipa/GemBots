@@ -1,0 +1,22 @@
+#name "Circularity"
+#author "chris"
+top:
+
+wr throttle 100
+wr steer 8
+rd random ax
+wr turret_heading ax
+rd thermometer ax
+cmp ax 100
+jge waste
+wr fire_missile
+
+jump top:
+
+waste:
+delay 4
+rd random ax
+and ax 1
+delay ax
+jump top:
+
