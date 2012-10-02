@@ -27,8 +27,25 @@
     
 }
 
--(void) refreshForRecompile {
+-(NSFont*) font {
     NSFont* font = [NSFont fontWithName:@"CONSOLAS" size:14.0];
+    if (font) {
+        return font;
+    }
+    font = [NSFont fontWithName:@"MONACO" size:13];
+    if (font) {
+        return font;
+    }
+    font = [NSFont fontWithName:@"COURIER" size:13];
+    if (font) {
+        return font;
+    }
+    font = [NSFont systemFontOfSize:14.0];
+    return font;
+}
+
+-(void) refreshForRecompile {
+    NSFont* font = [self font];
     NSColor* color = [NSColor colorWithDeviceRed:(3.0*16.0+4.0)/255.0 green:(14.0*16.0+15.0)/255.0 blue:(2.0*16.0+8.0)/255.0 alpha:1.0 ];
     
     
@@ -165,10 +182,16 @@
     [sourceCode setString:str];
 }
 -(void) setFonts {
-    NSFont* font = [NSFont fontWithName:@"CONSOLAS" size:14.0];
+        NSFont* font = [self font];
+    
     NSColor* color = [NSColor colorWithDeviceRed:(3.0*16.0+4.0)/255.0 green:(14.0*16.0+15.0)/255.0 blue:(2.0*16.0+8.0)/255.0 alpha:1.0 ];
-    [registers setFont:font];
+    
+    if (font) {
+        [registers setFont:font];
+    }
+    
     [registers setTextColor:color];
+    
     [namedMemoryLocations setFont:font];
     [namedMemoryLocations setTextColor:color];
     [sourceCode setFont:font];
@@ -217,7 +240,7 @@ NSString* sizeTo10(NSString* s) {
 -(NSTextField*) variableCell:(NSInteger) row {
     
     
-    NSFont* font = [NSFont fontWithName:@"CONSOLAS" size:14.0];
+        NSFont* font = [self font];
     NSColor* color = [NSColor colorWithDeviceRed:(3.0*16.0+4.0)/255.0 green:(14.0*16.0+15.0)/255.0 blue:(2.0*16.0+8.0)/255.0 alpha:1.0 ];
 
     NSTextField* v = [[NSTextField alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
