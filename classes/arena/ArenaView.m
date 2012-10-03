@@ -48,7 +48,7 @@ double convert_angle_to_degrees(int hexangle) {
 
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
-    #define ROBOT_RADIUS 2
+    #define ROBOT_RADIUS 6
     double botscale_scale =  ROBOT_RADIUS/2.0;
     //double turretscale_scale = 1;
     
@@ -105,8 +105,8 @@ double convert_angle_to_degrees(int hexangle) {
     
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
-    float width = 0.3;
-    float height = [missile internal_speed]/2.0 ;
+    float width = 0.6;
+    float height = [missile internal_speed]/1.0 ;
     glVertex2f(width, height);
     glVertex2f(width, -height);
     glVertex2f(-width, -height);
