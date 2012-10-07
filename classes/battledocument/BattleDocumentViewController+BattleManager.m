@@ -331,7 +331,13 @@
 }
 
 -(void) battleStepRobots:(NSArray*) robotsToStep {
-    [engine stepGameCycle:robotsToStep];
+    bool successStepping = [engine stepGameCycle:robotsToStep];
+    if (!successStepping) {
+        [self stopBattleLoop];
+        [self setBattleState:nobattle];
+        [self setStartRunError:@"Not enough room to place robots!"];
+        return;
+    }
     currentGameStateDescription = [engine currentGameStateDescription];
     if (graphicsEnabled) {
         

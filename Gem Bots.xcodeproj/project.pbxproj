@@ -151,6 +151,7 @@
 		36B5BF6B15EFDA8400A8A5A3 /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF3615EFDA8400A8A5A3 /* Random.m */; };
 		36B5BF6F15EFDA8400A8A5A3 /* gameparameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B5BF3D15EFDA8400A8A5A3 /* gameparameters.m */; };
 		36B5BF7215EFDAA200A8A5A3 /* libSBJsonLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2B29115DF5C6400DAB3DE /* libSBJsonLib.a */; };
+		36BC8C5E161CA133002D975C /* PGBotEngineRules.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BC8C5D161CA133002D975C /* PGBotEngineRules.m */; };
 		36C1914615D0B8A600A79D5F /* Gem Bots.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */; };
 		36C7F87115D8A74E00DD1A75 /* laser3-lipa-modified.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F87015D8A74E00DD1A75 /* laser3-lipa-modified.caf */; };
 		36C7F8A115D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf in Resources */ = {isa = PBXBuildFile; fileRef = 36C7F8A015D8B59E00DD1A75 /* 21410_21830-lq-short-lipa.caf */; };
@@ -458,6 +459,8 @@
 		36B5BF3C15EFDA8400A8A5A3 /* gameparameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameparameters.h; sourceTree = "<group>"; };
 		36B5BF3D15EFDA8400A8A5A3 /* gameparameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameparameters.m; sourceTree = "<group>"; };
 		36B5BF7415EFDB6300A8A5A3 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = external/sbjson/Classes/SBJson.h; sourceTree = "<group>"; };
+		36BC8C5C161CA133002D975C /* PGBotEngineRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGBotEngineRules.h; path = rules/PGBotEngineRules.h; sourceTree = "<group>"; };
+		36BC8C5D161CA133002D975C /* PGBotEngineRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGBotEngineRules.m; path = rules/PGBotEngineRules.m; sourceTree = "<group>"; };
 		36C1914515D0B8A600A79D5F /* Gem Bots.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Gem Bots.entitlements"; sourceTree = "<group>"; };
 		36C1914815D0BC6500A79D5F /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = external/sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
 		36C7F87015D8A74E00DD1A75 /* laser3-lipa-modified.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "laser3-lipa-modified.caf"; sourceTree = "<group>"; };
@@ -868,6 +871,7 @@
 		36B5BED215EFDA8400A8A5A3 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				36BC8C5B161CA10B002D975C /* Rules */,
 				36B5BED315EFDA8400A8A5A3 /* compileerror */,
 				36B5BED615EFDA8400A8A5A3 /* compiler */,
 				36B5BEDF15EFDA8400A8A5A3 /* GemBot */,
@@ -1031,6 +1035,15 @@
 			);
 			name = gameparameters;
 			path = engine/gameparameters;
+			sourceTree = "<group>";
+		};
+		36BC8C5B161CA10B002D975C /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				36BC8C5C161CA133002D975C /* PGBotEngineRules.h */,
+				36BC8C5D161CA133002D975C /* PGBotEngineRules.m */,
+			);
+			name = Rules;
 			sourceTree = "<group>";
 		};
 		36C1914715D0BC4400A79D5F /* external */ = {
@@ -1339,6 +1352,7 @@
 				36B5BF6A15EFDA8400A8A5A3 /* EngineUtility.m in Sources */,
 				36B5BF6B15EFDA8400A8A5A3 /* Random.m in Sources */,
 				36B5BF6F15EFDA8400A8A5A3 /* gameparameters.m in Sources */,
+				36BC8C5E161CA133002D975C /* PGBotEngineRules.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

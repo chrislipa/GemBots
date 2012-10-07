@@ -11,7 +11,7 @@
 @interface PGBotNativeEngine (GameManagement)
 -(void) resetAllRobotsForNextRound;
 -(void) giveRandomIDsToRobots ;
--(void) placeRobotsInRandomPositionsAndHeadings;
--(void) startNewMatchInternal;
+-(bool) placeRobotsInRandomPositionsAndHeadings;
+-(bool) startNewMatchInternal;
 -(void) giveCreditForWinsAndLosses;
 @end

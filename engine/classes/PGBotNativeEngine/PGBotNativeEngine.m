@@ -24,6 +24,7 @@
 @synthesize maxGameCycles;
 @synthesize headlessMode;
 @synthesize mines;
+@synthesize rules;
 
 -(void) testSelector:(SEL) sel {
     GemBot* gem = [[GemBot alloc] init];
@@ -52,6 +53,7 @@
 }
 -(id) init {
     if  (self = [super init]) {
+        rules = [[PGBotEngineRules alloc] initWithStandardRules];
         random = [[Random alloc] init];
 
         externalOrderingOfRobots = [NSMutableArray array];
@@ -148,8 +150,8 @@
     }
 }
 
--(void) startNewMatch {
-    [self startNewMatchInternal];
+-(bool) startNewMatch {
+    return [self startNewMatchInternal];
 }
 
 -(void) endMatch {
@@ -163,19 +165,31 @@
     }
     
 }
+-(void) notifyOfCollisionThisRound {
+    hadCollisionThisRound = YES;
+}
 
--(void) stepGameCycle:(NSArray*) trace {
+-(bool) stepGameCycle:(NSArray*) trace {
     int numberOfTimesLooped = 0;
 top_of_step_game_cycle:;
     bool didFinishInstruction = NO;
     if (gameCycleStatePosition==0) {
         gameCycleStatePosition = 1;
-        if (hasSetEnded || !hasSetStarted) {gameCycleStatePosition=0;gameCycleStateCPUCyclesExecuted=0; gameCycleStateRuntimePosition=0;return;}
+        if (hasSetEnded || !hasSetStarted) {gameCycleStatePosition=0;gameCycleStateCPUCyclesExecuted=0; gameCycleStateRuntimePosition=0;return YES;}
         
     }
     if (gameCycleStatePosition ==1) {
         gameCycleStatePosition = 2;
-        if (!isThisSetInitiated) { gameCycleStatePosition=0;gameCycleStateCPUCyclesExecuted=0;gameCycleStateRuntimePosition=0;[self startNewMatch]; return;}
+        if (!isThisSetInitiated) {
+            gameCycleStatePosition=0;
+            gameCycleStateCPUCyclesExecuted=0;
+            gameCycleStateRuntimePosition=0;
+            bool successStartingMatch = [self startNewMatch];
+            if (!successStartingMatch) {
+                return NO;
+            }
+            return YES;
+        }
     }
     
     if (gameCycleStatePosition==2) {
@@ -201,7 +215,7 @@ top_of_step_game_cycle:;
         numberOfTimesLooped++;
         goto top_of_step_game_cycle;
     }
-    
+    return YES;
     
 }
 

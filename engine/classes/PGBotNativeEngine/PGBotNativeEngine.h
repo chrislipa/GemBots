@@ -13,10 +13,16 @@
 #import "GameStateDescriptor.h"
 #import "Scan.h"
 #import "Explosion.h"
+#import "PGBotEngineRules.h"
 @class Scan;
 @class Explosion;
 @class GemBot;
 @interface PGBotNativeEngine : NSObject <PGBotEngineProtocol,GameStateDescriptor> {
+    // Rules:
+    
+    PGBotEngineRules* rules;
+    
+    
     // Persisted across Match sets
     NSObject<RandomProtocol>* random;
     NSMutableArray* robots;
@@ -62,8 +68,11 @@
     int gameCycleStateCPUCyclesExecuted;
     
     bool headlessMode;
+    bool hadCollisionThisRound;
     
 }
+
+@property (readonly) PGBotEngineRules* rules;
 @property (readwrite,assign)     bool headlessMode;
 @property (readonly) NSObject<RandomProtocol>* random;
 @property (readwrite,retain) NSMutableArray* mines;
@@ -74,7 +83,7 @@
 
 
 -(id) init;
-
+-(void) notifyOfCollisionThisRound;
 -(void) setRobot:(GemBot*) g toTeam:(int) team;
 
 
@@ -90,7 +99,7 @@
 
 -(void) startNewSetOfMatches;
 
--(void) stepGameCycle:(NSArray*) robots;
+-(bool) stepGameCycle:(NSArray*) robots;
 
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription;
 

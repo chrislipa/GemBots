@@ -70,7 +70,9 @@ typedef enum {
     IBOutlet NSTextFieldCell* matchesSlashCell;
     IBOutlet ArenaView* arenaView;
     IBOutlet NSSlider* gamespeedSlider;
+    IBOutlet NSSlider* robotSizeSlider;
     IBOutlet NSTextField* gamespeedTex;
+    IBOutlet NSTextFieldCell* robotRadiusTex;
     
     float delayBetweenGameCycles;
     bool flagToCreateNewTimer;
@@ -135,8 +137,9 @@ typedef enum {
 -(void) notifyOfRecompile:(NSURL*) url;
 -(void) notifyOfTeamsChange;
 -(void) computeGameSpeedBasedOnSlider;
+-(void) computeRobotRadiusBasedOnSlider;
 -(IBAction) gamespeedSliderCallback:(id)sender;
-
+-(IBAction) robotSizeSliderCallback:(id)sender;
 
 -(IBAction)soundEnabledCallback:(id)sender ;
 -(IBAction)graphicsEnabledCallback:(id)sender ;

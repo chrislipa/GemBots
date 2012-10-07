@@ -68,6 +68,7 @@
     [self setBattleState:nobattle];
     
     [gamespeedSlider setToolTip:@"Speed (-,= to adjust)"];
+
     [stopButton setToolTip:@"Terminate Battle (T)"];
     [stepButton setToolTip:@"Step Game Cycle (S)"];
     [gamespeedTex setToolTip:@"Speed (-,= to adjust)"];
@@ -80,7 +81,7 @@
     [matchesNumeratorCell setStringValue:@"0"];
     [gameCycleNumeratorCell setStringValue:@"0"];
     
-
+    [self computeRobotRadiusBasedOnSlider];
 }
 
 
@@ -479,6 +480,16 @@
 }
 -(IBAction) playPauseButtonCallback:(id)sender {
     [self playPauseButtonCallbackInternal];
+}
+
+-(void) computeRobotRadiusBasedOnSlider {
+    int x =[robotSizeSlider intValue];
+    [engine.rules setRobotRadius:x];
+    [robotRadiusTex setStringValue:[NSString stringWithFormat: @"%d meters", x]];
+}
+
+-(IBAction) robotSizeSliderCallback:(id)sender {
+    [self computeRobotRadiusBasedOnSlider];
 }
 
 

@@ -13,7 +13,7 @@
 @implementation PGBotNativeEngine (GameManagement)
 
 
--(void) startNewMatchInternal {
+-(bool) startNewMatchInternal {
     [self createInternalOrderingOfRobots];
     
     gameCycleStatePosition = 0;
@@ -24,9 +24,13 @@
     mines = [NSMutableArray array];
     [self resetAllRobotsForNextRound];
     [self giveRandomIDsToRobots];
-    [self placeRobotsInRandomPositionsAndHeadings];
+    bool successPlacingRobots = [self placeRobotsInRandomPositionsAndHeadings];
+    if (!successPlacingRobots) {
+        return NO;
+    }
     isMatchCurrentlyActive = YES;
     isThisSetInitiated = YES;
+    return YES;
 }
 
 -(void) createInternalOrderingOfRobots {
@@ -73,8 +77,12 @@
     }
 }
 
--(void) placeRobotsInRandomPositionsAndHeadings {
+-(bool) placeRobotsInRandomPositionsAndHeadings {
+    const int max_failures_to_place_robots = 10000;
+    int number_of_failures = 0;
+    
     bool match;
+    double ROBOT_RADIUS = rules.robotRadius;
     for (int i = 0; i < [robots count]; i ++ ) {
         
         GemBot* b = [robots objectAtIndex:i];
@@ -86,11 +94,16 @@
             for (int j = 0; j<i; j++) {
                 if (internal_distance_between(b, [robots objectAtIndex:j]) < 2 * distanceToInternalDistance(ROBOT_RADIUS)) {
                     match = YES;
+                    number_of_failures++;
+                    if (number_of_failures >= max_failures_to_place_robots) {
+                        return NO;
+                    }
                 }
             }
         } while (match);
         b.heading = b.desiredHeading = b.turretHeading = [random randomIntInInclusiveRange:0 :255];
     }
+    return YES;
 }
 
 -(void) giveCreditForWinsAndLosses {

@@ -32,7 +32,10 @@ void* runEngineLoop(NSObject<PGBotEngineProtocol>* engine) {
 
     while (![engine isSetOfMatchesCompleted]) {
         @autoreleasepool {
-            [engine stepGameCycle:nil];
+            bool success = [engine stepGameCycle:nil];
+            if (!success) {
+                break;
+            }
         }
     
 

@@ -48,41 +48,62 @@ double convert_angle_to_degrees(int hexangle) {
 
 
 -(void) internalDrawRobot:(NSObject<RobotDescription>*) bot {
-    #define ROBOT_RADIUS 6
-    double botscale_scale =  ROBOT_RADIUS/2.0;
+    double ROBOT_RADIUS = battleDocumentViewController.engine.rules.robotRadius;
+    //double botscale_scale =  ROBOT_RADIUS/2.0;
+    double turret = ROBOT_RADIUS * 0.4;
     //double turretscale_scale = 1;
+    
+    NSColor* c = bot.color;
+    float r = c.redComponent;
+    float g = c.greenComponent;
+    float b = c.blueComponent;
+
+    NSColor* bgcolor = [NSColor colorWithDeviceRed:r/3.0 green:g/3.0 blue:b/3.0 alpha:1.0];
+    setColorTo(bgcolor);
+    glBegin(GL_TRIANGLE_FAN);
+    double delta =  M_2_PI/8;
+    
+    glVertex2f(0, 0);
+    for (float dangle = 0; dangle < 2*M_PI+delta; dangle += delta) {
+        glVertex2f(((float)(ROBOT_RADIUS)) * sin(dangle+0),((float)(ROBOT_RADIUS))* cos(dangle+0));
+    }
+    
+    glEnd();
+    
+    
+    
     
     setColorTo(bot.color);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(0*botscale_scale, 2*botscale_scale);
-    glVertex2f(2*botscale_scale, -2*botscale_scale);
-    glVertex2f(-2*botscale_scale, -2*botscale_scale);
+    glVertex2f(sin(0)*ROBOT_RADIUS, cos(0)*ROBOT_RADIUS);
+    glVertex2f(sin(3.0/4.0*M_PI)* ROBOT_RADIUS, cos(3.0/4.0*M_PI)*ROBOT_RADIUS);
+    glVertex2f(sin(5.0/4.0*M_PI)* ROBOT_RADIUS, cos(5.0/4.0*M_PI)*ROBOT_RADIUS);
     glEnd();
     
     glPushMatrix() ;
     double angle =  (bot.turretHeading - bot.heading) / 256.0 * 360.0;
     glRotatef(angle , 0, 0, 1);
     
-    /*
+    
     setColorTo([NSColor whiteColor]);
     glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(0*turretscale_scale, 1.5*turretscale_scale);
-    glVertex2f(1.5*turretscale_scale, -1.5*turretscale_scale);
-    glVertex2f(-1.5*turretscale_scale, -1.5*turretscale_scale);
+    glVertex2f(sin(0)*turret, cos(0)*turret);
+    glVertex2f(sin(3.0/4.0*M_PI)* turret, cos(3.0/4.0*M_PI)*turret);
+    glVertex2f(sin(5.0/4.0*M_PI)* turret, cos(5.0/4.0*M_PI)*turret);
     glEnd();
-    */
+    
     if (bot.shieldOn) {
         setColorTo([NSColor whiteColor]);
         glBegin(GL_LINE_STRIP);
         
         
         
-        double r = ROBOT_RADIUS;
+        
         double delta =  M_2_PI/8;
         
         
         for (float dangle = 0; dangle < 2*M_PI+delta; dangle += delta) {
-            glVertex2f(((float)(r)) * sin(dangle+0),((float)(r))* cos(dangle+0));
+            glVertex2f(((float)(ROBOT_RADIUS)) * sin(dangle+0),((float)(ROBOT_RADIUS))* cos(dangle+0));
         }
         
         glEnd();
@@ -102,11 +123,12 @@ double convert_angle_to_degrees(int hexangle) {
 }
 
 -(void) internalDrawMissile:(NSObject<MissileDescription>*) missile {
-    
+    //double ROBOT_RADIUS = battleDocumentViewController.engine.rules.robotRadius;
+    double scale = 1;
     setColorTo(missile.owner.color);
     glBegin(GL_TRIANGLE_FAN);
-    float width = 0.6;
-    float height = [missile internal_speed]/1.0 ;
+    float width = 0.6 * scale;
+    float height = [missile internal_speed]/1.0 * scale ;
     glVertex2f(width, height);
     glVertex2f(width, -height);
     glVertex2f(-width, -height);

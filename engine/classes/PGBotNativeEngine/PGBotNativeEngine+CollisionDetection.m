@@ -171,10 +171,12 @@ static inline bool areMovingTowardsEachOther(unit b1x, unit b1y, unit b1vx, unit
     unit iy = i.internal_position.y;
     unit jx = j.internal_position.x;
     unit jy = j.internal_position.y;
-    
+    unit ir = i.internal_radius;
+    unit jr = j.internal_radius;
+     
     unit md = MAX(ABS(ix-jx),(iy-jy));
     
-    if (is + js < md) {
+    if (is + js < md- ir -jr) {
         return;
     }
     
@@ -185,8 +187,6 @@ static inline bool areMovingTowardsEachOther(unit b1x, unit b1y, unit b1vx, unit
     position jv = internal_velocity(j);
     unit jvx = jv.x;
     unit jvy = jv.y;
-    unit ir = i.internal_radius;
-    unit jr = j.internal_radius;
     
     bool qnc =!quickNearnessCheck(ix,iy,ivx,ivy,ir,jx,jy,jvx,jvy,jr);
     if (qnc) {
@@ -234,14 +234,22 @@ static inline bool areMovingTowardsEachOther(unit b1x, unit b1y, unit b1vx, unit
         unit t1 = 0.5 * (2 * b -usqrt (disc)) / a ;
         unit t2 = 0.5 * (2 * b + usqrt(disc)) / a;
         unit time;
-        if (t1 < 0 && t2 < 0 ) {
-            return;
-        } else if (t1 < 0) {
-            time = t2;
-        } else if (t2 < 0) {
-            time = t1;
+        if ((t1 > 0 && t2 < 0) || (t1 < 0 && t2 > 0) ) {
+            if (abs(t1)  < abs(t2)) {
+                time = 0;
+            } else {
+                return;
+            }
         } else {
-            time = MIN(t1,t2);
+            if (t1 < 0 && t2 < 0 ) {
+                return;
+            } else if (t1 < 0) {
+                time = t2;
+            } else if (t2 < 0) {
+                time = t1;
+            } else {
+                time = MIN(t1,t2);
+            }
         }
         if (time < *maximumCollisionTimeFound) {
             *maximumCollisionTimeFound = time;

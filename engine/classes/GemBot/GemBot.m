@@ -136,6 +136,7 @@
 
 
 -(unit) internal_radius {
+    double ROBOT_RADIUS = engine.rules.robotRadius;
     return ROBOT_RADIUS;
 }
 
@@ -172,7 +173,7 @@
 
 -(void) dealWithCollisionWithObject:(NSObject<CollideableObject>*) object {
     if ([object isKindOfClass:[Wall class]] || [object isKindOfClass:[GemBot class]]) {
-        [self hadCollision];
+        [self hadCollision:object ];
     }
 }
 

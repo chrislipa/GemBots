@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "GameStateDescriptor.h"
+
+
+@protocol PGBotEngineRulesProtocol <NSObject>
+-(void) setRobotRadius:(double) robotRadius;
+-(double) robotRadius;
+@end
+
+
 @protocol PGBotEngineProtocol <NSObject>
 
 
@@ -29,11 +37,11 @@
 
 -(void) startNewSetOfMatches;
 
--(void) stepGameCycle:(NSArray*) robots;
+-(bool) stepGameCycle:(NSArray*) robots;
 -(int) gameCycle;
 -(int) currentMatch;
 -(NSObject<GameStateDescriptor>*) currentGameStateDescription;
-
+-(NSObject<PGBotEngineRulesProtocol>*) rules;
 -(bool) isSetOfMatchesCompleted;
 -(bool) isMatchCurrentlyActive;
 -(void) setHeadlessMode:(bool)x;
