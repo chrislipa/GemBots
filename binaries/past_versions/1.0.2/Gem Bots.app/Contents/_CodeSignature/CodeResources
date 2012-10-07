@@ -111,17 +111,9 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>Resources/fire.gembot</key>
-		<data>
-		RpixGqgbdMMtbaD+fGpgHZfbmkU=
-		</data>
 		<key>Resources/gitcommit.txt</key>
 		<data>
-		tUtYy9pFsc5dQCc5AvooTUlDDn8=
-		</data>
-		<key>Resources/goodshot.gembot</key>
-		<data>
-		KVC1ntLQGpNV0nsdC0FveBS6BsE=
+		MFsJko7D2dMSURRscUdps50Cb+Y=
 		</data>
 		<key>Resources/green-plus-sign-50.tiff</key>
 		<data>
@@ -147,45 +139,57 @@
 		<data>
 		+MtCAMlWogB2huGtG+N594i+Vw0=
 		</data>
-		<key>Resources/shotinthedark.gembot</key>
+		<key>Resources/samplebots/fire.gembot</key>
+		<data>
+		RpixGqgbdMMtbaD+fGpgHZfbmkU=
+		</data>
+		<key>Resources/samplebots/goodshot.gembot</key>
+		<data>
+		KVC1ntLQGpNV0nsdC0FveBS6BsE=
+		</data>
+		<key>Resources/samplebots/shotinthedark.gembot</key>
 		<data>
 		D81VGYG5LyQ/AXeVNGL+xtYOy8o=
 		</data>
-		<key>Resources/sittingsniper.gembot</key>
+		<key>Resources/samplebots/sittingsniper.gembot</key>
 		<data>
 		1lUgVN9dihDfrxopCmlHAkrZ0Io=
+		</data>
+		<key>Resources/samplebots/slow.gembot</key>
+		<data>
+		EmG03pWYpO+Me0ClFMn7mEAEXuc=
+		</data>
+		<key>Resources/samplebots/sniper1.gembot</key>
+		<data>
+		bn/1f+K2hCCeKZ0eqJw4u2r6Bsg=
+		</data>
+		<key>Resources/samplebots/sniper2.gembot</key>
+		<data>
+		meY7XC+aleLM/8icp5PyZBq1w9k=
+		</data>
+		<key>Resources/samplebots/sniper_shield.gembot</key>
+		<data>
+		1E6scAtf8SxU6E+DcIORq2HExXM=
+		</data>
+		<key>Resources/samplebots/speedy.gembot</key>
+		<data>
+		J72sy8R0sT1fvOUfmKFHe+cWfUU=
+		</data>
+		<key>Resources/samplebots/speedyOD.gembot</key>
+		<data>
+		SarRxJGlaaqdUpRgg5+isf0JrlU=
+		</data>
+		<key>Resources/samplebots/spray.gembot</key>
+		<data>
+		BtOQdl/GwJwyZ6jbydZYfIs3xEY=
+		</data>
+		<key>Resources/samplebots/x-1.gembot</key>
+		<data>
+		pieeuEwR2GwVAcOLtrVnZCN5mbo=
 		</data>
 		<key>Resources/skull200.tiff</key>
 		<data>
 		x8yt393MtyQf1ucCpesolWL9K84=
-		</data>
-		<key>Resources/slow.gembot</key>
-		<data>
-		EmG03pWYpO+Me0ClFMn7mEAEXuc=
-		</data>
-		<key>Resources/sniper1.gembot</key>
-		<data>
-		bn/1f+K2hCCeKZ0eqJw4u2r6Bsg=
-		</data>
-		<key>Resources/sniper2.gembot</key>
-		<data>
-		meY7XC+aleLM/8icp5PyZBq1w9k=
-		</data>
-		<key>Resources/sniper_shield.gembot</key>
-		<data>
-		1E6scAtf8SxU6E+DcIORq2HExXM=
-		</data>
-		<key>Resources/speedy.gembot</key>
-		<data>
-		J72sy8R0sT1fvOUfmKFHe+cWfUU=
-		</data>
-		<key>Resources/speedyOD.gembot</key>
-		<data>
-		SarRxJGlaaqdUpRgg5+isf0JrlU=
-		</data>
-		<key>Resources/spray.gembot</key>
-		<data>
-		BtOQdl/GwJwyZ6jbydZYfIs3xEY=
 		</data>
 		<key>Resources/step200.tiff</key>
 		<data>
@@ -194,10 +198,6 @@
 		<key>Resources/stop200.tiff</key>
 		<data>
 		jgDI2XpGUKOevqxb3QdVbk2LLW8=
-		</data>
-		<key>Resources/x-1.gembot</key>
-		<data>
-		pieeuEwR2GwVAcOLtrVnZCN5mbo=
 		</data>
 	</dict>
 	<key>rules</key>
