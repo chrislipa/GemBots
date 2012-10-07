@@ -100,7 +100,8 @@ MasterController* staticMasterController = nil;
     NSString *programName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleExecutable"];
     pathToSampleBotDirectory = [[applicationSupportDirectory stringByAppendingPathComponent:programName] stringByAppendingPathComponent:@"samplebots"];
     NSFileManager* fm = [NSFileManager defaultManager];
-    if (![fm fileExistsAtPath:pathToSampleBotDirectory]) {
+    //if (![fm fileExistsAtPath:pathToSampleBotDirectory])
+    {
         [fm createDirectoryAtPath:pathToSampleBotDirectory withIntermediateDirectories:YES attributes:nil error:nil];
         
         NSString *resourcesPath = [[NSBundle mainBundle] resourcePath];
@@ -108,7 +109,10 @@ MasterController* staticMasterController = nil;
         for (NSString* filename in [fm contentsOfDirectoryAtPath:pathToSampleBotsBundle error:nil]) {
             NSString* src = [pathToSampleBotsBundle stringByAppendingPathComponent:filename];
             NSString* dst = [pathToSampleBotDirectory stringByAppendingPathComponent:filename];
-            [fm copyItemAtPath:src toPath:dst error:nil];
+            if (![fm fileExistsAtPath:dst]) {
+                [fm copyItemAtPath:src toPath:dst error:nil];
+            }
+        
         }
     }
     
