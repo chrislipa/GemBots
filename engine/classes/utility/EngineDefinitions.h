@@ -50,9 +50,9 @@ typedef double unit;
 #define MIN_THROTTLE -75
 #define STARTING_THROTTLE 0
 
-#define ROBOT_DEATH_EXPLOSION_RADIUS 25
-#define MINE_EXPLOSION_RADIUS 35
-#define MISSILE_EXPLOSION_RADIUS 14
+#define ROBOT_DEATH_EXPLOSION_RADIUS (23+engine.rules.robotRadius)
+#define MINE_EXPLOSION_RADIUS (33+engine.rules.robotRadius)
+#define MISSILE_EXPLOSION_RADIUS (2+engine.rules.robotRadius)
 
 #define DIFFERENCE_BETWEEN_HEAT_SHUTOFF_AND_REVIVE 50
 
