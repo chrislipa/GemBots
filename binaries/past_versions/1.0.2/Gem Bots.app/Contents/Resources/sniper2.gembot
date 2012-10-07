@@ -1,0 +1,197 @@
+#armament shield 0
+#armament armor 3
+#armament weapon 3
+#armament engine 2
+#armament heatsink 2
+#armament radar 2
+#armament mines 0
+
+
+#name "Drunk Sniper"
+#author "chris lipa"
+//#armament radar 0
+#def width
+#def negative_width 0 0 0 
+#def halfwidth
+#def drop_level_last
+#def ta
+
+#def ta3
+#def ta4
+#def ta5
+#def h
+#def tmp
+#def angle1
+#def angle2
+#def angle3
+#def angle4
+#def angle5
+
+mov ax 1
+syscall SET_KEEPSHIFT
+mov width 255
+jump loc
+
+mov_east:
+mov h 64
+jump after_locate
+
+mov_west:
+mov h 196
+jump after_locate
+
+mov_north:
+mov h 0
+jump after_locate
+
+mov_south:
+mov h 128
+jump after_locate
+
+loc:
+reset:
+
+ang1:
+rd random angle1
+and angle1 7
+sub angle1 3
+
+rd random angle2
+and angle2 7
+sub angle2 3
+
+rd random angle3
+and angle3 7
+sub angle3 3
+
+rd random angle4
+and angle4 7
+sub angle4 3
+
+rd random angle5
+and angle5 7
+sub angle5 3
+
+
+
+cmp width 0
+jne not_reset
+mov width 256
+not_reset:
+log reset
+syscall LOCATE
+cmp ex 250
+jle mov_east
+cmp ex 750
+jge mov_west
+cmp fx 250
+jle mov_south
+cmp fx 750
+jge mov_north
+
+
+
+
+after_locate:
+
+wr throttle 100
+rd random ax
+and ax 63
+sub ax 32
+add h ax
+
+rd THERMOMETER tmp
+
+
+wr heading h
+wr SCAN_ARC width
+
+
+scan_loop:
+
+wr scan_arc width
+rd radar ax
+cmp ax -1
+jeq not_found
+
+
+found:
+//log found 
+cmp width 2
+jeq fire
+mov drop_level_last 1
+slr width 1
+mov halfwidth width
+slr halfwidth 1
+add ta halfwidth
+wr TURRET_HEADING ta
+
+//logf halfwidth adding %d to turret_offset
+
+//logf turret_offset turret_offset = %d
+jump scan_loop
+
+
+
+not_found:
+//logf drop_level_last not found  drop level last = %d
+cmp width 256
+jge reset
+cmp drop_level_last 1  
+jeq move_forward
+
+
+move_up:
+
+sll width 2
+mov drop_level_last 0
+jump loc
+
+
+move_forward:
+//logf ta move forward ta = %d
+mov negative_width width
+neg negative_width
+add ta negative_width
+wr TURRET_HEADING ta
+mov drop_level_last 0
+jump scan_loop:
+
+
+
+
+
+
+fire:
+cmp tmp 200
+jge loc
+
+//wr FIRE_MISSILE -3
+//wr FIRE_MISSILE -2
+
+wr FIRE_MISSILE angle1
+rd random ax
+cmp ax 1000000000
+jgt loc
+wr FIRE_MISSILE angle2
+rd random ax
+cmp ax 500000000
+jgt loc
+wr FIRE_MISSILE angle3
+
+rd random ax
+cmp ax 0
+jgt loc
+
+
+wr FIRE_MISSILE angle4
+
+rd random ax
+cmp ax 0
+jgt loc
+
+wr FIRE_MISSILE angle5
+jump loc
+
+
+
